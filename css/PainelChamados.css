@@ -1,0 +1,158 @@
+
+.titulo{
+	font-size:22px;
+	}
+
+.sucesso{
+	color:#06C;
+	}
+
+.erro{
+	color:#F00;
+	}
+
+.linha1{
+	background-color:#CCC;
+	}
+	
+.linha2{
+	background-color:#FFF;
+	}
+	
+.linha1:hover{
+	background-color:#06C;
+	color:#FFF;
+	}
+	
+.linha2:hover{
+	background-color:#06C;
+	color:#FFF;
+	}
+	
+.linha3{
+	background-color:#666;
+	color:#FFF;	
+	}				
+.tabela{
+	background-color:#666;
+}
+
+.legenda{color:#000;}
+
+a.tabela{color:#FFF; 
+		text-decoration:none;
+		}
+
+a.tabela:hover{
+			color:#CCC;
+			}
+
+a:link, a:visited {
+	color: #CCC;
+	text-decoration: none;
+	}
+	
+a:hover, a:active {
+
+	text-decoration: underline;	
+	}
+
+#painel1, #painel2{
+	float: left;
+	margin-bottom: 10px;
+	}
+		
+#painel3{
+	float: left;
+	margin-bottom: 10px;
+	clear: both;
+	}	
+
+#completo{
+	float: left;
+	margin-top: 5px;
+	margin-right: 10px;
+	}
+	
+#parcial{
+	float: right;
+	margin-top: 5px;
+	margin-right: 10px;
+	}	
+	
+#devolvido{
+	float: left;
+	margin-top: 5px;	
+	margin-right: 10px;	
+	}
+	
+#emrecebimento{
+	float: left;
+	margin-top: 5px;
+	margin-right: 10px;
+	background-color: #FFF;
+	}	
+
+#emrecebimento:hover{
+	background-color: #000;
+	color: #FFF;
+	}	
+	
+#faltou{
+	float: right;
+	margin-top: 5px;	
+	margin-right: 10px;	
+	}	
+
+legend{
+	font-weight: bold; 
+	color: #FFF;
+	font-size: 18px;
+	}
+
+legend #nome{
+	font-weight: bold; 
+	color: #FFF;
+	font-size: 18px;
+	}
+	
+fieldset:hover{
+	background-color: #8B8989;
+	}	
+	
+body{
+	background-color: #4682B4;
+	}
+	
+#conteudo2{
+	float: left;
+	}
+	
+	
+#topo h2{
+font-family:Verdana,Arial,Sans-Serif;
+background-color:#FFF;
+padding: 2px 0px 5px 0px;
+text-align:center;
+border:solid black 1px;
+color: #000;
+width: 99%;
+height: 5%;
+margin-top: -25px;
+margin-bottom: 0;
+
+}
+
+#topo2 h3{
+font-family:Verdana,Arial,Sans-Serif;
+background-color:#FFF;
+padding: 2px 0px 5px 0px;
+text-align:center;
+border:solid black 1px;
+color: #000;
+width: 99%;
+height: 5%;
+margin-top: 5px;
+margin-bottom: 0;
+
+}

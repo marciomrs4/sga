@@ -1,0 +1,65 @@
+
+.linha1{
+	background-color: #87CEFF;
+	}
+	
+.linha2{
+	background-color:#FFF;
+	}
+	
+.linha1:hover, .linha2:hover{
+	background-color:#778899;
+	color:#FFF;
+	}
+		
+.linha3{
+	background-color:#5D81B1;
+	color: #FFF;	
+	}	
+
+
+
+.tabela{
+	background-color: #104E8B;
+}
+
+table tr td{
+	padding: 7px;
+	}
+	
+	
+	div.centro{
+
+	}
+	
+	div.esquerda
+	{
+		margin-top: 0px;
+		padding: 0px 0px 0px 0px;
+
+		border-color: #2970af;
+		float: left;
+	}
+
+	div.direita
+	{
+				
+		border-color: #00F;
+		float: right;
+	}
+	
+	.niver{
+		font-weight: bold;
+		color: #F00;
+		font-size: 45px;
+		margin-bottom: 0;
+		border-bottom: 50px;
+		
+	}
+
+	
+	.tabela-niver-cabecalho{
+		
+		color: #FFF;
+		font-weight: bold;		
+	}

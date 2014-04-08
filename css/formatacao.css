@@ -1,0 +1,172 @@
+.marcacao1{
+	background-color:#BCD2EE;
+	color: #F00;
+
+	}
+
+.marcacao2{
+	background-color:#BCD2EE;
+	color: #f00;
+	}
+	
+.titulo{font-size:22px;
+		}
+
+.sucesso{
+	color:#06C;
+	}
+
+.erro{
+	
+	color:#F00;
+	border-width: thin;
+	margin-left: 5px;
+	border-color: #F00;
+
+}
+
+.linha1{
+	background-color:#CCC;
+	}
+	
+.linha2{
+	background-color:#FFF;
+	}
+	
+.linha1:hover, .linha2:hover{
+	background-color:#778899;
+	color:#FFF;
+	}
+		
+.linha3{
+	background-color:#5D81B1;
+	color: #FFF;	
+	}	
+
+#tabela {
+	width: 100%;
+	overflow: auto;	
+	}
+	
+
+a.tabela, .login{
+	color:#FFF; 
+	text-decoration:none;
+}
+		
+a.tabela:hover{
+		color:#FFF; 
+
+}		
+
+
+.tabela{
+	background-color: #5D81B1
+}
+
+.legenda{
+	color:#000;
+	}
+
+legend{
+	font-weight: bold;
+	padding: 0px 5px 10px 5px;
+}
+
+
+
+table thead tr th{ 
+	padding: 0px 5px 0px 5px;
+	}
+
+table tr td{
+	padding: 0px 5px 0px 5px;
+	}
+
+	
+td a:hover{
+	text-decoration: underline;
+	color: #06C;
+	}
+			
+#submit{
+	font-size: 12pt;
+	padding: 15px 15px 15px 15px;
+	margin-left: 25px;
+	margin-right: 25px;
+	margin-bottom: 20px;
+	background-color: #CFCFCF;	
+	font-weight: bold;
+}
+
+#submit:hover{
+	background-color: #E8E8E8;
+	border-color: black;
+}
+
+textarea:hover, input:hover, select:hover{
+	background-color: #E8E8E8;
+	border-color: black;
+	color: #000;
+	}
+	
+.button-relatorio{
+	width: 160px;
+	margin-right: 15px;
+	margin-bottom: 5px; 
+	padding: 5px 5px 5px 5px ;
+	background-color: #CFCFCF;
+	color: 000;
+	font-weight: bold;
+	}
+	
+.button-relatorio:hover{
+	padding: 5px 5px 5px 5px;	
+	border-color: black;
+	background-color: #E8E8E8;	
+	cursor: pointer;
+	}	
+	
+.button-tela{
+	width: 70px; 
+	padding: 5px 5px 5px 5px ;
+	background-color: #CFCFCF;
+	color: 000;
+	font-weight: bold;
+	}
+	
+.button-tela:hover{
+	padding: 5px 5px 5px 5px;	
+	border-color: black;
+	background-color: #06C;	
+	cursor: pointer;
+	color: #FFF;
+	}
+
+.acoeschamado a{
+	color: red;
+	padding: 0px 0px 10px 10px;
+	text-decoration: none;
+	}
+	
+	div.centro{
+
+	}
+	
+	div.esquerda
+	{
+		margin-top: 0px;
+		padding: 0px 0px 0px 0px;
+
+		border-color: #2970af;
+		float: left;
+	}
+
+	div.direita
+	{
+				
+		border-color: #00F;
+		float: right;
+	}
+	
+	

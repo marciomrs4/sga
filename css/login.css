@@ -1,0 +1,38 @@
+body{
+
+	background-color: #4682B4;
+		
+}
+
+#login{
+
+
+	border: 10px;
+	background-color: #B0C4DE;
+	
+}
+
+fieldset {
+
+	margin: 225px 25px 225px 225px;		
+	padding: 25px 25px 25px 25px;
+	
+		
+	}
+
+#nome{
+	size: 100px;
+	/* background-color: blue; */
+	
+	}
+	
+#senha{
+	
+	
+	}
+
+#button{
+
+	
+
+}

@@ -1,0 +1,97 @@
+
+#global{
+	border: 1px;
+	border-style: solid;
+  	border-color: black;
+  	margin: 0px 0px 0px 0px;
+  	padding: 1px 1px 1px 1px;
+  	/* background-color: #E8E8E8; */
+
+	}
+
+#painel{
+	
+	padding: 2px 2px 2px 2px;
+	border: 1px;
+	margin: 2px 2px 2px 2px;
+	color: black;
+	border-style: solid;
+  	border-color: black;
+  	background-color: white;
+	}
+
+#anotacoes{
+	border: 1px;
+	border-style: solid;
+  	border-color: black;
+	height: 150px;
+	margin: 1px 1px 1px 1px;
+  	background-color: white;	
+	}
+	
+#observacao{
+	border: 1px;
+	border-style: solid;
+  	border-color: black;
+  	margin: 10px 0px 10px 0px;
+   	padding: 0px 0px 5px 10px;	
+	}	
+	
+#infocliente{
+	border: 1px;
+	border-style: solid;
+  	border-color: black;
+  	margin-top: 5px;
+  	padding: 0px 0px 5px 10px;
+	}
+	
+#infoprojeto{
+	border: 1px;
+	border-style: solid;
+  	border-color: black;
+  	margin-top: 5px;
+  	padding: 0px 0px 5px 10px;
+	}	
+	
+#apontamento{
+	border: 1px;
+	border-style: solid;
+  	border-color: black;
+  	margin-top: 5px;
+	margin-right: 5px;
+  	padding: 0px 0px 5px 10px;
+	}		
+
+#atividade{
+	border: 1px;
+	border-style: solid;
+  	border-color: black;
+  	margin-top: 5px;
+	margin-right: 5px;
+  	padding: 0px 0px 5px 10px;
+	}		
+
+#tituloprojeto{
+	font-size: 20px;
+	
+	
+}
+
+span{
+	font-weight: bold;
+	}
+
+h5{
+	margin-left: 1px;
+	margin-top: 1px;
+	
+	}
+
+h3{
+	color: #000;
+	margin-left: 1px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
+	}
+	

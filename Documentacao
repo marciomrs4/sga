@@ -1,0 +1,19 @@
+[para aquivos, classes e scripts]
+
+* @package [Nome do pacote de Classes, ou do sistema]
+* @name [Apelido para o arquivo]
+* @author [nome do autor] <[e-mail do autor]>
+* @license [link da licença] [Nome da licença]
+* @version [Versão atual do arquivo]
+* @since [Arquivo existe desde: Data ou Versao]
+
+
+[Para Metodos]
+
+* @param Parametros que são aceitos no metodo
+* @throws O tipo de exception lançada
+* @name Nome do metodo
+* @return o que ele retorna
+* @author O nome do autor/criador do metodo
+* @version a versão do metodo
+* @since data de criação
