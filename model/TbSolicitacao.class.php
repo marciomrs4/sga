@@ -133,7 +133,10 @@ class TbSolicitacao extends Banco
 							(SELECT date_format(tea_data_acao,'%d-%m-%Y %H:%i:%s') 
 								        	FROM tb_calculo_atendimento 
 								        	WHERE sol_codigo = SOL.sol_codigo AND sta_codigo = 1) AS Abertura,
-						  PRO.pro_descricao,  STA.sta_descricao,  DEP.dep_descricao,
+						  PRO.pro_descricao,  STA.sta_descricao,  
+					(SELECT dep_descricao FROM tb_departamento WHERE dep_codigo = 
+				        (SELECT dep_codigo FROM tb_usuario WHERE usu_codigo = usu_codigo_solicitante)
+				    	) AS Departamento_Solicitante,
 						   substr(SOL.sol_descricao_solicitacao,1,60) AS 'descricao', 
 						    (SELECT usu_email FROM tb_usuario WHERE usu_codigo = ATE.usu_codigo_atendente) AS Atendente
 					FROM tb_solicitacao AS SOL
