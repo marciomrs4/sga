@@ -110,7 +110,6 @@ try
 		}else
 		{
 			echo('Houve algum problema ao enviar o e-mail');
-
 		}
 
 	}

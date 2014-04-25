@@ -52,11 +52,20 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
 	    		$tbdepartamento = new TbDepartamento();
 	    		$Usuario = $tbusuario->getUsuario($_SESSION['alterar/Solicitacao']['usu_codigo_solicitante']); 
 	    		
-	    		echo $Usuario['usu_email'].' / Ramal: '.$Usuario['usu_ramal'].' / '.$tbdepartamento->getDepDescricao($Usuario['dep_codigo']);
+	    		echo $Usuario['usu_email'];
 	    		
 	    		?>
 	    	</td>
 	    </tr>
+	    
+	    <tr>
+	    	<th>
+	    	</th>
+	    	<td nowrap="nowrap">
+	    	<?php echo 'Ramal: '.$Usuario['usu_ramal'].' / '.$tbdepartamento->getDepDescricao($Usuario['dep_codigo']);?>
+	    	</td>
+	    </tr>
+	    
 	    	    
 	    <tr>
 	    		<th>

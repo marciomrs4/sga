@@ -21,7 +21,7 @@ class Validacao extends ClasseException
 			$Class::$Method($campo,$param);
 		}
 		
-	}
-	*/
+	}*/
+	
 
 }
