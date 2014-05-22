@@ -612,5 +612,23 @@ class Busca extends Dados
 		
 	}
 	
+	public function getRelatorioMensalMovimentacao()
+	{
+		
+		$this->dados['data1'] = ($this->dados['data1'] == '') ? date('') : $this->dados['data1'];
+		
+		$this->dados['data2'] = ($this->dados['data2'] == '') ? date('') : $this->dados['data2'];
+		
+		$this->dados['data1'] = ValidarDatas::dataBanco($this->dados['data1']);
+		$this->dados['data2'] = ValidarDatas::dataBanco($this->dados['data2']);
+		
+		$tbRelatorioMovimentacao = new TbRelatorioPortalMovimentacao();
+		
+		$dados = $tbRelatorioMovimentacao->getRelatorioMovimentacao($this->dados);
+		
+		return($dados);
+		
+	}
+	
 }
 ?>

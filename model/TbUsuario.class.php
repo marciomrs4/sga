@@ -351,5 +351,29 @@ class TbUsuario extends Banco
 	}
 	
 	
+	#Lista de Ramais usado na Intranet
+	public function listarRamaisIntranet()
+	{
+		
+		$query = ("SELECT usu_nome AS Nome, usu_ramal, usu_email AS Ramal, DEP.dep_descricao AS Departamento
+						FROM tb_usuario AS USU
+						INNER JOIN tb_departamento AS DEP
+						ON USU.dep_codigo = DEP.dep_codigo
+						INNER JOIN tb_acesso AS ACE
+						ON USU.usu_codigo = ACE.usu_codigo
+						WHERE ace_ativo = 'S' AND USU.usu_codigo != 1
+						");
+	
+		try{
+			
+			$stmt = $this->conexao->prepare($query);
+			$stmt->execute();
+			return($stmt);
+				
+		} catch (PDOException $e){
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+	}
+	
 }
 ?>

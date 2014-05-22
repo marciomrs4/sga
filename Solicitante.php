@@ -8,7 +8,7 @@ $busca = new Busca();
 $busca->validarPost($_POST);
 
 echo"<div class='sub_menu_principal'>";
-echo FormComponente::actionButton('<img src="./css/images/addchamado.png" title="Novo Chamado"  >','cadastrar/Solicitacao');
+echo FormComponente::actionButton('<img src="../sga/css/images/addchamado.png" title="Novo Chamado"  >','cadastrar/Solicitacao');
 Texto::criarTitulo("Chamados / Solicitações");
 echo "</div>";
 

@@ -75,7 +75,8 @@ Sessao::validarForm('cadastrar/Projeto');
     
     <tr>
       <td colspan="2" align="left">
-	      <input type="submit" name="cadastrar" class="button-tela" value="Salvar" />
+	      <input type="submit" name="cadastrar" class="button-tela" id="botaoSave" value="Salvar" />
+	      <span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>	      
       </td>
     </tr>
     

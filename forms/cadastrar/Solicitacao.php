@@ -2,7 +2,7 @@
 Sessao::validarForm('cadastrar/Solicitacao'); 
 ?>
 
-<form name="solicitacao" id="solicitacao" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/solicitacao.php">
+<form name="solicitacao" id="solicitacao"  method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/solicitacao.php">
 <fieldset>
 	<legend> Abrir Chamado </legend>
   <table border="0" cellspacing="5">
@@ -57,13 +57,11 @@ Sessao::validarForm('cadastrar/Solicitacao');
     
     <tr>
       <td colspan="2" align="left">
-	      <input type="submit" name="cadastrar" class="button-tela" value="Salvar" />
+	      <input type="submit" name="cadastrar" class="button-tela" id="botaoSave" value="Salvar" />
+	      <span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>
       </td>
     </tr>
-
   </table>
-       <div id="insere_aqui">
-     </div>
 </fieldset>
 </form>
 

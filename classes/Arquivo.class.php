@@ -36,7 +36,16 @@ class Arquivo extends Dados
 		}
 	}
 
+	
+
 	#Retorna o Binario do arquivo temporario
+	/**
+	 * 
+	 * @return string
+	 * @author Márcio Ramos
+	 * @version 1.0.1
+	 * 
+	 */
 	public function arquivoBinario()
 	{
 		set_time_limit(3600);

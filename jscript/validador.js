@@ -26,6 +26,15 @@ var problema = 'Problema';
 var ramal = 'Ramal';
 var senha = 'Senha';
 
+function submitForm(form){			
+	
+	$valida("#botaoSave").hide();
+	$valida(".botaoSave").css("visibility","visible");
+
+	form.submit();
+	
+	}
+
 
 $valida(document).ready( function() 
 {
@@ -72,6 +81,10 @@ $valida(document).ready( function()
 			pro_descricao:{
 				required: "Campo Descrição do projeto é Obrigadorio"
 			}
+		},
+		
+		submitHandler: function(form){
+			submitForm(form);
 		}
 	});
 	
@@ -99,11 +112,16 @@ $valida(document).ready( function()
 					required: "O campo " +problema+ " é obrigatório"
 				},
 				sol_descricao_solicitacao:{
-					required: "O campo Descrição do " +problema+ " é obrigatório",
-					minlength: "O campo Descrição do " +problema+ " precisa de ao menos 20 caracteres"
+					required: "O Campo Descrição é obrigatório",
+					minlength: "O Campo Descrição deve possuir no minimo 20 caracteres"
 				}
+				
+			},
+			
+			submitHandler: function(form){			
+				submitForm(form);
 			}
-		});
+			});
 		/*Fim de validação do formulário de solicitacao*/
 	
 		/*Inicio de validação do formulário de assentamento*/
@@ -122,6 +140,9 @@ $valida(document).ready( function()
 					required: "O campo Descrição do Assentamento é obrigatório",
 					minlength: "O campo Descrição do Assentamento precisa de ao menos 10 caracteres"
 				}
+			},
+			submitHandler: function(form){
+				submitForm(form);	
 			}
 		});
 		/*Fim de validação do formulário de assentamento*/	
