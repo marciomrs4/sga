@@ -762,7 +762,13 @@ class TbSolicitacao extends Banco
                         SOL.sol_codigo,  
 						(SELECT pro_descricao FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) as Problema
 						,
-					    (SELECT sta_descricao FROM tb_status WHERE SOL.sta_codigo = sta_codigo) AS sta_status
+					    (SELECT sta_descricao FROM tb_status WHERE SOL.sta_codigo = sta_codigo) AS sta_status,
+						(select pri_descricao from tb_prioridade
+							WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) ) as Prioridade,
+
+					( SELECT tat_descricao FROM tb_tempo_atendimento WHERE tat_codigo = (select tat_codigo from tb_prioridade
+							WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) ) ) as 'SLA'
+
 					FROM tb_solicitacao AS SOL
 					INNER JOIN tb_usuario AS USU
 					ON SOL.usu_codigo_solicitante =  USU.usu_codigo
@@ -772,7 +778,7 @@ class TbSolicitacao extends Banco
 					AND SOL.sta_codigo LIKE ?
 					AND dep_codigo_solicitado = ?
 					GROUP BY SOL.sol_codigo
-					ORDER BY 1 DESC
+					ORDER BY 1 DESC;
             	  ");
 		try
 		{

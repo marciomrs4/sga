@@ -31,7 +31,7 @@ echo "</div>";
 
 			$form = new FormComponente();
 			$form::$name = 'TODOS';
-			$form->selectOption('sta_codigo', $tbstatus->selectMeuStatus(),true,$busca->getDados('sta_codigo'),5);
+			$form->selectOption('sta_codigo', $tbstatus->selectMeuStatus(),true,$busca->getDados('sta_codigo'),6);
 
 			#Nome do Campo
 			echo(' '.$_SESSION['config']['problema'].':');

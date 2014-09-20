@@ -353,5 +353,37 @@ class TbAtividade extends Banco
 		}
 	}
 	
+	
+	#Usado no Painel de Atividade
+	public function graficoAtividade()
+	{
+		$query = ("SELECT 
+					(SELECT sta_descricao 
+						FROM tb_status 
+						WHERE sta_codigo = ATI.sta_codigo ) AS 'STATUS' , 
+				count(*) AS 'Quantidade'
+				FROM tb_atividade AS ATI
+				GROUP BY sta_codigo");
+						
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+				
+			$stmt->execute();
+			
+			foreach ($stmt as $value){
+				echo '[',"'",$value[0],"'",',',$value[1],'],';
+			}
+			
+	
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
+		}
+	}
+	
+	
+	
+	
 }
 ?>

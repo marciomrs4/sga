@@ -1,6 +1,8 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
 
+sleep(3);
+
 if($_POST)
 {
 	if ($_SESSION['validacaoform'] == base64_encode(date('d-m-Y')))

@@ -27,7 +27,7 @@ class Busca extends Dados
 
 		$this->dados['verpor'] = 2;
 					
-		if(($this->dados['sta_codigo'] == 5) AND ($this->dados['usu_codigo_atendente'] == 0))
+		if(($this->dados['sta_codigo'] == 6) AND ($this->dados['usu_codigo_atendente'] == 0))
 		{
 			$this->dados['verpor'] = 2;
 				
@@ -41,7 +41,7 @@ class Busca extends Dados
 			case 0 : #Todos
 
 				$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == '') ? 1 : '';
-				$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == 5) ? '%' : $this->dados['sta_codigo'];
+				$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == 6) ? '%' : $this->dados['sta_codigo'];
 				$this->dados['pro_codigo'] = ($this->dados['pro_codigo_busca'] == '') ? '%' : $this->dados['pro_codigo_busca'];
 				$this->dados['usu_nome'] = ($this->dados['usu_nome'] == '') ? '%' : $this->dados['usu_nome'];
 				$this->dados['sol_descricao_solicitacao'] = ($this->dados['sol_descricao_solicitacao'] == '') ? '%' : $this->dados['sol_descricao_solicitacao'];

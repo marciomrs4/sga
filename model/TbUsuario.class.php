@@ -375,5 +375,46 @@ class TbUsuario extends Banco
 		}
 	}
 	
+	
+	#Grafico de Pizza, Chamado por usuario
+	public function graficoChamadoPorUsuario($dados)
+	{
+	
+		$query = ("SELECT u.usu_nome as 'Usuario', count(ATS.sol_codigo) as 'QTD'
+				FROM tb_usuario u
+				INNER JOIN tb_acesso a
+				ON u.usu_codigo = a.usu_codigo
+				INNER JOIN tb_atendente_solicitacao AS ATS
+				ON ATS.usu_codigo_atendente = U.usu_codigo
+				LEFT JOIN tb_solicitacao AS SOL
+				ON SOL.sol_codigo = ATS.sol_codigo
+				WHERE u.dep_codigo = :dep_codigo
+				AND SOL.sta_codigo = :sta_codigo
+				AND a.ace_ativo = :ace_ativo
+				GROUP BY u.usu_codigo
+				ORDER BY 2 DESC");
+	
+		try{
+				
+			$stmt = $this->conexao->prepare($query);
+			
+			$stmt->bindParam(':dep_codigo', $dados['dep_codigo']);
+			$stmt->bindParam(':sta_codigo', $dados['sta_codigo']);
+			$stmt->bindParam(':ace_ativo', $dados['ace_ativo']);
+			
+			$stmt->execute();
+			
+			foreach ($stmt as $value){
+				echo '[',"'",$value[0],"'",',',$value[1],'],';
+			}
+				
+	
+		} catch (PDOException $e){
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+	}
+	
+	
+	
 }
 ?>

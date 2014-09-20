@@ -27,7 +27,7 @@ $dados = $tbAtividade->getFormAlteracao(base64_decode($_SESSION['valorform']));
     <tr>
       <th nowrap="nowrap">Descrição do Apontamento:</th>
       <td>
-      <textarea name="ap_descricao" cols="55" rows="7"	><?php echo($_SESSION['cadastrar/Apontamento']['ass_descricao']); ?></textarea> 
+      <textarea name="ap_descricao" cols="55" rows="7"	><?php echo($_SESSION['cadastrar/Apontamento']['ap_descricao']); ?></textarea> 
       <input type="hidden" name="at_codigo" value="<?php echo($dados[0]); ?>">	
       </td>
     </tr>
