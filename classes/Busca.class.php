@@ -76,7 +76,7 @@ class Busca extends Dados
 				$this->dados['dep_codigo_solicitado'] = $_SESSION['dep_codigo'];
 				
 				$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == '') ? 1 : $this->dados['sta_codigo'];
-				$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == 5) ? '%' : $this->dados['sta_codigo'];
+				$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == 6) ? '%' : $this->dados['sta_codigo'];
 				
 				$this->dados['pro_codigo'] = ($this->dados['pro_codigo_busca'] == '') ? '%' : $this->dados['pro_codigo_busca'];
 				$this->dados['usu_nome'] = ($this->dados['usu_nome'] == '') ? '%' : $this->dados['usu_nome'];

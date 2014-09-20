@@ -448,9 +448,14 @@ class Cadastro extends Dados
 				#Faz commit se tudo deu certo
 				$this->conexao->commit();
 				
-				#Enviar e-mail para assentamentos.
-				$email = new Email();
-				$email->interacaoAssentamento($this->dados);
+				
+				#Enviar e-mail com assentamentos 
+				
+				if($this->dados['Departamento'] || $this->dados['Solicitante'])
+				{
+					$email = new Email();
+					$email->interacaoAssentamento($this->dados);
+				}
 
 			} catch (Exception $e)
 			{

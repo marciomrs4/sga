@@ -66,13 +66,13 @@ class TbTempoAtendimento extends Banco
 					INNER JOIN tb_departamento AS DEP
 					ON DEP.dep_codigo = TEM.dep_codigo
 					WHERE TEM.dep_codigo LIKE ?
-					ORDER BY $this->tat_codigo");
+					ORDER BY dep_descricao, $this->tat_codigo");
 
 		try
 		{
 			$stmt = $this->conexao->prepare($query);
 				
-			$stmt->execute(array("%$dep_codigo%"));
+			$stmt->execute(array("{$dep_codigo}"));
 
 			return($stmt);
 

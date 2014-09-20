@@ -157,6 +157,7 @@ class TbSolicitacao extends Banco
 					AND SOL.sol_descricao_solicitacao LIKE ?
 					AND ATE.usu_codigo_atendente LIKE ?
 					ORDER BY SOL.sol_codigo DESC
+					LIMIT 500
 		");
 		
 		try
@@ -262,6 +263,7 @@ class TbSolicitacao extends Banco
                     AND sol_descricao_solicitacao LIKE ?
                     AND dep_codigo_solicitado = ?
 				    ORDER BY SOL.sol_codigo DESC
+					LIMIT 500
 				");
 		try
 		{
@@ -624,6 +626,31 @@ class TbSolicitacao extends Banco
 
 	}
 
+	public function getDescricaoSolicitacao($sol_codigo)
+	{
+		$query = ("SELECT sol_descricao_solicitacao
+					FROM tb_solicitacao
+					WHERE sol_codigo = ?");
+	
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+	
+			$stmt->bindParam(1,$sol_codigo,PDO::PARAM_INT);
+	
+			$stmt->execute();
+	
+			$dados = $stmt->fetch();
+	
+			return($dados[0]);
+	
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(), $e->getCode());
+		}
+	
+	}
+	
 	public function getUsuarioSolicitante($sol_codigo)
 	{
 		$query = ("SELECT $this->usu_codigo_solicitante

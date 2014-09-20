@@ -27,9 +27,12 @@ Texto::mostrarMensagem(Texto::erro($_SESSION['erro']));
 
 }else
 {
-echo ('<fieldset><legend>Logado como</legend> 
-		<a href="../'.$_SESSION['projeto'].'/action/logout.php"><img src="/SGA/css/images/sair.png" /></a>
-	   <a href="CentralUsuario.php"><img src="/SGA/css/images/perfil.jpg" /></a><br />
-	   Logado como: '.ucfirst($_SESSION['usu_nome']).'</fieldset>');	
+echo ('<fieldset>
+		<legend>Logado como</legend> 
+			<a href="../'.$_SESSION['projeto'].'/action/logout.php"><img src="/SGA/css/images/sair.png" /></a>
+	   		<a href="CentralUsuario.php"><img src="/SGA/css/images/perfil.jpg" /></a><br />
+	   	Logado como: '.ucfirst($_SESSION['usu_nome']).'<br />
+		IP: '.$_SERVER['REMOTE_ADDR'].'
+	   </fieldset>');	
 }
 ?>

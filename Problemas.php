@@ -26,7 +26,7 @@ $busca->validarPost($_POST);
 			<?php 
 		       $tbdepartamento = new TbDepartamento();
 		       FormComponente::$name = 'Todos';
-		       FormComponente::selectOption('dep_codigo',$tbdepartamento->listarTodosDepartamentos(),true,$busca->getDados('dep_codigo'));
+		       FormComponente::selectOption('dep_codigo',$tbdepartamento->listarTodosDepartamentos(),true,$_POST);
 			?>
 		</td>
 		<td>

@@ -81,12 +81,16 @@ class TbUsuario extends Banco
 
 	}
 
-	#utilizado no cadastro de apontamento
+	#utilizado no cadastro de apontamento/atribuicao de atividade 
 	public function selectUsuarioDepCompleto($dep_codigo)
 	{
-		$query = ("SELECT $this->usu_codigo, concat(usu_nome,' ',usu_sobrenome)
-					FROM tb_usuario
-                    WHERE dep_codigo = ?
+		$query = ("SELECT a.usu_codigo, concat(a.usu_nome,' ',a.usu_sobrenome)
+					FROM tb_usuario as a
+					INNER JOIN tb_acesso AS c
+					ON a.usu_codigo = c.usu_codigo
+					WHERE a.usu_codigo != 1 
+					AND c.ace_ativo = 'S'
+					AND dep_codigo = ?;
                     ");
 		
 		try 
@@ -107,13 +111,17 @@ class TbUsuario extends Banco
 	}
 
 	
-	#Listagem de usuários, usada na tela de Operação
+	#Listagem de usuários, usada para busca na tela de Operação/atividade
 	public function selectUsuarioPorDepartamento($dep_codigo)
 	{
-		$query = ("SELECT $this->usu_codigo, $this->usu_nome
-					FROM tb_usuario
-                    WHERE dep_codigo = ?
-                    ");
+			$query = ("SELECT a.usu_codigo, a.usu_nome
+						FROM tb_usuario as a
+						INNER JOIN tb_acesso AS c
+						ON a.usu_codigo = c.usu_codigo
+						WHERE a.usu_codigo != 1 
+						AND c.ace_ativo = 'S'
+						AND dep_codigo = ?;
+					");
 		
 		try 
 		{
@@ -280,7 +288,7 @@ class TbUsuario extends Banco
 		}
 	}
 	
-	#Listagem usada no cadastro de usuario
+	#Listagem usada na tela de cadastro de usuario
 	public function listarUsuarios($dados)
 	{
 		$query = ("SELECT usu_codigo, concat(usu_nome,' ',usu_sobrenome), dep_descricao, tac_descricao, usu_email, usu_ramal

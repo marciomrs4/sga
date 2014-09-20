@@ -29,6 +29,22 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
       <input type="hidden" name="sol_codigo" value="<?php echo($dados[0]); ?>">	
       </td>
     </tr>
+    
+        <tr>
+		    <th nowrap="nowrap">Enviar e-mail para:</th>
+		    	<td nowrap="nowrap"> 
+		    		Departamento Atendente: <input type="checkbox" name="Departamento" checked="checked" value="1" >
+		    		|
+		    		Meu e-mail: <input type="checkbox" name="Solicitante" checked="checked" value="1" >
+		    	</td>
+    	</tr>    
+    
+    <tr>
+      <td colspan="2" align="left">
+			&nbsp;
+	  </td>
+	</tr>
+    
     <tr>
       <th nowrap="nowrap">Fechar Chamado:</th>
       <td>
@@ -53,9 +69,10 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
 	  <?php
 	  if($dados[2] != 3)
 	  { 
-	      echo('<input type="submit" name="alterar" class="button-tela" value=" Salvar " />');
+	      echo('<input type="submit" name="alterar" class="button-tela" id="botaoSave" value=" Salvar " />');
 	  }
 	  ?>
+	  	      <span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>
 	  </td>
     </tr>
   </table>

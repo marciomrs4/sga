@@ -83,7 +83,7 @@ class TbChecklist extends Banco
 		          WHERE CHE.dep_codigo = ?
 		          AND che_ativo = 1
 		          AND D.$dia_semana = 1
-		          ORDER BY CHE.che_codigo
+		          ORDER BY CHE.che_titulo
 				");
 
 		try

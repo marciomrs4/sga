@@ -42,11 +42,20 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
 	    		$tbdepartamento = new TbDepartamento();
 	    		$Usuario = $tbusuario->getUsuario($_SESSION['alterar/Solicitacao']['usu_codigo_solicitante']); 
 	    		
-	    		echo $Usuario['usu_email'].' / '.$tbdepartamento->getDepDescricao($Usuario['dep_codigo']);
+	    		echo $Usuario['usu_email'];
 	    		
 	    		?>
 	    	</td>
 	    </tr>
+	    
+	    <tr>
+	    	<th>
+	    	</th>
+	    	<td nowrap="nowrap">
+	    	<?php echo 'Ramal: '.$Usuario['usu_ramal'].' / '.$tbdepartamento->getDepDescricao($Usuario['dep_codigo']);?>
+	    	</td>
+	    </tr>
+	    
 	    
 	    <tr>
 	    		<th>
@@ -149,8 +158,8 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
 	    </tr>
 	    <?php } ?>
 		<tr>
-    	<th><?php if($dados['ane_anexo']){ echo("Alterar");} ?> Anexo:</th>     		
-    	<td><?php if($usu_codigo){}else{ ?><input type="file" name="arquivo" /><?php }?></td>
+    	<th><?php if(!$usu_codigo){ echo("Alterar Anexo:"); ?> </th>     		
+    	<td><input type="file" name="arquivo" /><?php }?></td>
     </tr>
     <tr>
       <td colspan="2" align="center">
@@ -167,9 +176,6 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
 	  	
 	$tabela = $tbassentamento->listarAssentamento($_SESSION['alterar/Solicitacao']['sol_codigo']);
 	
-	if($usu_codigo)	
-  	{
-  
 	  	try
 	  	{
 			$tbassentamento = new TbAssentamento();
@@ -181,7 +187,6 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
 		  	$grid = new DataGrid($cabecalho, $tabela);
 		  	
 		  	$grid->titulofield = 'Assentamento(s)';
-		  	$grid->acao = 'alterar/Assentamento';
 		  	$grid->islink = false;
 		  	$grid->colunaoculta = 1;
 		  	$grid->mostrarDatagrid(1);
@@ -191,7 +196,7 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
 	  		echo $e->getMessage();
 	  	}
 	  	
-  	}
+  	
   	?>     
      </div>
 </fieldset>

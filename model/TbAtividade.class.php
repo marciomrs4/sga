@@ -382,8 +382,29 @@ class TbAtividade extends Banco
 		}
 	}
 	
-	
-	
+	public function validateQtdAtividadeEmAndamento($pro_codigo)
+	{
+		$query = ("select count(*) from tb_atividade 
+					where pro_codigo = ?
+					and sta_codigo = 2;");
+		
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+				
+			$stmt->bindParam(1,$pro_codigo,PDO::PARAM_INT);
+				
+			$stmt->execute();
+		
+			$dados = $stmt->fetch();
+			
+			return($dados[0]);
+		
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
+		}
+	}
 	
 }
 ?>

@@ -95,7 +95,7 @@ class TbProblema extends Banco
 					INNER JOIN tb_prioridade AS pri
 					ON pri.pri_codigo = pro.pri_codigo
 					WHERE dep.dep_codigo LIKE ?
-					ORDER BY pro.pro_descricao");
+					ORDER BY dep.dep_codigo, pro.pro_descricao");
 
 		try
 		{

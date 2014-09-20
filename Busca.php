@@ -98,6 +98,31 @@ $_SESSION['buscaRapida'] = $busca->buscaRapidaChamado();
 	    		<?php echo($_SESSION['buscaRapida']['sol_codigo']); ?>
 	    	</td>
 	    </tr>
+	    
+	    <tr>
+	    	<th nowrap="nowrap">
+	    		Aberto por:
+	    	</th>
+    		<td>
+	    		<?php  
+	    		$tbusuario = new TbUsuario(); 
+	    		$tbdepartamento = new TbDepartamento();
+	    		$Usuario = $tbusuario->getUsuario($_SESSION['buscaRapida']['usu_codigo_solicitante']); 
+	    		
+	    		echo $Usuario['usu_email'];
+	    		
+	    		?>
+	    	</td>
+	    </tr>
+	    
+	    <tr>
+	    	<th>
+	    	</th>
+	    	<td nowrap="nowrap">
+	    	<?php echo 'Ramal: '.$Usuario['usu_ramal'].' / '.$tbdepartamento->getDepDescricao($Usuario['dep_codigo']);?>
+	    	</td>
+	    </tr>
+	    
 	    <tr>
 	    		<th>
 	    			Status do Chamado:
@@ -199,13 +224,12 @@ $_SESSION['buscaRapida'] = $busca->buscaRapidaChamado();
 	    </tr>
 	    <?php }?>
 		<tr>
-    	<th><?php if($dados['ane_anexo']){ echo('Alterar'); } ?>Anexo:</th>     		
+    	<th><?php if(!$_SESSION['buscaRapida']['usu_codigo']){ echo('Alterar Anexo:'); ?></th>     		
     	<td><input type="file" name="arquivo" /></td>
     </tr>
     <tr>
       <td colspan="2" align="center">
-      <?php if($_SESSION['buscaRapida']['usu_codigo']){}else{?>
-	     <!-- <input type="submit" name="cadastrar" class="button-tela" value="Salvar" />  --> 
+	     	<input type="submit" name="cadastrar" class="button-tela" value="Salvar" />
 	      <?php }?>
       </td>
     </tr>

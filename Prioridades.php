@@ -24,7 +24,7 @@ $busca->validarPost($_POST);
 			<?php 
 		       $tbdepartamento = new TbDepartamento();
 		       FormComponente::$name = 'Todos';
-		       FormComponente::selectOption('dep_codigo',$tbdepartamento->listarTodosDepartamentos(),true,$busca->getDados('dep_codigo'));
+		       FormComponente::selectOption('dep_codigo',$tbdepartamento->listarTodosDepartamentos(),true,$_POST);
 			?>
 		</td>
 		<td>
@@ -39,7 +39,7 @@ $busca->validarPost($_POST);
 <?php 
 Arquivo::includeForm();
 
-$datagrid = new DataGrid(array('Descricao','Tempo de Atendimento'),$busca->listarPrioridade());
+$datagrid = new DataGrid(array('Descricao','Tempo de Atendimento','Departamento'),$busca->listarPrioridade());
 $datagrid->colunaoculta = 1;
 $datagrid->acao = 'alterar/MinhaPrioridade';
 $datagrid->nomelink = '<img src="./css/images/editar.gif" title="Alterar Prioridade">';

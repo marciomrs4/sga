@@ -125,13 +125,14 @@ class TbPrioridade extends Banco
 					INNER JOIN tb_departamento AS DEP
 					WHERE PRI.dep_codigo LIKE ?
 					GROUP BY pri_codigo
+					ORDER BY dep_descricao, PRI.pri_codigo
 				  ");
 
 		try
 		{
 			$stmt = $this->conexao->prepare($query);
 			
-			$stmt->execute(array("%$dep_codigo%"));
+			$stmt->execute(array("{$dep_codigo}"));
 
 			return($stmt);
 

@@ -121,7 +121,14 @@ class Alteracao extends Dados
 			$this->dados['pro_previsao_inicio'] = ValidarDatas::dataBanco($this->dados['pro_previsao_inicio']);
 			$this->dados['pro_previsao_fim'] = ValidarDatas::dataBanco($this->dados['pro_previsao_fim']);
 
+			#Verifica se existe atividade em andamento
+			$tbAtividade = new TbAtividade();
+			$quantidade = $tbAtividade->validateQtdAtividadeEmAndamento($this->dados['pro_codigo']);
 
+			if(($this->dados['stp_codigo'] != 2) and ($quantidade != 0)){
+				throw new Exception('Existe atividade em andamento: Este projeto não pode ser alterado');
+			}
+			
 			$tbprojeto = new TbProjeto();
 
 			$tbprojeto->update($this->dados);

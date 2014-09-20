@@ -1,7 +1,6 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
 
+$tbAtividade = new TbAtividade();
 
-$tb = new TbVerPor();
-		    
-Sessao::mostrarSessao();
+echo $tbAtividade->validateQtdAtividadeEmAndamento(2);
