@@ -19,4 +19,4 @@ $submit(function()
 		}
 	)
 	
-})(jQuery);
+});

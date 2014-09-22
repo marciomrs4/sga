@@ -358,6 +358,37 @@ class TbUsuario extends Banco
 		}
 	}
 	
+	#Listagem usada no Painel de Atividade
+	public function listarUsuariosPainelAtividade($dados)
+	{
+	
+		$query = ("SELECT u.usu_codigo, count(ATS.at_codigo) , u.usu_nome
+				FROM tb_usuario u
+				INNER JOIN tb_acesso a
+				ON u.usu_codigo = a.usu_codigo
+				INNER JOIN tb_atividade AS ATS
+				ON ATS.usu_codigo_responsavel = U.usu_codigo
+				WHERE u.dep_codigo = ?
+				AND ATS.sta_codigo = ?
+				AND a.ace_ativo = 'S'
+				GROUP BY u.usu_codigo
+				ORDER BY 2 DESC");
+	
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+	
+			$stmt->execute(array("{$dados['dep_codigo']}",
+			"{$dados['sta_codigo']}"));
+				
+			return($stmt);
+				
+		} catch (PDOException $e)
+		{
+		throw new PDOException($e->getMessage(),$e->getCode());
+		}
+	}
+	
 	
 	#Lista de Ramais usado na Intranet
 	public function listarRamaisIntranet()

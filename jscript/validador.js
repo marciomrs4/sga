@@ -196,4 +196,4 @@ $valida(document).ready( function()
 		});
 		/*Fim de validação do formulário de Atividade*/	
 	
-})(jQuery);
+});

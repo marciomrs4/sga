@@ -84,10 +84,10 @@ timer();
 
 $tbUsuario = new TbUsuario();
 
-foreach ($tbUsuario->listarUsuariosPainel($dados) as $valores):
+foreach ($tbUsuario->listarUsuariosPainelAtividade($dados) as $valores):
 
 echo("<fieldset id='completo'>
-		<legend id='nome'>$valores[1]</legend>");
+		<legend id='nome'>$valores[2]</legend>");
 		
 		$dados['usu_codigo_responsavel'] = $valores[0];
 		$dados['sta_codigo'] = 2;

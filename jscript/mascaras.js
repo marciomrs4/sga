@@ -18,5 +18,4 @@ $b('.rg').mask('99.999.999-9'); //hora
 $b('.ramal').mask('99'); //hora
 $b('.drt').mask('99999999'); //hora
 });
-})(jQuery);
-
+});

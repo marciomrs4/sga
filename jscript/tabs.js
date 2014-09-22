@@ -1,18 +1,3 @@
-/*
-<!-- 
-   função para ativar a funcionalide
-   das tabs.
- -->
-<script>
-
-
-  $(function() {
-    $( "#tabs" ).tabs();
-    $(".campoData").mask("99/99/9999");
-  });
-</script>
-*/
-
 var $mas = jQuery.noConflict();
 
 $mas(document).ready(function(){
@@ -30,4 +15,4 @@ $mas("#usuarioatividade").toggle(
 		       $mas("#usuarioatividade").html('<a href="#">Informações da Atividade [Ocultar]</a>').css("color","#06C");
 		       
 	        });
-})(jQuery);
+});

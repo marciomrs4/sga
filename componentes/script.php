@@ -2,12 +2,8 @@
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/topo1.php");
 ?>
 
-<!-- 
-<script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/jquery-1.7.2.js"></script>
--->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/jquery-1.11.1.min.js"></script>
 
-<script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/jquery-ui.js"></script>
 <script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/tabs.js"></script>
 
 <script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/maskedinput.js"></script>
@@ -20,9 +16,6 @@ include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/topo1.php
 <script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/mootools-1.2-core.js"></script>
 <script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/vlaCal-v2.1.js"></script>
 <script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/calendar.js"></script>	
-
-<script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/tiny_mce/tiny_mce.js"></script>
-<script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/meu_tiny_mce.js"></script>
 
 <script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/marcacao.js"></script>
 
