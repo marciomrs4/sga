@@ -13,6 +13,7 @@
 			<li><a href="RelatorioPorPeriodoTempo.php">Chamados por Tempo</a></li>			
 			<li><a href="PainelChamados.php">Painel de Chamados</a></li>
 			<li><a href="PainelAtividade.php">Painel de Atividade</a></li>																								
+			<li><a href="PainelProjeto.php">Painel de Projetos</a></li>																								
 		</ul>
     </div>
 <!--FIM menu secundário da direita -->    

@@ -44,7 +44,7 @@ $datagrid = new DataGrid();
 
 	<?php 
 	
-	$datagrid->setCabecalho(array($_SESSION['config']['usuario'],'Departamento','Tipo de Acesso','E-mail','Ramal'));
+	$datagrid->setCabecalho(array('Status',$_SESSION['config']['usuario'],'Departamento','Tipo de Acesso','E-mail','Ramal'));
 	$datagrid->setDados($busca->listarUsuario());
 	
 	$datagrid->exportarExcel('ListaDeUsuarios','listarUsuario',1);

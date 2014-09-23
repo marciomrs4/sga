@@ -39,6 +39,14 @@ $_SESSION['alterar/SenhaUsuario'] = $tbacesso->getForm(base64_decode($_SESSION['
 	      	<input name="ace_senha2" type="password" value=""/>
 	      </td>
     </tr>    
+
+    <tr>
+	   <th nowrap="nowrap">Status:</th>
+		   	<td nowrap="nowrap"> 
+				<input type="checkbox" name="ace_ativo" checked="checked" value="1" >
+		    </td>
+    	</tr>    
+    
     
     <tr>
       <td colspan="2" align="right">

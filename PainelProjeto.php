@@ -60,17 +60,17 @@ timer();
 		#Obetem o departamento do usuário 
 		$dados['dep_codigo'] = ($_SESSION['dep_codigo'] == '') ? $_GET['dep_codigo'] : $_SESSION['dep_codigo'];
 
-		$tbAtividade = new TbAtividade();
+		$tbProjeto = new TbProjeto();
 
-		$dados['sta_codigo'] = 1;
-		$AtividadePendente = $tbAtividade->totalAtividadePainel($dados);
+		$dados['stp_codigo'] = '%';
+		$ProjetosTotal = $tbProjeto->totalProjetosStatusPainel($dados);
 		
-		$dados['sta_codigo'] = 2;
-		$AtividadeEmAtendimento = $tbAtividade->totalAtividadePainel($dados);
+		$dados['stp_codigo'] = 2;
+		$ProjetosEmAndamento = $tbProjeto->totalProjetosStatusPainel($dados);
 		
 		?>	
 
-	<h3 id="emrecebimento">Total de Atividade(s): <?php echo($AtividadePendente[0]); ?> Pendente e <?php echo($AtividadeEmAtendimento[0]); ?> Em Andamento</h3>
+	<h3 id="emrecebimento">Total de Projeto(s): <?php echo($ProjetosTotal[0]); ?> e <?php echo($ProjetosEmAndamento[0]); ?> Em Andamento</h3>
 </div>
 
 <div id="painelcentral">
@@ -79,27 +79,52 @@ timer();
 
 <?php 
 
-$tbUsuario = new TbUsuario();
-
-foreach ($tbUsuario->listarUsuariosPainel($dados) as $valores):
+$cabecalho = array('Projeto','Atividade','Dias');
 
 echo("<fieldset id='completo'>
-		<legend id='nome'>$valores[1]</legend>");
+		<legend id='nome'>Aprovação</legend>");
 		
-		$dados['usu_codigo_responsavel'] = $valores[0];
-		$dados['sta_codigo'] = 2;
 		
 		$DataGrid = new DataGrid();
 		
-		$DataGrid->setDados($tbAtividade->listarAtividadePainel($dados));
-		$DataGrid->setCabecalho(array("Projeto","Atividade"));
+		#status Aprovacao 1
+		$dados['stp_codigo'] = 1;
+		$DataGrid->setDados($tbProjeto->listarProjetosPainel($dados));
+		$DataGrid->setCabecalho($cabecalho);
 		$DataGrid->nomelink = '';
 		$DataGrid->colunaoculta = 1;
 		$DataGrid->mostrarDatagrid(1);
 		
 		echo("</fieldset>");
 		
-endforeach;
+echo("<fieldset id='completo'>
+		<legend id='nome'>Em Andamento</legend>");
+		
+		$DataGrid = new DataGrid();
+		
+		$dados['stp_codigo'] = 2;
+		$DataGrid->setDados($tbProjeto->listarProjetosPainel($dados));
+		$DataGrid->setCabecalho($cabecalho);
+		$DataGrid->nomelink = '';
+		$DataGrid->colunaoculta = 1;
+		$DataGrid->mostrarDatagrid(1);
+		
+		echo("</fieldset>");
+		
+echo("<fieldset id='completo'>
+		<legend id='nome'>Paralizado</legend>");
+		
+		$DataGrid = new DataGrid();
+		
+		$dados['stp_codigo'] = 5;
+		$DataGrid->setDados($tbProjeto->listarProjetosPainel($dados));
+		$DataGrid->setCabecalho($cabecalho);
+		$DataGrid->nomelink = '';
+		$DataGrid->colunaoculta = 1;
+		$DataGrid->mostrarDatagrid(1);
+		
+		echo("</fieldset>");		
+		
 ?>
 	
 </div>

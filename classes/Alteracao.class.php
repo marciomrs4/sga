@@ -37,6 +37,8 @@ class Alteracao extends Dados
 			ValidarCampos::compararCampos($this->dados['ace_senha'],$this->dados['ace_senha2'],$_SESSION['config']['senha'].' e Repetir '.$_SESSION['config']['senha']);
 
 			ValidarCampos::validarQtdCaracter($this->dados['ace_senha'],6,$_SESSION['config']['senha']);
+			
+			$this->dados['ace_ativo'] = ($this->dados['ace_ativo'] == '') ? 'N' : 'S'; 
 
 			$this->dados['ace_senha'] = Validacao::hashSenha($this->dados['ace_senha']);
 

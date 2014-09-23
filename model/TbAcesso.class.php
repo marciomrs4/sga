@@ -9,6 +9,7 @@ class TbAcesso extends Banco implements TbTabela
 	private $ace_usuario = 'ace_usuario';
 	private $ace_senha = 'ace_senha';
 	private $usu_codigo = 'usu_codigo';
+	private $ace_ativo = 'ace_ativo';
 
 
 	public function insert($dados)
@@ -65,7 +66,8 @@ class TbAcesso extends Banco implements TbTabela
 	{
 		$query = ("UPDATE $this->tabela 
 					  SET $this->ace_usuario = ?,
-					      $this->ace_senha = ?
+					      $this->ace_senha = ?,
+						  $this->ace_ativo = ?
 					WHERE $this->ace_codigo = ? 
 				  ");
 		try
@@ -74,7 +76,8 @@ class TbAcesso extends Banco implements TbTabela
 
 			$stmt->bindParam(1,$dados[$this->ace_usuario],PDO::PARAM_STR);
 			$stmt->bindParam(2,$dados[$this->ace_senha],PDO::PARAM_STR);
-			$stmt->bindParam(3,$dados[$this->ace_codigo],PDO::PARAM_INT);
+			$stmt->bindParam(3,$dados[$this->ace_ativo],PDO::PARAM_STR);
+			$stmt->bindParam(4,$dados[$this->ace_codigo],PDO::PARAM_INT);
 						
 			$stmt->execute();
 
@@ -91,7 +94,9 @@ class TbAcesso extends Banco implements TbTabela
 	{
 		$query = ("SELECT $this->ace_codigo, $this->ace_usuario, $this->usu_codigo
     				FROM $this->tabela
-    				WHERE $this->ace_usuario = ? AND $this->ace_senha = ? 
+    				WHERE $this->ace_usuario = ? 
+					AND $this->ace_senha = ?
+					AND $this->ace_ativo = 'S' 
     			  ");
 
 		try

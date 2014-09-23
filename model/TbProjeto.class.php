@@ -443,9 +443,15 @@ class TbProjeto extends Banco
 	public function listarProjetosPainel($dados)
 	{
 		
-		$query = ("SELECT pro_codigo, pro_titulo FROM tb_projeto
-					WHERE dep_codigo = ?
-					AND stp_codigo = ?");
+		$query = ("SELECT PRO.pro_codigo, substr(PRO.pro_titulo,1,20), substr(ATV.at_descricao,1,25), DATEDIFF(now(),PRO.pro_previsao_inicio)
+					FROM tb_projeto AS PRO
+					LEFT JOIN tb_atividade AS ATV
+					ON PRO.pro_codigo = ATV.pro_codigo
+					WHERE PRO.dep_codigo = ?
+					AND PRO.stp_codigo LIKE ?
+					GROUP BY PRO.pro_codigo
+					ORDER BY 4 DESC
+					");
 
 		try
 		{
@@ -465,19 +471,20 @@ class TbProjeto extends Banco
 	}
 
 	#Usado no Painel de Projetos
-	public function totalProjetosPainel($dados)
+	public function totalProjetosStatusPainel($dados)
 	{
 		
 		$query = ("SELECT count(pro_codigo) 
 					FROM tb_projeto
-					WHERE dep_codigo = ?");
+					WHERE dep_codigo = ?
+					AND stp_codigo LIKE ?");
 
 		try
 		{
 			$stmt = $this->conexao->prepare($query);
 
-			$stmt->execute(array("{$dados[$this->dep_codigo]}"
-								 )
+			$stmt->execute(array("{$dados[$this->dep_codigo]}",
+								 "{$dados[$this->stp_codigo]}")
 						   );
 
 			return($stmt->fetch());

@@ -90,7 +90,8 @@ class TbUsuario extends Banco
 					ON a.usu_codigo = c.usu_codigo
 					WHERE a.usu_codigo != 1 
 					AND c.ace_ativo = 'S'
-					AND dep_codigo = ?;
+					AND dep_codigo = ?
+					ORDER BY 2;
                     ");
 		
 		try 
@@ -120,7 +121,8 @@ class TbUsuario extends Banco
 						ON a.usu_codigo = c.usu_codigo
 						WHERE a.usu_codigo != 1 
 						AND c.ace_ativo = 'S'
-						AND dep_codigo = ?;
+						AND dep_codigo = ?
+						ORDER BY 2;
 					");
 		
 		try 
@@ -291,16 +293,18 @@ class TbUsuario extends Banco
 	#Listagem usada na tela de cadastro de usuario
 	public function listarUsuarios($dados)
 	{
-		$query = ("SELECT usu_codigo, concat(usu_nome,' ',usu_sobrenome), dep_descricao, tac_descricao, usu_email, usu_ramal
+		$query = ("SELECT a.usu_codigo, IF(ACE.ace_ativo = 'S','Ativo','Inativo'), concat(a.usu_nome,' ',a.usu_sobrenome), b.dep_descricao, c.tac_descricao, a.usu_email, a.usu_ramal
 					FROM tb_usuario AS a
 						INNER JOIN tb_departamento AS b
 						ON a.dep_codigo = b.dep_codigo
 						INNER JOIN tb_tipo_acesso AS c
 						ON a.tac_codigo = c.tac_codigo
-	        		    WHERE usu_codigo != 1
+						INNER JOIN tb_acesso AS ACE
+						ON a.usu_codigo = ACE.usu_codigo
+	        		    WHERE a.usu_codigo != 1
 	                AND a.dep_codigo LIKE ?
-	                AND usu_nome LIKE ?
-        		    ORDER BY 2
+	                AND a.usu_nome LIKE ?
+        		    ORDER BY 2,3;
 				");
 
 		

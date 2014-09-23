@@ -1,7 +1,7 @@
 rsticket
 ========
 
-Projeto de Sistema de chamado - Rs Tecnologia
+Projeto de Sistema de chamado - TI CEADIS
 
-Este sistema Ã© para controle de chamado, projetos e
+Este sistema é para controle de chamado, projetos e
 checklist.
