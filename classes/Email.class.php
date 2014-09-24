@@ -124,7 +124,7 @@ class Email extends PHPMailer
 		$this->mensagem = 'Houve uma interação no chamado: '.$dados['sol_codigo'].'<br/>';
 		$this->mensagem .= 'Assentamento criado por: '.$email['usu_email'].'<br/>';
 		$this->mensagem .= $_SESSION['config']['problema'].': '.$problema['pro_descricao'].'<br/><br/>';
-		$this->mensagem .= 'Descricação do Chamado: '.$descricaoSolicitacao.'<br/><br/>';
+		$this->mensagem .= 'Descrição do Chamado: '.$descricaoSolicitacao.'<br/><br/>';
 		$this->mensagem .= 'Foi adicionado o seguinte assentamento: '.$dados['ass_descricao'].'<br/><br/>';
 		$this->mensagem .= 'Status do chamado: '.$sta_descricao;
 		

@@ -1,4 +1,4 @@
-rsticket
+SGA
 ========
 
 Projeto de Sistema de chamado - TI CEADIS

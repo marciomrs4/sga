@@ -79,7 +79,9 @@ timer();
 
 <?php 
 
-$cabecalho = array('Projeto','Atividade','Dias');
+$nomelink = '&raquo;';
+$link = 'GerarRelatorioProjetoPdf.php?codigo';
+$cabecalho = array('Projeto','Atividade','Data','Dias');
 
 echo("<fieldset id='completo'>
 		<legend id='nome'>Aprovação</legend>");
@@ -91,7 +93,8 @@ echo("<fieldset id='completo'>
 		$dados['stp_codigo'] = 1;
 		$DataGrid->setDados($tbProjeto->listarProjetosPainel($dados));
 		$DataGrid->setCabecalho($cabecalho);
-		$DataGrid->nomelink = '';
+		$DataGrid->nomelink = $nomelink;
+		$DataGrid->link = $link;
 		$DataGrid->colunaoculta = 1;
 		$DataGrid->mostrarDatagrid(1);
 		
@@ -105,7 +108,8 @@ echo("<fieldset id='completo'>
 		$dados['stp_codigo'] = 2;
 		$DataGrid->setDados($tbProjeto->listarProjetosPainel($dados));
 		$DataGrid->setCabecalho($cabecalho);
-		$DataGrid->nomelink = '';
+		$DataGrid->nomelink = $nomelink;
+		$DataGrid->link = $link;
 		$DataGrid->colunaoculta = 1;
 		$DataGrid->mostrarDatagrid(1);
 		
@@ -119,7 +123,8 @@ echo("<fieldset id='completo'>
 		$dados['stp_codigo'] = 5;
 		$DataGrid->setDados($tbProjeto->listarProjetosPainel($dados));
 		$DataGrid->setCabecalho($cabecalho);
-		$DataGrid->nomelink = '';
+		$DataGrid->nomelink = $nomelink;
+		$DataGrid->link = $link;
 		$DataGrid->colunaoculta = 1;
 		$DataGrid->mostrarDatagrid(1);
 		
