@@ -7,6 +7,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
 <meta http-equiv='Content-Type' content='application/xhtml+xml; charset=ISO-8859-1' />
 <title>..:: Painel Diário ::..</title>
 <link rel='stylesheet' type='text/css' href='../sga/css/PainelChamados.css' />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
 <script	language="JavaScript" src="../ticontrole/jscript/jquery-1.5.js"></script>
 <script language="JavaScript" src="../ticontrole/jscript/jquery.tablesorter.js"></script>
 	
