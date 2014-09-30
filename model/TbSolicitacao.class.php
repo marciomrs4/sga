@@ -785,6 +785,8 @@ class TbSolicitacao extends Banco
 					    min(CAL.tea_data_acao) AS DataInicio,
              max(CAL.tea_data_acao) AS DataFim,
              TIMEDIFF(max(CAL.tea_data_acao),min(CAL.tea_data_acao)) AS Tempo,
+						(SELECT dep_descricao FROM tb_departamento WHERE dep_codigo =  
+							(SELECT dep_codigo FROM tb_usuario where usu_codigo_solicitante = usu_codigo)),
               			concat(USU.usu_nome,' ',USU.usu_sobrenome) AS usu_nome, 
                         SOL.sol_codigo,  
 						(SELECT pro_descricao FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) as Problema
