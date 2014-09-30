@@ -91,7 +91,7 @@ class Table
 
 		echo("<table class='{$this->css}' id='{$this->id}'>
 				<thead>
-					<tr class='info'>");				
+					<tr class='active'>");
 				foreach ($this->cabecalho as $cabecalho):
 					echo("<th><a href='#'>{$cabecalho}</a></th>");
 				endforeach;
