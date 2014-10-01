@@ -51,6 +51,8 @@ timer();
 </head>	
 <body>
 
+<div id="container">
+
 <div id="topo">
 <a href="Relatorio.php">Voltar</a>
 	<h2>Painel de Projetos | <?php echo(date('d-m-Y H:i:s'));?></h2>
@@ -82,7 +84,7 @@ timer();
 
 $nomelink = '&raquo;';
 $link = 'GerarRelatorioProjetoPdf.php?codigo';
-$cabecalho = array('Projeto','Atividade','Data','Dias');
+$cabecalho = array('Projeto','Atividade','Inicio','Dias em aberto');
 
 echo("<fieldset id='completo'>
 		<legend id='nome'>Aprovação</legend>");
@@ -135,6 +137,7 @@ echo("<fieldset id='completo'>
 	
 </div>
 
+</div>
 </div>
 </body>
 </html>
