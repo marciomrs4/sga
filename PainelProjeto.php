@@ -84,7 +84,7 @@ timer();
 
 $nomelink = '&raquo;';
 $link = 'GerarRelatorioProjetoPdf.php?codigo';
-$cabecalho = array('Projeto','Atividade','Inicio','Dias em aberto');
+$cabecalho = array('Projeto','Atividade','Data','Dias');
 
 echo("<fieldset id='completo'>
 		<legend id='nome'>Aprovação</legend>");
