@@ -12,7 +12,8 @@ Texto::criarTitulo('Relatório: Chamados por Tempo');
 $busca = new Busca();
 $busca->validarPost($_POST);
 
-$dataGrid = new DataGrid(array('Data Inicio','Data Fim','Tempo','Departamento',$_SESSION['config']['usuario'] .' Solicitante','Número do chamado','Problema','Status','Prioridade','SLA'));
+$dataGrid = new DataGrid(array('Data Inicio','Data Fim','Tempo','Departamento',$_SESSION['config']['usuario'] .' Solicitante',
+								'Número do chamado','Problema','Status','Prioridade','SLA','Atendente'));
 
 
 ?>

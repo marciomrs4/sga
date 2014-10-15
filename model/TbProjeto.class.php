@@ -443,11 +443,16 @@ class TbProjeto extends Banco
 	public function listarProjetosPainel($dados)
 	{
 		
-		$query = ("SELECT PRO.pro_codigo, substr(PRO.pro_titulo,1,20) AS Titulo , (SELECT substr(at_descricao,1,25) FROM tb_atividade WHERE at_codigo = max(ATV.at_codigo)) AS 'Descricao Atividae', 
-						date_format((max(ATV.at_previsao_inicio)),'%d-%m-%Y') AS 'Data Atividade', DATEDIFF(now(),PRO.pro_previsao_inicio) AS 'Dias'
+		$query = ("SELECT PRO.pro_codigo, substr(PRO.pro_titulo,1,30) AS Titulo , 
+					(SELECT substr(at_descricao,1,35) 
+					FROM tb_atividade 
+					WHERE at_codigo = max(ATV.at_codigo)) AS 'Descricao Atividae', 
+						(date_format(max(APO.ap_data_criacao),'%d-%m-%Y')) AS 'Data Atividade', DATEDIFF(now(),PRO.pro_previsao_inicio) AS 'Dias'
 					FROM tb_projeto AS PRO
 					LEFT JOIN tb_atividade AS ATV
 					ON PRO.pro_codigo = ATV.pro_codigo
+					LEFT JOIN tb_apontamento AS APO
+					ON ATV.at_codigo = APO.at_codigo
 					WHERE PRO.dep_codigo = ?
 					AND PRO.stp_codigo LIKE ?
 					GROUP BY PRO.pro_codigo

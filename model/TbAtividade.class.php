@@ -334,6 +334,7 @@ class TbAtividade extends Banco
 					ON ATI.pro_codigo = PRO.pro_codigo
 					WHERE ATI.usu_codigo_responsavel = ?
 					AND ATI.sta_codigo = ?
+					AND PRO.dep_codigo = ?
 					ORDER BY 4 DESC");
 
 		try
@@ -342,6 +343,7 @@ class TbAtividade extends Banco
 			
 			$stmt->bindParam(1,$dados['usu_codigo_responsavel'],PDO::PARAM_INT);
 			$stmt->bindParam(2,$dados['sta_codigo'],PDO::PARAM_INT);			
+			$stmt->bindParam(3,$dados['dep_codigo'],PDO::PARAM_INT);			
 			
 			$stmt->execute();
 
