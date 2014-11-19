@@ -67,7 +67,7 @@ $cabecalho = array('N°','Projeto','Executor','Prev. Inicio','Previsão. Fim','Sta
 $datagrid->setCabecalho($cabecalho);
 
 
-$datagrid->exportarExcel('Atividade','listarAtividade');
+$datagrid->exportarExcel('Atividade','listarAtividadeSemQuebrarLinha');
 
 ?>
 </form>

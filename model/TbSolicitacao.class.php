@@ -547,7 +547,7 @@ class TbSolicitacao extends Banco
                     AND usu_nome LIKE ? AND sol_descricao_solicitacao LIKE ?
                     AND USU.dep_codigo = ?
 				    ORDER BY SOL.sol_codigo DESC, SOL.sta_codigo DESC
-				    LIMIT 50
+				    LIMIT 500
                     
 				");
 		try

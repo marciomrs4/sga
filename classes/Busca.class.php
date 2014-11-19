@@ -459,6 +459,28 @@ class Busca extends Dados
 		return($dados);
 
 	}
+	
+	public function listarAtividadeSemQuebrarLinha()
+	{
+	
+		$this->dados['dep_codigo'] = $_SESSION['dep_codigo'];
+		$this->dados['pro_codigo'] = ($this->dados['pro_codigo'] == '') ? '%' : $this->dados['pro_codigo'];
+	
+		$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == '') ? 1 : $this->dados['sta_codigo'];
+		$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == 5) ? '%' : $this->dados['sta_codigo'];
+	
+		$this->dados['usu_codigo_responsavel'] = ($this->dados['usu_codigo_responsavel'] == '') ? $_SESSION['usu_codigo'] : $this->dados['usu_codigo_responsavel'];
+		$this->dados['usu_codigo_responsavel'] = ($this->dados['usu_codigo_responsavel'] == 5) ? '%' : $this->dados['usu_codigo_responsavel'];
+	
+	
+		$this->dados['at_descricao'] = ($this->dados['at_descricao'] == '') ? '%' : $this->dados['at_descricao'];
+	
+		$tbAtividade = new TbAtividade();
+		$dados = $tbAtividade->listarAtividadeSemQuebrarLinha($this->dados);
+	
+		return($dados);
+	
+	}
 
 	#Relatorio
 	public function listarChamadoPorUsuario()

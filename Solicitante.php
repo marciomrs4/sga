@@ -56,6 +56,19 @@ echo "</div>";
 	</tr>
 </table>
 </fieldset>
+
+<?php 
+
+$cabecalho = array('Número',$_SESSION['config']['problema'],'Status','Solicitante','Data Abertura','Depto Solicitado','Descrição','Atendente');
+
+$dados = $busca->listarChamadoSolicitante();
+
+$datagrid = new DataGrid($cabecalho,$dados);
+
+$datagrid->exportarExcel('ListaChamado.xls','listarChamadoSolicitante');
+
+?>
+
 </form>
 <br />
 
@@ -67,12 +80,6 @@ Arquivo::includeForm();
 try
 {
 	
-$cabecalho = array('Número',$_SESSION['config']['problema'],'Status','Solicitante','Data Abertura','Depto Solicitado','Descrição','Atendente');
-
-$dados = $busca->listarChamadoSolicitante();
-
-$datagrid = new DataGrid($cabecalho,$dados);
-
 $datagrid->titulofield = 'Chamado(s)';
 $datagrid->acao = 'alterar/SolicitacaoSolicitante';
 $datagrid->nomelink = '<img src="/SGA/css/images/search.png" />';	

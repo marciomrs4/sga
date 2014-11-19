@@ -105,6 +105,7 @@ $datagrid->mostrarDatagrid();
 	echo $e->getMessage() . " ". $e->getCode();
 }
 
+
 Sessao::finalizarSessao();
 
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/menusecundario.php");

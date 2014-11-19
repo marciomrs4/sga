@@ -96,6 +96,50 @@ class TbAtividade extends Banco
 			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
 		}
 	}
+	
+	#Usado para listar as atividades, na exportação do excel da tela de atividade
+	public function listarAtividadeSemQuebrarLinha($dados)
+	{
+		$query = ("SELECT ATI.at_codigo, PRO.pro_titulo, USU.usu_nome, date_format(ATI.at_previsao_inicio,'%d-%m-%Y'),
+						  date_format(ATI.at_previsao_fim,'%d-%m-%Y'),STI.sta_descricao, ATI.at_descricao,
+						  date_format(max(APO.ap_data_criacao),'%d-%m-%Y %H:%i:%s') AS 'Maior Data',
+						  (SELECT ap_descricao FROM tb_apontamento WHERE ap_codigo = max(APO.ap_codigo)) AS 'Descricao',
+						  count(APO.ap_codigo) AS 'Qtd Apontamento'
+					FROM tb_atividade AS ATI
+					INNER JOIN tb_projeto AS PRO
+					ON ATI.pro_codigo = PRO.pro_codigo
+					INNER JOIN tb_status_atividade AS STI
+					ON ATI.sta_codigo = STI.sta_codigo
+					INNER JOIN tb_usuario AS USU
+					ON ATI.usu_codigo_responsavel = USU.usu_codigo
+					LEFT JOIN tb_apontamento AS APO
+					ON ATI.at_codigo = APO.at_codigo
+					WHERE PRO.dep_codigo = ?
+					AND ATI.pro_codigo LIKE ?
+					AND ATI.sta_codigo LIKE ?
+					AND ATI.usu_codigo_responsavel LIKE ?
+					AND ATI.at_descricao LIKE ?
+					GROUP BY ATI.at_codigo
+					ORDER BY ATI.at_codigo DESC");
+	
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+	
+			$stmt->execute(array("{$dados['dep_codigo']}",
+			"{$dados[$this->pro_codigo]}",
+			"{$dados[$this->sta_codigo]}",
+			"{$dados[$this->usu_codigo_responsavel]}",
+			"%{$dados[$this->at_descricao]}%"
+			));
+	
+			return($stmt);
+	
+		} catch (PDOException $e)
+		{
+		throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
+		}
+	}
 
 	public function update($dados)
 	{
@@ -383,6 +427,38 @@ class TbAtividade extends Banco
 			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
 		}
 	}
+
+	#Painel Grafico de Atividade por usuario
+	public function graficoAtividadePorUsuario($dados)
+	{
+		$query = ("SELECT (SELECT usu_nome FROM tb_usuario WHERE usu_codigo =  usu_codigo_responsavel) AS Usuario, count(*) AS Quantidade
+					FROM tb_atividade AS ATV
+					INNER JOIN tb_projeto AS PRO
+					ON PRO.pro_codigo = ATV.pro_codigo
+					WHERE PRO.dep_codigo = ?
+					AND ATV.sta_codigo IN(1,2)
+					GROUP BY 1;");
+	
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+	
+			$stmt->bindParam(1, $dados['dep_codigo']);
+			#$stmt->bindParam(2, $dados['sta_codigo']);
+			
+			$stmt->execute();
+				
+			foreach ($stmt as $value){
+				echo '[',"'",$value[0],"'",',',$value[1],'],';
+			}
+				
+	
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
+		}
+	}
+	
 	
 	public function validateQtdAtividadeEmAndamento($pro_codigo)
 	{

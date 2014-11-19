@@ -41,7 +41,7 @@ $_SESSION['alterar/Aniversario'] = $tbAniversariante->getForm(base64_decode($_SE
     <tr>
       <th nowrap="nowrap">Data Nascimento:</th>
       <td>
-		<input type="text" name="ani_data_nascimento" class="data" value="<?php echo(ValidarDatas::dataCliente($_SESSION['alterar/Aniversario']['ani_data_nascimento'])); ?>" />
+		<input type="text" name="ani_data_nascimento" class="data" value="<?php echo(ValidarDatas::dataCliente($_SESSION['alterar/Aniversario']['ani_data_nascimento'],'/')); ?>" />
       </td>
     </tr>    
 

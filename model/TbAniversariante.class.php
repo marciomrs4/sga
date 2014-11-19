@@ -152,9 +152,11 @@ class TbAniversariante extends Banco
 	#Get para o formulario de alteração
 	public function getForm($ani_codigo)
 	{
-		$query = ("SELECT *
+		$query = ("SELECT ani_codigo, ani_drt, ani_nome, ani_setor, 
+						  ani_data_nascimento, 
+						  ani_dia, ani_mes, ani_ano, ani_unidade
 					FROM tb_aniversariante
-					WHERE $this->ani_codigo = ?
+					WHERE ani_codigo = ?
 				  ");
 
 		try

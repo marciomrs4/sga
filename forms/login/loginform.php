@@ -2,6 +2,7 @@
 if(!$_SESSION['ace_codigo'])
 {
 Texto::mostrarMensagem(Texto::erro($_SESSION['erro']));
+
 ?>
 <form id="form1" name="form1" method="post" action="../<?php echo($_SESSION['projeto']); ?>/action/login.php">
   <table width="200" border="0">
@@ -27,11 +28,14 @@ Texto::mostrarMensagem(Texto::erro($_SESSION['erro']));
 
 }else
 {
-echo ('<fieldset>
+
+	$tbDepartamento = new TbDepartamento();
+	
+	echo ('<fieldset>
 		<legend>Logado como</legend> 
 			<a href="../'.$_SESSION['projeto'].'/action/logout.php"><img src="/SGA/css/images/sair.png" /></a>
 	   		<a href="CentralUsuario.php"><img src="/SGA/css/images/perfil.jpg" /></a><br />
-	   	'.ucfirst($_SESSION['usu_nome']).'<br />
+	   	'.ucfirst($_SESSION['usu_nome']).' / '. $tbDepartamento->getDepDescricao($_SESSION['dep_codigo']).'<br />
 		IP: '.$_SERVER['REMOTE_ADDR'].'
 	   </fieldset>');	
 }

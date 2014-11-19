@@ -11,7 +11,7 @@ Texto::criarTitulo('Relatório: Grafico');
 
 ?>
 <div>
-	<?php include_once 'GraficoAtividade.php'; ?>
+	<?php include_once 'GraficoChamado.php'; ?>
 </div>
 <?php 
 
