@@ -1,17 +1,14 @@
 <?php
 /**
  *
- *@author Márcio Ramos
+ *@author MÃ¡rcio Ramos
  *@version Fevereiro 2011
  *@name Banco
  *@example Classe abstrata para conectar ao banco
  */
 abstract class Banco
 {
-	private $user = 'root';
-	private $password = 'q1w2e3mrs';
-	private $tipobanco = 'mysql';
-	private $database = 'sga';
+
 	private $server =  'localhost';
 
 	/** 
