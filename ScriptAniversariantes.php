@@ -91,9 +91,9 @@ try
 		
 	//echo $html;
 
-		//'infra@ceadis.org.br'; 'marcio.santos@ceadis.org.br';
+	
 		
-		$para = 'eventos@ceadis.org.br';
+	
 		$cabecalho = date('d/m').' Aniversariante(s) do dia';
 		$emaildominio = 'sga@ceadis.org.br';
 		
