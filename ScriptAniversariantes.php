@@ -3,7 +3,7 @@
 date_default_timezone_set('America/Sao_Paulo');
 
 #Crio um objeto de conexão PDO
-$conexao = new PDO('mysql:host=localhost;dbname=sga','','',array(PDO::ATTR_PERSISTENT => true));
+$conexao = new PDO('mysql:host=localhost;dbname=','','',array(PDO::ATTR_PERSISTENT => true));
 $conexao->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 try
@@ -93,9 +93,9 @@ try
 
 	
 		
-	
+		$para = '';
 		$cabecalho = date('d/m').' Aniversariante(s) do dia';
-		$emaildominio = 'sga@ceadis.org.br';
+		$emaildominio = '';
 		
 		$headers  = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
