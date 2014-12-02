@@ -16,15 +16,11 @@ class Email extends PHPMailer
 
 		$this->Host = '172.22.0.31';
 /*
-		$this->Port = 25;
-		$this->SMTPAuth = true;
-		$this->Username = 'marcio.santos@ceadis.org.br';
-		$this->Password = 'q1w2e3mrs3';
-		$this->IsHTML(true);
+	
 */
 		$this->From = 'sga@ceadis.org.br';
 
-		$this->FromName = 'SISTEMA DE GESTÃO DE ATIVIDADES';
+		$this->FromName = 'SISTEMA DE GESTÃƒO DE ATIVIDADES';
 
 
 		$this->Subject = $this->cabecalho;
@@ -62,11 +58,11 @@ class Email extends PHPMailer
 				
 		$this->cabecalho = 'Abertura de Chamado: '.$dados['sol_codigo'];
 
-		$this->mensagem = 'O Chamado de número: '.$dados['sol_codigo'].'<br/>';
-		$this->mensagem .= 'Foi aberto com sucesso por: '.$email['usu_email'].' e logo um técnico irá atende-lo <br/>';
+		$this->mensagem = 'O Chamado de nÃºmero: '.$dados['sol_codigo'].'<br/>';
+		$this->mensagem .= 'Foi aberto com sucesso por: '.$email['usu_email'].' e logo um tÃ©cnico irÃ¡ atende-lo <br/>';
 		$this->mensagem .= 'Contato:  '.$email['usu_nome'].' - Tel / '.$_SESSION['config']['ramal'].': '.$email['usu_ramal'].'<br/>';
 		$this->mensagem .= $_SESSION['config']['problema'].': '.$problema['pro_descricao'].'<br/><br/>';
-		$this->mensagem .= 'Descrição do '.$_SESSION['config']['problema'].': '.$dados['sol_descricao_solicitacao'].'<br/>';
+		$this->mensagem .= 'DescriÃ§Ã£o do '.$_SESSION['config']['problema'].': '.$dados['sol_descricao_solicitacao'].'<br/>';
 		
 		
 		#E-mail de envido do usuario
@@ -90,13 +86,13 @@ class Email extends PHPMailer
 		#Instancia da Classe TbSolicitacao
 		$tbsolcitacao = new TbSolicitacao();
 
-		#pega o código do solicitante do chamado
+		#pega o cÃ³digo do solicitante do chamado
 		$usuSolicitante = $tbsolcitacao->getUsuarioSolicitante($dados['sol_codigo']);
 		
 		#pega a descricao da solicitacao que foi feito na abertura do chamado
 		$descricaoSolicitacao = $tbsolcitacao->getDescricaoSolicitacao($dados['sol_codigo']);
 		
-		#Pego e-mail de quem fez o assentamento informações do usuarios
+		#Pego e-mail de quem fez o assentamento informaÃ§Ãµes do usuarios
 		$tbusuario = new TbUsuario();
 		$email = $tbusuario->getUsuario($dados['usu_codigo']);
 		
@@ -112,7 +108,7 @@ class Email extends PHPMailer
 		$tbdepartamento = new TbDepartamento();
 		$emaildepto = $tbdepartamento->getDepartamentoEmail($dep_codigo_solicitado);
 
-		#Pego a descrição do problema
+		#Pego a descriÃ§Ã£o do problema
 		$tbprobleama = new TbProblema();
 		$problema = $tbprobleama->getForm($pro_codigo);
 
@@ -121,10 +117,10 @@ class Email extends PHPMailer
 
 		$this->cabecalho = 'Assentamento do chamado: '.$dados['sol_codigo'];
 
-		$this->mensagem = 'Houve uma interação no chamado: '.$dados['sol_codigo'].'<br/>';
+		$this->mensagem = 'Houve uma interaÃ§Ã£o no chamado: '.$dados['sol_codigo'].'<br/>';
 		$this->mensagem .= 'Assentamento criado por: '.$email['usu_email'].'<br/>';
 		$this->mensagem .= $_SESSION['config']['problema'].': '.$problema['pro_descricao'].'<br/><br/>';
-		$this->mensagem .= 'Descrição do Chamado: '.$descricaoSolicitacao.'<br/><br/>';
+		$this->mensagem .= 'DescriÃ§Ã£o do Chamado: '.$descricaoSolicitacao.'<br/><br/>';
 		$this->mensagem .= 'Foi adicionado o seguinte assentamento: '.$dados['ass_descricao'].'<br/><br/>';
 		$this->mensagem .= 'Status do chamado: '.$sta_descricao;
 		
