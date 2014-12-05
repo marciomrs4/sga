@@ -1,0 +1,5 @@
+.buildpath
+.git
+.project
+.settings/
+model/Banco.class.php
