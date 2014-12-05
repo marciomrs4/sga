@@ -4,6 +4,7 @@ include_once 'plugin/MPDF54/mpdf.php';
 ?>
 
 <link rel="stylesheet" href="./css/FormatacaoRelatorio.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
 
 <?php
 if($_GET)
@@ -30,11 +31,12 @@ try
 {
 
 ?>
+<div id="container">
 <img src="../sga/css/images/logoRelatorio.png"> 
-
+<hr>
 <div id="global">
 
-<h3>Projeto: <?php echo($dados['pro_titulo']); ?></h3>
+<h3 style="margin-left: 5px;">Projeto: <?php echo($dados['pro_titulo']); ?></h3>
 
 
 		<div id="infoprojeto">
@@ -44,7 +46,7 @@ try
 			<span>Descrição:</span> <?php echo($dados['pro_descricao']);?><br/>			
 		</div>
 	<div id="infocliente">
-	<h3 style="color: #0000CD;">ATIVIDADES</h3>
+	<h3 style="color: white; text-align: center; background-color: #43acd7; padding: 10px;">ATIVIDADES</h3>
 	<?php 
 		$tbAtividade = new TbAtividade();
 		
@@ -53,7 +55,7 @@ try
 		foreach ($Atividades as $atividade):
 	?>	
 	<div id="atividade">
-		<span style="color: #00008B;">Número Atividade:</span> <?php echo($atividade['at_codigo']);?>
+		<span style="color: ff4500;">Número Atividade:</span> <?php echo($atividade['at_codigo']);?>
 		- <span>Usuário:</span> <?php echo($atividade['Usuario']);?>
 		- <span>Data de Incio:</span> <?php echo($atividade['Inicio']);?>
 		- <span>Data de Conclusão:</span> <?php echo($atividade['Fim']);?>		
@@ -66,7 +68,7 @@ try
 		foreach ($Apontamentos as $apontamento):
 		?>
 		<div id="apontamento">
-			<span style="color: #00008B;">Apontamento:</span><br />
+			<span style="color: #43acd7; text-decoration: underline;">Apontamento:</span><br />
 			<span>Número Apontamento:</span> <?php echo($apontamento['ap_codigo']);?>
 			- <span>Usuário:</span> <?php echo($apontamento['Usuario']);?>
 			- <span>Data do Apontamento:</span> <?php echo($apontamento['Data']);?>
@@ -85,9 +87,14 @@ try
 	
 	
 	<div id="anotacoes">
-		<h5>Anotações:</h5>
-	
+		<h4>Anotações:</h4>	
 	</div>
+	
+</div>
+<br>
+<?php 
+include 'componentes/rodape.php';
+?>
 </div>
 
 <?php 	  	
@@ -142,4 +149,24 @@ $mpdf->Output();
 exit();
 */
 }
+
+
+
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

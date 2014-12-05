@@ -51,6 +51,8 @@ timer();
 </head>	
 <body>
 
+<div id="container">
+
 <div id="topo">
 <a href="Relatorio.php">Voltar</a>
 	<h2>Painel de Projetos | <?php echo(date('d-m-Y H:i:s'));?></h2>
@@ -135,6 +137,7 @@ echo("<fieldset id='completo'>
 	
 </div>
 
+</div>
 </div>
 </body>
 </html>

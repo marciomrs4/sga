@@ -1,12 +1,20 @@
 
+body{
+	font-family: 'Open Sans', verdana;
+	font-size: 14px;
+}
+
+#container{
+	width: 75%;
+	margin: 0 auto;
+}
 #global{
 	border: 1px;
 	border-style: solid;
   	border-color: black;
+  	border-radius: 3px;
   	margin: 0px 0px 0px 0px;
-  	padding: 1px 1px 1px 1px;
-  	/* background-color: #E8E8E8; */
-
+  	padding: 2px 2px 2px 2px;  	
 	}
 
 #painel{
@@ -26,7 +34,9 @@
   	border-color: black;
 	height: 150px;
 	margin: 1px 1px 1px 1px;
-  	background-color: white;	
+  	background-color: white;
+  	padding: 5px;
+  	color: #ff4500;	
 	}
 	
 #observacao{
@@ -88,10 +98,13 @@ h5{
 	}
 
 h3{
-	color: #000;
-	margin-left: 1px;
+	color:  ;
+	margin-right: 5px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	Background-color: #ccc;
+	padding: 5px;
+	border-radius: 3px;
 	
 	}
 	
