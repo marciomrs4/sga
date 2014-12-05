@@ -1,7 +1,7 @@
 <?php
 /**
  *
- *@author Márcio Ramos
+ *@author MÃ¡rcio Ramos
  *@version Fevereiro 2011
  *@name Banco
  *@example Classe abstrata para conectar ao banco
@@ -9,20 +9,7 @@
 abstract class Banco_postgree
 {
 
-	private $user = 'ceadis';
-	private $password = 'ceadis2011';
-	private $tipobanco = 'pgsql';
-	private $database = 'ceadis';
-	private $server =  '172.22.0.33';
 
-
-/*	private $user = 'teste';
-	private $password = 'teste';
-	private $tipobanco = 'pgsql';
-	private $database = 'ceadis_teste';
-	private $server =  '192.168.31.225';
-*/
-	/**
 	 *@name PDO
 	 *@uses conexao
 	 *@example para fazer conexao
