@@ -3,3 +3,7 @@
 .project
 .settings/
 model/Banco.class.php
+classes/Email.class.php
+ScriptAniversariantes.php
+indexMail.php
+model/Banco_postgree.class.php
