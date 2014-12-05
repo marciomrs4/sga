@@ -86,7 +86,7 @@ $_SESSION['alterar/Projeto'] = $tbprojeto->getFormAlteracao(base64_decode($_SESS
 
 
     <tr>
-      <th width="119" align="left" nowrap="nowrap">Descrição:</th>
+      <th width="119" align="left" nowrap="nowrap">Descrição do Projeto:</th>
       <td>
       	<textarea name="pro_descricao" rows="5" cols="32"><?php echo($_SESSION['alterar/Projeto']['pro_descricao']); ?></textarea>
       </td>
