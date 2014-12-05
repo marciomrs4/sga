@@ -1,18 +1,18 @@
 <?php 
-#Seto o time zone como s„o paulo
+#Seto o time zone como s√£o paulo
 date_default_timezone_set('America/Sao_Paulo');
 
-#Crio um objeto de conex„o PDO
-$conexao = new PDO('mysql:host=localhost;dbname=sga','root','q1w2e3mrs',array(PDO::ATTR_PERSISTENT => true));
+#Crio um objeto de conex√£o PDO
+$conexao = new PDO('mysql:host=localhost;dbname=','','',array(PDO::ATTR_PERSISTENT => true));
 $conexao->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 try
 {
-	#Obtenho o Dia e MÍs atuais
+	#Obtenho o Dia e M√™s atuais
 	$mes = date('m');
 	$dia = date('d');
 	
-	#FaÁo uma query buscando o mes, dia e unidade CEADIS
+	#Fa√ßo uma query buscando o mes, dia e unidade CEADIS
 	$query = ("SELECT ani_nome, ani_setor 
 				FROM tb_aniversariante 
 				WHERE ani_mes = ?  
@@ -30,8 +30,8 @@ try
 	$stmt->execute();
 	#Retorno o resultado da busca
 	$dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	#Verifico de houve algum resultado, se n„o houve
-	#n„o envio nada, caso contrario 
+	#Verifico de houve algum resultado, se n√£o houve
+	#n√£o envio nada, caso contrario 
 	if(count($dados) == 0)
 	{
 		echo 'Vazio';
@@ -44,7 +44,7 @@ try
 		$html .= '<h1 style="color: #1C86EE" >BOM DIA!</h1>
 					<br />
 				  <h2>
-				  	<span style="color: #000">Hoje È anivers·rio de nosso(s) colega(s):</span>
+				  	<span style="color: #000">Hoje √© anivers√°rio de nosso(s) colega(s):</span>
 					<br /><br />
 				  </h2> 
 				  <br /><br />';
@@ -78,24 +78,24 @@ try
 				</table>";
 		
 		$html .= '<h2>
-				  	<span style="color: #1C86EE">Desejamos um feliz anivers·rio, muita sa˙de e felicidades!</span>
+				  	<span style="color: #1C86EE">Desejamos um feliz anivers√°rio, muita sa√∫de e felicidades!</span>
 					<br /><br />
 				  </h2>';
 		
 		$html .= '<h4>
 				  	<span style="color: #000">CEADIS<br/>
-				  	Centro Estadual de Armazenamento e DistribuiÁ„o de Insumos de Sa˙de 
+				  	Centro Estadual de Armazenamento e Distribui√ß√£o de Insumos de Sa√∫de 
 				  	</span>
 					<br /><br />
 				  </h4>';
 		
 	//echo $html;
 
-		//'infra@ceadis.org.br'; 'marcio.santos@ceadis.org.br';
+	
 		
-		$para = 'eventos@ceadis.org.br';
+		$para = '';
 		$cabecalho = date('d/m').' Aniversariante(s) do dia';
-		$emaildominio = 'sga@ceadis.org.br';
+		$emaildominio = '';
 		
 		$headers  = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
