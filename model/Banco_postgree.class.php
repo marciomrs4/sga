@@ -9,6 +9,21 @@
 abstract class Banco_postgree
 {
 
+	private $user = 'ceadis';
+	private $password = 'ceadis2011';
+	private $tipobanco = 'pgsql';
+	private $database = 'ceadis';
+	private $server =  '172.22.0.33';
+	
+	
+  /*
+    private $user = 'teste';
+	private $password = 'teste';
+	private $tipobanco = 'pgsql';
+	private $database = 'ceadis_teste';
+	private $server =  '192.168.31.225';
+	*/
+	/**
 
 	 *@name PDO
 	 *@uses conexao
