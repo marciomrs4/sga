@@ -427,12 +427,22 @@ class Cadastro extends Dados
 				$tbassentamento = new TbAssentamento();
 				$tbsolicitacao = new TbSolicitacao();
 				$tbproblema = new TbProblema();
+				$tbAtendenteSolicitacao = new TbAtendenteSolicitacao();
 
 				#Inicia a transção
 				$this->conexao->beginTransaction();
+				
+				
+				#Verifica se existe um atendente no chamado
+				if($tbAtendenteSolicitacao->confirmarAtendente($this->dados['sol_codigo']) == '')
+				{
+					throw new Exception('Não existe um atendente para esse chamado!');
+				}
+
 
 				#Insere um assentamento
 				$tbassentamento->insert($this->dados);
+				
 
 				if($this->dados['sta_codigo'] == 3)
 				{

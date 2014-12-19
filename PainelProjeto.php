@@ -14,6 +14,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
 <script type="text/javascript">
 $(document).ready(function(){
 
+	 $(".tabela").tablesorter(); 
+	
 	$("#tempo").css("color","red");
 	
 var x = 0;
@@ -84,7 +86,7 @@ timer();
 
 $nomelink = '&raquo;';
 $link = 'GerarRelatorioProjetoPdf.php?codigo';
-$cabecalho = array('Projeto','Atividade','Data','Dias');
+$cabecalho = array('Projeto','Atividade','<a href="#">Data</a>','<a href="#">Dias</a>');
 
 echo("<fieldset id='completo'>
 		<legend id='nome'>Aprovação</legend>");

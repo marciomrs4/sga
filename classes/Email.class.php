@@ -15,6 +15,7 @@ class Email extends PHPMailer
 		$this->IsHTML();
 
 		$this->Host = '172.22.0.31';
+
 /*
 	
 */

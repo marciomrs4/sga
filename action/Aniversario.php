@@ -49,7 +49,7 @@ if($_POST)
 
 			default:
 				Sessao::destroiSessao();
-				break;
+			break;
 					
 		}
 

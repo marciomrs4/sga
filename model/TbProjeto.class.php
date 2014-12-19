@@ -456,7 +456,7 @@ class TbProjeto extends Banco
 					WHERE PRO.dep_codigo = ?
 					AND PRO.stp_codigo LIKE ?
 					GROUP BY PRO.pro_codigo
-					ORDER BY 5 DESC;
+					ORDER BY 4 DESC;
 					");
 
 		try

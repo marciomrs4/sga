@@ -3,8 +3,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
 include_once 'plugin/MPDF54/mpdf.php';
 ?>
 
-<link rel="stylesheet" href="./css/FormatacaoRelatorio.css">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+<link rel="stylesheet" href="./css/FormatacaoRelatorio.css">
 
 <?php
 if($_GET)
