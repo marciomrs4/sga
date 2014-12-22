@@ -11,14 +11,17 @@ class TbSolicitacao extends Banco
 	private $usu_codigo_solicitante = 'usu_codigo_solicitante';
 	private $dep_codigo_solicitado = 'dep_codigo_solicitado';
 	private $sol_descricao_solicitacao = 'sol_descricao_solicitacao';
+	private $sol_data_inicio = 'sol_data_inicio';
+	private $sol_data_fim = 'sol_data_fim';
 
 	public function insert($dados)
 	{
 
 		$query = ("INSERT INTO $this->tabela
 						($this->pro_codigo, $this->sta_codigo, $this->usu_codigo_solicitante,
-						$this->dep_codigo_solicitado, $this->sol_descricao_solicitacao)
-					VALUES(?,?,?,?,?)
+						$this->dep_codigo_solicitado, $this->sol_descricao_solicitacao,
+						$this->sol_data_inicio)
+					VALUES(?,?,?,?,?,?)
 				  ");
 
 						try
@@ -30,6 +33,7 @@ class TbSolicitacao extends Banco
 							$stmt->bindParam(3,$dados[$this->usu_codigo_solicitante],PDO::PARAM_INT);
 							$stmt->bindParam(4,$dados[$this->dep_codigo_solicitado],PDO::PARAM_INT);
 							$stmt->bindParam(5,$dados[$this->sol_descricao_solicitacao],PDO::PARAM_STR);
+							$stmt->bindParam(6,date('Y-m-d H:i:s'),PDO::PARAM_STR);							
 
 							$stmt->execute();
 
@@ -497,7 +501,8 @@ class TbSolicitacao extends Banco
 	public function alterarStatus($dados)
 	{
 		$query = ("UPDATE $this->tabela
-					SET $this->sta_codigo = ?
+					SET $this->sta_codigo = ?,
+						$this->sol_data_fim = ?
 					WHERE $this->sol_codigo = ?");
 
 		try
@@ -505,7 +510,8 @@ class TbSolicitacao extends Banco
 			$stmt = $this->conexao->prepare($query);
 
 			$stmt->bindParam(1, $dados[$this->sta_codigo],PDO::PARAM_INT);
-			$stmt->bindParam(2, $dados[$this->sol_codigo],PDO::PARAM_STR);
+			$stmt->bindParam(2, date('Y-m-d H:i:s'),PDO::PARAM_STR);
+			$stmt->bindParam(3, $dados[$this->sol_codigo],PDO::PARAM_STR);
 
 			$stmt->execute();
 
