@@ -13,6 +13,7 @@ class TbSolicitacao extends Banco
 	private $sol_descricao_solicitacao = 'sol_descricao_solicitacao';
 	private $sol_data_inicio = 'sol_data_inicio';
 	private $sol_data_fim = 'sol_data_fim';
+	private $pro_codigo_tecnico = 'pro_codigo_tecnico';
 
 	public function insert($dados)
 	{
@@ -20,8 +21,8 @@ class TbSolicitacao extends Banco
 		$query = ("INSERT INTO $this->tabela
 						($this->pro_codigo, $this->sta_codigo, $this->usu_codigo_solicitante,
 						$this->dep_codigo_solicitado, $this->sol_descricao_solicitacao,
-						$this->sol_data_inicio)
-					VALUES(?,?,?,?,?,?)
+						$this->sol_data_inicio, $this->pro_codigo_tecnico)
+					VALUES(?,?,?,?,?,?,?)
 				  ");
 
 						try
@@ -33,7 +34,8 @@ class TbSolicitacao extends Banco
 							$stmt->bindParam(3,$dados[$this->usu_codigo_solicitante],PDO::PARAM_INT);
 							$stmt->bindParam(4,$dados[$this->dep_codigo_solicitado],PDO::PARAM_INT);
 							$stmt->bindParam(5,$dados[$this->sol_descricao_solicitacao],PDO::PARAM_STR);
-							$stmt->bindParam(6,date('Y-m-d H:i:s'),PDO::PARAM_STR);							
+							$stmt->bindParam(6,date('Y-m-d H:i:s'),PDO::PARAM_STR);
+							$stmt->bindParam(7,$dados[$this->pro_codigo],PDO::PARAM_INT);
 
 							$stmt->execute();
 
@@ -53,7 +55,8 @@ class TbSolicitacao extends Banco
 		$query = ("UPDATE $this->tabela
 					SET	$this->dep_codigo_solicitado = ?,
 					$this->pro_codigo = ?,
-					$this->sol_descricao_solicitacao = ?
+					$this->sol_descricao_solicitacao = ?,
+					$this->pro_codigo_tecnico = ?
 					WHERE $this->sol_codigo = ? ");
 					try
 					{
@@ -62,7 +65,8 @@ class TbSolicitacao extends Banco
 						$stmt->bindParam(1,$dados[$this->dep_codigo_solicitado],PDO::PARAM_INT);
 						$stmt->bindParam(2,$dados[$this->pro_codigo],PDO::PARAM_INT);
 						$stmt->bindParam(3,$dados[$this->sol_descricao_solicitacao],PDO::PARAM_STR);
-						$stmt->bindParam(4,$dados[$this->sol_codigo],PDO::PARAM_INT);
+						$stmt->bindParam(4,$dados[$this->pro_codigo],PDO::PARAM_INT);						
+						$stmt->bindParam(5,$dados[$this->sol_codigo],PDO::PARAM_INT);
 							
 						$stmt->execute();
 
@@ -75,6 +79,7 @@ class TbSolicitacao extends Banco
 
 	}
 
+	#Usado para mostrar informaçãoes na tela da SolicitacaoTecnico
 	public function getFormReceptor($sol_codigo)
 	{
 
@@ -104,13 +109,14 @@ class TbSolicitacao extends Banco
 
 	}
 
-	#Metodo usado para mostrar a atividade no assentamento
+	#Metodo usado para mostrar o chamado no assentamento
 	public function getFormAssentamento($sol_codigo)
 	{
 
-		$query = ("SELECT $this->sol_codigo, $this->sol_descricao_solicitacao, $this->sta_codigo
-						FROM  $this->tabela
-				   WHERE $this->sol_codigo = ?");
+		$query = ("SELECT $this->sol_codigo, $this->sol_descricao_solicitacao, 
+						  $this->sta_codigo, $this->usu_codigo_solicitante, $this->pro_codigo_tecnico
+					FROM  $this->tabela
+				   	WHERE $this->sol_codigo = ?");
 
 		try
 		{
@@ -497,12 +503,13 @@ class TbSolicitacao extends Banco
 		}
 	}
 
-	#Usado para alterar o status da solicitação
+	#Usado para alterar o status da solicitação e o problema tecnico
 	public function alterarStatus($dados)
 	{
 		$query = ("UPDATE $this->tabela
 					SET $this->sta_codigo = ?,
-						$this->sol_data_fim = ?
+						$this->sol_data_fim = ?,
+						$this->pro_codigo_tecnico = ?
 					WHERE $this->sol_codigo = ?");
 
 		try
@@ -511,7 +518,8 @@ class TbSolicitacao extends Banco
 
 			$stmt->bindParam(1, $dados[$this->sta_codigo],PDO::PARAM_INT);
 			$stmt->bindParam(2, date('Y-m-d H:i:s'),PDO::PARAM_STR);
-			$stmt->bindParam(3, $dados[$this->sol_codigo],PDO::PARAM_STR);
+			$stmt->bindParam(3, $dados['pro_codigo_tecnico'],PDO::PARAM_INT);
+			$stmt->bindParam(4, $dados[$this->sol_codigo],PDO::PARAM_STR);
 
 			$stmt->execute();
 

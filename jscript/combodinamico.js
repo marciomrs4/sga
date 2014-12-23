@@ -25,6 +25,19 @@ $listar(document).ready(function(){
 				},
 		'html');
 		return false;
-	});		
+	});	
+	
+	//Criado para listar problemas dos tecnicos para abertura do chamado
+	$listar('select[name="dep_codigo_tecnico"]').change(function() {
+
+		var item = $listar('select[name="dep_codigo_tecnico"]').val();
+		$listar.post('listarProblemaTecnico.php', 
+				{dep_codigo: item },
+				function(data){		
+					$listar('select[name="pro_codigo"]').html(data);
+				},
+		'html');
+		return false;
+	});	
 
 });

@@ -18,7 +18,7 @@ Sessao::validarForm('cadastrar/SolicitacaoTecnico');
 		<?php 
 		$tbdepartamento = new TbDepartamento();
 		FormComponente::$name = 'Selecione';
-		FormComponente::selectOption('dep_codigo',$tbdepartamento->listarDepartamentos(),true,$_SESSION['cadastrar/SolicitacaoTecnico']);
+		FormComponente::selectOption('dep_codigo_tecnico',$tbdepartamento->listarDepartamentos(),true,$_SESSION['cadastrar/SolicitacaoTecnico']);
 		?>
       </td>
     </tr>
@@ -28,7 +28,7 @@ Sessao::validarForm('cadastrar/SolicitacaoTecnico');
   		   <?php 
 		       $tbproblema = new TbProblema();
 		       FormComponente::$name = 'Selecione';
-		       FormComponente::selectOption('pro_codigo',$tbproblema->listarProblema($_SESSION['dep_codigo']),true,$_SESSION['cadastrar/SolicitacaoTecnico']);
+		       FormComponente::selectOption('pro_codigo',$tbproblema->listarProblemasTecnicos($_SESSION['dep_codigo']),true,$_SESSION['cadastrar/SolicitacaoTecnico']);
 		   ?>
 		</td>
     </tr>

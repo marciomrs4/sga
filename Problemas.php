@@ -45,7 +45,7 @@ Arquivo::includeForm();
 
 
 $tbproblema = new TbProblema();
-$datagrid = new DataGrid(array($_SESSION['config']['problema'],'Departamento','Prioridade'),$busca->listarProblema());
+$datagrid = new DataGrid(array($_SESSION['config']['problema'],'Departamento','Prioridade','Tempo Solução','Mostrar ao Usuário','Ativo'),$busca->listarProblema());
 $datagrid->colunaoculta = 1;
 $datagrid->acao = 'alterar/MeuProblema';
 $datagrid->mostrarDatagrid();

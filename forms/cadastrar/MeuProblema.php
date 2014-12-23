@@ -41,6 +41,27 @@ Sessao::validarForm('cadastrar/MeuProblema');
 	      </td>
     </tr>
     <tr>
+	   <th nowrap="nowrap">Mostrar ao Usuário:</th>
+	   	<td nowrap="nowrap"> 
+	   		<input type="checkbox" name="pro_mostrar_usuario" >
+	   	</td>
+    </tr>    
+    
+    <tr>
+	   <th nowrap="nowrap">Status:</th>
+	   	<td nowrap="nowrap"> 
+	   		<input type="checkbox" name="pro_status_ativo" checked="checked" >
+	   	</td>
+    </tr>    
+    
+    <tr>
+      <th width="119" align="left" nowrap="nowrap">Tempo de Solução:</th>
+      <td>
+      	<input type="text" class="hora" name="pro_tempo_solucao" value="<?php echo($_SESSION['cadastrar/MeuProblema']['pro_tempo_solucao']); ?>" />
+      </td>
+    </tr>
+    
+    <tr>
       <td colspan="3" align="left">
 	      <input type="submit" name="cadastrar" id="button" value="Cadastrar" />
       </td>

@@ -37,7 +37,7 @@ echo "</div>";
 			echo(' '.$_SESSION['config']['problema'].':');
 				
 		    $tbproblema = new TbProblema();
-		    FormComponente::selectOption('pro_codigo_busca',$tbproblema->selectMeusProblemas($_SESSION['dep_codigo']),true,$_POST);
+		    FormComponente::selectOption('pro_codigo_busca_tecnico',$tbproblema->listarProblemasTecnicos($_SESSION['dep_codigo']),true,$_POST);
 			?>
 			
 		</td>

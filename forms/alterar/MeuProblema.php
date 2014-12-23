@@ -41,7 +41,36 @@ $_SESSION['cadastrar/MeuProblema'] = $tbproblema->getForm(base64_decode($_SESSIO
 	      	FormComponente::selectOption('pri_codigo', $tbprioridade->selectMinhasPrioridades($_SESSION['cadastrar/MeuProblema']['dep_codigo']),false,$_SESSION['cadastrar/MeuProblema']);	      	
 	      	?>
 	      </td>
-    </tr>       
+    </tr> 
+    
+        <tr>
+	   <th nowrap="nowrap">Mostrar ao Usuário:</th>
+	   	<td nowrap="nowrap"> 
+	   		<input type="checkbox" name="pro_mostrar_usuario"   <?php if($_SESSION['cadastrar/MeuProblema']['pro_mostrar_usuario'] == 1){
+      																		echo('checked="checked"'); 
+	   																	} ?>
+      >
+	   	</td>
+    </tr>    
+    
+    <tr>
+	   <th nowrap="nowrap">Status:</th>
+	   	<td nowrap="nowrap"> 
+	   		<input type="checkbox" name="pro_status_ativo" <?php if($_SESSION['cadastrar/MeuProblema']['pro_status_ativo'] == 1){
+      																		echo('checked="checked"'); 
+	   																	} ?>
+      >
+	   	</td>
+    </tr>    
+    
+    <tr>
+      <th width="119" align="left" nowrap="nowrap">Tempo de Solução:</th>
+      <td>
+      	<input type="text" class="hora" name="pro_tempo_solucao" value="<?php echo($_SESSION['cadastrar/MeuProblema']['pro_tempo_solucao']); ?>" />
+      </td>
+    </tr>
+    
+          
     <tr>
       <td colspan="2" align="right">
 	      <input type="submit" name="cadastrar" id="button" value="Alterar" />

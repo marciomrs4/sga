@@ -186,6 +186,12 @@ class Alteracao extends Dados
 			ValidarCampos::campoVazio($this->dados['pro_descricao'],'Descricao');
 			ValidarCampos::campoVazio($this->dados['pri_codigo'],'Prioridade');
 			ValidarCampos::campoVazio($this->dados['dep_codigo_problema'],'Departamento');
+			
+			$this->dados['pro_mostrar_usuario'] = ValidarCampos::campoEmptyTernario($this->dados['pro_mostrar_usuario'],1,'');
+			$this->dados['pro_status_ativo'] = ValidarCampos::campoEmptyTernario($this->dados['pro_status_ativo'],1,'');
+			
+			
+			ValidarCampos::campoVazio($this->dados['pro_tempo_solucao'],'Tempo de Solução');
 
 			$this->dados['dep_codigo'] = $this->dados['dep_codigo_problema'];
 

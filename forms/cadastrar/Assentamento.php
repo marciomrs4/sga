@@ -17,6 +17,42 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
     </tr>
 
     <tr>
+      <th nowrap="nowrap">Número do Chamado:</th>
+      <td>
+      	<?php echo($dados[0]); ?>
+      </td>
+    </tr>    
+    
+    <tr>
+	 <th nowrap="nowrap">
+	    		Aberto por:
+	    	</th>
+    		<td>
+	    		<?php  
+	    		$tbusuario = new TbUsuario(); 
+	    		$tbdepartamento = new TbDepartamento();
+	    		$Usuario = $tbusuario->getUsuario($dados['usu_codigo_solicitante']); 
+	    		
+	    		echo $Usuario['usu_email'];
+	    		
+	    		?>
+	    	</td>
+	    </tr>
+	    
+	    <tr>
+	    	<th>
+	    	</th>
+	    	<td nowrap="nowrap">
+	    	<?php echo 'Ramal: '.$Usuario['usu_ramal'].' / '.$tbdepartamento->getDepDescricao($Usuario['dep_codigo']);?>
+	    	</td>
+	</tr>
+    <tr>
+    	<td>
+    	&nbsp;
+    	</td>
+    </tr>
+    
+    <tr>
       <th nowrap="nowrap">Descrição do Chamado:</th>
       <td>
       	<?php echo($dados[1]); ?>
@@ -58,6 +94,24 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
       
       ?>
 	  </td>
+    </tr>
+    
+    <tr>
+    	<th>
+    		Problema técnico:
+    	</th>
+    	<td>
+    	<?php 
+    	$tbProblema = new TbProblema();
+     	if($dados[4])
+    	{$valor = false;}
+    	else
+    	{FormComponente::$name = 'Não há problema técnico indicado';
+    	$valor = true;} 
+    	FormComponente::selectOption('pro_codigo_tecnico', $tbProblema->listarProblemasTecnicos($_SESSION['dep_codigo']),true,$dados);
+    	
+    	?>
+    	</td>
     </tr>
     
         <tr>

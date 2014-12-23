@@ -23,7 +23,7 @@ class Busca extends Dados
 
 		#Dados da busca usado para diferenciar, pois caso contrario há um
 		#conflito de nomes com abertura de chamados e listava ou DEPTO.
-		$this->dados['pro_codigo_busca'];
+		$this->dados['pro_codigo_busca_tecnico'];
 
 		$this->dados['verpor'] = 2;
 					
@@ -42,7 +42,7 @@ class Busca extends Dados
 
 				$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == '') ? 1 : '';
 				$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == 6) ? '%' : $this->dados['sta_codigo'];
-				$this->dados['pro_codigo'] = ($this->dados['pro_codigo_busca'] == '') ? '%' : $this->dados['pro_codigo_busca'];
+				$this->dados['pro_codigo'] = ($this->dados['pro_codigo_busca_tecnico'] == '') ? '%' : $this->dados['pro_codigo_busca_tecnico'];
 				$this->dados['usu_nome'] = ($this->dados['usu_nome'] == '') ? '%' : $this->dados['usu_nome'];
 				$this->dados['sol_descricao_solicitacao'] = ($this->dados['sol_descricao_solicitacao'] == '') ? '%' : $this->dados['sol_descricao_solicitacao'];
 
@@ -60,7 +60,7 @@ class Busca extends Dados
 
 				$this->dados['usu_codigo_solicitante'] = $_SESSION['usu_codigo'];
 				$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == '') ? '%' : $this->dados['sta_codigo'];
-				$this->dados['pro_codigo'] = ($this->dados['pro_codigo_busca'] == '') ? '%' : $this->dados['pro_codigo_busca'];
+				$this->dados['pro_codigo'] = ($this->dados['pro_codigo_busca_tecnico'] == '') ? '%' : $this->dados['pro_codigo_busca_tecnico'];
 				$this->dados['usu_nome'] = ($this->dados['usu_nome'] == '') ? '%' : $this->dados['usu_nome'];
 				$this->dados['sol_descricao_solicitacao'] = ($this->dados['sol_descricao_solicitacao'] == '') ? '%' : $this->dados['sol_descricao_solicitacao'];
 
@@ -78,7 +78,7 @@ class Busca extends Dados
 				$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == '') ? 1 : $this->dados['sta_codigo'];
 				$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == 6) ? '%' : $this->dados['sta_codigo'];
 				
-				$this->dados['pro_codigo'] = ($this->dados['pro_codigo_busca'] == '') ? '%' : $this->dados['pro_codigo_busca'];
+				$this->dados['pro_codigo'] = ($this->dados['pro_codigo_busca_tecnico'] == '') ? '%' : $this->dados['pro_codigo_busca_tecnico'];
 				$this->dados['usu_nome'] = ($this->dados['usu_nome'] == '') ? '%' : $this->dados['usu_nome'];
 				$this->dados['sol_descricao_solicitacao'] = ($this->dados['sol_descricao_solicitacao'] == '') ? '%' : $this->dados['sol_descricao_solicitacao'];
 
@@ -100,7 +100,7 @@ class Busca extends Dados
 				
 				$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == 5) ? '%' : $this->dados['sta_codigo'];
 				
-				$this->dados['pro_codigo'] = ($this->dados['pro_codigo_busca'] == '') ? '%' : $this->dados['pro_codigo_busca'];
+				$this->dados['pro_codigo'] = ($this->dados['pro_codigo_busca_tecnico'] == '') ? '%' : $this->dados['pro_codigo_busca_tecnico'];
 				$this->dados['usu_nome'] = ($this->dados['usu_nome'] == '') ? '%' : $this->dados['usu_nome'];
 				$this->dados['sol_descricao_solicitacao'] = ($this->dados['sol_descricao_solicitacao'] == '') ? '%' : $this->dados['sol_descricao_solicitacao'];
 

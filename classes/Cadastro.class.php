@@ -207,7 +207,12 @@ class Cadastro extends Dados
 			ValidarCampos::campoVazio($this->dados['pro_descricao'],$_SESSION['config']['problema']);
 			ValidarCampos::campoVazio($this->dados['dep_codigo_problema'],'Departamento');
 			ValidarCampos::campoVazio($this->dados['pri_codigo'],'Prioridade');
-				
+			
+			$this->dados['pro_mostrar_usuario'] = ValidarCampos::campoEmptyTernario($this->dados['pro_mostrar_usuario'],1, '');
+			$this->dados['pro_status_ativo'] = ValidarCampos::campoEmptyTernario($this->dados['pro_status_ativo'],1, '');
+
+			ValidarCampos::campoVazio($this->dados['pro_tempo_solucao'],'Tempo de Solução');
+			
 			$this->dados['dep_codigo'] = $this->dados['dep_codigo_problema'];
 
 			$tbproblema = new TbProblema();
@@ -338,6 +343,7 @@ class Cadastro extends Dados
 
 			ValidarCampos::campoVazio($this->dados['ass_descricao'],'Descrição');
 			ValidarCampos::campoVazio($this->dados['usu_codigo_atendente'],'Atendente do Chamado');
+			
 
 			$this->dados['usu_codigo'] = $_SESSION['usu_codigo'];
 
@@ -349,6 +355,12 @@ class Cadastro extends Dados
 				$tbsolicitacao = new TbSolicitacao();
 				$tbatendente = new TbAtendenteSolicitacao();
 				$tbproblema = new TbProblema();
+
+				
+				if($this->dados['pro_codigo_tecnico'] == ''){
+					$this->dados['pro_codigo_tecnico'] = $tbsolicitacao->getProblema($this->dados['sol_codigo']);
+				}
+				
 
 				#Inicia a transção
 				$this->conexao->beginTransaction();

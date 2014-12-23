@@ -16,38 +16,43 @@ echo "</div>";
 <form action="" method="post">
 <fieldset>
 	<legend>Pesquisar Chamado</legend>
-<table border="0">
+<table border="2">
  
 	<tr>	
-		<td>
+		<td nowrap="nowrap">
 			Departamento:
 			<?php 
 			$tbdepartamento = new TbDepartamento();	
 			FormComponente::$name = 'TODOS';
 		    FormComponente::selectOption('dep_codigo_busca',$tbdepartamento->listarDepartamentos(),true,$busca->getDados('dep_codigo_busca'));
 			?>
-			
-			Status:
-			<?php 
-			$tbstatus= new TbStatus();
-			FormComponente::$name = 'TODOS';
-			FormComponente::selectOption('sta_codigo', $tbstatus->selectMeuStatus(),true,$busca->getDados('sta_codigo'));
-			?>
-			
+			</td>
+			<td>
 			<?php 
 			   echo($_SESSION['config']['problema'].':');
 		       $tbproblema = new TbProblema();
 		       FormComponente::$name = 'TODOS';
 		       FormComponente::selectOption('pro_codigo_busca',$tbproblema->listarProblema('dep_codigo'),true,$busca->getDados('pro_codigo_busca'));
 			?>
-	
+		</td>
+	</tr>
 	<tr>
+		<td nowrap="nowrap">
+				
+			Status:
+			<?php 
+			$tbstatus= new TbStatus();
+			FormComponente::$name = 'TODOS';
+			FormComponente::selectOption('sta_codigo', $tbstatus->selectMeuStatus(),true,$busca->getDados('sta_codigo'));
+			?>
+		</td>
+	
 		<td>
 			Solicitante:
-				<input type="text" name="usu_nome" value="<?php echo($busca->getDados('usu_nome')); ?>">
+				<input type="text" name="usu_nome" size="15" value="<?php echo($busca->getDados('usu_nome')); ?>">
 		
 			Descrição:
-				<input type="text" name="sol_descricao_solicitacao" size="50" value="<?php echo($busca->getDados('sol_descricao_solicitacao'));?>">
+				<input type="text" name="sol_descricao_solicitacao" size="30" value="<?php echo($busca->getDados('sol_descricao_solicitacao'));?>">
 		</td>				
 
 		<td>

@@ -10,6 +10,10 @@ class TbProblema extends Banco
 	private $dep_codigo = 'dep_codigo';
 	private $pri_codigo = 'pri_codigo';
 	private $pri_descricao = 'pri_descricao';
+	private $pro_mostrar_usuario = 'pro_mostrar_usuario';
+	private $pro_tempo_solucao = 'pro_tempo_solucao';
+	private $pro_status_ativo = 'pro_status_ativo';
+	
 	
 	public function getProblemaDescricao($pro_codigo)
 	{
@@ -35,8 +39,10 @@ class TbProblema extends Banco
 	{
 		
 		$query = ("INSERT INTO $this->tabela 
-					($this->pro_descricao,$this->dep_codigo,$this->pri_codigo)
-					VALUES(?,?,?)");
+					($this->pro_descricao,$this->dep_codigo,$this->pri_codigo,
+					$this->pro_mostrar_usuario, $this->pro_tempo_solucao,
+					$this->pro_status_ativo)
+					VALUES(?,?,?,?,?,?)");
 
 		try{
 			$stmt = $this->conexao->prepare($query);
@@ -44,6 +50,9 @@ class TbProblema extends Banco
 			$stmt->bindParam(1,$dados[$this->pro_descricao],PDO::PARAM_STR);
 			$stmt->bindParam(2,$dados[$this->dep_codigo],PDO::PARAM_INT);
 			$stmt->bindParam(3,$dados[$this->pri_codigo],PDO::PARAM_INT);
+			$stmt->bindParam(4,$dados[$this->pro_mostrar_usuario],PDO::PARAM_INT);
+			$stmt->bindParam(5,$dados[$this->pro_tempo_solucao],PDO::PARAM_INT);						
+			$stmt->bindParam(6,$dados[$this->pro_status_ativo],PDO::PARAM_INT);			
 			
 			$stmt->execute();
 
@@ -62,7 +71,10 @@ class TbProblema extends Banco
 		$query = ("UPDATE $this->tabela
 					SET	$this->pro_descricao = ?,
 					    $this->pri_codigo = ?, 
-					    $this->dep_codigo = ?
+					    $this->dep_codigo = ?,
+						$this->pro_mostrar_usuario = ?,
+						$this->pro_tempo_solucao = ?,
+						$this->pro_status_ativo = ?
 					WHERE $this->pro_codigo = ? ");
 		try
 		{
@@ -71,7 +83,10 @@ class TbProblema extends Banco
 			$stmt->bindParam(1,$dados[$this->pro_descricao],PDO::PARAM_STR);
 			$stmt->bindParam(2,$dados[$this->pri_codigo],PDO::PARAM_INT);			
 			$stmt->bindParam(3,$dados[$this->dep_codigo],PDO::PARAM_INT);						
-			$stmt->bindParam(4,$dados[$this->pro_codigo],PDO::PARAM_INT);			
+			$stmt->bindParam(4,$dados[$this->pro_mostrar_usuario],PDO::PARAM_STR);			
+			$stmt->bindParam(5,$dados[$this->pro_tempo_solucao],PDO::PARAM_STR);
+			$stmt->bindParam(6,$dados[$this->pro_status_ativo],PDO::PARAM_STR);			
+			$stmt->bindParam(7,$dados[$this->pro_codigo],PDO::PARAM_INT);						
 			
 			$stmt->execute();
 
@@ -84,11 +99,13 @@ class TbProblema extends Banco
 
 	}
 	
-	#Seleciona problema por departamento, tela de problema
+	#Lista todos os problema por departamento na tela de cadastro de problema
 	public function listarProblemaDepartamento($dep_codigo)
 	{
 		$query = ("SELECT pro.pro_codigo, pro.pro_descricao, 
-						  dep.dep_descricao, pri.pri_descricao 
+						  dep.dep_descricao, pri.pri_descricao, pro_tempo_solucao,
+						  IF(pro_mostrar_usuario = 1,'SIM','NÃO'),
+						  IF(pro_status_ativo = 1,'SIM','NÃO') 
 					FROM tb_problema AS pro
 					INNER JOIN tb_departamento AS dep
 					ON pro.dep_codigo = dep.dep_codigo
@@ -111,14 +128,15 @@ class TbProblema extends Banco
 		}
 	}
 	
+	#Usado nos formularios de cadastro de chamado e tela do Solicitante
 	public function listarProblema($dep_codigo)
 	{
-		$query = ("SELECT pb.pro_codigo, pb.pro_descricao, pr.pri_descricao
-					FROM $this->tabela AS pb
-					JOIN tb_prioridade AS pr
-					ON pr.pri_codigo = pb.pri_codigo
-					WHERE pb.dep_codigo = ?
-					ORDER BY pb.pro_descricao");
+		$query = ("SELECT pro_codigo, pro_descricao 
+					FROM tb_problema 
+					WHERE pro_mostrar_usuario = 1 
+					AND pro_status_ativo = 1
+					AND dep_codigo = ?
+					ORDER BY pro_descricao");
 
 		try
 		{
@@ -136,15 +154,15 @@ class TbProblema extends Banco
 		}
 	}
 	
-	
+	#Usado na tela de operação para listagem dos problemas
 	public function selectMeusProblemas($dep_codigo)
 	{
-		$query = ("SELECT pb.pro_codigo, pb.pro_descricao, pr.pri_descricao
-					FROM $this->tabela AS pb
-					JOIN tb_prioridade AS pr
-					ON pr.pri_codigo = pb.pri_codigo
-					WHERE pb.dep_codigo = ?
-					ORDER BY pb.pro_descricao");
+		$query = ("SELECT pro_codigo, pro_descricao 
+					FROM tb_problema 
+					WHERE pro_mostrar_usuario = 1 
+					AND pro_status_ativo = 1
+					AND dep_codigo = ?
+					ORDER BY pro_descricao");
 		
 		try
 		{
@@ -243,6 +261,30 @@ class TbProblema extends Banco
 			
 			return($stmt);
 
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getMessage());
+		}
+	}
+	
+	#Usado na tela de assentamento para a lista de chamado do tecnico.
+	public function listarProblemasTecnicos($dep_codigo)
+	{
+		$query = ("SELECT pro_codigo as 'pro_codigo_tecnico', pro_descricao 
+					FROM tb_problema 
+					WHERE pro_status_ativo = 1
+					AND dep_codigo = ?
+					ORDER BY pro_descricao;");
+	
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+			$stmt->bindParam(1,$dep_codigo,PDO::PARAM_INT);
+					
+			$stmt->execute();
+
+			return($stmt);
+	
 		} catch (PDOException $e)
 		{
 			throw new PDOException($e->getMessage(),$e->getMessage());

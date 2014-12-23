@@ -27,7 +27,6 @@ Sessao::validarForm('cadastrar/Solicitacao');
 	      <td>
   		   <?php 
 		       $tbproblema = new TbProblema();
-		       FormComponente::$name = 'Selecione';
 		       FormComponente::selectOption('pro_codigo',$tbproblema->listarProblema($_SESSION['dep_codigo']),true,$_SESSION['cadastrar/Solicitacao']);
 		   ?>
 </td>
