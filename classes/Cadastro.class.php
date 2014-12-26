@@ -339,10 +339,12 @@ class Cadastro extends Dados
 	{
 		try
 		{
-			/* ass_descricao, ass_data_cadastro, sol_codigo, usu_codigo*/
-
+			
+			$this->dados['ass_descricao'] = strip_tags($this->dados['ass_descricao']);
 			ValidarCampos::campoVazio($this->dados['ass_descricao'],'Descrição');
 			ValidarCampos::campoVazio($this->dados['usu_codigo_atendente'],'Atendente do Chamado');
+			
+
 			
 
 			$this->dados['usu_codigo'] = $_SESSION['usu_codigo'];
@@ -409,7 +411,7 @@ class Cadastro extends Dados
 					$email->interacaoAssentamento($this->dados);
 				}
 				
-			} catch (Exception $e)
+			} catch (PDOException $e)
 			{
 				#Faz Rollback se algo der errado
 				$this->conexao->rollBack();
@@ -427,7 +429,10 @@ class Cadastro extends Dados
 	{
 		try
 		{
-
+			
+			//filter_var_array($this->dados,FILTER_SANITIZE_STRING);
+			
+			$this->dados['ass_descricao'] = strip_tags($this->dados['ass_descricao']);
 			ValidarCampos::campoVazio($this->dados['ass_descricao'],'Assentamento');
 
 			$this->dados['usu_codigo'] = $_SESSION['usu_codigo'];

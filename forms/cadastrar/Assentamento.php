@@ -3,13 +3,14 @@ $tbsolicitacao = new TbSolicitacao();
 
 $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform']));
 
-
 ?>
 
-<form name="cadastrar/Assentamento" id="Assentamento" enctype="multipart/form-data" method="post" action="../<?php echo($_SESSION['projeto']); ?>/action/assentamento.php">
+
 <fieldset>
 	<legend><b>Assentamento</b></legend>
-  <table width="300" border="0">
+  <form name="cadastrar/Assentamento" id="Assentamento" enctype="multipart/form-data" method="post" action="../<?php echo($_SESSION['projeto']); ?>/action/assentamento.php">
+	<table width="300" border="0">
+
     <tr>
       <td colspan="2">	
       <?php Texto::mostrarMensagem($_SESSION['erro']);?>
@@ -128,14 +129,26 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
 			&nbsp;
 	  </td>
 	</tr>
-	<tr>
-      <td colspan="2" align="left">
-	      <input type="submit" name="alterar" class="button-tela" id="botaoSave" value=" Salvar " />
-	      <span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>
-	  </td>
-    </tr>
-  </table>
+	
+	<tr>	
+  	  <td>
+  	   </td>
+  	   <td nowrap="nowrap">
+  	    <input type="submit" name="alterar" class="button-tela" id="botaoSave" value=" Salvar " />
+	    <span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>
+
+    
 </form>
+		<hr>
+      	
+      	<form action="">
+ 	    	<input type="submit" name="alterar" class="button-tela" value=" Voltar " />
+ 	    </form>
+	  </td>
+  	</tr>
+
+ </table>
+ 
 <hr>
   	<?php 
   	

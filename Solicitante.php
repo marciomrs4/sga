@@ -16,7 +16,7 @@ echo "</div>";
 <form action="" method="post">
 <fieldset>
 	<legend>Pesquisar Chamado</legend>
-<table border="2">
+<table border="0">
  
 	<tr>	
 		<td nowrap="nowrap">
@@ -52,7 +52,7 @@ echo "</div>";
 				<input type="text" name="usu_nome" size="15" value="<?php echo($busca->getDados('usu_nome')); ?>">
 		
 			Descrição:
-				<input type="text" name="sol_descricao_solicitacao" size="30" value="<?php echo($busca->getDados('sol_descricao_solicitacao'));?>">
+				<input type="text" name="sol_descricao_solicitacao" size="20" value="<?php echo($busca->getDados('sol_descricao_solicitacao'));?>">
 		</td>				
 
 		<td>

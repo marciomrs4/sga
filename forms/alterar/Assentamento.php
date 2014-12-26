@@ -8,9 +8,9 @@ $solicitacao = $tbsolicitacao->getFormAssentamento($_SESSION['assentamento']['so
 
 ?>
 
-<form name="assentamento" enctype="multipart/form-data" method="post" action="../<?php echo($_SESSION['projeto']); ?>/action/assentamento.php">
 <fieldset>
 	<legend><b>Assentamento</b></legend>
+<form name="assentamento" enctype="multipart/form-data" method="post" action="../<?php echo($_SESSION['projeto']); ?>/action/assentamento.php">	
   <table width="300" border="0">
     <tr>
       <td colspan="2">	
@@ -34,12 +34,21 @@ $solicitacao = $tbsolicitacao->getFormAssentamento($_SESSION['assentamento']['so
       </td>
     </tr>
     <tr>
-      <td colspan="2" align="center">
+      <td nowrap="nowrap">
 	      <input type="submit" name="alterar" value=" Salvar " />
-	  </td>
-    </tr>
-  </table>
+
 </form>
+		<hr>
+      	
+      	<form action="">
+ 	    	<input type="submit" name="alterar" class="button-tela" value=" Voltar " />
+ 	    </form>
+	  </td>
+  	</tr>
+
+ </table>
+
+
 <hr>
   	<?php 
   	try

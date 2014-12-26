@@ -268,6 +268,13 @@ class TbProblema extends Banco
 	}
 	
 	#Usado na tela de assentamento para a lista de chamado do tecnico.
+	/**
+	 * 
+	 * @param unknown $dep_codigo
+	 * @throws PDOException
+	 * @return PDOStatement
+	 * @example Esse metodo funciona assim:
+	 */
 	public function listarProblemasTecnicos($dep_codigo)
 	{
 		$query = ("SELECT pro_codigo as 'pro_codigo_tecnico', pro_descricao 

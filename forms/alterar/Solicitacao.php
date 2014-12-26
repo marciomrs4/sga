@@ -6,9 +6,10 @@ $tbatendimentosolicitante = new TbAtendenteSolicitacao();
 $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/Solicitacao']['sol_codigo'])
 
 ?>
-<form name="solicitacao" id="solicitacao" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/solicitacao.php">
+
 	<fieldset>
-				<legend>Alterar Chamado</legend>
+		<legend>Alterar Chamado</legend>
+			<form name="solicitacao" id="solicitacao" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/solicitacao.php">				
 			<fieldset>
 				<legend>Ações</legend>
 				<div class="acoeschamado">
@@ -170,16 +171,37 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
     	<th><?php if( !$usu_codigo){ echo('Alterar Anexo:');  ?></th>     		
     	<td><input type="file" name="arquivo" /><?php }?></td>
     </tr>
+        
     <tr>
+      <td colspan="2" align="left">
+			&nbsp;
+	  </td>
+	</tr>
+    
+    <tr>
+    
+    <td>
+    	&emsp;	
+    </td>
+    
       <td colspan="2" align="left">
       <?php if($usu_codigo){}else{?>
 	      <input type="submit" name="cadastrar" class="button-tela" id="botaoSave" value="Salvar" />
 	      <span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>
 	      <?php }?>
-      </td>
-    </tr>
 
-  </table>
+</form>
+
+		<hr>
+      	
+      	<form action="">
+ 	    	<input type="submit" name="alterar" class="button-tela" value=" Voltar " />
+ 	    </form>
+	  </td>
+  	</tr>
+
+ </table>
+
        <div id="insere_aqui">
   	<?php 
   	try
@@ -204,7 +226,5 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
   	?>     
      </div>
 </fieldset>
-  
-</form>
 
 <?php unset($_SESSION['alterar/Solicitacao']);?>

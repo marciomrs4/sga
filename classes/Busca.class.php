@@ -353,6 +353,17 @@ class Busca extends Dados
 				{
 					throw new Exception('Chamado não encontrado');
 				}
+				
+				#Verifica se o departamento solicitante ou departamento solicitado
+				#para este chamado
+				$tbUsuario = new TbUsuario();
+				$DepSolicitante = $tbUsuario->getDepCodigo($solicitacao['usu_codigo_solicitante']);
+				
+				if(($solicitacao['dep_codigo'] != $_SESSION['dep_codigo']) && ($DepSolicitante != $_SESSION['dep_codigo'])){
+					throw new Exception('Você não possui permissão para este chamado.');
+				}
+								
+				
 			}
 				
 			try

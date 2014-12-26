@@ -5,16 +5,54 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
 
 ?>
 
-<form name="cadastrar/AssentamentoSolicitante" id="Assentamento" enctype="multipart/form-data" method="post" action="../<?php echo($_SESSION['projeto']); ?>/action/assentamento.php">
+
 <fieldset>
 	<legend><b>Assentamento</b></legend>
+<form name="cadastrar/AssentamentoSolicitante" id="Assentamento" enctype="multipart/form-data" method="post" action="../<?php echo($_SESSION['projeto']); ?>/action/assentamento.php">	
   <table width="300" border="0">
     <tr>
       <td colspan="2">	
       <?php Texto::mostrarMensagem($_SESSION['erro']);?>
     </td>
     </tr>
-
+    
+    <tr>
+      <th nowrap="nowrap">Número do Chamado:</th>
+      <td>
+      	<?php echo($dados[0]); ?>
+      </td>
+    </tr>    
+    
+    <tr>
+	 <th nowrap="nowrap">
+	    		Aberto por:
+	    	</th>
+    		<td>
+	    		<?php  
+	    		$tbusuario = new TbUsuario(); 
+	    		$tbdepartamento = new TbDepartamento();
+	    		$Usuario = $tbusuario->getUsuario($dados['usu_codigo_solicitante']); 
+	    		
+	    		echo $Usuario['usu_email'];
+	    		
+	    		?>
+	    	</td>
+	    </tr>
+	    
+	    <tr>
+	    	<th>
+	    	</th>
+	    	<td nowrap="nowrap">
+	    	<?php echo 'Ramal: '.$Usuario['usu_ramal'].' / '.$tbdepartamento->getDepDescricao($Usuario['dep_codigo']);?>
+	    	</td>
+	</tr>
+    <tr>
+    	<td>
+    	&nbsp;
+    	</td>
+    </tr>
+    
+    
     <tr>
       <th nowrap="nowrap">Descrição da Atividade:</th>
       <td>
@@ -63,9 +101,19 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
       */
       ?>
 	  </td>
-    </tr>    
+    </tr>
+    
     <tr>
-      <td colspan="2" align="center">
+      <td colspan="2" align="left">
+			&nbsp;
+	  </td>
+	</tr>
+	
+        
+    <tr>
+    <td>
+    </td>
+      <td nowrap="nowrap">
 	  <?php
 	  if($dados[2] != 3)
 	  { 
@@ -73,10 +121,18 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
 	  }
 	  ?>
 	  	      <span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>
-	  </td>
-    </tr>
-  </table>
+
 </form>
+		<hr>
+      	
+      	<form action="">
+ 	    	<input type="submit" name="alterar" class="button-tela" value=" Voltar " />
+ 	    </form>
+	  </td>
+  	</tr>
+
+ </table>
+
 <hr>
   	<?php 
   	try

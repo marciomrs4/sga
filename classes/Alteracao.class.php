@@ -248,7 +248,7 @@ class Alteracao extends Dados
 			ValidarCampos::campoVazio($this->dados['dep_codigo'],'Departamento');
 			ValidarCampos::campoVazio($this->dados['pro_codigo'],$_SESSION['config']['problema']);
 			ValidarCampos::campoVazio($this->dados['sol_descricao_solicitacao'],'Descrição do '.$_SESSION['config']['problema']);
-
+			$this->dados['sol_descricao_solicitacao'] = strip_tags($this->dados['sol_descricao_solicitacao']);
 			ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solicitacao'],10,'Descrição do '.$_SESSION['config']['problema']);
 
 			#Capturando o código do DEPTO solicitado

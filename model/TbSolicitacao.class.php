@@ -573,9 +573,10 @@ class TbSolicitacao extends Banco
 							"%{$dados[$this->pro_codigo]}%",
 							"%{$dados['usu_nome']}%",
 							"%{$dados[$this->sol_descricao_solicitacao]}%",
-			$dados['dep_codigo']);
+							   $dados['dep_codigo']);
 
 			$stmt->execute($array);
+			
 			return($stmt);
 
 		} catch (PDOException $e)

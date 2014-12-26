@@ -457,7 +457,30 @@ class TbUsuario extends Banco
 		}
 	}
 	
-	
+	public function getDepCodigo($usu_codigo)
+	{
+		$query = ("SELECT dep_codigo 
+					FROM tb_usuario 
+					WHERE usu_codigo = ?");
+
+		try {
+			
+			$stmt = $this->conexao->prepare($query);
+			
+			$stmt->bindParam(1, $usu_codigo,PDO::PARAM_INT);
+			
+			$stmt->execute();
+			
+			$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+			
+			return($usuario['dep_codigo']);
+			
+			
+		} catch (PDOException $e) {
+			throw new PDOException($e->getMessage(), $e->getCode());
+		}
+		
+	}
 	
 }
 ?>

@@ -6,9 +6,10 @@ $tbatendimentosolicitante = new TbAtendenteSolicitacao();
 $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/Solicitacao']['sol_codigo'])
 
 ?>
-<form name="arquivo" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/solicitacao.php">
+
 	<fieldset>
 				<legend>Alterar Chamado</legend>
+<form name="arquivo" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/solicitacao.php">				
 			<fieldset>
 				<legend>Ações</legend>
 				<div class="acoeschamado">
@@ -161,15 +162,33 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
     	<th><?php if(!$usu_codigo){ echo("Alterar Anexo:"); ?> </th>     		
     	<td><input type="file" name="arquivo" /><?php }?></td>
     </tr>
+    
+        <tr>
+      <td colspan="2" align="left">
+			&nbsp;
+	  </td>
+	</tr>
+    
     <tr>
-      <td colspan="2" align="center">
+    <td>
+    </td>
+    
+      <td nowrap="nowrap">
       <?php if($usu_codigo){}else{?>
 	      <input type="submit" name="cadastrar" class="button-tela" value="Salvar" />
 	      <?php }?>
-      </td>
-    </tr>
+  
+ </form>
+		<hr>
+      	
+      	<form action="">
+ 	    	<input type="submit" name="alterar" class="button-tela" value=" Voltar " />
+ 	    </form>
+	  </td>
+  	</tr>
 
-  </table>
+</table>
+  
        <div id="insere_aqui">
   	<?php 
 	$tbassentamento = new TbAssentamento();

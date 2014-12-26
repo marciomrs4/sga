@@ -16,6 +16,8 @@ Texto::criarTitulo("Busca Rápida");
 echo "</div>";
 
 
+//Sessao::mostrarSessao();
+
 try
 {
 
@@ -50,8 +52,10 @@ Arquivo::includeForm();
 $_SESSION['buscaRapida'] = $busca->buscaRapidaChamado();
 
 
-
-//$_SESSION['acaoform'] = base64_encode('alterar/Solicitacao');
+#Se houver uma acao nao mostra repetido o formulario
+#VALIDAFORM
+if($_SESSION['acao'])
+{}else{
 
 ?>
 <form name="arquivo" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/solicitacao.php">
@@ -62,7 +66,7 @@ $_SESSION['buscaRapida'] = $busca->buscaRapidaChamado();
 				<div class="acoeschamado">
 				<?php 
 				if($_SESSION['buscaRapida']['usu_codigo'])
-				{}elseif($_SESSION['tac_codigo'] != ControleDeAcesso::$Solicitante){
+				{}elseif($_SESSION['buscaRapida']['dep_codigo'] == $_SESSION['dep_codigo']){
 				?>
 				<a href="./action/atenderchamado.php?<?php echo(base64_encode('atender/chamado').'='.base64_encode($_SESSION['buscaRapida']['sol_codigo']));?>"><img src="./css/images/atender.png" title="Atender"></a>
 				
@@ -76,10 +80,15 @@ $_SESSION['buscaRapida'] = $busca->buscaRapidaChamado();
 				<a href="./action/formcontroler.php?<?php echo(base64_encode('cadastrar/AssentamentoSolicitante').'='.base64_encode($_SESSION['buscaRapida']['sol_codigo']));?>"><img src="./css/images/novo.png" title="Assentamento"></a>
 				<?php
 				} 
-				else{
+				elseif($_SESSION['buscaRapida']['dep_codigo'] == $_SESSION['dep_codigo']){
 				?>
 				<a href="./action/formcontroler.php?<?php echo(base64_encode('cadastrar/Assentamento').'='.base64_encode($_SESSION['buscaRapida']['sol_codigo']));?>"><img src="./css/images/novo.png" title="Assentamento"></a>
+				<?php 
+				}else{
+				?>
+				<a href="./action/formcontroler.php?<?php echo(base64_encode('cadastrar/AssentamentoSolicitante').'='.base64_encode($_SESSION['buscaRapida']['sol_codigo']));?>"><img src="./css/images/novo.png" title="Assentamento"></a>
 				<?php }?>
+				
 				<a href="./GerarRelatorioPdf.php?<?php echo(base64_encode('codigo').'='.base64_encode($_SESSION['buscaRapida']['sol_codigo']));?>" target="blank"><img src="./css/images/pdf.png" title="Gerar PDF"></a>
 			</div>
 			</fieldset>
@@ -262,6 +271,9 @@ $_SESSION['buscaRapida'] = $busca->buscaRapidaChamado();
   
 </form>
 <?php 
+#Fim do IF de validar se o formulario pode ou nao ser carregado
+#VALIDAFORM
+}
 
 unset($_SESSION['buscaRapida']);
 	
