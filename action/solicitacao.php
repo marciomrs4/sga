@@ -77,7 +77,7 @@ if($_POST)
 					
 					//$cadastro->listarDados();
 					
-					$cadastro->cadastrarSolicitacao(null,$_FILES['arquivo']);
+					$cadastro->cadastrarSolicitacaoTecnico(null,$_FILES['arquivo']);
 					
 					$cadastro->finalizarApp('cadastrar/SolicitacaoTecnico');
 

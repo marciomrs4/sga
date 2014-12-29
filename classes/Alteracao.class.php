@@ -409,6 +409,10 @@ class Alteracao extends Dados
 						#Insere na tabela de atendente_solicitacao quem esta atedendendo
 						$tbatendentesol->insert($this->dados);
 
+						#Obtem o problema cadastrado do usuario para atender. 
+						$this->dados['pro_codigo_tecnico'] = $tbsolicitacao->getProblema($this->dados['sol_codigo']);
+						
+						
 						#Altera o status da solicitacao para "Em atendimento"
 						$this->dados['sta_codigo'] = 2;
 						$tbsolicitacao->alterarStatus($this->dados);
@@ -452,23 +456,6 @@ class Alteracao extends Dados
 
 	}
 
-	public function alterarAssentamento()
-	{
-		try
-		{
-			/* ass_descricao, ass_data_cadastro, sol_codigo, usu_codigo*/
-
-			ValidarCampos::campoVazio($this->dados['ass_descricao'],'Descrição');
-
-			$tbassentamento = new TbAssentamento();
-			$tbassentamento->alterarDescricao($dados);
-
-
-		} catch (Exception $e)
-		{
-			throw new Exception($e->getMessage(), $e->getCode());
-		}
-	}
 
 	public function alterarChecklist()
 	{

@@ -99,12 +99,6 @@ class TbAssentamento extends Banco
 		}
 		
 	}
-
-
-	public function alterarDescricao($dados)
-	{
-		
-	}
 	
 }
 ?>

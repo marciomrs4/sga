@@ -503,6 +503,32 @@ class TbSolicitacao extends Banco
 		}
 	}
 
+	#Usado para alterar o DataFim da solicitação
+	public function alterarDataFim($dados)
+	{
+		$query = ("UPDATE $this->tabela
+				SET $this->sol_data_fim = ?
+				WHERE $this->sol_codigo = ?");
+	
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1, date('Y-m-d H:i:s'),PDO::PARAM_STR);
+			$stmt->bindParam(2, $dados[$this->sol_codigo],PDO::PARAM_STR);
+	
+			$stmt->execute();
+	
+			return($stmt);
+	
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(), $e->getCode());
+		}
+	
+	}
+	
+	
 	#Usado para alterar o status da solicitação e o problema tecnico
 	public function alterarStatus($dados)
 	{
@@ -584,6 +610,60 @@ class TbSolicitacao extends Banco
 			throw new PDOException($e->getMessage(), $e->getCode());
 		}
 	}
+	
+	#Exportar excel sem cortes na tela do Solicitante
+	public function exportSolicitacoesSolicitante($dados)
+	{
+	
+		$query = ("SELECT SOL.sol_codigo, PRO.pro_descricao, STA.sta_descricao,
+				     USU.usu_nome AS Usuario_Solicitante,
+				      (SELECT date_format(tea_data_acao,'%d-%m-%Y %H:%i:%s')
+			        	FROM tb_calculo_atendimento
+			        	WHERE sol_codigo = SOL.sol_codigo AND sta_codigo = 1) AS Abertura,
+                    (SELECT dep_descricao FROM tb_departamento WHERE dep_codigo = dep_codigo_solicitado) AS DEPTO_Solicitado,
+				    substr(sol_descricao_solicitacao,1,60),
+				    (SELECT usu_email FROM tb_usuario WHERE usu_codigo = ATS.usu_codigo_atendente) AS Atendente
+				    FROM tb_solicitacao AS SOL
+				    #Traz o nome do usuario solicitante
+				    INNER JOIN tb_usuario as USU
+           			ON usu_codigo_solicitante = USU.usu_codigo
+				    #Tabela de Problema, traz a descrição do problema
+				    INNER JOIN tb_problema AS PRO
+				    ON PRO.pro_codigo = SOL.pro_codigo
+				    INNER JOIN tb_status STA
+				    ON STA.sta_codigo = SOL.sta_codigo
+				    #Tabela de Atendente Solicitacao, traz quem esta atendendo a solicitacao
+				    LEFT JOIN tb_atendente_solicitacao AS ATS
+				    ON SOL.sol_codigo = ATS.sol_codigo
+				    WHERE dep_codigo_solicitado LIKE ?
+	                AND SOL.sta_codigo LIKE ? AND SOL.pro_codigo LIKE ?
+                    AND usu_nome LIKE ? AND sol_descricao_solicitacao LIKE ?
+                    AND USU.dep_codigo = ?
+				    ORDER BY SOL.sol_codigo DESC, SOL.sta_codigo DESC
+				    LIMIT 500
+	
+				");
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+	
+			$array = array("%{$dados[$this->dep_codigo_solicitado]}%",
+			"%{$dados[$this->sta_codigo]}%",
+			"%{$dados[$this->pro_codigo]}%",
+			"%{$dados['usu_nome']}%",
+			"%{$dados[$this->sol_descricao_solicitacao]}%",
+			$dados['dep_codigo']);
+	
+			$stmt->execute($array);
+				
+			return($stmt);
+	
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(), $e->getCode());
+		}
+	}
+	
 
 	#Pega a Descrição do problema, prioridade e tempo de atendimento
 	#Pra cada solicitacao
@@ -797,9 +877,8 @@ class TbSolicitacao extends Banco
 	public function chamadoPorPeriodoTempo($dados)
 	{
 		$query = ("SELECT SOL.sol_codigo, 
-					    min(CAL.tea_data_acao) AS DataInicio,
-             max(CAL.tea_data_acao) AS DataFim,
-             TIMEDIFF(max(CAL.tea_data_acao),min(CAL.tea_data_acao)) AS Tempo,
+			SOL.sol_data_inicio AS DataInicio, SOL.sol_data_fim AS DataFim,
+			TIMEDIFF(SOL.sol_data_fim,SOL.sol_data_inicio) AS Tempo,
 						(SELECT dep_descricao FROM tb_departamento WHERE dep_codigo =  
 							(SELECT dep_codigo FROM tb_usuario where usu_codigo_solicitante = usu_codigo)) AS Departamento,
               			concat(USU.usu_nome,' ',USU.usu_sobrenome) AS usu_nome, 
@@ -820,8 +899,8 @@ class TbSolicitacao extends Banco
 					INNER JOIN tb_usuario AS USU
 					ON SOL.usu_codigo_solicitante =  USU.usu_codigo
 					INNER JOIN tb_calculo_atendimento AS CAL
-					ON SOL.sol_codigo = CAL.sol_codigo 
-					WHERE CAL.tea_data_acao BETWEEN ? AND ?
+					ON SOL.sol_codigo = CAL.sol_codigo
+					WHERE SOL.sol_data_fim >= ? AND SOL.sol_data_fim <= ?
 					AND SOL.sta_codigo LIKE ?
 					AND dep_codigo_solicitado = ?
 					GROUP BY SOL.sol_codigo
@@ -844,6 +923,63 @@ class TbSolicitacao extends Banco
 
 			return($stmt);
 
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(), $e->getCode());
+		}
+	}
+	
+	#Relatorio: chamado por tempo de solução de problema
+	public function chamadoPorTempoDeSolucao($dados)
+	{
+		$query = ("SELECT SOL.sol_codigo, SOL.sol_data_inicio AS DataInicio, SOL.sol_data_fim AS DataFim,
+	   				TIMEDIFF(SOL.sol_data_fim,SOL.sol_data_inicio) AS Tempo,
+					(SELECT dep_descricao FROM tb_departamento WHERE dep_codigo =
+						(SELECT dep_codigo FROM tb_usuario where usu_codigo_solicitante = usu_codigo)) AS Departamento,
+							concat(USU.usu_nome,' ',USU.usu_sobrenome) AS usu_nome,
+			                        SOL.sol_codigo,
+								(SELECT pro_descricao FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) as Problema,
+								(SELECT pro_tempo_solucao FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) as 'Tempo Solucao Problema',				
+								    (SELECT sta_descricao FROM tb_status WHERE SOL.sta_codigo = sta_codigo) AS sta_status,
+										(SELECT pri_descricao FROM tb_prioridade
+											WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) ) as Prioridade,
+								(SELECT tat_descricao FROM tb_tempo_atendimento WHERE tat_codigo = (select tat_codigo from tb_prioridade
+										WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) ) ) as 'SLA',
+									(SELECT concat(usu_nome,' ',usu_sobrenome)
+										FROM tb_usuario WHERE usu_codigo =
+											(SELECT usu_codigo_atendente
+												FROM tb_atendente_solicitacao WHERE SOL.sol_codigo = sol_codigo)) as Atendente,
+										TIMEDIFF(TIMEDIFF(SOL.sol_data_fim,SOL.sol_data_inicio),
+								(SELECT pro_tempo_solucao FROM tb_problema as PRO 
+									WHERE SOL.pro_codigo = PRO.pro_codigo)) AS 'SLA SOLUCAO'
+				
+					FROM tb_solicitacao AS SOL
+					INNER JOIN tb_usuario AS USU
+					ON SOL.usu_codigo_solicitante =  USU.usu_codigo
+					INNER JOIN tb_calculo_atendimento AS CAL
+					ON SOL.sol_codigo = CAL.sol_codigo
+					WHERE SOL.sol_data_fim >= ? AND SOL.sol_data_fim <= ?
+					AND SOL.sta_codigo LIKE ?
+					AND dep_codigo_solicitado = ?
+					GROUP BY SOL.sol_codigo
+					ORDER BY 1 DESC;");
+		try
+		{
+				
+			$data1 = $dados['data1'].' 00:00:00';
+			$data2 = $dados['data2'].' 23:59:59';
+				
+			$stmt = $this->conexao->prepare($query);
+				
+			$stmt->bindParam(1,$data1,PDO::PARAM_STR);
+			$stmt->bindParam(2,$data2,PDO::PARAM_STR);
+			$stmt->bindParam(3,$dados['sta_codigo'],PDO::PARAM_STR);
+			$stmt->bindParam(4,$_SESSION['dep_codigo'],PDO::PARAM_INT);
+	
+			$stmt->execute();
+	
+			return($stmt);
+	
 		} catch (PDOException $e)
 		{
 			throw new PDOException($e->getMessage(), $e->getCode());

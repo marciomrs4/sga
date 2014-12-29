@@ -45,24 +45,6 @@ if($_POST)
 				}
 				break;
 
-			case 'alterar/Assentamento' :
-
-				$alteracao = new Alteracao();
-
-				try
-				{
-
-					$alteracao->setDados($_POST);
-
-					$alteracao->alterarAssentamento();
-						
-					$alteracao->finalizarApp();
-
-				}catch (Exception $e)
-				{
-					ClasseException::throwException($e);
-				}
-				break;
 
 			default:
 				Sessao::destroiSessao();

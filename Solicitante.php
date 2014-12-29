@@ -70,7 +70,7 @@ $dados = $busca->listarChamadoSolicitante();
 
 $datagrid = new DataGrid($cabecalho,$dados);
 
-$datagrid->exportarExcel('ListaChamado.xls','listarChamadoSolicitante');
+$datagrid->exportarExcel('ListaChamado.xls','exportarlistaChamadoSolicitante');
 
 ?>
 

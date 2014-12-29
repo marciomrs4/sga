@@ -119,6 +119,7 @@ class Busca extends Dados
 		}
 	}
 
+	#lista chamados na tela do Solicitante
 	public function listarChamadoSolicitante()
 	{
 		$tbsolicitacao = new TbSolicitacao();
@@ -135,6 +136,24 @@ class Busca extends Dados
 		return($dados);
 	}
 
+	#Exporta lista de chamado do solicitante sem quebra de linha
+	public function exportarlistaChamadoSolicitante()
+	{
+		$tbsolicitacao = new TbSolicitacao();
+	
+		$this->dados['dep_codigo_solicitado'] = ($this->dados['dep_codigo_busca'] == '') ? '%' : $this->dados['dep_codigo_busca'];
+		$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == '') ? '%' : $this->dados['sta_codigo'];
+		$this->dados['pro_codigo'] = ($this->dados['pro_codigo_busca'] == '') ? '%' : $this->dados['pro_codigo_busca'];
+		$this->dados['usu_nome'] = ($this->dados['usu_nome'] == '') ? '%' : $this->dados['usu_nome'];
+		$this->dados['sol_descricao_solicitacao'] = ($this->dados['sol_descricao_solicitacao'] == '') ? '%' : $this->dados['sol_descricao_solicitacao'];
+		$this->dados['dep_codigo'] = $_SESSION['dep_codigo'];
+			
+		$dados = $tbsolicitacao->exportSolicitacoesSolicitante($this->dados);
+	
+		return($dados);
+	}
+	
+	
 	public function listarProblema()
 	{
 		$this->dados['dep_codigo'] = ($this->dados['dep_codigo'] == '') ? '%' : $this->dados['dep_codigo'];
@@ -338,7 +357,10 @@ class Busca extends Dados
 				throw new Exception('',300);
 
 			}else{
-					
+
+				#Remove os espaços
+				$this->dados['sol_codigo'] = trim($this->dados['sol_codigo']);
+				
 				ValidarNumeros::validaNumero($this->dados['sol_codigo'],'Número do Chamado');
 					
 					
@@ -555,6 +577,25 @@ class Busca extends Dados
 
 		return($dados);
 		
+	}
+	
+	#Listar chamado por tempo de solução de problema
+	public function listarChamadoPorTempoDeSolucao()
+	{
+	
+		$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == '') ? '%' : $this->dados['sta_codigo'];
+	
+		$this->dados['data1'] = ($this->dados['data1'] == '') ? date('d-m-Y') : $this->dados['data1'];
+		$this->dados['data2'] = ($this->dados['data2'] == '') ? date('d-m-Y') : $this->dados['data2'];
+	
+		$this->dados['data1'] = ValidarDatas::dataBanco($this->dados['data1']);
+		$this->dados['data2'] = ValidarDatas::dataBanco($this->dados['data2']);
+	
+		$tbSolicitacao = new TbSolicitacao();
+		$dados = $tbSolicitacao->chamadoPorTempoDeSolucao($this->dados);
+	
+		return($dados);
+	
 	}
 	
 	#Relatorio

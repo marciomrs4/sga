@@ -262,7 +262,7 @@ class Cadastro extends Dados
 		{
 
 			#Metodos de validação
-			ValidarCampos::campoVazio($this->dados['dep_codigo_tecnico'],'Departamento');
+			ValidarCampos::campoVazio($this->dados['dep_codigo'],'Departamento');
 			ValidarCampos::campoVazio($this->dados['pro_codigo'],$_SESSION['config']['problema']);
 			ValidarCampos::campoVazio($this->dados['sol_descricao_solicitacao'],'Descrição do '.$_SESSION['config']['problema']);
 			ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solicitacao'],5,'Descrição do'.$_SESSION['config']['problema']);
@@ -270,7 +270,7 @@ class Cadastro extends Dados
 			#Capturando o codigo do usuário solicitante
 			$this->dados['usu_codigo_solicitante'] = ($usu_codigo_solicitante == null) ? $this->dados['usu_codigo_solicitante'] : $usu_codigo_solicitante;
 			#Capturando o código do DEPTO solicitado
-			$this->dados['dep_codigo_solicitado'] = $this->dados['dep_codigo_tecnico'];
+			$this->dados['dep_codigo_solicitado'] = $this->dados['dep_codigo'];
 			#Capta o status do chamado, no caso em atendimento
 			$this->dados['sta_codigo'] = 1;
 
@@ -335,6 +335,87 @@ class Cadastro extends Dados
 		}
 	}
 
+	#cadastra as solicitacaoes tecnicas
+	public function cadastrarSolicitacaoTecnico($usu_codigo_solicitante = null,$file)
+	{
+		try
+		{
+	
+		#Metodos de validação
+		ValidarCampos::campoVazio($this->dados['dep_codigo_tecnico'],'Departamento');
+		ValidarCampos::campoVazio($this->dados['pro_codigo'],$_SESSION['config']['problema']);
+		ValidarCampos::campoVazio($this->dados['sol_descricao_solicitacao'],'Descrição do '.$_SESSION['config']['problema']);
+		ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solicitacao'],5,'Descrição do'.$_SESSION['config']['problema']);
+		$this->dados['sol_descricao_solicitacao'] = strip_tags($this->dados['sol_descricao_solicitacao']);
+		#Capturando o codigo do usuário solicitante
+		$this->dados['usu_codigo_solicitante'] = ($usu_codigo_solicitante == null) ? $this->dados['usu_codigo_solicitante'] : $usu_codigo_solicitante;
+		#Capturando o código do DEPTO solicitado
+		$this->dados['dep_codigo_solicitado'] = $this->dados['dep_codigo_tecnico'];
+		#Capta o status do chamado, no caso em atendimento
+		$this->dados['sta_codigo'] = 1;
+	
+			try
+			{
+									
+				#Inicia a transação
+				$this->conexao->beginTransaction();
+									
+				#Grava na tabela de solicitacao
+				$tbsolicitacao = new TbSolicitacao();
+				$this->dados['sol_codigo'] = $tbsolicitacao->insert($this->dados);
+	
+				if($file['tmp_name'] != '')
+				{
+					#Instancia da classe Arquivo que manipula os aquivos
+					$arquivo = new Arquivo();
+					#Metodo setDados que serve para setar o $file que contém todo o arquivo
+					$arquivo->setDados($file);
+												/*
+					* Capturando os dados do arquivo
+												*/
+					$this->dados['ane_anexo'] = $arquivo->arquivoBinario();
+					$this->dados['ane_nome'] = $arquivo->arquivoNome();
+					$this->dados['ane_tamanho'] = $arquivo->arquivoTamanho();
+					$this->dados['ane_tipo'] = $arquivo->arquivoTipo();
+		
+					#Gravando o arquivo no banco dentro da tabela de anexo
+					$tbanexo = new TbAnexo();
+					$tbanexo->insert($this->dados);
+				}
+	
+					#Grava a data de abertura da solicitação
+					$tbcalculoatendimento = new TbCalculoAtendimento();
+					$tbcalculoatendimento->insertCalculoAtendimento($this->dados);
+	
+	
+					#Se tudo deu certo, faz commit
+					$this->conexao->commit();
+	
+								
+					if($this->dados['Departamento'] || $this->dados['Solicitante'])
+					{
+						$email = new Email();
+						$email->aberturaChamado($this->dados);
+					}
+	
+			}catch (PDOException $e)
+			{
+				#Se algo deu errado faz o rollBack
+				$this->conexao->rollBack();
+				#Lança uma exeção do tipo PDOException
+				throw new PDOException($e->getMessage(), $e->getCode());
+			}
+	
+	
+	
+			}catch (Exception $e)
+			{
+				#Lança uma exceção do tipo Exception
+				throw new Exception($e->getMessage(), $e->getCode());
+		}
+	}
+	
+	
 	public function cadastrarAssentamento()
 	{
 		try
@@ -459,7 +540,8 @@ class Cadastro extends Dados
 
 				#Insere um assentamento
 				$tbassentamento->insert($this->dados);
-				
+				#Altera a Data do Chamado para atual
+				$tbsolicitacao->alterarDataFim($this->dados);
 
 				if($this->dados['sta_codigo'] == 3)
 				{
