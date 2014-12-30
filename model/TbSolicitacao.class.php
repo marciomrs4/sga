@@ -621,7 +621,7 @@ class TbSolicitacao extends Banco
 			        	FROM tb_calculo_atendimento
 			        	WHERE sol_codigo = SOL.sol_codigo AND sta_codigo = 1) AS Abertura,
                     (SELECT dep_descricao FROM tb_departamento WHERE dep_codigo = dep_codigo_solicitado) AS DEPTO_Solicitado,
-				    substr(sol_descricao_solicitacao,1,60),
+				    sol_descricao_solicitacao,
 				    (SELECT usu_email FROM tb_usuario WHERE usu_codigo = ATS.usu_codigo_atendente) AS Atendente
 				    FROM tb_solicitacao AS SOL
 				    #Traz o nome do usuario solicitante
