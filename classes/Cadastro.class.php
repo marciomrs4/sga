@@ -531,11 +531,12 @@ class Cadastro extends Dados
 				$this->conexao->beginTransaction();
 				
 				
-				#Verifica se existe um atendente no chamado
+/* 				#Verifica se existe um atendente no chamado
+ * 				#Removido devido a necessidade da Lilian fechar o chamado mesmo sem atendente.
 				if($tbAtendenteSolicitacao->confirmarAtendente($this->dados['sol_codigo']) == '')
 				{
 					throw new Exception('Não existe um atendente para esse chamado!');
-				}
+				} */
 
 
 				#Insere um assentamento
