@@ -445,9 +445,9 @@ class TbProjeto extends Banco
 		
 		$query = ("SELECT PRO.pro_codigo, substr(PRO.pro_titulo,1,30) AS Titulo , 
 					(SELECT substr(at_descricao,1,35) 
-					FROM tb_atividade 
-					WHERE at_codigo = max(ATV.at_codigo)) AS 'Descricao Atividae', 
-						max(APO.ap_data_criacao) AS 'Data Apontamento', DATEDIFF(now(),PRO.pro_previsao_inicio) AS 'Dias'
+						FROM tb_atividade 
+							WHERE at_codigo = max(ATV.at_codigo)) AS 'Descricao Atividae', 
+								max(APO.ap_data_criacao) AS 'Data Apontamento', DATEDIFF(now(),PRO.pro_previsao_inicio) AS 'Dias'
 					FROM tb_projeto AS PRO
 					LEFT JOIN tb_atividade AS ATV
 					ON PRO.pro_codigo = ATV.pro_codigo
@@ -456,8 +456,7 @@ class TbProjeto extends Banco
 					WHERE PRO.dep_codigo = ?
 					AND PRO.stp_codigo LIKE ?
 					GROUP BY PRO.pro_codigo
-					ORDER BY 4 DESC;
-					");
+					ORDER BY 4 DESC;");
 
 		try
 		{

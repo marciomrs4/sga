@@ -13,7 +13,8 @@ $busca = new Busca();
 $busca->validarPost($_POST);
 
 $dataGrid = new DataGrid(array('Data Inicio','Data Fim','Tempo','Departamento',$_SESSION['config']['usuario'] .' Solicitante',
-								'Número do chamado','Problema','SLA Solução','Status','Prioridade','SLA Atendimento','Atendente','Dentro prazo'));
+								'Número','Problema Usuario','Problema Tecnico','SLA Usuario','SLA Tecnico',
+								'Status','Prioridade','SLA Atendimento','Atendente','DIFF - Usuario','DIFF - Tecnico'));
 
 
 ?>

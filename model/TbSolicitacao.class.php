@@ -900,7 +900,7 @@ class TbSolicitacao extends Banco
 					ON SOL.usu_codigo_solicitante =  USU.usu_codigo
 					INNER JOIN tb_calculo_atendimento AS CAL
 					ON SOL.sol_codigo = CAL.sol_codigo
-					WHERE SOL.sol_data_fim >= ? AND SOL.sol_data_fim <= ?
+					WHERE SOL.sol_data_inicio >= ? AND SOL.sol_data_inicio <= ?
 					AND SOL.sta_codigo LIKE ?
 					AND dep_codigo_solicitado = ?
 					GROUP BY SOL.sol_codigo
@@ -933,14 +933,16 @@ class TbSolicitacao extends Banco
 	public function chamadoPorTempoDeSolucao($dados)
 	{
 		$query = ("SELECT SOL.sol_codigo, SOL.sol_data_inicio AS DataInicio, SOL.sol_data_fim AS DataFim,
-	   				TIMEDIFF(SOL.sol_data_fim,SOL.sol_data_inicio) AS Tempo,
+	   				TIMEDIFF(SOL.sol_data_fim,SOL.sol_data_inicio) AS TempoTotal,
 					(SELECT dep_descricao FROM tb_departamento WHERE dep_codigo =
 						(SELECT dep_codigo FROM tb_usuario where usu_codigo_solicitante = usu_codigo)) AS Departamento,
-							concat(USU.usu_nome,' ',USU.usu_sobrenome) AS usu_nome,
-			                        SOL.sol_codigo,
-								(SELECT pro_descricao FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) as Problema,
-								(SELECT pro_tempo_solucao FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) as 'Tempo Solucao Problema',				
-								    (SELECT sta_descricao FROM tb_status WHERE SOL.sta_codigo = sta_codigo) AS sta_status,
+							concat(USU.usu_nome,' ',USU.usu_sobrenome) AS Usuario,
+			                        SOL.sol_codigo AS Chamado,
+								(SELECT pro_descricao FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) as 'Problema Usuario',
+								(SELECT pro_descricao FROM tb_problema as PRO WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo) as ProblemaTecnico,
+								(SELECT pro_tempo_solucao FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) as 'Tempo Usuario',	
+								(SELECT pro_tempo_solucao FROM tb_problema as PRO WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo) as 'Tempo Tecnico',
+								    (SELECT sta_descricao FROM tb_status WHERE SOL.sta_codigo = sta_codigo) AS 'Status',
 										(SELECT pri_descricao FROM tb_prioridade
 											WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) ) as Prioridade,
 								(SELECT tat_descricao FROM tb_tempo_atendimento WHERE tat_codigo = (select tat_codigo from tb_prioridade
@@ -949,16 +951,21 @@ class TbSolicitacao extends Banco
 										FROM tb_usuario WHERE usu_codigo =
 											(SELECT usu_codigo_atendente
 												FROM tb_atendente_solicitacao WHERE SOL.sol_codigo = sol_codigo)) as Atendente,
-										TIMEDIFF(TIMEDIFF(SOL.sol_data_fim,SOL.sol_data_inicio),
+						#Calcula a diferenca entre a data de inicio e fim e o tempo do problema do usuario
+						TIMEDIFF(TIMEDIFF(SOL.sol_data_fim,SOL.sol_data_inicio),
 								(SELECT pro_tempo_solucao FROM tb_problema as PRO 
-									WHERE SOL.pro_codigo = PRO.pro_codigo)) AS 'SLA SOLUCAO'
-				
+									WHERE SOL.pro_codigo = PRO.pro_codigo)) AS 'DIFF TIME - USUARIO',
+						#Calcula a diferenca entre a data de inicio e fim e o tempo do problema indicado pelo tecnico
+						TIMEDIFF(TIMEDIFF(SOL.sol_data_fim,SOL.sol_data_inicio),
+								(SELECT pro_tempo_solucao FROM tb_problema as PRO 
+									WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo)) AS 'DIFF TIME - TECNICO'
+
 					FROM tb_solicitacao AS SOL
 					INNER JOIN tb_usuario AS USU
 					ON SOL.usu_codigo_solicitante =  USU.usu_codigo
 					INNER JOIN tb_calculo_atendimento AS CAL
 					ON SOL.sol_codigo = CAL.sol_codigo
-					WHERE SOL.sol_data_fim >= ? AND SOL.sol_data_fim <= ?
+					WHERE SOL.sol_data_inicio >= ? AND SOL.sol_data_inicio <= ?
 					AND SOL.sta_codigo LIKE ?
 					AND dep_codigo_solicitado = ?
 					GROUP BY SOL.sol_codigo
@@ -966,7 +973,7 @@ class TbSolicitacao extends Banco
 		try
 		{
 				
-			$data1 = $dados['data1'].' 00:00:00';
+			$data1 = $dados['data1'].' 00:00:01';
 			$data2 = $dados['data2'].' 23:59:59';
 				
 			$stmt = $this->conexao->prepare($query);
