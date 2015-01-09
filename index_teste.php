@@ -2,9 +2,11 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
 
 
-$data1 = '2015-01-02 12:00:00';
+#677
 
-$data2 = '2015-01-05 12:00:00';
+$data1 = '2014-12-08 11:55:52';
+
+$data2 = '2015-01-05 17:05:19';
 
 $hora_ini = '8';
 $hora_fim = '18';

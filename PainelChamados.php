@@ -65,11 +65,11 @@ timer();
 		$dados['sta_codigo'] = 2;
 		$TotalEmAtendimento = $tbSolicitacao->totalChamadoStatusAreaPainel($dados);
 		
-		$dados['data1'] = date('Y-m-d');
-		$dados['data2'] = date('Y-m-d');
+		$dados['data1'] = date('Y-m-d').' 00:00:01';
+		$dados['data2'] = date('Y-m-d').' 23:59:59';		
 		$dados['sta_codigo'] = 3;
 		$_SESSION['dep_codigo'] = $dados['dep_codigo']; 
-		$TotalConcluidos = $tbSolicitacao->chamadoPorPeriodoTempo($dados)->rowCount();
+		$TotalConcluidos = $tbSolicitacao->totalChamadoFechadosDoDia($dados);
 		
 		?>	
 

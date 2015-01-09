@@ -1074,5 +1074,42 @@ class TbSolicitacao extends Banco
 		}
 	}
 	
+	
+	#Utilizado no Painel de Chamado
+	/**
+	 *
+	 * Enter description here ...
+	 * @param  $dados array
+	 * @throws PDOException
+	 * @example Mostra a quantidade de chamados por status do dia 
+	 */
+	public function totalChamadoFechadosDoDia($dados)
+	{
+		$query = ("SELECT count(sol_codigo) AS 'Total' FROM tb_solicitacao
+					WHERE sta_codigo = ?
+					AND dep_codigo_solicitado = ?
+					AND sol_data_fim >= ? AND sol_data_fim <= ?;
+            	  ");
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+				
+			$stmt->execute(array("{$dados['sta_codigo']}",
+								 "{$dados['dep_codigo']}",
+								 "{$dados['data1']}",
+								 "{$dados['data2']}"));
+	
+
+			$dados = $stmt->fetch();
+			
+			return($dados[0]);
+	
+		} catch (PDOException $e)
+		{
+		throw new PDOException($e->getMessage(), $e->getCode());
+			}
+			}
+	
+	
 }
 ?>
