@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="ISO-8859">
+<meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>..:: Painel de Chamados ::..</title>
 <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">  
@@ -15,7 +15,7 @@
 	<div class="panel panel-primary">	
 	<div class="panel-heading">	
 	<div class="panel-body">	
-		<h2>PAINEL DE CHAMADOS | HORA</h2>
+		<h2>PAINEL DE CHAMADOS | <?php echo date('d-m-Y H:i:s'); ?></h2>
 		<h3>TOTAL DE CHAMADOS | EM ATENDIMENTO | CONCLUIDOS HOJE</h3>
     </div>
     </div>
