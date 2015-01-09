@@ -18,7 +18,7 @@
 					<div class="form_description">
 					<p id="logo"></p>
 			<h2>SGA - CEADIS</h2>
-			<p>Sistema de Gestão de Atividades</p>
+			<p></p>
 		</div>						
 			<ul >
 				<li><?php 
