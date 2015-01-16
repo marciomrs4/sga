@@ -7,7 +7,6 @@ include($_SERVER['DOCUMENT_ROOT']."/{$Projeto}/componentes/script.php");
 
 //Texto::mostrarMensagem(Texto::erro($_SESSION['sempermissao']));
 
-Texto::criarTitulo('Relatório: Grafico');
 
 ?>
 <div>
