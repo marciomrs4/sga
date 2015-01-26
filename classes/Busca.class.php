@@ -582,9 +582,33 @@ class Busca extends Dados
 	#Listar chamado por tempo de solução de problema
 	public function listarChamadoPorTempoDeSolucao()
 	{
+		
+		try {
+			
+			ValidarCampos::campoVazio($this->dados['data1'],'Data Inicial'); 
+			
+			ValidarCampos::campoVazio($this->dados['data2'],'Data final');
+			
+ 			ValidarCampos::campoVazio($this->dados['hora_ini'],'Hora Inicial');
+			
+			ValidarCampos::campoVazio($this->dados['hora_fim'],'Hora final');
+			
+			ValidarCampos::campoVazio($this->dados['meio_dia'],'Meio dia');
+			
+			ValidarCampos::campoVazio($this->dados['sabado'],'Sabado');
+			
+		} catch (Exception $e) {
+			
+			throw new Exception('Por favor informe todos os campos: '.$e->getMessage());
+		}
+		
 	
 		$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == '') ? '%' : $this->dados['sta_codigo'];
 	
+		$this->dados['pri_codigo'] = ($this->dados['pri_codigo'] == '') ? '%' : $this->dados['pri_codigo'];
+		
+		$this->dados['usu_codigo_atendente'] = ($this->dados['usu_codigo_atendente'] == '') ? '%' : $this->dados['usu_codigo_atendente'];		
+		
 		$this->dados['data1'] = ($this->dados['data1'] == '') ? date('d-m-Y') : $this->dados['data1'];
 		$this->dados['data2'] = ($this->dados['data2'] == '') ? date('d-m-Y') : $this->dados['data2'];
 	

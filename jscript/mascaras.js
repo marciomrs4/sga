@@ -16,6 +16,6 @@ $b('.hora').mask('99:99:99'); //hora
 $b('.rg').mask('99.999.999-9'); //hora
 $b('.ramal').mask('99'); //hora
 $b('.drt').mask('99999999'); //hora
-
+$b('.doisdigitos').mask('99'); //hora
 
 });

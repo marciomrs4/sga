@@ -135,7 +135,6 @@ echo("<fieldset id='completo'>
 		
 		echo("</fieldset>");		
 		
-		echo strlen('CX COM 06 CARTUCHOS COM 10 UNID');
 ?>
 	
 	

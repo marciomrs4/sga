@@ -13,6 +13,7 @@ equalTo( other ): igual à um determinado valor
 
 var $valida = jQuery.noConflict();
 
+
 /*
 var usuario  = 'Utilizador';
 var problema = 'Serviço';
@@ -27,6 +28,7 @@ var ramal = 'Ramal';
 var senha = 'Senha';
 
 function submitForm(form){			
+	
 	
 	$valida("#botaoSave").hide();
 	$valida(".botaoSave").css("visibility","visible");
@@ -146,6 +148,30 @@ $valida(document).ready( function()
 			}
 		});
 		/*Fim de validação do formulário de assentamento*/	
+		
+		/*Inicio de validação do formulário do relatorio de solucao*/
+		$valida("#relatoriosolucao").validate({
+			/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+			
+			
+			rules:{
+				
+				hora_ini:{
+					required: true
+				}
+			},
+			/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+			messages:{
+				hora_ini:{
+					required: "O campo inicio é obrigatório"
+				}
+			},
+			submitHandler: function(form){
+				submitForm(form);	
+			}
+		});
+		/*Fim de validação do formulário do relatorio de solucao*/	
+		
 		
 		/*Inicio de validação do formulário de Atividade*/
 		$valida("#atividade").validate({

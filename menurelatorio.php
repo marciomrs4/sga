@@ -12,7 +12,7 @@
 			<li><a href="RelatorioPorPrioridade.php">Chamados por Prioridade</a></li>			
   -->					
 			<li><a href="RelatorioPorPeriodoTempo.php">Chamados por Tempo</a></li>			
-			<li><a href="RelatorioTempoDeSolucao.php">Tempo de Solução</a></li>
+			<li><a href="RelatorioSolucao.php" target="_blank">Tempo de Solução</a></li>
 	<hr>		
 		<span><b>Painéis</b></span>												
 			<li><a href="PainelChamados.php">Painel de Chamados</a></li>

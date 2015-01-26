@@ -1,6 +1,6 @@
 <?php
 
-class Grid
+class Grid implements IGrid
 {
 
 	/**
@@ -10,7 +10,6 @@ class Grid
 	 * csslinha1 = 'cssnome'
 	 */
 	public $css = 'table table-striped table-bordered table-condensed table-hover';
-				 //table table-striped table-bordered table-condensed table-hover
 
 
 	/**
@@ -58,6 +57,8 @@ class Grid
 
 	private $option;
 	
+	public $excel = false;
+	public $botaoexcel = '<a href="./GerarExcel.php"><img src="./css/images/excel.png" title="Exportar Excel"></a>';
 	
 	/**
 	 *
@@ -96,7 +97,7 @@ class Grid
 	private function criarCabecalho()
 	{
 
-		echo("<table class='{$this->css}' id='{$this->id}'>
+		echo("<table border='2' class='{$this->css}' id='{$this->id}'>
 				<thead>
 					<tr class='active'>");				
 				foreach ($this->cabecalho as $cabecalho):
@@ -199,7 +200,7 @@ class Grid
 			</table>');
 	}
 	
-	public function addOption($option)
+	public function addOption(IOption $option)
 	{
 	   $this->option[] = $option;
 	   return $this;
@@ -218,5 +219,23 @@ class Grid
 		}
 
 	}
+	
+	#Para funcionar a exportação do Excel isso deve ser chamado dentro do
+	#Formulario de busca
+	public function exportarExcel($NomeExcel,$Metodo,$ColunaOculta = 0)
+	{
+		$this->excel = ($_SESSION['post']['NomeExcel'] == $NomeExcel) ? true : false;
+	
+		$this->colunaoculta = $ColunaOculta;
+		$Cabecalho = implode(',',$this->cabecalho);
+	
+		echo("
+				<input type='hidden' name='NomeExcel' value='{$NomeExcel}' />
+				<input type='hidden' name='Cabecalho' value='{$Cabecalho}' />
+				<input type='hidden' name='Metodo' value='{$Metodo}' />
+				<input type='hidden' name='ColunaOculta' value='{$ColunaOculta}' />
+			");
+	}
+	
 }
 ?>
