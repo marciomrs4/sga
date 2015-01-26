@@ -20,6 +20,14 @@
 
 @Version: 2.18.3
 
+7de540efdcc51a1d00ff314693c9d53cca4410d2 Finalização do Relatorio de tempo de solucao
+ab3cd5769fc8e4b476a0ce157f53a4d46ea08a35 Add graficos do sistema
+25ad891418e6d625e31c9e97d93661951752f192 Novo painel de chamado
+28efa6e2e461b71b0a333fba94e9834d00a590be Merge pull request #3 from WellingtonJunior23/master
+b685f13dae0b79b29281b73a7ef4cda063b4cf20 Atualizacao do Painel de chamados
+33fef38722f7787d316ec277540cb5c750138435 Criado novo painel de chamados
+467959799b62b41f9fae38c2dacc85cae3cfcf3e Criacao do Relatrio por tempo de solucao e Painel de projetos
+f3c3d3c369a0b757e453e3d78137c218abdd30f7 Correcao na tela de painel de projeto
 93450475229dd38a7385cd8cd560e2fd689fb719 Criado a exportacao sem quebra de linha do relatorio de chamados do solicitante
 ac0816d12a2ad24c1e86dfea9680901594e784f0 Criado Relatorio de tempo de solucao, melhoria na exportacao do relatorio de solicitante
 bd0be5297af131d46573d49d3751b553ae33ad7b Correcao da atividade: 688-753

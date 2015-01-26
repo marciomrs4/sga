@@ -172,7 +172,7 @@ $grid->addFunctionColumn(function($var) use ($diaUtil, $busca){
 	}else {
 		$totalChamado++;
 		$chamadoFora++;
-		return 'Chamado Fora <td><img src="css/images/status/face1.png"></td>';
+		return 'Chamado Fora <td><img src="css/images/status/face2.png"></td>';
 }
 	
 	

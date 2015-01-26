@@ -24,7 +24,10 @@ $grafico(document).ready(function(){
             text: ''
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.y}</b>'
+            pointFormat: '<span style="font-size: 18px">{series.name}:<span> <b>{point.y}</b>',
+            style: {
+				fontSize: '18px'
+                }
         },
         plotOptions: {
             pie: {
@@ -35,7 +38,8 @@ $grafico(document).ready(function(){
                     enabled: true,
                     format: '<b>{point.name}</b>: {point.percentage:.1f} %',
                     style: {
-                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
+                        "fontSize":"18px"
                     }
                 }
             }
