@@ -1,0 +1,57 @@
+03564a4c925babff2c3af45003a5c050af1071d7 Alterado a imagem para red e relatorio com letras maiores no grafico
+5982824068c18ac68aff3249b93e5ccae596313a Finalização do Relatorio de tempo de solucao
+ab3cd5769fc8e4b476a0ce157f53a4d46ea08a35 Add graficos do sistema
+25ad891418e6d625e31c9e97d93661951752f192 Novo painel de chamado
+28efa6e2e461b71b0a333fba94e9834d00a590be Merge pull request #3 from WellingtonJunior23/master
+b685f13dae0b79b29281b73a7ef4cda063b4cf20 Atualizacao do Painel de chamados
+33fef38722f7787d316ec277540cb5c750138435 Criado novo painel de chamados
+467959799b62b41f9fae38c2dacc85cae3cfcf3e Criacao do Relatrio por tempo de solucao e Painel de projetos
+f3c3d3c369a0b757e453e3d78137c218abdd30f7 Correcao na tela de painel de projeto
+93450475229dd38a7385cd8cd560e2fd689fb719 Criado a exportacao sem quebra de linha do relatorio de chamados do solicitante
+ac0816d12a2ad24c1e86dfea9680901594e784f0 Criado Relatorio de tempo de solucao, melhoria na exportacao do relatorio de solicitante
+bd0be5297af131d46573d49d3751b553ae33ad7b Correcao da atividade: 688-753
+475870de6eb510b3271b1ac2740989edbc812e59 #BUG Fix: Abertura de chamado Tecnico
+ef23bd6a4878d2c0eb376b81212c386c679229f4 Criado a funcionalidade com dois tipos de problemas, tempo de cada problema, possibilidade de ativar/inativar e mostrar ou não ao usuario
+f116e068553cc09e48a69ca89dd4fade0fdcc7a5 Alterado a funcionalidade de criacao da solicitacao com data de abertura e fechamento
+604b54a4839bb05d09470cfb5a69d16d405fe8cd Update version class DataBase
+e91a4ce47a8f3491eb1923afe0327806c7fa2213 Gitignore
+5849c320ec9123cad87d793c6d0e3bb697510541 Merge branch 'WellingtonJunior23-master'
+ad84a2099356d320cf44848e2d1f161e683718d1 Painel de chamados
+2884e358d7f35eaec7757e882fa09238764a1a6b Alterado a versão do Gitignore
+7b7cc20b2e060da9d336a8039bb24bdcd2354e06 Alteracoes no gitignore
+eab314b638d1f256276c89568e5449e44aeb2b73 Merge branch 'master' of https://github.com/marciomrs4/sga
+9a9d62ee5bb5cb64cffe4d6310b571e8e9b5743a Update Banco_postgree.class.php
+ae990713b9f3b666aaca815a4bbd2967c0685f33 Merge branch 'master' of https://github.com/marciomrs4/sga
+e26f56bf902163c02acd295f3a5ad7aca9078338 Criado o gitignore
+9e1b078374c61dc7bf36125586556af8a8cb15f7 Criado o gitignore
+de16a2c9217717b7944b8720f019a1c380f0cea4 Alterado de Descricao para Descrição do Projeto
+d0acd8a26acbd31e98ee4e16f2756892d476bbed Update ScriptAniversariantes.php
+2d7b7f495c638c0cf22a841373b7190558a30675 Update ScriptAniversariantes.php
+99af9826e3f11c7d8c8399f8599577d6657b965b Update ScriptAniversariantes.php
+05250ddb26f401ee5bbe444db004972b78f35973 Update Email.class.php
+2bc1a5d8498afaec97463040a9dd083db0694ff6 Update Banco.class.php
+f65a5af890d8b392a82518b987fe348fe77d11d9 Update indexMail.php
+334be821f420a5eda0ba2ec5961f57c7bf67e40c Criacao de Graficos fase 1 e Atividade expor sem cortes
+ffaf1f44b0eef23cca1f4e64660e2a24656a70f3 Lista de Atividade e Ramais Alterada
+e58d0f9cce49bc318352cf79f385f16961c8922e Alterado cabeçalho painel de projetos
+875aeb6755a3c620cb842907a761403a4bde918a Corrigido problema de responsividade no relatorio de projetos
+aa894b85e59ad8614d1cc249c41eefae452ca463 Alterado o estilo do painel de projetos ao exportar o PDF
+34a2dc75169ed9794d573cfae7ac58fd4fa5a30a Criacao da Classe Grid
+804660b9291b06f078250d71ecf947db62f1eff7 Alteracao no Relatorio de Chamados por tempo
+a631ef5d7d1483519ad3723abe2ef975d15fd333 Merge pull request #1 from WellingtonJunior23/master
+a2436bdcda8b83f18d74db670f7b4a9dc5a030f3 Alteração da fonte do painel de projetos
+439e9de73897c0e0f38556b4272d78b509d539d2 Finalização do painel de projetos
+17c268e27c4ff5efcfb9106e97ffff4f5d110f19 Removido o arquivo de teste
+5045e9d225f455e56224e19e54eb095b6e25a32a Alteracoes no controle de acesso e ativacao de usuarios
+854f3ceb78a204fba7e3b1a18093ba9389060ebb Arquivos que foram deletados
+fcd23d26c00884ad30ebef6349a7c85e7b81cbbc Correcao de BUG da lisagem com JS
+6f8a8528f5a66d1a9971308909e518ea316a8fd8 Corrigido o erro da Class BD
+e719c7cf32992413263f12456afad4ba667e3afc Merge branch 'master' of https://github.com/marciomrs4/sga
+f499e64c7ce8ce7bd97881af21e3f3eea13e80bd #Atualizaçao para correção de bugs
+035822aa175d1b235105e78071b9df37e036872f # Add Inicio Graficos
+7f0404aa350a86fa9fa2efb17635675e1f37f33e Melhoria no problema do duplo submit
+d67b544ef54a84256e8940da39b5a0368800d45e Informação desnecessaria
+05917056f93acbe8a9a4dedeb3093d2f08c93f95 25/04/2014 Controle Inicial
+148ed5909aa97a44d4e1b891ddb2c74ed2a41c85 Atualizacao da Lista de Solicitacao
+98a62322ea3f25816b33e516f3768096cd0b6c41 Alteracao de Permissao no Relatorio de Tempo
+0992e7b7026baffe2d2ffd20124ce155a445276f Inicio de Controle do SGA

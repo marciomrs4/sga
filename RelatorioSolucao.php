@@ -8,14 +8,20 @@ include($_SERVER['DOCUMENT_ROOT']."/{$Projeto}/componentes/bootstrap.php");
  
 echo '<div class="jumbotron">';
 
+
+
+
 $busca = new Busca();
+
 $busca->validarPost($_POST);
 
-$cabecalho = array('Número','Data Inicio','Data Fim','Tempo','Departamento',$_SESSION['config']['usuario'] .' Solicitante',
+
+$cabecalho = array('','Número','Data Inicio','Data Fim','Tempo','Departamento',$_SESSION['config']['usuario'] .' Solicitante',
 				   'Problema Tecnico','SLA Tecnico','Status','Prioridade','SLA Atendimento','Atendente',
 				   'DIFF - Tecnico','Tempo Util',' SLA ','Status');
 
 ?>
+
 <form action="" method="post" id="relatoriosolucao">
 <fieldset>
 	<legend>Pesquisar Chamado</legend>
@@ -68,7 +74,7 @@ $cabecalho = array('Número','Data Inicio','Data Fim','Tempo','Departamento',$_SE
 	<tr>
 		<td>
           <input type="submit" class="button-tela" id="botaoSave" value="Pesquisar" name="Pesquisar" />
-	      <span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>			
+	      <span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>
 		</td>
 	</tr>
 	
@@ -116,7 +122,12 @@ try
 		
 		
 	}, 13);
-	
+
+$option = new GridOption();
+$option->setIco('edit')->setName('Ver chamado')->setUrl('?sol_codigo');
+
+$grid->addOption($option);
+
 
 function getHourToSecunds($hora)
 {
@@ -177,6 +188,9 @@ $grid->addFunctionColumn(function($var) use ($diaUtil, $busca){
 	
 	
 }, 14);
+
+
+$grid->id = null;
 
 
 $grid->show(); 
