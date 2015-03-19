@@ -28,7 +28,7 @@ $tbsistemas = new TbSistemas();
 				<img src="./css/images/novo.png" title="Apontamento"></a>
 		</div>
   </fieldset>
-				<hr/>
+	<hr/>
   
   <table border="0" cellspacing="5">
     <tr>
@@ -38,6 +38,46 @@ $tbsistemas = new TbSistemas();
     </tr>
     
     <tr>
+        <th nowrap="nowrap">
+    	Número da melhoria:
+    	</th>
+    	<td>
+    	<?php echo($_SESSION['cadastrar/SolicitacaoMelhoria']['som_codigo']); ?>
+    	</td>
+    </tr>
+    
+    <tr>
+	  	<th nowrap="nowrap">
+	   		Aberto por:
+	  	</th>
+    	<td>
+	    		<?php  
+	    		$tbusuario = new TbUsuario(); 
+	    		$tbdepartamento = new TbDepartamento();
+	    		$Usuario = $tbusuario->getUsuario($_SESSION['cadastrar/SolicitacaoMelhoria']['usu_codigo_solicitante']); 
+	    		
+	    		echo $Usuario['usu_email'];
+	    		
+	    		?>
+	  	</td>
+	 </tr>
+	 
+	 <tr>
+	  	<th>
+	   	</th>
+	    	<td nowrap="nowrap">
+	    	<?php echo 'Ramal: '.$Usuario['usu_ramal'].' / '.$tbdepartamento->getDepDescricao($Usuario['dep_codigo']);?>
+	    	</td>
+	    </tr>
+	 
+	 
+	<tr>
+    	<td colspan="2">
+    	&emsp;
+    	</td>
+    </tr>
+	 
+	    
       <th width="119" align="left" nowrap="nowrap">Sistema:</th>
       	<input type="hidden" name="som_codigo" value="<?php echo($_SESSION['cadastrar/SolicitacaoMelhoria']['som_codigo']); ?>" />
       <td>

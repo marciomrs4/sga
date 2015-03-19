@@ -12,10 +12,10 @@ class createTables extends Banco
 		$stmt->execute();
 		
 		foreach($stmt->fetchAll() as $campo){
-			$array[] = 'private $'.$campo['Field'] .' = "'.$campo['Field'].'"	;';
+			$array[] = 'private $'.$campo['Field'] .' = \''.$campo['Field'].'\';';
 		}
 
-		echo 'private $tabela = "'. $this->tabela . '";<br>';
+		echo 'private $tabela = \''. $this->tabela . '\';<br>';
 		foreach ($array as $campo){
 			echo $campo.'<br>';
 		}
