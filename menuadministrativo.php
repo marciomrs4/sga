@@ -10,7 +10,9 @@
 			<li><a href="Tempo.php"><img src='./css/images/tempo.png'> Tempo</a></li>			
 			<li><a href="Prioridades.php"><img src='./css/images/prioridade.png'> Prioridade</a></li>
 			<li><a href="Problemas.php"><img src='./css/images/ocorrencia.png'> <?php echo($_SESSION['config']['problema']);?></a></li>			
-
+			
+			<li><a href="Sistema.php"><img src='./css/images/sistema.png'> Sistema</a></li>
+				
 			<li><a href="CadastrarCheckList.php"><img src='./css/images/ck.png'> CheckList</a></li>	
 			
 		<!-- <li><a href="chamadotransportelistar.php">Solicitação de transporte</a></li>

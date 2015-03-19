@@ -730,5 +730,105 @@ class Alteracao extends Dados
 		
 	}
 	
+	
+	public function alterarSolicitacaoMelhoria()
+	{
+	
+		$tbMelhoria = new TbSolicitacaoMelhoria();
+		
+		if($tbMelhoria->getUsuarioAtendente($this->dados['som_codigo'])){
+			throw new Exception('Impossivel alterar! Já existe um atendente');
+		}
+		
+		if($tbMelhoria->getUsuarioSolicitante($this->dados['som_codigo']) != $_SESSION['usu_codigo']){
+			throw new Exception('Impossivel alterar! Você não é o criador da solicitação');
+		}
+		
+		
+		
+		try
+		{
+	
+			ValidarCampos::campoVazio($this->dados['sis_codigo'],'Sistema');
+			ValidarCampos::campoVazio($this->dados['som_descricao'],'Descricao');
+	
+	
+			try
+			{
+					
+				$tbMelhoria->update($this->dados);
+	
+			}catch (PDOException $e)
+			{
+				throw new PDOException($e->getMessage(), $e->getCode());
+			}
+	
+	
+		}catch (Exception $e)
+		{
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+	
+	
+	}
+	
+	public function alterarAtenderSolicitacaoMelhoria($som_codigo)
+	{
+		
+		try
+		{
+					
+			$tbMelhoria = new TbSolicitacaoMelhoria();	
+			$tbApontamentoMelhoria = new TbApontamentoMelhoria();
+			
+			/**
+			 *Atender melhoria
+			 */
+			$this->dados['usu_codigo_atendente'] = $_SESSION['usu_codigo'];
+			$this->dados['som_codigo'] = $som_codigo;
+			
+			$tbMelhoria->updateAtenderMelhoria($this->dados);
+			
+			$this->dados['usu_codigo'] = $_SESSION['usu_codigo'];
+			$this->dados['apm_descricao'] = 'Em Atendimento';
+			/**
+			 * Criar o apontamento da melhoria
+			 */
+			$tbApontamentoMelhoria->insert($this->dados);
+	
+		}catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(), $e->getCode());
+		}	
+	
+	}
+	
+	
+	public function alterarSistema()
+	{
+	
+		try {
+				
+			ValidarCampos::campoVazio($this->dados['sis_descricao'],'Sistema');
+			ValidarCampos::campoVazio($this->dados['usu_codigo_usuario_chave'],'Usuário chave');
+				
+			$this->dados['sis_status'] = 1;
+				
+			try {
+	
+				$tbSistema = new TbSistemas();
+					
+				$tbSistema->update($this->dados);
+	
+			} catch (PDOException $e) {
+				throw new PDOException($e->getMessage(), $e->getCode());
+			}
+				
+		} catch (Exception $e) {
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+	
+	}
+	
 }
 ?>

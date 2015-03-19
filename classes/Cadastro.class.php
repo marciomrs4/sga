@@ -923,6 +923,148 @@ class Cadastro extends Dados
 		
 	}
 	
+
+	public function cadastrarSolicitacaoMelhoria()
+	{
+	
+		try
+		{
+				
+			ValidarCampos::campoVazio($this->dados['sis_codigo'],'Sistema');
+			ValidarCampos::campoVazio($this->dados['som_descricao'],'Descricao');
+
+			$this->dados['usu_codigo_solicitante'] = $_SESSION['usu_codigo']; 
+			$this->dados['stm_codigo'] = 1;
+	
+	
+			try
+			{
+				$tbMelhoria = new TbSolicitacaoMelhoria();
+	
+				$this->conexao->beginTransaction();
+				
+				$this->dados['som_codigo'] = $tbMelhoria->insert($this->dados);
+				
+				$this->conexao->commit();
+				
+				#Envio de e-mail
+				$email = new Email();
+				$email->aberturaMelhoria($this->dados);
+	
+			}catch (PDOException $e)
+			{
+				throw new PDOException($e->getMessage(), $e->getCode());
+			}
+				
+				
+		}catch (Exception $e)
+		{
+			$this->conexao->rollBack();
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+	
+	
+	}
+	
+	public function cadastrarApontamentoMelhoria()
+	{
+	
+		try
+		{
+	
+			ValidarCampos::campoVazio($this->dados['som_codigo'],'Sistema');
+			ValidarCampos::campoVazio($this->dados['apm_descricao'],'Descricao');
+		
+			$this->dados['usu_codigo'] = $_SESSION['usu_codigo'];
+	
+			try
+			{
+				
+				$tbApontamentoMelhoria = new TbApontamentoMelhoria();
+				$tbSolicitacaoMelhoria = new TbSolicitacaoMelhoria();
+				
+				#Obtem os dados da melhoria
+				$Melhoria = $tbSolicitacaoMelhoria->getForm($this->dados['som_codigo']);
+				
+				$tbSistema = new TbSistemas();
+				#Obtem os dados do Sistema
+				$Sistema = $tbSistema->getForm($Melhoria['sis_codigo']);
+				
+				#Obtem o atendente do sistema
+				$Atendente = $tbSolicitacaoMelhoria->getUsuarioAtendente($this->dados['som_codigo']);
+				
+				//empty($Atendente) = $Sistema['usu_codigo_usuario_chave'] != $_SESSION['usu_codigo'];
+
+				#Verifica se o usuario e o atendente e se existe atendente
+				if(($Sistema['usu_codigo_usuario_chave'] != $_SESSION['usu_codigo']) and (empty($Atendente))){
+					throw new Exception('Não existe um atendente, você não pode inserir um apontamento.');						
+				}
+					
+				#Inicia a transacao
+				$this->conexao->beginTransaction();
+				
+				if($Sistema['usu_codigo_usuario_chave'] == $_SESSION['usu_codigo']){
+					$tbSolicitacaoMelhoria->updateStatusMelhoria($this->dados);
+				}
+				
+				#Obtem o Status atual da melhorias
+				$this->dados['stm_codigo'] = $tbSolicitacaoMelhoria->getStatusMelhoria($this->dados['som_codigo']);
+				
+				#Inseri um apontamento da melhoria
+				$tbApontamentoMelhoria->insert($this->dados);
+				
+				#Finaliza com commit
+				$this->conexao->commit();
+				
+				#Envio de email
+				$email = new Email();
+				$email->apontamentoMelhoria($this->dados);
+				
+			}catch (PDOException $e)
+			{
+				#Se erro, faz rollback
+				$this->conexao->rollBack();
+				
+				throw new PDOException($e->getMessage(), $e->getCode());
+			}
+	
+	
+		}catch (Exception $e)
+		{
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+		
+	
+	}
+	
+	
+	
+	public function cadastrarSistema()
+	{
+		
+		try {
+			
+			ValidarCampos::campoVazio($this->dados['sis_descricao'],'Sistema');
+			ValidarCampos::campoVazio($this->dados['usu_codigo_usuario_chave'],'Usuário chave');			
+			
+			$this->dados['sis_status'] = 1;
+			
+			try {
+				
+				$tbSistema = new TbSistemas();
+					
+				$tbSistema->insert($this->dados);
+				
+			} catch (PDOException $e) {
+				throw new PDOException($e->getMessage(), $e->getCode());
+			}
+			
+		} catch (Exception $e) {
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+		
+	}
+	
 	
 }
 

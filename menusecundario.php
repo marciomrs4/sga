@@ -11,6 +11,9 @@
 		$botaobusca = ("<li><a href='Busca.php'><img src='./css/images/search.png'> Pesquisar</a></li>");
 		$controleacesso->permitirBotao($botaobusca, array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
 		
+		$botaoMelhoria = ("<li><a href='Melhoria.php'><img src='./css/images/melhoria.png'> Melhoria</a></li>");
+		$controleacesso->permitirBotao($botaoMelhoria, array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
+		
 		$botaosol = ("<li><a href='Solicitante.php'><img src='./css/images/chamado.png'> Chamado</a></li>");
 		$controleacesso->permitirBotao($botaosol, array(ControleDeAcesso::$Solicitante));
 		

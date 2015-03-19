@@ -728,5 +728,33 @@ class Busca extends Dados
 		
 	}
 	
+	public function listarMelhoria()
+	{
+	
+		$this->dados['sis_codigo'] = ($this->dados['sis_codigo'] == '') ? '%' : $this->dados['sis_codigo'];
+		$this->dados['stm_codigo'] = ($this->dados['stm_codigo'] == '') ? '%' : $this->dados['stm_codigo'];	
+		
+		$tbSolicitacaoMelhoria = new TbSolicitacaoMelhoria();
+	
+		$dados = $tbSolicitacaoMelhoria->listarMelhoria($this->dados);
+	
+		return($dados);
+	
+	}
+	
+	#Usado na tela de cadastro de sistema
+	public function listarSistemaUsuarioChave()
+	{
+	
+		$usu_codigo_usuario_chave = ($this->dados['usu_codigo_usuario_chave'] == '') ? '%' : $this->dados['usu_codigo_usuario_chave'];
+	
+		$tbSistema = new TbSistemas();
+	
+		$dados = $tbSistema->listarSistemasPesquisa($usu_codigo_usuario_chave);
+	
+		return($dados);
+	
+	}
+	
 }
 ?>

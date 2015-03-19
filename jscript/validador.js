@@ -172,6 +172,71 @@ $valida(document).ready( function()
 		});
 		/*Fim de validação do formulário do relatorio de solucao*/	
 		
+		/*Inicio de validação do formulário do relatorio de Abertura de melhoria*/
+		$valida("#solicitacaoMelhoria").validate({
+			/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+			
+			
+			rules:{
+				
+				sis_codigo:{
+					required: true
+				},
+				
+				som_descricao:{
+						required: true,
+						minlength: 20
+				}
+			},
+			/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+			messages:{
+				
+				sis_codigo: {
+						required: "O campo sistema, é obrigatório"
+				},
+				
+				som_descricao:{
+					required: "O campo descrição é obrigatório",
+					minlength: "É necessário ao menos 20 caracteres"
+				}
+			},
+			submitHandler: function(form){
+				submitForm(form);	
+			}
+		});
+		/*Fim de validação do formulário do relatorio de Abertura de melhoria*/	
+		
+		/*Inicio de validação do formulário do relatorio de Apontamento de melhoria*/
+		$valida("#ApontamentoMelhoria").validate({
+			/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+			
+			rules:{
+				
+				apm_descricao:{
+					required: true
+				},
+				
+				stm_codigo:{
+						required: true
+				}
+			},
+			/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+			messages:{
+				
+				apm_descricao: {
+						required: "O campo descricão, é obrigatório"
+				},
+				
+				stm_codigo:{
+					required: "O campo status é obrigatório"
+				}
+			},
+			submitHandler: function(form){
+				submitForm(form);	
+			}
+		});
+		/*Fim de validação do formulário do relatorio de Apontamento de melhoria*/	
+		
 		
 		/*Inicio de validação do formulário de Atividade*/
 		$valida("#atividade").validate({
