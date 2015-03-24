@@ -8,8 +8,10 @@ if($_GET)
 	
 	$busca = new Busca();
 	$busca->setValueGet($_GET,'som_codigo');
+
+	echo $busca->getValueGet('som_codigo');
 	
-	#Teste pra ver se aparecer o codigo
+ 	#Teste pra ver se aparecer o codigo
 	//echo $busca->getValueGet('sol_codigo');
 	
 	if ($_SESSION['validacaoform'] == base64_encode(date('d-m-Y')))
@@ -53,6 +55,7 @@ if($_GET)
 }else
 {
 	Sessao::destroiSessao();
+
 }
 
 ?>

@@ -786,6 +786,7 @@ class Alteracao extends Dados
 			 */
 			$this->dados['usu_codigo_atendente'] = $_SESSION['usu_codigo'];
 			$this->dados['som_codigo'] = $som_codigo;
+			$this->dados['stm_codigo'] = 2;
 			
 			$tbMelhoria->updateAtenderMelhoria($this->dados);
 			

@@ -73,14 +73,16 @@ private $stm_codigo = 'stm_codigo';
 	public function updateAtenderMelhoria($dados)
 	{
 		$query = ("UPDATE $this->tabela
-					SET	$this->usu_codigo_atendente = ?
+					SET	$this->usu_codigo_atendente = ?,
+					    $this->stm_codigo = ?
 					WHERE $this->som_codigo = ? ");
 		try
 		{
 			$stmt = $this->conexao->prepare($query);
 	
 			$stmt->bindParam(1,$dados[$this->usu_codigo_atendente],PDO::PARAM_INT);
-			$stmt->bindParam(2,$dados[$this->som_codigo],PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados[$this->stm_codigo],PDO::PARAM_INT);
+			$stmt->bindParam(3,$dados[$this->som_codigo],PDO::PARAM_INT);			
 				
 			$stmt->execute();
 	
