@@ -210,5 +210,41 @@ class TbDepartamento extends Banco
 
 	}
 
+	#Grafico de Pizza, Chamados por Area
+	public function graficoChamadoPorArea()
+	{
+	
+		$query = ("SELECT DEP.dep_descricao, count(USU.dep_codigo)
+					FROM tb_solicitacao AS SOL
+					INNER JOIN tb_usuario AS USU
+					ON SOL.usu_codigo_solicitante = USU.usu_codigo
+					INNER JOIN tb_departamento AS DEP
+					ON USU.dep_codigo = DEP.dep_codigo
+					WHERE sol_data_inicio >= '2014-01-01 00:00:00' AND sol_data_fim <= '2014-12-31 23:59:59'
+					GROUP BY USU.dep_codigo
+					ORDER BY 2 DESC
+					LIMIT 10;");
+	
+		try{
+	
+			$stmt = $this->conexao->prepare($query);
+				
+/* 			$stmt->bindParam(':dep_codigo', $dados['dep_codigo']);
+			$stmt->bindParam(':sta_codigo', $dados['sta_codigo']);
+			$stmt->bindParam(':ace_ativo', $dados['ace_ativo']); */
+				
+			$stmt->execute();
+				
+			foreach ($stmt as $value){
+				echo '[',"'",utf8_encode($value[0]),"'",',',$value[1],'],';
+			}
+	
+	
+		} catch (PDOException $e){
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+	}
+	
+	
 }
 ?>
