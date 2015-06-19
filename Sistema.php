@@ -1,13 +1,13 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
 ControleDeAcesso::permitirAcesso(array(ControleDeAcesso::$TecnicoADM));
 
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/script.php");
 
 echo"<div class='sub_menu_principal'>";
-echo FormComponente::actionButton('<img src="./css/images/novo.png" title="Nova Prioridade">','cadastrar/Sistema');
-Texto::criarTitulo("Prioridade");
+echo FormComponente::actionButton('<img src="./css/images/novo.png" title="Novo Sistema">','cadastrar/Sistema');
+Texto::criarTitulo("Sistema");
 echo "</div>";
 
 $busca = new Busca();

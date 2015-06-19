@@ -5,7 +5,7 @@
  */
 session_start();
 
-$_SESSION['projeto'] = 'SGA';
+$_SESSION['projeto'] = 'sga';
 
 /*
 $_SESSION['config']['usuario'] = 'Utilizador';
@@ -28,7 +28,7 @@ $_SESSION['acao'] = isset($_SESSION['acao']) ? $_SESSION['acao'] : '';
 
 define('Projeto','chamado');
 
-$Projeto = 'SGA';
+$Projeto = 'sga';
 
 include_once 'autoload.php';
 

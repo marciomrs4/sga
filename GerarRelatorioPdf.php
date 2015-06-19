@@ -1,6 +1,6 @@
 <?php
 
-include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 include_once 'plugin/MPDF54/mpdf.php';
 
 if($_GET)
@@ -19,7 +19,7 @@ $_SESSION['buscaRapida'] = $busca->getRelatorioPDF();
 
 ?>
 	<fieldset>
-				<legend><img src="./css/images/header.png"></legend>
+				<legend><img src="css/images/teste.png"></legend>
 				<hr />
   <table border="2" cellspacing="5">
     <tr>
@@ -29,7 +29,7 @@ $_SESSION['buscaRapida'] = $busca->getRelatorioPDF();
     </tr>
     	<tr>
 	    	<th align="left">
-	    		Número do Chamado:
+	    		Nï¿½mero do Chamado:
 	    	</th>
     		<td>
 	    		<?php echo($_SESSION['buscaRapida']['sol_codigo']); ?>
@@ -111,7 +111,7 @@ $_SESSION['buscaRapida'] = $busca->getRelatorioPDF();
     		<td>
     		<?php 
     		$tbcalcatendimento = new TbCalculoAtendimento();
-    		#Pega a data da solicitação pelo STATUS informado, no caso 1 é ABERTURA
+    		#Pega a data da solicitaï¿½ï¿½o pelo STATUS informado, no caso 1 ï¿½ ABERTURA
     		echo $tbcalcatendimento->getDataPorStatus($_SESSION['buscaRapida']['sol_codigo'],1);
 			?>
     		</td>
@@ -142,7 +142,7 @@ $_SESSION['buscaRapida'] = $busca->getRelatorioPDF();
     	</td>
     </tr>
     <tr>
-      <th align="left" nowrap="nowrap">Descrição do <?php echo($_SESSION['config']['problema']);?>:</th>
+      <th align="left" nowrap="nowrap">Descriï¿½ï¿½o do <?php echo($_SESSION['config']['problema']);?>:</th>
 	      <td>
 	      	<?php echo($_SESSION['buscaRapida']['sol_descricao_solicitacao']); ?>
 	      </td>
@@ -155,7 +155,7 @@ $_SESSION['buscaRapida'] = $busca->getRelatorioPDF();
 	  	$tbassentamento = new TbAssentamento();
 	  	$tabela = $tbassentamento->listarAssentamento($_SESSION['buscaRapida']['sol_codigo']);
 	
-	  	$cabecalho = array('Descrição','Data','Editor');
+	  	$cabecalho = array('Descriï¿½ï¿½o','Data','Editor');
 	  	
 	  	$grid = new DataGrid($cabecalho, $tabela);
 	  	
@@ -189,8 +189,8 @@ $mpdf = new mPDF();
 $mpdf->SetHeader(utf8_encode('Emitido em: - '.date("d-m-Y")));
 
 
-$mpdf->SetAuthor(utf8_encode("Márcio Ramos"));
-$css =  file_get_contents('../SGA/css/formatacao.css');
+$mpdf->SetAuthor(utf8_encode("Mï¿½rcio Ramos"));
+$css =  file_get_contents('../sga/css/formatacao.css');
 
 
 $mpdf->WriteHTML($css,1);

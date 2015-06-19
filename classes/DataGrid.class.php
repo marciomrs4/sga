@@ -73,9 +73,9 @@ class DataGrid
 	 * @example Inserir o nome do link que sejá chamado ao clicar
 	 * link = 'link.php'
 	 */
-	public $link = '/SGA/action/formcontroler.php';
+	public $link = '/sga/action/formcontroler.php';
 	
-	public $link2 = '/SGA/action/formcontroler.php';
+	public $link2 = '/sga/action/formcontroler.php';
 
 	/**
 	 * Descrição ...

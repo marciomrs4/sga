@@ -84,6 +84,11 @@ class Alteracao extends Dados
 
 			ValidarString::validarEmail($this->dados['dep_email'],'E-mail');
 
+            ValidarCampos::campoVazio($this->dados['dep_hora_inicio'],'Hora Inicio');
+            ValidarCampos::campoVazio($this->dados['dep_hora_fim'],'Hora Fim');
+            ValidarCampos::campoVazio($this->dados['dep_hora_almoco'],'Hora de almoÃ§o');
+            ValidarCampos::campoVazio($this->dados['dep_carga_sabado'],'Carga HorÃ¡rio de SÃ¡bado');
+
 			$tbdepartamento = new TbDepartamento();
 
 			$tbdepartamento->update($this->dados);
@@ -116,9 +121,9 @@ class Alteracao extends Dados
 		try
 		{
 			ValidarCampos::campoVazio($this->dados['pro_titulo'],'Titulo');
-			ValidarCampos::campoVazio($this->dados['pro_descricao'],'Descrição');
-			ValidarCampos::campoVazio($this->dados['pro_previsao_inicio'],'Previsão Inicio');
-			ValidarCampos::campoVazio($this->dados['pro_previsao_fim'],'Previsão Fim');
+			ValidarCampos::campoVazio($this->dados['pro_descricao'],'Descriï¿½ï¿½o');
+			ValidarCampos::campoVazio($this->dados['pro_previsao_inicio'],'Previsï¿½o Inicio');
+			ValidarCampos::campoVazio($this->dados['pro_previsao_fim'],'Previsï¿½o Fim');
 
 			$this->dados['pro_previsao_inicio'] = ValidarDatas::dataBanco($this->dados['pro_previsao_inicio']);
 			$this->dados['pro_previsao_fim'] = ValidarDatas::dataBanco($this->dados['pro_previsao_fim']);
@@ -128,7 +133,7 @@ class Alteracao extends Dados
 			$quantidade = $tbAtividade->validateQtdAtividadeEmAndamento($this->dados['pro_codigo']);
 
 			if(($this->dados['stp_codigo'] != 2) and ($quantidade != 0)){
-				throw new Exception('Existe atividade em andamento: Este projeto não pode ser alterado');
+				throw new Exception('Existe atividade em andamento: Este projeto nï¿½o pode ser alterado');
 			}
 			
 			$tbprojeto = new TbProjeto();
@@ -191,7 +196,7 @@ class Alteracao extends Dados
 			$this->dados['pro_status_ativo'] = ValidarCampos::campoEmptyTernario($this->dados['pro_status_ativo'],1,'');
 			
 			
-			ValidarCampos::campoVazio($this->dados['pro_tempo_solucao'],'Tempo de Solução');
+			ValidarCampos::campoVazio($this->dados['pro_tempo_solucao'],'Tempo de Soluï¿½ï¿½o');
 
 			$this->dados['dep_codigo'] = $this->dados['dep_codigo_problema'];
 
@@ -238,7 +243,7 @@ class Alteracao extends Dados
 
 	/**
 	 *
-	 * Usadao para alterar a solicitação...
+	 * Usadao para alterar a solicitaï¿½ï¿½o...
 	 * @throws Exception
 	 */
 	public function alterarSolicitacao($file)
@@ -247,11 +252,11 @@ class Alteracao extends Dados
 		{
 			ValidarCampos::campoVazio($this->dados['dep_codigo'],'Departamento');
 			ValidarCampos::campoVazio($this->dados['pro_codigo'],$_SESSION['config']['problema']);
-			ValidarCampos::campoVazio($this->dados['sol_descricao_solicitacao'],'Descrição do '.$_SESSION['config']['problema']);
+			ValidarCampos::campoVazio($this->dados['sol_descricao_solicitacao'],'Descriï¿½ï¿½o do '.$_SESSION['config']['problema']);
 			$this->dados['sol_descricao_solicitacao'] = strip_tags($this->dados['sol_descricao_solicitacao']);
-			ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solicitacao'],10,'Descrição do '.$_SESSION['config']['problema']);
+			ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solicitacao'],10,'Descriï¿½ï¿½o do '.$_SESSION['config']['problema']);
 
-			#Capturando o código do DEPTO solicitado
+			#Capturando o cï¿½digo do DEPTO solicitado
 			$this->dados['dep_codigo_solicitado'] = $this->dados['dep_codigo'];
 
 			try
@@ -266,7 +271,7 @@ class Alteracao extends Dados
 
 				#Instancia da classe Arquivo que manipula os aquivos
 				$arquivo = new Arquivo();
-				#Metodo setDados que serve para setar o $file que contém todo o arquivo
+				#Metodo setDados que serve para setar o $file que contï¿½m todo o arquivo
 				$arquivo->setDados($file);
 				/*
 				 * Capturando os dados do arquivo
@@ -311,8 +316,8 @@ class Alteracao extends Dados
 		try
 		{
 
-			ValidarCampos::campoVazio($this->dados['sol_descricao_solucao'],'Descrição da Solução');
-			ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solucao'],10,'Descrição da Solução');
+			ValidarCampos::campoVazio($this->dados['sol_descricao_solucao'],'Descriï¿½ï¿½o da Soluï¿½ï¿½o');
+			ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solucao'],10,'Descriï¿½ï¿½o da Soluï¿½ï¿½o');
 
 			ValidarCampos::campoVazio($this->dados['sta_codigo'],'Status');
 
@@ -385,7 +390,7 @@ class Alteracao extends Dados
 					
 				if($atendente)
 				{
-					throw new Exception('Já existe um atendente para a ocorrência','300');
+					throw new Exception('Jï¿½ existe um atendente para a ocorrï¿½ncia','300');
 				}else
 				{
 
@@ -394,7 +399,7 @@ class Alteracao extends Dados
 						$tbsolicitacao = new TbSolicitacao();
 						$tbproblema = new TbProblema();
 
-						#Inicia a transação
+						#Inicia a transaï¿½ï¿½o
 						$this->conexao->beginTransaction();
 
 						#Pega o codigo do problema da solicitacao
@@ -417,7 +422,7 @@ class Alteracao extends Dados
 						$this->dados['sta_codigo'] = 2;
 						$tbsolicitacao->alterarStatus($this->dados);
 
-						#Grava a alteração no Calculo de Atendimento
+						#Grava a alteraï¿½ï¿½o no Calculo de Atendimento
 						$tbcalculoatendimento = new TbCalculoAtendimento();
 						$tbcalculoatendimento->insertCalculoAtendimento($this->dados);
 						
@@ -463,7 +468,7 @@ class Alteracao extends Dados
 		{
 			ValidarCampos::campoVazio($this->dados['che_titulo'],'Titulo');
 			ValidarCampos::campoVazio($this->dados['che_email_envio'],'E-mail de Envio');
-			ValidarCampos::campoVazio($this->dados['che_descricao'],'Descrição');
+			ValidarCampos::campoVazio($this->dados['che_descricao'],'Descriï¿½ï¿½o');
 			ValidarCampos::campoVazio($this->dados['dep_codigo'],'Departamento');
 
 			ValidarString::validarEmail($this->dados['che_email_envio'],'E-mail com sintaxe incorreta');
@@ -528,7 +533,7 @@ class Alteracao extends Dados
 					{
 						#Instancia da classe Arquivo que manipula os aquivos
 						$arquivo = new Arquivo();
-						#Metodo setDados que serve para setar o $file que contém todo o arquivo
+						#Metodo setDados que serve para setar o $file que contï¿½m todo o arquivo
 						$arquivo->setDados($file);
 						/*
 						 * Capturando os dados do arquivo
@@ -544,11 +549,11 @@ class Alteracao extends Dados
 						#Verifica se existe um anexo pra esste item
 						if($this->dados['ane_codigo'])
 						{
-							#Se já existe, altera o anexo do checklist
+							#Se jï¿½ existe, altera o anexo do checklist
 							$tbanexocklist->update($this->dados);
 						}else
 						{
-							#Se não existe, grava o anexo do checklist
+							#Se nï¿½o existe, grava o anexo do checklist
 							$tbanexocklist->insert($this->dados);
 						}
 							
@@ -590,9 +595,9 @@ class Alteracao extends Dados
 
 			ValidarCampos::campoVazio($this->dados['pro_codigo'],'Projeto');
 			ValidarCampos::campoVazio($this->dados['usu_codigo_responsavel'],$_SESSION['config']['usuario'].' Executor');
-			ValidarCampos::campoVazio($this->dados['at_previsao_inicio'],'Previsão Inicio');
-			ValidarCampos::campoVazio($this->dados['at_previsao_fim'],'Previsão Fim');
-			ValidarCampos::campoVazio($this->dados['at_descricao'],'Descrição');
+			ValidarCampos::campoVazio($this->dados['at_previsao_inicio'],'Previsï¿½o Inicio');
+			ValidarCampos::campoVazio($this->dados['at_previsao_fim'],'Previsï¿½o Fim');
+			ValidarCampos::campoVazio($this->dados['at_descricao'],'Descriï¿½ï¿½o');
 			
 
 			$this->dados['at_previsao_inicio'] = ValidarDatas::dataBanco($this->dados['at_previsao_inicio']);
@@ -611,7 +616,7 @@ class Alteracao extends Dados
 				
 				if($status != 2)
 				{
-					throw new Exception('Não é possível alterar essa atividade: Este projeto não esta em andamento');
+					throw new Exception('Nï¿½o ï¿½ possï¿½vel alterar essa atividade: Este projeto nï¿½o esta em andamento');
 				}else
 				{
 	
@@ -737,11 +742,11 @@ class Alteracao extends Dados
 		$tbMelhoria = new TbSolicitacaoMelhoria();
 		
 		if($tbMelhoria->getUsuarioAtendente($this->dados['som_codigo'])){
-			throw new Exception('Impossivel alterar! Já existe um atendente');
+			throw new Exception('Impossivel alterar! Jï¿½ existe um atendente');
 		}
 		
 		if($tbMelhoria->getUsuarioSolicitante($this->dados['som_codigo']) != $_SESSION['usu_codigo']){
-			throw new Exception('Impossivel alterar! Você não é o criador da solicitação');
+			throw new Exception('Impossivel alterar! Vocï¿½ nï¿½o ï¿½ o criador da solicitaï¿½ï¿½o');
 		}
 		
 		
@@ -811,7 +816,7 @@ class Alteracao extends Dados
 		try {
 				
 			ValidarCampos::campoVazio($this->dados['sis_descricao'],'Sistema');
-			ValidarCampos::campoVazio($this->dados['usu_codigo_usuario_chave'],'Usuário chave');
+			ValidarCampos::campoVazio($this->dados['usu_codigo_usuario_chave'],'Usuï¿½rio chave');
 				
 			$this->dados['sis_status'] = 1;
 				
@@ -830,6 +835,133 @@ class Alteracao extends Dados
 		}
 	
 	}
+
+	public function alterarTerceiro()
+	{
 	
+	
+		try {
+				
+			ValidarCampos::campoVazio($this->dados['ter_descricao'],'Descricï¿½o');
+			ValidarCampos::campoVazio($this->dados['dep_codigo'],'Deparamento');
+				
+			$this->dados['ter_status'] = ($this->dados['ter_status'] == '') ? 0 : 1;
+				
+			try {
+	
+				$tbTerceiro = new TbTerceiro();
+					
+				$tbTerceiro->update($this->dados);
+	
+			} catch (PDOException $e) {
+				throw new PDOException($e->getMessage(), $e->getCode());
+			}
+				
+		} catch (Exception $e) {
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+	
+	}
+
+    public function alterarEnvioTerceiro()
+    {
+
+        try {
+
+            //Valida se existe o codigo do chamado e o codigo do terceiro
+            ValidarCampos::campoVazio($this->dados['sol_codigo'],'Codigo');
+            ValidarCampos::campoVazio($this->dados['ter_codigo'],'Terceiro');
+
+            //Verifica se a descricao estÃ¡ completa
+            ValidarCampos::campoVazio($this->dados['sot_descricao_remocao'],'Descricao');
+
+            //Obtem o codigo do usuario da sessao
+            $this->dados['usu_codigo_remocao'] = $_SESSION['usu_codigo'];
+
+            //Pega a data do formulario e converte para o formato do banco
+            $data = ValidarDatas::dataBanco($this->dados['dataenvio']);
+            //pega a hora do formulario
+            $hora = $this->dados['horaenvio'];
+
+            //Junta da data e hora para gravar no banco
+            $this->dados['sot_data_remocao'] = $data .' '. $hora;
+
+            //Pega a data atual para saber quando foi registrado no banco
+            $this->dados['sot_data_criacao_remocao'] = date('Y-m-d H:i:s');
+
+            //Objeto que representa a tabela Solicitacao de terceiro
+            $tbSolicitacaoTerceiro = new TbSolicitacaoTerceiro();
+            //Pega o chamado para verificar qual o status com terceiro
+            $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($this->dados['sol_codigo']);
+
+            if($SolicitacaoTerceiro['sot_status'] == 'N'){
+                throw new Exception('Esse chamado esta em poder de terceiro!',300);
+            }
+
+            //Pega da data inicial enviado para terceiro e converte em DateTime
+            $DataInicial = new DateTime($tbSolicitacaoTerceiro->getDataEnvioTerceiro($this->dados['sot_codigo']));
+            //Pega a data final que veio do formulario e converte para DateTime
+            $DataFinal = new DateTime($this->dados['sot_data_remocao']);
+            //Calcula a diferena entre as Datas
+            $diferenca = $DataInicial->diff($DataFinal);
+            //Formata a data e armazenada no tempo total para enviar ao Banco de dados
+            $this->dados['sot_tempo_total'] = $diferenca->format('%Y-%M-%D %H:%I:%S');
+
+
+            //Obtem o codigo do departamento do chamado
+            $TbSolicitacao = new TbSolicitacao();
+            $CodigoDepartamento = $TbSolicitacao->getCodigoDepartamentoSolicitado($this->dados['sol_codigo']);
+
+            //Obtem o tempo de entrada, saida, almoco e sabado do Departamento
+            $TbDepartamento = new TbDepartamento();
+            $TempoDepartamento = $TbDepartamento->getAllHours($CodigoDepartamento);
+
+
+            $TempoUtil = new dateOpers();
+            $data1 = $tbSolicitacaoTerceiro->getDataEnvioTerceiro($this->dados['sot_codigo']);
+            $data2 = $this->dados['sot_data_remocao'];
+            //Hora de Inicio do departamento
+            $hora_ini = ($TempoDepartamento['dep_hora_inicio'] == '') ? 08 : $TempoDepartamento['dep_hora_inicio'];
+            //Hora Fim do departamento
+            $hora_fim = ($TempoDepartamento['dep_hora_fim'] == '') ? 18 : $TempoDepartamento['dep_hora_fim'];
+            //Hora de almoco departamento
+            $meio_dia = ($TempoDepartamento['dep_hora_almoco'] == '') ? 13 : $TempoDepartamento['dep_hora_almoco'];
+            //Carga horaria de sabado departamento
+            $sabado = ($TempoDepartamento['dep_carga_sabado'] == '') ? 04 : $TempoDepartamento['dep_carga_sabado'];
+            //Formato de saida H (em horas)
+            $saida = 'H';
+
+            $this->dados['sot_tempo_util'] = $TempoUtil->tempo_valido($data1, $data2, $hora_ini, $hora_fim, $meio_dia, $sabado, $saida);
+
+            //Altera o status da solciitacao para N
+            $this->dados['sot_status'] = 'N';
+
+
+            /*usu_codigo_remocao = ok
+            sot_data_remocao = ok
+            sot_descricao_remocao = ok
+            sot_data_criacao_remocao = ok
+            sot_tempo_util
+            sot_tempo_total = ok
+            sot_status = OK*/
+
+
+
+            //$this->listarDados();
+
+            try {
+
+                $tbSolicitacaoTerceiro->updateRemocaoTerceiro($this->dados);
+
+            } catch (PDOException $e) {
+                throw new PDOException($e->getMessage(), $e->getCode());
+            }
+
+        } catch (Exception $e) {
+            throw new Exception($e->getMessage(), $e->getCode());
+        }
+
+    }
+
 }
 ?>

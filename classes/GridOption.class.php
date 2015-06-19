@@ -8,6 +8,7 @@ class GridOption implements IOption
 	protected $type = array();
 	private $value = array();
 	private $nameText = array();
+    private $nameButton;
 
 	private $atribuition;
 	
@@ -83,6 +84,17 @@ class GridOption implements IOption
 		return $nameText;
 		
 	}
+
+    public function setNameButton($name = 'Opcoes')
+    {
+        $this->nameButton = $name;
+        return $this;
+    }
+
+    public function getNameButton()
+    {
+        return $this->nameButton;
+    }
 	
 	public function createOption($value)
 	{

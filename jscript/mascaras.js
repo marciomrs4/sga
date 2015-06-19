@@ -13,6 +13,7 @@ $b('.ie').mask('999.999.999.999'); //IE
 $b('.mask-ag').mask('9999-9'); //Agencia
 $b('.mask-cc').mask('9.999-9'); //Conta
 $b('.hora').mask('99:99:99'); //hora
+$b('.horadois').mask('99:99'); //hora
 $b('.rg').mask('99.999.999-9'); //hora
 $b('.ramal').mask('99'); //hora
 $b('.drt').mask('99999999'); //hora

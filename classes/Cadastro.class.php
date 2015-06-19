@@ -28,18 +28,18 @@ class Cadastro extends Dados
 
 			#Instancia Tabela usuario
 			$ValidarEmailUsuario = new TbUsuario();
-			#Valida se já existe um usuário cadastrado
+			#Valida se j? existe um usu?rio cadastrado
 			if($ValidarEmailUsuario->validaEmailUsuario($this->dados['usu_email']))
 			{
-				throw new Exception('E-mail já cadastrado para outro '.$_SESSION['config']['usuario'],300);
+				throw new Exception('E-mail j? cadastrado para outro '.$_SESSION['config']['usuario'],300);
 			}
 			
 			#Instancia Tabela de acesso
 			$ValidaUsuario = new TbAcesso();
-			#Valida se já existe um acesso com esse nome
+			#Valida se j? existe um acesso com esse nome
 			//if($ValidaUsuario->validaLoginAcesso($this->dados['ace_usuario']));
 			//{
-			//	throw new Exception('Já existe um '.$_SESSION['config']['usuario'].' ['.$this->dados['ace_usuario'].'] cadastrado no sistema.',300);
+			//	throw new Exception('J? existe um '.$_SESSION['config']['usuario'].' ['.$this->dados['ace_usuario'].'] cadastrado no sistema.',300);
 		//	}
 			
 
@@ -54,7 +54,7 @@ class Cadastro extends Dados
 				$tbacesso = new TbAcesso();
 				$tbacesso->insert($this->dados);
 
-				#Cria o layout padrão para o usuário
+				#Cria o layout padr?o para o usu?rio
 				$tblayout = new TbLayout();
 				$tblayout->insertLayout($this->dados['usu_codigo']);
 					
@@ -85,6 +85,11 @@ class Cadastro extends Dados
 
 			ValidarString::validarEmail($this->dados['dep_email'],'E-mail');
 
+            ValidarCampos::campoVazio($this->dados['dep_hora_inicio'],'Hora Inicio');
+            ValidarCampos::campoVazio($this->dados['dep_hora_fim'],'Hora Fim');
+            ValidarCampos::campoVazio($this->dados['dep_hora_almoco'],'Hora de almoço');
+            ValidarCampos::campoVazio($this->dados['dep_carga_sabado'],'Carga Horário de Sábado');
+
 			try
 			{
 					
@@ -96,7 +101,7 @@ class Cadastro extends Dados
 				//				$tbacesso = new TbAcesso();
 				//				$tbacesso->insert($this->dados);
 
-				#Cria o layout padrão para o usuário
+				#Cria o layout padr?o para o usu?rio
 				//				$tblayout = new TbLayout();
 				//				$tblayout->insertLayout($this->dados['usu_codigo']);
 					
@@ -125,9 +130,9 @@ class Cadastro extends Dados
 			
 			ValidarCampos::campoVazio($this->dados['pro_titulo'],'Titulo');
 			ValidarCampos::campoVazio($this->dados['usu_codigo_solicitante'],$_SESSION['config']['usuario'].' Solicitante');
-			ValidarCampos::campoVazio($this->dados['pro_descricao'],'Descrição');
-			ValidarCampos::campoVazio($this->dados['pro_previsao_inicio'],'Previsão Inicio');
-			ValidarCampos::campoVazio($this->dados['pro_previsao_fim'],'Previsão Fim');
+			ValidarCampos::campoVazio($this->dados['pro_descricao'],'Descri??o');
+			ValidarCampos::campoVazio($this->dados['pro_previsao_inicio'],'Previs?o Inicio');
+			ValidarCampos::campoVazio($this->dados['pro_previsao_fim'],'Previs?o Fim');
 
 			$this->dados['pro_previsao_inicio'] = ValidarDatas::dataBanco($this->dados['pro_previsao_inicio']);
 			$this->dados['pro_previsao_fim'] = ValidarDatas::dataBanco($this->dados['pro_previsao_fim']);
@@ -211,7 +216,7 @@ class Cadastro extends Dados
 			$this->dados['pro_mostrar_usuario'] = ValidarCampos::campoEmptyTernario($this->dados['pro_mostrar_usuario'],1, '');
 			$this->dados['pro_status_ativo'] = ValidarCampos::campoEmptyTernario($this->dados['pro_status_ativo'],1, '');
 
-			ValidarCampos::campoVazio($this->dados['pro_tempo_solucao'],'Tempo de Solução');
+			ValidarCampos::campoVazio($this->dados['pro_tempo_solucao'],'Tempo de Solu??o');
 			
 			$this->dados['dep_codigo'] = $this->dados['dep_codigo_problema'];
 
@@ -248,28 +253,28 @@ class Cadastro extends Dados
 	 * @param unknown_type $file
 	 * @throws PDOException
 	 * @throws Exception
-	 * @example para cadastrar uma solicitação são necessarios 3 tabelas
+	 * @example para cadastrar uma solicita??o s?o necessarios 3 tabelas
 	 * 1 - tb_solicitacao
-	 * 2 - tb_anexo [Não obrigatório
+	 * 2 - tb_anexo [N?o obrigat?rio
 	 * 3 - tb_calculo_atendimento
 	 * 	1: Grava os dados da solicitacao
-	 * 	2: Grava um anexo da solicitação se houver
-	 * 	3: Grava a data de criação para o acompanhamento da solicitação
+	 * 	2: Grava um anexo da solicita??o se houver
+	 * 	3: Grava a data de cria??o para o acompanhamento da solicita??o
 	 */
 	public function cadastrarSolicitacao($usu_codigo_solicitante = null,$file)
 	{
 		try
 		{
 
-			#Metodos de validação
+			#Metodos de valida??o
 			ValidarCampos::campoVazio($this->dados['dep_codigo'],'Departamento');
 			ValidarCampos::campoVazio($this->dados['pro_codigo'],$_SESSION['config']['problema']);
-			ValidarCampos::campoVazio($this->dados['sol_descricao_solicitacao'],'Descrição do '.$_SESSION['config']['problema']);
-			ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solicitacao'],5,'Descrição do'.$_SESSION['config']['problema']);
+			ValidarCampos::campoVazio($this->dados['sol_descricao_solicitacao'],'Descri??o do '.$_SESSION['config']['problema']);
+			ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solicitacao'],5,'Descri??o do'.$_SESSION['config']['problema']);
 			$this->dados['sol_descricao_solicitacao'] = strip_tags($this->dados['sol_descricao_solicitacao']);
-			#Capturando o codigo do usuário solicitante
+			#Capturando o codigo do usu?rio solicitante
 			$this->dados['usu_codigo_solicitante'] = ($usu_codigo_solicitante == null) ? $this->dados['usu_codigo_solicitante'] : $usu_codigo_solicitante;
-			#Capturando o código do DEPTO solicitado
+			#Capturando o c?digo do DEPTO solicitado
 			$this->dados['dep_codigo_solicitado'] = $this->dados['dep_codigo'];
 			#Capta o status do chamado, no caso em atendimento
 			$this->dados['sta_codigo'] = 1;
@@ -277,7 +282,7 @@ class Cadastro extends Dados
 			try
 			{
 					
-				#Inicia a transação
+				#Inicia a transa??o
 				$this->conexao->beginTransaction();
 					
 				#Grava na tabela de solicitacao
@@ -288,7 +293,7 @@ class Cadastro extends Dados
 				{
 					#Instancia da classe Arquivo que manipula os aquivos
 					$arquivo = new Arquivo();
-					#Metodo setDados que serve para setar o $file que contém todo o arquivo
+					#Metodo setDados que serve para setar o $file que cont?m todo o arquivo
 					$arquivo->setDados($file);
 					/*
 					 * Capturando os dados do arquivo
@@ -303,7 +308,7 @@ class Cadastro extends Dados
 					$tbanexo->insert($this->dados);
 				}
 
-				#Grava a data de abertura da solicitação
+				#Grava a data de abertura da solicita??o
 				$tbcalculoatendimento = new TbCalculoAtendimento();
 				$tbcalculoatendimento->insertCalculoAtendimento($this->dados);
 
@@ -322,7 +327,7 @@ class Cadastro extends Dados
 			{
 				#Se algo deu errado faz o rollBack
 				$this->conexao->rollBack();
-				#Lança uma exeção do tipo PDOException
+				#Lan?a uma exe??o do tipo PDOException
 				throw new PDOException($e->getMessage(), $e->getCode());
 			}
 
@@ -330,7 +335,7 @@ class Cadastro extends Dados
 
 		}catch (Exception $e)
 		{
-			#Lança uma exceção do tipo Exception
+			#Lan?a uma exce??o do tipo Exception
 			throw new Exception($e->getMessage(), $e->getCode());
 		}
 	}
@@ -341,15 +346,15 @@ class Cadastro extends Dados
 		try
 		{
 	
-		#Metodos de validação
+		#Metodos de valida??o
 		ValidarCampos::campoVazio($this->dados['dep_codigo_tecnico'],'Departamento');
 		ValidarCampos::campoVazio($this->dados['pro_codigo'],$_SESSION['config']['problema']);
-		ValidarCampos::campoVazio($this->dados['sol_descricao_solicitacao'],'Descrição do '.$_SESSION['config']['problema']);
-		ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solicitacao'],5,'Descrição do'.$_SESSION['config']['problema']);
+		ValidarCampos::campoVazio($this->dados['sol_descricao_solicitacao'],'Descri??o do '.$_SESSION['config']['problema']);
+		ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solicitacao'],5,'Descri??o do'.$_SESSION['config']['problema']);
 		$this->dados['sol_descricao_solicitacao'] = strip_tags($this->dados['sol_descricao_solicitacao']);
-		#Capturando o codigo do usuário solicitante
+		#Capturando o codigo do usu?rio solicitante
 		$this->dados['usu_codigo_solicitante'] = ($usu_codigo_solicitante == null) ? $this->dados['usu_codigo_solicitante'] : $usu_codigo_solicitante;
-		#Capturando o código do DEPTO solicitado
+		#Capturando o c?digo do DEPTO solicitado
 		$this->dados['dep_codigo_solicitado'] = $this->dados['dep_codigo_tecnico'];
 		#Capta o status do chamado, no caso em atendimento
 		$this->dados['sta_codigo'] = 1;
@@ -357,7 +362,7 @@ class Cadastro extends Dados
 			try
 			{
 									
-				#Inicia a transação
+				#Inicia a transa??o
 				$this->conexao->beginTransaction();
 									
 				#Grava na tabela de solicitacao
@@ -368,7 +373,7 @@ class Cadastro extends Dados
 				{
 					#Instancia da classe Arquivo que manipula os aquivos
 					$arquivo = new Arquivo();
-					#Metodo setDados que serve para setar o $file que contém todo o arquivo
+					#Metodo setDados que serve para setar o $file que cont?m todo o arquivo
 					$arquivo->setDados($file);
 												/*
 					* Capturando os dados do arquivo
@@ -383,7 +388,7 @@ class Cadastro extends Dados
 					$tbanexo->insert($this->dados);
 				}
 	
-					#Grava a data de abertura da solicitação
+					#Grava a data de abertura da solicita??o
 					$tbcalculoatendimento = new TbCalculoAtendimento();
 					$tbcalculoatendimento->insertCalculoAtendimento($this->dados);
 	
@@ -402,7 +407,7 @@ class Cadastro extends Dados
 			{
 				#Se algo deu errado faz o rollBack
 				$this->conexao->rollBack();
-				#Lança uma exeção do tipo PDOException
+				#Lan?a uma exe??o do tipo PDOException
 				throw new PDOException($e->getMessage(), $e->getCode());
 			}
 	
@@ -410,7 +415,7 @@ class Cadastro extends Dados
 	
 			}catch (Exception $e)
 			{
-				#Lança uma exceção do tipo Exception
+				#Lan?a uma exce??o do tipo Exception
 				throw new Exception($e->getMessage(), $e->getCode());
 		}
 	}
@@ -422,7 +427,7 @@ class Cadastro extends Dados
 		{
 			
 			$this->dados['ass_descricao'] = strip_tags($this->dados['ass_descricao']);
-			ValidarCampos::campoVazio($this->dados['ass_descricao'],'Descrição');
+			ValidarCampos::campoVazio($this->dados['ass_descricao'],'Descri??o');
 			ValidarCampos::campoVazio($this->dados['usu_codigo_atendente'],'Atendente do Chamado');
 			
 
@@ -431,6 +436,18 @@ class Cadastro extends Dados
 			$this->dados['usu_codigo'] = $_SESSION['usu_codigo'];
 
 			$this->dados['sta_codigo'];
+
+            //Valida se estão tentando encerrar o chamado que está em poder de terceiro, em caso sim, não deixa encerrar
+            $TbSolicitacaoTerceiro = new TbSolicitacaoTerceiro();
+            $Solicitacao = $TbSolicitacaoTerceiro->getChamadoInTerceiro($this->dados['sol_codigo']);
+
+            if(($this->dados['sta_codigo'] == 3) or ($this->dados['sta_codigo'] == 4)) {
+
+                if ($Solicitacao['sot_status'] == 'S') {
+                    throw new Exception('Esse chamado esta em poder de terceiro e não pode ser concluido!', 300);
+                }
+            }
+            //
 
 			try
 			{
@@ -445,7 +462,7 @@ class Cadastro extends Dados
 				}
 				
 
-				#Inicia a transção
+				#Inicia a trans??o
 				$this->conexao->beginTransaction();
 
 				if($tbatendente->confirmarAtendente($this->dados['sol_codigo']))
@@ -472,7 +489,7 @@ class Cadastro extends Dados
 				#Instancia da Classe CalculoAtendimento
 				$tbcalculoatendimento = new TbCalculoAtendimento();
 				
-				#Verifica se já houve um cadastro em abertura
+				#Verifica se j? houve um cadastro em abertura
 				//if($tbcalculoatendimento->verificaAberto($this->dados))
 				//{
 				//	$this->dados['sta_codigo'] = 5;
@@ -520,6 +537,18 @@ class Cadastro extends Dados
 
 			$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == '') ? $this->dados['sta_codigo'] : 3;
 
+            //Valida se estão tentando encerrar o chamado que está em poder de terceiro, em caso sim, não deixa encerrar
+            $TbSolicitacaoTerceiro = new TbSolicitacaoTerceiro();
+            $Solicitacao = $TbSolicitacaoTerceiro->getChamadoInTerceiro($this->dados['sol_codigo']);
+
+            if($this->dados['sta_codigo'] == 3) {
+
+                if ($Solicitacao['sot_status'] == 'S') {
+                    throw new Exception('Esse chamado esta em poder de terceiro e não pode ser concluido!', 300);
+                }
+            }
+            //
+
 			try
 			{
 				$tbassentamento = new TbAssentamento();
@@ -527,7 +556,7 @@ class Cadastro extends Dados
 				$tbproblema = new TbProblema();
 				$tbAtendenteSolicitacao = new TbAtendenteSolicitacao();
 
-				#Inicia a transção
+				#Inicia a trans??o
 				$this->conexao->beginTransaction();
 				
 				
@@ -535,7 +564,7 @@ class Cadastro extends Dados
  * 				#Removido devido a necessidade da Lilian fechar o chamado mesmo sem atendente.
 				if($tbAtendenteSolicitacao->confirmarAtendente($this->dados['sol_codigo']) == '')
 				{
-					throw new Exception('Não existe um atendente para esse chamado!');
+					throw new Exception('N?o existe um atendente para esse chamado!');
 				} */
 
 
@@ -546,10 +575,10 @@ class Cadastro extends Dados
 
 				if($this->dados['sta_codigo'] == 3)
 				{
-					#Alterar status da solicitação
-					$tbsolicitacao->alterarStatus($this->dados);
+					#Alterar status da solicita??o
+					$tbsolicitacao->alterarStatusSolicitante($this->dados);
 						
-					#Grava a data de alteracao de status da solicitação
+					#Grava a data de alteracao de status da solicita??o
 					$tbcalculoatendimento = new TbCalculoAtendimento();
 					$tbcalculoatendimento->insertCalculoAtendimento($this->dados);
 						
@@ -587,7 +616,7 @@ class Cadastro extends Dados
 		{
 			ValidarCampos::campoVazio($this->dados['che_titulo'],'Titulo');
 			ValidarCampos::campoVazio($this->dados['che_email_envio'],'E-mail de Envio');
-			ValidarCampos::campoVazio($this->dados['che_descricao'],'Descrição');
+			ValidarCampos::campoVazio($this->dados['che_descricao'],'Descri??o');
 			ValidarCampos::campoVazio($this->dados['dep_codigo'],'Departamento');
 			ValidarCampos::campoVazio($this->dados['che_ativo'],'Departamento');			
 
@@ -646,7 +675,7 @@ class Cadastro extends Dados
 				{
 					#Instancia da classe Arquivo que manipula os aquivos
 					$arquivo = new Arquivo();
-					#Metodo setDados que serve para setar o $file que contém todo o arquivo
+					#Metodo setDados que serve para setar o $file que cont?m todo o arquivo
 					$arquivo->setDados($file);
 					/*
 					 * Capturando os dados do arquivo
@@ -690,8 +719,8 @@ class Cadastro extends Dados
 			$CheCodigo = $this->dados['che_codigo'];
 			$CheTitulo = $this->dados['che_titulo'];
 						
-			ValidarCampos::campoVazio($observacao,'Observação');
-			ValidarCampos::validaQtdCaracter($observacao,20,'Observação');
+			ValidarCampos::campoVazio($observacao,'Observa??o');
+			ValidarCampos::validaQtdCaracter($observacao,20,'Observa??o');
 
 			array_pop($this->dados);
 			array_pop($this->dados);
@@ -727,7 +756,7 @@ class Cadastro extends Dados
 				$email->AddAddress($EmailEnvio);
 				
 				$email->mensagem ="Em: ".date("d-m-Y H:i:s")."<br />";
-				$email->mensagem .= "O usuário: <b>{$this->dados['usu_email']}</b> verificou as seguintes tarefas:<br /><br />";
+				$email->mensagem .= "O usu?rio: <b>{$this->dados['usu_email']}</b> verificou as seguintes tarefas:<br /><br />";
 				$email->mensagem .= "$tarefa <br />";
 				$email->mensagem .= $observacao;
 				$email->enviarEmail();
@@ -751,9 +780,9 @@ class Cadastro extends Dados
 
 			ValidarCampos::campoVazio($this->dados['pro_codigo'],'Projeto');
 			ValidarCampos::campoVazio($this->dados['usu_codigo_responsavel'],$_SESSION['config']['usuario'].' Executor');
-			ValidarCampos::campoVazio($this->dados['at_previsao_inicio'],'Previsão Inicio');
-			ValidarCampos::campoVazio($this->dados['at_previsao_fim'],'Previsão Fim');
-			ValidarCampos::campoVazio($this->dados['at_descricao'],'Descrição');
+			ValidarCampos::campoVazio($this->dados['at_previsao_inicio'],'Previs?o Inicio');
+			ValidarCampos::campoVazio($this->dados['at_previsao_fim'],'Previs?o Fim');
+			ValidarCampos::campoVazio($this->dados['at_descricao'],'Descri??o');
 			
 
 			$this->dados['at_previsao_inicio'] = ValidarDatas::dataBanco($this->dados['at_previsao_inicio']);
@@ -774,7 +803,7 @@ class Cadastro extends Dados
 				
 				if($status != 2)
 				{
-					throw new Exception('Não é possível criar essa atividade: Este projeto não esta em andamento');
+					throw new Exception('N?o ? poss?vel criar essa atividade: Este projeto n?o esta em andamento');
 				}else
 				{
 				
@@ -837,7 +866,7 @@ class Cadastro extends Dados
 		try
 		{
 			ValidarCampos::campoVazio($this->dados['at_codigo']);
-			ValidarCampos::campoVazio($this->dados['ap_descricao'],'Descrição do Apontamento');
+			ValidarCampos::campoVazio($this->dados['ap_descricao'],'Descri??o do Apontamento');
 			
 			$this->dados['usu_codigo'] = $_SESSION['usu_codigo'];
 			
@@ -852,7 +881,7 @@ class Cadastro extends Dados
 				
 				if($status > 2)
 				{
-					throw new Exception('Não é possível criar apontamento: Esta atividade não esta em Andamento ou Pendente');
+					throw new Exception('N?o ? poss?vel criar apontamento: Esta atividade n?o esta em Andamento ou Pendente');
 				}else 
 				{
 					
@@ -997,7 +1026,7 @@ class Cadastro extends Dados
 
 				#Verifica se o usuario e o atendente e se existe atendente
 				if(($Sistema['usu_codigo_usuario_chave'] != $_SESSION['usu_codigo']) and (empty($Atendente))){
-					throw new Exception('Não existe um atendente, você não pode inserir um apontamento.');						
+					throw new Exception('N?o existe um atendente, voc? n?o pode inserir um apontamento.');						
 				}
 					
 				#Inicia a transacao
@@ -1045,7 +1074,7 @@ class Cadastro extends Dados
 		try {
 			
 			ValidarCampos::campoVazio($this->dados['sis_descricao'],'Sistema');
-			ValidarCampos::campoVazio($this->dados['usu_codigo_usuario_chave'],'Usuário chave');			
+			ValidarCampos::campoVazio($this->dados['usu_codigo_usuario_chave'],'Usu?rio chave');			
 			
 			$this->dados['sis_status'] = 1;
 			
@@ -1063,6 +1092,78 @@ class Cadastro extends Dados
 			throw new Exception($e->getMessage(), $e->getCode());
 		}
 		
+	}
+	
+	public function cadastrarTerceiro()
+	{
+	
+		try {
+				
+			ValidarCampos::campoVazio($this->dados['ter_descricao'],'Descric?o');
+			ValidarCampos::campoVazio($this->dados['dep_codigo'],'Deparamento');
+				
+			$this->dados['ter_status'] = ($this->dados['ter_status'] == '') ? 0 : 1;
+				
+			try {
+	
+				$tbTerceiro = new TbTerceiro();
+					
+				$tbTerceiro->insert($this->dados);
+	
+			} catch (PDOException $e) {
+				throw new PDOException($e->getMessage(), $e->getCode());
+			}
+				
+		} catch (Exception $e) {
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+	
+	}
+	
+	
+	public function cadastrarEnvioTerceiro()
+	{
+	
+		try {
+
+            //Valida se existe o codigo do chamado e o codigo do terceiro
+			ValidarCampos::campoVazio($this->dados['sol_codigo'],'Codigo');
+			ValidarCampos::campoVazio($this->dados['ter_codigo'],'Terceiro');
+			
+
+			ValidarCampos::campoVazio($this->dados['ter_codigo']);
+			$this->dados['usu_codigo_inclusao'] = $_SESSION['usu_codigo'];
+			
+			$data = ValidarDatas::dataBanco($this->dados['dataenvio']);
+			$hora = $this->dados['horaenvio'];
+			
+			$this->dados['sot_data_inclusao'] = $data .' '. $hora;
+			
+/*			$this->dados['sot_descriacao_inclusao'] = 'Teste de Criacao';*/
+
+            ValidarCampos::campoVazio($this->dados['sot_descricao_inclusao'],'Descricao aqui mesmo');
+			
+			$this->dados['sot_data_criacao_inclusao'] = date('Y-m-d H:i:s');
+
+            $tbSolicitacaoTerceiro = new TbSolicitacaoTerceiro();
+            $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($this->dados['sol_codigo']);
+
+            if($SolicitacaoTerceiro['sot_status'] == 'S'){
+                throw new Exception('Esse chamado esta em poder de terceiro!',300);
+            }
+
+            try {
+
+				$tbSolicitacaoTerceiro->insert($this->dados);
+	
+			} catch (PDOException $e) {
+				throw new PDOException($e->getMessage(), $e->getCode());
+			}
+
+		} catch (Exception $e) {
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+	
 	}
 	
 	

@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/script.php");
 
@@ -22,29 +22,49 @@ echo "</div>";
 		<td nowrap="nowrap">
 			Departamento:
 			<?php 
-			$tbdepartamento = new TbDepartamento();	
-			FormComponente::$name = 'TODOS';
-		    FormComponente::selectOption('dep_codigo_busca',$tbdepartamento->listarDepartamentos(),true,$busca->getDados('dep_codigo_busca'));
+			$tbdepartamento = new TbDepartamento();
+            //Campo de Departamento
+            $FormDepartamento = new SelectOption();
+            $FormDepartamento->setStmt($tbdepartamento->listarDepartamentos())
+                             ->setOptionEmpty('TODOS')
+                             ->setSelectedItem($busca->getDados('dep_codigo_busca'))
+                             ->setSelectName('dep_codigo_busca')
+                             ->listOption();
+
+
 			?>
 			</td>
 			<td>
 			<?php 
 			   echo($_SESSION['config']['problema'].':');
 		       $tbproblema = new TbProblema();
-		       FormComponente::$name = 'TODOS';
-		       FormComponente::selectOption('pro_codigo_busca',$tbproblema->listarProblema('dep_codigo'),true,$busca->getDados('pro_codigo_busca'));
-			?>
+
+               $FormProblema = new SelectOption();
+               $FormProblema->setStmt($tbproblema->listarProblema('dep_codigo'))
+                            ->setOptionEmpty('TODOS')
+                            ->setSelectedItem($busca->getDados('pro_codigo_busca'))
+                            ->setSelectName('pro_codigo_busca')
+                            ->listOption();
+
+
+            ?>
 		</td>
 	</tr>
 	<tr>
 		<td nowrap="nowrap">
 				
 			Status:
-			<?php 
-			$tbstatus= new TbStatus();
-			FormComponente::$name = 'TODOS';
-			FormComponente::selectOption('sta_codigo', $tbstatus->selectMeuStatus(),true,$busca->getDados('sta_codigo'));
-			?>
+			<?php
+            $tbstatus= new TbStatus();
+            //Criacao do campo do formulario de status
+            $FormStatus = new SelectOption();
+            $FormStatus->setStmt($tbstatus->selectMeuStatus())
+                       ->setSelectName('sta_codigo')
+                       ->setSelectedItem($busca->getDados('sta_codigo'))
+                       ->setOptionEmpty('TODOS',6)
+                       ->listOption();
+
+            ?>
 		</td>
 	
 		<td>
@@ -87,7 +107,7 @@ try
 	
 $datagrid->titulofield = 'Chamado(s)';
 $datagrid->acao = 'alterar/SolicitacaoSolicitante';
-$datagrid->nomelink = '<img src="/SGA/css/images/search.png" />';	
+$datagrid->nomelink = '<img src="/sga/css/images/search.png" />';	
 
 $datagrid->mostrarDatagrid();
 

@@ -3,13 +3,17 @@ $tbsolicitacao = new TbSolicitacao();
 $_SESSION['alterar/Solicitacao'] = $tbsolicitacao->getFormReceptor(base64_decode($_SESSION['valorform']));
 
 $tbatendimentosolicitante = new TbAtendenteSolicitacao();
-$usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/Solicitacao']['sol_codigo'])
+$usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/Solicitacao']['sol_codigo']);
+
+$tbSolicitacaoTerceiro = new TbSolicitacaoTerceiro();
+$SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($_SESSION['alterar/Solicitacao']['sol_codigo']);
 
 ?>
 
 	<fieldset>
 				<legend>Alterar Chamado</legend>
-<form name="arquivo" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/solicitacao.php">				
+<form name="arquivo" method="post" class="<?php echo ($SolicitacaoTerceiro['sot_status'] == 'S') ? 'solicitacao-emterceiro' : ''; ?>"
+        enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/solicitacao.php">
 			<fieldset>
 				<legend>Ações</legend>
 				<div class="acoeschamado">
@@ -22,11 +26,27 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
     <tr>
       <td colspan="2" align="center">
       	<?php Texto::mostrarMensagem($_SESSION['erro']); ?>
-      </td>
+
+      	      <span class="aviso-em-terceiro" >
+          <?php
+if($SolicitacaoTerceiro['sot_status'] == 'S'){
+    echo 'Chamado com ',$tbSolicitacaoTerceiro->getDescricaoTerceiro($SolicitacaoTerceiro['sot_codigo']),
+    '. Tempo:  ',$tbSolicitacaoTerceiro->getTempoEmTerceiro($SolicitacaoTerceiro['sot_codigo']);
+}
+?>
+      </span>
+
+    </td>
     </tr>
-<tr>
+      <tr>
+          <td>
+              &nbsp;
+          </td>
+      </tr>
+
+        <tr>
 	    	<th nowrap="nowrap">
-	    		Número do Chamado:
+	    		N?mero do Chamado:
 	    	</th>
     		<td>
 	    		<?php echo($_SESSION['alterar/Solicitacao']['sol_codigo']); ?>
@@ -114,7 +134,7 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
     		<td>
     		<?php 
     		$tbcalcatendimento = new TbCalculoAtendimento();
-    		#Pega a data da solicitação pelo STATUS informado, no caso 1 é ABERTURA
+    		#Pega a data da solicita??o pelo STATUS informado, no caso 1 ? ABERTURA
     		echo $tbcalcatendimento->getDataPorStatus($_SESSION['alterar/Solicitacao']['sol_codigo'],1);
 			?>
     		</td>
@@ -140,7 +160,7 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
 	  </td>
     </tr>
     <tr>
-      <th align="left" nowrap="nowrap">Descrição do <?php echo($_SESSION['config']['problema']);?>:</th>
+      <th align="left" nowrap="nowrap">Descri??o do <?php echo($_SESSION['config']['problema']);?>:</th>
 	      <td>
 	      	<textarea name="sol_descricao_solicitacao" rows="10" cols="50"><?php echo($_SESSION['alterar/Solicitacao']['sol_descricao_solicitacao']); ?></textarea>
 	      </td>
@@ -201,7 +221,7 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
 	  	
 		  	$tabela = $tbassentamento->listarAssentamento($_SESSION['alterar/Solicitacao']['sol_codigo']);
 		
-		  	$cabecalho = array('Descrição','Data','Editor');
+		  	$cabecalho = array('Descri??o','Data','Editor');
 		  	
 		  	$grid = new DataGrid($cabecalho, $tabela);
 		  	

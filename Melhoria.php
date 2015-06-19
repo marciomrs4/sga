@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
 $ControleAcesso = new ControleDeAcesso();
 $ControleAcesso->permitirAcesso(array(ControleDeAcesso::$TecnicoADM,ControleDeAcesso::$Tecnico, ControleDeAcesso::$Solicitante));
@@ -65,7 +65,7 @@ $datagrid->setCabecalho(array('Nº','Solicitante','Data Solicitação','Sistema','S
 
 $datagrid->titulofield = ' Melhorias(s)';
 $datagrid->acao = 'alterar/SolicitacaoMelhoria';
-$datagrid->nomelink = '<img src="/SGA/css/images/search2.png" title="Visualizar" />';	
+$datagrid->nomelink = '<img src="/sga/css/images/search2.png" title="Visualizar" />';	
 
 $datagrid->islink2 = true;
 $datagrid->acao2 = 'cadastrar/apontamentoMelhoria';

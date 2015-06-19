@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
 //resolve o problema de acentos
 header('Content-Type: text/html; charset=ISO-8859-1');

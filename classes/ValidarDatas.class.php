@@ -11,7 +11,7 @@ class ValidarDatas extends ClasseException
 	{
 		if(!preg_match("/^[0-9]{2}\-[0-9]{2}\-[0-9]{4}$/",$data))
 		{
-			throw new Exception("A data no campo {$campo} não é válida",300);
+			throw new Exception("A data no campo {$campo} nï¿½o ï¿½ vï¿½lida",300);
 		}
 
 	}
@@ -60,12 +60,12 @@ class ValidarDatas extends ClasseException
 	 * Calcula um intervalo de datas
 	 * @param string $data
 	 * @param int $dias
-	 * @example A data deve ser informada no padrão
+	 * @example A data deve ser informada no padrï¿½o
 	 * 	DIA/MES/ANO
 	 * @return string $data
 	 * @tutorial Informe a data que deja calcular
 	 * e a quantidade de dias que deseja ser calculado
-	 * para dias já passados deve ser inserido valor
+	 * para dias jï¿½ passados deve ser inserido valor
 	 * negativo. Para calcular uma data a frente (data
 	 * futura) basta inserir um valor positivo.
 	 */
@@ -99,7 +99,7 @@ class ValidarDatas extends ClasseException
 
 	public static function validarAteDataAtual($data,$campo,$frase = null)
 	{
-		$frase = ($frase == null) ? 'Data inválida no campo: ' : frase;
+		$frase = ($frase == null) ? 'Data invï¿½lida no campo: ' : frase;
 
 		if(stristr($data,'/'))
 		{
@@ -124,7 +124,7 @@ class ValidarDatas extends ClasseException
 
 		if(!checkdate($data[1],$data[0],$data[2]))
 		{
-			throw new DataInvalidaException("Data inválida no campo {$nomecampo}.",300);
+			throw new DataInvalidaException("Data invï¿½lida no campo {$nomecampo}.",300);
 		}
 	}
 
@@ -154,13 +154,6 @@ class ValidarDatas extends ClasseException
 
 		return($timestamp);
 	}
-
-	
-	public function setData($data)
-	{
-		
-	}
-	
 	
 }
 ?>

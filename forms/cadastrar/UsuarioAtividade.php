@@ -11,7 +11,7 @@ $_SESSION['alterar/Atividade'] = $tbAtividade->getFormAlteracao(base64_decode($_
 	<legend><?php echo($_SESSION['config']['usuario']);?> Atividade:</legend>
 
 <fieldset id="telausuarioatividade">
-	<legend><a href="#"><span id="usuarioatividade">Informações da Atividade [Ocultar]</span></a></legend>
+	<legend><a href="#"><span id="usuarioatividade">Informações da Atividade [Mostrar/Esconder]</span></a></legend>
 			
   <table border="0" cellspacing="5" id="esconder">
 	<tr>
@@ -20,7 +20,7 @@ $_SESSION['alterar/Atividade'] = $tbAtividade->getFormAlteracao(base64_decode($_
 	    <?php 
 		$tbProjeto = new TbProjeto();
 		FormComponente::$name = 'Selecione...';
-		FormComponente::selectOption('pro_codigo', $tbProjeto->listarProjetoAtivo(),true,$_SESSION['alterar/Atividade']);
+		FormComponente::selectOption('pro_codigo', $tbProjeto->listarProjetoAtivo($_SESSION['dep_codigo']),true,$_SESSION['alterar/Atividade']);
 		?>
 		</td>
      </tr>
@@ -46,21 +46,21 @@ $_SESSION['alterar/Atividade'] = $tbAtividade->getFormAlteracao(base64_decode($_
      </tr>     
      
      <tr>
-       <th width="119" align="left" nowrap="nowrap">Previsão Inicio:</th>
+       <th width="119" align="left" nowrap="nowrap">Previs?o Inicio:</th>
      	<td> 	
       		<input type="text" id="data-id" class="data" name="at_previsao_inicio" value="<?php echo(ValidarDatas::dataCliente($_SESSION['alterar/Atividade']['at_previsao_inicio'])); ?>"  />
      	</td>
      </tr>
      
       <tr>
-       <th width="119" align="left" nowrap="nowrap">Previsão Fim:</th>	
+       <th width="119" align="left" nowrap="nowrap">Previs?o Fim:</th>	
       	<td>
       		<input type="text" id="data" class="data" name="at_previsao_fim" value="<?php echo(ValidarDatas::dataCliente($_SESSION['alterar/Atividade']['at_previsao_fim'])); ?>"  />
      	</td>
      </tr>
 
     <tr>
-      <th width="119" align="left" nowrap="nowrap">Descrição:</th>
+      <th width="119" align="left" nowrap="nowrap">Descri??o:</th>
       <td>
       	<textarea name="at_descricao" rows="5" cols="32"><?php echo($_SESSION['alterar/Atividade']['at_descricao']); ?></textarea>
       </td>

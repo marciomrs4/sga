@@ -30,7 +30,7 @@ class TbAtendenteSolicitacao extends Banco
 
 	}
 
-	#Usado para confirmar se existe alguém atendendo a solicitação
+	#Usado para confirmar se existe alguï¿½m atendendo a solicitaï¿½ï¿½o
 	#para evitar q se criei dois atendimentos.
 	public function confirmarAtendente($sol_codigo)
 	{
@@ -136,7 +136,7 @@ class TbAtendenteSolicitacao extends Banco
 	#Utilizado no Painel de Chamados
 	public function listarSolicitacaoPainel($dados)
 	{
-		$query = ("SELECT ate.usu_codigo_atendente, ate.sol_codigo, 
+		/*$query = ("SELECT ate.usu_codigo_atendente, ate.sol_codigo,
 								(SELECT usu_nome FROM tb_usuario 
 									WHERE usu_codigo = so.usu_codigo_solicitante ) as 'Solicitante',
 									DATEDIFF(now(),(SELECT tea_data_acao FROM tb_calculo_atendimento 
@@ -147,7 +147,21 @@ class TbAtendenteSolicitacao extends Banco
 						ON ate.sol_codigo = so.sol_codigo
 						WHERE ate.usu_codigo_atendente = ?
 						AND so.sta_codigo = ?
-						ORDER BY 4 DESC");
+						ORDER BY 4 DESC");*/
+
+            $query = ("SELECT  ate.sol_codigo,
+                            (SELECT usu_nome FROM tb_usuario
+                                WHERE usu_codigo = so.usu_codigo_solicitante ) as 'Solicitante',
+                                      DATEDIFF(now(),(SELECT tea_data_acao FROM tb_calculo_atendimento
+                                WHERE so.sol_codigo = sol_codigo AND sta_codigo = 1)
+                                ) AS Tempo,
+                              (SELECT pri_descricao FROM tb_prioridade WHERE ate.pri_codigo = pri_codigo) as pri_descricao
+                       FROM tb_atendente_solicitacao AS ate
+                       INNER JOIN tb_solicitacao AS so
+                       ON ate.sol_codigo = so.sol_codigo
+                       WHERE ate.usu_codigo_atendente = ?
+                       AND so.sta_codigo = ?
+                       ORDER BY 4 DESC");
 		
 		try 
 		{

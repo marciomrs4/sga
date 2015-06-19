@@ -112,7 +112,7 @@ class TbUsuario extends Banco
 	}
 
 	
-	#Listagem de usuários, usada para busca na tela de Operação/atividade
+	#Listagem de usuï¿½rios, usada para busca na tela de Operaï¿½ï¿½o/atividade
 	public function selectUsuarioPorDepartamento($dep_codigo)
 	{
 			$query = ("SELECT a.usu_codigo, a.usu_nome
@@ -143,7 +143,7 @@ class TbUsuario extends Banco
 	}
 	
 	
-	#Usado na lista de usuários na abertura de chamado
+	#Usado na lista de usuï¿½rios na abertura de chamado
 	public function selectUsuarios()
 	{
 		$query = ("SELECT usu_codigo, concat(usu_nome,' ',usu_sobrenome), dep_descricao, tac_descricao
@@ -332,20 +332,20 @@ class TbUsuario extends Banco
 					WHERE u.dep_codigo = ?
 					AND a.ace_ativo = 'S'");
 */
-		
-			$query = ("SELECT u.usu_codigo, count(ATS.sol_codigo) , u.usu_nome
-				FROM tb_usuario u
-				INNER JOIN tb_acesso a
-				ON u.usu_codigo = a.usu_codigo
-				INNER JOIN tb_atendente_solicitacao AS ATS
-				ON ATS.usu_codigo_atendente = U.usu_codigo
-				LEFT JOIN tb_solicitacao AS SOL
-				ON SOL.sol_codigo = ATS.sol_codigo
-				WHERE u.dep_codigo = ?
-				AND SOL.sta_codigo = ?
-				AND a.ace_ativo = 'S'
-				GROUP BY u.usu_codigo
-				ORDER BY 2 DESC");
+
+        $query = ("SELECT u.usu_codigo, count(ATS.sol_codigo) , u.usu_nome
+                           FROM tb_usuario u
+                           INNER JOIN tb_acesso a
+                           ON u.usu_codigo = a.usu_codigo
+                           INNER JOIN tb_atendente_solicitacao AS ATS
+                           ON ATS.usu_codigo_atendente = u.usu_codigo
+                           LEFT JOIN tb_solicitacao AS SOL
+                           ON SOL.sol_codigo = ATS.sol_codigo
+                           WHERE u.dep_codigo = ?
+                           AND SOL.sta_codigo = ?
+                           AND a.ace_ativo = 'S'
+                           GROUP BY u.usu_codigo
+                           ORDER BY 2 DESC");
 		
 		try 
 		{

@@ -45,7 +45,7 @@ $_SESSION['alterar/SenhaUsuario'] = $tbacesso->getForm(base64_decode($_SESSION['
 		   	<td nowrap="nowrap"> 
 				<input type="checkbox" name="ace_ativo" checked="checked" value="1" >
 		    </td>
-    	</tr>    
+   	</tr>    
     
     
     <tr>

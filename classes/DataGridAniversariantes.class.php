@@ -60,8 +60,8 @@ class DataGridAniversariantes
 	 * nomelink = 'Clique Aqui'
 	 */
 		
-	public $nomelink = "<img src='/SGA/css/images/editar.gif' />";
-	public $nomelink2 = '<img src="/SGA/css/images/adcionar.png" />';
+	public $nomelink = "<img src='/sga/css/images/editar.gif' />";
+	public $nomelink2 = '<img src="/sga/css/images/adcionar.png" />';
 	
 	
 	public $excel = false; 
@@ -73,9 +73,9 @@ class DataGridAniversariantes
 	 * @example Inserir o nome do link que sejá chamado ao clicar
 	 * link = 'link.php'
 	 */
-	public $link = '/SGA/action/formcontroler.php';
+	public $link = '/sga/action/formcontroler.php';
 	
-	public $link2 = '/SGA/action/formcontroler.php';
+	public $link2 = '/sga/action/formcontroler.php';
 
 	/**
 	 * Descrição ...

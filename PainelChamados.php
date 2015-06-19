@@ -1,11 +1,11 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 ?>
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' 'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
 <meta http-equiv='Content-Type' content='application/xhtml+xml; charset=ISO-8859-1' />
-<title>..:: Painel Diário ::..</title>
+<title>..:: Painel Di?rio ::..</title>
 <link rel='stylesheet' type='text/css' href='../sga/css/PainelChamados.css' />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
 <script	language="JavaScript" src="../sga/jscript/jquery-1.11.1.min.js"></script>
@@ -87,6 +87,7 @@ timer();
 $tbUsuario = new TbUsuario();
 $dados['sta_codigo'] = 2;
 
+$nomelink = '&raquo;';
 
 foreach ($tbUsuario->listarUsuariosPainel($dados) as $valores):
 
@@ -101,9 +102,12 @@ echo("<fieldset id='completo'>
 		$DataGrid = new DataGrid();
 		
 		$DataGrid->setDados($tbAtendenteSolicitacao->listarSolicitacaoPainel($dados));
-		$DataGrid->setCabecalho(array("Número","Usuário","Dias"));
-		$DataGrid->nomelink = '';
-		$DataGrid->colunaoculta = 1;
+		$DataGrid->setCabecalho(array('Número','Usúario','Dias','SLA'));
+		$DataGrid->nomelink = $nomelink;
+        $DataGrid->link = './GerarRelatorioPdf.php';
+        $DataGrid->acao = 'sol_codigo';
+		$DataGrid->colunaoculta = 0;
+
 		$DataGrid->mostrarDatagrid(1);
 		
 		echo("</fieldset>");

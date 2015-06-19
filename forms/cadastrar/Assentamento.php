@@ -3,22 +3,39 @@ $tbsolicitacao = new TbSolicitacao();
 
 $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform']));
 
-?>
+$tbSolicitacaoTerceiro = new TbSolicitacaoTerceiro();
+$SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_codigo']);
 
+?>
 
 <fieldset>
 	<legend><b>Assentamento</b></legend>
-  <form name="cadastrar/Assentamento" id="Assentamento" enctype="multipart/form-data" method="post" action="../<?php echo($_SESSION['projeto']); ?>/action/assentamento.php">
+  <form name="cadastrar/Assentamento" id="Assentamento" class="<?php echo ($SolicitacaoTerceiro['sot_status'] == 'S') ? 'solicitacao-emterceiro' : ''; ?>" enctype="multipart/form-data" method="post" action="../<?php echo($_SESSION['projeto']); ?>/action/assentamento.php">
 	<table width="300" border="0">
 
     <tr>
       <td colspan="2">	
       <?php Texto::mostrarMensagem($_SESSION['erro']);?>
-    </td>
+
+          <span class="aviso-em-terceiro" >
+          <?php
+          if($SolicitacaoTerceiro['sot_status'] == 'S'){
+              echo 'Chamado com ',$tbSolicitacaoTerceiro->getDescricaoTerceiro($SolicitacaoTerceiro['sot_codigo']),
+              '. Tempo:  ',$tbSolicitacaoTerceiro->getTempoEmTerceiro($SolicitacaoTerceiro['sot_codigo']);
+          }
+          ?>
+      </span>
+
+      </td>
     </tr>
+        <tr>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
 
     <tr>
-      <th nowrap="nowrap">Número do Chamado:</th>
+      <th nowrap="nowrap">Nï¿½mero do Chamado:</th>
       <td>
       	<?php echo($dados[0]); ?>
       </td>
@@ -54,7 +71,7 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
     </tr>
     
     <tr>
-      <th nowrap="nowrap">Descrição do Chamado:</th>
+      <th nowrap="nowrap">Descriï¿½ï¿½o do Chamado:</th>
       <td>
       	<?php echo($dados[1]); ?>
       </td>
@@ -84,12 +101,12 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
       	$atendente = $tbatendente->getNomeAtendente($dados[0]);
     
       	$tbusuario = new TbUsuario();
-      		#Verifica se há um atendente e não houver, é mostrado o $name
+      		#Verifica se hï¿½ um atendente e nï¿½o houver, ï¿½ mostrado o $name
       		#Caso contrario lista os nomes sem o $name
      	  	if($atendente)
    			{$valor = false;}
    			else
-   			{FormComponente::$name = 'Não há atendentes';
+   			{FormComponente::$name = 'Nï¿½o hï¿½ atendentes';
    			$valor = true;}
       	FormComponente::selectOption('usu_codigo_atendente',$tbusuario->selectUsuarioDepCompleto($_SESSION['dep_codigo']),$valor,$atendente);
       
@@ -99,7 +116,7 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
     
     <tr>
     	<th>
-    		Problema técnico:
+    		Problema tï¿½cnico:
     	</th>
     	<td>
     	<?php 
@@ -107,7 +124,7 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
      	if($dados[4])
     	{$valor = false;}
     	else
-    	{FormComponente::$name = 'Não há problema técnico indicado';
+    	{FormComponente::$name = 'Nï¿½o hï¿½ problema tï¿½cnico indicado';
     	$valor = true;} 
     	FormComponente::selectOption('pro_codigo_tecnico', $tbProblema->listarProblemasTecnicos($_SESSION['dep_codigo']),true,$dados);
     	
@@ -120,7 +137,7 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
 		    	<td nowrap="nowrap"> 
 		    		Departamento Atendente: <input type="checkbox" name="Departamento" checked="checked" value="1" >
 		    		|
-		    		Usuário Solicitante: <input type="checkbox" name="Solicitante" checked="checked" value="1" >
+		    		Usuï¿½rio Solicitante: <input type="checkbox" name="Solicitante" checked="checked" value="1" >
 		    	</td>
     	</tr>    
             
@@ -157,7 +174,7 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
 	  	$tbassentamento = new TbAssentamento();
 	  	$tabela = $tbassentamento->listarAssentamento($dados[0]);
 	
-	  	$cabecalho = array('Descrição','Data','Editor');
+	  	$cabecalho = array('Descriï¿½ï¿½o','Data','Editor');
 	  	
 	  	$grid = new DataGrid($cabecalho, $tabela);
 	  	

@@ -78,20 +78,44 @@ class createTables extends Banco
 	
 	}
 	
+	
+	private function getNameClass()
+	{
+		$string = '';
+		
+		$partes = explode('_', $this->tabela);
+		
+		$qtd = count($partes);
+		
+		for ($x=0; $x <= $qtd; $x++){
+		
+			$string .=  ucfirst($partes[$x]);
+		
+		}
+		
+		return $string;
+	}
+	
 	public function generateAll()
 	{
-		echo 'Class $$$$ extends Banco
-			  <br>{<br><br>';
+		echo 'class ', $this->getNameClass(), ' extends Banco',
+			  '<br>{<br><br>';
 		$this->createAtributos();
-		echo '<br><br>';	
+		echo '<br><br>';
 
-		echo 'public function insert()<br>
+		echo 'public function insert($dados)<br>
 			  {<br>';
 			$this->generateInsert();
-		echo '<br>}<br><br>';
+		echo '<br>}
+				<br><br>';
 		$this->generateSelect();
 		
-		echo '<br><br>}';
+		echo '<br><br>}<br><br>';
+		
+		echo 'public function update($dados)<br>
+			  {<br>';
+		$this->generateUpdate();
+		echo '<br>}<br><br>';
 	}
 	
 }

@@ -1,4 +1,4 @@
-SGA
+sga
 ========
 
 Projeto de Sistema de chamado - TI CEADIS

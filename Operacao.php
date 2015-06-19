@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
 $ControleAcesso = new ControleDeAcesso();
 $ControleAcesso->permitirAcesso(array(ControleDeAcesso::$TecnicoADM,ControleDeAcesso::$Tecnico));
@@ -28,16 +28,26 @@ echo "</div>";
 			Status:
 			<?php 
 			$tbstatus= new TbStatus();
-
-			$form = new FormComponente();
-			$form::$name = 'TODOS';
-			$form->selectOption('sta_codigo', $tbstatus->selectMeuStatus(),true,$busca->getDados('sta_codigo'),6);
+            //Criacao do campo do formulario de status
+            $FormStatus = new SelectOption();
+            $FormStatus->setStmt($tbstatus->selectMeuStatus())
+                       ->setSelectName('sta_codigo')
+                       ->setSelectedItem($busca->getDados('sta_codigo'))
+                       ->setOptionEmpty('TODOS',6)
+                       ->listOption();
 
 			#Nome do Campo
 			echo(' '.$_SESSION['config']['problema'].':');
 				
 		    $tbproblema = new TbProblema();
-		    FormComponente::selectOption('pro_codigo_busca_tecnico',$tbproblema->listarProblemasTecnicos($_SESSION['dep_codigo']),true,$_POST);
+            //Criacao do campo do formulario de Problema
+            $FormProblema = new SelectOption();
+            $FormProblema->setStmt($tbproblema->listarProblemasTecnicos($_SESSION['dep_codigo']))
+                         ->setSelectName('pro_codigo_busca_tecnico')
+                         ->setSelectedItem($busca->getDados('pro_codigo_busca_tecnico'))
+                         ->setOptionEmpty('Selectione...')
+                         ->listOption();
+
 			?>
 			
 		</td>
@@ -55,12 +65,17 @@ echo "</div>";
 			<?php 
 				
 		    $tbUsuario = new TbUsuario();
-		    FormComponente::$name = 'Todos';
-		    FormComponente::selectOption('usu_codigo_atendente',$tbUsuario->selectUsuarioPorDepartamento($_SESSION['dep_codigo']),true,$_SESSION['post'],0);
+            //Botao de Lista de Problemas
+            $FormUsuarioAtendente = new SelectOption();
+            $FormUsuarioAtendente->setStmt($tbUsuario->selectUsuarioPorDepartamento($_SESSION['dep_codigo']))
+                                 ->setOptionEmpty('TODOS',0)
+                                 ->setSelectName('usu_codigo_atendente')
+                                 ->setSelectedItem($busca->getDados('usu_codigo_atendente'))
+                                 ->listOption();
 			?>		
  										
 			<?php 
-				//'Número',$_SESSION['config']['problema'],'Status','Solicitante','Depto Solicitante','Descrição','Atendente','Data Abertura'
+				//'N?mero',$_SESSION['config']['problema'],'Status','Solicitante','Depto Solicitante','Descri??o','Atendente','Data Abertura'
 			$cabecalho = array('Número','Solicitante','Data Abertura',$_SESSION['config']['problema'],'Status','Depto Solicitante','Descrição','Atendente');
 				
 			$datagrid->setCabecalho($cabecalho);
@@ -91,7 +106,7 @@ $datagrid->setDados($busca->listarChamado());
 
 $datagrid->titulofield = ' Chamado(s)';
 $datagrid->acao = 'alterar/Solicitacao';
-$datagrid->nomelink = '<img src="/SGA/css/images/search2.png" title="Visualizar" />';	
+$datagrid->nomelink = '<img src="/sga/css/images/search2.png" title="Visualizar" />';	
 
 $datagrid->islink2 = true;
 $datagrid->acao2 = 'cadastrar/Assentamento';

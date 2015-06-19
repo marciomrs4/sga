@@ -10,6 +10,12 @@ class TbDepartamento extends Banco
 	private $dep_email = 'dep_email';
 	private $pro_permite_listar_chamado = 'pro_permite_listar_chamado';
 
+    /** Campos add devido ao calculo do tempo de atendimento*/
+    private $dep_hora_inicio = 'dep_hora_inicio';
+    private $dep_hora_fim = 'dep_hora_fim';
+    private $dep_hora_almoco = 'dep_hora_almoco';
+    private $dep_carga_sabado = 'dep_carga_sabado';
+
 
 	public function getDepDescricao($dep_codigo)
 	{
@@ -65,6 +71,10 @@ class TbDepartamento extends Banco
 			$stmt->bindParam(1,$dados[$this->dep_descricao],PDO::PARAM_INT);
 			$stmt->bindParam(2,$dados[$this->dep_email],PDO::PARAM_STR);
 			$stmt->bindParam(3,$dados[$this->pro_permite_listar_chamado],PDO::PARAM_STR);
+            $stmt->bindParam(4,$dados[$this->dep_hora_inicio],PDO::PARAM_INT);
+            $stmt->bindParam(5,$dados[$this->dep_hora_fim],PDO::PARAM_INT);
+            $stmt->bindParam(6,$dados[$this->dep_hora_almoco],PDO::PARAM_INT);
+            $stmt->bindParam(7,$dados[$this->dep_carga_sabado],PDO::PARAM_INT);
 
 			$stmt->execute();
 
@@ -82,8 +92,12 @@ class TbDepartamento extends Banco
 	{
 		$query = ("UPDATE $this->tabela
 					SET	$this->dep_descricao = ?,
-					$this->dep_email = ?,
-					$this->pro_permite_listar_chamado = ?
+					    $this->dep_email = ?,
+					    $this->pro_permite_listar_chamado = ?,
+					    $this->dep_hora_inicio = ?,
+                        $this->dep_hora_fim = ?,
+                        $this->dep_hora_almoco = ?,
+                        $this->dep_carga_sabado = ?
 					WHERE $this->dep_codigo = ? ");
 					try
 					{
@@ -91,7 +105,11 @@ class TbDepartamento extends Banco
 						$stmt->bindParam(1,$dados[$this->dep_descricao],PDO::PARAM_STR);
 						$stmt->bindParam(2,$dados[$this->dep_email],PDO::PARAM_STR);
 						$stmt->bindParam(3,$dados[$this->pro_permite_listar_chamado],PDO::PARAM_INT);
-						$stmt->bindParam(4,$dados[$this->dep_codigo],PDO::PARAM_INT);
+                        $stmt->bindParam(4,$dados[$this->dep_hora_inicio],PDO::PARAM_INT);
+                        $stmt->bindParam(5,$dados[$this->dep_hora_fim],PDO::PARAM_INT);
+                        $stmt->bindParam(6,$dados[$this->dep_hora_almoco],PDO::PARAM_INT);
+                        $stmt->bindParam(7,$dados[$this->dep_carga_sabado],PDO::PARAM_INT);
+						$stmt->bindParam(8,$dados[$this->dep_codigo],PDO::PARAM_INT);
 
 						$stmt->execute();
 
@@ -143,11 +161,11 @@ class TbDepartamento extends Banco
 
 	}
 
-	#Usado em Cadastro de usuario e alteração de usuario
+	#Usado em Cadastro de usuario e alteraï¿½ï¿½o de usuario
 	public function listarTodosDepartamentos()
 	{
 		$query = ("SELECT dep_codigo, dep_descricao, dep_email, 
-    				IF(pro_permite_listar_chamado = 1,'SIM','NÃO') as 'Listar Chamado'
+    				IF(pro_permite_listar_chamado = 1,'SIM','NAO') as 'Listar Chamado'
 					FROM tb_departamento 
 					WHERE dep_codigo != 1
 				  ");
@@ -245,6 +263,30 @@ class TbDepartamento extends Banco
 		}
 	}
 	
-	
+
+    public function getAllHours($dep_codigo)
+    {
+
+        $query = ("SELECT dep_hora_inicio, dep_hora_fim,
+                          dep_hora_almoco, dep_carga_sabado
+                      FROM  $this->tabela
+				      WHERE $this->dep_codigo = ?");
+
+        try
+        {
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->bindParam(1,$dep_codigo,PDO::PARAM_INT);
+
+            $stmt->execute();
+
+            return($stmt->fetch(\PDO::FETCH_ASSOC));
+
+        } catch (PDOException $e)
+        {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }
+    }
+
 }
 ?>

@@ -79,7 +79,7 @@ class TbSolicitacao extends Banco
 
 	}
 
-	#Usado para mostrar informaçãoes na tela da SolicitacaoTecnico
+	#Usado para mostrar informaï¿½ï¿½oes na tela da SolicitacaoTecnico
 	public function getFormReceptor($sol_codigo)
 	{
 
@@ -192,7 +192,7 @@ class TbSolicitacao extends Banco
 		}
 	}
 
-	#Usado na opção, Chamados que abri
+	#Usado na opï¿½ï¿½o, Chamados que abri
 	public function selectMinhasSolicitacoes($dados)
 	{
 		$query = ("SELECT SOL.sol_codigo, substr(PRO.pro_descricao,1,60), STA.sta_descricao,
@@ -206,7 +206,7 @@ class TbSolicitacao extends Banco
 				    #Traz o nome do usuario solicitante
 				    INNER JOIN tb_usuario as USU
             		ON usu_codigo_solicitante = USU.usu_codigo
-				    #Tabela de Problema, traz a descrição do problema
+				    #Tabela de Problema, traz a descriï¿½ï¿½o do problema
 				    inner join tb_problema AS PRO
 				    ON PRO.pro_codigo = SOL.pro_codigo
 				    inner join tb_status STA
@@ -240,7 +240,7 @@ class TbSolicitacao extends Banco
 	}
 
 	#Mostra os Chamados da area, por Status e Problema, TODOS CHAMADO PRA EQUIPE.
-	public function selectSolicitacoesDepartmento($dados,$null)
+	public function selectSolicitacoesDepartmento($dados)
 	{
 
 		$query = ("SELECT SOL.sol_codigo, USU.usu_nome AS Usuario_Solicitante,
@@ -259,7 +259,7 @@ class TbSolicitacao extends Banco
 				    #Traz o nome do usuario solicitante
 				    INNER JOIN tb_usuario as USU
            			ON usu_codigo_solicitante = USU.usu_codigo
-				    #Tabela de Problema, traz a descrição do problema
+				    #Tabela de Problema, traz a descriï¿½ï¿½o do problema
 				    INNER JOIN tb_problema AS PRO
 				    ON PRO.pro_codigo = SOL.pro_codigo
 				    INNER JOIN tb_status STA
@@ -313,7 +313,7 @@ class TbSolicitacao extends Banco
 				    #Traz o nome do usuario solicitante
 				    INNER JOIN tb_usuario as USU
            			ON usu_codigo_solicitante = USU.usu_codigo
-				    #Tabela de Problema, traz a descrição do problema
+				    #Tabela de Problema, traz a descriï¿½ï¿½o do problema
 				    INNER JOIN tb_problema AS PRO
 				    ON PRO.pro_codigo = SOL.pro_codigo
 				    INNER JOIN tb_status STA
@@ -396,7 +396,7 @@ class TbSolicitacao extends Banco
 					}
 	}
 
-	#Apenas solicitações para o Departamento
+	#Apenas solicitaï¿½ï¿½es para o Departamento
 	public function selectSolicitacaoDepartamento($dep_codigo)
 	{
 		$query = ("SELECT SOL.sol_codigo, PRO.pro_descricao, STA.sta_descricao,
@@ -406,7 +406,7 @@ class TbSolicitacao extends Banco
 				    ) AS Departamento_Solicitante,
 				    sol_descricao_solicitacao, (SELECT usu_email FROM tb_usuario WHERE usu_codigo = ATS.usu_codigo_atendente) as Atendente
 				    from tb_solicitacao as SOL
-				    #Tabela de Problema, traz a descrição do problema
+				    #Tabela de Problema, traz a descriï¿½ï¿½o do problema
 				    inner join tb_problema AS PRO
 				    ON PRO.pro_codigo = SOL.pro_codigo
 				    inner join tb_status STA
@@ -482,7 +482,8 @@ class TbSolicitacao extends Banco
 	#Verifica qual o Departamento da solicitacao, e retorna
 	public function getCodigoDepartamentoSolicitado($sol_codigo)
 	{
-		$query = ("SELECT $this->dep_codigo_solicitado FROM $this->tabela
+		$query = ("SELECT $this->dep_codigo_solicitado
+                    FROM $this->tabela
 					WHERE $this->sol_codigo = ?");
 
 		try
@@ -495,7 +496,7 @@ class TbSolicitacao extends Banco
 
 			$dados = $stmt->fetch();
 
-			return($dados[0]);
+			return($dados['0']);
 
 		} catch (PDOException $e)
 		{
@@ -503,7 +504,7 @@ class TbSolicitacao extends Banco
 		}
 	}
 
-	#Usado para alterar o DataFim da solicitação
+	#Usado para alterar o DataFim da solicitaï¿½ï¿½o
 	public function alterarDataFim($dados)
 	{
 		$query = ("UPDATE $this->tabela
@@ -529,7 +530,7 @@ class TbSolicitacao extends Banco
 	}
 	
 	
-	#Usado para alterar o status da solicitação e o problema tecnico
+	#Usado para alterar o status da solicitaï¿½ï¿½o e o problema tecnico do atendente tÃ©cnico.
 	public function alterarStatus($dados)
 	{
 		$query = ("UPDATE $this->tabela
@@ -558,7 +559,34 @@ class TbSolicitacao extends Banco
 
 	}
 
-	#Lista a solicitações do Solicitante
+    #Usado para alterar o status da solicitaï¿½ï¿½o e o problema tecnico do solicitante.
+    public function alterarStatusSolicitante($dados)
+    {
+        $query = ("UPDATE $this->tabela
+					SET $this->sta_codigo = ?,
+						$this->sol_data_fim = ?,
+					WHERE $this->sol_codigo = ?");
+
+        try
+        {
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->bindParam(1, $dados[$this->sta_codigo],PDO::PARAM_INT);
+            $stmt->bindParam(2, date('Y-m-d H:i:s'),PDO::PARAM_STR);
+            $stmt->bindParam(3, $dados[$this->sol_codigo],PDO::PARAM_STR);
+
+            $stmt->execute();
+
+            return($stmt);
+
+        } catch (PDOException $e)
+        {
+            throw new PDOException($e->getMessage(), $e->getCode());
+        }
+
+    }
+
+	#Lista a solicitaï¿½ï¿½es do Solicitante
 	public function selectSolicitacoesSolicitante($dados)
 	{
 
@@ -574,7 +602,7 @@ class TbSolicitacao extends Banco
 				    #Traz o nome do usuario solicitante
 				    INNER JOIN tb_usuario as USU
            			ON usu_codigo_solicitante = USU.usu_codigo
-				    #Tabela de Problema, traz a descrição do problema
+				    #Tabela de Problema, traz a descriï¿½ï¿½o do problema
 				    INNER JOIN tb_problema AS PRO
 				    ON PRO.pro_codigo = SOL.pro_codigo
 				    INNER JOIN tb_status STA
@@ -627,7 +655,7 @@ class TbSolicitacao extends Banco
 				    #Traz o nome do usuario solicitante
 				    INNER JOIN tb_usuario as USU
            			ON usu_codigo_solicitante = USU.usu_codigo
-				    #Tabela de Problema, traz a descrição do problema
+				    #Tabela de Problema, traz a descriï¿½ï¿½o do problema
 				    INNER JOIN tb_problema AS PRO
 				    ON PRO.pro_codigo = SOL.pro_codigo
 				    INNER JOIN tb_status STA
@@ -665,7 +693,7 @@ class TbSolicitacao extends Banco
 	}
 	
 
-	#Pega a Descrição do problema, prioridade e tempo de atendimento
+	#Pega a Descriï¿½ï¿½o do problema, prioridade e tempo de atendimento
 	#Pra cada solicitacao
 	public function getPrioridadeTempoAtendimento($sol_codigo)
 	{
@@ -771,7 +799,7 @@ class TbSolicitacao extends Banco
 
 	}
 
-	#Relatório: Chamado por Usuario [Utilizador] 
+	#Relatï¿½rio: Chamado por Usuario [Utilizador] 
 	public function chamadoPorUsuario($dados)
 	{
 		$query = ("SELECT SOL.sol_codigo, 
@@ -803,7 +831,7 @@ class TbSolicitacao extends Banco
 		}
 	}
 	
-	#Relatório: Chamado por Area [Departamento] 
+	#Relatï¿½rio: Chamado por Area [Departamento] 
 	public function chamadoPorArea($dados)
 	{
 		$query = ("SELECT SOL.sol_codigo, 
@@ -836,7 +864,7 @@ class TbSolicitacao extends Banco
 		}
 	}
 	
-	#Relatório: Chamado por Periodo [Date de Abertura] 
+	#Relatï¿½rio: Chamado por Periodo [Date de Abertura] 
 	public function chamadoPorPeriodo($dados)
 	{
 		$query = ("SELECT SOL.sol_codigo, 
@@ -873,7 +901,7 @@ class TbSolicitacao extends Banco
 	}
 	
 	
-	#Relatório: Chamado por Periodo com calculo de tempo [Date de Abertura] 
+	#Relatï¿½rio: Chamado por Periodo com calculo de tempo [Date de Abertura] 
 	public function chamadoPorPeriodoTempo($dados)
 	{
 		$query = ("SELECT SOL.sol_codigo, 
@@ -929,14 +957,15 @@ class TbSolicitacao extends Banco
 		}
 	}
 	
-	#Relatorio: chamado por tempo de solução de problema
+	#Relatorio: chamado por tempo de soluï¿½ï¿½o de problema
 	public function chamadoPorTempoDeSolucao($dados)
 	{
+
 		$query = ("SELECT SOL.sol_codigo AS Chamado, SOL.sol_data_inicio AS DataInicio, SOL.sol_data_fim AS DataFim,
 	   				TIMEDIFF(SOL.sol_data_fim,SOL.sol_data_inicio) AS TempoTotal,
 					(SELECT dep_descricao FROM tb_departamento WHERE dep_codigo =
 						(SELECT dep_codigo FROM tb_usuario where usu_codigo_solicitante = usu_codigo)) AS Departamento,
-							concat(USU.usu_nome,' ',USU.usu_sobrenome) AS Usuario,			                        
+							USU.usu_nome AS Usuario,
 								/* (SELECT pro_descricao FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) as 'Problema Usuario', */
 								(SELECT pro_descricao FROM tb_problema as PRO WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo) as ProblemaTecnico,
 								/* (SELECT pro_tempo_solucao FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) as 'Tempo Usuario',	*/
@@ -947,7 +976,7 @@ class TbSolicitacao extends Banco
 								(SELECT tat_descricao FROM tb_tempo_atendimento WHERE tat_codigo = (select tat_codigo from tb_prioridade
 										WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) ) ) as 'SLA',
 
-						(SELECT concat(usu_nome,' ',usu_sobrenome) FROM tb_usuario WHERE usu_codigo = ATS.usu_codigo_atendente) Atendente,
+						(SELECT usu_nome FROM tb_usuario WHERE usu_codigo = ATS.usu_codigo_atendente) Atendente,
 				
 						#Calcula a diferenca entre a data de inicio e fim e o tempo do problema do usuario
 						/* TIMEDIFF(TIMEDIFF(SOL.sol_data_fim,SOL.sol_data_inicio),
@@ -976,6 +1005,7 @@ class TbSolicitacao extends Banco
 					AND dep_codigo_solicitado = ?
 					AND PRO.pri_codigo LIKE ?
 					AND ATS.usu_codigo_atendente LIKE ?
+					AND SOL.pro_codigo LIKE ?
 					GROUP BY SOL.sol_codigo
 					ORDER BY 1 DESC;");
 		try
@@ -991,8 +1021,9 @@ class TbSolicitacao extends Banco
 			$stmt->bindParam(3,$dados['sta_codigo'],PDO::PARAM_STR);
 			$stmt->bindParam(4,$_SESSION['dep_codigo'],PDO::PARAM_INT);
 			$stmt->bindParam(5,$dados['pri_codigo'],PDO::PARAM_INT);
-			$stmt->bindParam(6,$dados['usu_codigo_atendente'],PDO::PARAM_INT);			
-	
+			$stmt->bindParam(6,$dados['usu_codigo_atendente'],PDO::PARAM_INT);
+            $stmt->bindParam(7,$dados['pro_codigo'],PDO::PARAM_INT);
+
 			$stmt->execute();
 	
 		return($stmt->fetchAll(\PDO::FETCH_ASSOC));
@@ -1114,6 +1145,31 @@ class TbSolicitacao extends Banco
 			
 			return($dados[0]);
 	
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(), $e->getCode());
+		}
+	}
+	
+	#Usado na validacao de data de abertura de Envio pra terceiro
+	public function getDataAbertura($sol_codigo)
+	{
+		$query = ("SELECT $this->sol_data_inicio 
+						FROM $this->tabela
+					WHERE $this->sol_codigo = ?");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1, $sol_codigo, PDO::PARAM_INT);
+			
+			$stmt->execute();		
+		
+			$dados = $stmt->fetch(PDO::FETCH_ASSOC);
+						
+			return($dados['sol_data_inicio']);
+		
 		} catch (PDOException $e)
 		{
 			throw new PDOException($e->getMessage(), $e->getCode());

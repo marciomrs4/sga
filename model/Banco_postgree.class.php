@@ -13,7 +13,7 @@ abstract class Banco_postgree
 	private $password = 'ceadis2011';
 	private $tipobanco = 'pgsql';
 	private $database = 'ceadis';
-	private $server =  '172.22.0.33';
+	private $server =  '172.22.0.105';
 	
 	
   /*

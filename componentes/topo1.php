@@ -2,7 +2,7 @@
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
 <meta http-equiv='Content-Type' content='application/xhtml+xml; charset=ISO-8859-1' />
-<title> ...::: SGA - Tecnologia da Informação :::...</title>
+<title> ...::: sga - Tecnologia da Informação :::...</title>
 <link rel='stylesheet' type='text/css' href='../<?php echo($_SESSION['projeto']); ?>/css/style.css' />
 <link rel='stylesheet' type='text/css' href='../<?php echo($_SESSION['projeto']); ?>/css/formatacao.css' />
 <link rel='stylesheet' type='text/css' href='../<?php echo($_SESSION['projeto']); ?>/css/colorpicker.css' />

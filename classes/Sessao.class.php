@@ -34,7 +34,7 @@ class Sessao
 	{
 		session_unset();
 		session_destroy();
-		header('location: ../../SGA/index.php');
+		header('location: ../../sga/index.php');
 	}
 
 	public static function criarAcaoForm($get,$retorno=true)

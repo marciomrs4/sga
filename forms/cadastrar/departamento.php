@@ -36,6 +36,40 @@ Sessao::validarForm('cadastrar/departamento');
     </tr>
 
     <tr>
+      <th align="left" nowrap="nowrap">Hora de Inicio:</th>
+	      <td>
+	      	<input name="dep_hora_inicio" class="doisdigitos" size="2" type="text" value="<?php echo($_SESSION['cadastrar/departamento']['dep_hora_inicio']); ?>"/>
+	      </td>
+    </tr>
+
+    <tr>
+      <th align="left" nowrap="nowrap">Hora Fim:</th>
+	      <td>
+	      	<input name="dep_hora_fim" class="doisdigitos" size="2" type="text" value="<?php echo($_SESSION['cadastrar/departamento']['dep_hora_fim']); ?>"/>
+	      </td>
+    </tr>
+
+    <tr>
+      <th align="left" nowrap="nowrap">Hora de Almoço:</th>
+	      <td>
+	      	<input name="dep_hora_almoco" class="doisdigitos" size="2" type="text" value="<?php echo($_SESSION['cadastrar/departamento']['dep_hora_almoco']); ?>"/>
+	      </td>
+    </tr>
+
+    <tr>
+      <th align="left" nowrap="nowrap">Carga Horaria de Sábado:</th>
+	      <td>
+	      	<input name="dep_carga_sabado" class="doisdigitos" size="2" type="text" value="<?php echo($_SESSION['cadastrar/departamento']['dep_carga_sabado']); ?>"/>
+	      </td>
+    </tr>
+
+    <tr>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+
+    <tr>
       <td colspan="2" align="left">
 	      <input type="submit" name="cadastrar" class="button-tela" value="Cadastrar" />
 

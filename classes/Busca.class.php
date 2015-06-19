@@ -21,7 +21,7 @@ class Busca extends Dados
 	public function listarChamado()
 	{
 
-		#Dados da busca usado para diferenciar, pois caso contrario há um
+		#Dados da busca usado para diferenciar, pois caso contrario hï¿½ um
 		#conflito de nomes com abertura de chamados e listava ou DEPTO.
 		$this->dados['pro_codigo_busca_tecnico'];
 
@@ -54,7 +54,7 @@ class Busca extends Dados
 
 				break;
 					
-			case 1 : #Chamados que abri, ou seja fiz a solicitação
+			case 1 : #Chamados que abri, ou seja fiz a solicitaï¿½ï¿½o
 
 				$tbsolicitacao = new TbSolicitacao();
 
@@ -92,7 +92,7 @@ class Busca extends Dados
 
 				break;
 					
-			case 3 : #Chamados Em Atendimento, por todos os ou separado por usuário
+			case 3 : #Chamados Em Atendimento, por todos os ou separado por usuï¿½rio
 
 				$tbsolicitacao = new TbSolicitacao();
 
@@ -247,7 +247,7 @@ class Busca extends Dados
 			return($dados);
 			break;
 
-			#Terça
+			#Terï¿½a
 			case 2 :
 			$dados = $tbchecklist->listarExecucaoChecklist($_SESSION['dep_codigo'],'dse_terca');	
 			return($dados);				
@@ -277,7 +277,7 @@ class Busca extends Dados
 			return($dados);				
 			break;
 			
-			#Caso não tenho uma escolha
+			#Caso nï¿½o tenho uma escolha
 			default:
 				
 			break;
@@ -285,7 +285,7 @@ class Busca extends Dados
 
 	}
 	
-	#Lista a lista de execução do item do checklist baseado no dia da semana
+	#Lista a lista de execuï¿½ï¿½o do item do checklist baseado no dia da semana
 	public function listarExecutarItemCheckList()
 	{
 		/* dse_segunda, dse_terca, dse_quarta, dse_quinta, dse_sexta, dse_sabado, dse_domingo */
@@ -309,7 +309,7 @@ class Busca extends Dados
 			return($dados);
 			break;
 
-			#Terça
+			#Terï¿½a
 			case 2 :
 			$dados = $tbitemcklist->listarItemChecklistDiaSemana(self::getDados('che_codigo'),'dse_terca');	
 			return($dados);				
@@ -339,7 +339,7 @@ class Busca extends Dados
 			return($dados);				
 			break;
 			
-			#Caso não tenho uma escolha
+			#Caso nï¿½o tenho uma escolha
 			default:
 				
 			break;
@@ -358,10 +358,10 @@ class Busca extends Dados
 
 			}else{
 
-				#Remove os espaços
+				#Remove os espaï¿½os
 				$this->dados['sol_codigo'] = trim($this->dados['sol_codigo']);
 				
-				ValidarNumeros::validaNumero($this->dados['sol_codigo'],'Número do Chamado');
+				ValidarNumeros::validaNumero($this->dados['sol_codigo'],'Nï¿½mero do Chamado');
 					
 					
 				#Instacia da classe Solicitacao
@@ -373,7 +373,7 @@ class Busca extends Dados
 				#Verifica se o chamado existe
 				if(!$solicitacao['sol_codigo'])
 				{
-					throw new Exception('Chamado não encontrado');
+					throw new Exception('Chamado nï¿½o encontrado');
 				}
 				
 				#Verifica se o departamento solicitante ou departamento solicitado
@@ -382,7 +382,7 @@ class Busca extends Dados
 				$DepSolicitante = $tbUsuario->getDepCodigo($solicitacao['usu_codigo_solicitante']);
 				
 				if(($solicitacao['dep_codigo'] != $_SESSION['dep_codigo']) && ($DepSolicitante != $_SESSION['dep_codigo'])){
-					throw new Exception('Você não possui permissão para este chamado.');
+					throw new Exception('Vocï¿½ nï¿½o possui permissï¿½o para este chamado.');
 				}
 								
 				
@@ -428,7 +428,7 @@ class Busca extends Dados
 			#Verifica se o chamado existe
 			if(!$solicitacao['sol_codigo'])
 			{
-				throw new Exception('Chamado não encontrado');
+				throw new Exception('Chamado nï¿½o encontrado');
 			}
 				
 				
@@ -579,7 +579,7 @@ class Busca extends Dados
 		
 	}
 	
-	#Listar chamado por tempo de solução de problema
+	#Listar chamado por tempo de soluï¿½ï¿½o de problema
 	public function listarChamadoPorTempoDeSolucao()
 	{
 		
@@ -607,13 +607,15 @@ class Busca extends Dados
 	
 		$this->dados['pri_codigo'] = ($this->dados['pri_codigo'] == '') ? '%' : $this->dados['pri_codigo'];
 		
-		$this->dados['usu_codigo_atendente'] = ($this->dados['usu_codigo_atendente'] == '') ? '%' : $this->dados['usu_codigo_atendente'];		
-		
+		$this->dados['usu_codigo_atendente'] = ($this->dados['usu_codigo_atendente'] == '') ? '%' : $this->dados['usu_codigo_atendente'];
+
+        $this->dados['pro_codigo'] = ($this->dados['pro_codigo'] == '') ? '%' : $this->dados['pro_codigo'];
+
 		$this->dados['data1'] = ($this->dados['data1'] == '') ? date('d-m-Y') : $this->dados['data1'];
 		$this->dados['data2'] = ($this->dados['data2'] == '') ? date('d-m-Y') : $this->dados['data2'];
 	
-		$this->dados['data1'] = ValidarDatas::dataBanco($this->dados['data1']);
-		$this->dados['data2'] = ValidarDatas::dataBanco($this->dados['data2']);
+		/*$this->dados['data1'] = ValidarDatas::dataBanco($this->dados['data1']);
+		$this->dados['data2'] = ValidarDatas::dataBanco($this->dados['data2']);*/
 	
 		$tbSolicitacao = new TbSolicitacao();
 		$dados = $tbSolicitacao->chamadoPorTempoDeSolucao($this->dados);
@@ -751,6 +753,20 @@ class Busca extends Dados
 		$tbSistema = new TbSistemas();
 	
 		$dados = $tbSistema->listarSistemasPesquisa($usu_codigo_usuario_chave);
+	
+		return($dados);
+	
+	}
+	
+	#Usado na tela de cadastro de Terceiro
+	public function listarTerceiro()
+	{
+	
+		$dep_codigo = ($this->dados['dep_codigo'] == '') ? '%' : $this->dados['dep_codigo'];
+	
+		$tbTerceiro = new TbTerceiro();
+	
+		$dados = $tbTerceiro->listarCadastro($dep_codigo);
 	
 		return($dados);
 	

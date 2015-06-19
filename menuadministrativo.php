@@ -12,6 +12,7 @@
 			<li><a href="Problemas.php"><img src='./css/images/ocorrencia.png'> <?php echo($_SESSION['config']['problema']);?></a></li>			
 			
 			<li><a href="Sistema.php"><img src='./css/images/sistema.png'> Sistema</a></li>
+			<li><a href="Terceiro.php"><img src='./css/images/terceiro.png'> Terceiro</a></li>
 				
 			<li><a href="CadastrarCheckList.php"><img src='./css/images/ck.png'> CheckList</a></li>	
 			

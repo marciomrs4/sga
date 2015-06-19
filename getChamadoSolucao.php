@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
 //resolve o problema de acentos
 header('Content-Type: text/html; charset=ISO-8859-1');
@@ -23,8 +23,7 @@ $_SESSION['buscaRapida'] = $busca->buscaRapidaChamado();
 
 ?>
 <form name="arquivo" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/solicitacao.php">
-	<fieldset>
-				<legend></legend>
+
   <table border="0" cellspacing="5">
     <tr>
       <td colspan="2" align="center">
@@ -121,7 +120,7 @@ $_SESSION['buscaRapida'] = $busca->buscaRapidaChamado();
     		<td>
     		<?php 
     		$tbcalcatendimento = new TbCalculoAtendimento();
-    		#Pega a data da solicitação pelo STATUS informado, no caso 1 é ABERTURA
+    		#Pega a data da solicita??o pelo STATUS informado, no caso 1 ? ABERTURA
     		echo $tbcalcatendimento->getDataPorStatus($_SESSION['buscaRapida']['sol_codigo'],1);
 			?>
     		</td>
@@ -200,7 +199,7 @@ $_SESSION['buscaRapida'] = $busca->buscaRapidaChamado();
   	}
   	?>     
      </div>
-</fieldset>
+
   
 </form>
 <?php 

@@ -88,6 +88,7 @@ class TbApontamento extends Banco
 								WHERE ATI.usu_codigo = $this->usu_codigo) as 'Usuario'
 					FROM $this->tabela AS ATI
 					WHERE $this->at_codigo = ?
+					ORDER BY $this->ap_data_criacao DESC
 				  ");
 		
 		try 

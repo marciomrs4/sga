@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT']."/SGA/componentes/config.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/sga/componentes/config.php");
 
 
 ControleDeAcesso::permitirAcesso(array(ControleDeAcesso::$TecnicoADM,ControleDeAcesso::$Tecnico));
@@ -7,8 +7,6 @@ ControleDeAcesso::permitirAcesso(array(ControleDeAcesso::$TecnicoADM,ControleDeA
 include($_SERVER['DOCUMENT_ROOT']."/{$Projeto}/componentes/bootstrap.php");
  
 echo '<div class="jumbotron">';
-
-
 
 
 $busca = new Busca();
@@ -20,6 +18,18 @@ $cabecalho = array('','Número','Data Inicio','Data Fim','Tempo','Departamento',$
 				   'Problema Tecnico','SLA Tecnico','Status','Prioridade','SLA Atendimento','Atendente',
 				   'DIFF - Tecnico','Tempo Util',' SLA ','Status');
 
+//Obtem o tempo de entrada, saida, almoco e sabado do Departamento
+$TbDepartamento = new TbDepartamento();
+$TempoDepartamento = $TbDepartamento->getAllHours($_SESSION['dep_codigo']);
+
+//Hora inicio do Departamento
+$hora_ini = ($busca->getDados('hora_ini') == '') ? $TempoDepartamento['dep_hora_inicio']  : $busca->getDados('hora_ini');
+//Hora Fim do departamento
+$hora_fim = ($busca->getDados('hora_fim') == '') ? $TempoDepartamento['dep_hora_fim']     : $busca->getDados('hora_fim');
+//Hora de almoco departamento
+$meio_dia = ($busca->getDados('meio_dia') == '') ? $TempoDepartamento['dep_hora_almoco']  : $busca->getDados('meio_dia');
+//Carga horaria de sabado departamento
+$sabado =   ($busca->getDados('sabado') == '')   ? $TempoDepartamento['dep_carga_sabado'] : $busca->getDados('sabado');
 ?>
 
 <form action="" method="post" id="relatoriosolucao">
@@ -31,44 +41,71 @@ $cabecalho = array('','Número','Data Inicio','Data Fim','Tempo','Departamento',$
 			Status:
 			<?php 
 		    $tbStatus = new TbStatus();
-		    FormComponente::$name = 'TODOS';
-		    FormComponente::selectOption('sta_codigo',$tbStatus->selectStatus(),true,$busca->getDados('sta_codigo'));
-		    ?>
+
+            $FormStatus = new SelectOption();
+            $FormStatus->setOptionEmpty('TODOS')
+                       ->setSelectedItem($busca->getDados('sta_codigo'))
+                       ->setSelectName('sta_codigo')
+                       ->setStmt($tbStatus->selectStatus())
+                       ->listOption();
+
+            ?>
 		    
 		    Prioridade: 
 		    <?php 
 		    
 		    $tbPrioridade = new TbPrioridade();
-		    FormComponente::$name = 'TODOS';
-		    $prioridade['pri_codigo'] = $busca->getDados('pri_codigo');
-		    FormComponente::selectOption('pri_codigo',$tbPrioridade->selectPrioridadesDepartamento($_SESSION['dep_codigo']),true,$prioridade);
+
+            $FormPrioridade = new SelectOption();
+            $FormPrioridade->setStmt($tbPrioridade->selectPrioridadesDepartamento($_SESSION['dep_codigo']))
+                            ->setSelectedItem($busca->getDados('pri_codigo'))
+                            ->setSelectName('pri_codigo')
+                            ->setOptionEmpty('TODOS')
+                            ->listOption();
 		    
 		    ?>
 		    
 		    Usuário:
 		    <?php 
 		    $tbUsuario = new TbUsuario();
-		    FormComponente::$name = 'TODOS';
-		    $codigo_atendente['usu_codigo_atendente'] = $busca->getDados('usu_codigo_atendente');
-		    FormComponente::selectOption('usu_codigo_atendente',$tbUsuario->selectUsuarioPorDepartamento($_SESSION['dep_codigo']),true,$codigo_atendente);		    
+
+            $FormCodigoAtendente = new SelectOption();
+            $FormCodigoAtendente->setStmt($tbUsuario->selectUsuarioPorDepartamento($_SESSION['dep_codigo']))
+                                ->setOptionEmpty('TODOS')
+                                ->setSelectName('usu_codigo_atendente')
+                                ->setSelectedItem($busca->getDados('usu_codigo_atendente'))
+                                ->listOption();
 		    
 		    ?>
 		    	
-		Período: De <input type="text" name="data1" class="data" id="data-id" size="10" value="<?php echo($busca->getDados('data1'));?>">
-		à 			<input type="text" name="data2" class="data" id="data" size="10" value="<?php echo($busca->getDados('data2'));?>">
+		Período: De <input type="date" name="data1" value="<?php echo($busca->getDados('data1'));?>">
+		à 			<input type="date" name="data2" value="<?php echo($busca->getDados('data2'));?>">
 		</td>				
 		
 	</tr>
 	<tr>
-		
-		<td>
+
+        <td>
+            Problema:
+            <?php
+            $TbProblema = new TbProblema();
+
+            $FormProblema = new SelectOption();
+            $FormProblema->setStmt($TbProblema->listarProblemasTecnicos($_SESSION['dep_codigo']))
+                         ->setOptionEmpty('TODOS')
+                         ->setSelectName('pro_codigo')
+                         ->setSelectedItem($busca->getDados('pro_codigo'))
+                         ->listOption();
+
+            ?>
+
 		 Horário de trabalho Inicio:
-		 		  <input type="text" name="hora_ini" class="doisdigitos" size="3" value="<?php echo($busca->getDados('hora_ini'));?>">
-		 		à <input type="text" name="hora_fim" class="doisdigitos" size="3" value="<?php echo($busca->getDados('hora_fim'));?>">
+		 		  <input type="text" name="hora_ini" class="doisdigitos" size="3" value="<?php echo($hora_ini);?>">
+		 		à <input type="text" name="hora_fim" class="doisdigitos" size="3" value="<?php echo($hora_fim);?>">
 
-		Almoço: <input type="text" name="meio_dia" class="doisdigitos" size="3" value="<?php echo($busca->getDados('meio_dia'));?>">
+		Almoço: <input type="text" name="meio_dia" class="doisdigitos" size="3" value="<?php echo($meio_dia);?>">
 
-		Carga horária de Sábado: <input type="text" name="sabado" class="doisdigitos" size="3" value="<?php echo($busca->getDados('sabado'));?>">		
+		Carga horária de Sábado: <input type="text" name="sabado" class="doisdigitos" size="3" value="<?php echo($sabado);?>">
 		</td>
 	</tr>
 	<tr>
@@ -91,8 +128,6 @@ try
 	
 	$grid = new Grid();
 	
-	//$grid->id = null;
-	
 	$grid->setCabecalho($cabecalho);
 	
 	$grid->setDados($busca->listarChamadoPorTempoDeSolucao());
@@ -110,7 +145,7 @@ try
 		#Hora Final
 		$hora_fim = $busca->getDados('hora_fim');
 		
-		#Até o esse horario do almoço
+		#At? o esse horario do almo?o
 		$meio_dia = $busca->getDados('meio_dia');
 		#Horas de sabados
 		$sabado   = $busca->getDados('sabado');
@@ -124,7 +159,7 @@ try
 	}, 13);
 
 $option = new GridOption();
-$option->setIco('edit')->setName('Ver chamado')->setUrl('?sol_codigo');
+$option->setIco('edit')->setName('Ver chamado');
 
 $grid->addOption($option);
 
@@ -138,10 +173,9 @@ function getHourToSecunds($hora)
 	return $horasEmSegundo;
 }
 
-
-
 $grid->addFunctionColumn(function($var) use ($diaUtil, $busca){
 
+    //Estas variaveis sao globais para uso no incluse GraficoTempoSolucao
 	global $totalChamado, $chamadoDentro, $chamadoFora;
 	
 	$chamadoDentro = ($chamadoDentro == 0) ? 0 : $chamadoDentro;
@@ -159,13 +193,13 @@ $grid->addFunctionColumn(function($var) use ($diaUtil, $busca){
 	#Hora Final
 	$hora_fim = $busca->getDados('hora_fim');
 		
-	#Até o esse horario do almoço
+	#At? o esse horario do almo?o
 	$meio_dia = $busca->getDados('meio_dia');
 	#Horas de sabados
 	$sabado   = $busca->getDados('sabado');
 		
 	#Tipo de Saida em horas
-	$saida    = 'H';
+	$saida = 'H';
 	
 	$horaUtil = $diaUtil->tempo_valido($data1, $data2, $hora_ini, $hora_fim, $meio_dia, $sabado, $saida);
 	
@@ -178,12 +212,12 @@ $grid->addFunctionColumn(function($var) use ($diaUtil, $busca){
 		$totalChamado++;
 		$chamadoDentro++;
 		
-		return 'Chamado Dentro <td><img src="css/images/status/face.png"></td>';
+		return 'Dentro <td><img src="css/images/status/face.png"></td>';
 
 	}else {
 		$totalChamado++;
 		$chamadoFora++;
-		return 'Chamado Fora <td><img src="css/images/status/face2.png"></td>';
+		return 'Fora <td><img src="css/images/status/face2.png"></td>';
 }
 	
 	
@@ -193,7 +227,11 @@ $grid->addFunctionColumn(function($var) use ($diaUtil, $busca){
 $grid->id = null;
 
 
-$grid->show(); 
+$Painel = new Painel();
+$Painel->addGrid($grid)
+       ->setPainelTitle('<a href="#">Resultado <span id="painel-resultado" class="glyphicon glyphicon-resize-small"></span></a>')
+       ->setPainelColor('default')
+       ->show();
 
 			
 } catch (Exception $e) 

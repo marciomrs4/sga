@@ -18,14 +18,14 @@ $dados = $tbAtividade->getFormAlteracao(base64_decode($_SESSION['valorform']));
     </tr>
 
     <tr>
-      <th nowrap="nowrap">Descrição da Atividade:</th>
+      <th nowrap="nowrap">Descriï¿½ï¿½o da Atividade:</th>
       <td>
       	<?php echo($dados['at_descricao']); ?>
       </td>
     </tr>    
     
     <tr>
-      <th nowrap="nowrap">Descrição do Apontamento:</th>
+      <th nowrap="nowrap">Descriï¿½ï¿½o do Apontamento:</th>
       <td>
       <textarea name="ap_descricao" cols="55" rows="7"	><?php echo($_SESSION['cadastrar/Apontamento']['ap_descricao']); ?></textarea> 
       <input type="hidden" name="at_codigo" value="<?php echo($dados[0]); ?>">	
@@ -55,7 +55,7 @@ $dados = $tbAtividade->getFormAlteracao(base64_decode($_SESSION['valorform']));
 	  	$tbApontamento = new TbApontamento();
 	  	$tabela = $tbApontamento->listarApontamento($dados[0]);
 	
-	  	$cabecalho = array('Descrição','Data',$_SESSION['config']['usuario']);
+	  	$cabecalho = array('Descriï¿½ï¿½o','Data',$_SESSION['config']['usuario']);
 	  	
 	  	$grid = new DataGrid($cabecalho, $tabela);
 	  	

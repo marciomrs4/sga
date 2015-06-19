@@ -18,19 +18,20 @@ Sessao::validarForm('cadastrar/SolicitacaoTecnico');
       <td>
 		<?php 
 		$tbdepartamento = new TbDepartamento();
-		FormComponente::$name = 'Selecione';
-		FormComponente::selectOption('dep_codigo_tecnico',$tbdepartamento->listarDepartamentos(),true,$_SESSION['cadastrar/SolicitacaoTecnico']);
-		?>
+
+        $FormDepCodigo = new SelectOption();
+        $FormDepCodigo->setStmt($tbdepartamento->listarDepartamentos())
+            ->setOptionEmpty('Selecione')
+            ->setSelectedItem($_SESSION['cadastrar/SolicitacaoTecnico']['dep_codigo_tecnico'])
+            ->setSelectName('dep_codigo_tecnico')
+            ->listOption();
+        ?>
       </td>
     </tr>
     <tr>
       <th align="left" nowrap="nowrap"><?php echo($_SESSION['config']['problema']); ?>:</th>
 	      <td>
-  		   <?php 
-		       $tbproblema = new TbProblema();
-		       FormComponente::$name = 'Selecione';
-		       FormComponente::selectOption('pro_codigo',$tbproblema->listarProblemasTecnicos($_SESSION['dep_codigo']),true,$_SESSION['cadastrar/SolicitacaoTecnico']);
-		   ?>
+              <select name="pro_codigo"></select>
 		</td>
     </tr>
     
@@ -47,7 +48,7 @@ Sessao::validarForm('cadastrar/SolicitacaoTecnico');
     
     
     <tr>
-      <th align="left" nowrap="nowrap">Descrição do <?php echo($_SESSION['config']['problema']); ?>:</th>
+      <th align="left" nowrap="nowrap">Descriï¿½ï¿½o do <?php echo($_SESSION['config']['problema']); ?>:</th>
 	      <td>
 	      	<textarea name="sol_descricao_solicitacao" rows="10" cols="50"><?php echo($_SESSION['cadastrar/SolicitacaoTecnico']['sol_descricao_solicitacao']); ?></textarea>
 	      </td>

@@ -168,5 +168,12 @@ textarea:hover, input:hover, select:hover{
 		border-color: #00F;
 		float: right;
 	}
-	
-	
+
+.solicitacao-emterceiro{
+    background-color: #E8E8E8;
+}
+
+.aviso-em-terceiro{
+    font-size: 13px;
+    color: #FF0000;
+}

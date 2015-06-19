@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
 $ControleAcesso = new ControleDeAcesso();
 $ControleAcesso->permitirAcesso(array(ControleDeAcesso::$TecnicoADM,ControleDeAcesso::$Tecnico));
@@ -86,10 +86,10 @@ $datagrid->setDados($busca->listarAtividade());
 
 $datagrid->titulofield = 'Atividade(s)';
 $datagrid->acao = 'alterar/Atividade';
-$datagrid->nomelink = '<img src="/SGA/css/images/search2.png" title="Visualizar" />';	
+$datagrid->nomelink = '<img src="/sga/css/images/search2.png" title="Visualizar" />';	
 
 $datagrid->islink2 = true;
-$datagrid->nomelink2 = '<img src="/SGA/css/images/adcionar.png" title="Adicionar Apontamento" />';
+$datagrid->nomelink2 = '<img src="/sga/css/images/adcionar.png" title="Adicionar Apontamento" />';
 $datagrid->acao2 = 'cadastrar/Apontamento';
 
 

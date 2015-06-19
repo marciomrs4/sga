@@ -1,8 +1,8 @@
 <?php
 /**
- * @author Márcio Ramos e-mail: marciomrs4@hotmail.com
+ * @author Mï¿½rcio Ramos e-mail: marciomrs4@hotmail.com
  * @name Titulo
- * @example Essa classe é utilizada para criar titulo já formatado
+ * @example Essa classe ï¿½ utilizada para criar titulo jï¿½ formatado
  * @package script
  * @version 1.0 Data 20/04/2011
  * 
@@ -12,7 +12,7 @@ final class Texto
 
 	
 	/**
-	 * @author Márcio Ramos e-mail: marciomrs4@hotmail.com
+	 * @author Mï¿½rcio Ramos e-mail: marciomrs4@hotmail.com
 	 * @name criaTitulo
 	 * @package script
 	 * @param titulo
@@ -34,7 +34,7 @@ final class Texto
 
 		$Mensagem = isset($msg) ? $msg : null;
 		
-		echo($Mensagem);
+		echo $Mensagem,'<br/>';
 		
 	}
 		

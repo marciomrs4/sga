@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
 $ControleAcesso = new ControleDeAcesso();
 $ControleAcesso->permitirAcesso(array(ControleDeAcesso::$TecnicoADM,ControleDeAcesso::$Tecnico));
@@ -105,7 +105,7 @@ $datagrid->setDados($busca->listarAniversariante());
 $datagrid->titulofield = ' Aniversariante(s)';
 $datagrid->islink = (($_SESSION['dep_codigo'] == 40) || ($_SESSION['dep_codigo'] == 5)) ? true : false;
 $datagrid->acao = 'alterar/Aniversario';
-$datagrid->nomelink = '<img src="/SGA/css/images/search.png" />';	
+$datagrid->nomelink = '<img src="/sga/css/images/search.png" />';	
 
 $datagrid->acao2 = true;
 

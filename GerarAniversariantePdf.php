@@ -1,9 +1,9 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/SGA/componentes/config.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 include_once 'plugin/MPDF54/mpdf.php';
 ?>
 
-<link rel='stylesheet' type='text/css' href='../SGA/css/formatacao-niver.css' />
+<link rel='stylesheet' type='text/css' href='../sga/css/formatacao-niver.css' />
 
 
 <?php 

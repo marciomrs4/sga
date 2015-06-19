@@ -3,13 +3,16 @@ $tbsolicitacao = new TbSolicitacao();
 $_SESSION['alterar/Solicitacao'] = $tbsolicitacao->getFormReceptor(base64_decode($_SESSION['valorform']));
 
 $tbatendimentosolicitante = new TbAtendenteSolicitacao();
-$usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/Solicitacao']['sol_codigo'])
+$usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/Solicitacao']['sol_codigo']);
+
+$tbSolicitacaoTerceiro = new TbSolicitacaoTerceiro();
+$SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($_SESSION['alterar/Solicitacao']['sol_codigo']);
 
 ?>
 
 	<fieldset>
 		<legend>Alterar Chamado</legend>
-			<form name="solicitacao" id="solicitacao" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/solicitacao.php">				
+			<form name="solicitacao" id="solicitacao" class="<?php echo ($SolicitacaoTerceiro['sot_status'] == 'S') ? 'solicitacao-emterceiro' : ''; ?>" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/solicitacao.php">
 			<fieldset>
 				<legend>Ações</legend>
 				<div class="acoeschamado">
@@ -23,6 +26,25 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
 				 } 
 				?>
 				<a href="./action/formcontroler.php?<?php echo(base64_encode('cadastrar/Assentamento').'='.base64_encode($_SESSION['alterar/Solicitacao']['sol_codigo']));?>"><img src="./css/images/novo.png" title="Assentamento"></a>
+
+				<?php 
+				if(($_SESSION['alterar/Solicitacao']['sta_codigo'] == 2) AND ($_SESSION['alterar/Solicitacao']['dep_codigo'] == $_SESSION['dep_codigo'] )){
+
+
+
+                    if($SolicitacaoTerceiro['sot_status'] == 'S'){
+                            ?>
+                    <a href="./action/formcontroler.php?<?php echo(base64_encode('alterar/EnvioTerceiro').'='.base64_encode($SolicitacaoTerceiro['sot_codigo']));?>"><img src="./css/images/remove.png" title="Remover de Terceiro"></a>
+                        <?php
+                    }else{
+                  ?>
+
+				    <a href="./action/formcontroler.php?<?php echo(base64_encode('cadastrar/EnvioTerceiro').'='.base64_encode($_SESSION['alterar/Solicitacao']['sol_codigo']));?>"><img src="./css/images/envio.png" title="Envio para Terceiro"></a>
+
+				<?php }
+
+                } ?>
+
 				
 				<a href="./GerarRelatorioPdf.php?<?php echo(base64_encode('codigo').'='.base64_encode($_SESSION['alterar/Solicitacao']['sol_codigo']));?>" target="blank"><img src="./css/images/pdf.png" title="Gerar PDF"></a>
 			</div>
@@ -32,8 +54,23 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
     <tr>
       <td colspan="2" align="center">
       	<?php Texto::mostrarMensagem($_SESSION['erro']); ?>
+
+          <span class="aviso-em-terceiro" >
+          <?php
+          if($SolicitacaoTerceiro['sot_status'] == 'S'){
+              echo 'Chamado com ',$tbSolicitacaoTerceiro->getDescricaoTerceiro($SolicitacaoTerceiro['sot_codigo']),
+              '. Tempo:  ',$tbSolicitacaoTerceiro->getTempoEmTerceiro($SolicitacaoTerceiro['sot_codigo']);
+          }
+          ?>
+      </span>
+
       </td>
     </tr>
+      <tr>
+          <td>
+              &nbsp;
+          </td>
+      </tr>
     	<tr>
 	    	<th nowrap="nowrap">
 	    		Número do Chamado:
@@ -124,7 +161,7 @@ $usu_codigo = $tbatendimentosolicitante->confirmarAtendente($_SESSION['alterar/S
     		<td>
     		<?php 
     		$tbcalcatendimento = new TbCalculoAtendimento();
-    		#Pega a data da solicitação pelo STATUS informado, no caso 1 é ABERTURA
+    		#Pega a data da solicita??o pelo STATUS informado, no caso 1 ? ABERTURA
     		echo $tbcalcatendimento->getDataPorStatus($_SESSION['alterar/Solicitacao']['sol_codigo'],1);
 			?>
     		</td>

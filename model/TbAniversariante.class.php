@@ -149,7 +149,7 @@ class TbAniversariante extends Banco
 
 	}
 	
-	#Get para o formulario de alteração
+	#Get para o formulario de alteraï¿½ï¿½o
 	public function getForm($ani_codigo)
 	{
 		$query = ("SELECT ani_codigo, ani_drt, ani_nome, ani_setor, 
@@ -199,7 +199,35 @@ class TbAniversariante extends Banco
 		}
 
 	}
-	
+
+    //Aniversariante do dia(INTRANET)
+    public function listAniversarianteDia(array $dados = null)
+    {
+        $query = ("SELECT ani_nome, ani_setor
+			   FROM tb_aniversariante
+			   WHERE ani_dia = ?
+			   AND ani_mes = ?
+			   AND ani_unidade = 1");
+
+        try {
+            $dia = date('d');
+
+            $mes = date('m');
+
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->bindParam(1, $dia, \PDO::PARAM_STR);
+            $stmt->bindParam(2, $mes, \PDO::PARAM_STR);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll(\PDO::FETCH_NUM);
+
+        } catch (\PDOException $e) {
+            throw new \PDOException($e->getMessage(), $e->getCode());
+        }
+    }
+
 }
 
 ?>
