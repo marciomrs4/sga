@@ -6,16 +6,22 @@
     <file url="file://$PROJECT_DIR$/Operacao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/PainelChamados.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/RelatorioSolucao.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/ScriptAniversariantes.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Solicitante.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/classes/Cadastro.class.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/bootstrap.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/componentes/menuprincipal.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/componentes/topo1.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/alterar/EnvioTerceiro.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/alterar/Solicitacao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/alterar/SolicitacaoSolicitante.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/alterar/UsuarioAtividade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/alterar/departamento.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/forms/cadastrar/Assentamento.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/AssentamentoSolicitante.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/EnvioTerceiro.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/forms/cadastrar/Solicitacao.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/forms/cadastrar/SolicitacaoTecnico.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/UsuarioAtividade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/departamento.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/getChamadoSolucao.php" charset="ISO-8859-1" />

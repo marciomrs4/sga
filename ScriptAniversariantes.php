@@ -1,18 +1,18 @@
 <?php 
-#Seto o time zone como são paulo
+#Seto o time zone como s?o paulo
 date_default_timezone_set('America/Sao_Paulo');
 
-#Crio um objeto de conexão PDO
+#Crio um objeto de conex?o PDO
 $conexao = new PDO('mysql:host=localhost;dbname=sga','root','q1w2e3mrs',array(PDO::ATTR_PERSISTENT => true));
 $conexao->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 try
 {
-	#Obtenho o Dia e Mês atuais
+	#Obtenho o Dia e M?s atuais
 	$mes = date('m');
 	$dia = date('d');
 	
-	#Faço uma query buscando o mes, dia e unidade CEADIS
+	#Fa?o uma query buscando o mes, dia e unidade CEADIS
 	$query = ("SELECT ani_nome, ani_setor 
 				FROM tb_aniversariante 
 				WHERE ani_mes = ?  
@@ -30,8 +30,8 @@ try
 	$stmt->execute();
 	#Retorno o resultado da busca
 	$dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	#Verifico de houve algum resultado, se não houve
-	#não envio nada, caso contrario 
+	#Verifico de houve algum resultado, se n?o houve
+	#n?o envio nada, caso contrario 
 	if(count($dados) == 0)
 	{
 		echo 'Vazio';
@@ -84,7 +84,7 @@ try
 		
 		$html .= '<h4>
 				  	<span style="color: #000">CEADIS<br/>
-				  	Centro Estadual de Armazenamento e Distribuição de Insumos de Saúde 
+				  	Centro Estadual de Armazenamento e Distribuição de Insumos de Saúde
 				  	</span>
 					<br /><br />
 				  </h4>';

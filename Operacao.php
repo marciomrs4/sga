@@ -45,7 +45,7 @@ echo "</div>";
             $FormProblema->setStmt($tbproblema->listarProblemasTecnicos($_SESSION['dep_codigo']))
                          ->setSelectName('pro_codigo_busca_tecnico')
                          ->setSelectedItem($busca->getDados('pro_codigo_busca_tecnico'))
-                         ->setOptionEmpty('Selectione...')
+                         ->setOptionEmpty('TODOS')
                          ->listOption();
 
 			?>

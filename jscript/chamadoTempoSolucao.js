@@ -5,7 +5,7 @@ $chamado(document).ready(function(){
 
 	$chamado("button.chamado").on('click',function(){
 
-		$chamado("#myModal").fadeIn();
+		$chamado("#myModal").show('clip');
 		
 		var codigo  = $chamado(this).val();
 		

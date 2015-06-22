@@ -1,11 +1,11 @@
-<!-- INICIO Essa È o rodapÈ do site -->
+<!-- INICIO Essa ÔøΩ o rodapÔøΩ do site -->
 <div id="footer">
     <div id="copyright">
-    ..: sga - Sistema de Gest„o de Atividades [Tecnologia da InformaÁ„o] :..
+    ..: SGA - Sistema de Gest√£o de Atividades [Tecnologia da Informa√£o] :..
 	<hr />
 	</div>       
 </div>
-<!-- FIM rodapÈ do site-->
+<!-- FIM rodapÔøΩ do site-->
 
 </body>
 </html>

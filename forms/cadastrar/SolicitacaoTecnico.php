@@ -48,7 +48,7 @@ Sessao::validarForm('cadastrar/SolicitacaoTecnico');
     
     
     <tr>
-      <th align="left" nowrap="nowrap">Descriï¿½ï¿½o do <?php echo($_SESSION['config']['problema']); ?>:</th>
+      <th align="left" nowrap="nowrap">Descrição do <?php echo($_SESSION['config']['problema']); ?>:</th>
 	      <td>
 	      	<textarea name="sol_descricao_solicitacao" rows="10" cols="50"><?php echo($_SESSION['cadastrar/SolicitacaoTecnico']['sol_descricao_solicitacao']); ?></textarea>
 	      </td>

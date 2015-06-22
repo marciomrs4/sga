@@ -2,385 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2526c6c5-3cfb-4a59-b223-ceacd7d0168e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/envio.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/terceiro.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/forms/cadastrar/EnvioTerceiro.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/TbSolicitacaoTerceiro.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/model/TbTerceiro.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Terceiro.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/action/Terceiro.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/forms/alterar/Terceiro.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/forms/cadastrar/Terceiro.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/fonts/glyphicons-halflings-regular.svg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.buildpath" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.project" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.settings/.jsdtscope" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.settings/org.eclipse.php.core.prefs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.container" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/componentes/script_teste.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/images/ListaDeAniversariantes.xls" afterPath="$PROJECT_DIR$/css/images/ListaDeAniversariantes.xls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Administracao.php" afterPath="$PROJECT_DIR$/Administracao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Alteracao.class.php" afterPath="$PROJECT_DIR$/classes/Alteracao.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Aniversariante.php" afterPath="$PROJECT_DIR$/Aniversariante.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/Aniversario.php" afterPath="$PROJECT_DIR$/action/Aniversario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/Aniversario.php" afterPath="$PROJECT_DIR$/forms/alterar/Aniversario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/Aniversario.php" afterPath="$PROJECT_DIR$/forms/cadastrar/Aniversario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" afterPath="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/ApontamentoMelhoria.php" afterPath="$PROJECT_DIR$/forms/cadastrar/ApontamentoMelhoria.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Arquivo.class.php" afterPath="$PROJECT_DIR$/classes/Arquivo.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/Assentamento.php" afterPath="$PROJECT_DIR$/forms/alterar/Assentamento.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/Assentamento.php" afterPath="$PROJECT_DIR$/forms/cadastrar/Assentamento.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/AssentamentoSolicitante.php" afterPath="$PROJECT_DIR$/forms/cadastrar/AssentamentoSolicitante.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Atividade.php" afterPath="$PROJECT_DIR$/Atividade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/Atividade.php" afterPath="$PROJECT_DIR$/forms/alterar/Atividade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/Atividade.php" afterPath="$PROJECT_DIR$/forms/cadastrar/Atividade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaixarArquivo.php" afterPath="$PROJECT_DIR$/BaixarArquivo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BaixarArquivoAnexoCheckList.php" afterPath="$PROJECT_DIR$/BaixarArquivoAnexoCheckList.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Banco.class.php" afterPath="$PROJECT_DIR$/model/Banco.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Banco_postgree.class.php" afterPath="$PROJECT_DIR$/model/Banco_postgree.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Busca.class.php" afterPath="$PROJECT_DIR$/classes/Busca.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Busca.php" afterPath="$PROJECT_DIR$/Busca.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/CHANGELOG.txt" afterPath="$PROJECT_DIR$/plugin/MPDF54/CHANGELOG.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/includes/CJKdata.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/includes/CJKdata.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/CREDITS.txt" afterPath="$PROJECT_DIR$/plugin/MPDF54/CREDITS.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CadastrarCheckList.php" afterPath="$PROJECT_DIR$/CadastrarCheckList.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Cadastro.class.php" afterPath="$PROJECT_DIR$/classes/Cadastro.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CentralUsuario.php" afterPath="$PROJECT_DIR$/CentralUsuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/Checklist.php" afterPath="$PROJECT_DIR$/forms/alterar/Checklist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/Checklist.php" afterPath="$PROJECT_DIR$/forms/cadastrar/Checklist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ClasseException.class.php" afterPath="$PROJECT_DIR$/classes/ClasseException.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ControleDeAcesso.class.php" afterPath="$PROJECT_DIR$/classes/ControleDeAcesso.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Dados.class.php" afterPath="$PROJECT_DIR$/classes/Dados.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/DataGrid.class.php" afterPath="$PROJECT_DIR$/classes/DataGrid.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/DataGridAniversariantes.class.php" afterPath="$PROJECT_DIR$/classes/DataGridAniversariantes.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/ttfonts/DejaVuinfo.txt" afterPath="$PROJECT_DIR$/plugin/MPDF54/ttfonts/DejaVuinfo.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Departamentos.php" afterPath="$PROJECT_DIR$/Departamentos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Documentacao" afterPath="$PROJECT_DIR$/Documentacao" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Email.class.php" afterPath="$PROJECT_DIR$/classes/Email.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Erro.class.php" afterPath="$PROJECT_DIR$/classes/Erro.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Error.class.php" afterPath="$PROJECT_DIR$/classes/Error.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExecutarCheckList.php" afterPath="$PROJECT_DIR$/ExecutarCheckList.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/FONT INFO.txt" afterPath="$PROJECT_DIR$/plugin/MPDF54/FONT INFO.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/FormComponente.class.php" afterPath="$PROJECT_DIR$/classes/FormComponente.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/FormatacaoRelatorio.css" afterPath="$PROJECT_DIR$/css/FormatacaoRelatorio.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/ttfonts/GNUFreeFontinfo.txt" afterPath="$PROJECT_DIR$/plugin/MPDF54/ttfonts/GNUFreeFontinfo.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GerarAniversariantePdf.php" afterPath="$PROJECT_DIR$/GerarAniversariantePdf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GerarExcel.php" afterPath="$PROJECT_DIR$/GerarExcel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GerarRelatorioAtividadePdf.php" afterPath="$PROJECT_DIR$/GerarRelatorioAtividadePdf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GerarRelatorioPdf.php" afterPath="$PROJECT_DIR$/GerarRelatorioPdf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GerarRelatorioProjetoPdf.php" afterPath="$PROJECT_DIR$/GerarRelatorioProjetoPdf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GraficoAtividade.php" afterPath="$PROJECT_DIR$/GraficoAtividade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/GraficoAtividade.php" afterPath="$PROJECT_DIR$/jscript/GraficoAtividade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GraficoAtividadePorUsuario.php" afterPath="$PROJECT_DIR$/GraficoAtividadePorUsuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/GraficoAtividadePorUsuario.php" afterPath="$PROJECT_DIR$/jscript/GraficoAtividadePorUsuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GraficoChamado.php" afterPath="$PROJECT_DIR$/GraficoChamado.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/GraficoChamadoTempoSolucao.php" afterPath="$PROJECT_DIR$/jscript/GraficoChamadoTempoSolucao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/GraficoQtdChamadoPorUsuario.php" afterPath="$PROJECT_DIR$/jscript/GraficoQtdChamadoPorUsuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GraficoQuantidadeAtividade.php" afterPath="$PROJECT_DIR$/GraficoQuantidadeAtividade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GraficoQuantidadeChamado.php" afterPath="$PROJECT_DIR$/GraficoQuantidadeChamado.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GraficoQuantidadeChamadoAbertoPorArea.php" afterPath="$PROJECT_DIR$/GraficoQuantidadeChamadoAbertoPorArea.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/GraficoQuantidadeChamadoAbertoPorArea.php" afterPath="$PROJECT_DIR$/jscript/GraficoQuantidadeChamadoAbertoPorArea.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GraficoQuantidadeChamadoAbertoPorAreaInclude.php" afterPath="$PROJECT_DIR$/GraficoQuantidadeChamadoAbertoPorAreaInclude.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GraficoTempoSolucaoMontagem.php" afterPath="$PROJECT_DIR$/GraficoTempoSolucaoMontagem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GraficoUsuario.php" afterPath="$PROJECT_DIR$/GraficoUsuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Grid.class.php" afterPath="$PROJECT_DIR$/classes/Grid.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/GridOption.class.php" afterPath="$PROJECT_DIR$/classes/GridOption.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/IGrid.class.php" afterPath="$PROJECT_DIR$/classes/IGrid.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/IOption.class.php" afterPath="$PROJECT_DIR$/classes/IOption.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ItemCheckList.php" afterPath="$PROJECT_DIR$/ItemCheckList.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/Itemchecklist.php" afterPath="$PROJECT_DIR$/forms/alterar/Itemchecklist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/Itemchecklist.php" afterPath="$PROJECT_DIR$/forms/cadastrar/Itemchecklist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/JavaScript.class.php" afterPath="$PROJECT_DIR$/classes/JavaScript.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/LICENSE.txt" afterPath="$PROJECT_DIR$/plugin/MPDF54/LICENSE.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Logar.class.php" afterPath="$PROJECT_DIR$/classes/Logar.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Melhoria.php" afterPath="$PROJECT_DIR$/Melhoria.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/MeuColorpicker.js" afterPath="$PROJECT_DIR$/jscript/MeuColorpicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/MeuPerfilCor.php" afterPath="$PROJECT_DIR$/forms/alterar/MeuPerfilCor.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/MeuProblema.php" afterPath="$PROJECT_DIR$/forms/alterar/MeuProblema.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/MeuProblema.php" afterPath="$PROJECT_DIR$/forms/cadastrar/MeuProblema.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/MeuStatus.php" afterPath="$PROJECT_DIR$/forms/alterar/MeuStatus.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/MeuStatus.php" afterPath="$PROJECT_DIR$/forms/cadastrar/MeuStatus.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/MeuTempo.php" afterPath="$PROJECT_DIR$/forms/alterar/MeuTempo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/MeuTempo.php" afterPath="$PROJECT_DIR$/forms/cadastrar/MeuTempo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/MeuUsuario.php" afterPath="$PROJECT_DIR$/forms/cadastrar/MeuUsuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/MinhaPrioridade.php" afterPath="$PROJECT_DIR$/forms/alterar/MinhaPrioridade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/MinhaPrioridade.php" afterPath="$PROJECT_DIR$/forms/cadastrar/MinhaPrioridade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/MinhaSenha.php" afterPath="$PROJECT_DIR$/forms/alterar/MinhaSenha.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/patterns/NOTES.txt" afterPath="$PROJECT_DIR$/plugin/MPDF54/patterns/NOTES.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Operacao.php" afterPath="$PROJECT_DIR$/Operacao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Painel.class.php" afterPath="$PROJECT_DIR$/classes/Painel.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PainelAtividade.php" afterPath="$PROJECT_DIR$/PainelAtividade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/PainelChamados.css" afterPath="$PROJECT_DIR$/css/PainelChamados.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PainelChamados.php" afterPath="$PROJECT_DIR$/PainelChamados.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PainelProjeto.php" afterPath="$PROJECT_DIR$/PainelProjeto.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prioridades.php" afterPath="$PROJECT_DIR$/Prioridades.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Problemas.php" afterPath="$PROJECT_DIR$/Problemas.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Projetos.php" afterPath="$PROJECT_DIR$/Projetos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/ProtecaoMultiSubmit.js" afterPath="$PROJECT_DIR$/jscript/ProtecaoMultiSubmit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/README.txt" afterPath="$PROJECT_DIR$/plugin/MPDF54/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Relatorio.php" afterPath="$PROJECT_DIR$/Relatorio.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RelatorioChamados.php" afterPath="$PROJECT_DIR$/RelatorioChamados.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RelatorioMensalMovimentacao.php" afterPath="$PROJECT_DIR$/RelatorioMensalMovimentacao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RelatorioPorArea.php" afterPath="$PROJECT_DIR$/RelatorioPorArea.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RelatorioPorPeriodo.php" afterPath="$PROJECT_DIR$/RelatorioPorPeriodo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RelatorioPorPeriodoTempo.php" afterPath="$PROJECT_DIR$/RelatorioPorPeriodoTempo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RelatorioPorPrioridade.php" afterPath="$PROJECT_DIR$/RelatorioPorPrioridade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RelatorioPorUsuario.php" afterPath="$PROJECT_DIR$/RelatorioPorUsuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RelatorioSolucao.php" afterPath="$PROJECT_DIR$/RelatorioSolucao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RelatorioTempoDeSolucao.php" afterPath="$PROJECT_DIR$/RelatorioTempoDeSolucao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/SMTP.class.php" afterPath="$PROJECT_DIR$/classes/SMTP.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ScriptAniversariantes.php" afterPath="$PROJECT_DIR$/ScriptAniversariantes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/SenhaUsuario.php" afterPath="$PROJECT_DIR$/forms/alterar/SenhaUsuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Sessao.class.php" afterPath="$PROJECT_DIR$/classes/Sessao.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sistema.php" afterPath="$PROJECT_DIR$/Sistema.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/Sistema.php" afterPath="$PROJECT_DIR$/action/Sistema.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/Sistema.php" afterPath="$PROJECT_DIR$/forms/alterar/Sistema.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/Sistema.php" afterPath="$PROJECT_DIR$/forms/cadastrar/Sistema.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/Solicitacao.php" afterPath="$PROJECT_DIR$/forms/alterar/Solicitacao.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/Solicitacao.php" afterPath="$PROJECT_DIR$/forms/cadastrar/Solicitacao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/SolicitacaoMelhoria.php" afterPath="$PROJECT_DIR$/forms/alterar/SolicitacaoMelhoria.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/SolicitacaoMelhoria.php" afterPath="$PROJECT_DIR$/forms/cadastrar/SolicitacaoMelhoria.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/SolicitacaoSolicitante.php" afterPath="$PROJECT_DIR$/forms/alterar/SolicitacaoSolicitante.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/SolicitacaoTecnico.php" afterPath="$PROJECT_DIR$/forms/cadastrar/SolicitacaoTecnico.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Solicitante.php" afterPath="$PROJECT_DIR$/Solicitante.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/StylePainelProjetos.css" afterPath="$PROJECT_DIR$/css/StylePainelProjetos.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Table.class.php" afterPath="$PROJECT_DIR$/classes/Table.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbAcesso.class.php" afterPath="$PROJECT_DIR$/model/TbAcesso.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbAnexo.class.php" afterPath="$PROJECT_DIR$/model/TbAnexo.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbAnexoCheckList.class.php" afterPath="$PROJECT_DIR$/model/TbAnexoCheckList.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbAniversariante.class.php" afterPath="$PROJECT_DIR$/model/TbAniversariante.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbApontamento.class.php" afterPath="$PROJECT_DIR$/model/TbApontamento.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbApontamentoMelhoria.class.php" afterPath="$PROJECT_DIR$/model/TbApontamentoMelhoria.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbAssentamento.class.php" afterPath="$PROJECT_DIR$/model/TbAssentamento.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbAtendenteSolicitacao.class.php" afterPath="$PROJECT_DIR$/model/TbAtendenteSolicitacao.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbAtividade.class.php" afterPath="$PROJECT_DIR$/model/TbAtividade.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbCalculoAtendimento.class.php" afterPath="$PROJECT_DIR$/model/TbCalculoAtendimento.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbChecklist.class.php" afterPath="$PROJECT_DIR$/model/TbChecklist.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbConfigAniversario.class.php" afterPath="$PROJECT_DIR$/model/TbConfigAniversario.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbDepartamento.class.php" afterPath="$PROJECT_DIR$/model/TbDepartamento.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbDiaSemana.class.php" afterPath="$PROJECT_DIR$/model/TbDiaSemana.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbDiaSemanaCheckList.class.php" afterPath="$PROJECT_DIR$/model/TbDiaSemanaCheckList.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbHistoricoCheckList.class.php" afterPath="$PROJECT_DIR$/model/TbHistoricoCheckList.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbItemChecklist.class.php" afterPath="$PROJECT_DIR$/model/TbItemChecklist.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbLayout.class.php" afterPath="$PROJECT_DIR$/model/TbLayout.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbPrioridade.class.php" afterPath="$PROJECT_DIR$/model/TbPrioridade.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbProblema.class.php" afterPath="$PROJECT_DIR$/model/TbProblema.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbProjeto.class.php" afterPath="$PROJECT_DIR$/model/TbProjeto.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbRelatorioPortalMovimentacao.class.php" afterPath="$PROJECT_DIR$/model/TbRelatorioPortalMovimentacao.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbSimNao.class.php" afterPath="$PROJECT_DIR$/model/TbSimNao.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbSistemas.class.php" afterPath="$PROJECT_DIR$/model/TbSistemas.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbSolicitacao.class.php" afterPath="$PROJECT_DIR$/model/TbSolicitacao.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbSolicitacaoMelhoria.class.php" afterPath="$PROJECT_DIR$/model/TbSolicitacaoMelhoria.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbStatus.class.php" afterPath="$PROJECT_DIR$/model/TbStatus.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbStatusAtividade.class.php" afterPath="$PROJECT_DIR$/model/TbStatusAtividade.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbStatusMelhoria.class.php" afterPath="$PROJECT_DIR$/model/TbStatusMelhoria.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbStatusProjeto.class.php" afterPath="$PROJECT_DIR$/model/TbStatusProjeto.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbSubProblema.class.php" afterPath="$PROJECT_DIR$/model/TbSubProblema.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbTabela.class.php" afterPath="$PROJECT_DIR$/model/TbTabela.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbTempoAtendimento.class.php" afterPath="$PROJECT_DIR$/model/TbTempoAtendimento.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbTipoAcesso.class.php" afterPath="$PROJECT_DIR$/model/TbTipoAcesso.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbTipoUsuarioAtividade.class.php" afterPath="$PROJECT_DIR$/model/TbTipoUsuarioAtividade.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbUsuario.class.php" afterPath="$PROJECT_DIR$/model/TbUsuario.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbUsuarioAtividade.class.php" afterPath="$PROJECT_DIR$/model/TbUsuarioAtividade.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbVerPor.class.php" afterPath="$PROJECT_DIR$/model/TbVerPor.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tempo.php" afterPath="$PROJECT_DIR$/Tempo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Texto.class.php" afterPath="$PROJECT_DIR$/classes/Texto.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/utils/UnicodeData.txt" afterPath="$PROJECT_DIR$/plugin/MPDF54/utils/UnicodeData.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/utils/UnicodeRanges.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/utils/UnicodeRanges.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Usuario.class.php" afterPath="$PROJECT_DIR$/model/Usuario.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/UsuarioAtividade.php" afterPath="$PROJECT_DIR$/forms/alterar/UsuarioAtividade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/UsuarioAtividade.php" afterPath="$PROJECT_DIR$/forms/cadastrar/UsuarioAtividade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Usuarios.php" afterPath="$PROJECT_DIR$/Usuarios.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Validacao.class.php" afterPath="$PROJECT_DIR$/classes/Validacao.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ValidarCampos.class.php" afterPath="$PROJECT_DIR$/classes/ValidarCampos.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ValidarDatas.class.php" afterPath="$PROJECT_DIR$/classes/ValidarDatas.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ValidarNavegador.class.php" afterPath="$PROJECT_DIR$/classes/ValidarNavegador.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ValidarNumeros.class.php" afterPath="$PROJECT_DIR$/classes/ValidarNumeros.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/ValidarString.class.php" afterPath="$PROJECT_DIR$/classes/ValidarString.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Version" afterPath="$PROJECT_DIR$/Version" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/ttfonts/XW Zar Font Info.txt" afterPath="$PROJECT_DIR$/plugin/MPDF54/ttfonts/XW Zar Font Info.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/apontamento.php" afterPath="$PROJECT_DIR$/action/apontamento.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/apontamentoMelhoria.php" afterPath="$PROJECT_DIR$/action/apontamentoMelhoria.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/aprovarprojeto.php" afterPath="$PROJECT_DIR$/action/aprovarprojeto.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/assentamento.php" afterPath="$PROJECT_DIR$/action/assentamento.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/atenderchamado.php" afterPath="$PROJECT_DIR$/action/atenderchamado.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/atendermelhoria.php" afterPath="$PROJECT_DIR$/action/atendermelhoria.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/atividade.php" afterPath="$PROJECT_DIR$/action/atividade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/autoload.php" afterPath="$PROJECT_DIR$/componentes/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/classes/barcode.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/classes/barcode.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/inc/base.php" afterPath="$PROJECT_DIR$/jscript/inc/base.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/classes/bmp.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/classes/bmp.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap/bootstrap-theme.css" afterPath="$PROJECT_DIR$/css/bootstrap/bootstrap-theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/css/bootstrap/bootstrap-theme.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap/bootstrap.css" afterPath="$PROJECT_DIR$/css/bootstrap/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/bootstrap.js" afterPath="$PROJECT_DIR$/jscript/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap/bootstrap.min.css" afterPath="$PROJECT_DIR$/css/bootstrap/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/bootstrap.php" afterPath="$PROJECT_DIR$/componentes/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/calendar.js" afterPath="$PROJECT_DIR$/jscript/calendar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/font/ccourier.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/font/ccourier.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/font/ccourierb.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/font/ccourierb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/font/ccourierbi.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/font/ccourierbi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/font/ccourieri.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/font/ccourieri.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/chamadoTempoSolucao.js" afterPath="$PROJECT_DIR$/jscript/chamadoTempoSolucao.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/checklist.php" afterPath="$PROJECT_DIR$/action/checklist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/font/chelvetica.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/font/chelvetica.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/font/chelveticab.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/font/chelveticab.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/font/chelveticabi.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/font/chelveticabi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/font/chelveticai.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/font/chelveticai.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/colorpicker.css" afterPath="$PROJECT_DIR$/css/colorpicker.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/colorpicker.js" afterPath="$PROJECT_DIR$/jscript/colorpicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/combodinamico.js" afterPath="$PROJECT_DIR$/jscript/combodinamico.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/combodinamicoPrioridade.js" afterPath="$PROJECT_DIR$/jscript/combodinamicoPrioridade.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/combodinamicoProblema.js" afterPath="$PROJECT_DIR$/jscript/combodinamicoProblema.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/compress.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/compress.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/config.php" afterPath="$PROJECT_DIR$/componentes/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/config.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/config_cp.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/config_cp.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/config_fonts.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/config_fonts.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/createTables.class.php" afterPath="$PROJECT_DIR$/model/createTables.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/criarchecklist.php" afterPath="$PROJECT_DIR$/action/criarchecklist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/font/csymbol.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/font/csymbol.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/font/ctimes.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/font/ctimes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/font/ctimesb.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/font/ctimesb.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/font/ctimesbi.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/font/ctimesbi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/font/ctimesi.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/font/ctimesi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/font/czapfdingbats.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/font/czapfdingbats.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/patterns/de.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/patterns/de.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/inc/decade.php" afterPath="$PROJECT_DIR$/jscript/inc/decade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/departamento.php" afterPath="$PROJECT_DIR$/action/departamento.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/departamento.php" afterPath="$PROJECT_DIR$/forms/alterar/departamento.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/departamento.php" afterPath="$PROJECT_DIR$/forms/cadastrar/departamento.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/patterns/dictionary.txt" afterPath="$PROJECT_DIR$/plugin/MPDF54/patterns/dictionary.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/classes/directw.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/classes/directw.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/graph_cache/dummy.txt" afterPath="$PROJECT_DIR$/plugin/MPDF54/graph_cache/dummy.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/ttfontdata/dummy.txt" afterPath="$PROJECT_DIR$/plugin/MPDF54/ttfontdata/dummy.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/duplosubmit.js" afterPath="$PROJECT_DIR$/jscript/duplosubmit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/patterns/en.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/patterns/en.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/patterns/es.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/patterns/es.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/patterns/fi.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/patterns/fi.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/utils/font_collections.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/utils/font_collections.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/utils/font_coverage.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/utils/font_coverage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/utils/font_dump.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/utils/font_dump.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/utils/font_names.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/utils/font_names.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/login/form.php" afterPath="$PROJECT_DIR$/forms/login/form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/classes/form.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/classes/form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/formataMoney.js" afterPath="$PROJECT_DIR$/jscript/formataMoney.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/formatacao-niver.css" afterPath="$PROJECT_DIR$/css/formatacao-niver.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/formatacao.css" afterPath="$PROJECT_DIR$/css/formatacao.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/formatacao.php" afterPath="$PROJECT_DIR$/css/formatacao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/formcontroler.php" afterPath="$PROJECT_DIR$/action/formcontroler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/mpdfi/fpdi_pdf_parser.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/mpdfi/fpdi_pdf_parser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/patterns/fr.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/patterns/fr.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/includes/functions.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/includes/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getChamadoSolucao.php" afterPath="$PROJECT_DIR$/getChamadoSolucao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/classes/gif.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/classes/gif.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/classes/grad.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/classes/grad.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/grafico.js" afterPath="$PROJECT_DIR$/jscript/grafico.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/graph.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/graph.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/login/iepngfix.htc" afterPath="$PROJECT_DIR$/forms/login/iepngfix.htc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_bn_1_001.volt.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_bn_1_001.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_gu_1_001.volt.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_gu_1_001.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_hi_1_001.volt.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_hi_1_001.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_kn_1_001.volt.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_kn_1_001.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_ml_1_001.volt.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_ml_1_001.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_or_1_001.volt.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_or_1_001.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_pa_1_001.volt.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_pa_1_001.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_ta_1_001.volt.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_ta_1_001.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_te_1_001.volt.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/includes/ind_te_1_001.volt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/index.php" afterPath="$PROJECT_DIR$/componentes/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.php" afterPath="$PROJECT_DIR$/css/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/images/index.php" afterPath="$PROJECT_DIR$/css/images/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/images/nav/index.php" afterPath="$PROJECT_DIR$/css/images/nav/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/index.php" afterPath="$PROJECT_DIR$/jscript/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/index.php" afterPath="$PROJECT_DIR$/model/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/utils/index.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/utils/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexMail.php" afterPath="$PROJECT_DIR$/indexMail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index_teste.php" afterPath="$PROJECT_DIR$/index_teste.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/classes/indic.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/classes/indic.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/patterns/it.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/patterns/it.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/itemchecklist.php" afterPath="$PROJECT_DIR$/action/itemchecklist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/jquery.columnfilters.js" afterPath="$PROJECT_DIR$/jscript/jquery.columnfilters.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/jquery.dataTables.js" afterPath="$PROJECT_DIR$/jscript/jquery.dataTables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/jquery.tablesorter.js" afterPath="$PROJECT_DIR$/jscript/jquery.tablesorter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/listarProblemaTecnico.php" afterPath="$PROJECT_DIR$/listarProblemaTecnico.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/login.css" afterPath="$PROJECT_DIR$/css/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/login.php" afterPath="$PROJECT_DIR$/action/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/login/loginform.php" afterPath="$PROJECT_DIR$/forms/login/loginform.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/logout.php" afterPath="$PROJECT_DIR$/action/logout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/marcacao.js" afterPath="$PROJECT_DIR$/jscript/marcacao.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/mascaras.js" afterPath="$PROJECT_DIR$/jscript/mascaras.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/maskedinput.js" afterPath="$PROJECT_DIR$/jscript/maskedinput.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/menuadministrativo.php" afterPath="$PROJECT_DIR$/menuadministrativo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/menuprincipal.php" afterPath="$PROJECT_DIR$/componentes/menuprincipal.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/menurelatorio.php" afterPath="$PROJECT_DIR$/menurelatorio.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/menusecundario.php" afterPath="$PROJECT_DIR$/menusecundario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/meuMaskMoney.js" afterPath="$PROJECT_DIR$/jscript/meuMaskMoney.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meusproblemas.php" afterPath="$PROJECT_DIR$/meusproblemas.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meusproblemasBusca.php" afterPath="$PROJECT_DIR$/meusproblemasBusca.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/meutempoatendimento.php" afterPath="$PROJECT_DIR$/meutempoatendimento.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/minhaprioridade.php" afterPath="$PROJECT_DIR$/minhaprioridade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/inc/month.php" afterPath="$PROJECT_DIR$/jscript/inc/month.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/mootools-1.2-core.js" afterPath="$PROJECT_DIR$/jscript/mootools-1.2-core.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/mpdf.css" afterPath="$PROJECT_DIR$/plugin/MPDF54/mpdf.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/mpdf.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/mpdf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/my-alert.js" afterPath="$PROJECT_DIR$/jscript/my-alert.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/my-data-table.js" afterPath="$PROJECT_DIR$/jscript/my-data-table.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/nav.css" afterPath="$PROJECT_DIR$/css/nav.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/nav.php" afterPath="$PROJECT_DIR$/css/nav.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/patterns/nl.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/patterns/nl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/ttfonts/ocrbinfo.txt" afterPath="$PROJECT_DIR$/plugin/MPDF54/ttfonts/ocrbinfo.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/ordena.js" afterPath="$PROJECT_DIR$/jscript/ordena.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/includes/out.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/includes/out.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/mpdfi/pdf_context.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/mpdfi/pdf_context.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/mpdfi/pdf_parser.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/mpdfi/pdf_parser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/patterns/pl.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/patterns/pl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/prioridade.php" afterPath="$PROJECT_DIR$/action/prioridade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/problema.php" afterPath="$PROJECT_DIR$/action/problema.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/progbar.css" afterPath="$PROJECT_DIR$/plugin/MPDF54/progbar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/projeto.php" afterPath="$PROJECT_DIR$/action/projeto.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/projeto.php" afterPath="$PROJECT_DIR$/forms/alterar/projeto.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/projeto.php" afterPath="$PROJECT_DIR$/forms/cadastrar/projeto.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/rodape.php" afterPath="$PROJECT_DIR$/componentes/rodape.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/patterns/ru.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/patterns/ru.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/script.php" afterPath="$PROJECT_DIR$/componentes/script.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/script_prioridade.php" afterPath="$PROJECT_DIR$/componentes/script_prioridade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/solicitacao.php" afterPath="$PROJECT_DIR$/action/solicitacao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/solicitacaoMelhoria.php" afterPath="$PROJECT_DIR$/action/solicitacaoMelhoria.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/status.php" afterPath="$PROJECT_DIR$/action/status.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.php" afterPath="$PROJECT_DIR$/css/style.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/includes/subs_core.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/includes/subs_core.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/includes/subs_win-1252.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/includes/subs_win-1252.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/patterns/sv.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/patterns/sv.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/classes/svg.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/classes/svg.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/tableTools.js" afterPath="$PROJECT_DIR$/jscript/tableTools.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/tabs.js" afterPath="$PROJECT_DIR$/jscript/tabs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/tempo.php" afterPath="$PROJECT_DIR$/action/tempo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/classes/tocontents.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/classes/tocontents.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/tooltip.css" afterPath="$PROJECT_DIR$/css/tooltip.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/topo1.php" afterPath="$PROJECT_DIR$/componentes/topo1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/topo2.php" afterPath="$PROJECT_DIR$/componentes/topo2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/classes/ttfontsuni.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/classes/ttfontsuni.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/usuario.php" afterPath="$PROJECT_DIR$/action/usuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/usuario.php" afterPath="$PROJECT_DIR$/forms/alterar/usuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/usuario.php" afterPath="$PROJECT_DIR$/forms/cadastrar/usuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/validador.js" afterPath="$PROJECT_DIR$/jscript/validador.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/inc/vars.php" afterPath="$PROJECT_DIR$/jscript/inc/vars.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/login/view.css" afterPath="$PROJECT_DIR$/forms/login/view.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/vlaCal-v2.1-adobe_cs3.css" afterPath="$PROJECT_DIR$/css/vlaCal-v2.1-adobe_cs3.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/vlaCal-v2.1-apple_widget.css" afterPath="$PROJECT_DIR$/css/vlaCal-v2.1-apple_widget.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/vlaCal-v2.1.css" afterPath="$PROJECT_DIR$/css/vlaCal-v2.1.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/vlaCal-v2.1.js" afterPath="$PROJECT_DIR$/jscript/vlaCal-v2.1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin/MPDF54/classes/wmf.php" afterPath="$PROJECT_DIR$/plugin/MPDF54/classes/wmf.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/inc/year.php" afterPath="$PROJECT_DIR$/jscript/inc/year.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sga.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -418,15 +52,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/model/Banco.class.php" />
-        <option value="$PROJECT_DIR$/forms/cadastrar/UsuarioAtividade.php" />
-        <option value="$PROJECT_DIR$/forms/alterar/UsuarioAtividade.php" />
-        <option value="$PROJECT_DIR$/model/Banco_postgree.class.php" />
         <option value="$PROJECT_DIR$/jscript/tabs.js" />
         <option value="$PROJECT_DIR$/Terceiro.php" />
         <option value="$PROJECT_DIR$/action/EnvioTerceiro.php" />
         <option value="$PROJECT_DIR$/Solicitante.php" />
-        <option value="$PROJECT_DIR$/Operacao.php" />
         <option value="$PROJECT_DIR$/classes/SelectOption.class.php" />
         <option value="$PROJECT_DIR$/model/TbApontamento.class.php" />
         <option value="$PROJECT_DIR$/model/TbAtendenteSolicitacao.class.php" />
@@ -436,13 +65,8 @@
         <option value="$PROJECT_DIR$/forms/alterar/EnvioTerceiro.php" />
         <option value="$PROJECT_DIR$/forms/cadastrar/EnvioTerceiro.php" />
         <option value="$PROJECT_DIR$/action/envioterceiro.php" />
-        <option value="$PROJECT_DIR$/forms/cadastrar/Solicitacao.php" />
-        <option value="$PROJECT_DIR$/forms/cadastrar/SolicitacaoTecnico.php" />
-        <option value="$PROJECT_DIR$/forms/cadastrar/AssentamentoSolicitante.php" />
-        <option value="$PROJECT_DIR$/forms/alterar/SolicitacaoSolicitante.php" />
         <option value="$PROJECT_DIR$/forms/alterar/Solicitacao.php" />
         <option value="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" />
-        <option value="$PROJECT_DIR$/forms/cadastrar/Assentamento.php" />
         <option value="$PROJECT_DIR$/model/TbSolicitacaoTerceiro.class.php" />
         <option value="$PROJECT_DIR$/model/TbUsuario.class.php" />
         <option value="$PROJECT_DIR$/services/ramais.php" />
@@ -466,9 +90,19 @@
         <option value="$PROJECT_DIR$/model/TbSolicitacao.class.php" />
         <option value="$PROJECT_DIR$/classes/Cadastro.class.php" />
         <option value="$PROJECT_DIR$/RelatorioSolucao.php" />
-        <option value="$PROJECT_DIR$/jscript/chamadoTempoSolucao.js" />
         <option value="$PROJECT_DIR$/GraficoTempoSolucaoMontagem.php" />
         <option value="$PROJECT_DIR$/teste.php" />
+        <option value="$PROJECT_DIR$/jscript/chamadoTempoSolucao.js" />
+        <option value="$PROJECT_DIR$/Operacao.php" />
+        <option value="$PROJECT_DIR$/forms/cadastrar/Solicitacao.php" />
+        <option value="$PROJECT_DIR$/forms/cadastrar/SolicitacaoTecnico.php" />
+        <option value="$PROJECT_DIR$/forms/cadastrar/Assentamento.php" />
+        <option value="$PROJECT_DIR$/forms/alterar/SolicitacaoSolicitante.php" />
+        <option value="$PROJECT_DIR$/forms/cadastrar/AssentamentoSolicitante.php" />
+        <option value="$PROJECT_DIR$/componentes/rodape.php" />
+        <option value="$PROJECT_DIR$/componentes/topo1.php" />
+        <option value="$PROJECT_DIR$/componentes/menuprincipal.php" />
+        <option value="$PROJECT_DIR$/ScriptAniversariantes.php" />
       </list>
     </option>
   </component>
@@ -540,20 +174,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="action" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -563,7 +183,7 @@
     <property name="options.lastSelected" value="preferences.editor" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SFintranet" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
@@ -675,111 +295,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/forms/cadastrar/AssentamentoSolicitante.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.050561797" vertical-offset="108" max-vertical-offset="3276">
-          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-          <folding>
-            <element signature="e#3090#3240#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/alterar/Assentamento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1458">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/alterar/Solicitacao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53089887" vertical-offset="756" max-vertical-offset="4896">
-          <caret line="63" column="12" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/meusproblemas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12413793" vertical-offset="0" max-vertical-offset="725">
-          <caret line="5" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/PDO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3448276" vertical-offset="20828" max-vertical-offset="24516">
-          <caret line="1171" column="20" selection-start-line="1171" selection-start-column="20" selection-end-line="1171" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbUsuario.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3960674" vertical-offset="7008" max-vertical-offset="8838">
-          <caret line="405" column="46" selection-start-line="405" selection-start-column="46" selection-end-line="405" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Table.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3834484" vertical-offset="1728" max-vertical-offset="3186">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/DataGrid.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0537932" vertical-offset="2839" max-vertical-offset="5778">
-          <caret line="75" column="11" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/componentes/topo2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/componentes/topo1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32275862" vertical-offset="0" max-vertical-offset="725">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/componentes/script.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.099310346" vertical-offset="0" max-vertical-offset="810">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbAniversariante.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37931034" vertical-offset="3451" max-vertical-offset="4284">
-          <caret line="207" column="32" selection-start-line="207" selection-start-column="32" selection-end-line="207" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/ramais.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8262069" vertical-offset="85" max-vertical-offset="882">
-          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/formatacao.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61702126" vertical-offset="2560" max-vertical-offset="3312">
-          <caret line="168" column="21" selection-start-line="168" selection-start-column="21" selection-end-line="168" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index_teste.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1737931" vertical-offset="0" max-vertical-offset="725">
@@ -798,15 +313,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37921348" vertical-offset="0" max-vertical-offset="1422">
           <caret line="15" column="56" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Assentamento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3539326" vertical-offset="972" max-vertical-offset="3564">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -814,7 +320,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32965517" vertical-offset="463" max-vertical-offset="1296">
           <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -830,14 +335,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8441379" vertical-offset="522" max-vertical-offset="1638">
           <caret line="63" column="9" selection-start-line="37" selection-start-column="0" selection-end-line="63" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbSolicitacaoTerceiro.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3448276" vertical-offset="722" max-vertical-offset="5238">
-          <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -845,7 +342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5213793" vertical-offset="0" max-vertical-offset="725">
           <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -853,7 +349,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21629213" vertical-offset="16334" max-vertical-offset="17496">
           <caret line="916" column="83" selection-start-line="914" selection-start-column="0" selection-end-line="916" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -875,7 +370,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1983471" vertical-offset="0" max-vertical-offset="726">
           <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -912,16 +406,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50344825" vertical-offset="2785" max-vertical-offset="4428">
           <caret line="175" column="66" selection-start-line="175" selection-start-column="66" selection-end-line="175" selection-end-column="66" />
-          <folding>
-            <marker date="1434650897997" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1434650897997" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1434650897997" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1434650897997" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1434650897997" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1434650897997" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1434650897997" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1434650897997" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -929,7 +414,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1737931" vertical-offset="0" max-vertical-offset="725">
           <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,10 +421,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3324138" vertical-offset="461" max-vertical-offset="2142">
           <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-          <folding>
-            <marker date="1434650987253" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1434650987253" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -948,17 +429,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.049655173" vertical-offset="0" max-vertical-offset="5346">
           <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding>
-            <marker date="1434489235598" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1434489235598" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1434489235598" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1434489235598" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..." />
-            <marker date="1434489235598" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..." />
-            <marker date="1434489235598" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_departamento..." />
-            <marker date="1434489235598" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1434489235598" expanded="true" signature="-1:-1" placeholder="SELECT DEP.d..tb_solicitacao..." />
-            <marker date="1434489235598" expanded="true" signature="-1:-1" placeholder="SELECT dep_h..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -966,17 +437,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3448276" vertical-offset="1586" max-vertical-offset="5526">
           <caret line="102" column="20" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="20" />
-          <folding>
-            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT pro.p..tb_problema..." />
-            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_problema..." />
-            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_problema..." />
-            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_problema..." />
-            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -984,7 +445,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47191012" vertical-offset="10662" max-vertical-offset="14058">
           <caret line="611" column="97" selection-start-line="611" selection-start-column="97" selection-end-line="611" selection-end-column="97" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,81 +469,6 @@
             <element signature="n#getCodigoDepartamentoSolicitado#0;n#TbSolicitacao#0;n#!!top" expanded="false" />
             <element signature="n#alterarDataFim#0;n#TbSolicitacao#0;n#!!top" expanded="false" />
             <element signature="n#selectSolicitacoesSolicitante#0;n#TbSolicitacao#0;n#!!top" expanded="false" />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT sol_c..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT date_..tb_calculo_atendimento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT date_..tb_calculo_atendimento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT date_..tb_calculo_atendimento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT date_..tb_calculo_atendimento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT usu_n..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT date_..tb_calculo_atendimento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT date_..tb_calculo_atendimento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT sta_c..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT sol_d..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT pro_d..tb_problema..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT pri_d..tb_prioridade..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT pri_c..tb_problema..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT tat_d..tb_tempo_atendimento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="select tat_c..tb_prioridade..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT pri_c..tb_problema..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="/* (SELECT p..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT pro_d..tb_problema..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="/* (SELECT p..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT pro_t..tb_problema..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="/* TIMEDIFF(..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..tb_problema..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT PRI.p..tb_prioridade..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT min(C..tb_calculo_atendimento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT count..tb_solicitacao..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT count..." />
-            <marker date="1434717154685" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
           </folding>
         </state>
       </provider>
@@ -1092,7 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5351124" vertical-offset="10023" max-vertical-offset="21186">
           <caret line="578" column="53" selection-start-line="578" selection-start-column="53" selection-end-line="578" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1100,15 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.62068963" vertical-offset="216" max-vertical-offset="1278">
           <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/chamadoTempoSolucao.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38297874" vertical-offset="0" max-vertical-offset="752">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1132,35 +507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8662069" vertical-offset="686" max-vertical-offset="4086">
           <caret line="73" column="27" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="27" />
-          <folding>
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Operacao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.008427" vertical-offset="1700" max-vertical-offset="2412">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1169,7 +515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24827586" vertical-offset="0" max-vertical-offset="725">
           <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1177,7 +522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19862069" vertical-offset="0" max-vertical-offset="1980">
           <caret line="8" column="96" selection-start-line="8" selection-start-column="96" selection-end-line="8" selection-end-column="96" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1185,7 +529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31741574" vertical-offset="1610" max-vertical-offset="2322">
           <caret line="102" column="19" selection-start-line="102" selection-start-column="19" selection-end-line="102" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1193,7 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3448276" vertical-offset="128" max-vertical-offset="1314">
           <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1201,7 +543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6703448" vertical-offset="0" max-vertical-offset="725">
           <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1210,6 +551,186 @@
         <state vertical-scroll-proportion="0.31724137" vertical-offset="3784" max-vertical-offset="4536">
           <caret line="223" column="7" selection-start-line="223" selection-start-column="7" selection-end-line="223" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jscript/chamadoTempoSolucao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19148937" vertical-offset="0" max-vertical-offset="752">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/TbTerceiro.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6565517" vertical-offset="1201" max-vertical-offset="2790">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1432666707227" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1432666707227" expanded="true" signature="-1:-1" placeholder="SELECT ter_c..tb_terceiro..." />
+            <marker date="1432666707227" expanded="true" signature="-1:-1" placeholder="SELECT ter_c..tb_terceiro..." />
+            <marker date="1432666707227" expanded="true" signature="-1:-1" placeholder="SELECT ter_c..tb_terceiro..." />
+            <marker date="1432666707227" expanded="true" signature="-1:-1" placeholder="SELECT ter_c..tb_terceiro..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/share/php/PEAR.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.2344828" vertical-offset="1620" max-vertical-offset="18918">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/share/php/Console/Getopt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6678">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/share/php/System.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1737931" vertical-offset="0" max-vertical-offset="11178">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Operacao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.025280898" vertical-offset="864" max-vertical-offset="2412">
+          <caret line="47" column="48" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Solicitacao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.37037" vertical-offset="404" max-vertical-offset="1656">
+          <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/cadastrar/SolicitacaoTecnico.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48033708" vertical-offset="486" max-vertical-offset="1890">
+          <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/alterar/SolicitacaoSolicitante.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.4157304" vertical-offset="2538" max-vertical-offset="4500">
+          <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Assentamento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30477527" vertical-offset="1205" max-vertical-offset="3564">
+          <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/TbSolicitacaoTerceiro.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35448277" vertical-offset="5359" max-vertical-offset="6084">
+          <caret line="312" column="20" selection-start-line="312" selection-start-column="20" selection-end-line="312" selection-end-column="20" />
+          <folding>
+            <marker date="1434138144121" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1434138144121" expanded="true" signature="-1:-1" placeholder="SELECT sot_c..tb_solicitacao_terceiro..." />
+            <marker date="1434138144121" expanded="true" signature="-1:-1" placeholder="SELECT sot_c..tb_solicitacao_terceiro..." />
+            <marker date="1434138144121" expanded="true" signature="-1:-1" placeholder="SELECT sot_c..tb_solicitacao_terceiro..." />
+            <marker date="1434138144121" expanded="true" signature="-1:-1" placeholder="SELECT sot_c..." />
+            <marker date="1434138144121" expanded="true" signature="-1:-1" placeholder="SELECT sot_c..." />
+            <marker date="1434138144121" expanded="true" signature="-1:-1" placeholder="SELECT sot_d..tb_solicitacao_terceiro..." />
+            <marker date="1434138144121" expanded="true" signature="-1:-1" placeholder="SELECT sec_t..tb_solicitacao_terceiro..." />
+            <marker date="1434138144121" expanded="true" signature="-1:-1" placeholder="SELECT TER.t..tb_solicitacao_terceiro..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/cadastrar/AssentamentoSolicitante.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4550562" vertical-offset="108" max-vertical-offset="3222">
+          <caret line="24" column="70" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/componentes/rodape.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07448276" vertical-offset="0" max-vertical-offset="725">
+          <caret line="3" column="69" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/componentes/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="752">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/componentes/topo1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32275862" vertical-offset="0" max-vertical-offset="725">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/componentes/topo2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39724138" vertical-offset="0" max-vertical-offset="725">
+          <caret line="16" column="79" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/componentes/menuprincipal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20224719" vertical-offset="0" max-vertical-offset="712">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ScriptAniversariantes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.1351724" vertical-offset="0" max-vertical-offset="2304">
+          <caret line="86" column="85" selection-start-line="86" selection-start-column="85" selection-end-line="86" selection-end-column="85" />
+          <folding>
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="SELECT ani_n..tb_aniversariante..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1435001063802" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

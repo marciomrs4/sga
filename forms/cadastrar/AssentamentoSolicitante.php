@@ -72,7 +72,7 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
     
     
     <tr>
-      <th nowrap="nowrap">Descri??o da Atividade:</th>
+      <th nowrap="nowrap">Descrição da Atividade:</th>
       <td>
       	<?php echo($dados[1]); ?>
       </td>
@@ -158,7 +158,7 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
 	  	$tbassentamento = new TbAssentamento();
 	  	$tabela = $tbassentamento->listarAssentamento($dados[0]);
 	
-	  	$cabecalho = array('Descri??o','Data','Editor');
+	  	$cabecalho = array('Descrição','Data','Editor');
 	  	
 	  	$grid = new DataGrid($cabecalho, $tabela);
 	  	

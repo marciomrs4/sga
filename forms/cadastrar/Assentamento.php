@@ -35,7 +35,7 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
         </tr>
 
     <tr>
-      <th nowrap="nowrap">Nï¿½mero do Chamado:</th>
+      <th nowrap="nowrap">Número do Chamado:</th>
       <td>
       	<?php echo($dados[0]); ?>
       </td>
@@ -71,7 +71,7 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
     </tr>
     
     <tr>
-      <th nowrap="nowrap">Descriï¿½ï¿½o do Chamado:</th>
+      <th nowrap="nowrap">Descrição do Chamado:</th>
       <td>
       	<?php echo($dados[1]); ?>
       </td>
@@ -101,12 +101,12 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
       	$atendente = $tbatendente->getNomeAtendente($dados[0]);
     
       	$tbusuario = new TbUsuario();
-      		#Verifica se hï¿½ um atendente e nï¿½o houver, ï¿½ mostrado o $name
+      		#Verifica se h? um atendente e n?o houver, ? mostrado o $name
       		#Caso contrario lista os nomes sem o $name
      	  	if($atendente)
    			{$valor = false;}
    			else
-   			{FormComponente::$name = 'Nï¿½o hï¿½ atendentes';
+   			{FormComponente::$name = 'Não hão atendentes';
    			$valor = true;}
       	FormComponente::selectOption('usu_codigo_atendente',$tbusuario->selectUsuarioDepCompleto($_SESSION['dep_codigo']),$valor,$atendente);
       
@@ -116,7 +116,7 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
     
     <tr>
     	<th>
-    		Problema tï¿½cnico:
+    		Problema técnico:
     	</th>
     	<td>
     	<?php 
@@ -124,7 +124,7 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
      	if($dados[4])
     	{$valor = false;}
     	else
-    	{FormComponente::$name = 'Nï¿½o hï¿½ problema tï¿½cnico indicado';
+    	{FormComponente::$name = 'Não há problema técnico indicado';
     	$valor = true;} 
     	FormComponente::selectOption('pro_codigo_tecnico', $tbProblema->listarProblemasTecnicos($_SESSION['dep_codigo']),true,$dados);
     	
@@ -137,7 +137,7 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
 		    	<td nowrap="nowrap"> 
 		    		Departamento Atendente: <input type="checkbox" name="Departamento" checked="checked" value="1" >
 		    		|
-		    		Usuï¿½rio Solicitante: <input type="checkbox" name="Solicitante" checked="checked" value="1" >
+		    		Usu?rio Solicitante: <input type="checkbox" name="Solicitante" checked="checked" value="1" >
 		    	</td>
     	</tr>    
             
@@ -174,7 +174,7 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
 	  	$tbassentamento = new TbAssentamento();
 	  	$tabela = $tbassentamento->listarAssentamento($dados[0]);
 	
-	  	$cabecalho = array('Descriï¿½ï¿½o','Data','Editor');
+	  	$cabecalho = array('Descrição','Data','Editor');
 	  	
 	  	$grid = new DataGrid($cabecalho, $tabela);
 	  	

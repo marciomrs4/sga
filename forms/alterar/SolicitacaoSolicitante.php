@@ -46,7 +46,7 @@ if($SolicitacaoTerceiro['sot_status'] == 'S'){
 
         <tr>
 	    	<th nowrap="nowrap">
-	    		N?mero do Chamado:
+	    		Número do Chamado:
 	    	</th>
     		<td>
 	    		<?php echo($_SESSION['alterar/Solicitacao']['sol_codigo']); ?>
@@ -160,7 +160,7 @@ if($SolicitacaoTerceiro['sot_status'] == 'S'){
 	  </td>
     </tr>
     <tr>
-      <th align="left" nowrap="nowrap">Descri??o do <?php echo($_SESSION['config']['problema']);?>:</th>
+      <th align="left" nowrap="nowrap">Descrição do <?php echo($_SESSION['config']['problema']);?>:</th>
 	      <td>
 	      	<textarea name="sol_descricao_solicitacao" rows="10" cols="50"><?php echo($_SESSION['alterar/Solicitacao']['sol_descricao_solicitacao']); ?></textarea>
 	      </td>
@@ -221,7 +221,7 @@ if($SolicitacaoTerceiro['sot_status'] == 'S'){
 	  	
 		  	$tabela = $tbassentamento->listarAssentamento($_SESSION['alterar/Solicitacao']['sol_codigo']);
 		
-		  	$cabecalho = array('Descri??o','Data','Editor');
+		  	$cabecalho = array('Descrição','Data','Editor');
 		  	
 		  	$grid = new DataGrid($cabecalho, $tabela);
 		  	
