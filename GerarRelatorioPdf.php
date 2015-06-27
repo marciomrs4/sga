@@ -19,7 +19,7 @@ $_SESSION['buscaRapida'] = $busca->getRelatorioPDF();
 
 ?>
 	<fieldset>
-				<legend><img src="css/images/teste.png"></legend>
+				<legend><img src="css/images/logoRelatorio.jpeg"></legend>
 				<hr />
   <table border="2" cellspacing="5">
     <tr>
@@ -29,7 +29,7 @@ $_SESSION['buscaRapida'] = $busca->getRelatorioPDF();
     </tr>
     	<tr>
 	    	<th align="left">
-	    		Nï¿½mero do Chamado:
+	    		Número do Chamado:
 	    	</th>
     		<td>
 	    		<?php echo($_SESSION['buscaRapida']['sol_codigo']); ?>
@@ -111,7 +111,7 @@ $_SESSION['buscaRapida'] = $busca->getRelatorioPDF();
     		<td>
     		<?php 
     		$tbcalcatendimento = new TbCalculoAtendimento();
-    		#Pega a data da solicitaï¿½ï¿½o pelo STATUS informado, no caso 1 ï¿½ ABERTURA
+    		#Pega a data da solicita??o pelo STATUS informado, no caso 1 ? ABERTURA
     		echo $tbcalcatendimento->getDataPorStatus($_SESSION['buscaRapida']['sol_codigo'],1);
 			?>
     		</td>
@@ -142,7 +142,7 @@ $_SESSION['buscaRapida'] = $busca->getRelatorioPDF();
     	</td>
     </tr>
     <tr>
-      <th align="left" nowrap="nowrap">Descriï¿½ï¿½o do <?php echo($_SESSION['config']['problema']);?>:</th>
+      <th align="left" nowrap="nowrap">Descrição do <?php echo($_SESSION['config']['problema']);?>:</th>
 	      <td>
 	      	<?php echo($_SESSION['buscaRapida']['sol_descricao_solicitacao']); ?>
 	      </td>
@@ -155,7 +155,7 @@ $_SESSION['buscaRapida'] = $busca->getRelatorioPDF();
 	  	$tbassentamento = new TbAssentamento();
 	  	$tabela = $tbassentamento->listarAssentamento($_SESSION['buscaRapida']['sol_codigo']);
 	
-	  	$cabecalho = array('Descriï¿½ï¿½o','Data','Editor');
+	  	$cabecalho = array('Descrição','Data','Editor');
 	  	
 	  	$grid = new DataGrid($cabecalho, $tabela);
 	  	
@@ -164,6 +164,23 @@ $_SESSION['buscaRapida'] = $busca->getRelatorioPDF();
 	  	$grid->islink = false;
 	  	$grid->colunaoculta = 1;
 	  	$grid->mostrarDatagrid();
+
+
+        $tbSolicitacaoTerceiro = new TbSolicitacaoTerceiro();
+
+        $grid1 = new DataGrid(array('#','Terceiro','Usuario','Data de Envio','Descricao'),
+            $tbSolicitacaoTerceiro->listarEnvioTerceiro($_SESSION['buscaRapida']['sol_codigo']));
+
+        $grid1->titulofield = 'Envio(s) para terceiro(s)';
+        $grid1->islink = false;
+        $grid1->mostrarDatagrid(1);
+
+        $grid2 = new DataGrid(array('#','Terceiro','Usuario','Remocao','Descricao'),
+            $tbSolicitacaoTerceiro->listarRemocaoTerceiro($_SESSION['buscaRapida']['sol_codigo']));
+
+        $grid2->titulofield = 'Remocao(s) de terceiro(s)';
+        $grid2->islink = false;
+        $grid2->mostrarDatagrid(1);
 	  	
   	}catch (Exception $e)
   	{
@@ -189,7 +206,7 @@ $mpdf = new mPDF();
 $mpdf->SetHeader(utf8_encode('Emitido em: - '.date("d-m-Y")));
 
 
-$mpdf->SetAuthor(utf8_encode("Mï¿½rcio Ramos"));
+$mpdf->SetAuthor(utf8_encode("M?rcio Ramos"));
 $css =  file_get_contents('../sga/css/formatacao.css');
 
 

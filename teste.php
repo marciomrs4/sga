@@ -20,15 +20,6 @@ echo '$_SERVER[DOCUMENT_ROOT]',$_SERVER['DOCUMENT_ROOT'],$QL,$QL;
 
 print_r(pathinfo(__DIR__));*/
 
-$texto = new Texto();
-
-//$texto->criarTitulo('Vinicius');
-
-
-$array = array($texto);
-
-$array['0']->criarTitulo('Vinicius');
-
 
 
 ?>

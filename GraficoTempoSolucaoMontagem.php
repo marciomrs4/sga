@@ -18,6 +18,10 @@
 
 <script src="../<?php echo($_SESSION['projeto']);?>/jscript/chamadoTempoSolucao.js"></script>
 
+<script src="../<?php echo($_SESSION['projeto']);?>/jscript/mootools-1.2-core.js"></script>
+<script src="../<?php echo($_SESSION['projeto']);?>/jscript/vlaCal-v2.1.js"></script>
+<script src="../<?php echo($_SESSION['projeto']);?>/jscript/calendar.js"></script>
+
 <?php
 include $_SERVER['DOCUMENT_ROOT']."/sga/jscript/GraficoChamadoTempoSolucao.php";
 ?>
@@ -31,7 +35,9 @@ include $_SERVER['DOCUMENT_ROOT']."/sga/jscript/GraficoChamadoTempoSolucao.php";
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">Informações do Chamado</h4>
+                <h4 class="modal-title" id="myModalLabel">
+                    <p></p>
+                </h4>
             </div>
             <div class="modal-body">
                 <span id="carregarchamado"></span>

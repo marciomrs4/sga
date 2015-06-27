@@ -57,7 +57,7 @@ timer();
 
 <div id="topo2">
 	<?php
-		#Obetem o departamento do usuário 
+		#Obetem o departamento do usu?rio 
 		$dados['dep_codigo'] = ($_SESSION['dep_codigo'] == '') ? $_GET['dep_codigo'] : $_SESSION['dep_codigo'];
 
 		$tbAtividade = new TbAtividade();

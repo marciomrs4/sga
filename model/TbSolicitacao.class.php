@@ -961,8 +961,8 @@ class TbSolicitacao extends Banco
 	public function chamadoPorTempoDeSolucao($dados)
 	{
 
-		$query = ("SELECT SOL.sol_codigo AS Chamado, SOL.sol_data_inicio AS DataInicio, SOL.sol_data_fim AS DataFim,
-	   				TIMEDIFF(SOL.sol_data_fim,SOL.sol_data_inicio) AS TempoTotal,
+		$query = ("SELECT SOL.sol_codigo AS Chamado, SOL.sol_data_inicio AS DataInicio, (CASE SOL.sta_codigo WHEN 2 THEN now() WHEN 3 THEN SOL.sol_data_fim ELSE SOL.sol_data_fim END) AS DataFim,
+	   				TIMEDIFF((CASE SOL.sta_codigo WHEN 2 THEN now() WHEN 3 THEN SOL.sol_data_fim ELSE SOL.sol_data_fim END),SOL.sol_data_inicio) AS TempoTotal,
 					(SELECT dep_descricao FROM tb_departamento WHERE dep_codigo =
 						(SELECT dep_codigo FROM tb_usuario where usu_codigo_solicitante = usu_codigo)) AS Departamento,
 							USU.usu_nome AS Usuario,
@@ -983,11 +983,11 @@ class TbSolicitacao extends Banco
 								(SELECT pro_tempo_solucao FROM tb_problema as PRO 
 									WHERE SOL.pro_codigo = PRO.pro_codigo)) AS 'DIFF TIME - USUARIO', */
 						#Calcula a diferenca entre a data de inicio e fim e o tempo do problema indicado pelo tecnico
-						TIMEDIFF(TIMEDIFF(SOL.sol_data_fim,SOL.sol_data_inicio),
+						TIMEDIFF(TIMEDIFF((CASE SOL.sta_codigo WHEN 2 THEN now() WHEN 3 THEN SOL.sol_data_fim ELSE SOL.sol_data_fim END),SOL.sol_data_inicio),
 								(SELECT pro_tempo_solucao FROM tb_problema as PRO 
 									WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo)) AS 'DIFF TIME - TECNICO',
-							concat(SOL.sol_data_inicio , ' | ', SOL.sol_data_fim) as 'TempoSolucao',
-							concat(SOL.sol_data_inicio , ' | ', SOL.sol_data_fim,' | ',
+							concat(SOL.sol_data_inicio , ' | ', (CASE SOL.sta_codigo WHEN 2 THEN now() WHEN 3 THEN SOL.sol_data_fim ELSE SOL.sol_data_fim END)) as 'TempoSolucao',
+							concat(SOL.sol_data_inicio , ' | ', (CASE SOL.sta_codigo WHEN 2 THEN now() WHEN 3 THEN SOL.sol_data_fim ELSE SOL.sol_data_fim END),' | ',
 									(SELECT pro_tempo_solucao 
 										FROM tb_problema as PRO 
 										WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo)) as 'Dentro/Fora SLA'
@@ -1033,8 +1033,90 @@ class TbSolicitacao extends Banco
 			throw new PDOException($e->getMessage(), $e->getCode());
 		}
 	}
-	
-	public function chamadoPorPrioridade($dados)
+
+    #Relatorio: tempo de solucao com tempo envio de terceiro
+    public function chamadoPorTempoDeSolucaoEnvioTerceiro($dados)
+    {
+
+        $query = ("SELECT SOL.sol_codigo AS Chamado, SOL.sol_data_inicio AS DataInicio,
+	(CASE SOL.sta_codigo WHEN 2 THEN now() WHEN 3 THEN SOL.sol_data_fim ELSE SOL.sol_data_fim END) AS DataFim,
+	   				TIMEDIFF((CASE SOL.sta_codigo WHEN 2 THEN now() WHEN 3 THEN SOL.sol_data_fim ELSE SOL.sol_data_fim END),SOL.sol_data_inicio) AS TempoTotal,
+					/* (SELECT dep_descricao FROM tb_departamento WHERE dep_codigo =
+ 						(SELECT dep_codigo FROM tb_usuario where usu_codigo_solicitante = usu_codigo)) AS Departamento,
+							USU.usu_nome AS Usuario, */
+								(SELECT pro_descricao FROM tb_problema as PRO WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo) as ProblemaTecnico,
+								(SELECT pro_tempo_solucao FROM tb_problema as PRO WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo) as 'Tempo Tecnico',
+								    (SELECT sta_descricao FROM tb_status WHERE SOL.sta_codigo = sta_codigo) AS 'Status',
+										(SELECT pri_descricao FROM tb_prioridade
+											WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) ) as Prioridade,
+								(SELECT tat_descricao FROM tb_tempo_atendimento WHERE tat_codigo = (select tat_codigo from tb_prioridade
+										WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) ) ) as 'SLA',
+						(SELECT usu_nome FROM tb_usuario WHERE usu_codigo = ATS.usu_codigo_atendente) Atendente,
+						TIMEDIFF(TIMEDIFF((CASE SOL.sta_codigo WHEN 2 THEN now() WHEN 3 THEN SOL.sol_data_fim ELSE SOL.sol_data_fim END),SOL.sol_data_inicio),
+								(SELECT pro_tempo_solucao FROM tb_problema as PRO
+									WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo)) AS 'DIFF TIME - TECNICO',
+							concat(SOL.sol_data_inicio , ' | ',
+									(CASE SOL.sta_codigo WHEN 2 THEN now() WHEN 3 THEN SOL.sol_data_fim ELSE SOL.sol_data_fim END)) as 'TempoSolucao',
+
+                          ifnull((SELECT sec_to_time(SUM((time_to_sec(sot_tempo_util))))
+							FROM tb_solicitacao_terceiro AS TER
+							WHERE TER.sol_codigo = SOL.sol_codigo),'00:00:00') AS TempoUtilTerceiro,
+
+							concat(SOL.sol_data_inicio , ' | ',
+									(CASE SOL.sta_codigo WHEN 2 THEN now() WHEN 3 THEN SOL.sol_data_fim ELSE SOL.sol_data_fim END),' | ',
+									(SELECT pro_tempo_solucao
+										FROM tb_problema as PRO
+										WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo) ,' | ',
+						ifnull((SELECT sec_to_time(SUM((time_to_sec(sot_tempo_util))))
+									FROM tb_solicitacao_terceiro AS TER
+									WHERE TER.sol_codigo = SOL.sol_codigo),'00:00:00')
+						) as 'Dentro/Fora SLA'
+
+					FROM tb_solicitacao AS SOL
+					INNER JOIN tb_usuario AS USU
+					ON SOL.usu_codigo_solicitante =  USU.usu_codigo
+					INNER JOIN tb_calculo_atendimento AS CAL
+					ON SOL.sol_codigo = CAL.sol_codigo
+					INNER JOIN tb_problema as PRO
+					ON SOL.pro_codigo_tecnico = PRO.pro_codigo
+					INNER JOIN tb_atendente_solicitacao AS ATS
+					ON SOL.sol_codigo = ATS.sol_codigo
+					WHERE SOL.sol_data_inicio >= ? AND SOL.sol_data_inicio <= ?
+					AND SOL.sta_codigo LIKE ?
+					AND dep_codigo_solicitado = ?
+					AND PRO.pri_codigo LIKE ?
+					AND ATS.usu_codigo_atendente LIKE ?
+					AND SOL.pro_codigo LIKE ?
+					GROUP BY SOL.sol_codigo
+					ORDER BY 1 DESC;");
+        try
+        {
+
+            $data1 = $dados['data1'].' 00:00:01';
+            $data2 = $dados['data2'].' 23:59:59';
+
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->bindParam(1,$data1,PDO::PARAM_STR);
+            $stmt->bindParam(2,$data2,PDO::PARAM_STR);
+            $stmt->bindParam(3,$dados['sta_codigo'],PDO::PARAM_STR);
+            $stmt->bindParam(4,$_SESSION['dep_codigo'],PDO::PARAM_INT);
+            $stmt->bindParam(5,$dados['pri_codigo'],PDO::PARAM_INT);
+            $stmt->bindParam(6,$dados['usu_codigo_atendente'],PDO::PARAM_INT);
+            $stmt->bindParam(7,$dados['pro_codigo'],PDO::PARAM_INT);
+
+            $stmt->execute();
+
+            return($stmt->fetchAll(\PDO::FETCH_ASSOC));
+
+        } catch (PDOException $e)
+        {
+            throw new PDOException($e->getMessage(), $e->getCode());
+        }
+    }
+
+
+    public function chamadoPorPrioridade($dados)
 	{
 			$query = ("SELECT 
 						    (SELECT 

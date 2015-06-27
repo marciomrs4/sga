@@ -14,9 +14,9 @@ $busca = new Busca();
 $busca->validarPost($_POST);
 
 
-$cabecalho = array('','Número','Data Inicio','Data Fim','Tempo','Departamento',$_SESSION['config']['usuario'] .' Solicitante',
-				   'Problema Tecnico','SLA Tecnico','Status','Prioridade','SLA Atendimento','Atendente',
-				   'DIFF - Tecnico','Tempo Util',' % SLA ');
+$cabecalho = array('','Número','Data Inicio','Data Fim','Tempo',
+				   'Problema Tecnico','SLA Tecnico','Status','Prioridade','SLA Atend.','Atendente',
+				   'DIFF - Tecnico','Tempo Util',' Tempo Terceiro ','Útil Real',' % SLA - Porcentagem');
 
 //Obtem o tempo de entrada, saida, almoco e sabado do Departamento
 $TbDepartamento = new TbDepartamento();
@@ -34,7 +34,10 @@ $sabado =   ($busca->getDados('sabado') == '')   ? $TempoDepartamento['dep_carga
 
 <form action="" method="post" id="relatoriosolucao">
 <fieldset>
-	<legend>Pesquisar Chamado</legend>
+	<legend>
+            <span style="cursor: pointer" id="docRelatorioTempoTerceiro" class="glyphicon glyphicon-question-sign" title="Ajuda ?"></span>
+              Pesquisar Chamado
+            </legend>
 <table border="0">
 	<tr>	
 		<td>
@@ -130,7 +133,7 @@ try
 	
 	$grid->setCabecalho($cabecalho);
 	
-	$grid->setDados($busca->listarChamadoPorTempoDeSolucao());
+	$grid->setDados($busca->listarChamadoPorTempoDeSolucaoEnvioTerceiro());
 	
 	
 	$grid->addFunctionColumn(function ($var) use ($diaUtil, $busca)
@@ -156,7 +159,7 @@ try
 		return $diaUtil->tempo_valido($data1, $data2, $hora_ini, $hora_fim, $meio_dia, $sabado, $saida);
 		
 		
-	}, 13);
+	}, 11);
 
 $option = new GridOption();
 $option->setIco('edit')->setName('Ver chamado');
@@ -164,6 +167,7 @@ $option->setIco('edit')->setName('Ver chamado');
 $grid->addOption($option);
 
 
+//Funcao que retorna as horas em segundos
 function getHourToSecunds($hora)
 {
 	$horaParte = explode(':', $hora);
@@ -173,28 +177,41 @@ function getHourToSecunds($hora)
 	return $horasEmSegundo;
 }
 
+//Funcao que retorna os segundos em horas
+function getSecundToHours($segundos){
+
+        $hours = floor($segundos / 3600);
+        $segundos -= $hours * 3600;
+        $minutes = floor($segundos / 60);
+        $segundos -= $minutes * 60;
+
+        return "$hours:$minutes:$segundos";
+
+}
+
+//Funcao que retorna a porcentagem do tempo ou facered se ultrapassar 100%
 function getPercent($horaTecnica, $tempoChamado)
 {
-
     $percent = ($tempoChamado / $horaTecnica) * 100;
 
     if($percent > 100){
         return '<img src="css/images/status/face2.png">';
     }else{
 
-        $valor = sprintf('%.2f',$percent).'%';
+    $valor = sprintf('%.2f',$percent).'%';
 
-        $retorno = '<div class="progress">
-              <div class="progress-bar-info"
-                   role="progressbar"
-                   aria-valuenow="'.$valor.'"
-                   aria-valuemin="0"
-                   aria-valuemax="100"
-                   style="width: '.$valor.';">
-                        <span style="color: #000000">'.$valor.'</span>
-              </div>
-             </div>';
+    $retorno = '<div class="progress">
+                  <div class="progress-bar-info"
+                       role="progressbar"
+                       aria-valuenow="'.$valor.'"
+                       aria-valuemin="0"
+                       aria-valuemax="100"
+                       style="width: '.$valor.';">
+                            <span style="color: #000000">'.$valor.'</span>
+                  </div>
+                 </div>';
         return $retorno;
+
     }
 }
 
@@ -206,12 +223,15 @@ $grid->addFunctionColumn(function($var) use ($diaUtil, $busca){
 	$chamadoDentro = ($chamadoDentro == 0) ? 0 : $chamadoDentro;
 	$chamadoFora = ($chamadoFora == 0) ? 0 : $chamadoFora;
 	
-	$tempo =explode('|', $var);
+	$tempo = explode('|', $var);
 	
 	$data1 = trim($tempo['0']);
 	$data2 = trim($tempo['1']);
 	
 	$tempoProblema = trim($tempo['2']);
+
+    //Tempo util do terceiro
+    $tempoUtilTerceiro = trim($tempo['3']);
 	
 	#Hora Inicial
 	$hora_ini = $busca->getDados('hora_ini');
@@ -227,27 +247,38 @@ $grid->addFunctionColumn(function($var) use ($diaUtil, $busca){
 	$saida = 'H';
 	
 	$horaUtil = $diaUtil->tempo_valido($data1, $data2, $hora_ini, $hora_fim, $meio_dia, $sabado, $saida);
-	
+
+    $tempoUtilTerceiroEmSegundos = getHourToSecunds($tempoUtilTerceiro);
+
+
 	#Converte para secundos as horas 
 	$horaUtil = getHourToSecunds($horaUtil);
 	$tempoProblema = getHourToSecunds($tempoProblema);
-	
+
+    $tempoUtilFinal = $horaUtil - $tempoUtilTerceiroEmSegundos;
+
+
+    $percent = getPercent($tempoProblema,$tempoUtilFinal);
+
+
  	if($horaUtil <= $tempoProblema){
 		
 		$totalChamado++;
 		$chamadoDentro++;
 		
-		return getPercent($tempoProblema,$horaUtil);
+		return getSecundToHours($tempoUtilFinal) .'
+		                        <td>' . $percent . '</td>';
 
 	}else {
 		$totalChamado++;
 		$chamadoFora++;
 
-        return getPercent($tempoProblema,$horaUtil);
+		return getSecundToHours($tempoUtilFinal) .'
+		                        <td>' . $percent . '</td>';
 }
 	
 	
-}, 14);
+}, 13);
 
 
 $grid->id = null;
@@ -255,7 +286,7 @@ $grid->id = null;
 
 $Painel = new Painel();
 $Painel->addGrid($grid)
-       ->setPainelTitle('<a href="#">Resultado <span id="painel-resultado" class="glyphicon glyphicon-resize-small"></span></a>')
+       ->setPainelTitle('<a href="#">Resultado <span class="glyphicon glyphicon-resize-small"></span></a>')
        ->setPainelColor('default')
        ->show();
 

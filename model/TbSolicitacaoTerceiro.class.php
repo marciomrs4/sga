@@ -174,6 +174,7 @@ class TbSolicitacaoTerceiro extends Banco
                     INNER JOIN tb_terceiro AS TER
                     ON TER.ter_codigo = SOL.ter_codigo
                     WHERE sol_codigo = ?
+                    ORDER BY 1 DESC
                     ");
 
         try
@@ -207,6 +208,7 @@ class TbSolicitacaoTerceiro extends Banco
                     INNER JOIN tb_terceiro AS TER
                     ON TER.ter_codigo = SOL.ter_codigo
                     WHERE sol_codigo = ?
+                    ORDER BY 1 DESC
                     ");
 
         try
@@ -309,7 +311,7 @@ class TbSolicitacaoTerceiro extends Banco
         }
     }
 
-    /* Retorna a data de criacao deste envio para terceiro */
+    /* Retorna o tempo que o chamado está com terceiro */
     public function getTempoEmTerceiro($sot_codigo)
     {
 
@@ -320,8 +322,16 @@ class TbSolicitacaoTerceiro extends Banco
 
             $dataAtual = new DateTime();
 
-            return $dataEnvio->diff($dataAtual)
-                             ->format('%Y Anos %M meses %D dias %H horas %I minutos e %S segundos.');
+            $D = $dataEnvio->diff($dataAtual);
+
+            $Tempo  = ($D->format('%Y') == '00') ? '' : $D->format('%Y Ano(s) ');
+            $Tempo .= ($D->format('%M') == '00') ? '' : $D->format('%M Mes(es) ');
+            $Tempo .= ($D->format('%D') == '00') ? '' : $D->format('%D Dia(s) ');
+            $Tempo .= ($D->format('%H') == '00') ? '' : $D->format('%H Hora(s) ');
+            $Tempo .= ($D->format('%I') == '00') ? '' : $D->format('%I Minuto(s) ');
+            $Tempo .= ($D->format('%S') == '00') ? '' : $D->format('e %S Segundos');
+
+            return $Tempo;
 
 
         }catch (\PDOException $e){

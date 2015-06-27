@@ -106,5 +106,9 @@ h3{
 	padding: 5px;
 	border-radius: 3px;
 	
-	}
+}
+
+.painel-title{
+    cursor: pointer;
+}
 	

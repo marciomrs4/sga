@@ -62,7 +62,7 @@ timer();
 
 <div id="topo2">
 	<?php
-		#Obetem o departamento do usuário 
+		#Obetem o departamento do usu?rio 
 		$dados['dep_codigo'] = ($_SESSION['dep_codigo'] == '') ? $_GET['dep_codigo'] : $_SESSION['dep_codigo'];
 
 		$tbProjeto = new TbProjeto();
@@ -89,7 +89,7 @@ $link = 'GerarRelatorioProjetoPdf.php?codigo';
 $cabecalho = array('Projeto','Atividade','<a href="#">Data</a>','<a href="#">Dias</a>');
 
 echo("<fieldset id='completo'>
-		<legend id='nome'>Aprovação</legend>");
+		<legend id='nome'>Aprova??o</legend>");
 		
 		
 		$DataGrid = new DataGrid();

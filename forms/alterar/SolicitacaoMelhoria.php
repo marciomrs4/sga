@@ -17,7 +17,7 @@ $tbsistemas = new TbSistemas();
   
  
   <fieldset>
-	<legend>Ações</legend>
+	<legend>Aï¿½ï¿½es</legend>
 		<div class="acoesmelhoria">	
 			<?php if(($tbsistemas->getUsuarioChave($_SESSION['cadastrar/SolicitacaoMelhoria']['sis_codigo']) == $_SESSION['usu_codigo']) AND 
 						($_SESSION['cadastrar/SolicitacaoMelhoria']['usu_codigo_atendente'] == '')) {?>
@@ -39,7 +39,7 @@ $tbsistemas = new TbSistemas();
     
     <tr>
         <th nowrap="nowrap">
-    	Número da melhoria:
+    	Nï¿½mero da melhoria:
     	</th>
     	<td>
     	<?php echo($_SESSION['cadastrar/SolicitacaoMelhoria']['som_codigo']); ?>
@@ -90,7 +90,7 @@ $tbsistemas = new TbSistemas();
     </tr>
     
     <tr>
-      <th align="left" nowrap="nowrap">Descrição do <?php echo($_SESSION['config']['problema']); ?>:</th>
+      <th align="left" nowrap="nowrap">Descriï¿½ï¿½o do <?php echo($_SESSION['config']['problema']); ?>:</th>
 	      <td>
 	      	<textarea name="som_descricao" rows="10" cols="50"><?php echo($_SESSION['cadastrar/SolicitacaoMelhoria']['som_descricao']); ?></textarea>
 	      </td>
@@ -129,7 +129,7 @@ $tbsistemas = new TbSistemas();
 	  	
 	  	$tabela = $tbApontamento->listarApontamentoMelhoria($_SESSION['cadastrar/SolicitacaoMelhoria']['som_codigo']);
 	
-	  	$cabecalho = array('Descrição','Status','Data','Editor');
+	  	$cabecalho = array('Descriï¿½ï¿½o','Status','Data','Editor');
 	  	
 	  	$grid = new DataGrid($cabecalho, $tabela);
 	  	

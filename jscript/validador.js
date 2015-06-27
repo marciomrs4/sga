@@ -1,14 +1,14 @@
 /**
- * maxlength( length ): Máximo de caracteres
+ * maxlength( length ): M?ximo de caracteres
 rangelength( range ): Faz com que o elemento requer um intervalo de valores dado
-max( value ): Valor máximo permitido
-url( ): URL válida
-date( ): Data válida
-dateISO( ): Data ISO válida
-number( ): Campo numérico
-digits( ): Só aceita dígitos
-creditcard( ): Um número de cartão de crédito
-equalTo( other ): igual à um determinado valor
+max( value ): Valor m?ximo permitido
+url( ): URL v?lida
+date( ): Data v?lida
+dateISO( ): Data ISO v?lida
+number( ): Campo num?rico
+digits( ): S? aceita d?gitos
+creditcard( ): Um n?mero de cart?o de cr?dito
+equalTo( other ): igual ? um determinado valor
  */
 
 var $valida = jQuery.noConflict();
@@ -16,8 +16,8 @@ var $valida = jQuery.noConflict();
 
 /*
 var usuario  = 'Utilizador';
-var problema = 'Serviço';
-var ramal = 'Extensão';
+var problema = 'Servi?o';
+var ramal = 'Extens?o';
 var senha = 'Palavra-passe';
 */
 
@@ -42,17 +42,17 @@ $valida(document).ready( function()
 {
 	
 	$valida("#meuproblema").validate({
-		/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+		/* REGRAS DE VALIDA??O DO FORMUL?RIO */
 		rules:{
 			pro_descricao:{
-				required: true, /* Campo obrigatório */
-				minlength: 5    /* No mínimo 5 caracteres */
+				required: true, /* Campo obrigat?rio */
+				minlength: 5    /* No m?nimo 5 caracteres */
 			},
 			dep_codigo_problema:{
 				required: true
 			}
 		},
-		/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+		/* DEFINI??O DAS MENSAGENS DE ERRO */
 		messages:{
 			pro_descricao:{
 				required: "Preencha o campo <u>" +problema+ "</u>",
@@ -68,8 +68,8 @@ $valida(document).ready( function()
 
 		rules:{
 			pro_titulo:{
-				required: true, /* Campo obrigatório */
-				minlength: 5    /* No mínimo 5 caracteres */
+				required: true, /* Campo obrigat?rio */
+				minlength: 5    /* No m?nimo 5 caracteres */
 			},
 			pro_descricao:{
 				required: true
@@ -90,9 +90,9 @@ $valida(document).ready( function()
 		}
 	});
 	
-		/*Inicio de validação do formulário de solicitacao*/
+		/*Inicio de valida??o do formul?rio de solicitacao*/
 		$valida("#solicitacao").validate({
-			/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+			/* REGRAS DE VALIDA??O DO FORMUL?RIO */
 			rules:{
 				dep_codigo:{
 					required: true
@@ -105,7 +105,7 @@ $valida(document).ready( function()
 					minlength: 20
 				}
 			},
-			/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+			/* DEFINI??O DAS MENSAGENS DE ERRO */
 			messages:{
 				dep_codigo:{
 					required: "O campo departamento é obrigatório"
@@ -124,11 +124,11 @@ $valida(document).ready( function()
 				submitForm(form);
 			}
 			});
-		/*Fim de validação do formulário de solicitacao*/
+		/*Fim de valida??o do formul?rio de solicitacao*/
 	
-		/*Inicio de validação do formulário de assentamento*/
+		/*Inicio de valida??o do formul?rio de assentamento*/
 		$valida("#Assentamento").validate({
-			/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+			/* REGRAS DE VALIDA??O DO FORMUL?RIO */
 			rules:{
 				
 				ass_descricao:{
@@ -136,7 +136,7 @@ $valida(document).ready( function()
 					minlength: 10
 				}
 			},
-			/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+			/* DEFINI??O DAS MENSAGENS DE ERRO */
 			messages:{
 				ass_descricao:{
 					required: "O campo Descrição do Assentamento é obrigatório",
@@ -147,11 +147,11 @@ $valida(document).ready( function()
 				submitForm(form);	
 			}
 		});
-		/*Fim de validação do formulário de assentamento*/	
+		/*Fim de valida??o do formul?rio de assentamento*/	
 		
-		/*Inicio de validação do formulário do relatorio de solucao*/
+		/*Inicio de valida??o do formul?rio do relatorio de solucao*/
 		$valida("#relatoriosolucao").validate({
-			/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+			/* REGRAS DE VALIDA??O DO FORMUL?RIO */
 			
 			
 			rules:{
@@ -160,7 +160,7 @@ $valida(document).ready( function()
 					required: true
 				}
 			},
-			/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+			/* DEFINI??O DAS MENSAGENS DE ERRO */
 			messages:{
 				hora_ini:{
 					required: "O campo inicio é obrigatório"
@@ -170,11 +170,11 @@ $valida(document).ready( function()
 				submitForm(form);	
 			}
 		});
-		/*Fim de validação do formulário do relatorio de solucao*/	
+		/*Fim de valida??o do formul?rio do relatorio de solucao*/	
 		
-		/*Inicio de validação do formulário do relatorio de Abertura de melhoria*/
+		/*Inicio de valida??o do formul?rio do relatorio de Abertura de melhoria*/
 		$valida("#solicitacaoMelhoria").validate({
-			/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+			/* REGRAS DE VALIDA??O DO FORMUL?RIO */
 			
 			
 			rules:{
@@ -188,7 +188,7 @@ $valida(document).ready( function()
 						minlength: 20
 				}
 			},
-			/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+			/* DEFINI??O DAS MENSAGENS DE ERRO */
 			messages:{
 				
 				sis_codigo: {
@@ -204,11 +204,11 @@ $valida(document).ready( function()
 				submitForm(form);	
 			}
 		});
-		/*Fim de validação do formulário do relatorio de Abertura de melhoria*/	
+		/*Fim de valida??o do formul?rio do relatorio de Abertura de melhoria*/	
 		
-		/*Inicio de validação do formulário do relatorio de Apontamento de melhoria*/
+		/*Inicio de valida??o do formul?rio do relatorio de Apontamento de melhoria*/
 		$valida("#ApontamentoMelhoria").validate({
-			/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+			/* REGRAS DE VALIDA??O DO FORMUL?RIO */
 			
 			rules:{
 				
@@ -220,11 +220,11 @@ $valida(document).ready( function()
 						required: true
 				}
 			},
-			/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+			/* DEFINI??O DAS MENSAGENS DE ERRO */
 			messages:{
 				
 				apm_descricao: {
-						required: "O campo descricão, é obrigatório"
+						required: "O campo descrição, é obrigatório"
 				},
 				
 				stm_codigo:{
@@ -235,12 +235,12 @@ $valida(document).ready( function()
 				submitForm(form);	
 			}
 		});
-		/*Fim de validação do formulário do relatorio de Apontamento de melhoria*/	
+		/*Fim de valida??o do formul?rio do relatorio de Apontamento de melhoria*/	
 		
 		
-		/*Inicio de validação do formulário de Atividade*/
+		/*Inicio de valida??o do formul?rio de Atividade*/
 		$valida("#atividade").validate({
-			/* REGRAS DE VALIDAÇÃO DO FORMULÁRIO */
+			/* REGRAS DE VALIDA??O DO FORMUL?RIO */
 			rules:{
 				
 				at_previsao_inicio:{
@@ -262,7 +262,7 @@ $valida(document).ready( function()
 					minlength: 10
 				}
 			},
-			/* DEFINIÇÃO DAS MENSAGENS DE ERRO */
+			/* DEFINI??O DAS MENSAGENS DE ERRO */
 			messages:{
 				
 				at_previsao_inicio:{
@@ -285,6 +285,50 @@ $valida(document).ready( function()
 				}
 			}
 		});
-		/*Fim de validação do formulário de Atividade*/	
+		/*Fim de valida??o do formul?rio de Atividade*/
+
+    $valida("#EnvioTerceiro").validate({
+        /* REGRAS DE VALIDA??O DO FORMUL?RIO */
+
+
+        rules:{
+
+            sot_descricao_inclusao:{
+                required: true,
+                minlength: 10
+            },
+
+            sot_descricao_remocao:{
+                required: true,
+                minlength: 10
+            },
+
+            ter_codigo:{
+                required: true
+
+            }
+        },
+        /* DEFINI??O DAS MENSAGENS DE ERRO */
+        messages:{
+
+            sot_descricao_inclusao: {
+                required: "O campo Descricao, é obrigatório",
+                minlength: "É necessário ao menos 10 caracteres"
+            },
+
+            sot_descricao_remocao: {
+                required: "O campo Descricao, é obrigatório",
+                minlength: "É necessário ao menos 10 caracteres"
+            },
+
+            ter_codigo:{
+                required: "O campo terceiro é obrigatório"
+
+            }
+        },
+        submitHandler: function(form){
+            submitForm(form);
+        }
+    });
 	
 });

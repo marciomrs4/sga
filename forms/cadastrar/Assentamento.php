@@ -137,7 +137,7 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
 		    	<td nowrap="nowrap"> 
 		    		Departamento Atendente: <input type="checkbox" name="Departamento" checked="checked" value="1" >
 		    		|
-		    		Usu?rio Solicitante: <input type="checkbox" name="Solicitante" checked="checked" value="1" >
+		    		Usuário Solicitante: <input type="checkbox" name="Solicitante" checked="checked" value="1" >
 		    	</td>
     	</tr>    
             

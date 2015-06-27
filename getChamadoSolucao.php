@@ -17,11 +17,15 @@ $busca->validarPost($_POST);
 try
 {
 
-
-
 $_SESSION['buscaRapida'] = $busca->buscaRapidaChamado();
 
 ?>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Informações do Chamado</h3>
+  </div>
+  <div class="panel-body">
+
 <form name="arquivo" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/solicitacao.php">
 
   <table border="0" cellspacing="5">
@@ -175,7 +179,9 @@ $_SESSION['buscaRapida'] = $busca->buscaRapidaChamado();
     </tr>
 
   </table>
-       <div id="insere_aqui">
+
+    </div>
+</div>
   	<?php 
   	try
   	{
@@ -190,8 +196,33 @@ $_SESSION['buscaRapida'] = $busca->buscaRapidaChamado();
 	  	$Grid->colunaoculta = 1;
 	  	$Grid->colunaoculta = 1;
 	  	$Grid->setCabecalho($cabecalho)
-	  		 ->setDados($tabela)
-	  		 ->show();
+	  		 ->setDados($tabela);
+
+        $PainelAssentamento = new Painel();
+        $PainelAssentamento->setPainelTitle('Assentamento(s)')
+                           ->addGrid($Grid)
+                           ->show();
+
+        $tbSolicitacaoTerceiro = new TbSolicitacaoTerceiro();
+
+        $GridEnvios = new Grid();
+        $GridEnvios->setCabecalho(array('#','Terceiro','Usuario','Data de Envio','Descricao'))
+                   ->setDados($tbSolicitacaoTerceiro->listarEnvioTerceiro($_SESSION['buscaRapida']['sol_codigo'])->fetchAll(\PDO::FETCH_NUM));
+
+        $PainelEnvios = new Painel();
+        $PainelEnvios->setPainelTitle('Envio(s)')
+            ->addGrid($GridEnvios)
+            ->show();
+
+
+        $GridRemocao = new Grid();
+        $GridRemocao->setCabecalho(array('#','Terceiro','Usuario','Remocao','Descricao'))
+            ->setDados($tbSolicitacaoTerceiro->listarRemocaoTerceiro($_SESSION['buscaRapida']['sol_codigo'])->fetchAll(\PDO::FETCH_NUM));
+
+        $PainelRemocao = new Painel();
+        $PainelRemocao->setPainelTitle('Remoção(ões)')
+            ->addGrid($GridRemocao)
+            ->show();
 	  	
   	}catch (Exception $e)
   	{
