@@ -50,6 +50,8 @@
     </li>
     <li>
         15 - % SLA: Mostra qual a porcentagem que o tempo está para a data de ultrapassar o SLA técnico.
+        Levando em consideração as cores: Verde - Até 50% | Laranja - de 51% à 90% | Vermelho - acima de 90%
+        chegando à 100% é mostrado o emoticon em vermelho.
     </li>
 
     <li style="color: #000000 ">

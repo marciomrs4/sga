@@ -196,22 +196,30 @@ function getPercent($horaTecnica, $tempoChamado)
 
     if($percent > 100){
         return '<img src="css/images/status/face2.png">';
-    }else{
+    }else {
 
-    $valor = sprintf('%.2f',$percent).'%';
+        $valor = sprintf('%.2f', $percent) . '%';
 
-    $retorno = '<div class="progress">
-                  <div class="progress-bar-info"
-                       role="progressbar"
-                       aria-valuenow="'.$valor.'"
-                       aria-valuemin="0"
-                       aria-valuemax="100"
-                       style="width: '.$valor.';">
-                            <span style="color: #000000">'.$valor.'</span>
-                  </div>
-                 </div>';
+        if ($percent <= 50) {
+            $style = 'progress-bar-success progress-bar-striped';
+        } elseif ($percent > 50 and $percent <= 90) {
+            $style = 'progress-bar-warning progress-bar-striped';
+        } elseif ($percent > 90) {
+            $style = 'progress-bar-danger progress-bar-striped';
+        }
+
+        $retorno = '<div class="progress">
+              <div class="' . $style . '"
+                   role="progressbar"
+                   aria-valuenow="' . $valor . '"
+                   aria-valuemin="0"
+                   aria-valuemax="100"
+                   style="width: ' . $valor . ';">
+                        <span style="color: #000000">' . $valor . '</span>
+              </div>
+             </div>';
+
         return $retorno;
-
     }
 }
 
@@ -291,7 +299,7 @@ $Painel->addGrid($grid)
        ->show();
 
 			
-} catch (Exception $e) 
+} catch (\Exception $e)
 {
 	echo $e->getMessage();
 }

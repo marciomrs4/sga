@@ -200,14 +200,14 @@ class TbAniversariante extends Banco
 
 	}
 
-    //Aniversariante do dia(INTRANET)
-    public function listAniversarianteDia(array $dados = null)
+    //Aniversariante do dia(INTRANET CEADIS e Intranet UDTP)
+    public function listAniversarianteDia($unidade=1)
     {
         $query = ("SELECT ani_nome, ani_setor
 			   FROM tb_aniversariante
 			   WHERE ani_dia = ?
 			   AND ani_mes = ?
-			   AND ani_unidade = 1");
+			   AND ani_unidade = ?");
 
         try {
             $dia = date('d');
@@ -218,6 +218,7 @@ class TbAniversariante extends Banco
 
             $stmt->bindParam(1, $dia, \PDO::PARAM_STR);
             $stmt->bindParam(2, $mes, \PDO::PARAM_STR);
+            $stmt->bindParam(3, $unidade, \PDO::PARAM_STR);
 
             $stmt->execute();
 

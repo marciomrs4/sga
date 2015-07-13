@@ -4,17 +4,19 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
 if($_GET['id'] == base64_encode(date('d-m-Y').'M')) {
 
+    $id = filter_input(INPUT_GET,'id');
+    $unidade = filter_input(INPUT_GET,'unidade');
 
-    $TbUsuario = new TbUsuario();
+    $TbAniversariante = new TbAniversariante();
 
     $lista = array();
 
-    foreach ($TbUsuario->listarRamaisIntranet()->fetchAll(\PDO::FETCH_ASSOC) as $array)
+    foreach ($TbAniversariante->listAniversarianteDia($unidade) as $array)
     {
         $lista[] = array_map('utf8_encode', $array);
     }
 
- echo json_encode($lista);
+    echo json_encode($lista);
 
 }
 ?>

@@ -21,5 +21,19 @@ echo '$_SERVER[DOCUMENT_ROOT]',$_SERVER['DOCUMENT_ROOT'],$QL,$QL;
 print_r(pathinfo(__DIR__));*/
 
 
+$id = base64_encode(date('d-m-Y').'M');
+$unidade = 1; //ceadis
+
+$dados = file_get_contents('http://localhost/sga/services/aniversariantesdodia.php?unidade='.$unidade.'&id='.$id);
+
+$dados = json_decode($dados);
+
+foreach($dados as $arrays){
+    foreach($arrays as $array){
+        echo $array , '<br>';
+    }
+}
+
+//print_r($dados);
 
 ?>

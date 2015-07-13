@@ -184,8 +184,16 @@ function getPercent($horaTecnica, $tempoChamado)
 
         $valor = sprintf('%.2f',$percent).'%';
 
+        if($percent <= 50){
+            $style = 'progress-bar progress-bar-success progress-bar-striped';
+        }elseif($percent > 50 and $percent <= 90){
+            $style = 'progress-bar progress-bar-warning progress-bar-striped';
+        }elseif($percent > 90){
+            $style = 'progress-bar progress-bar-danger progress-bar-striped';
+        }
+
         $retorno = '<div class="progress">
-              <div class="progress-bar-info"
+              <div class="'.$style.'"
                    role="progressbar"
                    aria-valuenow="'.$valor.'"
                    aria-valuemin="0"
@@ -194,6 +202,7 @@ function getPercent($horaTecnica, $tempoChamado)
                         <span style="color: #000000">'.$valor.'</span>
               </div>
              </div>';
+
         return $retorno;
     }
 }

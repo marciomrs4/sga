@@ -97,7 +97,8 @@ class Grid implements IGrid
 	private function criarCabecalho()
 	{
 
-		echo("<table border='2' class='{$this->css}' id='{$this->id}'>
+		echo("<div class='table-responsive'>
+                <table border='2' class='{$this->css}' id='{$this->id}'>
 				<thead>
 					<tr class='active'>");				
 				foreach ($this->cabecalho as $cabecalho):
@@ -197,7 +198,8 @@ class Grid implements IGrid
 		}
 		
 		echo('</tbody>
-			</table>');
+			</table>
+           </div>');
 	}
 	
 	public function addOption(IOption $option)

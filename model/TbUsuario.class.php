@@ -398,7 +398,8 @@ class TbUsuario extends Banco
 	public function listarRamaisIntranet()
 	{
 		
-		$query = ("SELECT concat(usu_nome,' ',usu_sobrenome) AS Nome, usu_ramal, usu_email AS Ramal, DEP.dep_descricao AS Departamento
+		$query = ("SELECT concat(usu_nome,' ',usu_sobrenome) AS nome, usu_ramal AS ramal,
+                          usu_email AS email, DEP.dep_descricao AS departamento
 						FROM tb_usuario AS USU
 						INNER JOIN tb_departamento AS DEP
 						ON USU.dep_codigo = DEP.dep_codigo
