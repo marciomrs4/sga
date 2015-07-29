@@ -121,7 +121,9 @@ class TbAniversariante extends Banco
 
 	}
 	
-	#Listar na tela de Aniversariantes PDF
+	/**
+     * Listar na tela de Aniversariantes PDF
+    */
 	public function listarAniversariantePDF($dados)
 	{
 		$query = ("SELECT ani_codigo, ani_dia, ani_nome, ani_setor
@@ -219,6 +221,32 @@ class TbAniversariante extends Banco
             $stmt->bindParam(1, $dia, \PDO::PARAM_STR);
             $stmt->bindParam(2, $mes, \PDO::PARAM_STR);
             $stmt->bindParam(3, $unidade, \PDO::PARAM_STR);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll(\PDO::FETCH_NUM);
+
+        } catch (\PDOException $e) {
+            throw new \PDOException($e->getMessage(), $e->getCode());
+        }
+    }
+
+    //Aniversariante do MES (INTRANET CEADIS e Intranet UDTP)
+    public function listarAniversarianteMes($unidade=1)
+    {
+        $query = ("SELECT ani_dia, ani_nome, ani_setor
+			   FROM tb_aniversariante
+			   WHERE ani_mes = ?
+			   AND ani_unidade = ?");
+
+        try {
+
+            $mes = date('m');
+
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->bindParam(1, $mes, \PDO::PARAM_STR);
+            $stmt->bindParam(2, $unidade, \PDO::PARAM_STR);
 
             $stmt->execute();
 

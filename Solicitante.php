@@ -61,7 +61,7 @@ echo "</div>";
             $FormStatus->setStmt($tbstatus->selectMeuStatus())
                        ->setSelectName('sta_codigo')
                        ->setSelectedItem($busca->getDados('sta_codigo'))
-                       ->setOptionEmpty('TODOS',6)
+                       ->setOptionEmpty('TODOS')
                        ->listOption();
 
             ?>
@@ -82,7 +82,7 @@ echo "</div>";
 </table>
 </fieldset>
 
-<?php 
+<?php
 
 $cabecalho = array('Número',$_SESSION['config']['problema'],'Status','Solicitante','Data Abertura','Depto Solicitado','Descrição','Atendente');
 

@@ -921,13 +921,13 @@ class Alteracao extends Dados
             $data1 = $tbSolicitacaoTerceiro->getDataEnvioTerceiro($this->dados['sot_codigo']);
             $data2 = $this->dados['sot_data_remocao'];
             //Hora de Inicio do departamento
-            $hora_ini = ($TempoDepartamento['dep_hora_inicio'] == '') ? 08 : $TempoDepartamento['dep_hora_inicio'];
+            $hora_ini = ($TempoDepartamento['dep_hora_inicio'] == '') ? '08' : $TempoDepartamento['dep_hora_inicio'];
             //Hora Fim do departamento
-            $hora_fim = ($TempoDepartamento['dep_hora_fim'] == '') ? 18 : $TempoDepartamento['dep_hora_fim'];
+            $hora_fim = ($TempoDepartamento['dep_hora_fim'] == '') ? '18' : $TempoDepartamento['dep_hora_fim'];
             //Hora de almoco departamento
-            $meio_dia = ($TempoDepartamento['dep_hora_almoco'] == '') ? 13 : $TempoDepartamento['dep_hora_almoco'];
+            $meio_dia = ($TempoDepartamento['dep_hora_almoco'] == '') ? '13' : $TempoDepartamento['dep_hora_almoco'];
             //Carga horaria de sabado departamento
-            $sabado = ($TempoDepartamento['dep_carga_sabado'] == '') ? 04 : $TempoDepartamento['dep_carga_sabado'];
+            $sabado = ($TempoDepartamento['dep_carga_sabado'] == '') ? '00' : $TempoDepartamento['dep_carga_sabado'];
             //Formato de saida H (em horas)
             $saida = 'H';
 

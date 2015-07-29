@@ -524,7 +524,7 @@ class TbSolicitacao extends Banco
 	
 		} catch (PDOException $e)
 		{
-			throw new PDOException($e->getMessage(), $e->getCode());
+			throw new PDOException(get_class($this) . $e->getMessage(), $e->getCode());
 		}
 	
 	}
@@ -564,7 +564,7 @@ class TbSolicitacao extends Banco
     {
         $query = ("UPDATE $this->tabela
 					SET $this->sta_codigo = ?,
-						$this->sol_data_fim = ?,
+						$this->sol_data_fim = ?
 					WHERE $this->sol_codigo = ?");
 
         try
@@ -598,11 +598,12 @@ class TbSolicitacao extends Banco
                     (SELECT dep_descricao FROM tb_departamento WHERE dep_codigo = dep_codigo_solicitado) AS DEPTO_Solicitado,
 				    substr(sol_descricao_solicitacao,1,60), 
 				    (SELECT usu_email FROM tb_usuario WHERE usu_codigo = ATS.usu_codigo_atendente) AS Atendente
+
 				    FROM tb_solicitacao AS SOL
 				    #Traz o nome do usuario solicitante
 				    INNER JOIN tb_usuario as USU
            			ON usu_codigo_solicitante = USU.usu_codigo
-				    #Tabela de Problema, traz a descri��o do problema
+				    #Tabela de Problema, traz a descrição do problema
 				    INNER JOIN tb_problema AS PRO
 				    ON PRO.pro_codigo = SOL.pro_codigo
 				    INNER JOIN tb_status STA
@@ -611,10 +612,13 @@ class TbSolicitacao extends Banco
 				    LEFT JOIN tb_atendente_solicitacao AS ATS
 				    ON SOL.sol_codigo = ATS.sol_codigo
 				    WHERE dep_codigo_solicitado LIKE ?
-	                AND SOL.sta_codigo LIKE ? AND SOL.pro_codigo LIKE ?
-                    AND usu_nome LIKE ? AND sol_descricao_solicitacao LIKE ?
+	                AND SOL.sta_codigo LIKE ?
+	                AND SOL.pro_codigo LIKE ?
+                    AND usu_nome LIKE ?
+                    AND sol_descricao_solicitacao LIKE ?
                     AND USU.dep_codigo = ?
-				    ORDER BY SOL.sol_codigo DESC, SOL.sta_codigo DESC
+				    ORDER BY SOL.sol_codigo
+				    DESC, SOL.sta_codigo DESC
 				    LIMIT 500
                     
 				");

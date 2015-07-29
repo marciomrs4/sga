@@ -13,6 +13,7 @@ $busca = new Busca();
 
 $busca->validarPost($_POST);
 
+//print_r($_SESSION);
 
 $cabecalho = array('','Número','Data Inicio','Data Fim','Tempo',
 				   'Problema Tecnico','SLA Tecnico','Status','Prioridade','SLA Atend.','Atendente',
@@ -30,6 +31,7 @@ $hora_fim = ($busca->getDados('hora_fim') == '') ? $TempoDepartamento['dep_hora_
 $meio_dia = ($busca->getDados('meio_dia') == '') ? $TempoDepartamento['dep_hora_almoco']  : $busca->getDados('meio_dia');
 //Carga horaria de sabado departamento
 $sabado =   ($busca->getDados('sabado') == '')   ? $TempoDepartamento['dep_carga_sabado'] : $busca->getDados('sabado');
+
 ?>
 
 <form action="" method="post" id="relatoriosolucao">
@@ -103,12 +105,12 @@ $sabado =   ($busca->getDados('sabado') == '')   ? $TempoDepartamento['dep_carga
             ?>
 
 		 Horário de trabalho Inicio:
-		 		  <input type="text" name="hora_ini" class="doisdigitos" size="3" value="<?php echo($hora_ini);?>">
-		 		à <input type="text" name="hora_fim" class="doisdigitos" size="3" value="<?php echo($hora_fim);?>">
+		 		  <input type="text" name="hora_ini" class="doisdigitos" size="3" value="<?php echo $hora_ini; ?>">
+		 		à <input type="text" name="hora_fim" class="doisdigitos" size="3" value="<?php echo $hora_fim; ?>">
 
-		Almoço: <input type="text" name="meio_dia" class="doisdigitos" size="3" value="<?php echo($meio_dia);?>">
+		Almoço: <input type="text" name="meio_dia" class="doisdigitos" size="3" value="<?php echo $meio_dia; ?>">
 
-		Carga horária de Sábado: <input type="text" name="sabado" class="doisdigitos" size="3" value="<?php echo($sabado);?>">
+		Carga horária de Sábado: <input type="text" name="sabado" class="doisdigitos" size="3" value="<?php echo $sabado; ?>">
 		</td>
 	</tr>
 	<tr>
@@ -140,9 +142,9 @@ try
 	{
 		$data = explode('|', $var);
 		
-		$data1 = trim($data['0']);
-		$data2 = trim($data['1']);
-		
+		$data1 = $data['0'];
+		$data2 = $data['1'];
+
 		#Hora Inicial
 		$hora_ini = $busca->getDados('hora_ini');
 		#Hora Final
@@ -165,7 +167,6 @@ $option = new GridOption();
 $option->setIco('edit')->setName('Ver chamado');
 
 $grid->addOption($option);
-
 
 //Funcao que retorna as horas em segundos
 function getHourToSecunds($hora)
@@ -269,7 +270,7 @@ $grid->addFunctionColumn(function($var) use ($diaUtil, $busca){
     $percent = getPercent($tempoProblema,$tempoUtilFinal);
 
 
- 	if($horaUtil <= $tempoProblema){
+ 	if($tempoUtilFinal <= $tempoProblema){
 		
 		$totalChamado++;
 		$chamadoDentro++;
@@ -288,9 +289,7 @@ $grid->addFunctionColumn(function($var) use ($diaUtil, $busca){
 	
 }, 13);
 
-
 $grid->id = null;
-
 
 $Painel = new Painel();
 $Painel->addGrid($grid)
@@ -298,12 +297,11 @@ $Painel->addGrid($grid)
        ->setPainelColor('default')
        ->show();
 
-			
+
 } catch (\Exception $e)
 {
 	echo $e->getMessage();
 }
-
 
 include_once "GraficoTempoSolucaoMontagem.php";
 

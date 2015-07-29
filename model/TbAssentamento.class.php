@@ -37,7 +37,7 @@ class TbAssentamento extends Banco
 		
 	}
 	
-	#Metodo que lista os assentamentos das solicitações
+	#Metodo que lista os assentamentos das solicitaï¿½ï¿½es
 	public function listarAssentamento($sol_codigo)
 	{
 	
@@ -60,7 +60,7 @@ class TbAssentamento extends Banco
 
 		} catch (PDOException $e)
 		{
-			throw new PDOException($e->getMessage(),$e->getCode());
+			throw new PDOException(get_class($this) . $e->getMessage(),$e->getCode());
 		}
 		
 	}
