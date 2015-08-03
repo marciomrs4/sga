@@ -23,7 +23,10 @@ if($_POST)
 	} catch (Exception $e)
 	{
 		$_SESSION['erro'] = $e->getMessage();
-		header('location: '.$_SERVER['HTTP_REFERER']);
+
+        sleep(2);
+
+        header('location: '.$_SERVER['HTTP_REFERER']);
 	}
 
 }

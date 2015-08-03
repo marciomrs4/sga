@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2526c6c5-3cfb-4a59-b223-ceacd7d0168e" name="Default" comment="" />
+    <list default="true" id="2526c6c5-3cfb-4a59-b223-ceacd7d0168e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Cadastro.class.php" afterPath="$PROJECT_DIR$/classes/Cadastro.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Grid.class.php" afterPath="$PROJECT_DIR$/classes/Grid.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/GridOption.class.php" afterPath="$PROJECT_DIR$/classes/GridOption.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PainelChamados.php" afterPath="$PROJECT_DIR$/PainelChamados.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PainelChamadosNovo.php" afterPath="$PROJECT_DIR$/PainelChamadosNovo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbAtendenteSolicitacao.class.php" afterPath="$PROJECT_DIR$/model/TbAtendenteSolicitacao.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbUsuario.class.php" afterPath="$PROJECT_DIR$/model/TbUsuario.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/TopoPainelChamados.php" afterPath="$PROJECT_DIR$/componentes/TopoPainelChamados.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/footerPainel.php" afterPath="$PROJECT_DIR$/componentes/footerPainel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getChamadoSolucao.php" afterPath="$PROJECT_DIR$/getChamadoSolucao.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/login.php" afterPath="$PROJECT_DIR$/action/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="sga.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -31,34 +45,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="teste.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/teste.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="252">
-              <caret line="67" column="2" selection-start-line="67" selection-start-column="2" selection-end-line="67" selection-end-column="2" />
-              <folding>
-                <element signature="e#78#1753#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PainelChamadosNovo.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PainelChamadosNovo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27769986" vertical-offset="198" max-vertical-offset="1530">
-              <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index_teste.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index_teste.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="1062">
-              <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-              <folding />
+            <state vertical-scroll-proportion="0.37190083" vertical-offset="918" max-vertical-offset="2718">
+              <caret line="105" column="64" selection-start-line="105" selection-start-column="64" selection-end-line="105" selection-end-column="64" />
+              <folding>
+                <element signature="n#getHourToSecunds#0;n#!!top" expanded="false" />
+                <element signature="n#getPercent#0;n#!!top" expanded="false" />
+                <marker date="1438617282116" expanded="true" signature="2169:2526" placeholder="..." />
+                <marker date="1438617282116" expanded="true" signature="2208:2506" placeholder="..." />
+                <marker date="1438617282116" expanded="false" signature="2395:2413" placeholder="..." />
+                <marker date="1438617282116" expanded="false" signature="2453:2467" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,37 +70,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/forms/cadastrar/SolicitacaoTecnico.php" />
-        <option value="$PROJECT_DIR$/forms/alterar/SolicitacaoSolicitante.php" />
-        <option value="$PROJECT_DIR$/forms/cadastrar/AssentamentoSolicitante.php" />
-        <option value="$PROJECT_DIR$/componentes/topo1.php" />
-        <option value="$PROJECT_DIR$/ScriptAniversariantes.php" />
-        <option value="$PROJECT_DIR$/GerarRelatorioPdf.php" />
-        <option value="$PROJECT_DIR$/forms/alterar/EnvioTerceiro.php" />
-        <option value="$PROJECT_DIR$/forms/cadastrar/EnvioTerceiro.php" />
-        <option value="$PROJECT_DIR$/action/envioterceiro.php" />
-        <option value="$PROJECT_DIR$/forms/alterar/SolicitacaoMelhoria.php" />
-        <option value="$PROJECT_DIR$/PainelProjeto.php" />
         <option value="$PROJECT_DIR$/PainelAtividade.php" />
         <option value="$PROJECT_DIR$/Documentacao" />
         <option value="$PROJECT_DIR$/forms/cadastrar/Assentamento.php" />
-        <option value="$PROJECT_DIR$/css/formatacao.css" />
         <option value="$PROJECT_DIR$/componentes/rodape.php" />
         <option value="$PROJECT_DIR$/classes/Busca.class.php" />
         <option value="$PROJECT_DIR$/menurelatorio.php" />
         <option value="$PROJECT_DIR$/jscript/chamadoTempoSolucao.js" />
         <option value="$PROJECT_DIR$/jscript/validador.js" />
         <option value="$PROJECT_DIR$/jscript/calendar.js" />
-        <option value="$PROJECT_DIR$/getChamadoSolucao.php" />
         <option value="$PROJECT_DIR$/GraficoTempoSolucaoMontagem.php" />
         <option value="$PROJECT_DIR$/css/FormatacaoRelatorio.css" />
-        <option value="$PROJECT_DIR$/classes/GridOption.class.php" />
         <option value="$PROJECT_DIR$/model/TbSolicitacaoTerceiro.class.php" />
-        <option value="$PROJECT_DIR$/PainelChamados.php" />
         <option value="$PROJECT_DIR$/jscript/combodinamicoProblema.js" />
-        <option value="$PROJECT_DIR$/classes/Grid.class.php" />
         <option value="$PROJECT_DIR$/services/DocRelatorioTempoSolucaoTerceiro.php" />
-        <option value="$PROJECT_DIR$/model/TbUsuario.class.php" />
         <option value="$PROJECT_DIR$/listaRamaisIntranet.php" />
         <option value="$PROJECT_DIR$/jscript/my-data-table.js" />
         <option value="$PROJECT_DIR$/services/ramais.php" />
@@ -120,7 +102,24 @@
         <option value="$PROJECT_DIR$/model/Banco.class.php" />
         <option value="$PROJECT_DIR$/RelatorioSolucaoTempoEnvioTerceiro.php" />
         <option value="$PROJECT_DIR$/teste.php" />
+        <option value="$PROJECT_DIR$/GerarAniversariantePdf.php" />
+        <option value="$PROJECT_DIR$/model/TbUsuario.class.php" />
+        <option value="$PROJECT_DIR$/PainelChamados.php" />
+        <option value="$PROJECT_DIR$/classes/GridOption.class.php" />
+        <option value="$PROJECT_DIR$/jscript/jquery.jclock.js" />
+        <option value="$PROJECT_DIR$/jscript/my-alert.js" />
         <option value="$PROJECT_DIR$/componentes/footerPainel.php" />
+        <option value="$PROJECT_DIR$/classes/Cadastro.class.php" />
+        <option value="$PROJECT_DIR$/model/TbAtendenteSolicitacao.class.php" />
+        <option value="$PROJECT_DIR$/classes/Grid.class.php" />
+        <option value="$PROJECT_DIR$/action/login.php" />
+        <option value="$USER_HOME$/PhpstormProjects/phpavancado/ClassC.php" />
+        <option value="$USER_HOME$/PhpstormProjects/phpavancado/ClassB.php" />
+        <option value="$USER_HOME$/PhpstormProjects/phpavancado/index.php" />
+        <option value="$PROJECT_DIR$/css/formatacao.css" />
+        <option value="$PROJECT_DIR$/css/bootstrap/style.css" />
+        <option value="$PROJECT_DIR$/componentes/TopoPainelChamados.php" />
+        <option value="$PROJECT_DIR$/getChamadoSolucao.php" />
         <option value="$PROJECT_DIR$/PainelChamadosNovo.php" />
       </list>
     </option>
@@ -161,6 +160,20 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="sga">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -179,18 +192,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="sga">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jscript" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -202,16 +215,16 @@
     <property name="options.lastSelected" value="preferences.editor" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../infra" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../planilhas" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/css/bootstrap" />
+      <recent name="$PROJECT_DIR$/jscript" />
       <recent name="$PROJECT_DIR$/services" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/classes" />
-      <recent name="$PROJECT_DIR$/jscript" />
-      <recent name="$PROJECT_DIR$/forms/alterar" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/css" />
@@ -261,10 +274,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1439" y="0" width="1442" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18819444" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -328,196 +341,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jscript/my-data-table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11968085" vertical-offset="0" max-vertical-offset="752">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbUsuario.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39325842" vertical-offset="6848" max-vertical-offset="8856">
-          <caret line="396" column="38" selection-start-line="396" selection-start-column="38" selection-end-line="396" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/listaRamaisIntranet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5213793" vertical-offset="0" max-vertical-offset="1098">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/ramais.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27310345" vertical-offset="0" max-vertical-offset="725">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GraficoTempoSolucaoMontagem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55617976" vertical-offset="0" max-vertical-offset="1422">
-          <caret line="22" column="82" selection-start-line="22" selection-start-column="82" selection-end-line="22" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RelatorioSolucao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3429752" vertical-offset="3117" max-vertical-offset="5166">
-          <caret line="187" column="76" selection-start-line="187" selection-start-column="76" selection-end-line="187" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/validador.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.099310346" vertical-offset="0" max-vertical-offset="725">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/menurelatorio.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6320225" vertical-offset="0" max-vertical-offset="712">
-          <caret line="25" column="86" selection-start-line="25" selection-start-column="86" selection-end-line="25" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Projetos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.505618" vertical-offset="0" max-vertical-offset="1566">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Projeto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55617976" vertical-offset="0" max-vertical-offset="1710">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/componentes/menuprincipal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.252809" vertical-offset="0" max-vertical-offset="712">
-          <caret line="10" column="66" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbConfigAniversario.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42206895" vertical-offset="0" max-vertical-offset="1926">
-          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GerarAniversariantePdf.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29793105" vertical-offset="486" max-vertical-offset="2268">
-          <caret line="45" column="79" selection-start-line="45" selection-start-column="79" selection-end-line="45" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbAniversariante.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44413793" vertical-offset="2288" max-vertical-offset="3546">
-          <caret line="215" column="0" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbSolicitacaoTerceiro.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.962963" vertical-offset="1648" max-vertical-offset="6264">
-          <caret line="105" column="20" selection-start-line="105" selection-start-column="20" selection-end-line="105" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbAssentamento.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5206612" vertical-offset="648" max-vertical-offset="1962">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/assentamento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47107437" vertical-offset="324" max-vertical-offset="1278">
-          <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/cadastrar/AssentamentoSolicitante.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50490886" vertical-offset="0" max-vertical-offset="3222">
-          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GerarExcel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.555555" vertical-offset="318" max-vertical-offset="1044">
-          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/DataGrid.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="5032" max-vertical-offset="5778">
-          <caret line="293" column="20" selection-start-line="293" selection-start-column="20" selection-end-line="293" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Solicitante.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6970547" vertical-offset="1159" max-vertical-offset="2322">
-          <caret line="92" column="20" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minhaprioridade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="396">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbPrioridade.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.296296" vertical-offset="973" max-vertical-offset="3456">
-          <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/combodinamicoProblema.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21513945" vertical-offset="0" max-vertical-offset="753">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/combodinamico.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45949537" vertical-offset="86" max-vertical-offset="864">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/cadastrar/SolicitacaoTecnico.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37868163" vertical-offset="270" max-vertical-offset="1890">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/listarProblemaTecnico.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24793388" vertical-offset="0" max-vertical-offset="726">
@@ -525,34 +348,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbProblema.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3953168" vertical-offset="4735" max-vertical-offset="5526">
-          <caret line="279" column="75" selection-start-line="279" selection-start-column="62" selection-end-line="279" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbSolicitacao.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7223001" vertical-offset="19141" max-vertical-offset="22896">
-          <caret line="1092" column="45" selection-start-line="1092" selection-start-column="45" selection-end-line="1092" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Busca.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6227209" vertical-offset="11526" max-vertical-offset="14886">
-          <caret line="665" column="52" selection-start-line="665" selection-start-column="52" selection-end-line="665" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/Dados.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3953168" vertical-offset="235" max-vertical-offset="1584">
           <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -577,19 +376,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Painel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4201102" vertical-offset="379" max-vertical-offset="1494">
-          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/TbTerceiro.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.296296" vertical-offset="433" max-vertical-offset="2790">
           <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -614,13 +404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/componentes/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7892562" vertical-offset="3" max-vertical-offset="756">
-          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/Banco.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35343617" vertical-offset="0" max-vertical-offset="900">
@@ -633,7 +416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.049586777" vertical-offset="0" max-vertical-offset="1944">
           <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -644,60 +426,323 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Cadastro.class.php">
+    <entry file="file://$PROJECT_DIR$/componentes/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.14726508" vertical-offset="10455" max-vertical-offset="21186">
-          <caret line="575" column="51" selection-start-line="575" selection-start-column="51" selection-end-line="575" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.41735536" vertical-offset="3" max-vertical-offset="756">
+          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RelatorioSolucaoTempoEnvioTerceiro.php">
+    <entry file="file://$PROJECT_DIR$/GerarAniversariantePdf.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49509117" vertical-offset="4579" max-vertical-offset="5670">
-          <caret line="274" column="24" selection-start-line="274" selection-start-column="24" selection-end-line="274" selection-end-column="24" />
-          <folding />
+        <state vertical-scroll-proportion="0.71900827" vertical-offset="486" max-vertical-offset="2268">
+          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/TbUsuario.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42075735" vertical-offset="5604" max-vertical-offset="8730">
+          <caret line="328" column="74" selection-start-line="328" selection-start-column="64" selection-end-line="328" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index_teste.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="336" max-vertical-offset="1062">
+        <state vertical-scroll-proportion="0.5785124" vertical-offset="336" max-vertical-offset="1062">
           <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GraficoTempoSolucaoMontagem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.050490882" vertical-offset="0" max-vertical-offset="1422">
+          <caret line="2" column="68" selection-start-line="2" selection-start-column="63" selection-end-line="2" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teste.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="252">
+        <state vertical-scroll-proportion="0.1983471" vertical-offset="0" max-vertical-offset="726">
           <caret line="67" column="2" selection-start-line="67" selection-start-column="2" selection-end-line="67" selection-end-column="2" />
-          <folding>
-            <element signature="e#78#1753#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/componentes/TopoPainelChamados.php">
+    <entry file="file://$PROJECT_DIR$/classes/GridOption.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3436185" vertical-offset="97" max-vertical-offset="810">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.48209366" vertical-offset="1324" max-vertical-offset="2178">
+          <caret line="93" column="35" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jscript/chamadoTempoSolucao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21513945" vertical-offset="0" max-vertical-offset="1224">
+          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jscript/my-alert.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="753">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PainelChamados.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5206612" vertical-offset="486" max-vertical-offset="2646">
+          <caret line="48" column="9" selection-start-line="12" selection-start-column="0" selection-end-line="48" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Cadastro.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5091164" vertical-offset="13155" max-vertical-offset="21186">
+          <caret line="751" column="16" selection-start-line="751" selection-start-column="16" selection-end-line="751" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/TbSolicitacao.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7489481" vertical-offset="18762" max-vertical-offset="22896">
+          <caret line="1072" column="86" selection-start-line="1068" selection-start-column="0" selection-end-line="1072" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Busca.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6858345" vertical-offset="11481" max-vertical-offset="14886">
+          <caret line="665" column="62" selection-start-line="665" selection-start-column="62" selection-end-line="665" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RelatorioSolucaoTempoEnvioTerceiro.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.3264463" vertical-offset="2703" max-vertical-offset="5670">
+          <caret line="137" column="65" selection-start-line="137" selection-start-column="65" selection-end-line="137" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RelatorioTempoDeSolucao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.8595041" vertical-offset="624" max-vertical-offset="1350">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/componentes/footerPainel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20196353" vertical-offset="0" max-vertical-offset="713">
-          <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.6207865" vertical-offset="152" max-vertical-offset="1458">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/ClasseException.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44689655" vertical-offset="0" max-vertical-offset="725">
+          <caret line="18" column="62" selection-start-line="18" selection-start-column="62" selection-end-line="18" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/Aniversario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5213793" vertical-offset="108" max-vertical-offset="1296">
+          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Terceiro.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7219101" vertical-offset="386" max-vertical-offset="1098">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Grid.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4951724" vertical-offset="2719" max-vertical-offset="4464">
+          <caret line="171" column="43" selection-start-line="171" selection-start-column="43" selection-end-line="171" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PainelProjetoUsuarios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8230337" vertical-offset="332" max-vertical-offset="1044">
+          <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/TbAtendenteSolicitacao.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3525281" vertical-offset="2359" max-vertical-offset="3330">
+          <caret line="145" column="31" selection-start-line="145" selection-start-column="31" selection-end-line="145" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RelatorioSolucao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76965517" vertical-offset="0" max-vertical-offset="5166">
+          <caret line="31" column="119" selection-start-line="21" selection-start-column="0" selection-end-line="31" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5137741" vertical-offset="41" max-vertical-offset="792">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PhpstormProjects/phpavancado/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.446281" vertical-offset="0" max-vertical-offset="726">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PhpstormProjects/phpavancado/ClassC.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.446281" vertical-offset="0" max-vertical-offset="726">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PhpstormProjects/phpavancado/ClassB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57024795" vertical-offset="0" max-vertical-offset="726">
+          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PhpstormProjects/phpavancado/ClassA.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12396694" vertical-offset="0" max-vertical-offset="726">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Painel.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5785124" vertical-offset="768" max-vertical-offset="1494">
+          <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="45" />
+          <folding>
+            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1432666707235" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/bootstrap/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12162162" vertical-offset="216" max-vertical-offset="104238">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/bootstrap/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15812592" vertical-offset="0" max-vertical-offset="683">
+          <caret line="6" column="99654" selection-start-line="6" selection-start-column="99654" selection-end-line="6" selection-end-column="99654" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8565737" vertical-offset="4035" max-vertical-offset="4788">
+          <caret line="260" column="0" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/formatacao.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8565737" vertical-offset="2559" max-vertical-offset="3312">
+          <caret line="178" column="1" selection-start-line="178" selection-start-column="1" selection-end-line="178" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/componentes/TopoPainelChamados.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40495867" vertical-offset="192" max-vertical-offset="936">
+          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/bootstrap/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="753">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/TbProblema.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72727275" vertical-offset="1704" max-vertical-offset="2592">
+          <caret line="287" column="52" selection-start-line="287" selection-start-column="52" selection-end-line="287" selection-end-column="52" />
+          <folding>
+            <element signature="n#getProblemaDescricao#0;n#TbProblema#0;n#!!top" expanded="false" />
+            <element signature="n#insert#0;n#TbProblema#0;n#!!top" expanded="false" />
+            <element signature="n#update#0;n#TbProblema#0;n#!!top" expanded="false" />
+            <element signature="n#listarProblemaDepartamento#0;n#TbProblema#0;n#!!top" expanded="false" />
+            <element signature="n#select#0;n#TbProblema#0;n#!!top" expanded="false" />
+            <element signature="n#getForm#0;n#TbProblema#0;n#!!top" expanded="false" />
+            <element signature="n#getPrioridade#0;n#TbProblema#0;n#!!top" expanded="false" />
+            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
+            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT pro.p..tb_problema..." />
+            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_problema..." />
+            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_problema..." />
+            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
+            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_problema..." />
+            <marker date="1432666707231" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getChamadoSolucao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38705233" vertical-offset="2383" max-vertical-offset="4572">
+          <caret line="148" column="83" selection-start-line="148" selection-start-column="83" selection-end-line="148" selection-end-column="83" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PainelChamadosNovo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27769986" vertical-offset="198" max-vertical-offset="1530">
-          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-          <folding />
+        <state vertical-scroll-proportion="0.37190083" vertical-offset="918" max-vertical-offset="2718">
+          <caret line="105" column="64" selection-start-line="105" selection-start-column="64" selection-end-line="105" selection-end-column="64" />
+          <folding>
+            <element signature="n#getHourToSecunds#0;n#!!top" expanded="false" />
+            <element signature="n#getPercent#0;n#!!top" expanded="false" />
+            <marker date="1438617282116" expanded="true" signature="2169:2526" placeholder="..." />
+            <marker date="1438617282116" expanded="true" signature="2208:2506" placeholder="..." />
+            <marker date="1438617282116" expanded="false" signature="2395:2413" placeholder="..." />
+            <marker date="1438617282116" expanded="false" signature="2453:2467" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

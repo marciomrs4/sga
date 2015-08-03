@@ -136,18 +136,6 @@ class TbAtendenteSolicitacao extends Banco
 	#Utilizado no Painel de Chamados
 	public function listarSolicitacaoPainel($dados)
 	{
-		/*$query = ("SELECT ate.usu_codigo_atendente, ate.sol_codigo,
-								(SELECT usu_nome FROM tb_usuario 
-									WHERE usu_codigo = so.usu_codigo_solicitante ) as 'Solicitante',
-									DATEDIFF(now(),(SELECT tea_data_acao FROM tb_calculo_atendimento 
-						WHERE so.sol_codigo = sol_codigo AND sta_codigo = 1)
-					) AS Tempo
-						FROM tb_atendente_solicitacao AS ate
-						INNER JOIN tb_solicitacao AS so
-						ON ate.sol_codigo = so.sol_codigo
-						WHERE ate.usu_codigo_atendente = ?
-						AND so.sta_codigo = ?
-						ORDER BY 4 DESC");*/
 
             $query = ("SELECT  ate.sol_codigo,
                             (SELECT usu_nome FROM tb_usuario
@@ -155,13 +143,20 @@ class TbAtendenteSolicitacao extends Banco
                                       DATEDIFF(now(),(SELECT tea_data_acao FROM tb_calculo_atendimento
                                 WHERE so.sol_codigo = sol_codigo AND sta_codigo = 1)
                                 ) AS Tempo,
-                              (SELECT pri_descricao FROM tb_prioridade WHERE ate.pri_codigo = pri_codigo) as pri_descricao
+                              #(SELECT pri_descricao FROM tb_prioridade WHERE ate.pri_codigo = pri_codigo) as pri_descricao,
+							concat(so.sol_data_inicio , ' | ',
+									(CASE so.sta_codigo WHEN 2 THEN now() WHEN 3 THEN so.sol_data_fim ELSE so.sol_data_fim END),' | ',
+									(SELECT pro_tempo_solucao
+										FROM tb_problema as PRO
+										WHERE so.pro_codigo_tecnico = PRO.pro_codigo))
+							AS 'SLA'
+
                        FROM tb_atendente_solicitacao AS ate
                        INNER JOIN tb_solicitacao AS so
                        ON ate.sol_codigo = so.sol_codigo
                        WHERE ate.usu_codigo_atendente = ?
                        AND so.sta_codigo = ?
-                       ORDER BY 4 DESC");
+                       ORDER BY 4 DESC;");
 		
 		try 
 		{

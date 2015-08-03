@@ -145,7 +145,8 @@ $_SESSION['buscaRapida'] = $busca->buscaRapidaChamado();
 	  <td>
 		<?php 
 		$tbproblema = new TbProblema();
-		FormComponente::selectOption('pro_codigo',$tbproblema->listarProblema($_SESSION['buscaRapida']['dep_codigo']),false,$_SESSION['buscaRapida']);
+		//FormComponente::selectOption('pro_codigo',$tbproblema->listarProblema($_SESSION['buscaRapida']['dep_codigo']),false,$_SESSION['buscaRapida']);
+        FormComponente::selectOption('pro_codigo',$tbproblema->listarProblemasTecnicos($_SESSION['buscaRapida']['dep_codigo']),false,$_SESSION['buscaRapida']);
 		?>
 	  </td>
     </tr>

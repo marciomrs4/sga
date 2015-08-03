@@ -171,7 +171,7 @@ class Grid implements IGrid
 			    
     				if($enableOption == 1){
 
-   				    	echo '<td class="col-md-1">
+   				    	echo '<td class="col-xs-1">
 								<div class="btn-group">
 	           						<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
 	               						' . $this->option['0']->getNameButton() . ' <span class="caret"></span>

@@ -756,7 +756,7 @@ class Cadastro extends Dados
 				$email->AddAddress($EmailEnvio);
 				
 				$email->mensagem ="Em: ".date("d-m-Y H:i:s")."<br />";
-				$email->mensagem .= "O usu?rio: <b>{$this->dados['usu_email']}</b> verificou as seguintes tarefas:<br /><br />";
+				$email->mensagem .= "O usuário: <b>{$this->dados['usu_email']}</b> verificou as seguintes tarefas:<br /><br />";
 				$email->mensagem .= "$tarefa <br />";
 				$email->mensagem .= $observacao;
 				$email->enviarEmail();

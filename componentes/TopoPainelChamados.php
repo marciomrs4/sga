@@ -12,9 +12,11 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 	<link rel='shortcut icon' href='css/images/ceadisico.ico'>	
 	<!-- css -->
 	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap/style.css" rel="stylesheet" />
+
 </head>
 
-<body onload="startTime()">
+<body">
     
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="navbar-header">
@@ -30,7 +32,12 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 	  
 	<div class="container-fluid collapse navbar-collapse" id="menu-principal">
             <h4 class="navbar-text"><a href="Operacao.php" title="Voltar">SGA</a> - PAINEL DE CHAMADOS</h4>
-            <h5 class="navbar-right navbar-text"><span class="estiloniver"> <?php echo (date('d-m-Y')); ?> | <span id="timer"></span></span></h5><span class="navbar-right navbar-text"></span>            		            
+            <h5 class="navbar-right navbar-text">
+                <span class="estiloniver">
+                    <?php echo (date('d-m-Y H:i:s')); ?>
+                </span>
+            </h5>
+            <span class="navbar-right navbar-text"></span>
 	</div>				
 </nav>
 

@@ -103,8 +103,10 @@ class GridOption implements IOption
 	   $buttonList =
 	   "<li>
 			<button type='button' value='{$this->getValue()}' class='chamado'>
-					{$this->getName()}
-			</button>	   		
+                <span class='glyphicon glyphicon-eye-open'>
+                </span>
+                    {$this->getName()}
+			</button>
 	   </li>";
 	   
 	   return $buttonList;		       

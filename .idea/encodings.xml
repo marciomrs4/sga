@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/Departamentos.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/GerarAniversariantePdf.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GerarRelatorioPdf.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GraficoTempoSolucaoMontagem.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Operacao.php" charset="ISO-8859-1" />
@@ -15,6 +16,7 @@
     <file url="file://$PROJECT_DIR$/Solicitante.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/classes/Cadastro.class.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/bootstrap.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/componentes/footerPainel.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/menuprincipal.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/rodape.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/topo1.php" charset="ISO-8859-1" />
