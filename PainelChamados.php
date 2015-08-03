@@ -1,142 +1,184 @@
 <?php
+
 include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
-?>
-<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.1//EN' 'http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd'>
-<html xmlns='http://www.w3.org/1999/xhtml'>
-<head>
-<meta http-equiv='Content-Type' content='application/xhtml+xml; charset=ISO-8859-1' />
-<title>..:: Painel Diário ::..</title>
-<link rel='stylesheet' type='text/css' href='../sga/css/PainelChamados.css' />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
-<script	language="JavaScript" src="../sga/jscript/jquery-1.11.1.min.js"></script>
+include_once 'componentes/TopoPainelChamados.php';
 
-<script type="text/javascript">
-$(document).ready(function(){
+$dados['dep_codigo'] = ($_SESSION['dep_codigo'] == '') ? $_GET['dep_codigo'] : $_SESSION['dep_codigo'];
 
-	$("#tempo").css("color","red");
-	
-var x = 0;
-	for(x = 0; x <= 1; x++)
-	{
-		$("#emrecebimento").fadeOut("slow");
-		$("#emrecebimento").fadeIn("slow");
-	}
+$tbSolicitacao = new TbSolicitacao();
+$dados['sta_codigo'] = 1;
+$TotalEmAberto = $tbSolicitacao->totalChamadoStatusAreaPainel($dados);
 
-});
+$dados['sta_codigo'] = 2;
+$TotalEmAtendimento = $tbSolicitacao->totalChamadoStatusAreaPainel($dados);
 
-var count = 60; // O tempo para refresh em segundos
-
-function timer()
-{
-	$("#tempo").html(count);
-	
-	if(count > 1)
-
-count--;
-
-else
-	
-	window.location.href = "<?php echo($_SERVER['REQUEST_URI']);?>"; 
-
-	setTimeout("timer();", 1000);
-}
-
-
-</script>
-
-<script>
-timer();
-</script>
-</head>	
-<body>
-
-<div id="topo">
-<a href="Relatorio.php">Voltar</a>
-	<h2>Painel de Chamados  | <?php echo(date('d-m-Y H:i:s'));?></h2>
-</div>
-
-<div id="topo2">
-	<?php
-	
-		$dados['dep_codigo'] = ($_SESSION['dep_codigo'] == '') ? $_GET['dep_codigo'] : $_SESSION['dep_codigo'];
-
-		$tbSolicitacao = new TbSolicitacao();
-		$dados['sta_codigo'] = 1;
-		$TotalEmAberto = $tbSolicitacao->totalChamadoStatusAreaPainel($dados);
-
-		$dados['sta_codigo'] = 2;
-		$TotalEmAtendimento = $tbSolicitacao->totalChamadoStatusAreaPainel($dados);
-		
-		$dados['data1'] = date('Y-m-d').' 00:00:01';
-		$dados['data2'] = date('Y-m-d').' 23:59:59';		
-		$dados['sta_codigo'] = 3;
-		$_SESSION['dep_codigo'] = $dados['dep_codigo']; 
-		$TotalConcluidos = $tbSolicitacao->totalChamadoFechadosDoDia($dados);
-		
-		?>	
-
-	<h3 id="emrecebimento">Total de Chamado(s): <?php echo($TotalEmAberto[0]); ?> Em Aberto, 
-		<?php echo($TotalEmAtendimento[0]); ?> Em Atendimento e <?php echo($TotalConcluidos); ?> Concluídos hoje</h3>
-</div>
-
-<div id="painelcentral">
-
-<div id="painel1">
-
-<?php 
+$dados['data1'] = date('Y-m-d').' 00:00:01';
+$dados['data2'] = date('Y-m-d').' 23:59:59';
+$dados['sta_codigo'] = 3;
+$_SESSION['dep_codigo'] = $dados['dep_codigo'];
+$TotalConcluidos = $tbSolicitacao->totalChamadoFechadosDoDia($dados);
 
 $tbUsuario = new TbUsuario();
-$dados['sta_codigo'] = 2;
 
-$nomelink = '&raquo;';
-
-
-foreach ($tbUsuario->listarUsuariosPainel($dados) as $valores):
-
-echo("<fieldset id='completo'>
-		<legend id='nome'>$valores[2]</legend>");
-
-		$tbAtendenteSolicitacao = new TbAtendenteSolicitacao();
-		
-		$dados['usu_codigo_atendente'] = $valores[0];
-		
-		
-		$DataGrid = new DataGrid();
-		
-		$DataGrid->setDados($tbAtendenteSolicitacao->listarSolicitacaoPainel($dados));
-		$DataGrid->setCabecalho(array('Número','Usúario','Dias','SLA'));
-		$DataGrid->nomelink = $nomelink;
-        $DataGrid->link = './GerarRelatorioPdf.php';
-        $DataGrid->acao = 'sol_codigo';
-		$DataGrid->colunaoculta = 0;
-
-		$DataGrid->mostrarDatagrid(1);
-		
-		echo("</fieldset>");
-		
-endforeach;
 ?>
 	
-</div>
+	<div class="container-fluid">
+	<!-- Div Principal -->
+	
+	<div class="panel panel-default">
+  		<div class="panel-heading">
+            <h4>Total de Chamado(s):
+                <?php echo $TotalEmAberto[0]; ?> Em aberto,
+                <?php echo $TotalEmAtendimento[0];?> Em atendimento  e
+                <?php echo $TotalConcluidos;?> concluídos hoje.
+            </h4>
+        </div>
+	</div>			
+		
+		<?php
+
+        function getHourToSecunds($hora)
+        {
+            $horaParte = explode(':', $hora);
+
+            $horasEmSegundo = ($horaParte['0'] * 3600) + ($horaParte['1'] * 60) + $horaParte['2'];
+
+            return $horasEmSegundo;
+        }
+
+        function getPercent($horaTecnica, $tempoChamado)
+        {
+
+            $percent = ($tempoChamado / $horaTecnica) * 100;
+
+            if($percent > 100){
+                return '<img src="css/images/status/face2.png">';
+            }else{
+
+                $valor = sprintf('%.2f',$percent).'%';
+
+                if($percent <= 50){
+                    $style = 'progress-bar progress-bar-success progress-bar-striped';
+                }elseif($percent > 50 and $percent <= 90){
+                    $style = 'progress-bar progress-bar-warning progress-bar-striped';
+                }elseif($percent > 90){
+                    $style = 'progress-bar progress-bar-danger progress-bar-striped';
+                }
+
+                $retorno = '<div class="progress">
+              <div class="'.$style.'"
+                   role="progressbar"
+                   aria-valuenow="'.$valor.'"
+                   aria-valuemin="0"
+                   aria-valuemax="100"
+                   style="width: '.$valor.';">
+                        <span style="color: #000000">'.$valor.'</span>
+              </div>
+             </div>';
+
+                return $retorno;
+            }
+        }
+
+        $dataOper = new dateOpers();
+
+        $TbDepartamento = new TbDepartamento();
+        $TempoDepartamento = $TbDepartamento->getAllHours($_SESSION['dep_codigo']);
+
+        //Hora inicio do Departamento
+        $hora_ini = ($hora_ini == '') ? $TempoDepartamento['dep_hora_inicio']  : $hora_ini;
+        //Hora Fim do departamento
+        $hora_fim = ($hora_fim == '') ? $TempoDepartamento['dep_hora_fim']     : $hora_fim;
+        //Hora de almoco departamento
+        $meio_dia = ($meio_dia == '') ? $TempoDepartamento['dep_hora_almoco']  : $meio_dia;
+        //Carga horaria de sabado departamento
+        $sabado =   ($sabado == '')   ? $TempoDepartamento['dep_carga_sabado'] : $sabado;
+
+        $dados['sta_codigo'] = 2;
 
 
-<!-- 
-<div id="painel3">
-	<fieldset id="emrecebimento">
-		<legend>Total em Atendimento</legend>
-		</fieldset>
-	<fieldset id="chamadoaberto">
-		<legend>Total em Aberto</legend>
-		<?php 
-		$tbSolicitacao = new TbSolicitacao();
-		$dados['sta_codigo'] = 1;
-		$Total = $tbSolicitacao->totalChamadoStatusAreaPainel($dados);
-		echo('<h2>'.$Total[0].' Chamado(s)</h2>');
-		?>
-	</fieldset>	
-</div>
- -->
+        foreach ($tbUsuario->listarUsuariosPainel($dados) as $valores):
 
-</div>
-</body>
-</html>
+            $tbAtendenteSolicitacao = new TbAtendenteSolicitacao();
+            $dados['usu_codigo_atendente'] = $valores[0];
+
+            //Chamada o metodo que pega as informacoes do banco e retorna um stmt
+            $dadosUsuario = $tbAtendenteSolicitacao->listarSolicitacaoPainel($dados);
+
+            //Com os dados do usuário faz um fetch
+            $UsuarioInfo = $dadosUsuario->fetchAll(\PDO::FETCH_ASSOC);
+
+            //Com dados do usuário conto quantos retornos do banco
+            $QtdChamadoUsuario = $dadosUsuario->rowCount();
+
+		?>			
+				
+		<div class="container col-sm-3">
+
+            <?php
+
+                $botton = new GridOption();
+                $botton->setIco('search')->setName('Visualizar');
+
+                $Grid = new Grid();
+                $Grid->setCabecalho(array('','Número','Usuário','Dias','SLA'))
+                     ->setDados($UsuarioInfo)->addOption($botton);
+
+
+            $Grid->addFunctionColumn(function($var)use($dataOper,$TempoDepartamento){
+
+
+            $tempo =explode('|', $var);
+
+            $data1 = trim($tempo['0']);
+            $data2 = trim($tempo['1']);
+
+            $tempoProblema = trim($tempo['2']);
+
+            #Hora Inicial
+            $hora_ini = $TempoDepartamento['dep_hora_inicio'];
+            #Hora Final
+            $hora_fim = $TempoDepartamento['dep_hora_fim'];
+
+            #At? o esse horario do almo?o
+            $meio_dia = $TempoDepartamento['dep_hora_almoco'] ;
+            #Horas de sabados
+            $sabado   = $TempoDepartamento['dep_carga_sabado'];
+
+            #Tipo de Saida em horas
+            $saida = 'H';
+
+            $horaUtil = $dataOper->tempo_valido($data1, $data2, $hora_ini, $hora_fim, $meio_dia, $sabado, $saida);
+
+            #Converte para secundos as horas
+            $horaUtil = getHourToSecunds($horaUtil);
+            $tempoProblema = getHourToSecunds($tempoProblema);
+
+
+            return getPercent($tempoProblema,$horaUtil);
+
+             },3);
+
+                $Grid->id = null;
+
+
+                $Painel = new Painel();
+                $Painel->addGrid($Grid)
+                       ->setPainelTitle('<span class="glyphicon glyphicon-user"> '.$valores['usu_nome'].' </span>
+                                         | <span class="glyphicon glyphicon-phone-alt"> '.$QtdChamadoUsuario.'</span>')
+                       ->setPainelColor('primary')
+                       ->show();
+
+            ?>
+        </div>
+
+		<?php
+        endforeach;
+        ?>
+					
+	</div>
+	<!-- Fim Div Principal -->
+	
+<?php 
+	include_once 'componentes/footerPainel.php'; 
+?>

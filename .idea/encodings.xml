@@ -8,7 +8,7 @@
     <file url="file://$PROJECT_DIR$/Operacao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/PainelAtividade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/PainelChamados.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/PainelChamadosNovo.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/PainelChamados_OLD.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/PainelProjeto.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/RelatorioSolucao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/RelatorioSolucaoTempoEnvioTerceiro.php" charset="ISO-8859-1" />

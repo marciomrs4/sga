@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2526c6c5-3cfb-4a59-b223-ceacd7d0168e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Cadastro.class.php" afterPath="$PROJECT_DIR$/classes/Cadastro.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Grid.class.php" afterPath="$PROJECT_DIR$/classes/Grid.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/GridOption.class.php" afterPath="$PROJECT_DIR$/classes/GridOption.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PainelChamados.php" afterPath="$PROJECT_DIR$/PainelChamados.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PainelChamadosNovo.php" afterPath="$PROJECT_DIR$/PainelChamadosNovo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbAtendenteSolicitacao.class.php" afterPath="$PROJECT_DIR$/model/TbAtendenteSolicitacao.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbUsuario.class.php" afterPath="$PROJECT_DIR$/model/TbUsuario.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/TopoPainelChamados.php" afterPath="$PROJECT_DIR$/componentes/TopoPainelChamados.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/footerPainel.php" afterPath="$PROJECT_DIR$/componentes/footerPainel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getChamadoSolucao.php" afterPath="$PROJECT_DIR$/getChamadoSolucao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/login.php" afterPath="$PROJECT_DIR$/action/login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sga.iws" />
@@ -45,19 +36,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PainelChamadosNovo.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PainelChamadosNovo.php">
+      <file leaf-file-name="menurelatorio.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/menurelatorio.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37190083" vertical-offset="918" max-vertical-offset="2718">
-              <caret line="105" column="64" selection-start-line="105" selection-start-column="64" selection-end-line="105" selection-end-column="64" />
-              <folding>
-                <element signature="n#getHourToSecunds#0;n#!!top" expanded="false" />
-                <element signature="n#getPercent#0;n#!!top" expanded="false" />
-                <marker date="1438617282116" expanded="true" signature="2169:2526" placeholder="..." />
-                <marker date="1438617282116" expanded="true" signature="2208:2506" placeholder="..." />
-                <marker date="1438617282116" expanded="false" signature="2395:2413" placeholder="..." />
-                <marker date="1438617282116" expanded="false" signature="2453:2467" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="0.50490886" vertical-offset="0" max-vertical-offset="713">
+              <caret line="20" column="80" selection-start-line="20" selection-start-column="80" selection-end-line="20" selection-end-column="80" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,7 +59,6 @@
         <option value="$PROJECT_DIR$/forms/cadastrar/Assentamento.php" />
         <option value="$PROJECT_DIR$/componentes/rodape.php" />
         <option value="$PROJECT_DIR$/classes/Busca.class.php" />
-        <option value="$PROJECT_DIR$/menurelatorio.php" />
         <option value="$PROJECT_DIR$/jscript/chamadoTempoSolucao.js" />
         <option value="$PROJECT_DIR$/jscript/validador.js" />
         <option value="$PROJECT_DIR$/jscript/calendar.js" />
@@ -108,7 +91,6 @@
         <option value="$PROJECT_DIR$/classes/GridOption.class.php" />
         <option value="$PROJECT_DIR$/jscript/jquery.jclock.js" />
         <option value="$PROJECT_DIR$/jscript/my-alert.js" />
-        <option value="$PROJECT_DIR$/componentes/footerPainel.php" />
         <option value="$PROJECT_DIR$/classes/Cadastro.class.php" />
         <option value="$PROJECT_DIR$/model/TbAtendenteSolicitacao.class.php" />
         <option value="$PROJECT_DIR$/classes/Grid.class.php" />
@@ -118,9 +100,11 @@
         <option value="$USER_HOME$/PhpstormProjects/phpavancado/index.php" />
         <option value="$PROJECT_DIR$/css/formatacao.css" />
         <option value="$PROJECT_DIR$/css/bootstrap/style.css" />
-        <option value="$PROJECT_DIR$/componentes/TopoPainelChamados.php" />
-        <option value="$PROJECT_DIR$/getChamadoSolucao.php" />
         <option value="$PROJECT_DIR$/PainelChamadosNovo.php" />
+        <option value="$PROJECT_DIR$/componentes/footerPainel.php" />
+        <option value="$PROJECT_DIR$/getChamadoSolucao.php" />
+        <option value="$PROJECT_DIR$/componentes/TopoPainelChamados.php" />
+        <option value="$PROJECT_DIR$/menurelatorio.php" />
       </list>
     </option>
   </component>
@@ -173,6 +157,7 @@
             </PATH_ELEMENT>
           </PATH>
         </subPane>
+        <subPane subId="Default" />
       </pane>
       <pane id="ProjectPane">
         <subPane>
@@ -189,20 +174,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jscript" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -274,13 +245,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1439" y="0" width="1442" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="1539" y="100" width="1242" height="676" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32981715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -441,13 +413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbUsuario.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42075735" vertical-offset="5604" max-vertical-offset="8730">
-          <caret line="328" column="74" selection-start-line="328" selection-start-column="64" selection-end-line="328" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index_teste.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5785124" vertical-offset="336" max-vertical-offset="1062">
@@ -490,7 +455,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PainelChamados.php">
+    <entry file="file://$PROJECT_DIR$/PainelChamados_OLD.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5206612" vertical-offset="486" max-vertical-offset="2646">
           <caret line="48" column="9" selection-start-line="12" selection-start-column="0" selection-end-line="48" selection-end-column="9" />
@@ -535,14 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/componentes/footerPainel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6207865" vertical-offset="152" max-vertical-offset="1458">
-          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/ClasseException.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44689655" vertical-offset="0" max-vertical-offset="725">
@@ -579,14 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8230337" vertical-offset="332" max-vertical-offset="1044">
           <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbAtendenteSolicitacao.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3525281" vertical-offset="2359" max-vertical-offset="3330">
-          <caret line="145" column="31" selection-start-line="145" selection-start-column="31" selection-end-line="145" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -682,14 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/componentes/TopoPainelChamados.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40495867" vertical-offset="192" max-vertical-offset="936">
-          <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/bootstrap/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="753">
@@ -723,26 +664,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getChamadoSolucao.php">
+    <entry file="file://$PROJECT_DIR$/componentes/footerPainel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38705233" vertical-offset="2383" max-vertical-offset="4572">
-          <caret line="148" column="83" selection-start-line="148" selection-start-column="83" selection-end-line="148" selection-end-column="83" />
+        <state vertical-scroll-proportion="0.8232819" vertical-offset="529" max-vertical-offset="1458">
+          <caret line="62" column="8" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PainelChamadosNovo.php">
+    <entry file="file://$PROJECT_DIR$/model/TbUsuario.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62601626" vertical-offset="5604" max-vertical-offset="8730">
+          <caret line="337" column="45" selection-start-line="337" selection-start-column="45" selection-end-line="337" selection-end-column="45" />
+          <folding>
+            <marker date="1438264093417" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1438264093417" expanded="true" signature="-1:-1" placeholder="SELECT a.usu..tb_usuario..." />
+            <marker date="1438264093417" expanded="true" signature="-1:-1" placeholder="SELECT a.usu..tb_usuario..." />
+            <marker date="1438264093417" expanded="true" signature="-1:-1" placeholder="SELECT usu_c..tb_usuario..." />
+            <marker date="1438264093417" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
+            <marker date="1438264093417" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
+            <marker date="1438264093417" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
+            <marker date="1438264093417" expanded="true" signature="-1:-1" placeholder="SELECT usu_c..tb_usuario..." />
+            <marker date="1438264093417" expanded="true" signature="-1:-1" placeholder="SELECT a.usu..tb_usuario..." />
+            <marker date="1438264093417" expanded="true" signature="-1:-1" placeholder="SELECT u.usu..tb_usuario..." />
+            <marker date="1438264093417" expanded="true" signature="-1:-1" placeholder="SELECT u.usu..tb_usuario..." />
+            <marker date="1438264093417" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
+            <marker date="1438264093417" expanded="true" signature="-1:-1" placeholder="SELECT u.usu..." />
+            <marker date="1438264093417" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getChamadoSolucao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4698457" vertical-offset="2455" max-vertical-offset="4572">
+          <caret line="155" column="72" selection-start-line="155" selection-start-column="72" selection-end-line="155" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/TbAtendenteSolicitacao.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11781206" vertical-offset="2310" max-vertical-offset="3330">
+          <caret line="133" column="4" selection-start-line="133" selection-start-column="4" selection-end-line="133" selection-end-column="4" />
+          <folding>
+            <marker date="1438290127375" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1438290127375" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
+            <marker date="1438290127375" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
+            <marker date="1438290127375" expanded="true" signature="-1:-1" placeholder="SELECT usu_c..tb_atendente_solicitacao..." />
+            <marker date="1438290127375" expanded="true" signature="-1:-1" placeholder="SELECT ate.s..." />
+            <marker date="1438290127375" expanded="true" signature="-1:-1" placeholder="SELECT usu_n..tb_usuario..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PainelChamados.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37190083" vertical-offset="918" max-vertical-offset="2718">
-          <caret line="105" column="64" selection-start-line="105" selection-start-column="64" selection-end-line="105" selection-end-column="64" />
+          <caret line="105" column="68" selection-start-line="105" selection-start-column="68" selection-end-line="105" selection-end-column="68" />
           <folding>
             <element signature="n#getHourToSecunds#0;n#!!top" expanded="false" />
             <element signature="n#getPercent#0;n#!!top" expanded="false" />
-            <marker date="1438617282116" expanded="true" signature="2169:2526" placeholder="..." />
-            <marker date="1438617282116" expanded="true" signature="2208:2506" placeholder="..." />
-            <marker date="1438617282116" expanded="false" signature="2395:2413" placeholder="..." />
-            <marker date="1438617282116" expanded="false" signature="2453:2467" placeholder="..." />
+            <marker date="1438617282116" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1438617282116" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1438617282116" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1438617282116" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/componentes/TopoPainelChamados.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76859504" vertical-offset="0" max-vertical-offset="936">
+          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/menurelatorio.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50490886" vertical-offset="0" max-vertical-offset="713">
+          <caret line="20" column="80" selection-start-line="20" selection-start-column="80" selection-end-line="20" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>

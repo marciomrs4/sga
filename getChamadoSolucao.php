@@ -153,7 +153,7 @@ $_SESSION['buscaRapida'] = $busca->buscaRapidaChamado();
     <tr>
       <th align="left" nowrap="nowrap">Descrição do <?php echo($_SESSION['config']['problema']);?>:</th>
 	      <td>
-	      	<textarea name="sol_descricao_solicitacao" rows="10" cols="50"><?php echo($_SESSION['buscaRapida']['sol_descricao_solicitacao']); ?></textarea>
+	      	<textarea name="sol_descricao_solicitacao" rows="10" cols="80"><?php echo($_SESSION['buscaRapida']['sol_descricao_solicitacao']); ?></textarea>
 	      </td>
     </tr>
 		<?php
