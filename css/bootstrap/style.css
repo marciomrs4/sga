@@ -1,3 +1,7 @@
 .panel-heading{
     cursor: pointer;
 }
+
+.list-group-item{
+    cursor: pointer;
+}

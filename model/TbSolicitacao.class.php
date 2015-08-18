@@ -1261,7 +1261,8 @@ class TbSolicitacao extends Banco
 			throw new PDOException($e->getMessage(), $e->getCode());
 		}
 	}
-	
+
+
 	
 }
 ?>

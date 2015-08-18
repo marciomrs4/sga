@@ -97,7 +97,7 @@ class TbAtividade extends Banco
 		}
 	}
 	
-	#Usado para listar as atividades, na exportação do excel da tela de atividade
+	#Usado para listar as atividades, na exportaï¿½ï¿½o do excel da tela de atividade
 	public function listarAtividadeSemQuebrarLinha($dados)
 	{
 		$query = ("SELECT ATI.at_codigo, PRO.pro_titulo, USU.usu_nome, date_format(ATI.at_previsao_inicio,'%d-%m-%Y'),
@@ -483,6 +483,32 @@ class TbAtividade extends Banco
 			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
 		}
 	}
-	
+
+    #Usado no Painel de Tarefas
+    public function listarAtividadePainelTarefas($dados)
+    {
+        $query = ("SELECT concat('Atividade: ', at_codigo) AS atividade
+                    FROM tb_atividade
+                    WHERE usu_codigo_responsavel = ?
+                    AND sta_codigo = ?
+                    ORDER BY at_codigo
+                  ");
+
+        try
+        {
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->bindParam(1,$dados['usu_codigo_responsavel'],PDO::PARAM_INT);
+            $stmt->bindParam(2,$dados['sta_codigo'],PDO::PARAM_INT);
+
+            $stmt->execute();
+
+            return($stmt);
+
+        } catch (PDOException $e)
+        {
+            throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
+        }
+    }
 }
 ?>

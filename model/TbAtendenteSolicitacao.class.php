@@ -176,5 +176,36 @@ class TbAtendenteSolicitacao extends Banco
 		
 	}
 
+    #Utilizado no Painel de Tarefas
+    public function listarChamadosPainelTarefas($dados)
+    {
+
+        $query = ("SELECT  concat('Chamado: ',ate.sol_codigo) as chamado
+                    FROM tb_atendente_solicitacao AS ate
+                    INNER JOIN tb_solicitacao AS so
+                    ON ate.sol_codigo = so.sol_codigo
+                    WHERE ate.usu_codigo_atendente = ?
+                    AND so.sta_codigo = ?
+                    ORDER BY ate.sol_codigo");
+
+        try
+        {
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->bindParam(1,$dados['usu_codigo_atendente'],PDO::PARAM_INT);
+            $stmt->bindParam(2,$dados['sta_codigo'],PDO::PARAM_INT);
+
+            $stmt->execute();
+
+            return($stmt);
+
+        } catch (PDOException $e)
+        {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }
+
+    }
+
+
 }
 ?>
