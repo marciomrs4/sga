@@ -121,13 +121,16 @@ $alert(document).ready(function(){
         }
     }});
 
-    $alert(document).on('click','li.list-group-item',function(){
+    $alert(document).on('click','a.list-group-item',function(){
 
         var tarefa = $alert(this).html();
+
+        $alert(this).fadeOut().fadeIn();
 
         enviarAjax($alert, tarefa);
 
     });
+
 
     $alert(document).on('dblclick','#table-bootstrap',function(){
         $alert(this).dataTable({
@@ -166,7 +169,7 @@ $alert(document).ready(function(){
     {
         date = new Date();
 
-        dataAtual = date.getDate() +'/0'+ (date.getMonth()+parseInt(1)) +'/'+ date.getFullYear() + ' ' +
+        dataAtual = date.getDate() +'/0'+ (date.getMonth()+parseInt(1)) +'/'+ date.getFullYear() + ' | ' +
                     date.getHours() +':'+ checkTime(date.getMinutes())+':'+checkTime(date.getSeconds());
 
         $load("#tempo").html(dataAtual);
@@ -195,6 +198,11 @@ function loadPaineis() {
      function (data) {
      $load("#listarchamado").html(data);
      }, 'html');
+
+    $load.post('LoadTop5MaisUsadosPainelTarefas.php',
+        function (data) {
+            $load("#maisutilizados").html(data);
+        }, 'html');
 
 }
 

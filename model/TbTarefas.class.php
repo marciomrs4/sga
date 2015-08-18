@@ -58,5 +58,34 @@ class TbTarefas extends Banco
         }
     }
 
+    public function listarTarefasMaisUsadas($dados)
+    {
+
+        $query = ("SELECT count(tar_descricao), tar_descricao
+                    FROM tb_tarefas
+                    WHERE usu_codigo = ?
+                    AND tar_data > ?
+                    GROUP BY tar_descricao
+                    ORDER BY 1 DESC
+                    LIMIT 5;");
+
+        try
+        {
+            $dados['tar_data'] = date('Y-m-d 00:00:01');
+
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->bindParam(1,$dados['usu_codigo'],\PDO::PARAM_INT);
+            $stmt->bindParam(2,$dados['tar_data'],\PDO::PARAM_STR);
+
+            $stmt->execute();
+
+            return $stmt;
+
+        }catch(\PDOException $e){
+            throw new \PDOException($e->getMessage(), $e->getCode());
+        }
+    }
+
 }
 ?>

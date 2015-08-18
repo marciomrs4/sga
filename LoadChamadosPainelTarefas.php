@@ -10,13 +10,13 @@ $dados['usu_codigo_atendente'] = $_SESSION['usu_codigo'];
 $dados['sta_codigo'] = 2;
 
 
-echo '<ul class="list-group">';
+echo '<div class="list-group">';
 
     foreach($tbChamado->listarChamadosPainelTarefas($dados)->fetchAll(\PDO::FETCH_OBJ) as $chamado):
 
-        echo '<li class="list-group-item">' . $chamado->chamado . '</li>';
+        echo '<a href="#" class="list-group-item">' . $chamado->chamado . '</a>';
 
     endforeach;
 
-echo '</ul>';
+echo '</div>';
 ?>

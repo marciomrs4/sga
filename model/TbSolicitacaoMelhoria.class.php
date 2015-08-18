@@ -137,16 +137,20 @@ private $stm_codigo = 'stm_codigo';
 						ON SOL.usu_codigo_atendente = USUARIO.usu_codigo
 						INNER JOIN tb_status_melhoria AS STM
 						ON SOL.stm_codigo = STM.stm_codigo
-						WHERE SOL.sis_codigo LIKE ?
+						WHERE (usu_codigo_solicitante = ?
+						OR SIS.usu_codigo_usuario_chave = ?)
+						AND SOL.sis_codigo LIKE ?
 						AND SOL.stm_codigo  LIKE ?
 						ORDER BY 1 DESC;");
 	
 		try
 		{
 			$stmt = $this->conexao->prepare($query);
-	
-			$stmt->bindParam(1,$dados['sis_codigo'],PDO::PARAM_INT);
-			$stmt->bindParam(2,$dados['stm_codigo'],PDO::PARAM_INT);
+
+            $stmt->bindParam(1,$_SESSION['usu_codigo'],PDO::PARAM_INT);
+            $stmt->bindParam(2,$_SESSION['usu_codigo'],PDO::PARAM_INT);
+            $stmt->bindParam(3,$dados['sis_codigo'],PDO::PARAM_INT);
+			$stmt->bindParam(4,$dados['stm_codigo'],PDO::PARAM_INT);
 	
 			$stmt->execute();
 	

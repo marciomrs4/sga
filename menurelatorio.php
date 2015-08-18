@@ -22,6 +22,7 @@
             <li><a href="PainelTarefas.php" target="_blank">Painel de Tarefas</a></li>
 
             <hr>
+
 		<span><b>Gráficos</b></span>
 			<li><a href="GraficoQuantidadeChamado.php">Chamado por Atedente</a></li>		
 			<li><a href="GraficoQuantidadeAtividade.php">Atividade por Status</a></li>

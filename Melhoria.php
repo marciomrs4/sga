@@ -51,7 +51,6 @@ echo "</div>";
 </form>
 
 <?php
-
 #Carrega dinamicamente os formularios	
 Arquivo::includeForm();
 
@@ -61,14 +60,14 @@ try
 	
 	
 $datagrid->setDados($busca->listarMelhoria());
-$datagrid->setCabecalho(array('Nº','Solicitante','Data Solicitação','Sistema','Status','Descrição','Atendente'));
+$datagrid->setCabecalho(array('N°','Solicitante','Data Solicitação','Sistema','Status','Descrição','Atendente'));
 
 $datagrid->titulofield = ' Melhorias(s)';
 $datagrid->acao = 'alterar/SolicitacaoMelhoria';
 $datagrid->nomelink = '<img src="/sga/css/images/search2.png" title="Visualizar" />';	
 
 $datagrid->islink2 = true;
-$datagrid->acao2 = 'cadastrar/apontamentoMelhoria';
+$datagrid->acao2 = 'cadastrar/ApontamentoMelhoria';
 $datagrid->nomelink2 = '<img src="./css/images/adcionar.png" title="Adicionar Apontamento" />';
 
 

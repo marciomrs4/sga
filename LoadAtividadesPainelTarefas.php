@@ -10,13 +10,13 @@ $dados['usu_codigo_responsavel'] = $_SESSION['usu_codigo'];
 $dados['sta_codigo'] = 2;
 
 
-echo '<ul class="list-group">';
+echo '<div class="list-group">';
 
     foreach($tbAtividade->listarAtividadePainelTarefas($dados)->fetchAll(\PDO::FETCH_OBJ) as $atividade):
 
-        echo '<li class="list-group-item">' . $atividade->atividade . '</li>';
+        echo '<a href="#" class="list-group-item">' . $atividade->atividade . '</a>';
 
     endforeach;
 
-echo '</ul>';
+echo '</div>';
 ?>

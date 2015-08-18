@@ -14,21 +14,32 @@ include_once 'componentes/TopoPainelTarefas.php';
 
                <div class="panel panel-primary">
                    <div class="panel-heading">
+                       <h3 class="panel-title">Top 5 mais Usados</h3>
+                   </div>
+                   <div class="panel-body">
+                       <div id="maisutilizados"></div>
+                   </div>
+                   <div class="panel-footer"></div>
+               </div>
+
+
+               <div class="panel panel-primary">
+                   <div class="panel-heading">
                        <h3 class="panel-title">Tarefas</h3>
                    </div>
                    <div class="panel-body">
-                       <ul class="list-group">
+                       <div class="list-group">
                            <?php
                            $ExecutarTarefa = new TbExecutarTarefas();
 
                            $dados['dep_codigo'] = $_SESSION['dep_codigo'];
                            foreach($ExecutarTarefa->listarExecutarTarefas($dados)->fetchAll(\PDO::FETCH_OBJ) as $tarefa):
                             ?>
-                           <li class="list-group-item"><?php echo($tarefa->tae_descricao); ?></li>
+                           <a href='#' class="list-group-item"><?php echo($tarefa->tae_descricao); ?></a>
                            <?php
                            endforeach;
                            ?>
-                       </ul>
+                       </div>
                        <label>Tarefa:</label>
                        <input type="text">
                        <button class="btn btn-primary btn-sm addtarefa">Inserir</button>

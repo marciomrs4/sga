@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Painel de Chamados</title>	
+	<title>Painel de Tarefas</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel='shortcut icon' href='css/images/ceadisico.ico'>	
 	<!-- css -->
@@ -30,7 +30,6 @@
             <h4 class="navbar-text"><a href="Operacao.php" title="Voltar">SGA</a> - PAINEL DE TAREFAS | <?php echo(ucfirst($_SESSION['usu_nome']));?></h4>
             <h5 class="navbar-right navbar-text">
                 <span id="tempo">
-                    <?php echo (date('d-m-Y H:i:s')); ?>
                 </span>
             </h5>
             <span class="navbar-right navbar-text">
