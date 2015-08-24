@@ -57,13 +57,14 @@ class Email extends PHPMailer
 		$problema = $tbprobleama->getForm($dados['pro_codigo']);
 
 				
-		$this->cabecalho = 'Abertura de Chamado: '.$dados['sol_codigo'];
+		$this->cabecalho = 'Abertura de Chamado '.$dados['sol_codigo'];
 
-		$this->mensagem = 'O Chamado de nÃºmero: '.$dados['sol_codigo'].'<br/>';
-		$this->mensagem .= 'Foi aberto com sucesso por: '.$email['usu_email'].' e logo um tÃ©cnico irÃ¡ atende-lo <br/>';
-		$this->mensagem .= 'Contato:  '.$email['usu_nome'].' - Tel / '.$_SESSION['config']['ramal'].': '.$email['usu_ramal'].'<br/>';
-		$this->mensagem .= $_SESSION['config']['problema'].': '.$problema['pro_descricao'].'<br/><br/>';
-		$this->mensagem .= 'DescriÃ§Ã£o do '.$_SESSION['config']['problema'].': '.$dados['sol_descricao_solicitacao'].'<br/>';
+		$this->mensagem = '<b>O Chamado de número: </b>'.$dados['sol_codigo'].'<br/>';
+		$this->mensagem .= '<b>Foi aberto com sucesso por: </b>'.$email['usu_email'].' e logo um técnico irá atende-lo <br/>';
+		$this->mensagem .= '<b>Contato:  </b>'.$email['usu_nome'].'<br/>';
+		$this->mensagem .= '<b>Tel / '.$_SESSION['config']['ramal'].': </b> '.$email['usu_ramal'].'<br/>';
+		$this->mensagem .= '<b>' . $_SESSION['config']['problema'].': </b>'.$problema['pro_descricao'].'<br/><br/>';
+		$this->mensagem .= '<b>Descrição do '.$_SESSION['config']['problema'].': </b>'.$dados['sol_descricao_solicitacao'].'<br/>';
 		
 		
 		#E-mail de envido do usuario
@@ -87,13 +88,13 @@ class Email extends PHPMailer
 		#Instancia da Classe TbSolicitacao
 		$tbsolcitacao = new TbSolicitacao();
 
-		#pega o cÃ³digo do solicitante do chamado
+		#pega o código do solicitante do chamado
 		$usuSolicitante = $tbsolcitacao->getUsuarioSolicitante($dados['sol_codigo']);
 		
 		#pega a descricao da solicitacao que foi feito na abertura do chamado
 		$descricaoSolicitacao = $tbsolcitacao->getDescricaoSolicitacao($dados['sol_codigo']);
 		
-		#Pego e-mail de quem fez o assentamento informaÃ§Ãµes do usuarios
+		#Pego e-mail de quem fez o assentamento informações do usuarios
 		$tbusuario = new TbUsuario();
 		$email = $tbusuario->getUsuario($dados['usu_codigo']);
 		
@@ -109,7 +110,7 @@ class Email extends PHPMailer
 		$tbdepartamento = new TbDepartamento();
 		$emaildepto = $tbdepartamento->getDepartamentoEmail($dep_codigo_solicitado);
 
-		#Pego a descriÃ§Ã£o do problema
+		#Pego a descrição do problema
 		$tbprobleama = new TbProblema();
 		$problema = $tbprobleama->getForm($pro_codigo);
 
@@ -118,12 +119,12 @@ class Email extends PHPMailer
 
 		$this->cabecalho = 'Assentamento do chamado: '.$dados['sol_codigo'];
 
-		$this->mensagem = 'Houve uma interaÃ§Ã£o no chamado: '.$dados['sol_codigo'].'<br/>';
-		$this->mensagem .= 'Assentamento criado por: '.$email['usu_email'].'<br/>';
-		$this->mensagem .= $_SESSION['config']['problema'].': '.$problema['pro_descricao'].'<br/><br/>';
-		$this->mensagem .= 'Descrição do Chamado: '.$descricaoSolicitacao.'<br/><br/>';
-		$this->mensagem .= 'Foi adicionado o seguinte assentamento: '.$dados['ass_descricao'].'<br/><br/>';
-		$this->mensagem .= 'Status do chamado: '.$sta_descricao;
+		$this->mensagem = '<b>Houve uma interação no chamado: </b>'.$dados['sol_codigo'].'<br/>';
+		$this->mensagem .= '<b>Assentamento criado por: </b>'.$email['usu_email'].'<br/>';
+		$this->mensagem .= '<b>' . $_SESSION['config']['problema'].': </b>'.$problema['pro_descricao'].'<br/><br/>';
+		$this->mensagem .= '<b>Descrição do Chamado: </b>'.$descricaoSolicitacao.'<br/><br/>';
+		$this->mensagem .= '<b>Foi adicionado o seguinte assentamento: </b>'.$dados['ass_descricao'].'<br/><br/>';
+		$this->mensagem .= '<b>Status do chamado: </b>'.$sta_descricao;
 		
 		
 		#E-mail de envido do usuario
@@ -160,11 +161,12 @@ class Email extends PHPMailer
 		
 		$this->cabecalho = 'Abertura de melhoria: '.$dados['som_codigo'];
 		
-		$this->mensagem = 'A melhoria de número: '.$dados['som_codigo'].'<br/>';
-		$this->mensagem .= 'Foi aberto com sucesso por: '.$usuarioSolicitante['usu_email'].' e logo o usuário chave irá atende-lo. <br/>';
-		$this->mensagem .= 'Contato:  '.$usuarioSolicitante['usu_nome'].' - Tel / '.$_SESSION['config']['ramal'].': '.$usuarioSolicitante['usu_ramal'].'<br/>';
-		$this->mensagem .= 'Sistema: '.$sistema['sis_descricao'].'<br/><br/>';
-		$this->mensagem .= 'Descrição da melhoria: ' . $dados['som_descricao'].'<br/>';
+		$this->mensagem = '<b>A melhoria de número: </b>'.$dados['som_codigo'].'<br/>';
+		$this->mensagem .= '<b>Foi aberto com sucesso por: </b>'.$usuarioSolicitante['usu_email'].' <b> e logo o usuário chave irá atende-lo.</b> <br/>';
+		$this->mensagem .= '<b>Contato:  </b>'.$usuarioSolicitante['usu_nome'].'</b><br/>';
+        $this->mensagem .= '<b>Tel / '.$_SESSION['config']['ramal'].':</b> '.$usuarioSolicitante['usu_ramal'].'<br/>';
+		$this->mensagem .= '<b>Sistema: </b>'.$sistema['sis_descricao'].'<br/><br/>';
+		$this->mensagem .= '<b>Descrição da melhoria: </b>' . $dados['som_descricao'].'<br/>';
 
 		#E-mail do atendente
 		$this->AddAddress($usuarioAtendente['usu_email']);
@@ -200,12 +202,12 @@ class Email extends PHPMailer
 		
 		$this->cabecalho = 'Apontamento da melhoria: '.$dados['som_codigo'];
 
-		$this->mensagem = 'Houve um apontamento no melhoria: '.$dados['som_codigo'].'<br/>';
-		$this->mensagem .= 'Criado por: '.$usuarioCriador['usu_email'].'<br/>';
-		$this->mensagem .= 'Sistema: '.$sistema['sis_descricao'].'<br/><br/>';
-		$this->mensagem .= 'Descrição do Chamado: '.$Solicitacao['som_descricao'].'<br/><br/>';
-		$this->mensagem .= 'Foi adicionado o seguinte Apontamento: '.$dados['apm_descricao'].'<br/><br/>';
-		$this->mensagem .= 'Status do chamado: '.$Status['stm_descricao'];
+		$this->mensagem = '<b>Houve um apontamento no melhoria: </b>'.$dados['som_codigo'].'<br/>';
+		$this->mensagem .= '<b>Criado por: </b>'.$usuarioCriador['usu_email'].'<br/>';
+		$this->mensagem .= '<b>Sistema: </b>'.$sistema['sis_descricao'].'<br/><br/>';
+		$this->mensagem .= '<b>Descrição do Chamado: </b>'.$Solicitacao['som_descricao'].'<br/><br/>';
+		$this->mensagem .= '<b>Foi adicionado o seguinte Apontamento: </b>'.$dados['apm_descricao'].'<br/><br/>';
+		$this->mensagem .= '<b>Status do chamado: </b>'.$Status['stm_descricao'];
 		
 		
 		#E-mail de envido para o Atendente

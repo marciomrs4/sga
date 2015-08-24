@@ -130,9 +130,9 @@ class Cadastro extends Dados
 			
 			ValidarCampos::campoVazio($this->dados['pro_titulo'],'Titulo');
 			ValidarCampos::campoVazio($this->dados['usu_codigo_solicitante'],$_SESSION['config']['usuario'].' Solicitante');
-			ValidarCampos::campoVazio($this->dados['pro_descricao'],'Descri??o');
-			ValidarCampos::campoVazio($this->dados['pro_previsao_inicio'],'Previs?o Inicio');
-			ValidarCampos::campoVazio($this->dados['pro_previsao_fim'],'Previs?o Fim');
+			ValidarCampos::campoVazio($this->dados['pro_descricao'],'Descrição');
+			ValidarCampos::campoVazio($this->dados['pro_previsao_inicio'],'Previsão Inicio');
+			ValidarCampos::campoVazio($this->dados['pro_previsao_fim'],'Previsão Fim');
 
 			$this->dados['pro_previsao_inicio'] = ValidarDatas::dataBanco($this->dados['pro_previsao_inicio']);
 			$this->dados['pro_previsao_fim'] = ValidarDatas::dataBanco($this->dados['pro_previsao_fim']);
@@ -216,7 +216,7 @@ class Cadastro extends Dados
 			$this->dados['pro_mostrar_usuario'] = ValidarCampos::campoEmptyTernario($this->dados['pro_mostrar_usuario'],1, '');
 			$this->dados['pro_status_ativo'] = ValidarCampos::campoEmptyTernario($this->dados['pro_status_ativo'],1, '');
 
-			ValidarCampos::campoVazio($this->dados['pro_tempo_solucao'],'Tempo de Solu??o');
+			ValidarCampos::campoVazio($this->dados['pro_tempo_solucao'],'Tempo de Solução');
 			
 			$this->dados['dep_codigo'] = $this->dados['dep_codigo_problema'];
 
@@ -269,8 +269,8 @@ class Cadastro extends Dados
 			#Metodos de valida??o
 			ValidarCampos::campoVazio($this->dados['dep_codigo'],'Departamento');
 			ValidarCampos::campoVazio($this->dados['pro_codigo'],$_SESSION['config']['problema']);
-			ValidarCampos::campoVazio($this->dados['sol_descricao_solicitacao'],'Descri??o do '.$_SESSION['config']['problema']);
-			ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solicitacao'],5,'Descri??o do'.$_SESSION['config']['problema']);
+			ValidarCampos::campoVazio($this->dados['sol_descricao_solicitacao'],'Descrição do '.$_SESSION['config']['problema']);
+			ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solicitacao'],5,'Descrição do'.$_SESSION['config']['problema']);
 			$this->dados['sol_descricao_solicitacao'] = strip_tags($this->dados['sol_descricao_solicitacao']);
 			#Capturando o codigo do usu?rio solicitante
 			$this->dados['usu_codigo_solicitante'] = ($usu_codigo_solicitante == null) ? $this->dados['usu_codigo_solicitante'] : $usu_codigo_solicitante;
@@ -349,8 +349,8 @@ class Cadastro extends Dados
 		#Metodos de valida??o
 		ValidarCampos::campoVazio($this->dados['dep_codigo_tecnico'],'Departamento');
 		ValidarCampos::campoVazio($this->dados['pro_codigo'],$_SESSION['config']['problema']);
-		ValidarCampos::campoVazio($this->dados['sol_descricao_solicitacao'],'Descri??o do '.$_SESSION['config']['problema']);
-		ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solicitacao'],5,'Descri??o do'.$_SESSION['config']['problema']);
+		ValidarCampos::campoVazio($this->dados['sol_descricao_solicitacao'],'Descrição do '.$_SESSION['config']['problema']);
+		ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solicitacao'],5,'Descrição do'.$_SESSION['config']['problema']);
 		$this->dados['sol_descricao_solicitacao'] = strip_tags($this->dados['sol_descricao_solicitacao']);
 		#Capturando o codigo do usu?rio solicitante
 		$this->dados['usu_codigo_solicitante'] = ($usu_codigo_solicitante == null) ? $this->dados['usu_codigo_solicitante'] : $usu_codigo_solicitante;
@@ -427,7 +427,7 @@ class Cadastro extends Dados
 		{
 			
 			$this->dados['ass_descricao'] = strip_tags($this->dados['ass_descricao']);
-			ValidarCampos::campoVazio($this->dados['ass_descricao'],'Descri??o');
+			ValidarCampos::campoVazio($this->dados['ass_descricao'],'Descrição');
 			ValidarCampos::campoVazio($this->dados['usu_codigo_atendente'],'Atendente do Chamado');
 			
 
@@ -616,7 +616,7 @@ class Cadastro extends Dados
 		{
 			ValidarCampos::campoVazio($this->dados['che_titulo'],'Titulo');
 			ValidarCampos::campoVazio($this->dados['che_email_envio'],'E-mail de Envio');
-			ValidarCampos::campoVazio($this->dados['che_descricao'],'Descri??o');
+			ValidarCampos::campoVazio($this->dados['che_descricao'],'Descrição');
 			ValidarCampos::campoVazio($this->dados['dep_codigo'],'Departamento');
 			ValidarCampos::campoVazio($this->dados['che_ativo'],'Departamento');			
 
@@ -719,8 +719,8 @@ class Cadastro extends Dados
 			$CheCodigo = $this->dados['che_codigo'];
 			$CheTitulo = $this->dados['che_titulo'];
 						
-			ValidarCampos::campoVazio($observacao,'Observa??o');
-			ValidarCampos::validaQtdCaracter($observacao,20,'Observa??o');
+			ValidarCampos::campoVazio($observacao,'Observação');
+			ValidarCampos::validaQtdCaracter($observacao,20,'Observação');
 
 			array_pop($this->dados);
 			array_pop($this->dados);
@@ -780,9 +780,9 @@ class Cadastro extends Dados
 
 			ValidarCampos::campoVazio($this->dados['pro_codigo'],'Projeto');
 			ValidarCampos::campoVazio($this->dados['usu_codigo_responsavel'],$_SESSION['config']['usuario'].' Executor');
-			ValidarCampos::campoVazio($this->dados['at_previsao_inicio'],'Previs?o Inicio');
-			ValidarCampos::campoVazio($this->dados['at_previsao_fim'],'Previs?o Fim');
-			ValidarCampos::campoVazio($this->dados['at_descricao'],'Descri??o');
+			ValidarCampos::campoVazio($this->dados['at_previsao_inicio'],'Previsão Inicio');
+			ValidarCampos::campoVazio($this->dados['at_previsao_fim'],'Previsão Fim');
+			ValidarCampos::campoVazio($this->dados['at_descricao'],'Descrição');
 			
 
 			$this->dados['at_previsao_inicio'] = ValidarDatas::dataBanco($this->dados['at_previsao_inicio']);
@@ -803,7 +803,7 @@ class Cadastro extends Dados
 				
 				if($status != 2)
 				{
-					throw new Exception('N?o ? poss?vel criar essa atividade: Este projeto n?o esta em andamento');
+					throw new Exception('Não é possível criar essa atividade: Este projeto não esta em andamento');
 				}else
 				{
 				
@@ -866,7 +866,7 @@ class Cadastro extends Dados
 		try
 		{
 			ValidarCampos::campoVazio($this->dados['at_codigo']);
-			ValidarCampos::campoVazio($this->dados['ap_descricao'],'Descri??o do Apontamento');
+			ValidarCampos::campoVazio($this->dados['ap_descricao'],'Descrição do Apontamento');
 			
 			$this->dados['usu_codigo'] = $_SESSION['usu_codigo'];
 			
@@ -881,7 +881,7 @@ class Cadastro extends Dados
 				
 				if($status > 2)
 				{
-					throw new Exception('N?o ? poss?vel criar apontamento: Esta atividade n?o esta em Andamento ou Pendente');
+					throw new Exception('Não é possível criar apontamento: Esta atividade não esta em Andamento ou Pendente');
 				}else 
 				{
 					
@@ -1026,7 +1026,7 @@ class Cadastro extends Dados
 
 				#Verifica se o usuario e o atendente e se existe atendente
 				if(($Sistema['usu_codigo_usuario_chave'] != $_SESSION['usu_codigo']) and (empty($Atendente))){
-					throw new Exception('N?o existe um atendente, voc? n?o pode inserir um apontamento.');						
+					throw new Exception('Não existe um atendente, você não pode inserir um apontamento.');
 				}
 					
 				#Inicia a transacao
@@ -1074,7 +1074,7 @@ class Cadastro extends Dados
 		try {
 			
 			ValidarCampos::campoVazio($this->dados['sis_descricao'],'Sistema');
-			ValidarCampos::campoVazio($this->dados['usu_codigo_usuario_chave'],'Usu?rio chave');			
+			ValidarCampos::campoVazio($this->dados['usu_codigo_usuario_chave'],'Usuário chave');
 			
 			$this->dados['sis_status'] = 1;
 			
@@ -1099,7 +1099,7 @@ class Cadastro extends Dados
 	
 		try {
 				
-			ValidarCampos::campoVazio($this->dados['ter_descricao'],'Descric?o');
+			ValidarCampos::campoVazio($this->dados['ter_descricao'],'Descricão');
 			ValidarCampos::campoVazio($this->dados['dep_codigo'],'Deparamento');
 				
 			$this->dados['ter_status'] = ($this->dados['ter_status'] == '') ? 0 : 1;
@@ -1141,7 +1141,7 @@ class Cadastro extends Dados
 			
 /*			$this->dados['sot_descriacao_inclusao'] = 'Teste de Criacao';*/
 
-            ValidarCampos::campoVazio($this->dados['sot_descricao_inclusao'],'Descricao aqui mesmo');
+            ValidarCampos::campoVazio($this->dados['sot_descricao_inclusao'],'Descrição');
 			
 			$this->dados['sot_data_criacao_inclusao'] = date('Y-m-d H:i:s');
 

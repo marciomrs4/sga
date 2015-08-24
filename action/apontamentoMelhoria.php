@@ -11,7 +11,7 @@ if($_POST)
 
 		switch ($acao)
 		{
-			case 'cadastrar/apontamentoMelhoria' :
+			case 'cadastrar/ApontamentoMelhoria' :
 				$cadastro = new Cadastro();
 
 				try

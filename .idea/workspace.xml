@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2526c6c5-3cfb-4a59-b223-ceacd7d0168e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoadAtividadesPainelTarefas.php" afterPath="$PROJECT_DIR$/LoadAtividadesPainelTarefas.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LoadChamadosPainelTarefas.php" afterPath="$PROJECT_DIR$/LoadChamadosPainelTarefas.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Melhoria.php" afterPath="$PROJECT_DIR$/Melhoria.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PainelTarefas.php" afterPath="$PROJECT_DIR$/PainelTarefas.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbSolicitacaoMelhoria.class.php" afterPath="$PROJECT_DIR$/model/TbSolicitacaoMelhoria.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbTarefas.class.php" afterPath="$PROJECT_DIR$/model/TbTarefas.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/TopoPainelTarefas.php" afterPath="$PROJECT_DIR$/componentes/TopoPainelTarefas.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Alteracao.class.php" afterPath="$PROJECT_DIR$/classes/Alteracao.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" afterPath="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Cadastro.class.php" afterPath="$PROJECT_DIR$/classes/Cadastro.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Documentacao" afterPath="$PROJECT_DIR$/Documentacao" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Email.class.php" afterPath="$PROJECT_DIR$/classes/Email.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/SolicitacaoMelhoria.php" afterPath="$PROJECT_DIR$/forms/alterar/SolicitacaoMelhoria.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/SolicitacaoMelhoria.php" afterPath="$PROJECT_DIR$/forms/cadastrar/SolicitacaoMelhoria.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Version" afterPath="$PROJECT_DIR$/Version" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/apontamentoMelhoria.php" afterPath="$PROJECT_DIR$/action/apontamentoMelhoria.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/footerPainelTarefas.php" afterPath="$PROJECT_DIR$/componentes/footerPainelTarefas.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/menurelatorio.php" afterPath="$PROJECT_DIR$/menurelatorio.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teste.php" afterPath="$PROJECT_DIR$/teste.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sga.iws" />
@@ -51,16 +50,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/services/ramais.php" />
-        <option value="$PROJECT_DIR$/RelatorioSolucao.php" />
-        <option value="$PROJECT_DIR$/services/aniversariantesdodia.php" />
-        <option value="$PROJECT_DIR$/componentes/menuprincipal.php" />
-        <option value="$PROJECT_DIR$/services/listadeaniversariante.php" />
-        <option value="$PROJECT_DIR$/model/TbAniversariante.class.php" />
-        <option value="$PROJECT_DIR$/model/TbAssentamento.class.php" />
         <option value="$PROJECT_DIR$/Solicitante.php" />
         <option value="$PROJECT_DIR$/classes/Dados.class.php" />
-        <option value="$PROJECT_DIR$/classes/Alteracao.class.php" />
         <option value="$PROJECT_DIR$/index_teste.php" />
         <option value="$PROJECT_DIR$/model/TbTabela_TESTE.class.php" />
         <option value="$PROJECT_DIR$/model/Banco.class.php" />
@@ -71,7 +62,6 @@
         <option value="$PROJECT_DIR$/classes/GridOption.class.php" />
         <option value="$PROJECT_DIR$/jscript/jquery.jclock.js" />
         <option value="$PROJECT_DIR$/jscript/my-alert.js" />
-        <option value="$PROJECT_DIR$/classes/Cadastro.class.php" />
         <option value="$PROJECT_DIR$/classes/Grid.class.php" />
         <option value="$PROJECT_DIR$/action/login.php" />
         <option value="$USER_HOME$/PhpstormProjects/phpavancado/ClassC.php" />
@@ -102,6 +92,15 @@
         <option value="$PROJECT_DIR$/componentes/TopoPainelTarefas.php" />
         <option value="$PROJECT_DIR$/componentes/footerPainelTarefas.php" />
         <option value="$PROJECT_DIR$/teste.php" />
+        <option value="$PROJECT_DIR$/Version" />
+        <option value="$PROJECT_DIR$/Documentacao" />
+        <option value="$PROJECT_DIR$/classes/Alteracao.class.php" />
+        <option value="$PROJECT_DIR$/classes/Cadastro.class.php" />
+        <option value="$PROJECT_DIR$/forms/cadastrar/SolicitacaoMelhoria.php" />
+        <option value="$PROJECT_DIR$/forms/alterar/SolicitacaoMelhoria.php" />
+        <option value="$PROJECT_DIR$/action/apontamentoMelhoria.php" />
+        <option value="$PROJECT_DIR$/classes/Email.class.php" />
+        <option value="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" />
       </list>
     </option>
   </component>
@@ -156,20 +155,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -324,79 +309,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PainelProjetoUsuarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8230337" vertical-offset="332" max-vertical-offset="1044">
-          <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RelatorioSolucao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76965517" vertical-offset="0" max-vertical-offset="5166">
-          <caret line="31" column="119" selection-start-line="21" selection-start-column="0" selection-end-line="31" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5137741" vertical-offset="41" max-vertical-offset="792">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PhpstormProjects/phpavancado/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.446281" vertical-offset="0" max-vertical-offset="726">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PhpstormProjects/phpavancado/ClassC.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.446281" vertical-offset="0" max-vertical-offset="726">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PhpstormProjects/phpavancado/ClassB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57024795" vertical-offset="0" max-vertical-offset="726">
-          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PhpstormProjects/phpavancado/ClassA.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12396694" vertical-offset="0" max-vertical-offset="726">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Painel.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5785124" vertical-offset="768" max-vertical-offset="1494">
-          <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/bootstrap/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12162162" vertical-offset="216" max-vertical-offset="104238">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/bootstrap/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15812592" vertical-offset="0" max-vertical-offset="683">
-          <caret line="6" column="99654" selection-start-line="6" selection-start-column="99654" selection-end-line="6" selection-end-column="99654" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/formatacao.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8565737" vertical-offset="2559" max-vertical-offset="3312">
@@ -416,6 +328,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.62601626" vertical-offset="5604" max-vertical-offset="8730">
           <caret line="337" column="45" selection-start-line="337" selection-start-column="45" selection-end-line="337" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -609,13 +522,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/cadastrar/SolicitacaoMelhoria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/ControleDeAcesso.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="190" max-vertical-offset="1314">
@@ -635,13 +541,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53436184" vertical-offset="13767" max-vertical-offset="14886">
           <caret line="786" column="51" selection-start-line="786" selection-start-column="51" selection-end-line="786" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Melhoria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09917355" vertical-offset="0" max-vertical-offset="1656">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -713,6 +612,104 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.60589063" vertical-offset="216" max-vertical-offset="2412">
           <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Documentacao">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.95135134" vertical-offset="970" max-vertical-offset="1782">
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Version">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85405403" vertical-offset="646" max-vertical-offset="1386">
+          <caret line="71" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Alteracao.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5553997" vertical-offset="0" max-vertical-offset="17496">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/cadastrar/SolicitacaoMelhoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3436185" vertical-offset="241" max-vertical-offset="1170">
+          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/apontamentoMelhoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49586776" vertical-offset="324" max-vertical-offset="1278">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Melhoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3553719" vertical-offset="714" max-vertical-offset="1656">
+          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Email.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28099173" vertical-offset="1722" max-vertical-offset="3816">
+          <caret line="132" column="62" selection-start-line="132" selection-start-column="62" selection-end-line="132" selection-end-column="62" />
+          <folding>
+            <element signature="n#enviarEmail#0;n#Email#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/solicitacaoMelhoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.07438017" vertical-offset="54" max-vertical-offset="2376">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Apontamento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1422">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/alterar/SolicitacaoMelhoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.3884993" vertical-offset="2059" max-vertical-offset="2772">
+          <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Cadastro.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19354838" vertical-offset="17052" max-vertical-offset="21186">
+          <caret line="955" column="20" selection-start-line="955" selection-start-column="20" selection-end-line="955" selection-end-column="20" />
           <folding />
         </state>
       </provider>

@@ -17,14 +17,14 @@ $tbsistemas = new TbSistemas();
   
  
   <fieldset>
-	<legend>Aï¿½ï¿½es</legend>
+	<legend>Ações</legend>
 		<div class="acoesmelhoria">	
 			<?php if(($tbsistemas->getUsuarioChave($_SESSION['cadastrar/SolicitacaoMelhoria']['sis_codigo']) == $_SESSION['usu_codigo']) AND 
 						($_SESSION['cadastrar/SolicitacaoMelhoria']['usu_codigo_atendente'] == '')) {?>
 			<a href="./action/atendermelhoria.php?<?php echo(base64_encode('atender/melhoria').'='.base64_encode($_SESSION['cadastrar/SolicitacaoMelhoria']['som_codigo']));?>">
 				<img src="./css/images/atender.png" title="Atender"></a>
 				<?php }?>			
-			<a href="./action/formcontroler.php?<?php echo(base64_encode('cadastrar/apontamentoMelhoria').'='.base64_encode($_SESSION['cadastrar/SolicitacaoMelhoria']['som_codigo']));?>">
+			<a href="./action/formcontroler.php?<?php echo(base64_encode('cadastrar/ApontamentoMelhoria').'='.base64_encode($_SESSION['cadastrar/SolicitacaoMelhoria']['som_codigo']));?>">
 				<img src="./css/images/novo.png" title="Apontamento"></a>
 		</div>
   </fieldset>
@@ -39,7 +39,7 @@ $tbsistemas = new TbSistemas();
     
     <tr>
         <th nowrap="nowrap">
-    	Nï¿½mero da melhoria:
+    	Número da melhoria:
     	</th>
     	<td>
     	<?php echo($_SESSION['cadastrar/SolicitacaoMelhoria']['som_codigo']); ?>
@@ -90,7 +90,7 @@ $tbsistemas = new TbSistemas();
     </tr>
     
     <tr>
-      <th align="left" nowrap="nowrap">Descriï¿½ï¿½o do <?php echo($_SESSION['config']['problema']); ?>:</th>
+      <th align="left" nowrap="nowrap">Descrição do <?php echo($_SESSION['config']['problema']); ?>:</th>
 	      <td>
 	      	<textarea name="som_descricao" rows="10" cols="50"><?php echo($_SESSION['cadastrar/SolicitacaoMelhoria']['som_descricao']); ?></textarea>
 	      </td>
@@ -129,7 +129,7 @@ $tbsistemas = new TbSistemas();
 	  	
 	  	$tabela = $tbApontamento->listarApontamentoMelhoria($_SESSION['cadastrar/SolicitacaoMelhoria']['som_codigo']);
 	
-	  	$cabecalho = array('Descriï¿½ï¿½o','Status','Data','Editor');
+	  	$cabecalho = array('Descrição','Status','Data','Editor');
 	  	
 	  	$grid = new DataGrid($cabecalho, $tabela);
 	  	
