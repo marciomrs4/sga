@@ -288,5 +288,28 @@ class TbDepartamento extends Banco
         }
     }
 
+    #Permite listar todos os departamentos cadastrados, usado na tela de solicitar acesso
+    public function getAllDepartamentos()
+    {
+        $query = ("SELECT dep_codigo, dep_descricao
+					FROM tb_departamento
+                    WHERE dep_codigo != 1
+                    ORDER BY dep_descricao
+				  ");
+
+        try
+        {
+            $stmt = $this->conexao->prepare($query);
+            $stmt->execute();
+            return($stmt);
+
+        } catch (PDOException $e)
+        {
+            throw new PDOException($e->getMessage(), $e->getCode());
+        }
+
+    }
+
+
 }
 ?>

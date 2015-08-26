@@ -108,9 +108,7 @@ $tbsistemas = new TbSistemas();
       <td nowrap="nowrap">
 	      <input type="submit" name="cadastrar" class="button-tela" id="botaoSave" value="Salvar" />
 	      <span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>
-
-
-</form>
+    </form>
 		<hr>
       	
       	<form action="" method="post">

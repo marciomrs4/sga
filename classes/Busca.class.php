@@ -817,6 +817,19 @@ class Busca extends Dados
 		return($dados);
 	
 	}
-	
+
+    public function getRelatorioTarefa()
+    {
+        $this->dados['data_inicial'] = $this->dados['data_inicial'] .' 00:00:01';
+        $this->dados['data_final'] = $this->dados['data_final'] . ' 23:59:59';
+        $this->dados['usu_codigo'] = ($this->dados['usu_codigo'] == '') ? '%' : $this->dados['usu_codigo'];
+        $this->dados['dep_codigo'] = $_SESSION['dep_codigo'];
+
+        $tbTarefa = new TbTarefas();
+
+        return $tbTarefa->listTaskByGroup($this->dados);
+
+    }
+
 }
 ?>

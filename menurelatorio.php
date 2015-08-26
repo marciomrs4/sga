@@ -14,6 +14,7 @@
 			<li><a href="RelatorioPorPeriodoTempo.php">Chamados por Tempo</a></li>			
 			<li><a href="RelatorioSolucao.php" target="_blank">Tempo de Solução</a></li>
             <li><a href="RelatorioSolucaoTempoEnvioTerceiro.php" target="_blank">Tempo de Solução com Terceiro</a></li>
+            <li><a href="RelatorioDeTarefa.php" target="_blank">Relatório de Tarefas</a></li>
 	<hr>		
 		<span><b>Painéis</b></span>
 			<li><a href="PainelChamados.php">Painel de Chamados</a></li>

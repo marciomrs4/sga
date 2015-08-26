@@ -87,5 +87,34 @@ class TbTarefas extends Banco
         }
     }
 
+    public function listTaskByGroup($dados)
+    {
+        $query = ("SELECT tar_descricao, date_format(tar_data,'%d/%m/%Y %H:%i:%s') AS tar_data,
+                        (SELECT usu_nome FROM tb_usuario WHERE TAR.usu_codigo = usu_codigo) AS 'Usuário'
+                    FROM tb_tarefas AS TAR
+                    WHERE tar_data BETWEEN ? AND ?
+                    AND dep_codigo = ?
+                    AND usu_codigo like ?
+                    ORDER BY tar_data");
+
+        try
+        {
+
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->execute(array(
+                "{$dados['data_inicial']}",
+                "{$dados['data_final']}",
+                "{$dados['dep_codigo']}",
+                "%{$dados['usu_codigo']}%"
+            ));
+
+            return $stmt;
+
+        }catch(\PDOException $e){
+            throw new \PDOException($e->getMessage(), $e->getCode());
+        }
+    }
+
 }
 ?>

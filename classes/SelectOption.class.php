@@ -24,6 +24,8 @@ class SelectOption
      */
     private $selectName;
 
+    private $class;
+
     /**
      * @var bool
      */
@@ -45,14 +47,20 @@ class SelectOption
     private $valor;
 
     /**
-    * @param $frase, $valor
-    * @throws not
-    * @name setOptionEmpty
-    * @return SelectOption
-    * @author Márcio Ramos
-    * @version 1.0.0
-    * @since 2015-06
-    */
+     * require
+     */
+    private $require;
+
+
+    /**
+     * @param $frase, $valor
+     * @throws not
+     * @name setOptionEmpty
+     * @return SelectOption
+     * @author Márcio Ramos
+     * @version 1.0.0
+     * @since 2015-06
+     */
     public function setOptionEmpty($frase, $valor = null)
     {
         $this->isNewOption = true;
@@ -73,6 +81,21 @@ class SelectOption
     public function setSelectName($selectName)
     {
         $this->selectName = $selectName;
+        return $this;
+    }
+
+    /**
+     * @param $class
+     * @throws not
+     * @name setClass
+     * @return SelectOption
+     * @author Márcio Ramos
+     * @version 1.1.0
+     * @since 2015-06
+     */
+    public function setClass($class)
+    {
+        $this->class = $class;
         return $this;
     }
 
@@ -133,16 +156,16 @@ class SelectOption
      */
     public function listOption()
     {
-        echo '<select name="' . $this->selectName . '">';
+        echo '<select name="' . $this->selectName . '" class="'. $this->class .'" '.$this->require.'>';
 
         $this->optionEmpty();
 
         foreach ($this->stmt as $linha):
 
             echo '<option value="', $linha['0'], '"' .
-                    $this->selectedItem($linha['0']) . '>',
-                    $linha['1'],
-                 '</option>';
+                $this->selectedItem($linha['0']) . '>',
+            $linha['1'],
+            '</option>';
         endforeach;
         echo('</select>');
     }
@@ -163,4 +186,13 @@ class SelectOption
             '</option>';
         }
     }
+
+    public function isRequire($true=false)
+    {
+        if($true){
+            $this->require = 'required';
+        }
+        return $this;
+    }
+
 }
