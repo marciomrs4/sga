@@ -12,7 +12,7 @@
         <div class="col-sm-12">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title" title="Clique para realizar a impressão" onclick="doPrinter()" style="cursor: pointer">
+                <h3 class="panel-title" title="Clique para realizar a impressão" id="doPrinter" style="cursor: pointer">
                     <span class="glyphicon glyphicon-print"></span>
                     Solicitação de Acesso: <?php echo '#',$chamado,' - ', $dados->data_cadastrado; ?></h3>
             </div>

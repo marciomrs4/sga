@@ -64,8 +64,13 @@ $(document).on('click','#incluir',function(event){
         alert('Amigão, não tem biscoito!!!');
     }else {
 
-        $.get('forms/solicitacaoacessoservicos.php', function (data) {
-            $('#insercao').append(data);
+       var servico =  $('select[name="servico"]').val();
+       var perfil = $('select[name="perfil"]').val();
+
+        $.post('forms/solicitacaoacessoservicos.php',
+                {post_servico: servico, post_perfil: perfil},
+            function (data) {
+                $('#insercao').append(data);
         });
 
         x++;
@@ -80,11 +85,14 @@ $(document).on('click','.remover',function(event){
 });
 
 
-$(document).on('change','select[name="service[]"]',function(){
+
+$(document).on('change','select[name="servico"]',function(){
+
     var valor = $(this).val();
 
-    //alert(valor);
-
-    $('select[name="perfil[]"]').html(valor);
+  $.post('forms/solicitacaoacessoperfil.php',
+        {post_service: valor}, function (data) {
+        $('select[name="perfil"]').html(data);
+    });
 
 });

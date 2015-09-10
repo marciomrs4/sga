@@ -5,33 +5,30 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 <div class="row">
     <hr>
     <div class="col-xs-5">
-
         <?php
-        $tbTipoSolicitacao = new TbTipoSolicitacaoAcesso();
-
-        $select = new SelectOption();
-
-        $select->setStmt($tbTipoSolicitacao->select()->fetchAll(\PDO::FETCH_NUM))
-            ->setSelectName('service[]')
-            ->setOptionEmpty('Selecione')
-            ->setClass('form-control')
-            ->isRequire(true)
-            ->listOption();
-
+        $tbServico = new TbServico();
         ?>
+
+        <select class="form-control" name="servico[]" readonly>
+            <option value="<?php echo $tbServico->getDescricaoServico($_POST['post_servico']) ?>">
+                <?php echo $tbServico->getDescricaoServico($_POST['post_servico']) ?>
+            </option>
+        </select>
 
     </div>
 
     <div class="col-xs-5">
-
-        <select class="form-control"  name="perfil[]">
-            <option disabled selected>SELECIONE PERFIL...</option>
-            <option value="alterar" >Alteração</option>
-            <option value="bloquear">Bloqueio</option>
-            <option value="desbloquear">Desbloqueio</option>
-            <option value="incluir">Inclusão</option>
+        <?php
+        $tbPerfil = new TbPerfil();
+        ?>
+        <select class="form-control" name="perfil[]" readonly>
+            <option value="<?php echo $tbPerfil->getDescricaoPerfil($_POST['post_perfil']);?>">
+                <?php echo $tbPerfil->getDescricaoPerfil($_POST['post_perfil']);?>
+            </option>
         </select>
     </div>
+
+
     <div class="col-xs-2">
         <button class="btn btn-sm btn-danger remover" >Remover</button>
     </div>

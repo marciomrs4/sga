@@ -18,7 +18,7 @@ Texto::criarTitulo("Chamado");
 echo "</div>";
 
 ?>
-<form action="" method="post">
+    <form action="" method="post">
 <fieldset>
 	<legend>Pesquisar Chamado</legend>
 <table border="0">

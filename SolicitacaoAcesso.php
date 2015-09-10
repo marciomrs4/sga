@@ -17,7 +17,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
                 <h3 class="panel-title" align="center">Solicitação de Acesso</h3>
             </div>
             <div class="panel-body">
-                <form role="form-inline" id="formsolicitacaoacesso" method="post" action="SolicitacaoAcessoCreate.php" enctype="multipart/form-data">
+                <form role="form-inline" id="formsolicitacaoacesso" method="post" action="action/solicitacaodeacesso.php" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-xs-6">
                             <label class="control-label" for="nome_solicitante">Nome do Solicitante:</label>
@@ -114,37 +114,47 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
                     <div class="row">
                         <div class="col-xs-5">
+                            <label class="control-label">Servico:</label>
 
-                            <select class="form-control"  name="servico[]">
-                                <option disabled selected>SELECIONE SERVIÇO...</option>
-                                <option value="alterar" >Alteração</option>
-                                <option value="bloquear">Bloqueio</option>
-                                <option value="desbloquear">Desbloqueio</option>
-                                <option value="incluir">Inclusão</option>
-                            </select>
+                            <?php
+                            $tbServico = new TbServico();
+
+                            $selectServico = new SelectOption();
+
+                            $selectServico->setStmt($tbServico->select()->fetchAll(\PDO::FETCH_NUM))
+                                ->setSelectName('servico')
+                                ->setOptionEmpty('Selecione')
+                                ->setClass('form-control')
+                                ->isRequire(true)
+                                ->listOption();
+
+                            ?>
                         </div>
 
                         <div class="col-xs-5">
+                            <label class="control-label">Perfil:</label>
+                            <select class="form-control"  name="perfil">
 
-                            <select class="form-control"  name="perfil[]">
-                                <option disabled selected>SELECIONE PERFIL...</option>
-                                <option value="alterar" >Alteração</option>
-                                <option value="bloquear">Bloqueio</option>
-                                <option value="desbloquear">Desbloqueio</option>
-                                <option value="incluir">Inclusão</option>
                             </select>
                         </div>
 
                         <div class="col-xs-2">
-                          <button type="button" class="btn btn-default" id="incluir" >Incluir</button>
+                          <button type="button" class="btn btn-default" id="incluir" >Adicionar</button>
                         </div>
                     </div>
-
-                    <div id="insercao">
-
-                    </div>
-
                     <hr>
+
+                    <div class="panel panel-default">
+                        <div class="panel panel-heading">
+                            <h3 class="panel-title">Lista de Acessos</h3>
+                        </div>
+                        <div class="panel panel-body">
+                            <div id="insercao">
+
+                            </div>
+                        </div>
+                        <div class="panel-footer"></div>
+                    </div>
 
                     <div class="row">
                         <div class="col-xs-12">

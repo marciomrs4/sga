@@ -2,6 +2,8 @@
 #Seto o time zone como s?o paulo
 date_default_timezone_set('America/Sao_Paulo');
 
+include_once 'model\TbAniversariante.class.php';
+
 #Crio um objeto de conex?o PDO
 $conexao = new PDO('mysql:host=localhost;dbname=sga','root','q1w2e3mrs',array(PDO::ATTR_PERSISTENT => true));
 $conexao->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);

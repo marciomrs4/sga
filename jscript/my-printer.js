@@ -6,3 +6,9 @@ function doPrinter(){
     tela_impressao.window.print();
     tela_impressao.window.close();
 }
+
+$print = jQuery.noConflict();
+
+$print(document).on('click','#doPrinter',function(){
+    doPrinter();
+});
