@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2526c6c5-3cfb-4a59-b223-ceacd7d0168e" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/SolicitacaoAcessoCreate.php" afterPath="$PROJECT_DIR$/SolicitacaoAcessoCreated.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Operacao.php" afterPath="$PROJECT_DIR$/Operacao.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Email.class.php" afterPath="$PROJECT_DIR$/classes/Email.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ScriptAniversariantes.php" afterPath="$PROJECT_DIR$/ScriptAniversariantes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SolicitacaoAcesso.php" afterPath="$PROJECT_DIR$/SolicitacaoAcesso.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/formsolicitacao.php" afterPath="$PROJECT_DIR$/forms/formsolicitacao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/my-add-field.js" afterPath="$PROJECT_DIR$/jscript/my-add-field.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/my-printer.js" afterPath="$PROJECT_DIR$/jscript/my-printer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/solicitacaoacessoservicos.php" afterPath="$PROJECT_DIR$/forms/solicitacaoacessoservicos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbAniversariante.class.php" afterPath="$PROJECT_DIR$/model/TbAniversariante.class.php" />
     </list>
     <ignored path="sga.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,28 +38,42 @@
       <file leaf-file-name="ScriptAniversariantes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ScriptAniversariantes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.123967" vertical-offset="1614" max-vertical-offset="2340">
-              <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.9504132" vertical-offset="1362" max-vertical-offset="2682">
+              <caret line="114" column="65" selection-start-line="114" selection-start-column="65" selection-end-line="114" selection-end-column="86" />
               <folding>
-                <marker date="1441921571602" expanded="true" signature="488:611" placeholder="SELECT ani_n..tb_aniversariante..." />
-                <marker date="1441921571602" expanded="true" signature="1089:1103" placeholder="..." />
-                <marker date="1441921571602" expanded="true" signature="1141:1253" placeholder="..." />
-                <marker date="1441921571602" expanded="false" signature="1163:1174" placeholder="..." />
-                <marker date="1441921571602" expanded="true" signature="1307:1504" placeholder="..." />
-                <marker date="1441921571602" expanded="true" signature="1320:1504" placeholder="..." />
-                <marker date="1441921571602" expanded="false" signature="1354:1368" placeholder="..." />
-                <marker date="1441921571602" expanded="true" signature="1394:1429" placeholder="..." />
-                <marker date="1441921571602" expanded="false" signature="1463:1477" placeholder="..." />
-                <marker date="1441921571602" expanded="true" signature="1569:1600" placeholder="..." />
-                <marker date="1441921571602" expanded="true" signature="1601:1760" placeholder="..." />
-                <marker date="1441921571602" expanded="true" signature="1657:1701" placeholder="..." />
-                <marker date="1441921571602" expanded="true" signature="1801:1857" placeholder="..." />
-                <marker date="1441921571602" expanded="true" signature="1823:1846" placeholder="..." />
-                <marker date="1441921571602" expanded="true" signature="1892:2024" placeholder="..." />
-                <marker date="1441921571602" expanded="false" signature="1914:1928" placeholder="..." />
-                <marker date="1441921571602" expanded="true" signature="2046:2211" placeholder="..." />
-                <marker date="1441921571602" expanded="false" signature="2068:2079" placeholder="..." />
-                <marker date="1441921571602" expanded="true" signature="2080:2181" placeholder="..." />
+                <marker date="1442000395970" expanded="true" signature="1356:1370" placeholder="..." />
+                <marker date="1442000395970" expanded="true" signature="1408:1520" placeholder="..." />
+                <marker date="1442000395970" expanded="false" signature="1430:1441" placeholder="..." />
+                <marker date="1442000395970" expanded="true" signature="1574:1771" placeholder="..." />
+                <marker date="1442000395970" expanded="true" signature="1587:1771" placeholder="..." />
+                <marker date="1442000395970" expanded="false" signature="1621:1635" placeholder="..." />
+                <marker date="1442000395970" expanded="true" signature="1661:1696" placeholder="..." />
+                <marker date="1442000395970" expanded="false" signature="1730:1744" placeholder="..." />
+                <marker date="1442000395970" expanded="true" signature="1836:1867" placeholder="..." />
+                <marker date="1442000395970" expanded="true" signature="1868:2027" placeholder="..." />
+                <marker date="1442000395970" expanded="true" signature="1924:1968" placeholder="..." />
+                <marker date="1442000395970" expanded="true" signature="2068:2124" placeholder="..." />
+                <marker date="1442000395970" expanded="true" signature="2090:2113" placeholder="..." />
+                <marker date="1442000395970" expanded="true" signature="2159:2291" placeholder="..." />
+                <marker date="1442000395970" expanded="false" signature="2181:2195" placeholder="..." />
+                <marker date="1442000395970" expanded="true" signature="2313:2478" placeholder="..." />
+                <marker date="1442000395970" expanded="false" signature="2335:2346" placeholder="..." />
+                <marker date="1442000395970" expanded="true" signature="2347:2448" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Email.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/Email.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1386">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#enviarEmail#0;n#Email#0;n#!!top" expanded="false" />
+                <element signature="n#aberturaChamado#0;n#Email#0;n#!!top" expanded="false" />
+                <element signature="n#interacaoAssentamento#0;n#Email#0;n#!!top" expanded="false" />
+                <element signature="n#apontamentoMelhoria#0;n#Email#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -75,8 +82,8 @@
       <file leaf-file-name="TbAniversariante.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/TbAniversariante.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.555555" vertical-offset="138" max-vertical-offset="864">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+            <state vertical-scroll-proportion="-10.962963" vertical-offset="586" max-vertical-offset="1350">
+              <caret line="268" column="42" selection-start-line="268" selection-start-column="42" selection-end-line="268" selection-end-column="42" />
               <folding>
                 <element signature="n#insert#0;n#TbAniversariante#0;n#!!top" expanded="false" />
                 <element signature="n#update#0;n#TbAniversariante#0;n#!!top" expanded="false" />
@@ -86,13 +93,14 @@
                 <element signature="n#delete#0;n#TbAniversariante#0;n#!!top" expanded="false" />
                 <element signature="n#listAniversarianteDia#0;n#TbAniversariante#0;n#!!top" expanded="false" />
                 <element signature="n#listarAniversarianteMes#0;n#TbAniversariante#0;n#!!top" expanded="false" />
-                <marker date="1436888995439" expanded="true" signature="462:676" placeholder="INSERT INTO ..." />
-                <marker date="1436888995439" expanded="true" signature="2768:2986" placeholder="SELECT ani_c..tb_aniversariante..." />
-                <marker date="1436888995439" expanded="true" signature="3490:3641" placeholder="SELECT ani_c..tb_aniversariante..." />
-                <marker date="1436888995439" expanded="true" signature="4036:4216" placeholder="SELECT ani_c..tb_aniversariante..." />
-                <marker date="1436888995439" expanded="true" signature="4546:4604" placeholder="DELETE FROM ..." />
-                <marker date="1436888995439" expanded="true" signature="5052:5179" placeholder="SELECT ani_n..tb_aniversariante..." />
-                <marker date="1436888995439" expanded="true" signature="5839:5953" placeholder="SELECT ani_d..tb_aniversariante..." />
+                <marker date="1441973160466" expanded="true" signature="462:676" placeholder="INSERT INTO ..." />
+                <marker date="1441973160466" expanded="true" signature="2768:2986" placeholder="SELECT ani_c..tb_aniversariante..." />
+                <marker date="1441973160466" expanded="true" signature="3490:3641" placeholder="SELECT ani_c..tb_aniversariante..." />
+                <marker date="1441973160466" expanded="true" signature="4036:4216" placeholder="SELECT ani_c..tb_aniversariante..." />
+                <marker date="1441973160466" expanded="true" signature="4546:4604" placeholder="DELETE FROM ..." />
+                <marker date="1441973160466" expanded="true" signature="5052:5179" placeholder="SELECT ani_n..tb_aniversariante..." />
+                <marker date="1441973160466" expanded="true" signature="5839:5953" placeholder="SELECT ani_d..tb_aniversariante..." />
+                <marker date="1441973160466" expanded="true" signature="6462:6645" placeholder="SELECT ani_n..tb_aniversariante..." />
               </folding>
             </state>
           </provider>
@@ -106,7 +114,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/model/TbSolicitacao.class.php" />
         <option value="$PROJECT_DIR$/listartarefa.php" />
         <option value="$PROJECT_DIR$/model/TbExecutarTarefas.class.php" />
         <option value="$PROJECT_DIR$/model/TbAtividade.class.php" />
@@ -128,7 +135,6 @@
         <option value="$PROJECT_DIR$/classes/Cadastro.class.php" />
         <option value="$PROJECT_DIR$/forms/cadastrar/SolicitacaoMelhoria.php" />
         <option value="$PROJECT_DIR$/action/apontamentoMelhoria.php" />
-        <option value="$PROJECT_DIR$/classes/Email.class.php" />
         <option value="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" />
         <option value="$PROJECT_DIR$/formsolicitacao.php" />
         <option value="$PROJECT_DIR$/forms/alterar/SolicitacaoMelhoria.php" />
@@ -156,6 +162,8 @@
         <option value="$PROJECT_DIR$/model/TbSolicitacaoAcesso.class.php" />
         <option value="$PROJECT_DIR$/SolicitacaoAcessoCreated.php" />
         <option value="$PROJECT_DIR$/action/solicitacaodeacesso.php" />
+        <option value="$PROJECT_DIR$/classes/Email.class.php" />
+        <option value="$PROJECT_DIR$/model/TbAniversariante.class.php" />
         <option value="$PROJECT_DIR$/ScriptAniversariantes.php" />
       </list>
     </option>
@@ -297,7 +305,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1439" y="0" width="1442" height="876" extended-state="6" />
+    <frame x="1439" y="0" width="1442" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -361,19 +369,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/componentes/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09917355" vertical-offset="0" max-vertical-offset="726">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/componentes/footerPainel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25245443" vertical-offset="378" max-vertical-offset="1458">
@@ -722,14 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Email.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37052342" vertical-offset="577" max-vertical-offset="4266">
-          <caret line="47" column="20" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/TbCalculoAtendimento.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="10" max-vertical-offset="5076">
@@ -910,10 +902,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/classes/PHPMailer.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34502104" vertical-offset="42" max-vertical-offset="41382">
+          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/model/TbAniversariante.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.555555" vertical-offset="138" max-vertical-offset="864">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.962963" vertical-offset="586" max-vertical-offset="1350">
+          <caret line="268" column="42" selection-start-line="268" selection-start-column="42" selection-end-line="268" selection-end-column="42" />
           <folding>
             <element signature="n#insert#0;n#TbAniversariante#0;n#!!top" expanded="false" />
             <element signature="n#update#0;n#TbAniversariante#0;n#!!top" expanded="false" />
@@ -923,41 +923,54 @@
             <element signature="n#delete#0;n#TbAniversariante#0;n#!!top" expanded="false" />
             <element signature="n#listAniversarianteDia#0;n#TbAniversariante#0;n#!!top" expanded="false" />
             <element signature="n#listarAniversarianteMes#0;n#TbAniversariante#0;n#!!top" expanded="false" />
-            <marker date="1436888995439" expanded="true" signature="462:676" placeholder="INSERT INTO ..." />
-            <marker date="1436888995439" expanded="true" signature="2768:2986" placeholder="SELECT ani_c..tb_aniversariante..." />
-            <marker date="1436888995439" expanded="true" signature="3490:3641" placeholder="SELECT ani_c..tb_aniversariante..." />
-            <marker date="1436888995439" expanded="true" signature="4036:4216" placeholder="SELECT ani_c..tb_aniversariante..." />
-            <marker date="1436888995439" expanded="true" signature="4546:4604" placeholder="DELETE FROM ..." />
-            <marker date="1436888995439" expanded="true" signature="5052:5179" placeholder="SELECT ani_n..tb_aniversariante..." />
-            <marker date="1436888995439" expanded="true" signature="5839:5953" placeholder="SELECT ani_d..tb_aniversariante..." />
+            <marker date="1441973160466" expanded="true" signature="462:676" placeholder="INSERT INTO ..." />
+            <marker date="1441973160466" expanded="true" signature="2768:2986" placeholder="SELECT ani_c..tb_aniversariante..." />
+            <marker date="1441973160466" expanded="true" signature="3490:3641" placeholder="SELECT ani_c..tb_aniversariante..." />
+            <marker date="1441973160466" expanded="true" signature="4036:4216" placeholder="SELECT ani_c..tb_aniversariante..." />
+            <marker date="1441973160466" expanded="true" signature="4546:4604" placeholder="DELETE FROM ..." />
+            <marker date="1441973160466" expanded="true" signature="5052:5179" placeholder="SELECT ani_n..tb_aniversariante..." />
+            <marker date="1441973160466" expanded="true" signature="5839:5953" placeholder="SELECT ani_d..tb_aniversariante..." />
+            <marker date="1441973160466" expanded="true" signature="6462:6645" placeholder="SELECT ani_n..tb_aniversariante..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Email.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1386">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#enviarEmail#0;n#Email#0;n#!!top" expanded="false" />
+            <element signature="n#aberturaChamado#0;n#Email#0;n#!!top" expanded="false" />
+            <element signature="n#interacaoAssentamento#0;n#Email#0;n#!!top" expanded="false" />
+            <element signature="n#apontamentoMelhoria#0;n#Email#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ScriptAniversariantes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.123967" vertical-offset="1614" max-vertical-offset="2340">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.9504132" vertical-offset="1362" max-vertical-offset="2682">
+          <caret line="114" column="65" selection-start-line="114" selection-start-column="65" selection-end-line="114" selection-end-column="86" />
           <folding>
-            <marker date="1441921571602" expanded="true" signature="488:611" placeholder="SELECT ani_n..tb_aniversariante..." />
-            <marker date="1441921571602" expanded="true" signature="1089:1103" placeholder="..." />
-            <marker date="1441921571602" expanded="true" signature="1141:1253" placeholder="..." />
-            <marker date="1441921571602" expanded="false" signature="1163:1174" placeholder="..." />
-            <marker date="1441921571602" expanded="true" signature="1307:1504" placeholder="..." />
-            <marker date="1441921571602" expanded="true" signature="1320:1504" placeholder="..." />
-            <marker date="1441921571602" expanded="false" signature="1354:1368" placeholder="..." />
-            <marker date="1441921571602" expanded="true" signature="1394:1429" placeholder="..." />
-            <marker date="1441921571602" expanded="false" signature="1463:1477" placeholder="..." />
-            <marker date="1441921571602" expanded="true" signature="1569:1600" placeholder="..." />
-            <marker date="1441921571602" expanded="true" signature="1601:1760" placeholder="..." />
-            <marker date="1441921571602" expanded="true" signature="1657:1701" placeholder="..." />
-            <marker date="1441921571602" expanded="true" signature="1801:1857" placeholder="..." />
-            <marker date="1441921571602" expanded="true" signature="1823:1846" placeholder="..." />
-            <marker date="1441921571602" expanded="true" signature="1892:2024" placeholder="..." />
-            <marker date="1441921571602" expanded="false" signature="1914:1928" placeholder="..." />
-            <marker date="1441921571602" expanded="true" signature="2046:2211" placeholder="..." />
-            <marker date="1441921571602" expanded="false" signature="2068:2079" placeholder="..." />
-            <marker date="1441921571602" expanded="true" signature="2080:2181" placeholder="..." />
+            <marker date="1442000395970" expanded="true" signature="1356:1370" placeholder="..." />
+            <marker date="1442000395970" expanded="true" signature="1408:1520" placeholder="..." />
+            <marker date="1442000395970" expanded="false" signature="1430:1441" placeholder="..." />
+            <marker date="1442000395970" expanded="true" signature="1574:1771" placeholder="..." />
+            <marker date="1442000395970" expanded="true" signature="1587:1771" placeholder="..." />
+            <marker date="1442000395970" expanded="false" signature="1621:1635" placeholder="..." />
+            <marker date="1442000395970" expanded="true" signature="1661:1696" placeholder="..." />
+            <marker date="1442000395970" expanded="false" signature="1730:1744" placeholder="..." />
+            <marker date="1442000395970" expanded="true" signature="1836:1867" placeholder="..." />
+            <marker date="1442000395970" expanded="true" signature="1868:2027" placeholder="..." />
+            <marker date="1442000395970" expanded="true" signature="1924:1968" placeholder="..." />
+            <marker date="1442000395970" expanded="true" signature="2068:2124" placeholder="..." />
+            <marker date="1442000395970" expanded="true" signature="2090:2113" placeholder="..." />
+            <marker date="1442000395970" expanded="true" signature="2159:2291" placeholder="..." />
+            <marker date="1442000395970" expanded="false" signature="2181:2195" placeholder="..." />
+            <marker date="1442000395970" expanded="true" signature="2313:2478" placeholder="..." />
+            <marker date="1442000395970" expanded="false" signature="2335:2346" placeholder="..." />
+            <marker date="1442000395970" expanded="true" signature="2347:2448" placeholder="..." />
           </folding>
         </state>
       </provider>

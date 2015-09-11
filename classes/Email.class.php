@@ -38,11 +38,13 @@ class Email extends PHPMailer
 	public function setMensagem($mensagem)
 	{
 		$this->mensagem = $mensagem;
+        return $this;
 	}
 
 	public function setCabecalho($cabecalho)
 	{
 		$this->cabecalho = $cabecalho;
+        return $this;
 	}
 
 	public function aberturaChamado($dados)

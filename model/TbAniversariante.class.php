@@ -257,6 +257,33 @@ class TbAniversariante extends Banco
         }
     }
 
+    public function createListEmailToDay($unidade=1)
+    {
+        $query = ("SELECT ani_nome, ani_setor
+                    FROM tb_aniversariante
+                    WHERE ani_mes = ?
+                    AND ani_dia = ?
+                    AND ani_unidade = ?");
+        /*
+                    #Unidade CEADIS = 1 | UDTP = 2
+                    AND ani_unidade = 1");
+    */
+        	$mes = 9;//date('m');
+        	$dia = 5;//date('d');
+
+        $stmt = $this->conexao->prepare($query);
+
+        $stmt->bindParam(1,$mes,\PDO::PARAM_INT);
+        $stmt->bindParam(2,$dia,\PDO::PARAM_INT);
+        $stmt->bindParam(3,$unidade,\PDO::PARAM_INT);
+
+        $stmt->execute();
+        #Retorno o resultado da busca
+        $dados = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $dados;
+    }
+
 }
 
 ?>
