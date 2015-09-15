@@ -364,7 +364,7 @@ class TbUsuario extends Banco
 				INNER JOIN tb_acesso a
 				ON u.usu_codigo = a.usu_codigo
 				INNER JOIN tb_atividade AS ATS
-				ON ATS.usu_codigo_responsavel = U.usu_codigo
+				ON ATS.usu_codigo_responsavel = u.usu_codigo
 				WHERE u.dep_codigo = ?
 				AND ATS.sta_codigo = ?
 				AND a.ace_ativo = 'S'
@@ -376,13 +376,13 @@ class TbUsuario extends Banco
 			$stmt = $this->conexao->prepare($query);
 	
 			$stmt->execute(array("{$dados['dep_codigo']}",
-			"{$dados['sta_codigo']}"));
+			                     "{$dados['sta_codigo']}"));
 				
 			return($stmt);
 				
 		} catch (PDOException $e)
 		{
-		throw new PDOException($e->getMessage(),$e->getCode());
+		    throw new PDOException($e->getMessage(),$e->getCode());
 		}
 	}
 	
