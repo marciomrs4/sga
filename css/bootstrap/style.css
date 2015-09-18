@@ -5,3 +5,7 @@
 .list-group-item{
     cursor: pointer;
 }
+
+.hr-style{
+    margin: 0 0 10px 0px;
+}

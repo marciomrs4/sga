@@ -38,7 +38,10 @@ class TbSolicitacaoAcesso extends Banco
 
     public function select($sac_codigo)
     {
-        $query =  ("SELECT * FROM tb_solicitacao_acesso
+        $query =  ("SELECT sac_codigo, usu_codigo_solicitante, sol_codigo,
+		              date_format(sac_datacadastro,'%d-%m-%Y') AS sac_datacadastro,
+		              sac_formulario
+		              FROM tb_solicitacao_acesso
                     WHERE sac_codigo = ?");
 
         try{
@@ -57,5 +60,41 @@ class TbSolicitacaoAcesso extends Banco
 
 
     }
+
+    public function listControlAcess($dados)
+    {
+        $query =  ("SELECT SAC.sac_codigo, SOL.sol_codigo,
+                        (SELECT sta_descricao FROM tb_status WHERE sta_codigo = SOL.sta_codigo) AS sta_descricao,
+                        date_format(SAC.sac_datacadastro,'%d-%m-%Y %H:%i:%s') AS sac_datacadastro,
+                        (SELECT usu_email FROM tb_usuario WHERE usu_codigo = ATE.usu_codigo_atendente) AS usu_email
+                    FROM tb_solicitacao AS SOL
+                    INNER JOIN tb_solicitacao_acesso AS SAC
+                    ON SOL.sol_codigo = SAC.sol_codigo
+                    LEFT JOIN tb_atendente_solicitacao AS ATE
+                    ON SOL.sol_codigo = ATE.sol_codigo
+                    WHERE SOL.sta_codigo LIKE ?
+                    AND (SELECT dep_codigo FROM tb_usuario WHERE usu_codigo = SOL.usu_codigo_solicitante) = ?
+                    AND SOL.sol_codigo LIKE ?
+                    ORDER BY 1 DESC
+                    ");
+
+        try{
+
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->execute(array("{$dados['sta_codigo']}",
+                                 "{$dados['dep_codigo']}",
+                                 "%{$dados['sol_codigo']}%")
+                           );
+
+            return $stmt;
+
+        }catch (\PDOException $e){
+            throw new \PDOException($e);
+        }
+
+
+    }
+
 }
 ?>

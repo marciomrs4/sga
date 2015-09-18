@@ -1,15 +1,26 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
-$id = filter_input(INPUT_GET,'id',FILTER_SANITIZE_NUMBER_INT);
+$get = new Busca();
+
+$get->setValueGet($_GET,'id');
+
+$id = $get->getValueGet('id');
+
+$id = filter_var($id,FILTER_SANITIZE_NUMBER_INT);
 
 
 $tbSolicitacaoAcesso = new TbSolicitacaoAcesso();
+$tbTipoSolicitacaAcesso = new TbTipoSolicitacaoAcesso();
+$tbDepartamento = new TbDepartamento();
+
 
 $dados = $tbSolicitacaoAcesso->select($id)->fetch(\PDO::FETCH_OBJ);
 
-$formulario = json_decode($dados->formulario);
+$formulario = unserialize($dados->sac_formulario);
 
+/*echo '<pre>';
 print_r($formulario);
+echo '</pre>';*/
 
-//include_once 'forms/formsolicitacao.php';
+include_once 'forms/formsolicitacao.php';

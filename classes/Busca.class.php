@@ -831,5 +831,17 @@ class Busca extends Dados
 
     }
 
+    public function listarRelatoriSolicitacaoAcesso()
+    {
+        $this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == '') ? '%' : $this->dados['sta_codigo'];
+        $this->dados['sol_codigo'] = ($this->dados['sol_codigo'] == '') ? '%' : $this->dados['sol_codigo'];
+        $this->dados['dep_codigo'] = $_SESSION['dep_codigo'];
+
+        $tbSolicitacaoAcesso = new TbSolicitacaoAcesso();
+
+        return $tbSolicitacaoAcesso->listControlAcess($this->dados);
+
+    }
+
 }
 ?>

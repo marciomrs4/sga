@@ -1,7 +1,7 @@
   </div>
 <!--FIM Corpo principal do site -->    
 
-<!--INICIO menu secundário da direita -->
+<!--INICIO menu secund?rio da direita -->
     <div id="nav_main">
     <div class="titulo_menu_direita">Menu</div>    
         <ul>
@@ -34,11 +34,14 @@
 
 		$botaocklist = ("<li><a href='Aniversariante.php'><img src='./css/images/niver.png'> Aniversário</a></li>");
 		$controleacesso->permitirBotao($botaocklist, array(ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
-		
+
+        $SolicitacaoAcesso = ("<li><a href='SolicitacaoAcessoListar.php'><img src='./css/images/acessorestrito.jpg'> Solicitação de Acesso</a></li>");
+        $controleacesso->permitirBotao($SolicitacaoAcesso, array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
+
 		?>
 		</ul>
     </div>
-<!--FIM menu secundário da direita -->    
+<!--FIM menu secund?rio da direita -->    
     
 </div>
 <!-- FIM Do quadro da pagina INTEIRA -->

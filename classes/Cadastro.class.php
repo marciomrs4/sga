@@ -1166,7 +1166,51 @@ class Cadastro extends Dados
 	
 	}
 	
-	
+
+    public function cadastrarSolicitacaoAcesso()
+    {
+        $dados['pro_codigo'] = 513; //Codigo do problema usado na abertuda de chamado (Manutencao de usuarios
+        $dados['dep_codigo'] = $_SESSION['dep_codigo']; //Departamento solicitante
+        $dados['sol_descricao_solicitacao'] = 'Solicitação de Acesso '.$this->dados['observacao']; //Descricao da solicitacao
+        $dados['usu_codigo_solicitante'] = $_SESSION['usu_codigo']; //Codigo do usuarios que esta criando a solicitacao
+        $dados['dep_codigo_solicitado'] = 5; //Departamento que recebera a solicitacao, no caso TI
+        $dados['sta_codigo'] = 1; //Status Inicial do chamado.
+
+        try {
+
+            $this->conexao->beginTransaction();
+
+            $tbSolicitacao = new TbSolicitacao();
+            $dados['sol_codigo'] = $tbSolicitacao->insert($dados);
+
+            #Grava a data de abertura da solicita??o
+            $tbcalculoatendimento = new TbCalculoAtendimento();
+            $tbcalculoatendimento->insertCalculoAtendimento($dados);
+
+            $tbSolicitacaoAcesso = new TbSolicitacaoAcesso();
+
+
+            $dados['sac_formulario'] = serialize($this->dados);
+
+            $sac_codigo = $tbSolicitacaoAcesso->insert($dados);
+
+            $this->conexao->commit();
+
+
+            $email = new Email();
+            $dados['Solicitante'] = true;
+            $dados['Departamento'] = true;
+            $email->aberturaChamado($dados);
+
+            return $sac_codigo;
+
+        }catch (\PDOException $e){
+            $this->conexao->rollBack();
+            throw new \PDOException($e->getMessage(), $e->getCode());
+        }
+
+    }
+
 }
 
 ?>

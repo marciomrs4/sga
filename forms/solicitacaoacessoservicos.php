@@ -9,7 +9,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
         $tbServico = new TbServico();
         ?>
 
-        <select class="form-control" name="servico[]" readonly>
+        <select class="form-control" name="servico[]" readonly required>
             <option value="<?php echo $tbServico->getDescricaoServico($_POST['post_servico']) ?>">
                 <?php echo $tbServico->getDescricaoServico($_POST['post_servico']) ?>
             </option>
@@ -21,7 +21,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
         <?php
         $tbPerfil = new TbPerfil();
         ?>
-        <select class="form-control" name="perfil[]" readonly>
+        <select class="form-control" name="perfil[]" readonly required>
             <option value="<?php echo $tbPerfil->getDescricaoPerfil($_POST['post_perfil']);?>">
                 <?php echo $tbPerfil->getDescricaoPerfil($_POST['post_perfil']);?>
             </option>
@@ -30,6 +30,6 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
 
     <div class="col-xs-2">
-        <button class="btn btn-sm btn-danger remover" >Remover</button>
+        <button class="btn btn-sm btn-danger remover" ><span class="glyphicon glyphicon-remove"></span> Remover</button>
     </div>
 </div>

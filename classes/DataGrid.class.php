@@ -4,7 +4,7 @@ class DataGrid
 {
 
 	/**
-	 * Descrição ...
+	 * Descriï¿½ï¿½o ...
 	 * @var string
 	 * @example Inserir o nome da classe CSS para linha
 	 * csslinha1 = 'cssnome'
@@ -12,7 +12,7 @@ class DataGrid
 	public $csslinha1 = 'linha1';
 
 	/**
-	 * Descrição ...
+	 * Descriï¿½ï¿½o ...
 	 * @var string
 	 * @example Inserir o nome da classe CSS para linha
 	 * csslinha2 = 'cssnome'
@@ -20,15 +20,15 @@ class DataGrid
 	public $csslinha2 = 'linha2';
 
 	/**
-	 * Descrição ...
+	 * Descriï¿½ï¿½o ...
 	 * @var string
-	 * @example Inserir o nome da classe CSS para cabeçalho
+	 * @example Inserir o nome da classe CSS para cabeï¿½alho
 	 * csscabecalho = 'cssnome'
 	 */
 	public $csscabecalho = 'linha3';
 
 	/**
-	 * Descrição ...
+	 * Descriï¿½ï¿½o ...
 	 * @var int
 	 * @example Inserir o valor para borda
 	 * borda = 1
@@ -36,7 +36,7 @@ class DataGrid
 	public $borda = 0;
 
 	/**
-	 * Descrição ...
+	 * Descriï¿½ï¿½o ...
 	 * @var string
 	 * @example Inserir o nome da classe CSS para tabela
 	 * csstabela = 'cssnome'
@@ -44,9 +44,9 @@ class DataGrid
 	public $csstabela = 'tabela';
 
 	/**
-	 * Descrição ...
+	 * Descriï¿½ï¿½o ...
 	 * @var string
-	 * @example Inserir o nome da variavél que vai no link
+	 * @example Inserir o nome da variavï¿½l que vai no link
 	 * getnome = 'pes_codigo'
 	 */
 	public $acao;
@@ -54,9 +54,9 @@ class DataGrid
 	public $acao2;
 
 	/**
-	 * Descrição ...
+	 * Descriï¿½ï¿½o ...
 	 * @var string
-	 * @example Inserir o nome do link que aparecerá para clicar
+	 * @example Inserir o nome do link que aparecerï¿½ para clicar
 	 * nomelink = 'Clique Aqui'
 	 */
 		
@@ -66,11 +66,13 @@ class DataGrid
 	
 	public $excel = false; 
 	public $botaoexcel = '<a href="./GerarExcel.php"><img src="./css/images/excel.png" title="Exportar Excel"></a>';
-	
+
+    public $targetEnable=false;
+
 	/**
-	 * Descrição ...
+	 * Descriï¿½ï¿½o ...
 	 * @var string
-	 * @example Inserir o nome do link que sejá chamado ao clicar
+	 * @example Inserir o nome do link que sejï¿½ chamado ao clicar
 	 * link = 'link.php'
 	 */
 	public $link = '/sga/action/formcontroler.php';
@@ -78,7 +80,7 @@ class DataGrid
 	public $link2 = '/sga/action/formcontroler.php';
 
 	/**
-	 * Descrição ...
+	 * Descriï¿½ï¿½o ...
 	 * @var bolean
 	 * @example Inserir valor boleano para poder aparecer o link
 	 * com javascript
@@ -87,7 +89,7 @@ class DataGrid
 	public $colunaoculta = 0;
 
 	/**
-	 * Descrição ...
+	 * Descriï¿½ï¿½o ...
 	 * @var bolean
 	 * @example Inserir valor boleano para poder aparecer o link
 	 * islink = true
@@ -97,7 +99,7 @@ class DataGrid
 	public $islink2 = false;
 	
 	/**
-	 * Descrição ...
+	 * Descriï¿½ï¿½o ...
 	 * @var array
 	 * @example dados que devem ser mostrados na tabela
 	 * dados = tabeladedados
@@ -105,7 +107,7 @@ class DataGrid
 	public $dados;
 
 	/**
-	 * Descrição ...
+	 * Descriï¿½ï¿½o ...
 	 * @var array
 	 * @example Nomes para o titulo de cada coluna
 	 * cabecalho = titulodascolunas
@@ -116,9 +118,9 @@ class DataGrid
 	public $cabecalho;
 
 	/**
-	 * Descrição ...
+	 * Descriï¿½ï¿½o ...
 	 * @var int
-	 * @example quantidade de colunas que haverá na tabela, obtido automaticamente
+	 * @example quantidade de colunas que haverï¿½ na tabela, obtido automaticamente
 	 * coluna = quantidadecoluna
 	 */
 	private $coluna;
@@ -149,7 +151,7 @@ class DataGrid
 	/**
 	 *
 	 * Enter description here ...
-	 * @example Metodo que cria o cabeçalho baseado no array informado no
+	 * @example Metodo que cria o cabeï¿½alho baseado no array informado no
 	 * construtor
 	 */
 	
@@ -188,7 +190,7 @@ class DataGrid
 			$this->coluna = count($campo) / 2;
 			echo("<tr class ='{$estilo}'>");
 
-			#Colunas de ação para esquerda
+			#Colunas de aï¿½ï¿½o para esquerda
 			self::colunaLink(base64_encode($campo[0]));
 			self::colunaLink2(base64_encode($campo[0]));
 			
@@ -215,7 +217,7 @@ class DataGrid
 		if($this->islink)
 		{
 			echo("<td class='{$this->csstabela}'><a href='{$this->link}?{$this->getAcao()}={$campo}' 
-					  class='{$this->csstabela}'>{$this->nomelink}</a></td>");
+					  class='{$this->csstabela}' {$this->getTarget()}>{$this->nomelink}</a></td>");
 		}
 	}
 	
@@ -223,7 +225,13 @@ class DataGrid
 	{
 		return(base64_encode($this->acao));
 	}
-	
+
+    public function getTarget()
+    {
+        if(true == $this->targetEnable){
+            return "target='_blank'";
+        }
+    }
 	
 	private function colunaLink2($campo)
 	{
@@ -250,7 +258,7 @@ class DataGrid
 	
 	
 	
-	#Para funcionar a exportação do Excel isso deve ser chamado dentro do
+	#Para funcionar a exportaï¿½ï¿½o do Excel isso deve ser chamado dentro do
 	#Formulario de busca
 	public function exportarExcel($NomeExcel,$Metodo,$ColunaOculta = 0)
 	{
@@ -270,7 +278,7 @@ class DataGrid
 /**
 	 *
 	 * Enter description here ...
-	 * @example Metodo que cria o rodapé com a quantidade de linhas retornadas
+	 * @example Metodo que cria o rodapï¿½ com a quantidade de linhas retornadas
 	 * da busca
 	 */
 	private function criaRodape()

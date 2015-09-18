@@ -61,7 +61,7 @@ $(document).on('click','#incluir',function(event){
     event.preventDefault();
 
     if(x >=5){
-        alert('Amig√£o, n√£o tem biscoito!!!');
+        alert('Limite m·ximo por solicitaÁ„o atingido!!!');
     }else {
 
        var servico =  $('select[name="servico"]').val();

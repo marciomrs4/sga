@@ -1,6 +1,15 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
+$tbDepartamento = new TbDepartamento();
+
+$tbUsuario = new TbUsuario();
+$DataUsers = $tbUsuario->getUsuario($_SESSION['usu_codigo']);
+
+/*echo '<pre>';
+print_r($_SESSION);
+echo '</pre>';*/
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,55 +28,58 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
             <div class="panel-body">
                 <form role="form-inline" id="formsolicitacaoacesso" method="post" action="action/solicitacaodeacesso.php" enctype="multipart/form-data">
                     <div class="row">
+
+                        <div class="col-xs-3">
+                            <label class="control-label" for="area">Área Solicitante:</label>
+                            <input type="text" name="cargo_solicitante" value="<?php echo($tbDepartamento->getDepDescricao($_SESSION['dep_codigo'])); ?>"
+                                   class="form-control" id="cargo_solicitante" placeholder="Cargo do solicitante" required>
+                        </div>
+
                         <div class="col-xs-6">
                             <label class="control-label" for="nome_solicitante">Nome do Solicitante:</label>
-                            <input type="text" name="nome_solicitante" class="form-control" id="nome_solicitante" placeholder="Nome do solicitante">
+                            <input type="text" name="nome_solicitante" value="<?php echo($DataUsers['usu_nome'] .' '.$DataUsers['usu_sobrenome'] ); ?>"
+                                   class="form-control" id="nome_solicitante" placeholder="Nome do solicitante" required>
                         </div>
 
                         <div class="col-xs-3">
-                            <label class="control-label" for="email">E-mail do Solicitante:</label>
-                                <input type="text" name="email_solicitante" class="form-control" id="email_solicitante" placeholder="E-mail do solicitante">
+                            <label class="control-label" for="email">Ramal:</label>
+                                <input type="text" name="ramal_solicitante" value="<?php echo($DataUsers['usu_ramal']); ?>"
+                                       class="form-control" id="email_solicitante" placeholder="E-mail do solicitante" required>
                         </div>
 
-                        <div class="col-xs-3">
-                            <label class="control-label" for="area">Área do Solicitante:</label>
-                            <input type="text" name="cargo_solicitante" class="form-control" id="cargo_solicitante" placeholder="Cargo do solicitante" >
-                        </div>
                     </div>
 
                     <hr>
 
                     <div class="row">
-                        <div class="col-xs-3">
-                            <label class="control-label" for="nome_usuario" name="">Nome do Usuário:</label>
+                        <div class="col-xs-6">
+                            <label class="control-label" for="nome_usuario" name="">Nome completo (não abreviar):</label>
                             <input type="text" class="form-control" name="nome_usuario" id="nome_usuario" placeholder="Nome do Usuário (Não abreviar)"
-                                text="Favor não abreviar o nome do Usuário"  >
+                                text="Favor não abreviar o nome do Usuário"  required>
                         </div>
-                        <div class="col-xs-3">
-                            <label class="control-label" for="nome_usuario" name="">Sobre nome:</label>
-                            <input type="text" class="form-control" name="sobre_nome_usuario" id="nome_usuario" placeholder="Nome do Usuário (Não abreviar)"
-                                   text="Favor não abreviar o nome do Usuário"  >
-                        </div>
+
                         <div class="col-xs-3">
                             <label class="control-label" for="cargo_usuario">Cargo:</label>
-                            <input type="text" class="form-control" name="email_usuario" id="email_usuario" placeholder="Cargo do Usuário"  >
+                            <input type="text" class="form-control" name="email_usuario" id="email_usuario" placeholder="Cargo do Usuário"  required>
                         </div>
                         <div class="col-xs-3">
                             <label class="control-label" for="drt_usuario">DRT:</label>
-                            <input type="text" class="form-control drt" name="cargo_usuario" id="cargo_usuario" placeholder="DRT do Usuário">
+                            <input type="number" class="form-control drt" name="cargo_usuario" id="cargo_usuario" placeholder="DRT do Usuário" required>
                             <br>
                         </div>
 
-                        <div class="col-xs-6">
-                            <label class="control-label" for="email_usuario">E-mail do Usuário:</label>
-                            <input type="email" class="form-control" name="email_usuario" id="email_usuario" placeholder="E-mail do Usuário">
-                        </div>
                         <div class="col-xs-3">
                             <label class="control-label" for="unidade_usuario">Unidade:</label>
-                            <input type="text" class="form-control" name="unidade_usuario" id="unidade_usuario" placeholder="Unidade do Usuário">
+                            <input type="text" class="form-control" name="unidade_usuario" id="unidade_usuario" placeholder="Unidade do Usuário" required>
                         </div>
+
+                        <div class="col-xs-6">
+                            <label class="control-label" for="email_usuario">E-mail:</label>
+                            <input type="email" class="form-control" name="email_usuario" id="email_usuario" placeholder="E-mail do Usuário">
+                        </div>
+
                         <div class="col-xs-3">
-                            <label class="control-label" for="ramal_usuario">Ramal do Usuário:</label>
+                            <label class="control-label" for="ramal_usuario">Ramal:</label>
                             <input type="text" class="form-control ramal"  name="ramal_usuario" id="ramal_usuario" placeholder="Ramal do Usuário"  >
                         </div>
 
@@ -77,7 +89,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
                     <div class="row">
                         <div class="col-xs-6">
-                            <label class="control-label" for="tipo_permissao"> Tipo de acesso: </label>
+                            <label class="control-label" for="tipo_permissao"> Tipo: </label>
                             <?php
                             $tbTipoSolicitacao = new TbTipoSolicitacaoAcesso();
 
@@ -87,6 +99,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
                                    ->setSelectName('soc_codigo')
                                    ->setOptionEmpty('Selecione')
                                    ->setClass('form-control')
+                                   ->isRequire(true)
                                    ->listOption();
 
                             ?>
@@ -95,14 +108,15 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
                         <div class="col-xs-6">
                             <label class="control-label" for="tipo_permissao"> Área: </label>
                             <?php
-                            $tbDepartamento = new TbDepartamento();
+
 
                             $selectDepartamento = new SelectOption();
                             $selectDepartamento->setStmt($tbDepartamento->getAllDepartamentos()->fetchAll(\PDO::FETCH_NUM))
-                                               ->setSelectName('soc_codigo')
+                                               ->setSelectName('dep_codigo')
                                                ->setOptionEmpty('Selecione')
                                                ->setClass('form-control')
                                                ->setSelectedItem($_SESSION['dep_codigo'])
+                                               ->isRequire(true)
                                                ->listOption();
 
                             ?>
@@ -133,20 +147,20 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
                         <div class="col-xs-5">
                             <label class="control-label">Perfil:</label>
-                            <select class="form-control"  name="perfil">
+                            <select class="form-control"  name="perfil" required>
 
                             </select>
                         </div>
 
                         <div class="col-xs-2">
-                          <button type="button" class="btn btn-default" id="incluir" >Adicionar</button>
+                          <button type="button" class="btn btn-default" id="incluir" ><span class="glyphicon glyphicon-plus"></span> Adicionar</button>
                         </div>
                     </div>
                     <hr>
 
                     <div class="panel panel-default">
                         <div class="panel panel-heading">
-                            <h3 class="panel-title">Lista de Acessos</h3>
+                            <h3 class="panel-title">Permissões de Acessos</h3>
                         </div>
                         <div class="panel panel-body">
                             <div id="insercao">
@@ -158,7 +172,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
                     <div class="row">
                         <div class="col-xs-12">
-                            <label class="control-label" for="cargo">Observação: </label>
+                            <label class="control-label" for="cargo">Observações: </label>
                             <textarea id="obs" name="observacao" class="form-control" rows="3"
                                       placeholder="Especifique (caso necessário) as permissões solicitadas, e/ou coloque neste campo um usuário modelo"></textarea>
                         </div>
@@ -168,7 +182,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
                 <div class="row">
                     <div class="col-xs-5">
-                        <button type="submit" class="btn btn-primary" > Solicitar </button>
+                        <button type="submit" class="btn btn-primary" ><span class="glyphicon glyphicon-floppy-open"></span> Solicitar </button>
                     </div>
                 </div>
 
