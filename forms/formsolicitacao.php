@@ -4,9 +4,9 @@
         <meta charset="ISO-8859-1">
         <title>Solicitação de Acesso</title>
         <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
-        <link rel="stylesheet" href="css/bootstrap/style.css">
+        <link rel="stylesheet" href="css/bootstrap/style-solicitacao-acesso.css">
     </head>
-    <body>
+    <body class="size-text">
         <div class="container">
         <div class="col-sm-12">
         <div class="panel panel-default">
@@ -171,7 +171,7 @@
                                     <br>
                                 </div>
                                 <div class="panel-footer">
-                                    Data: __/__/____
+                                    Data: ___/____/____
                                 </div>
                             </div>
                            
@@ -186,7 +186,7 @@
                                   <br>
                                 </div>
                                 <div class="panel-footer">
-                                    Data: __/__/____
+                                    Data: ___/____/____
                                 </div>
                               </div>
                         </div>
@@ -199,7 +199,7 @@
                                     <br>
                                 </div>
                                 <div class="panel-footer">
-                                    Data: __/__/____
+                                    Data: ___/____/____
                                 </div>
                             </div>
                         </div>
@@ -212,7 +212,7 @@
                                     <br>
                                 </div>
                                 <div class="panel-footer">
-                                    Data: __/__/____
+                                    Data: ___/____/____
                                 </div>
                             </div>
                        </div>

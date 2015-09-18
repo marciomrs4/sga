@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2526c6c5-3cfb-4a59-b223-ceacd7d0168e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Busca.class.php" afterPath="$PROJECT_DIR$/classes/Busca.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Cadastro.class.php" afterPath="$PROJECT_DIR$/classes/Cadastro.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/DataGrid.class.php" afterPath="$PROJECT_DIR$/classes/DataGrid.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SolicitacaoAcesso.php" afterPath="$PROJECT_DIR$/SolicitacaoAcesso.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SolicitacaoAcessoCreated.php" afterPath="$PROJECT_DIR$/SolicitacaoAcessoCreated.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/SolicitacaoMelhoria.php" afterPath="$PROJECT_DIR$/forms/alterar/SolicitacaoMelhoria.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbSolicitacaoAcesso.class.php" afterPath="$PROJECT_DIR$/model/TbSolicitacaoAcesso.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbTipoSolicitacaoAcesso.class.php" afterPath="$PROJECT_DIR$/model/TbTipoSolicitacaoAcesso.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Usuario.class.php" afterPath="$PROJECT_DIR$/model/Usuario.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/formsolicitacao.php" afterPath="$PROJECT_DIR$/forms/formsolicitacao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/menusecundario.php" afterPath="$PROJECT_DIR$/menusecundario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/my-add-field.js" afterPath="$PROJECT_DIR$/jscript/my-add-field.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/solicitacaoacessoservicos.php" afterPath="$PROJECT_DIR$/forms/solicitacaoacessoservicos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/solicitacaodeacesso.php" afterPath="$PROJECT_DIR$/action/solicitacaodeacesso.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/bootstrap/style.css" afterPath="$PROJECT_DIR$/css/bootstrap/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sga.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,7 +41,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/LoadAtividadesPainelTarefas.php" />
         <option value="$PROJECT_DIR$/model/TbSolicitacaoMelhoria.class.php" />
         <option value="$PROJECT_DIR$/Melhoria.php" />
         <option value="$PROJECT_DIR$/PainelTarefas.php" />
@@ -97,8 +81,6 @@
         <option value="$PROJECT_DIR$/forms/solicitacaoacessoservicos.php" />
         <option value="$PROJECT_DIR$/SolicitacaoAcesso.php" />
         <option value="$PROJECT_DIR$/jscript/my-add-field.js" />
-        <option value="$PROJECT_DIR$/css/bootstrap/style.css" />
-        <option value="$PROJECT_DIR$/forms/formsolicitacao.php" />
         <option value="$PROJECT_DIR$/classes/Busca.class.php" />
         <option value="$PROJECT_DIR$/model/TbSolicitacaoAcesso.class.php" />
         <option value="$PROJECT_DIR$/classes/DataGrid.class.php" />
@@ -107,6 +89,9 @@
         <option value="$PROJECT_DIR$/SolicitacaoAcessoCreated.php" />
         <option value="$PROJECT_DIR$/menusecundario.php" />
         <option value="$PROJECT_DIR$/classes/Cadastro.class.php" />
+        <option value="$PROJECT_DIR$/css/bootstrap/style.css" />
+        <option value="$PROJECT_DIR$/forms/formsolicitacao.php" />
+        <option value="$PROJECT_DIR$/css/bootstrap/style-solicitacao-acesso.css" />
       </list>
     </option>
   </component>
@@ -164,6 +149,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -193,11 +210,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/css/bootstrap" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/model" />
       <recent name="$PROJECT_DIR$/action" />
       <recent name="$PROJECT_DIR$/forms" />
-      <recent name="$PROJECT_DIR$/jscript" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/forms" />
@@ -295,17 +312,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/componentes/footerPainelTarefas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47933885" vertical-offset="2604" max-vertical-offset="4032">
-          <caret line="164" column="5" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
-          <folding>
-            <marker date="1439931172076" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1439931172076" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PainelTarefas.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1782">
@@ -764,14 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/bootstrap/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23904383" vertical-offset="0" max-vertical-offset="753">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/TbSolicitacaoAcesso.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5785124" vertical-offset="624" max-vertical-offset="1458">
@@ -841,22 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/formsolicitacao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="4338">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SolicitacaoAcessoCreated.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6198347" vertical-offset="0" max-vertical-offset="726">
-          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/action/solicitacaodeacesso.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.54545456" vertical-offset="0" max-vertical-offset="726">
@@ -906,6 +888,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41935483" vertical-offset="2851" max-vertical-offset="3942">
           <caret line="175" column="53" selection-start-line="175" selection-start-column="53" selection-end-line="175" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/bootstrap/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1434263" vertical-offset="0" max-vertical-offset="753">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/bootstrap/style-solicitacao-acesso.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64541835" vertical-offset="0" max-vertical-offset="753">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/formsolicitacao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50490886" vertical-offset="2736" max-vertical-offset="4338">
+          <caret line="172" column="55" selection-start-line="172" selection-start-column="55" selection-end-line="172" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SolicitacaoAcessoCreated.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6198347" vertical-offset="0" max-vertical-offset="726">
+          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
           <folding />
         </state>
       </provider>
