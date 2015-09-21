@@ -1,6 +1,6 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
-
+header('Content-Type: text/html; charset=ISO-8859-1');
 ?>
 <div class="row">
     <hr>

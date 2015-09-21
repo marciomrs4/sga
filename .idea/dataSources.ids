@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - sga@localhost" uuid="6e28f145-cd8f-43ed-a4bc-86a35cd193d4">
+    <database-info product="MySQL" version="5.5.44-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="sga"/>
+    <table name="tb_acesso" schema="" catalog="sga" type="TABLE">
+      <column name="ace_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ace_usuario" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ace_senha" sqlType="VARCHAR" precision="40" scale="0" nullable="false" jdbcType="12"/>
+      <column name="usu_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ace_ativo" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1" def="J1Mn"/>
+      <primary-key name="PRIMARY" columns="ace_codigo"/>
+      <foreign-key name="fk_tb_acesso_tb_usuario" columns="usu_codigo" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="ace_usuario_UNIQUE" unique="true" columns="ace_usuario"/>
+      <index name="fk_tb_acesso_tb_usuario" unique="false" columns="usu_codigo"/>
+    </table>
+    <table name="tb_anexo" schema="" catalog="sga" type="TABLE">
+      <column name="ane_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ane_anexo" sqlType="LONGBLOB" precision="2147483647" scale="0" nullable="true" jdbcType="-4"/>
+      <column name="ane_tipo" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ane_nome" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ane_tamanho" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sol_codigo" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ane_codigo"/>
+      <foreign-key name="fk_solicitacao" columns="sol_codigo" ref-table="tb_solicitacao" ref-schema="" ref-catalog="sga" ref-columns="sol_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_solicitacao" unique="false" columns="sol_codigo"/>
+    </table>
+    <table name="tb_anexo_checklist" schema="" catalog="sga" type="TABLE">
+      <column name="ane_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ane_anexo" sqlType="LONGBLOB" precision="2147483647" scale="0" nullable="true" jdbcType="-4"/>
+      <column name="ane_tipo" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ane_nome" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ane_tamanho" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ich_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ane_codigo"/>
+      <foreign-key name="fk_tb_anexo_checklist_tb_item_checklist1" columns="ich_codigo" ref-table="tb_item_checklist" ref-schema="" ref-catalog="sga" ref-columns="ich_codigo" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="fk_tb_anexo_checklist_tb_item_checklist1" unique="false" columns="ich_codigo"/>
+    </table>
+    <table name="tb_aniversariante" schema="" catalog="sga" type="TABLE">
+      <column name="ani_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ani_drt" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ani_nome" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ani_setor" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ani_data_nascimento" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="ani_dia" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ani_mes" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ani_ano" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ani_unidade" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1" def="JzEn"/>
+      <primary-key name="PRIMARY" columns="ani_codigo"/>
+    </table>
+    <table name="tb_apontamento" schema="" catalog="sga" type="TABLE">
+      <column name="ap_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ap_descricao" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="ap_data_criacao" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="at_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="usu_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ap_codigo"/>
+      <foreign-key name="fk_atividade_apontamento" columns="at_codigo" ref-table="tb_atividade" ref-schema="" ref-catalog="sga" ref-columns="at_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_usuario_apontamento" columns="usu_codigo" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_atividade_apontamento" unique="false" columns="at_codigo"/>
+      <index name="fk_usuario_apontamento" unique="false" columns="usu_codigo"/>
+    </table>
+    <table name="tb_apontamento_melhoria" schema="" catalog="sga" type="TABLE">
+      <column name="apm_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="apm_descricao" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="usu_codigo" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="apm_data" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="som_codigo" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="stm_codigo" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="apm_codigo"/>
+      <foreign-key name="fk_solicitacao_melhoria" columns="som_codigo" ref-table="tb_solicitacao_melhoria" ref-schema="" ref-catalog="sga" ref-columns="som_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_usuario_apo_melhoria" columns="usu_codigo" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_solicitacao_melhoria_idx" unique="false" columns="som_codigo"/>
+      <index name="fk_usuario_apo_melhoria" unique="false" columns="usu_codigo"/>
+    </table>
+    <table name="tb_aprovacao_gerencia" schema="" catalog="sga" type="TABLE">
+      <column name="apr_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pro_codigo_projeto" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="apr_status" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="usu_codigo_gerencia" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="apr_data_aprovado" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="apr_codigo"/>
+      <foreign-key name="fk_pro" columns="pro_codigo_projeto" ref-table="tb_projeto" ref-schema="" ref-catalog="sga" ref-columns="pro_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_pro" unique="false" columns="pro_codigo_projeto"/>
+    </table>
+    <table name="tb_assentamento" schema="" catalog="sga" type="TABLE">
+      <column name="ass_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ass_descricao" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="ass_data_cadastro" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="sol_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="usu_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ass_codigo"/>
+      <foreign-key name="fk_sol" columns="sol_codigo" ref-table="tb_solicitacao" ref-schema="" ref-catalog="sga" ref-columns="sol_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_usuario" columns="usu_codigo" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk" unique="false" columns="sol_codigo"/>
+      <index name="fk_" unique="false" columns="sol_codigo"/>
+      <index name="fk_sol" unique="false" columns="sol_codigo"/>
+      <index name="fk_usuario" unique="false" columns="usu_codigo"/>
+    </table>
+    <table name="tb_atendente_solicitacao" schema="" catalog="sga" type="TABLE">
+      <column name="ats_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="usu_codigo_atendente" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sol_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pri_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ats_codigo,pri_codigo,sol_codigo,usu_codigo_atendente"/>
+      <foreign-key name="pk_prioridade" columns="pri_codigo" ref-table="tb_prioridade" ref-schema="" ref-catalog="sga" ref-columns="pri_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="pk_solicitcao" columns="sol_codigo" ref-table="tb_solicitacao" ref-schema="" ref-catalog="sga" ref-columns="sol_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="pk_usuario" columns="usu_codigo_atendente" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="pk_prioridade" unique="false" columns="pri_codigo"/>
+      <index name="pk_solicitcao" unique="false" columns="sol_codigo"/>
+      <index name="pk_usuario" unique="false" columns="usu_codigo_atendente"/>
+    </table>
+    <table name="tb_atividade" schema="" catalog="sga" type="TABLE">
+      <column name="at_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pro_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="usu_codigo_responsavel" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="at_previsao_inicio" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="at_previsao_fim" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="sta_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="at_descricao" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="at_observacao" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="usu_codigo_criador" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="at_codigo"/>
+      <foreign-key name="fk_projeto_atividade" columns="pro_codigo" ref-table="tb_projeto" ref-schema="" ref-catalog="sga" ref-columns="pro_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_status_atividade" columns="sta_codigo" ref-table="tb_status_atividade" ref-schema="" ref-catalog="sga" ref-columns="sta_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_usuario_atividade" columns="usu_codigo_responsavel" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_usuario_criador" columns="usu_codigo_criador" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_atividade_apontamento" table="tb_apontamento" schema="" catalog="sga" columns="at_codigo"/>
+      <exported-key name="fk_rel_atividade" table="tb_usuario_atividade" schema="" catalog="sga" columns="at_codigo"/>
+      <index name="fk_projeto_atividade" unique="false" columns="pro_codigo"/>
+      <index name="fk_status_atividade" unique="false" columns="sta_codigo"/>
+      <index name="fk_usuario_atividade" unique="false" columns="usu_codigo_responsavel"/>
+      <index name="fk_usuario_criador" unique="false" columns="usu_codigo_criador"/>
+    </table>
+    <table name="tb_calculo_atendimento" schema="" catalog="sga" type="TABLE">
+      <column name="tea_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="sol_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="usu_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sta_codigo" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="tea_data_acao" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="tea_codigo"/>
+      <foreign-key name="fk_soli" columns="sol_codigo" ref-table="tb_solicitacao" ref-schema="" ref-catalog="sga" ref-columns="sol_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_tb_calculo_atendimento_tb_status1" columns="sta_codigo" ref-table="tb_status" ref-schema="" ref-catalog="sga" ref-columns="sta_codigo" update-rule="3" delete-rule="2" deferrability="2"/>
+      <foreign-key name="fk_tb_calculo_atendimento_tb_usuario1" columns="usu_codigo" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_soli" unique="false" columns="sol_codigo"/>
+      <index name="fk_tb_calculo_atendimento_tb_status1" unique="false" columns="sta_codigo"/>
+      <index name="fk_tb_calculo_atendimento_tb_usuario1" unique="false" columns="usu_codigo"/>
+    </table>
+    <table name="tb_checklist" schema="" catalog="sga" type="TABLE">
+      <column name="che_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="che_titulo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="che_descricao" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="che_data_cadastro" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <column name="che_email_envio" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="che_ativo" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1" def="JzEn"/>
+      <column name="dep_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="usu_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="che_codigo"/>
+      <foreign-key name="fk_tb_checklist_tb_departamento1" columns="dep_codigo" ref-table="tb_departamento" ref-schema="" ref-catalog="sga" ref-columns="dep_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_tb_checklist_tb_usuario1" columns="usu_codigo" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_dia_checklist" table="tb_dia_semana_checklist" schema="" catalog="sga" columns="che_codigo"/>
+      <exported-key name="fk_tb_item_checklist_tb_checklist1" table="tb_item_checklist" schema="" catalog="sga" columns="che_codigo"/>
+      <index name="fk_tb_checklist_tb_departamento1" unique="false" columns="dep_codigo"/>
+      <index name="fk_tb_checklist_tb_usuario1" unique="false" columns="usu_codigo"/>
+    </table>
+    <table name="tb_departamento" schema="" catalog="sga" type="TABLE">
+      <column name="dep_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="dep_descricao" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="dep_email" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pro_permite_listar_chamado" sqlType="TINYINT" precision="3" scale="0" nullable="true" jdbcType="-6"/>
+      <column name="dep_hora_inicio" sqlType="CHAR" precision="2" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dep_hora_fim" sqlType="CHAR" precision="2" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dep_hora_almoco" sqlType="CHAR" precision="2" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dep_carga_sabado" sqlType="CHAR" precision="2" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="dep_codigo"/>
+      <exported-key name="fk_tb_checklist_tb_departamento1" table="tb_checklist" schema="" catalog="sga" columns="dep_codigo"/>
+      <exported-key name="fk_tabela_departamento" table="tb_envio_para" schema="" catalog="sga" columns="dep_codigo"/>
+      <exported-key name="fk_tb_prioridade_tb_departamento1" table="tb_prioridade" schema="" catalog="sga" columns="dep_codigo"/>
+      <exported-key name="fk_tb_problema_tb_departamento1" table="tb_problema" schema="" catalog="sga" columns="dep_codigo"/>
+      <exported-key name="fk_departamento_projeto" table="tb_projeto" schema="" catalog="sga" columns="dep_codigo"/>
+      <exported-key name="fk_tb_tempo_atendimento_tb_departamento1" table="tb_tempo_atendimento" schema="" catalog="sga" columns="dep_codigo"/>
+      <exported-key name="dep_codigo_terceito" table="tb_terceiro" schema="" catalog="sga" columns="dep_codigo"/>
+      <exported-key name="fk_tb_usuario_tb_departamento1" table="tb_usuario" schema="" catalog="sga" columns="dep_codigo"/>
+    </table>
+    <table name="tb_dia_semana_checklist" schema="" catalog="sga" type="TABLE">
+      <column name="dse_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="che_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dse_segunda" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dse_terca" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dse_quarta" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dse_quinta" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dse_sexta" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dse_sabado" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dse_domingo" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="dse_codigo"/>
+      <foreign-key name="fk_dia_checklist" columns="che_codigo" ref-table="tb_checklist" ref-schema="" ref-catalog="sga" ref-columns="che_codigo" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="fk_dia_checklist" unique="false" columns="che_codigo"/>
+    </table>
+    <table name="tb_dia_semana_item_checklist" schema="" catalog="sga" type="TABLE">
+      <column name="dse_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ich_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dse_segunda" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dse_terca" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dse_quarta" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dse_quinta" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dse_sexta" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dse_sabado" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="dse_domingo" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="dse_codigo"/>
+      <foreign-key name="fk_dia_itemcklist" columns="ich_codigo" ref-table="tb_item_checklist" ref-schema="" ref-catalog="sga" ref-columns="ich_codigo" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="fk_dia_itemcklist" unique="false" columns="ich_codigo"/>
+    </table>
+    <table name="tb_envio_para" schema="" catalog="sga" type="TABLE">
+      <column name="enp_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pro_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="usu_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dep_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="enp_codigo"/>
+      <foreign-key name="fk_tabela_departamento" columns="dep_codigo" ref-table="tb_departamento" ref-schema="" ref-catalog="sga" ref-columns="dep_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_tabela_problema" columns="pro_codigo" ref-table="tb_problema" ref-schema="" ref-catalog="sga" ref-columns="pro_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_tabela_usuario" columns="usu_codigo" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_tabela_departamento" unique="false" columns="dep_codigo"/>
+      <index name="fk_tabela_problema" unique="false" columns="pro_codigo"/>
+      <index name="fk_tabela_usuario" unique="false" columns="usu_codigo"/>
+    </table>
+    <table name="tb_historico_checklist" schema="" catalog="sga" type="TABLE">
+      <column name="hck_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="che_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="che_titulo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="usu_email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="hck_data" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="hck_status" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="hck_codigo"/>
+    </table>
+    <table name="tb_item_checklist" schema="" catalog="sga" type="TABLE">
+      <column name="ich_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ich_titulo_tarefa" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ich_ativo" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <column name="ich_link" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="che_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ich_codigo"/>
+      <foreign-key name="fk_tb_item_checklist_tb_checklist1" columns="che_codigo" ref-table="tb_checklist" ref-schema="" ref-catalog="sga" ref-columns="che_codigo" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="fk_tb_anexo_checklist_tb_item_checklist1" table="tb_anexo_checklist" schema="" catalog="sga" columns="ich_codigo"/>
+      <exported-key name="fk_dia_itemcklist" table="tb_dia_semana_item_checklist" schema="" catalog="sga" columns="ich_codigo"/>
+      <index name="fk_tb_item_checklist_tb_checklist1" unique="false" columns="che_codigo"/>
+    </table>
+    <table name="tb_layout" schema="" catalog="sga" type="TABLE">
+      <column name="lay_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="lay_fundo_tela" sqlType="VARCHAR" precision="8" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lay_menu_principal" sqlType="VARCHAR" precision="8" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lay_botoes_menu" sqlType="VARCHAR" precision="8" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="lay_botoes_tela" sqlType="VARCHAR" precision="8" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lay_tabela" sqlType="VARCHAR" precision="8" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lay_tabela_linha_par" sqlType="VARCHAR" precision="8" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lay_tabela_linha_impar" sqlType="VARCHAR" precision="8" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lay_passar_mouse_botao" sqlType="VARCHAR" precision="8" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lay_passar_mouse_tabela" sqlType="VARCHAR" precision="8" scale="0" nullable="false" jdbcType="12"/>
+      <column name="usu_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="lay_codigo"/>
+      <foreign-key name="fk_usuario_layout" columns="usu_codigo" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_usuario_layout" unique="false" columns="usu_codigo"/>
+    </table>
+    <table name="tb_log" schema="" catalog="sga" type="TABLE">
+      <column name="log_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="log_data_time" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="log_tipo_acao" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="log_codigo_usuario" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="log_codigo_aterado" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="log_descricao_alteracao_acao" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="log_codigo"/>
+    </table>
+    <table name="tb_perfil" schema="" catalog="sga" type="TABLE">
+      <column name="per_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ser_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="per_descricao" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="per_codigo"/>
+      <foreign-key name="fk_tb_perfil_tb_servico" columns="ser_codigo" ref-table="tb_servico" ref-schema="" ref-catalog="sga" ref-columns="ser_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="fk_tb_perfil_tb_servico_idx" unique="false" columns="ser_codigo"/>
+    </table>
+    <table name="tb_prioridade" schema="" catalog="sga" type="TABLE">
+      <column name="pri_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pri_descricao" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="tat_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dep_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="pri_codigo"/>
+      <foreign-key name="fk_tb_prioridade_tb_departamento1" columns="dep_codigo" ref-table="tb_departamento" ref-schema="" ref-catalog="sga" ref-columns="dep_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_tb_prioridade_tb_tempo_atendimento1" columns="tat_codigo" ref-table="tb_tempo_atendimento" ref-schema="" ref-catalog="sga" ref-columns="tat_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="pk_prioridade" table="tb_atendente_solicitacao" schema="" catalog="sga" columns="pri_codigo"/>
+      <exported-key name="fk_prioridade" table="tb_problema" schema="" catalog="sga" columns="pri_codigo"/>
+      <index name="fk_tb_prioridade_tb_departamento1" unique="false" columns="dep_codigo"/>
+      <index name="fk_tb_prioridade_tb_tempo_atendimento1" unique="false" columns="tat_codigo"/>
+    </table>
+    <table name="tb_problema" schema="" catalog="sga" type="TABLE">
+      <column name="pro_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pro_descricao" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pri_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dep_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pro_mostrar_usuario" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1"/>
+      <column name="pro_tempo_solucao" sqlType="TIME" precision="8" scale="0" nullable="true" jdbcType="92"/>
+      <column name="pro_status_ativo" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1" def="JzEn"/>
+      <primary-key name="PRIMARY" columns="pro_codigo"/>
+      <foreign-key name="fk_prioridade" columns="pri_codigo" ref-table="tb_prioridade" ref-schema="" ref-catalog="sga" ref-columns="pri_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_tb_problema_tb_departamento1" columns="dep_codigo" ref-table="tb_departamento" ref-schema="" ref-catalog="sga" ref-columns="dep_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_tabela_problema" table="tb_envio_para" schema="" catalog="sga" columns="pro_codigo"/>
+      <exported-key name="fk_problema" table="tb_solicitacao" schema="" catalog="sga" columns="pro_codigo"/>
+      <index name="fk_prioridade" unique="false" columns="pri_codigo"/>
+      <index name="fk_tb_problema_tb_departamento1" unique="false" columns="dep_codigo"/>
+    </table>
+    <table name="tb_projeto" schema="" catalog="sga" type="TABLE">
+      <column name="pro_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pro_cod_projeto" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pro_titulo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="usu_codigo_solicitante" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pro_previsao_inicio" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="pro_previsao_fim" sqlType="DATE" precision="10" scale="0" nullable="false" jdbcType="91"/>
+      <column name="stp_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pro_descricao" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="usu_codigo_criador" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="pro_data_cadastro" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="dep_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="pro_codigo"/>
+      <foreign-key name="fk_departamento_projeto" columns="dep_codigo" ref-table="tb_departamento" ref-schema="" ref-catalog="sga" ref-columns="dep_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_status_projeto" columns="stp_codigo" ref-table="tb_status_projeto" ref-schema="" ref-catalog="sga" ref-columns="stp_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_usuario_codigo" columns="usu_codigo_criador" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_usuario_solicitante" columns="usu_codigo_solicitante" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_pro" table="tb_aprovacao_gerencia" schema="" catalog="sga" columns="pro_codigo_projeto"/>
+      <exported-key name="fk_projeto_atividade" table="tb_atividade" schema="" catalog="sga" columns="pro_codigo"/>
+      <index name="fk_dep_codigo" unique="false" columns="usu_codigo_criador"/>
+      <index name="fk_departamento_projeto" unique="false" columns="dep_codigo"/>
+      <index name="fk_status_projeto" unique="false" columns="stp_codigo"/>
+      <index name="fk_usu_codigo" unique="false" columns="usu_codigo_solicitante"/>
+      <index name="fk_usuario_codigo" unique="false" columns="usu_codigo_criador"/>
+      <index name="fk_usuario_solicitante" unique="false" columns="usu_codigo_solicitante"/>
+    </table>
+    <table name="tb_servico" schema="" catalog="sga" type="TABLE">
+      <column name="ser_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="ser_descricao" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="ser_codigo"/>
+      <exported-key name="fk_tb_perfil_tb_servico" table="tb_perfil" schema="" catalog="sga" columns="ser_codigo"/>
+    </table>
+    <table name="tb_sim_nao" schema="" catalog="sga" type="TABLE">
+      <column name="sn_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="sn_descricao" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="sn_codigo"/>
+    </table>
+    <table name="tb_sistemas" schema="" catalog="sga" type="TABLE">
+      <column name="sis_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="sis_descricao" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="usu_codigo_usuario_chave" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sis_status" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1" def="JzEn"/>
+      <primary-key name="PRIMARY" columns="sis_codigo"/>
+      <foreign-key name="fk_usuario_chave" columns="usu_codigo_usuario_chave" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_sistema_sol" table="tb_solicitacao_melhoria" schema="" catalog="sga" columns="sis_codigo"/>
+      <index name="fk_usuario_chave_idx" unique="false" columns="usu_codigo_usuario_chave"/>
+    </table>
+    <table name="tb_solicitacao" schema="" catalog="sga" type="TABLE">
+      <column name="sol_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="pro_codigo" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="sta_codigo" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="usu_codigo_solicitante" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="dep_codigo_solicitado" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="sol_descricao_solicitacao" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="sol_data_inicio" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="sol_data_fim" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="pro_codigo_tecnico" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="sol_codigo"/>
+      <foreign-key name="fk_problema" columns="pro_codigo" ref-table="tb_problema" ref-schema="" ref-catalog="sga" ref-columns="pro_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_status_solicitacao" columns="sta_codigo" ref-table="tb_status" ref-schema="" ref-catalog="sga" ref-columns="sta_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_solicitacao" table="tb_anexo" schema="" catalog="sga" columns="sol_codigo"/>
+      <exported-key name="fk_sol" table="tb_assentamento" schema="" catalog="sga" columns="sol_codigo"/>
+      <exported-key name="pk_solicitcao" table="tb_atendente_solicitacao" schema="" catalog="sga" columns="sol_codigo"/>
+      <exported-key name="fk_soli" table="tb_calculo_atendimento" schema="" catalog="sga" columns="sol_codigo"/>
+      <exported-key name="solicitacao_terceiro" table="tb_solicitacao_terceiro" schema="" catalog="sga" columns="sol_codigo"/>
+      <index name="fk_problema" unique="false" columns="pro_codigo"/>
+      <index name="fk_status_solicitacao" unique="false" columns="sta_codigo"/>
+    </table>
+    <table name="tb_solicitacao_acesso" schema="" catalog="sga" type="TABLE">
+      <column name="sac_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="usu_codigo_solicitante" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sol_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sac_datacadastro" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="sac_formulario" sqlType="BLOB" precision="65535" scale="0" nullable="false" jdbcType="-4"/>
+      <primary-key name="PRIMARY" columns="sac_codigo"/>
+    </table>
+    <table name="tb_solicitacao_melhoria" schema="" catalog="sga" type="TABLE">
+      <column name="som_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="sis_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="som_descricao" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="som_data_solicitacao" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="usu_codigo_atendente" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="usu_codigo_solicitante" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="stm_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="som_codigo"/>
+      <foreign-key name="fk_sistema_sol" columns="sis_codigo" ref-table="tb_sistemas" ref-schema="" ref-catalog="sga" ref-columns="sis_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_user_aten_melhoria" columns="usu_codigo_atendente" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_user_sol_melhoria" columns="usu_codigo_solicitante" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_solicitacao_melhoria" table="tb_apontamento_melhoria" schema="" catalog="sga" columns="som_codigo"/>
+      <index name="fk_sistema_sol_idx" unique="false" columns="sis_codigo"/>
+      <index name="fk_user_aten_melhoria" unique="false" columns="usu_codigo_atendente"/>
+      <index name="fk_user_sol_melhoria" unique="false" columns="usu_codigo_solicitante"/>
+    </table>
+    <table name="tb_solicitacao_terceiro" schema="" catalog="sga" type="TABLE">
+      <column name="sot_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="sol_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ter_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="usu_codigo_inclusao" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sot_data_inclusao" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="sot_descricao_inclusao" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="sot_data_criacao_inclusao" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="usu_codigo_remocao" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="sot_data_remocao" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="sot_descricao_remocao" sqlType="TEXT" precision="65535" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="sot_data_criacao_remocao" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="sot_tempo_util" sqlType="TIME" precision="8" scale="0" nullable="true" jdbcType="92"/>
+      <column name="sot_tempo_total" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sot_status" sqlType="CHAR" precision="1" scale="0" nullable="true" jdbcType="1" def="J1Mn"/>
+      <primary-key name="PRIMARY" columns="sot_codigo"/>
+      <foreign-key name="codigo_terceiro" columns="ter_codigo" ref-table="tb_terceiro" ref-schema="" ref-catalog="sga" ref-columns="ter_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="solicitacao_terceiro" columns="sol_codigo" ref-table="tb_solicitacao" ref-schema="" ref-catalog="sga" ref-columns="sol_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="usuario_inclusao" columns="usu_codigo_inclusao" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="usuario_remocao" columns="usu_codigo_remocao" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="codigo_terceiro_idx" unique="false" columns="ter_codigo"/>
+      <index name="solicitacao_terceiro_idx" unique="false" columns="sol_codigo"/>
+      <index name="usuario_inclusao_idx" unique="false" columns="usu_codigo_inclusao"/>
+      <index name="usuario_remocao_idx" unique="false" columns="usu_codigo_remocao"/>
+    </table>
+    <table name="tb_status" schema="" catalog="sga" type="TABLE">
+      <column name="sta_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="sta_descricao" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="sta_codigo"/>
+      <exported-key name="fk_tb_calculo_atendimento_tb_status1" table="tb_calculo_atendimento" schema="" catalog="sga" columns="sta_codigo"/>
+      <exported-key name="fk_status_solicitacao" table="tb_solicitacao" schema="" catalog="sga" columns="sta_codigo"/>
+    </table>
+    <table name="tb_status_atividade" schema="" catalog="sga" type="TABLE">
+      <column name="sta_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="sta_descricao" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="sta_codigo"/>
+      <exported-key name="fk_status_atividade" table="tb_atividade" schema="" catalog="sga" columns="sta_codigo"/>
+    </table>
+    <table name="tb_status_melhoria" schema="" catalog="sga" type="TABLE">
+      <column name="stm_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="stm_descricao" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="stm_codigo"/>
+    </table>
+    <table name="tb_status_projeto" schema="" catalog="sga" type="TABLE">
+      <column name="stp_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="stp_descricao" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="stp_codigo"/>
+      <exported-key name="fk_status_projeto" table="tb_projeto" schema="" catalog="sga" columns="stp_codigo"/>
+    </table>
+    <table name="tb_tarefa_executar" schema="" catalog="sga" type="TABLE">
+      <column name="tae_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="dep_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="tae_descricao" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="tae_codigo"/>
+    </table>
+    <table name="tb_tarefas" schema="" catalog="sga" type="TABLE">
+      <column name="tar_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tar_descricao" sqlType="VARCHAR" precision="245" scale="0" nullable="false" jdbcType="12"/>
+      <column name="tar_data" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="usu_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="dep_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="tar_codigo"/>
+    </table>
+    <table name="tb_tempo_atendimento" schema="" catalog="sga" type="TABLE">
+      <column name="tat_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tat_descricao" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="dep_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="tat_codigo"/>
+      <foreign-key name="fk_tb_tempo_atendimento_tb_departamento1" columns="dep_codigo" ref-table="tb_departamento" ref-schema="" ref-catalog="sga" ref-columns="dep_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_tb_prioridade_tb_tempo_atendimento1" table="tb_prioridade" schema="" catalog="sga" columns="tat_codigo"/>
+      <index name="fk_tb_tempo_atendimento_tb_departamento1" unique="false" columns="dep_codigo"/>
+    </table>
+    <table name="tb_terceiro" schema="" catalog="sga" type="TABLE">
+      <column name="ter_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="dep_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ter_descricao" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ter_status" sqlType="CHAR" precision="1" scale="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="ter_codigo"/>
+      <foreign-key name="dep_codigo_terceito" columns="dep_codigo" ref-table="tb_departamento" ref-schema="" ref-catalog="sga" ref-columns="dep_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="codigo_terceiro" table="tb_solicitacao_terceiro" schema="" catalog="sga" columns="ter_codigo"/>
+      <index name="dep_codigo_terceito_idx" unique="false" columns="dep_codigo"/>
+    </table>
+    <table name="tb_tipo_acesso" schema="" catalog="sga" type="TABLE">
+      <column name="tac_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tac_descricao" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="tac_codigo"/>
+    </table>
+    <table name="tb_tipo_solicitacao_acesso" schema="" catalog="sga" type="TABLE">
+      <column name="soc_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="soc_descricao" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="soc_codigo"/>
+    </table>
+    <table name="tb_tipo_usuario_atividade" schema="" catalog="sga" type="TABLE">
+      <column name="tua_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="tua_descricao" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="tua_codigo"/>
+      <exported-key name="fk_rel_tipo_usuario" table="tb_usuario_atividade" schema="" catalog="sga" columns="tua_codigo"/>
+    </table>
+    <table name="tb_usuario" schema="" catalog="sga" type="TABLE">
+      <column name="usu_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="usu_nome" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="usu_sobrenome" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="usu_email" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="usu_ramal" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="dep_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="tac_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="usu_cargo" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="usu_drt" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="usu_codigo"/>
+      <foreign-key name="fk_tb_usuario_tb_departamento1" columns="dep_codigo" ref-table="tb_departamento" ref-schema="" ref-catalog="sga" ref-columns="dep_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="fk_tb_acesso_tb_usuario" table="tb_acesso" schema="" catalog="sga" columns="usu_codigo"/>
+      <exported-key name="fk_usuario_apontamento" table="tb_apontamento" schema="" catalog="sga" columns="usu_codigo"/>
+      <exported-key name="fk_usuario_apo_melhoria" table="tb_apontamento_melhoria" schema="" catalog="sga" columns="usu_codigo"/>
+      <exported-key name="fk_usuario" table="tb_assentamento" schema="" catalog="sga" columns="usu_codigo"/>
+      <exported-key name="pk_usuario" table="tb_atendente_solicitacao" schema="" catalog="sga" columns="usu_codigo_atendente"/>
+      <exported-key name="fk_usuario_atividade" table="tb_atividade" schema="" catalog="sga" columns="usu_codigo_responsavel"/>
+      <exported-key name="fk_usuario_criador" table="tb_atividade" schema="" catalog="sga" columns="usu_codigo_criador"/>
+      <exported-key name="fk_tb_calculo_atendimento_tb_usuario1" table="tb_calculo_atendimento" schema="" catalog="sga" columns="usu_codigo"/>
+      <exported-key name="fk_tb_checklist_tb_usuario1" table="tb_checklist" schema="" catalog="sga" columns="usu_codigo"/>
+      <exported-key name="fk_tabela_usuario" table="tb_envio_para" schema="" catalog="sga" columns="usu_codigo"/>
+      <exported-key name="fk_usuario_layout" table="tb_layout" schema="" catalog="sga" columns="usu_codigo"/>
+      <exported-key name="fk_usuario_codigo" table="tb_projeto" schema="" catalog="sga" columns="usu_codigo_criador"/>
+      <exported-key name="fk_usuario_solicitante" table="tb_projeto" schema="" catalog="sga" columns="usu_codigo_solicitante"/>
+      <exported-key name="fk_usuario_chave" table="tb_sistemas" schema="" catalog="sga" columns="usu_codigo_usuario_chave"/>
+      <exported-key name="fk_user_aten_melhoria" table="tb_solicitacao_melhoria" schema="" catalog="sga" columns="usu_codigo_atendente"/>
+      <exported-key name="fk_user_sol_melhoria" table="tb_solicitacao_melhoria" schema="" catalog="sga" columns="usu_codigo_solicitante"/>
+      <exported-key name="usuario_inclusao" table="tb_solicitacao_terceiro" schema="" catalog="sga" columns="usu_codigo_inclusao"/>
+      <exported-key name="usuario_remocao" table="tb_solicitacao_terceiro" schema="" catalog="sga" columns="usu_codigo_remocao"/>
+      <exported-key name="fk_rel_usuario" table="tb_usuario_atividade" schema="" catalog="sga" columns="usu_codigo"/>
+      <index name="fk_tb_usuario_tb_departamento1" unique="false" columns="dep_codigo"/>
+      <index name="fk_tb_usuario_tb_tipo_acesso1" unique="false" columns="tac_codigo"/>
+    </table>
+    <table name="tb_usuario_atividade" schema="" catalog="sga" type="TABLE">
+      <column name="ua_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="at_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="usu_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="tua_codigo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="ua_codigo"/>
+      <foreign-key name="fk_rel_atividade" columns="at_codigo" ref-table="tb_atividade" ref-schema="" ref-catalog="sga" ref-columns="at_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rel_tipo_usuario" columns="tua_codigo" ref-table="tb_tipo_usuario_atividade" ref-schema="" ref-catalog="sga" ref-columns="tua_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="fk_rel_usuario" columns="usu_codigo" ref-table="tb_usuario" ref-schema="" ref-catalog="sga" ref-columns="usu_codigo" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="all_UNIQUE" unique="true" columns="at_codigo,usu_codigo"/>
+      <index name="fk_rel_atividade" unique="false" columns="at_codigo"/>
+      <index name="fk_rel_tipo_usuario" unique="false" columns="tua_codigo"/>
+      <index name="fk_rel_usuario" unique="false" columns="usu_codigo"/>
+    </table>
+  </data-source>
+</component>

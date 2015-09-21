@@ -1,6 +1,7 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
+header('Content-Type: text/html; charset=ISO-8859-1');
 
 $ser_codigo = filter_var($_POST['post_service'],FILTER_VALIDATE_INT);
 
