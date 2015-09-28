@@ -65,13 +65,13 @@
                         <div class="col-xs-3">
                             <label class="control-label" for="cargo_usuario">Cargo:</label>
                             <p>
-                                <?php echo($formulario['email_usuario']); ?>
+                                <?php echo($formulario['cargo_usuario']); ?>
                             </p>
                         </div>
                         <div class="col-xs-3">
                             <label class="control-label" for="drt_usuario">DRT:</label>
                             <p>
-                                <?php echo($formulario['cargo_usuario']); ?>
+                                <?php echo($formulario['drt_usuario']); ?>
                             </p>
                             <br>
                         </div>

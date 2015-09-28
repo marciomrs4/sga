@@ -7,12 +7,9 @@ $ser_codigo = filter_var($_POST['post_service'],FILTER_VALIDATE_INT);
 
 $tbServico = new TbPerfil();
 
-print_r($tbServico->selectByServico($ser_codigo)->fetchAll(\PDO::FETCH_ASSOC));
-
 ?>
 
-
-<select class="form-control" name="perfil">
+<option value="">Selecione</option>
 <?php
 foreach($tbServico->selectByServico($ser_codigo)->fetchAll(\PDO::FETCH_ASSOC) as $linha){
 ?>
@@ -21,4 +18,3 @@ foreach($tbServico->selectByServico($ser_codigo)->fetchAll(\PDO::FETCH_ASSOC) as
 }
 
 ?>
-</select>

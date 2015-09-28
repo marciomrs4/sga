@@ -37,7 +37,7 @@ echo '</pre>';*/
 
                         <div class="col-xs-6">
                             <label class="control-label" for="nome_solicitante">Nome do Solicitante:</label>
-                            <input type="text" name="nome_solicitante" value="<?php echo($DataUsers['usu_nome'] .' '.$DataUsers['usu_sobrenome'] ); ?>"
+                            <input type="text" name="nome_solicitante" minlength="3" value="<?php echo($DataUsers['usu_nome'] .' '.$DataUsers['usu_sobrenome'] ); ?>"
                                    class="form-control" id="nome_solicitante" placeholder="Nome do solicitante" required>
                         </div>
 
@@ -60,11 +60,11 @@ echo '</pre>';*/
 
                         <div class="col-xs-3">
                             <label class="control-label" for="cargo_usuario">Cargo:</label>
-                            <input type="text" class="form-control" name="email_usuario" id="email_usuario" placeholder="Cargo do Usuário"  required>
+                            <input type="text" class="form-control" name="cargo_usuario" id="cargo_usuario" placeholder="Cargo do Usuário"  required>
                         </div>
                         <div class="col-xs-3">
                             <label class="control-label" for="drt_usuario">DRT:</label>
-                            <input type="number" class="form-control drt" name="cargo_usuario" id="cargo_usuario" placeholder="DRT do Usuário" required>
+                            <input type="number" class="form-control drt" name="drt_usuario" id="drt_usuario" placeholder="DRT do Usuário" required>
                             <br>
                         </div>
 
@@ -147,7 +147,7 @@ echo '</pre>';*/
 
                         <div class="col-xs-5">
                             <label class="control-label">Perfil:</label>
-                            <select class="form-control"  name="perfil" required>
+                            <select name="perfil" class="form-control" required>
 
                             </select>
                         </div>
@@ -182,7 +182,7 @@ echo '</pre>';*/
 
                 <div class="row">
                     <div class="col-xs-5">
-                        <button type="submit" class="btn btn-primary" ><span class="glyphicon glyphicon-floppy-open"></span> Solicitar </button>
+                        <button type="submit" onclick="validarPermissoes()" class="btn btn-primary" ><span class="glyphicon glyphicon-floppy-open"></span> Solicitar </button>
                     </div>
                 </div>
 

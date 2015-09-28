@@ -56,9 +56,26 @@ $(document).on('click','#criaracesso',function(event){
 
 var x = 0;
 
+validarPermissoes = function(){
+    if(x < 1){
+        alert('Você deve selecionar ao menos uma permissão!');
+        return false;
+    }
+};
+
 $(document).on('click','#incluir',function(event){
 
     event.preventDefault();
+
+    servico =  $('select[name="servico"]').val();
+    perfil = $('select[name="perfil"]').val();
+
+    if((servico =='') || (perfil=='')){
+        alert('Por favor Selecione Servico e Perfil!');
+        return false;
+    }
+
+
 
     if(x >=5){
         alert('Limite máximo por solicitação atingido!!!');
