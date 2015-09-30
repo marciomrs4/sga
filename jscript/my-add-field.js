@@ -59,6 +59,7 @@ var x = 0;
 validarPermissoes = function(){
     if(x < 1){
         alert('Você deve selecionar ao menos uma permissão!');
+        event.preventDefault();
         return false;
     }
 };

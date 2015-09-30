@@ -1,6 +1,9 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
+$ControleAcesso = new ControleDeAcesso();
+$ControleAcesso->permitirAcesso(array(ControleDeAcesso::$TecnicoADM,ControleDeAcesso::$Tecnico,$ControleAcesso::$Solicitante));
+
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/script.php");
 
 $busca = new Busca();

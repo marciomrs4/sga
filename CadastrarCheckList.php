@@ -26,7 +26,7 @@ $grid->acao = 'alterar/Checklist';
 
 $grid->islink2 = true;
 $grid->acao2 = 'criar/ItemChecklist';
-$grid->link2 = 'ItemChecklist.php';
+$grid->link2 = 'ItemCheckList.php';
 
 $grid->mostrarDatagrid();
 

@@ -1,6 +1,9 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
+$ControleAcesso = new ControleDeAcesso();
+$ControleAcesso->permitirAcesso(array(ControleDeAcesso::$TecnicoADM,ControleDeAcesso::$Tecnico,$ControleAcesso::$Solicitante));
+
 $tbDepartamento = new TbDepartamento();
 
 $tbUsuario = new TbUsuario();

@@ -6,7 +6,7 @@ Sessao::validarForm('cadastrar/Checklist');
 		<td>
 			<fieldset>
 				<legend>Cadastrar Checklist</legend>
-<form name="Checklist" id="Checklist" method="post" action="../<?php echo($_SESSION['projeto']); ?>/action/Checklist.php">
+<form name="Checklist" id="Checklist" method="post" action="../<?php echo($_SESSION['projeto']); ?>/action/checklist.php">
   <table border="0" cellspacing="5">
     <tr>
       <td colspan="2" align="center">
@@ -19,11 +19,11 @@ Sessao::validarForm('cadastrar/Checklist');
 		    	<td nowrap="nowrap"> 
 		    		Domingo: <input type="checkbox" name="dse_domingo" checked="checked" value="1" > |
 		    		Segunda: <input type="checkbox" name="dse_segunda" checked="checked" value="1" > |
-		    		Terça: <input type="checkbox" name="dse_terca" checked="checked" value="1" > |
+		    		Terï¿½a: <input type="checkbox" name="dse_terca" checked="checked" value="1" > |
 		    		Quarta: <input type="checkbox" name="dse_quarta" checked="checked" value="1" > |
 		    		Quinta: <input type="checkbox" name="dse_quinta" checked="checked" value="1" > |
 		    		Sexta: <input type="checkbox" name="dse_sexta" checked="checked" value="1" > |
-		    		Sábado: <input type="checkbox" name="dse_sabado" checked="checked" value="1" >
+		    		Sï¿½bado: <input type="checkbox" name="dse_sabado" checked="checked" value="1" >
 		    	</td>
     	</tr>    
     
@@ -40,7 +40,7 @@ Sessao::validarForm('cadastrar/Checklist');
       </td>
     </tr>  
  	<tr>
-      <th width="119" align="left" nowrap="nowrap">Descrição:</th>
+      <th width="119" align="left" nowrap="nowrap">Descriï¿½ï¿½o:</th>
       <td>
 	      	<textarea name="che_descricao" rows="10" cols="50"><?php echo($_SESSION['cadastrar/Checklist']['che_descricao']); ?></textarea>
       </td>

@@ -11,7 +11,7 @@ if($_POST)
 
 		switch ($acao)
 		{
-			case 'cadastrar/ItemChecklist' :
+			case 'cadastrar/Itemchecklist' :
 				
 				$cadastro = new Cadastro();
 
@@ -29,7 +29,7 @@ if($_POST)
 				}
 				break;
 
-			case 'alterar/ItemChecklist' :
+			case 'alterar/Itemchecklist' :
 				
 				$alteracao = new Alteracao();
 

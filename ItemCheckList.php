@@ -13,7 +13,7 @@ $busca = new Busca();
 #Seta a variavel GET e diz que pode ser usado o nome che_codigo
 #para obetela
 $busca->setValueGet($_GET,'che_codigo');
-#Obtem o código che_codigo com metodo get
+#Obtem o c?digo che_codigo com metodo get
 
 
 $tbchecklist = new TbChecklist();
@@ -23,7 +23,7 @@ $_SESSION['cadastrar/ItemChecklist'] = $tbchecklist->getForm($busca->getValueGet
 $CheckList = $_SESSION['cadastrar/ItemChecklist'];
 
 echo"<div class='sub_menu_principal'>";
-echo FormComponente::actionButton('<img src="./css/images/addItem.png" title="Novo Item do Checklist"  >','cadastrar/ItemChecklist');
+echo FormComponente::actionButton('<img src="./css/images/addItem.png" title="Novo Item do Checklist"  >','cadastrar/Itemchecklist');
 Texto::criarTitulo('Item Checklist: '.$_SESSION['cadastrar/ItemChecklist']['che_titulo']);
 echo "</div>";
 
@@ -35,7 +35,7 @@ $datagrid = new DataGrid($cabecalho, $busca->listarItemCheckList());
 
 $datagrid->colunaoculta = 1;
 
-$datagrid->acao = 'alterar/ItemChecklist';
+$datagrid->acao = 'alterar/Itemchecklist';
 
 $datagrid->titulofield = 'Itens do Checklist: - '.$CheckList['che_titulo'].' -';
 

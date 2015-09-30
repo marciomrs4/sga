@@ -18,12 +18,18 @@ $dados = $tbAtividade->getFormAlteracao(base64_decode($_SESSION['valorform']));
     </tr>
 
     <tr>
+      <th nowrap="nowrap">Número da Atividade:</th>
+      <td>
+      	    <?php echo($dados[0]); ?>
+      </td>
+    </tr>
+    <tr>
       <th nowrap="nowrap">Descrição da Atividade:</th>
       <td>
       	<?php echo($dados['at_descricao']); ?>
       </td>
     </tr>    
-    
+
     <tr>
       <th nowrap="nowrap">Descrição do Apontamento:</th>
       <td>
