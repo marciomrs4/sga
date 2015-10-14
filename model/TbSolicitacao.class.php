@@ -976,7 +976,7 @@ class TbSolicitacao extends Banco
 								(SELECT pro_tempo_solucao FROM tb_problema as PRO WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo) as 'Tempo Tecnico',
 								    (SELECT sta_descricao FROM tb_status WHERE SOL.sta_codigo = sta_codigo) AS 'Status',
 										(SELECT pri_descricao FROM tb_prioridade
-											WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) ) as Prioridade,
+											WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo) ) as Prioridade,
 								(SELECT tat_descricao FROM tb_tempo_atendimento WHERE tat_codigo = (select tat_codigo from tb_prioridade
 										WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) ) ) as 'SLA',
 
@@ -1009,7 +1009,7 @@ class TbSolicitacao extends Banco
 					AND dep_codigo_solicitado = ?
 					AND PRO.pri_codigo LIKE ?
 					AND ATS.usu_codigo_atendente LIKE ?
-					AND SOL.pro_codigo LIKE ?
+					AND SOL.pro_codigo_tecnico LIKE ?
 					GROUP BY SOL.sol_codigo
 					ORDER BY 1 DESC;");
 		try
@@ -1052,7 +1052,7 @@ class TbSolicitacao extends Banco
 								(SELECT pro_tempo_solucao FROM tb_problema as PRO WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo) as 'Tempo Tecnico',
 								    (SELECT sta_descricao FROM tb_status WHERE SOL.sta_codigo = sta_codigo) AS 'Status',
 										(SELECT pri_descricao FROM tb_prioridade
-											WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) ) as Prioridade,
+											WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo) ) as Prioridade,
 								(SELECT tat_descricao FROM tb_tempo_atendimento WHERE tat_codigo = (select tat_codigo from tb_prioridade
 										WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) ) ) as 'SLA',
 						(SELECT usu_nome FROM tb_usuario WHERE usu_codigo = ATS.usu_codigo_atendente) Atendente,
@@ -1090,7 +1090,7 @@ class TbSolicitacao extends Banco
 					AND dep_codigo_solicitado = ?
 					AND PRO.pri_codigo LIKE ?
 					AND ATS.usu_codigo_atendente LIKE ?
-					AND SOL.pro_codigo LIKE ?
+					AND SOL.pro_codigo_tecnico LIKE ?
 					GROUP BY SOL.sol_codigo
 					ORDER BY 1 DESC;");
         try
