@@ -38,6 +38,37 @@ $listar(document).ready(function(){
 				},
 		'html');
 		return false;
-	});	
+	});
+
+	//Criado para listar as fases do projeto dentro do cadastro de atividade
+	$listar('select[name="pro_codigo"]').change(function() {
+
+		var item = $listar(this).val();
+
+		$listar.post('listarFaseProjeto.php',
+			{pro_codigo: item },
+			function(data){
+				$listar('select[name="fas_codigo"]').html(data);
+			},
+			'html');
+		return false;
+	});
+
+	//Criado para listar as fases do projeto dentro do cadastro de atividade
+	$listar('select[name="pro_codigo"]').change(function() {
+
+		var item = $listar(this).val();
+		var at_codigo = $listar('input[name=at_codigo]').val();
+
+
+		$listar.post('listarAtividadeProjeto.php',
+			{pro_codigo: item, at_codigo: at_codigo },
+			function(data){
+				$listar('select[name="at_codigo_dependente"]').html(data);
+			},
+			'html');
+		return false;
+	});
+
 
 });

@@ -136,6 +136,53 @@ class TbStatusProjeto extends Banco
 
 	}
 
-	
+	//Retorna a descricao do status, ao passar o codigo do status
+	public function getDescricaoStatus($sta_codigo)
+	{
+
+		$query = ("SELECT $this->sta_descricao
+					FROM  $this->tabela
+				   WHERE $this->sta_codigo = ?");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$sta_codigo,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetch(\PDO::FETCH_ASSOC));
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+
+
+	public function selectStatusToApontamento()
+	{
+		$query = ("SELECT stp_codigo, stp_descricao
+					FROM tb_status_projeto
+					WHERE stp_codigo != 1;");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->execute();
+
+			return($stmt);
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getMessage());
+		}
+	}
+
+
 }
 ?>

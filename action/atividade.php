@@ -38,6 +38,8 @@ if($_POST)
 
 					$alteracao->setDados($_POST);
 
+					//$alteracao->listarDados();
+
 					$alteracao->alterarAtividade();
 
 					$alteracao->finalizarApp();
@@ -79,9 +81,7 @@ if($_POST)
 
 					$alterar->alterarUsuarioAtividade();
 
-					$_SESSION['acao'] = base64_encode('alterar/UsuarioAtividade');
-					//$_SESSION['valorform'] = $_SESSION['valor'];
-					
+
 					$alterar->finalizarApp('','Alterado com sucesso!');
 
 				}catch (Exception $e)

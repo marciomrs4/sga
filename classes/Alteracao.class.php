@@ -130,12 +130,22 @@ class Alteracao extends Dados
 
 			#Verifica se existe atividade em andamento
 			$tbAtividade = new TbAtividade();
-			$quantidade = $tbAtividade->validateQtdAtividadeEmAndamento($this->dados['pro_codigo']);
 
-			if(($this->dados['stp_codigo'] != 2) and ($quantidade != 0)){
-				throw new Exception('Existe atividade em andamento: Este projeto não pode ser alterado');
+			$pro_previsao_inicio = strtotime($this->dados['pro_previsao_inicio']);
+
+			$pro_previsao_fim = strtotime($this->dados['pro_previsao_fim']);
+
+			if($pro_previsao_inicio > $pro_previsao_fim){
+				throw new \Exception('A data de previsão de inicio deve ser menor que a previsão de fim do projeto.');
 			}
-			
+
+
+			$qtdAtividade = $tbAtividade->getCountQtdAtividadeByProjetos($this->dados['pro_codigo']);
+
+			if($qtdAtividade['qtd_atividade'] != 0){
+				throw new \Exception('Existe(m) atividade(s) não pendente: Este projeto não pode ser alterado.');
+			}
+
 			$tbprojeto = new TbProjeto();
 
 			$tbprojeto->update($this->dados);
@@ -605,13 +615,48 @@ class Alteracao extends Dados
 			
 			$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == '') ? 1 : $this->dados['sta_codigo'];
 
+			$this->dados['at_notificacao'] = ($this->dados['at_notificacao'] == '') ? null : '1';
+
+			$this->dados['fas_codigo'] = ($this->dados['fas_codigo'] == '') ? null : $this->dados['fas_codigo'];
+			$this->dados['at_codigo_dependente'] = ($this->dados['at_codigo_dependente'] == '') ? null : $this->dados['at_codigo_dependente'];
+
 			try
 			{
 					
 				$this->conexao->beginTransaction();
 				
 				$tbProjeto = new TbProjeto();
-				
+
+				$dataProjeto = $tbProjeto->getDataIncioFimProjeto($this->dados['pro_codigo']);
+
+
+				$pro_previsao_inicio = strtotime($dataProjeto['pro_previsao_inicio']);
+
+				$pro_previsao_fim = strtotime($dataProjeto['pro_previsao_fim']);
+
+				$at_previsao_inicio = strtotime($this->dados['at_previsao_inicio']);
+				$at_previsao_fim = strtotime($this->dados['at_previsao_fim']);
+
+				//valida se a data de inicio da atividade e menor que a data final da atividade
+				if($at_previsao_inicio > $at_previsao_fim){
+					throw new \Exception('A data inicial da atividade deve ser menor que a data final.');
+				}
+
+				//Valida se a data inicial da atividade é maior que a data inicial do projeto
+				if($at_previsao_inicio <= $pro_previsao_inicio){
+					throw new \Exception('A data inicial da atividade deve ser maior que a data inicial do projeto.');
+				}
+
+				//Valida se a data final da atividade é menor que a data final do projeto
+				if($at_previsao_fim > $pro_previsao_fim){
+					throw new \Exception('A data final da atividade deve ser menor ou igual que a data final do projeto.');
+				}
+
+				//Valida se a atividade esta em andamento e não deixa editar
+				if($this->dados['sta_codigo'] != 1){
+					throw new \Exception('Atividade não está pendente, você não pode alterar.');
+				}
+
 				$status = $tbProjeto->getStatusProjeto($this->dados['pro_codigo']);
 				
 				if($status != 2)
@@ -661,9 +706,17 @@ class Alteracao extends Dados
 				if($this->dados['alterar'])
 				{
 					$tbUsuarioAtividade->update($this->dados);
+					$_SESSION['acao'] = base64_encode('alterar/UsuarioAtividade');
+					$_SESSION['valorform'] = base64_encode($this->dados['ua_codigo']);
+
 				}else
 				{
 					$tbUsuarioAtividade->delete($this->dados);
+
+					$_SESSION['acao'] = base64_encode('cadastrar/UsuarioAtividade');
+					$_SESSION['valorform'] = base64_encode($this->dados['at_codigo']);
+					$_SESSION['acaoform'] = $_SESSION['acao'];
+
 				}
 				$this->conexao->commit();
 				
@@ -962,6 +1015,88 @@ class Alteracao extends Dados
         }
 
     }
+
+	public function alterarFaseProjeto()
+	{
+
+		try{
+
+			ValidarCampos::campoVazio($this->dados['fas_descricao']);
+
+			try{
+
+				$tbFaseProjeto = new TbFaseProjeto();
+
+				$tbFaseProjeto->update($this->dados);
+
+			}catch (\PDOException $e){
+				throw new \PDOException($e->getMessage(), $e->getCode());
+			}
+
+
+		}catch (\Exception $e){
+			throw new \Exception($e->getMessage(), $e->getCode());
+		}
+
+	}
+
+
+	public function alterarUsuarioProjeto()
+	{
+
+		try{
+
+			ValidarCampos::campoVazio($this->dados['usu_codigo_integrante']);
+
+			try{
+
+
+				$tbUsuarioProjeto = new TbUsuarioProjeto();
+
+				if($this->dados['alterar']){
+
+					$tbUsuarioProjeto->update($this->dados);
+					$_SESSION['acao'] = base64_encode('alterar/Projeto');
+					$_SESSION['valorform'] = base64_encode($this->dados['pro_codigo']);
+
+				}else{
+					$tbUsuarioProjeto->delete($this->dados);
+					$_SESSION['acao'] = base64_encode('alterar/Projeto');
+					$_SESSION['valorform'] = base64_encode($this->dados['pro_codigo']);
+				}
+
+
+
+			}catch (\PDOException $e){
+				throw new \PDOException($e->getMessage(), $e->getCode());
+			}
+
+
+		}catch (\Exception $e){
+			throw new \Exception($e->getMessage(), $e->getCode());
+		}
+
+	}
+
+	public function alterarAtaReuniao()
+	{
+
+		//$this->dados['ata_codigo'];
+		$this->dados['pro_codigo_projeto'] = $this->dados['pro_codigo'];
+		$this->dados['usu_codigo_criador'] = $_SESSION['usu_codigo'];
+		//$this->dados['ata_data_criacao'];
+		$this->dados['form_ata_reuniao'] = serialize($this->dados);
+
+		$tbAtaReuniao = new TbAtaReuniao();
+
+		try {
+
+			$tbAtaReuniao->update($this->dados);
+		}catch (\PDOException $e){
+			throw new \PDOException($e->getMessage(), $e->getCode());
+		}
+
+	}
 
 }
 ?>

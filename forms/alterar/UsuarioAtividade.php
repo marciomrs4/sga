@@ -10,7 +10,6 @@ $tbAtividade =  new TbAtividade();
 
 $_SESSION['alterar/Atividade'] = $tbAtividade->getFormAlteracao($dados[1]); 
 
-
 ?>
 
 <fieldset>
@@ -52,21 +51,21 @@ $_SESSION['alterar/Atividade'] = $tbAtividade->getFormAlteracao($dados[1]);
      </tr>     
      
      <tr>
-       <th width="119" align="left" nowrap="nowrap">Previs?o Inicio:</th>
+       <th width="119" align="left" nowrap="nowrap">Previsão Inicio:</th>
      	<td> 	
       		<input type="text" id="data-id" class="data" name="at_previsao_inicio" value="<?php echo(ValidarDatas::dataCliente($_SESSION['alterar/Atividade']['at_previsao_inicio'])); ?>"  />
      	</td>
      </tr>
      
       <tr>
-       <th width="119" align="left" nowrap="nowrap">Previs?o Fim:</th>	
+       <th width="119" align="left" nowrap="nowrap">Previsão Fim:</th>
       	<td>
       		<input type="text" id="data" class="data" name="at_previsao_fim" value="<?php echo(ValidarDatas::dataCliente($_SESSION['alterar/Atividade']['at_previsao_fim'])); ?>"  />
      	</td>
      </tr>
 
     <tr>
-      <th width="119" align="left" nowrap="nowrap">Descri??o:</th>
+      <th width="119" align="left" nowrap="nowrap">Descrição:</th>
       <td>
       	<textarea name="at_descricao" rows="5" cols="32"><?php echo($_SESSION['alterar/Atividade']['at_descricao']); ?></textarea>
       </td>
@@ -81,8 +80,9 @@ $_SESSION['alterar/Atividade'] = $tbAtividade->getFormAlteracao($dados[1]);
     <tr>
       <td colspan="5" align="center">
       	<?php Texto::mostrarMensagem($_SESSION['mensagem'],Erro::verificarErro($_SESSION['erro'])); ?>
-   		<input name="ua_codigo" type="hidden" value="<?php echo($dados[0]); ?>" />     	       	
-      </td>
+   		<input name="ua_codigo" type="hidden" value="<?php echo($dados[0]); ?>" />
+   	    <input name="at_codigo" type="hidden" value="<?php echo($dados[1]); ?>" />
+	  </td>
     </tr>
     
     <tr>
@@ -141,6 +141,7 @@ $DataGridAtividade->acao = 'alterar/UsuarioAtividade';
 $DataGridAtividade->colunaoculta = 1;										
 $DataGridAtividade->mostrarDatagrid(1);
 
-unset($_SESSION['cadastrar/UsuarioAtividade']);
+
+unset($_SESSION['alterar/UsuarioAtividade'],$_SESSION['alterar/Atividade']);
 ?>
 </fieldset>

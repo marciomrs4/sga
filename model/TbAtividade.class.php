@@ -14,6 +14,12 @@ class TbAtividade extends Banco
 	private $at_descricao = 'at_descricao';
 	private $at_observacao = 'at_observacao';
 	private $usu_codigo_criador = 'usu_codigo_criador';
+	private $at_notificacao = 'at_notificacao';
+	private $fas_codigo = 'fas_codigo';
+	private $at_codigo_dependente = 'at_codigo_dependente';
+	private $at_inicio = 'at_inicio';
+	private $at_fim = 'at_fim';
+	private $at_tipo_atividade = 'at_tipo_atividade';
 
 
 	public function insert($dados)
@@ -22,8 +28,9 @@ class TbAtividade extends Banco
 		$query = ("INSERT INTO $this->tabela
 					($this->pro_codigo, $this->usu_codigo_responsavel, $this->at_previsao_inicio, 
 					$this->at_previsao_fim, $this->sta_codigo, $this->at_descricao,
-					$this->at_observacao, $this->usu_codigo_criador)
-					VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+					$this->at_observacao, $this->usu_codigo_criador, $this->fas_codigo, $this->at_codigo_dependente,
+					$this->at_notificacao)
+					VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
 
 					try
@@ -38,6 +45,9 @@ class TbAtividade extends Banco
 						$stmt->bindParam(6,$dados[$this->at_descricao],PDO::PARAM_INT);
 						$stmt->bindParam(7,$dados[$this->at_observacao],PDO::PARAM_STR);
 						$stmt->bindParam(8,$dados[$this->usu_codigo_criador],PDO::PARAM_INT);
+						$stmt->bindParam(9,$dados[$this->fas_codigo],PDO::PARAM_INT);
+						$stmt->bindParam(10,$dados[$this->at_codigo_dependente],PDO::PARAM_INT);
+						$stmt->bindParam(11,$dados[$this->at_notificacao],PDO::PARAM_INT);
 
 						$stmt->execute();
 
@@ -145,17 +155,20 @@ class TbAtividade extends Banco
 	{
 		$query = ("UPDATE $this->tabela
 					SET $this->pro_codigo = ?,
-					$this->usu_codigo_responsavel = ?,
-					$this->at_previsao_inicio = ?,
-					$this->at_previsao_fim = ?,
-					$this->sta_codigo = ?,
-					$this->at_descricao = ?,
-					$this->at_observacao = ?
+						$this->usu_codigo_responsavel = ?,
+						$this->at_previsao_inicio = ?,
+						$this->at_previsao_fim = ?,
+						$this->sta_codigo = ?,
+						$this->at_descricao = ?,
+						$this->at_observacao = ?,
+						$this->fas_codigo = ?,
+						$this->at_codigo_dependente = ?,
+						$this->at_notificacao = ?
 					
 					WHERE $this->at_codigo = ? ");
 						
-					try
-					{
+					try{
+
 						$stmt = $this->conexao->prepare($query);
 
 						$stmt->bindParam(1,$dados[$this->pro_codigo],PDO::PARAM_INT);
@@ -165,8 +178,11 @@ class TbAtividade extends Banco
 						$stmt->bindParam(5,$dados[$this->sta_codigo],PDO::PARAM_INT);
 						$stmt->bindParam(6,$dados[$this->at_descricao],PDO::PARAM_STR);
 						$stmt->bindParam(7,$dados[$this->at_observacao],PDO::PARAM_STR);
-						$stmt->bindParam(8,$dados[$this->at_codigo],PDO::PARAM_INT);
-							
+						$stmt->bindParam(8,$dados[$this->fas_codigo],PDO::PARAM_INT);
+						$stmt->bindParam(9,$dados[$this->at_codigo_dependente],PDO::PARAM_INT);
+						$stmt->bindParam(10,$dados[$this->at_notificacao],PDO::PARAM_INT);
+						$stmt->bindParam(11,$dados[$this->at_codigo],PDO::PARAM_INT);
+
 						$stmt->execute();
 
 						return($stmt);
@@ -510,5 +526,251 @@ class TbAtividade extends Banco
             throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
         }
     }
+
+	#usado para listar atividade dependente
+	public function listarAtividadeDependente($dados)
+	{
+		$query = ("SELECT at_codigo, substring(at_descricao,1,30) AS at_descricao
+					FROM tb_atividade
+					WHERE pro_codigo = ?
+					AND sta_codigo = 1
+					AND at_codigo != ?");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados[$this->pro_codigo],PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados[$this->at_codigo],PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt);
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
+		}
+	}
+
+	#usado no cadastro de projeto para validar se existe atividades que não sejam pendentes
+	public function getCountQtdAtividadeByProjetos($pro_codigo)
+	{
+		$query = ("SELECT COUNT(*) AS qtd_atividade
+					FROM tb_atividade
+					WHERE pro_codigo = ?
+					AND sta_codigo != 1;");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$pro_codigo,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetch(\PDO::FETCH_ASSOC));
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
+		}
+	}
+
+	public function updateTipoAtividade($dados)
+	{
+		$query = ("UPDATE tb_atividade
+					SET at_tipo_atividade = ?
+					WHERE at_codigo = ?
+				  ");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados['at_tipo_atividade'],PDO::PARAM_STR);
+			$stmt->bindParam(2,$dados['at_codigo'],PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt);
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	public function getAtividadeDependente($at_codigo)
+	{
+		$query = ("SELECT sta_codigo, at_codigo
+					FROM tb_atividade
+					WHERE at_codigo = (SELECT at_codigo_dependente
+										FROM tb_atividade
+										WHERE at_codigo = ?)");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$at_codigo,\PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetch(\PDO::FETCH_ASSOC));
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	//Atualiza a data de inicio efetivo da atividade
+	public function updateDataInicioAtividade($dados)
+	{
+		$query = ("UPDATE tb_atividade
+					SET at_inicio = ?
+					WHERE at_codigo = ?
+				  ");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados['at_inicio'],PDO::PARAM_STR);
+			$stmt->bindParam(2,$dados['at_codigo'],PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt);
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Tabela atividade ' . $e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	//Atualiza a data de fim efetivo da atividade
+	public function updateDataFimAtividade($dados)
+	{
+		$query = ("UPDATE tb_atividade
+					SET at_fim = ?
+					WHERE at_codigo = ?
+				  ");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados['at_fim'],PDO::PARAM_STR);
+			$stmt->bindParam(2,$dados['at_codigo'],PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt);
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+
+	//Obtem a data de inicio e fim efetivos da atividade
+	public function getDataInicioFimAtividade($at_codigo)
+	{
+		$query = ("SELECT at_inicio, at_fim
+					FROM tb_atividade
+					WHERE at_codigo = ?");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$at_codigo,\PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetch(\PDO::FETCH_ASSOC));
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Erro ao buscar as datas ' . $e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	//Obetem codigo do projeto
+	// usado para envio de notificacao de apontamento
+	public function getProCodigo($at_codigo)
+	{
+		$query = ("SELECT pro_codigo
+					FROM tb_atividade
+					WHERE at_codigo = ?");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$at_codigo,\PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetch(\PDO::FETCH_ASSOC));
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Erro ao buscar as datas ' . $e->getMessage(),$e->getCode());
+		}
+
+	}
+
+
+	//Obetem a lista de atividades para notificacao automatica
+	// usado para envio de notificacao da atividade para o responsavel
+	public function listaNotificaoAtividade()
+	{
+		$query = ("SELECT
+						(SELECT pro_titulo
+							FROM tb_projeto
+							WHERE ATV.pro_codigo = pro_codigo) AS pro_titulo,
+						at_codigo,
+						(SELECT concat(usu_nome,' ', usu_sobrenome)
+							FROM tb_usuario
+							WHERE usu_codigo_responsavel = usu_codigo) AS usu_nome,
+						(SELECT usu_email
+							FROM tb_usuario
+							WHERE usu_codigo_responsavel = usu_codigo) AS usu_email,
+						(SELECT sta_descricao
+							FROM tb_status_atividade
+							WHERE ATV.sta_codigo = sta_codigo) AS sta_descricao,
+						at_previsao_fim,datediff(at_previsao_fim, date_format(now(),'%Y-%m-%d')) AS dias
+					FROM tb_atividade ATV
+					WHERE at_notificacao = 1
+					AND sta_codigo IN (1,2)
+					AND datediff(at_previsao_fim, date_format(now(),'%Y-%m-%d')) <= 5
+					ORDER BY at_codigo;");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->execute();
+
+			return($stmt->fetchAll(\PDO::FETCH_ASSOC));
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Erro ao listar ' . $e->getMessage(),$e->getCode());
+		}
+
+	}
+
+
 }
+
 ?>

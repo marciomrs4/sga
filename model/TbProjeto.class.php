@@ -4,11 +4,11 @@ class TbProjeto extends Banco
 {
 
 	private $tabela = 'tb_projeto';
-
 	private $pro_codigo = 'pro_codigo';
 	private $pro_cod_projeto = 'pro_cod_projeto';
 	private $pro_titulo = 'pro_titulo';
 	private $usu_codigo_solicitante = 'usu_codigo_solicitante';
+	private $usu_codigo_responsavel = 'usu_codigo_responsavel';
 	private $pro_previsao_inicio = 'pro_previsao_inicio';
 	private $pro_previsao_fim = 'pro_previsao_fim';
 	private $stp_codigo = 'stp_codigo';
@@ -16,15 +16,21 @@ class TbProjeto extends Banco
 	private $usu_codigo_criador = 'usu_codigo_criador';
 	private $pro_data_cadastro = 'pro_data_cadastro';
 	private $dep_codigo = 'dep_codigo';
+	private $pro_data_inicio = 'pro_data_inicio';
+	private $pro_data_final = 'pro_data_final';
+	private $pro_observacao = 'pro_observacao';
+	private $pro_local_armazenado = 'pro_local_armazenado';
 
 
 	public function insert($dados)
 	{
 
 		$query = ("INSERT INTO $this->tabela
-					($this->pro_cod_projeto, $this->pro_titulo, $this->usu_codigo_solicitante, $this->pro_previsao_inicio, 
-					$this->pro_previsao_fim, $this->stp_codigo, $this->pro_descricao, $this->usu_codigo_criador, $this->dep_codigo)
-					VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)");
+					($this->pro_cod_projeto, $this->pro_titulo, $this->usu_codigo_solicitante,
+					$this->pro_previsao_inicio, $this->pro_previsao_fim, $this->stp_codigo,
+					$this->pro_descricao, $this->usu_codigo_criador, $this->dep_codigo,
+					$this->usu_codigo_responsavel, $this->pro_observacao, $this->pro_local_armazenado)
+					VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 						
 					$this->usu_codigo_criador = $_SESSION['usu_codigo'];
 
@@ -41,8 +47,11 @@ class TbProjeto extends Banco
 						$stmt->bindParam(6,$dados[$this->stp_codigo],PDO::PARAM_INT);
 						$stmt->bindParam(7,$dados[$this->pro_descricao],PDO::PARAM_STR);
 						$stmt->bindParam(8,$this->usu_codigo_criador,PDO::PARAM_INT);
-						$stmt->bindParam(9,$dados[$this->dep_codigo],PDO::PARAM_INT);						
-							
+						$stmt->bindParam(9,$dados[$this->dep_codigo],PDO::PARAM_INT);
+						$stmt->bindParam(10,$dados[$this->usu_codigo_responsavel],PDO::PARAM_INT);
+						$stmt->bindParam(11,$dados[$this->pro_observacao],PDO::PARAM_STR);
+						$stmt->bindParam(12,$dados[$this->pro_local_armazenado],PDO::PARAM_STR);
+
 						$stmt->execute();
 
 						$this->pro_codigo = $this->conexao->lastInsertId();
@@ -88,12 +97,12 @@ class TbProjeto extends Banco
 	{
 		$query = ("SELECT
 		           P.PRO_CODIGO,
-                   P.PRO_COD_PROJETO AS Código, 
+                   P.PRO_COD_PROJETO AS Cï¿½digo, 
                    P.PRO_TITULO AS Titulo,
-                   P.PRO_DESCRICAO AS Descrição,
+                   P.PRO_DESCRICAO AS Descriï¿½ï¿½o,
                    P.PRO_PREVISAO_INICIO,
                    P.PRO_PREVISAO_FIM,
-                   concat(U.USU_NOME, ' ', U.USU_SOBRENOME) AS Usuário,
+                   concat(U.USU_NOME, ' ', U.USU_SOBRENOME) AS Usuï¿½rio,
                    S.STP_DESCRICAO AS Status
                    FROM tb_projeto AS P
                    JOIN tb_usuario AS U
@@ -122,12 +131,12 @@ class TbProjeto extends Banco
 	{
 		$query = ("SELECT
 		           P.PRO_CODIGO,
-                   P.PRO_COD_PROJETO AS Código, 
+                   P.PRO_COD_PROJETO AS Cï¿½digo, 
                    P.PRO_TITULO AS Titulo,
-                   P.PRO_DESCRICAO AS Descrição,
+                   P.PRO_DESCRICAO AS Descriï¿½ï¿½o,
                    P.PRO_PREVISAO_INICIO,
                    P.PRO_PREVISAO_FIM,
-                   concat(U.USU_NOME, ' ', U.USU_SOBRENOME) AS Usuário,
+                   concat(U.USU_NOME, ' ', U.USU_SOBRENOME) AS Usuï¿½rio,
                    S.STP_DESCRICAO AS Status
                    FROM tb_projeto AS P
                    JOIN tb_usuario AS U
@@ -156,12 +165,12 @@ class TbProjeto extends Banco
 	{
 		$query = ("SELECT
 		           P.PRO_CODIGO,
-                   P.PRO_COD_PROJETO AS Código, 
+                   P.PRO_COD_PROJETO AS Cï¿½digo, 
                    P.PRO_TITULO AS Titulo,
-                   P.PRO_DESCRICAO AS Descrição,
+                   P.PRO_DESCRICAO AS Descriï¿½ï¿½o,
                    P.PRO_PREVISAO_INICIO,
                    P.PRO_PREVISAO_FIM,
-                   concat(U.USU_NOME, ' ', U.USU_SOBRENOME) AS Usuário,
+                   concat(U.USU_NOME, ' ', U.USU_SOBRENOME) AS Usuï¿½rio,
                    S.STP_DESCRICAO AS Status
                    FROM tb_projeto AS P
                    JOIN tb_usuario AS U
@@ -190,12 +199,12 @@ class TbProjeto extends Banco
 	{
 		$query = ("SELECT
 		           P.PRO_CODIGO,
-                   P.PRO_COD_PROJETO AS Código, 
+                   P.PRO_COD_PROJETO AS Cï¿½digo, 
                    P.PRO_TITULO AS Titulo,
-                   P.PRO_DESCRICAO AS Descrição,
+                   P.PRO_DESCRICAO AS Descriï¿½ï¿½o,
                    P.PRO_PREVISAO_INICIO,
                    P.PRO_PREVISAO_FIM,
-                   concat(U.USU_NOME, ' ', U.USU_SOBRENOME) AS Usuário,
+                   concat(U.USU_NOME, ' ', U.USU_SOBRENOME) AS Usuï¿½rio,
                    S.STP_DESCRICAO AS Status
                    FROM tb_projeto AS P
                    JOIN tb_usuario AS U
@@ -499,7 +508,211 @@ class TbProjeto extends Banco
 			throw new PDOException($e->getMessage(),$e->getCode());
 		}
 	}
-	
-	
+
+	public function getProjetoToCadastroApontamento($pro_codigo)
+	{
+		$query = ("SELECT pro_codigo, pro_titulo, stp_codigo
+					FROM $this->tabela
+					WHERE $this->pro_codigo = ?");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$pro_codigo,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetch());
+
+		}catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	public function updateStatusProjeto($dados)
+	{
+		$query = ("UPDATE $this->tabela
+					SET $this->stp_codigo = ?
+					WHERE $this->pro_codigo = ? ");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados[$this->stp_codigo],PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados[$this->pro_codigo],PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt);
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	public function getDescricaoProjeto($pro_codigo)
+	{
+		$query = ("SELECT pro_codigo, pro_titulo
+					FROM $this->tabela
+					WHERE $this->pro_codigo = ?");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$pro_codigo,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetch());
+
+		}catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	/**
+	 * @param $pro_codigo
+	 * @return mixed
+	 * Usado no cadastro e alteracao de atividade, para validar a data de criacao
+	 */
+	public function getDataIncioFimProjeto($pro_codigo)
+	{
+		$query = ("SELECT pro_previsao_inicio, pro_previsao_fim
+					FROM $this->tabela
+					WHERE $this->pro_codigo = ?");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$pro_codigo,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetch(\PDO::FETCH_ASSOC));
+
+		}catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	/**
+	 * @param $pro_codigo
+	 * @return mixed
+	 * Usado no cadastro de apontamento, para validar a data de inicio real do projeto
+	 */
+	public function getInicioFimProjeto($pro_codigo)
+	{
+		$query = ("SELECT pro_data_inicio, pro_data_final
+					FROM tb_projeto
+					WHERE pro_codigo =  ?;");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$pro_codigo,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetch(\PDO::FETCH_ASSOC));
+
+		}catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	//Atualiza a data inicial real do projeto
+	public function updateDataInicio($dados)
+	{
+		$query = ("UPDATE $this->tabela
+					SET $this->pro_data_inicio = ?
+					WHERE $this->pro_codigo = ? ");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados[$this->pro_data_inicio],PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados[$this->pro_codigo],PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt);
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+
+	//Atualiza a data final do projeto
+	public function updateDataFinal($dados)
+	{
+		$query = ("UPDATE $this->tabela
+					SET pro_data_final = ?
+					WHERE pro_codigo = ? ");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados['pro_data_final'],PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados['pro_codigo'],PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt);
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	//Lista email dos usuarios participantes do projeto
+	public function getEmailUsuarioByProjeto($pro_codigo)
+	{
+		$query = ("SELECT
+						(SELECT usu_email
+							FROM tb_usuario
+							WHERE usu_codigo = usu_codigo_integrante ) AS usu_email
+					FROM tb_usuario_projeto
+					WHERE pro_codigo = ?;");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$pro_codigo,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetchAll(\PDO::FETCH_ASSOC));
+
+		}catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+
 }
 ?>

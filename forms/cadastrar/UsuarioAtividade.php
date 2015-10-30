@@ -127,6 +127,6 @@ $DataGridAtividade->acao = 'alterar/UsuarioAtividade';
 $DataGridAtividade->colunaoculta = 1;										
 $DataGridAtividade->mostrarDatagrid(1);
 
-unset($_SESSION['cadastrar/UsuarioAtividade']);
+unset($_SESSION['cadastrar/UsuarioAtividade'],$_SESSION['alterar/Atividade']);
 ?>
 </fieldset>

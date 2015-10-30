@@ -1,8 +1,6 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
-//sleep(2);
-
 if($_POST)
 {
 	if ($_SESSION['validacaoform'] == base64_encode(date('d-m-Y')))
@@ -13,26 +11,32 @@ if($_POST)
 
 		switch ($acao)
 		{
-			case 'cadastrar/Projeto' :
-
+			case 'cadastrar/AtaReuniao' :
 				$cadastro = new Cadastro();
 
 				try
 				{
 					$cadastro->setDados($_POST);
-					
-					$cadastro->cadastrarProjeto();
 
-					$cadastro->finalizarApp('cadastrar/Projeto');
+					//$cadastro->listarDados();
+
+					$cadastro->cadastrarAtaReuniao();
+
+					//$cadastro->finalizarApp('cadastrar/Sistema');
+
+					unset($_SESSION['cadastrar/AtaReuniao']);
+
+					$_SESSION['acao'] = base64_encode('alterar/Projeto');
+					$_SESSION['valor'] = $_POST['pro_codigo'];
+					header('location: '.$_SERVER['HTTP_REFERER']);
 
 				}catch (Exception $e)
 				{
-					ClasseException::throwException($e,$_POST,'cadastrar/Projeto');
+					ClasseException::throwException($e,$_POST,'cadastrar/Sistema');
 				}
 				break;
 
-			case 'alterar/Projeto' :
-				
+			case 'alterar/AtaReuniao' :
 				$alteracao = new Alteracao();
 
 				try
@@ -40,26 +44,11 @@ if($_POST)
 
 					$alteracao->setDados($_POST);
 
-					$alteracao->alterarProjeto();
+					$alteracao->alterarAtaReuniao();
 
-					$alteracao->finalizarApp();
-
-				}catch (Exception $e)
-				{
-					ClasseException::throwException($e);
-				}
-				break;
-					
-			case 'projeto/aprovar':
-				$alteracao = new Alteracao();
-
-				try
-				{
-					$alteracao->setDados($_POST);
-
-					$alteracao->aprovarProjeto();
-
-					$alteracao->finalizarApp();
+					$_SESSION['acao'] = base64_encode('alterar/Projeto');
+					$_SESSION['valorform'] = base64_encode($_POST['pro_codigo']);
+					header('location: '.$_SERVER['HTTP_REFERER']);
 
 				}catch (Exception $e)
 				{

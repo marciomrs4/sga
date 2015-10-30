@@ -20,7 +20,14 @@ if($_POST)
 						
 					$cadastro->cadastrarAssentamento();
 
-					$cadastro->finalizarApp('cadastrar/Assentamento');
+					//$cadastro->finalizarApp('cadastrar/Assentamento');
+
+
+					unset($_SESSION['cadastrar/Assentamento']);
+					$_SESSION['valorform'] = base64_encode($_POST['sol_codigo']);
+					$_SESSION['acao'] = base64_encode('alterar/Solicitacao');
+					$_SESSION['erro'] = Texto::sucesso('Assentamento cadastrado com sucesso! ');
+					header('location: '.$_SERVER['HTTP_REFERER']);
 
 				}catch (Exception $e)
 				{

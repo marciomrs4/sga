@@ -226,8 +226,67 @@ class Email extends PHPMailer
 		
 		$this->enviarEmail();
 		
-	}	
-	
-	
+	}
+
+	/**
+	 * @param $dados
+	 *
+	 * Envio de email para apontamento de atividades
+	 */
+	public function apontamentoAtividade($dados)
+	{
+
+		$at_codigo = $dados['at_codigo'];
+		$ap_descricao = $dados['ap_descricao'];
+		$sta_codigo = $dados['sta_codigo'];
+
+		$tbAtividade = new TbAtividade();
+		$tbProjeto = new TbProjeto();
+		$tbUsuario = new TbUsuario();
+		$tbStatusAtividade = new TbStatusAtividade();
+
+		$tbUsuarioAtividade = new TbUsuarioAtividade();
+
+		$projeto = $tbAtividade->getProCodigo($at_codigo);
+
+		$projeto = $tbProjeto->getDescricaoProjeto($projeto['pro_codigo']);
+
+		$usuario = $tbUsuario->getUsuario($_SESSION['usu_codigo']);
+
+
+		$this->cabecalho = "Andamento do projeto: {$projeto['pro_titulo']}";
+
+		$this->mensagem .= '<b>Houve um novo apontamento.</b><br><br>';
+		$this->mensagem .= "<b>Titulo do Projeto:</b> {$projeto['pro_titulo']} <br>";
+		$this->mensagem .= "<b>Número da atividade: </b> {$at_codigo} <br><br>";
+		$this->mensagem .= "<b>Criado por: </b>" . $usuario['usu_nome'] .' '. $usuario['usu_sobrenome'] .' | ' . $usuario['usu_email'] . "<br><br>";
+		$this->mensagem .= '<b>Descrição do apontamento:</b> <br>';
+		$this->mensagem .= "{$ap_descricao}<br><br>";
+		$this->mensagem .= "<b>Status da Atividade: </b> {$tbStatusAtividade->getDescricao($sta_codigo)}";
+
+
+
+		if($dados['informados']) {
+
+			foreach ($tbUsuarioAtividade->getEmailUsuarioByInformadoOrConsultado($at_codigo, 1) as $email) {
+				$this->AddAddress($email['usu_email']);
+			}
+		}
+
+		if($dados['consultados']) {
+			foreach ($tbUsuarioAtividade->getEmailUsuarioByInformadoOrConsultado($at_codigo, 2) as $email) {
+				$this->AddAddress($email['usu_email']);
+			}
+		}
+
+		if($dados['participantes']) {
+			foreach ($tbProjeto->getEmailUsuarioByProjeto($projeto['pro_codigo']) as $email) {
+				$this->AddAddress($email['usu_email']);
+			}
+		}
+
+		$this->enviarEmail();
+
+	}
 
 }

@@ -16,7 +16,7 @@ $at_codigo = $tbUsuAtividade->verificaUsuariosAtividade($_SESSION['alterar/Ativi
 				<legend>Ações</legend>
 				<div class="acoeschamado">
 					<a href="./action/formcontroler.php?<?php echo(base64_encode('cadastrar/UsuarioAtividade').'='.base64_encode($_SESSION['alterar/Atividade']['at_codigo']));?>">
-						<img src="./css/images/new_usuario.png" title="Adcionar Usuário">
+						<img src="./css/images/new_usuario.png" title="Adcionar Usu?rio">
 					</a>
 					
 					<a href="./action/formcontroler.php?<?php echo(base64_encode('cadastrar/Apontamento').'='.base64_encode($_SESSION['alterar/Atividade']['at_codigo']));?>">
@@ -30,7 +30,8 @@ $at_codigo = $tbUsuAtividade->verificaUsuariosAtividade($_SESSION['alterar/Ativi
     <tr>
       <td colspan="2" align="center">
       	<?php Texto::mostrarMensagem($_SESSION['erro']); ?>
-   		<input name="at_codigo" type="hidden" value="<?php echo($_SESSION['alterar/Atividade']['at_codigo']); ?>" />     	       	
+   		<input name="at_codigo" type="hidden" value="<?php echo($_SESSION['alterar/Atividade']['at_codigo']); ?>" />
+ 	    <input name="sta_codigo" type="hidden" value="<?php echo($_SESSION['alterar/Atividade']['sta_codigo']); ?>" />
       </td>
     </tr>
 
@@ -39,8 +40,15 @@ $at_codigo = $tbUsuAtividade->verificaUsuariosAtividade($_SESSION['alterar/Ativi
 		<td>
 	    <?php 
 		$tbProjeto = new TbProjeto();
-		FormComponente::$name = 'Selecione...';
-		FormComponente::selectOption('pro_codigo', $tbProjeto->listarProjetoAlteracaoAtividade($_SESSION['dep_codigo']),true,$_SESSION['alterar/Atividade']);
+
+		$SelectTbProjeot = new SelectOption();
+		$SelectTbProjeot->setOptionEmpty('Selecione..')
+			->setSelectedItem($_SESSION['alterar/Atividade']['pro_codigo'])
+			->setSelectName('pro_codigo')
+			->setStmt($tbProjeto->listarProjetoAlteracaoAtividade($_SESSION['dep_codigo']))
+			->listOption();
+
+
 		?>
 		</td>
      </tr>
@@ -53,8 +61,16 @@ $at_codigo = $tbUsuAtividade->verificaUsuariosAtividade($_SESSION['alterar/Ativi
 
 		if($at_codigo == '')
 	    {
-			FormComponente::$name = 'Selecione...';
-			FormComponente::selectOption('usu_codigo_responsavel', $tbUsuario->selectUsuarioDepCompleto($_SESSION['dep_codigo']),true,$_SESSION['alterar/Atividade']);
+
+			$SelectUsuario = new SelectOption();
+
+			$SelectUsuario->setOptionEmpty('Selecione ...')
+				->setSelectedItem($_SESSION['alterar/Atividade']['usu_codigo_responsavel'])
+				->setSelectName('usu_codigo_responsavel')
+				->setStmt($tbUsuario->selectUsuarioDepCompleto($_SESSION['dep_codigo']))
+				->listOption();
+
+
 	    }else
 	    {
 	    	$dadosUsuario = $tbUsuario->getForm($_SESSION['alterar/Atividade']['usu_codigo_responsavel']);
@@ -66,16 +82,7 @@ $at_codigo = $tbUsuAtividade->verificaUsuariosAtividade($_SESSION['alterar/Ativi
 		?>
 		</td>
      </tr>
-	<tr>
-		<th nowrap="nowrap">Status:</th>
-		<td>
-	    <?php 
-		$tbStatusAtividade = new TbStatusAtividade();
-		FormComponente::selectOption('sta_codigo', $tbStatusAtividade->listarStatusAtividade(),false,$_SESSION['alterar/Atividade']);
-		?>
-		</td>
-     </tr>     
-     
+
      <tr>
        <th width="119" align="left" nowrap="nowrap">Previsão Inicio:</th>
      	<td> 	
@@ -84,11 +91,70 @@ $at_codigo = $tbUsuAtividade->verificaUsuariosAtividade($_SESSION['alterar/Ativi
      </tr>
      
       <tr>
-       <th width="119" align="left" nowrap="nowrap">Previsão Fim:</th>	
+       <th width="119" align="left" nowrap="nowrap">Previsão Fim:</th>
       	<td>
       		<input type="text" id="data" class="data" name="at_previsao_fim" value="<?php echo(ValidarDatas::dataCliente($_SESSION['alterar/Atividade']['at_previsao_fim'])); ?>"  />
      	</td>
      </tr>
+
+	  <tr>
+		  <th width="119" align="left" nowrap="nowrap">Fase do projeto:</th>
+		  <td>
+			  <?php
+
+				$tbFaseProjeto = new TbFaseProjeto();
+
+			  $SelectFase = new SelectOption();
+			  $SelectFase->setOptionEmpty('Selecione..')
+				  ->setSelectedItem($_SESSION['alterar/Atividade']['fas_codigo'])
+				  ->setSelectName('fas_codigo')
+				  ->setStmt($tbFaseProjeto->findByProjeto($_SESSION['alterar/Atividade']['pro_codigo']))
+				  ->listOption();
+
+			  ?>
+		  </td>
+	  </tr>
+
+	  <tr>
+		  <th width="119" align="left" nowrap="nowrap">Atividade dependente:</th>
+		  <td>
+			  <?php
+
+			  $SelectAtividadeAtendente = new SelectOption();
+
+			  $dadosAtividadePendente['pro_codigo'] = $_SESSION['alterar/Atividade']['pro_codigo'];
+			  $dadosAtividadePendente['at_codigo'] = $_SESSION['alterar/Atividade']['at_codigo'];
+
+			  $SelectAtividadeAtendente->setOptionEmpty('Selecione..')
+			  ->setSelectedItem($_SESSION['alterar/Atividade']['at_codigo_dependente'])
+			  ->setSelectName('at_codigo_dependente')
+			  ->setStmt($tbAtividade->listarAtividadeDependente($dadosAtividadePendente))
+			  ->listOption();
+
+			  ?>
+		  </td>
+	  </tr>
+
+	  <tr>
+		  <th width="119" align="left" nowrap="nowrap">Status Atividade:</th>
+		  <td>
+			  <?php
+
+			  $tbStatusAtividade = new TbStatusAtividade();
+
+			  echo $tbStatusAtividade->getDescricao($_SESSION['alterar/Atividade']['sta_codigo']);
+
+			  ?>
+		  </td>
+	  </tr>
+
+	  <tr>
+		  <th width="119" align="left" nowrap="nowrap">Ativar notificação:</th>
+		  <td>
+			  <?php $check = ($_SESSION['alterar/Atividade']['at_notificacao'] == null) ? '' : 'checked';?>
+			  <input type="checkbox" name="at_notificacao" <?php echo($check); ?>>
+		  </td>
+	  </tr>
 
     <tr>
       <th width="119" align="left" nowrap="nowrap">Descrição:</th>

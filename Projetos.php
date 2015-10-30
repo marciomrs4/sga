@@ -16,6 +16,7 @@ $busca->validarPost($_POST);
 
 $DataGrid = new DataGrid(array('Código do Projeto','Titulo',$_SESSION['config']['usuario'].' Solicitante','Previsão Inicio','Previsão Fim','Status'));
 
+
 ?>
 <form action="" method="post">
 <fieldset>
@@ -55,7 +56,13 @@ $DataGrid = new DataGrid(array('Código do Projeto','Titulo',$_SESSION['config'][
 <br />
 <?php
 
+
+/*echo '<pre>';
+print_r($_SESSION);
+echo '</pre>';*/
+
 Arquivo::includeForm();
+
 
 try
 {

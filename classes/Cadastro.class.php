@@ -140,9 +140,16 @@ class Cadastro extends Dados
 			$this->dados['stp_codigo'] = ($this->dados['stp_codigo'] == '') ? 1 : $this->dados['stp_codigo'];
 
 			$this->dados['dep_codigo'] = $_SESSION['dep_codigo'];
-			$this->dados['pro_cod_projeto'] = $tbprojeto->codigoProjeto(); 
-			    	
-			
+			$this->dados['pro_cod_projeto'] = $tbprojeto->codigoProjeto();
+
+			$pro_previsao_inicio = strtotime($this->dados['pro_previsao_inicio']);
+
+			$pro_previsao_fim = strtotime($this->dados['pro_previsao_fim']);
+
+			if($pro_previsao_inicio > $pro_previsao_fim){
+				throw new \Exception('A data de previsão de inicio deve ser menor que a previsão de fim do projeto.');
+			}
+
 			try
 			{
 					
@@ -791,14 +798,47 @@ class Cadastro extends Dados
 			$this->dados['sta_codigo'] = ($this->dados['sta_codigo'] == '') ? 1 : $this->dados['sta_codigo'];
 
 			$this->dados['usu_codigo_criador'] = $_SESSION['usu_codigo'];
-			
+
+			$this->dados['at_notificacao'] = ($this->dados['at_notificacao'] == '') ? null : '1';
+
+			$this->dados['fas_codigo'] = ($this->dados['fas_codigo'] == '') ? null : $this->dados['fas_codigo'];
+			$this->dados['at_codigo_dependente'] = ($this->dados['at_codigo_dependente'] == '') ? null : $this->dados['at_codigo_dependente'];
+
+
 			try
 			{
 					
 				$this->conexao->beginTransaction();
 
 				$tbProjeto = new TbProjeto();
-				
+
+				$dataProjeto = $tbProjeto->getDataIncioFimProjeto($this->dados['pro_codigo']);
+
+
+				$pro_previsao_inicio = strtotime($dataProjeto['pro_previsao_inicio']);
+
+				$pro_previsao_fim = strtotime($dataProjeto['pro_previsao_fim']);
+
+				$at_previsao_inicio = strtotime($this->dados['at_previsao_inicio']);
+				$at_previsao_fim = strtotime($this->dados['at_previsao_fim']);
+
+				//valida se a data de inicio da atividade e menor que a data final da atividade
+				if($at_previsao_inicio > $at_previsao_fim){
+					throw new \Exception('A data inicial da atividade deve ser menor que a data final.');
+				}
+
+				//Valida se a data inicial da atividade é maior que a data inicial do projeto
+				if($at_previsao_inicio <= $pro_previsao_inicio){
+					throw new \Exception('A data inicial da atividade deve ser maior que a data inicial do projeto.');
+				}
+
+				//Valida se a data final da atividade é menor que a data final do projeto
+				if($at_previsao_fim > $pro_previsao_fim){
+					throw new \Exception('A data final da atividade deve ser menor ou igual que a data final do projeto.');
+				}
+
+
+
 				$status = $tbProjeto->getStatusProjeto($this->dados['pro_codigo']);
 				
 				if($status != 2)
@@ -809,7 +849,14 @@ class Cadastro extends Dados
 				
 					$tbAtividade = new TbAtividade();
 					$this->dados['at_codigo'] = $tbAtividade->insert($this->dados);
-	
+
+					$qtd = $tbAtividade->getCountQtdAtividadeByProjetos($this->dados['pro_codigo']);
+
+					if($qtd['qtd_atividade'] != 0){
+						$this->dados['at_tipo_atividade'] = 1;
+						$tbAtividade->updateTipoAtividade($this->dados);
+					}
+
 					$this->conexao->commit();
 				}
 				
@@ -869,14 +916,49 @@ class Cadastro extends Dados
 			ValidarCampos::campoVazio($this->dados['ap_descricao'],'Descrição do Apontamento');
 			
 			$this->dados['usu_codigo'] = $_SESSION['usu_codigo'];
-			
-			try 
+
+			try
 			{
 				$this->conexao->beginTransaction();
-				
-				$tbApontamento = new TbApontamento();
+
 				$tbAtividade = new TbAtividade();
-				
+
+				$dataAtividade = $tbAtividade->getDataInicioFimAtividade($this->dados['at_codigo']);
+
+
+				//Atualiza a data Inicio ao ter um apontamento com status em andamento e ainda data inicio vazia
+				if(($this->dados['sta_codigo'] == 2) and ($dataAtividade['at_inicio'] == '')){
+
+					$dados['at_inicio'] = date('Y-m-d H:i:s');
+					$dados['at_codigo'] = $this->dados['at_codigo'];
+
+					$tbAtividade->updateDataInicioAtividade($dados);
+				}
+
+				//Atualiza a data de Fim ao ter um apontamento com status em concluido e ainda data fim vazia
+				if(($this->dados['sta_codigo'] == 3) and ($dataAtividade['at_fim'] == '')){
+
+					$dados['at_fim'] = date('Y-m-d H:i:s');
+					$dados['at_codigo'] = $this->dados['at_codigo'];
+
+					$tbAtividade->updateDataFimAtividade($dados);
+				}
+
+			
+
+				$tbApontamento = new TbApontamento();
+
+
+				$atividadeDependete = $tbAtividade->getAtividadeDependente($this->dados['at_codigo']);
+
+
+				if($atividadeDependete['sta_codigo'] == 1){
+					throw new \Exception("A atividade {$atividadeDependete['at_codigo']} é
+					dependente, vc não pode iniciar essa atividade!");
+				}
+
+
+
 				$status = $tbAtividade->getStatusAtividade($this->dados['at_codigo']);
 				
 				if($status > 2)
@@ -889,7 +971,16 @@ class Cadastro extends Dados
 					$tbAtividade->updateStatusAtividade($this->dados);
 					
 					$this->conexao->commit();
-					
+
+
+
+
+					if(($this->dados['informados']) or ($this->dados['consultados']) or ($this->dados['participantes'])) {
+
+						$Email = new Email();
+						$Email->apontamentoAtividade($this->dados);
+
+					}
 				}
 				
 				
@@ -1210,6 +1301,141 @@ class Cadastro extends Dados
         }
 
     }
+
+	public function cadastrarFaseProjeto()
+	{
+
+		try{
+
+			ValidarCampos::campoVazio($this->dados['fas_descricao']);
+
+			try{
+
+				$tbFaseProjeto = new TbFaseProjeto();
+
+				$tbFaseProjeto->insert($this->dados);
+
+			}catch (\PDOException $e){
+				throw new \PDOException($e->getMessage(), $e->getCode());
+			}
+
+
+		}catch (\Exception $e){
+			throw new \Exception($e->getMessage(), $e->getCode());
+		}
+
+	}
+
+	public function cadastrarUsuarioProjeto()
+	{
+
+		try{
+
+			ValidarCampos::campoVazio($this->dados['usu_codigo_integrante']);
+			ValidarCampos::campoVazio($this->dados['pro_codigo']);
+
+			$this->dados['usu_codigo_criador'] = $_SESSION['usu_codigo'];
+
+			try{
+
+				$tbUsuarioProjeto = new TbUsuarioProjeto();
+
+				$tbUsuarioProjeto->insert($this->dados);
+
+			}catch (\PDOException $e){
+				throw new \PDOException($e->getMessage(), $e->getCode());
+			}
+
+
+		}catch (\Exception $e){
+			throw new \Exception($e->getMessage(), $e->getCode());
+		}
+
+	}
+
+
+	public function cadastrarApontamentoProjeto()
+	{
+
+		try{
+
+			ValidarCampos::campoVazio($this->dados['ap_descricao'],'Descricao do apontamento');
+			ValidarCampos::campoVazio($this->dados['pro_codigo']);
+
+			$this->dados['usu_codigo'] = $_SESSION['usu_codigo'];
+
+			$tbAtividade = new TbAtividade();
+
+			$quantidade = $tbAtividade->validateQtdAtividadeEmAndamento($this->dados['pro_codigo']);
+
+			if(($this->dados['stp_codigo'] != 2) and ($quantidade != 0)){
+				throw new Exception('Existem atividades em andamento, o projeto não pode ser concluido.');
+			}
+
+			try{
+
+				$tbApontamentoProjeto = new TbApontamentoProjeto();
+				$tbProjeto = new TbProjeto();
+
+				$this->conexao->beginTransaction();
+
+				#Inseri apontamento.
+				$tbApontamentoProjeto->insert($this->dados);
+				#atualiza o status do projeto.
+				$tbProjeto->updateStatusProjeto($this->dados);
+
+
+				$DataProjeto = $tbProjeto->getInicioFimProjeto($this->dados['pro_codigo']);
+
+
+				if(($DataProjeto['pro_data_inicio'] == '') and ($this->dados['stp_codigo'] == 2)){
+
+					$this->dados['pro_data_inicio'] = date('Y-m-d');
+					$tbProjeto->updateDataInicio($this->dados);
+				}
+
+
+				if(($DataProjeto['pro_data_final'] == '') and ($this->dados['stp_codigo'] == 4)){
+
+					$this->dados['pro_data_final'] = date('Y-11-d');
+					$tbProjeto->updateDataFinal($this->dados);
+				}
+
+
+				$this->conexao->commit();
+
+			}catch (\PDOException $e){
+				$this->conexao->rollBack();
+				throw new \PDOException($e->getMessage(), $e->getCode());
+			}
+
+
+		}catch (\Exception $e){
+			throw new \Exception($e->getMessage(), $e->getCode());
+		}
+
+	}
+
+
+	public function cadastrarAtaReuniao()
+	{
+
+		//$this->dados['ata_codigo'];
+		$this->dados['pro_codigo_projeto'] = $this->dados['pro_codigo'];
+		$this->dados['usu_codigo_criador'] = $_SESSION['usu_codigo'];
+		//$this->dados['ata_data_criacao'];
+		$this->dados['form_ata_reuniao'] = serialize($this->dados);
+
+		$tbAtaReuniao = new TbAtaReuniao();
+
+		try {
+
+			$tbAtaReuniao->insert($this->dados);
+		}catch (\PDOException $e){
+			throw new \PDOException($e->getMessage(), $e->getCode());
+		}
+
+	}
 
 }
 

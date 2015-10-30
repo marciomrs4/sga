@@ -153,7 +153,7 @@ class TbUsuarioAtividade extends Banco
 		}
 	}
 
-		#Verifica se existe atividade com usuário informado
+		#Verifica se existe atividade com usuï¿½rio informado
 	public function verificaUsuariosAtividade($at_codigo)
 	{
 		$query = ("SELECT ua_codigo, at_codigo,
@@ -181,7 +181,41 @@ class TbUsuarioAtividade extends Banco
 			throw new PDOException($e->getMessage(), $e->getCode());
 		}
 	}
-		
-	
+
+
+	//Pega usuarios pelo tipo informado, usado no envio de notificacao
+	// 1 - informado
+	// 2 - consultado
+	public function getEmailUsuarioByInformadoOrConsultado($at_codigo, $tua_codigo)
+	{
+		$query = ("SELECT
+						(SELECT usu_email
+							FROM tb_usuario
+							WHERE ATV.usu_codigo = usu_codigo) AS usu_email
+					FROM tb_usuario_atividade ATV
+					WHERE at_codigo = ?
+					AND tua_codigo = ?;
+					");
+
+		try
+		{
+
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$at_codigo,PDO::PARAM_INT);
+			$stmt->bindParam(2,$tua_codigo,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(), $e->getCode());
+		}
+	}
+
+
 }
 ?>

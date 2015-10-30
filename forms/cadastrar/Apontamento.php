@@ -47,6 +47,32 @@ $dados = $tbAtividade->getFormAlteracao(base64_decode($_SESSION['valorform']));
 	  </td>
     </tr>    
 
+  <tr>
+    <td>
+     &nbsp;
+    </td>
+  </tr>
+
+   <tr>
+      <td colspan="2" align="left">
+        <fieldset>
+            <legend>Notificações</legend>
+            <p>
+              Usuários Informados: <input type="checkbox" name="informados" checked> |
+              Usuários Consultados: <input type="checkbox" name="consultados" checked> |
+              Participantes do projeto: <input type="checkbox" name="participantes" checked>
+            </p>
+        </fieldset>
+
+	  </td>
+    </tr>
+
+  <tr>
+    <td>
+     &nbsp;
+    </td>
+  </tr>
+
     <tr>
       <td colspan="2" align="left">
 	      <input type="submit" name="alterar" class="button-tela" value="Salvar" />

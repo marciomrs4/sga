@@ -11,36 +11,46 @@ if($_POST)
 
 		switch ($acao)
 		{
-			case 'cadastrar/Apontamento' :
+			case 'cadastrar/UsuarioProjeto' :
 				$cadastro = new Cadastro();
 
 				try
 				{
 					$cadastro->setDados($_POST);
 
-					$cadastro->listarDados();
+					//$cadastro->listarDados();
 
-					$cadastro->cadastrarApontamento();
+					$cadastro->cadastrarUsuarioProjeto();
 
-					$cadastro->finalizarApp('cadastrar/Apontamento');
+					//$cadastro->finalizarApp('cadastrar/Sistema');
+
+					unset($_SESSION['cadastrar/UsuarioProjeto']);
+
+					$_SESSION['acao'] = base64_encode('alterar/Projeto');
+					$_SESSION['valor'] = $_POST['pro_codigo'];
+					header('location: '.$_SERVER['HTTP_REFERER']);
 
 				}catch (Exception $e)
 				{
-					ClasseException::throwException($e,$_POST,'cadastrar/Apontamento');
+					ClasseException::throwException($e,$_POST,'cadastrar/Sistema');
 				}
 				break;
 
-			case 'alterar/Apontamento' :
-				$alteracao = new Alteracao();				
+			case 'alterar/UsuarioProjeto' :
+				$alteracao = new Alteracao();
 
 				try
 				{
 
 					$alteracao->setDados($_POST);
 
-					//$alteracao->alterarProblema();
+					//$alteracao->listarDados();
 
-					$alteracao->finalizarApp();
+					$alteracao->alterarUsuarioProjeto();
+
+
+					//$_SESSION['erro'] = 'Funcionou';
+					header('location: '.$_SERVER['HTTP_REFERER']);
 
 				}catch (Exception $e)
 				{

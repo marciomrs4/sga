@@ -32,6 +32,8 @@ include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/topo1.php
 
 <script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/colorpicker.js"></script>
 
+    <script type="text/javascript" src="../<?php echo($_SESSION['projeto']);?>/jscript/my-addfieldata.js"></script>
+
 <link rel='shortcut icon' href='css/images/header.ico'>
 
 <?php 
