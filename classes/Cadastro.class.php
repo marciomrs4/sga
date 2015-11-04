@@ -190,6 +190,56 @@ class Cadastro extends Dados
 			throw new Exception($e->getMessage(), $e->getCode());
 		}
 	}
+        
+         #Gerar RNC
+        public function cadastrarRnc()
+        {
+            try
+            {
+                //ValidarCampos::campoVazio($this->dados['nc_codigo'], 'RNC N°');
+                ValidarCampos::campoVazio($this->dados['nc_codigo_pro'], 'CÓDIGO');
+                ValidarCampos::campoVazio($this->dados['nc_descricao'], 'DESCRIÇÃO PRODUTO');
+                ValidarCampos::campoVazio($this->dados['nc_lote'], 'LOTE');
+                ValidarCampos::campoVazio($this->dados['nc_oc'], 'OC N°');
+                ValidarCampos::campoVazio($this->dados['nc_quantidade'], 'QUANTIDADE');
+                ValidarCampos::campoVazio($this->dados['nc_descricaocompleta'], 'DESCRIÇÃO');
+                ValidarCampos::campoVazio($this->dados['nc_local_ocorrencia'], 'LOCAL');
+                ValidarCampos::campoVazio($this->dados['usu_emitente_codigo'], 'EMITENTE');
+                ValidarCampos::campoVazio($this->dados['dep_responsavel_codigo'], 'DEPTO RESPONSÁVEL');
+                ValidarCampos::campoVazio($this->dados['nc_acao_imediata'], 'AÇÃO IMEDIATA');
+                
+                //$this->conexao->beginTransaction();
+                
+                $tbrnc = new TbCadastroRnc();
+                $tbrnc->insert($this->dados);
+                
+            } catch (Exception $e) 
+            {
+                throw new Exception($e->getMessage(), $e->getCode());
+            }
+        }
+        
+        #Resposta Gestor RNC
+        public function cadastrarRespostaRnc() 
+        {
+          try
+            {                
+                ValidarCampos::campoVazio($this->dados['nc_causas'], 'CAUSA DA OCORRÊNCIA');
+                ValidarCampos::campoVazio($this->dados['nc_acao_melhoria'], 'MELHORIA');
+                ValidarCampos::campoVazio($this->dados['nc_prazo_implatacao'], 'PRAZO PARA IMPLANTAÇÃO');
+                ValidarCampos::campoVazio($this->dados['nc_resp_implantacao'], 'RESPONSÁVEL PELA IMPLANTAÇÃO');
+                ValidarCampos::campoVazio($this->dados['nc_data_implantacao'], 'DATA DA IMPLANTAÇÃO');                
+                
+                //$this->conexao->beginTransaction();
+                
+                $tbrnc = new TbCadastroRnc();
+                $tbrnc->update($this->dados);
+                
+            } catch (Exception $e) 
+            {
+                throw new Exception($e->getMessage(), $e->getCode());
+            }  
+        }
 
 	public function cadastrarPrioridade()
 	{

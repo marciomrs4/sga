@@ -2,12 +2,16 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 ?>
 
+<?php
+$n = rand(1,100)
+?>
+
 <!DOCTYPE HTML>
 <html>
 
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Painel de Projetos</title>	
+	<title>SGA - PROJETOS</title>	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel='shortcut icon' href='css/images/ceadisico.ico'>	
 	<!-- css -->
@@ -29,7 +33,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 	</div>	
 	  
 	<div class="container-fluid collapse navbar-collapse" id="menu-principal">
-            <h4 class="navbar-text"><a href="Operacao.php" title="Voltar">SGA</a> - PAINEL DE ACOMPANHAMENTO DE PROJETOS</h4>
+            <h4 class="navbar-text"><a href="PainelProjetoUsuarios.php" title="Voltar">SGA</a> - Projeto: Kanban Segunda Fase </h4>
             <h5 class="navbar-right navbar-text"><span class="estiloniver"> <?php echo (date('d-m-Y')); ?> | <span id="timer"></span></span></h5><span class="navbar-right navbar-text"></span>            		            
 	</div>				
 </nav>
