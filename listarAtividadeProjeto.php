@@ -7,7 +7,7 @@ header('Content-Type: text/html; charset=ISO-8859-1');
 $tbAtividade = new TbAtividade();
 
 $dados['pro_codigo'] = $_POST["pro_codigo"];
-$dados['at_codigo'] = $_POST["at_codigo"];
+$dados['at_codigo'] = ($_POST["at_codigo"] == '') ? '' : $_POST["at_codigo"];
 
 echo ('<option value="">Nenhuma</option>');
 

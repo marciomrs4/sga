@@ -540,8 +540,8 @@ class TbAtividade extends Banco
 		{
 			$stmt = $this->conexao->prepare($query);
 
-			$stmt->bindParam(1,$dados[$this->pro_codigo],PDO::PARAM_INT);
-			$stmt->bindParam(2,$dados[$this->at_codigo],PDO::PARAM_INT);
+			$stmt->bindParam(1,$dados['pro_codigo'],PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados['at_codigo'],PDO::PARAM_INT);
 
 			$stmt->execute();
 
