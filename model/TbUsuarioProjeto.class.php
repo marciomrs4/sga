@@ -127,5 +127,56 @@ class TbUsuarioProjeto extends Banco
             throw new \PDOException($e->getMessage(). $e->getCode());
         }
     }
+
+
+    public function findProjetoByUsers($usu_codigo)
+    {
+        $query = ("SELECT USU_PRO.pro_codigo
+                    FROM tb_usuario_projeto AS USU_PRO
+                    INNER JOIN tb_projeto AS PRO
+                    ON USU_PRO.pro_codigo = PRO.pro_codigo
+                    WHERE usu_codigo_integrante = ?
+                    AND PRO.stp_codigo = 2;");
+
+        try{
+
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->bindParam(1,$usu_codigo,\PDO::PARAM_INT);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+        }catch (\PDOException $e){
+
+        }
+
+    }
+
+    public function countProjectByUser($usu_codigo)
+    {
+        $query = ("SELECT count(pro_codigo)
+                    FROM tb_usuario_projeto
+                    WHERE usu_codigo_integrante = ?");
+
+        try{
+
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->bindParam(1,$usu_codigo,\PDO::PARAM_INT);
+
+            $stmt->execute();
+
+            $dados = $stmt->fetch(\PDO::FETCH_NUM);
+
+            return $dados['0'];
+
+        }catch (\PDOException $e){
+
+        }
+
+    }
+
 }
 ?>

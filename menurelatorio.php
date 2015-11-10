@@ -19,7 +19,8 @@
 		<span><b>Painéis</b></span>
 			<li><a href="PainelChamados.php">Painel de Chamados</a></li>
 			<li><a href="PainelAtividade.php">Painel de Atividade</a></li>																								
-			<li><a href="PainelProjeto.php">Painel de Projetos</a></li>
+<!--			<li><a href="PainelProjeto.php">Painel de Projetos</a></li>-->
+			<li><a href="PainelProjetoUsuarios.php">Painel de Projetos</a></li>
             <li><a href="PainelTarefas.php" target="_blank">Painel de Tarefas</a></li>
 
             <hr>

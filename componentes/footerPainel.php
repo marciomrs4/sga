@@ -10,7 +10,9 @@
                 </h4>
             </div>
             <div class="modal-body">
-                <span id="carregarchamado"></span>
+
+                <span id="carregaratividade"></span>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default close" data-dismiss="modal">OK</button>
@@ -28,48 +30,18 @@
 
 			<script src="jscript/jquery-2.1.4.js"></script>
 			<script src="jscript/bootstrap.js"></script>
-            <script src="jscript/chamadoTempoSolucao.js"></script>
-            <script src="jscript/my-alert.js"></script>
+            <script src="jscript/getAtividadeDetalheProjeto.js"></script>
+            <script src="jscript/getAtaDetalheProjeto.js"></script>
+            <script src="jscript/highcharts.js"></script>
+            <script src="jscript/highcharts-3d.js"></script>
+            <script src="jscript/exporting.js"></script>
+            <?php
+            include_once $_SERVER['DOCUMENT_ROOT'].'/sga/jscript/getGraficoAtividadeDetalheProjeto.php';
+            include_once $_SERVER['DOCUMENT_ROOT'].'/sga/jscript/getGraficoAtividadeDetalheProjetoPrazo.php';
+            ?>
 
 <script type="text/javascript">
-    var $timer = jQuery.noConflict();
-    $timer(document).ready(function(){
-
-        $timer("#tempo").css("color","red");
-
-        var x = 0;
-        for(x = 0; x <= 1; x++)
-        {
-            $timer(".panel-heading").fadeOut("slow");
-            $timer('.panel-heading').fadeIn("slow");
-        }
-
-    });
-
-    var count = 180; // O tempo para refresh em segundos
-
-    function timer()
-    {
-        $timer("#timer").html(count);
-
-        if(count > 1)
-
-            count--;
-
-        else
-
-            window.location.href = "<?php echo($_SERVER['REQUEST_URI']);?>";
-
-        setTimeout("timer();", 1000);
-    }
-
-
 </script>
 
-<script>
-    timer();
-</script>
-
-<!--			<script src="jscript/timer.js"></script>-->
 </body>
 </html>
