@@ -206,8 +206,11 @@ class Cadastro extends Dados
                 ValidarCampos::campoVazio($this->dados['nc_local_ocorrencia'], 'LOCAL');
                 ValidarCampos::campoVazio($this->dados['usu_emitente_codigo'], 'EMITENTE');
                 ValidarCampos::campoVazio($this->dados['dep_responsavel_codigo'], 'DEPTO RESPONSÁVEL');
-                ValidarCampos::campoVazio($this->dados['nc_acao_imediata'], 'AÇÃO IMEDIATA');
+                ValidarCampos::campoVazio($this->dados['nc_acao_imediata'], 'AÇÃO IMEDIATA');                
+                ValidarCampos::campoVazio($this->dados['nc_data_ocorrencia'],'DATA DA OCORRÊNCIA');
                 
+                $this->dados['nc_data_ocorrencia'] = ValidarDatas::dataBanco($this->dados['nc_data_ocorrencia']);
+                               
                 //$this->conexao->beginTransaction();
                 
                 $tbrnc = new TbCadastroRnc();

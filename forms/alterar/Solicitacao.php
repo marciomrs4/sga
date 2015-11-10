@@ -25,7 +25,7 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($_SESSION['a
 				<?php
 				 } 
 				?>
-				<a href="./action/formcontroler.php?<?php echo(base64_encode('cadastrar/Assentamento').'='.base64_encode($_SESSION['alterar/Solicitacao']['sol_codigo']));?>"><img src="./css/images/novo.png" title="Assentamento"></a>
+				<a href="./action/formcontroler.php?<?php echo(base64_encode('cadastrar/Assentamento').'='.base64_encode($_SESSION['alterar/Solicitacao']['sol_codigo']));?>"><img src="./css/images/novo.png" title="Assentamento"></a>                                
 
 				<?php 
 				if(($_SESSION['alterar/Solicitacao']['sta_codigo'] == 2) AND ($_SESSION['alterar/Solicitacao']['dep_codigo'] == $_SESSION['dep_codigo'] )){
@@ -45,8 +45,12 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($_SESSION['a
 
                 } ?>
 
-				
+				<?php if($_SESSION['dep_codigo'] == 36): ?>
+                                <a href="rnc.php"><img src="./css/images/gerar.png" title="Gerar RNC"></a>
+                                <?php endif; ?>
+                                    
 				<a href="./GerarRelatorioPdf.php?<?php echo(base64_encode('codigo').'='.base64_encode($_SESSION['alterar/Solicitacao']['sol_codigo']));?>" target="blank"><img src="./css/images/pdf.png" title="Gerar PDF"></a>
+                                                                
 			</div>
 			</fieldset>
 				<hr/>

@@ -66,7 +66,7 @@ $_SESSION['rncGestor'] = $tbRnc->getFormRnc($buca->getValueGet('nc_codigo'));
                 </div>
                 
                 <div class="col-xs-12">
-                    <label class="text-info">DATA DA OCORRÊNCIA:</label> <?php echo $_SESSION['rncGestor']['nc_data_ocorrencia']; ?>                    
+                    <label class="text-info">DATA DA OCORRÊNCIA:</label> <?php echo ValidarDatas::dataCliente($_SESSION['rncGestor']['nc_data_ocorrencia']); ?>                    
                     <br>
                 </div>
                 

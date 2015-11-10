@@ -85,11 +85,12 @@ class TbCadastroRnc extends Banco
 
     public function listTelaRnc()
     {
-        $query = ("SELECT $this->nc_codigo, 
-                          $this->nc_data_ocorrencia,
-                          $this->nc_descricaocompleta,
-                          $this->nc_local_ocorrencia                
-                                FROM $this->tabela");
+        $query = ("SELECT nc_codigo, date_format(nc_data_ocorrencia,'%d-%m-%Y') AS nc_data_ocorrencia, nc_descricaocompleta, 
+                          nc_local_ocorrencia,DEP.dep_descricao
+                          FROM tb_rnc AS RNC
+                          INNER JOIN tb_departamento AS DEP
+                          ON RNC.dep_responsavel_codigo = DEP.dep_codigo
+                          ORDER BY nc_codigo DESC;");
         
         try{
             
