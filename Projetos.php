@@ -70,6 +70,8 @@ try
 	$DataGrid->setDados($busca->listarProjeto());
 	
 	$DataGrid->titulofield = 'Projeto(s)';
+
+	$DataGrid->nomelink = '<img src="./css/images/search2.png" title="Abrir" />';
 	
 	$DataGrid->acao = 'alterar/Projeto';
 	

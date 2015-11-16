@@ -178,5 +178,31 @@ class TbUsuarioProjeto extends Banco
 
     }
 
+    public function getUserProjetoValidade($dados)
+    {
+        $query = ("SELECT count(*)
+                    FROM tb_usuario_projeto
+                    WHERE pro_codigo = ?
+                    AND usu_codigo_integrante = ?;
+                  ");
+
+        try{
+
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->bindParam(1,$dados['pro_codigo'],\PDO::PARAM_INT);
+            $stmt->bindParam(2,$dados['usu_codigo_integrante'],\PDO::PARAM_INT);
+
+            $stmt->execute();
+
+            $dados = $stmt->fetch(\PDO::FETCH_NUM);
+
+            return $dados['0'];
+
+        }catch (\PDOException $e){
+
+        }
+    }
+
 }
 ?>

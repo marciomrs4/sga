@@ -27,7 +27,7 @@ include_once($_SERVER['DOCUMENT_ROOT']."/sga/componentes/config.php");
                 text: ''
             },
             tooltip: {
-                pointFormat: '<span style="font-size: 14px">{series.name}:<span> <b>{point.y}</b>',
+                pointFormat: '<span style="font-size: 18px">{series.name}:<span> <b>{point.y}</b>',
                 style: {
                     fontSize: '18px'
                 }
@@ -42,7 +42,7 @@ include_once($_SERVER['DOCUMENT_ROOT']."/sga/componentes/config.php");
                         format: '<b>{point.name}</b>: {point.percentage:.1f} %',
                         style: {
                             color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
-                            "fontSize":"18px"
+                            "fontSize":"14px"
                         }
                     }
                 }

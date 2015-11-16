@@ -32,6 +32,8 @@
 			<script src="jscript/bootstrap.js"></script>
             <script src="jscript/getAtividadeDetalheProjeto.js"></script>
             <script src="jscript/getAtaDetalheProjeto.js"></script>
+            <script src="jscript/getApontamentoDetalheProjeto.js"></script>
+            <script src="jscript/getFilesDetalheProjeto.js"></script>
             <script src="jscript/highcharts.js"></script>
             <script src="jscript/highcharts-3d.js"></script>
             <script src="jscript/exporting.js"></script>

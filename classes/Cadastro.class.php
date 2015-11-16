@@ -1390,6 +1390,10 @@ class Cadastro extends Dados
 
 				$tbUsuarioProjeto = new TbUsuarioProjeto();
 
+				if($tbUsuarioProjeto->getUserProjetoValidade($this->dados) >= 1){
+					throw new \Exception('Já existe este usuário adcionado ao projeto.');
+				}
+
 				$tbUsuarioProjeto->insert($this->dados);
 
 			}catch (\PDOException $e){
@@ -1481,6 +1485,42 @@ class Cadastro extends Dados
 		try {
 
 			$tbAtaReuniao->insert($this->dados);
+		}catch (\PDOException $e){
+			throw new \PDOException($e->getMessage(), $e->getCode());
+		}
+
+	}
+
+	public function cadastrarAnexoProjeto($file)
+	{
+
+		$upload = new FileUpload();
+
+		$pro_codigo = base64_decode($this->dados['pro_codigo']);
+
+		$Dir = new DirectoryCreate();
+		$Dir->createDirProjetos($pro_codigo);
+
+		$erro = $upload->setFile($file['arquivo']['tmp_name'])
+			->setDestination(FileUpload::PATH.FileUpload::PROJETOS.$pro_codigo.'/'.$file['arquivo']['name'])
+			->moveUploaded()
+			->getErro();
+
+
+
+		$dados['usuario'] = $_SESSION['usu_nome'].' '.$_SESSION['usu_sobrenome'];
+		$dados['arquivo'] = $file['arquivo']['name'];
+		$dados['acao'] = 'Envio';
+		$dados['tipo'] = 'Projetos';
+		$dados['codigo'] = $pro_codigo;
+
+
+		$log = new LogUpload();
+
+		try {
+
+			$log->insert($dados);
+
 		}catch (\PDOException $e){
 			throw new \PDOException($e->getMessage(), $e->getCode());
 		}

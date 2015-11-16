@@ -43,6 +43,10 @@ class CalculatePercent
 
 		$totalDiaParcial = $dataInicio->diff($dataAtual)->days + 1;
 
+		if(	$dataInicio->diff($dataAtual)->invert == 1 ){
+			$totalDiaParcial *= -1;
+		}
+
 		$valorPencentual = $totalDiaParcial / $totalDias;
 
 		$this->percentual = sprintf('%.2f', $valorPencentual * 100);

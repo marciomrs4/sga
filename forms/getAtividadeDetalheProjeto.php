@@ -21,6 +21,11 @@ $dadosApontamento = $tbApontamento->listarApontamento($_POST['at_codigo']);
     <div class="panel-body">
 
         <div class="col-xs-12">
+            <label class="text-warning">Descrição:</label> <?php echo $dadosAtividade['at_descricao']; ?>
+            <br>
+        </div>
+
+        <div class="col-xs-12">
             <label class="text-warning">Responsável da Atividade:</label> <?php echo $dadosAtividade['responsavel']; ?>
             <br>
         </div>
@@ -30,10 +35,6 @@ $dadosApontamento = $tbApontamento->listarApontamento($_POST['at_codigo']);
         </div>
         <div class="col-xs-12">
             <label class="text-warning">Previsão de Finalização:</label> <?php echo $dadosAtividade['at_previsao_fim']; ?>
-            <br>
-        </div>
-        <div class="col-xs-12">
-            <label class="text-warning">Descrição:</label> <?php echo $dadosAtividade['at_descricao']; ?>
             <br>
         </div>
         <div class="col-xs-12">
@@ -49,11 +50,11 @@ $dadosApontamento = $tbApontamento->listarApontamento($_POST['at_codigo']);
             <br>
         </div>
         <div class="col-xs-12">
-            <label class="text-warning">Inicio oficial:</label> <?php echo $dadosAtividade['at_inicio']; ?>
+            <label class="text-warning">Inicio Realizado:</label> <?php echo $dadosAtividade['at_inicio']; ?>
             <br>
         </div>
         <div class="col-xs-12">
-            <label class="text-warning">Finalização oficial:</label> <?php echo $dadosAtividade['at_fim']; ?>
+            <label class="text-warning">Finalização Realizado:</label> <?php echo $dadosAtividade['at_fim']; ?>
             <br>
         </div>
 

@@ -101,7 +101,6 @@ echo '</pre>';*/
 
                                 <div class="col-xs-12">
                                     <label class="text-warning">Atividades Não Planejadas:</label> <?php echo $planejamentoAtividade['1']['0']; ?>
-                                    <br>
                                 </div>
 
                                 <div class="col-xs-12">
@@ -109,13 +108,29 @@ echo '</pre>';*/
                                     <?php
                                     echo $planejamentoAtividade['0']['0'] + $planejamentoAtividade['1']['0'];
                                     ?>
-                                    <br>
                                 </div>
+
+                                <ul class="list-group">
+
+                                    <div class="col-xs-12">
+                                        <li class="list-group-item">
+                                            <button value="<?php echo $pro_codigo; ?>" type="button" class="btn btn-primary btn-xs" id="apontamento" data-toggle="modal" data-target="#myModal" title="Apontamento do projeto">
+                                                <span class="glyphicon glyphicon-hand-right"></span> Apontamento(s) do Projeto
+                                            </button>
+                                        </li>
+                                    </div>
+
+                                    <div class="col-xs-12">
+                                        <li class="list-group-item">
+                                            <button value="<?php echo $pro_codigo; ?>" type="button" class="btn btn-primary btn-xs" id="files" data-toggle="modal" data-target="#myModal" title="Apontamento do projeto">
+                                                <span class="glyphicon glyphicon-hand-right"></span> Arquivos(s) do Projeto
+                                            </button>
+                                        </li>
+                                    </div>
+
+
+                                </ul>
                                 <!--
-                                <div class="col-xs-12">
-                                    <label class="text-warning">Previsão fim:</label> 01/01/9999
-                                    <br>
-                                </div>
                                 <div class="col-xs-12">
                                     <label class="text-warning">Status :</label> Em Andamento
                                 </div>-->
@@ -127,7 +142,7 @@ echo '</pre>';*/
                     <div class="col-xs-4">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Ata(s) de reunião</h3>
+                                <h3 class="panel-title"></h3>
                             </div>
                             <div class="panel-body">
 
@@ -136,23 +151,24 @@ echo '</pre>';*/
 
                                     <ul class="list-group">
                                         <?php
-                                            foreach($tbAtaReuniao->listarPauta($pro_codigo)->fetchAll(\PDO::FETCH_ASSOC) as $ata):
-                                        ?>
-                                        <li class="list-group-item">
+                                        foreach($tbAtaReuniao->listarPauta($pro_codigo)->fetchAll(\PDO::FETCH_ASSOC) as $ata):
 
-                                                    <button value="<?php echo $ata['ata_codigo']; ?>" id="ata" type="button" class="btn btn-primary btn-xs"
-                                                            data-toggle="modal" data-target="#myModal" title="Ata reunião">
-                                                        <span class="glyphicon glyphicon-book"></span>
-                                                    </button>
+                                            $form = unserialize($ata['form_ata_reuniao']);
 
-                                                    <?php echo $ata['usu_codigo_criador']; ?>
-                                                        -
-                                                    <?php echo $ata['ata_data_criacao']; ?>
-                                        </li>
-                                        <?php
-                                            endforeach;
+                                            ?>
+                                            <li class="list-group-item">
+                                                <button value="<?php echo $ata['ata_codigo']; ?>" id="ata" type="button" class="btn btn-primary btn-xs"
+                                                        data-toggle="modal" data-target="#myModal" title="Ata reunião">
+                                                    <span class="glyphicon glyphicon-book"></span>
+                                                        Ata: <?php echo $form['ata_assunto']?>
+
+                                                </button>
+                                            </li>
+                                            <?php
+                                        endforeach;
                                         ?>
                                     </ul>
+
                                 </div>
 
                             </div>
@@ -179,13 +195,11 @@ echo '</pre>';*/
                                 </p>
 
                                 <?php
-                                //for ($x = 0; $x <= 9; $x++):
-
                                 foreach($tbAtividade->listarAtividadeByProjeto($pro_codigo) as $atividade):
 
                                     $calculatePercent = new CalculatePercent($atividade['previsao_inicio'],
-                                                                             $atividade['previsao_fim'],
-                                                                             $atividade['atual']);
+                                        $atividade['previsao_fim'],
+                                        $atividade['atual']);
 
                                     ?>
                                     <div class="col-xs-6">
@@ -198,7 +212,7 @@ echo '</pre>';*/
                                                     </button>
 
                                                     <a>Atividade: <?php echo $atividade['at_codigo']; ?> |
-                                                        Responsável: <?php echo $atividade['responsavel']; ?>
+                                                        Responsável: <?php echo $atividade['responsavel']; ?> |
                                                         Status: <?php echo $atividade['status']; ?> </a>
 
                                                 </div>
@@ -215,43 +229,43 @@ echo '</pre>';*/
                     <!-- Fim Lista de atividades -->
 
 
-                        <div class="col-xs-6">
-                            <div class="panel panel-info">
-                                <div class="panel-heading">
-                                    <div class="panel-title">
-                                        <h3 class="panel-title">
-                                            <span class="glyphicon glyphicon-picture"></span>
-                                            Quantidade de Atividade por Status
-                                        </h3>
-                                    </div>
-                                </div>
-
-                                <div class="panel-body">
-
-                                    <span id="graficoAtividade1"></span>
-
+                    <div class="col-xs-6">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h3 class="panel-title">
+                                        <span class="glyphicon glyphicon-picture"></span>
+                                        Quantidade de Atividade por Status
+                                    </h3>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-xs-6">
-                            <div class="panel panel-info">
-                                <div class="panel-heading">
-                                    <div class="panel-title">
-                                        <h3 class="panel-title">
-                                            <span class="glyphicon glyphicon-picture"></span>
-                                            Porcentagem de Atividade Dentro e Fora do Prazo
-                                        </h3>
-                                    </div>
-                                </div>
+                            <div class="panel-body">
 
-                                <div class="panel-body">
+                                <span id="graficoAtividade1"></span>
 
-                                    <span id="graficoAtividade2"></span>
-
-                                </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <h3 class="panel-title">
+                                        <span class="glyphicon glyphicon-picture"></span>
+                                        Porcentagem de Atividade Dentro e Fora do Prazo
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <div class="panel-body">
+
+                                <span id="graficoAtividade2"></span>
+
+                            </div>
+                        </div>
+                    </div>
 
 
 

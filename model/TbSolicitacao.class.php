@@ -978,7 +978,7 @@ class TbSolicitacao extends Banco
 										(SELECT pri_descricao FROM tb_prioridade
 											WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo) ) as Prioridade,
 								(SELECT tat_descricao FROM tb_tempo_atendimento WHERE tat_codigo = (select tat_codigo from tb_prioridade
-										WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) ) ) as 'SLA',
+										WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo) ) ) as 'SLA',
 
 						(SELECT usu_nome FROM tb_usuario WHERE usu_codigo = ATS.usu_codigo_atendente) Atendente,
 				
@@ -1054,7 +1054,7 @@ class TbSolicitacao extends Banco
 										(SELECT pri_descricao FROM tb_prioridade
 											WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo) ) as Prioridade,
 								(SELECT tat_descricao FROM tb_tempo_atendimento WHERE tat_codigo = (select tat_codigo from tb_prioridade
-										WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo = PRO.pro_codigo) ) ) as 'SLA',
+										WHERE pri_codigo = (SELECT pri_codigo FROM tb_problema as PRO WHERE SOL.pro_codigo_tecnico = PRO.pro_codigo) ) ) as 'SLA',
 						(SELECT usu_nome FROM tb_usuario WHERE usu_codigo = ATS.usu_codigo_atendente) Atendente,
 						TIMEDIFF(TIMEDIFF((CASE SOL.sta_codigo WHEN 2 THEN now() WHEN 3 THEN SOL.sol_data_fim ELSE SOL.sol_data_fim END),SOL.sol_data_inicio),
 								(SELECT pro_tempo_solucao FROM tb_problema as PRO
