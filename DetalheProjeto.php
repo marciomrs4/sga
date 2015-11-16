@@ -160,7 +160,7 @@ echo '</pre>';*/
                                                 <button value="<?php echo $ata['ata_codigo']; ?>" id="ata" type="button" class="btn btn-primary btn-xs"
                                                         data-toggle="modal" data-target="#myModal" title="Ata reunião">
                                                     <span class="glyphicon glyphicon-book"></span>
-                                                        Ata: <?php echo $form['ata_assunto']?>
+                                                    Ata: <?php echo $form['ata_assunto']?>
 
                                                 </button>
                                             </li>
@@ -180,7 +180,7 @@ echo '</pre>';*/
 
                     <!-- Lista de atividades -->
                     <div class="col-xs-12">
-                        <div class="panel panel-default">
+                        <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="panel-title"><span class="glyphicon glyphicon-cog"></span> ATIVIDADES DO PROJETO</div>
                             </div>
@@ -194,34 +194,94 @@ echo '</pre>';*/
 
                                 </p>
 
-                                <?php
-                                foreach($tbAtividade->listarAtividadeByProjeto($pro_codigo) as $atividade):
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="panel-title"><span class="glyphicon glyphicon-info-sign"></span> Atividade(s) sem fase.</div>
+                                    </div>
 
-                                    $calculatePercent = new CalculatePercent($atividade['previsao_inicio'],
-                                        $atividade['previsao_fim'],
-                                        $atividade['atual']);
+                                    <div class="panel-body">
+                                        <?php
+                                        foreach($tbAtividade->listarAtividadeByProjeto($pro_codigo) as $atividade):
 
-                                    ?>
-                                    <div class="col-xs-6">
-                                        <div class="panel panel-<?php echo $calculatePercent->getColor(); ?>">
-                                            <div class="panel-heading">
-                                                <div class="panel-title">
+                                            $calculatePercent = new CalculatePercent($atividade['previsao_inicio'],
+                                                $atividade['previsao_fim'],
+                                                $atividade['atual']);
 
-                                                    <button value="<?php echo $atividade['at_codigo']; ?>" id="atividade" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" title="Ver Atividade">
-                                                        <span class="glyphicon glyphicon-eye-open"></span>
-                                                    </button>
+                                            ?>
+                                            <div class="col-xs-6">
+                                                <div class="panel panel-<?php echo $calculatePercent->getColor(); ?>">
+                                                    <div class="panel-heading">
+                                                        <div class="panel-title">
 
-                                                    <a>Atividade: <?php echo $atividade['at_codigo']; ?> |
-                                                        Responsável: <?php echo $atividade['responsavel']; ?> |
-                                                        Status: <?php echo $atividade['status']; ?> </a>
+                                                            <button value="<?php echo $atividade['at_codigo']; ?>" id="atividade" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" title="Ver Atividade">
+                                                                <span class="glyphicon glyphicon-eye-open"></span>
+                                                            </button>
 
+                                                            <a>Atividade: <?php echo $atividade['at_codigo']; ?> |
+                                                                Responsável: <?php echo $atividade['responsavel']; ?> |
+                                                                Status: <?php echo $atividade['status']; ?> </a>
+
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <?php
+                                        endforeach;
+                                        ?>
+                                    </div>
+                                </div>
+
+
+                                <?php
+                                $tbFaseProjeto = new TbFaseProjeto();
+
+                                foreach($tbFaseProjeto->listFaseByProjeto($pro_codigo) AS $fase):
+
+                                    $dados['fas_codigo'] = $fase['fas_codigo'];
+                                    $dados['pro_codigo'] = $pro_codigo;
+                                    ?>
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <div class="panel-title"><span class="glyphicon glyphicon-flag"></span> Fase: <?php echo $fase['fas_descricao']; ?></div>
+                                        </div>
+
+                                        <div class="panel-body">
+                                            <?php
+                                            foreach($tbAtividade->listarAtividadeByFaseAndProjeto($dados) as $atividade):
+
+                                                $calculatePercent = new CalculatePercent($atividade['previsao_inicio'],
+                                                    $atividade['previsao_fim'],
+                                                    $atividade['atual']);
+
+                                                ?>
+                                                <div class="col-xs-6">
+                                                    <div class="panel panel-<?php echo $calculatePercent->getColor(); ?>">
+                                                        <div class="panel-heading">
+                                                            <div class="panel-title">
+
+                                                                <button value="<?php echo $atividade['at_codigo']; ?>" id="atividade" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" title="Ver Atividade">
+                                                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                                                </button>
+
+                                                                <a>Atividade: <?php echo $atividade['at_codigo']; ?> |
+                                                                    Responsável: <?php echo $atividade['responsavel']; ?> |
+                                                                    Status: <?php echo $atividade['status']; ?> </a>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php
+                                            endforeach;
+                                            ?>
                                         </div>
                                     </div>
+
                                     <?php
                                 endforeach;
                                 ?>
+
 
                             </div>
                         </div>

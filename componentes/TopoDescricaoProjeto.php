@@ -16,6 +16,14 @@ $n = rand(1,100)
 	<link rel='shortcut icon' href='css/images/ceadisico.ico'>	
 	<!-- css -->
 	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+	<style>
+
+		.panel-heading {
+			cursor: pointer;
+		}
+
+	</style>
+
 </head>
 
 <body>

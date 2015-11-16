@@ -785,7 +785,8 @@ class TbAtividade extends Banco
 							IF(sta_codigo > 2, ifnull(at_fim, at_previsao_fim), at_previsao_fim) AS previsao_fim,
 							IF(sta_codigo < 3, now(), ifnull(at_fim, at_previsao_fim)) AS atual
 					FROM tb_atividade ATV
-					WHERE pro_codigo = ?");
+					WHERE fas_codigo IS NULL
+					AND pro_codigo = ?");
 
 		try
 		{
@@ -804,6 +805,43 @@ class TbAtividade extends Banco
 
 	}
 
+
+	//Usado no painel de detalhe das atividades por fase
+	public function listarAtividadeByFaseAndProjeto($dados)
+	{
+			$query = ("SELECT at_codigo,
+							(SELECT concat(usu_nome,' ', usu_sobrenome)
+								FROM tb_usuario
+								WHERE usu_codigo_responsavel = usu_codigo) AS responsavel,
+							(SELECT sta_descricao
+								FROM tb_status_atividade
+								WHERE ATV.sta_codigo = sta_codigo) AS 'status',
+								concat(at_previsao_inicio,' 00:00:00') AS previsao_inicio,
+								IF(sta_codigo > 2, ifnull(at_fim, at_previsao_fim), at_previsao_fim) AS previsao_fim,
+								IF(sta_codigo < 3, now(), ifnull(at_fim, at_previsao_fim)) AS atual,
+								fas_codigo
+						FROM tb_atividade ATV
+						WHERE fas_codigo = ?
+						AND pro_codigo = ?
+						ORDER BY fas_codigo;");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados['fas_codigo'],\PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados['pro_codigo'],\PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetchAll(\PDO::FETCH_ASSOC));
+
+		} catch (\PDOException $e)
+		{
+			throw new \PDOException('Erro ao listar ' . $e->getMessage(),$e->getCode());
+		}
+
+	}
 
 	//Usado no painel de atividade
 	public function getFormDetalheAtividade($at_codigo)
