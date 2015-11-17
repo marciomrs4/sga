@@ -197,17 +197,20 @@ class Cadastro extends Dados
             try
             {
                 //ValidarCampos::campoVazio($this->dados['nc_codigo'], 'RNC N°');
-                ValidarCampos::campoVazio($this->dados['nc_codigo_pro'], 'CÓDIGO');
-                ValidarCampos::campoVazio($this->dados['nc_descricao'], 'DESCRIÇÃO PRODUTO');
-                ValidarCampos::campoVazio($this->dados['nc_lote'], 'LOTE');
-                ValidarCampos::campoVazio($this->dados['nc_oc'], 'OC N°');
-                ValidarCampos::campoVazio($this->dados['nc_quantidade'], 'QUANTIDADE');
+                //ValidarCampos::campoVazio($this->dados['nc_codigo_pro'], 'CÓDIGO');
+                //ValidarCampos::campoVazio($this->dados['nc_descricao'], 'DESCRIÇÃO PRODUTO');
+                //ValidarCampos::campoVazio($this->dados['nc_lote'], 'LOTE');
+                //ValidarCampos::campoVazio($this->dados['nc_oc'], 'OC N°');
+                //ValidarCampos::campoVazio($this->dados['nc_quantidade'], 'QUANTIDADE');
                 ValidarCampos::campoVazio($this->dados['nc_descricaocompleta'], 'DESCRIÇÃO');
                 ValidarCampos::campoVazio($this->dados['nc_local_ocorrencia'], 'LOCAL');
                 ValidarCampos::campoVazio($this->dados['usu_emitente_codigo'], 'EMITENTE');
                 ValidarCampos::campoVazio($this->dados['dep_responsavel_codigo'], 'DEPTO RESPONSÁVEL');
-                ValidarCampos::campoVazio($this->dados['nc_acao_imediata'], 'AÇÃO IMEDIATA');
+                ValidarCampos::campoVazio($this->dados['nc_acao_imediata'], 'AÇÃO IMEDIATA');                
+                ValidarCampos::campoVazio($this->dados['nc_data_ocorrencia'],'DATA DA OCORRÊNCIA');
                 
+                $this->dados['nc_data_ocorrencia'] = ValidarDatas::dataBanco($this->dados['nc_data_ocorrencia']);
+                               
                 //$this->conexao->beginTransaction();
                 
                 $tbrnc = new TbCadastroRnc();

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/var/www/sga/rncVerificacao.php</file>
+            <file>file:/var/www/sga/forms/alterar/Solicitacao.php</file>
+            <file>file:/var/www/sga/classes/Cadastro.class.php</file>
+            <file>file:/var/www/sga/Operacao.php</file>
+            <file>file:/var/www/sga/model/TbCadastroRnc.class.php</file>
+            <file>file:/var/www/sga/action/cadastrarRnc.php</file>
+            <file>file:/var/www/sga/Qualidade.php</file>
+            <file>file:/var/www/sga/rnc.php</file>
+            <file>file:/var/www/sga/rncGestor.php</file>
+            <file>file:/var/www/sga/model/TbProblema.class.php</file>
+            <file>file:/var/www/sga/model/TbRncEficaz.class.php</file>
+        </group>
+    </open-files>
+</project-private>
