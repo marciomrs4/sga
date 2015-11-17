@@ -48,6 +48,10 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($_SESSION['a
 				<?php if($_SESSION['dep_codigo'] == 36): ?>
                                 <a href="rnc.php"><img src="./css/images/gerar.png" title="Gerar RNC"></a>
                                 <?php endif; ?>
+                                
+                                <?php if($_SESSION['dep_codigo'] == 36): ?>
+                                <a href="./action/formcontroler.php?<?php echo(base64_encode('cadastrar/Ocorrencia').'='.base64_encode($_SESSION['alterar/Solicitacao']['sol_codigo']));?>"><img src="./css/images/ocorrencia2.png" title="Adicionar Ocorrência"></a>
+                                <?php endif; ?>
                                     
 				<a href="./GerarRelatorioPdf.php?<?php echo(base64_encode('codigo').'='.base64_encode($_SESSION['alterar/Solicitacao']['sol_codigo']));?>" target="blank"><img src="./css/images/pdf.png" title="Gerar PDF"></a>
                                                                 

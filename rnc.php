@@ -21,45 +21,8 @@ include_once 'componentes/TopoRnc.php';
                     <?php if($_SESSION['mensagem']):?>
                         <div class="alert alert-success" role="alert"><?php echo $_SESSION['mensagem']; ?></div>
                     <?php endif;?>    
+                                                                
                     
-                    <div class="col-xs-2 col-xs-offset-10">
-                        <label class="text-warning">RNC N°</label>
-                        <input class="form-control" id="disabledInput" type="text" name="nc_codigo" placeholder="RNC N°" 
-                               value="<?php echo($_SESSION['rnc']['nc_codigo']); ?>" disabled>
-                    </div>
-                    <div class="col-xs-3">
-                        <br>
-                        <label class="text-info">CÓDIGO PRODUTO:</label>
-                        <input type="text" class="form-control" name="nc_codigo_pro" placeholder="CÓDIGO" 
-                               value="<?php echo($_SESSION['rnc']['nc_codigo_pro']); ?>">
-                    </div>
-                    <div class="col-xs-3">
-                        <br>
-                        <label class="text-info">DESCRIÇÃO:</label>
-                        <input type="text" class="form-control" name="nc_descricao" placeholder="DESCRIÇÃO PRODUTO"
-                               value="<?php echo($_SESSION['rnc']['nc_descricao']); ?>">                                 
-                        <br>
-                    </div>
-                    <div class="col-xs-2">
-                        <br>
-                        <label class="text-info">LOTE:</label>
-                        <input type="text" class="form-control" name="nc_lote" placeholder="LOTE"
-                               value="<?php echo($_SESSION['rnc']['nc_lote']); ?>">
-                    </div>
-                    <div class="col-xs-2">
-                        <br>
-                        <label class="text-info">OC:</label>
-                        <input type="text" class="form-control" name="nc_oc" placeholder="OC N°"
-                               value="<?php echo($_SESSION['rnc']['nc_oc']); ?>">
-                    </div>
-                    <div class="col-xs-2">
-                        <br>
-                        <label class="text-info">QUANTIDADE:</label>
-                        <input type="text" class="form-control" name="nc_quantidade" placeholder="QUANTIDADE"
-                               value="<?php echo($_SESSION['rnc']['nc_quantidade']); ?>">                                 
-                        <br>
-                    </div>                                        
-
                     <div class="col-xs-12">
                         <label class="text-info">DESCRIÇÃO DA NÃO COMFORMIDADE:</label>
                         <textarea class="form-control" rows="3" name="nc_descricaocompleta" placeholder="DESCRIÇÃO"
@@ -114,13 +77,40 @@ include_once 'componentes/TopoRnc.php';
 
                         <br>
                     </div>
+                        
+                    <div class="col-xs-3">
+                        <label class="text-info">OUTRAS OCORRÊNCIAS:</label>
+
+                        <?php
+                        $tbProblemas = new TbProblema();
+
+                        //$tbDepartamento->getAllDepartamentos();
+
+                        $SelectProblema = new SelectOption();
+
+                        $SelectProblema->setStmt($tbProblemas->listarProblemaDepartamento())
+                                ->isRequire()
+                                ->setClass('form-control')
+                                ->setOptionEmpty('SELECIONE')
+                                ->setSelectName('pro.pro_codigo')
+                                ->listOption();
+                        ?>
+
+                        <br>
+                    </div>                     
+                        
+                    <div class="col-xs-9">
+                        <label class="text-info">ANEXAR ARQUIVO:</label>
+                        <input type="file" id="exampleInputFile">                                                
+                    </div>    
+                        
                     <div class="col-xs-12">
                         <label class="text-info">AÇÃO IMEDIATA:</label>
                         <textarea class="form-control" rows="3" name="nc_acao_imediata" placeholder="AÇÃO IMEDIATA"
                                   value="<?php echo($_SESSION['rnc']['nc_acao_imediata']); ?>"></textarea>
                         <br>
                     </div>
-
+                                                
                     <div class="container-fluid"> 
                         <div class="col-xs-12 col-xs-offset-10">
                             <button type="submit" class="btn btn-primary"> Gerar</button>

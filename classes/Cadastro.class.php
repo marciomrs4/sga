@@ -197,11 +197,11 @@ class Cadastro extends Dados
             try
             {
                 //ValidarCampos::campoVazio($this->dados['nc_codigo'], 'RNC N°');
-                ValidarCampos::campoVazio($this->dados['nc_codigo_pro'], 'CÓDIGO');
-                ValidarCampos::campoVazio($this->dados['nc_descricao'], 'DESCRIÇÃO PRODUTO');
-                ValidarCampos::campoVazio($this->dados['nc_lote'], 'LOTE');
-                ValidarCampos::campoVazio($this->dados['nc_oc'], 'OC N°');
-                ValidarCampos::campoVazio($this->dados['nc_quantidade'], 'QUANTIDADE');
+                //ValidarCampos::campoVazio($this->dados['nc_codigo_pro'], 'CÓDIGO');
+                //ValidarCampos::campoVazio($this->dados['nc_descricao'], 'DESCRIÇÃO PRODUTO');
+                //ValidarCampos::campoVazio($this->dados['nc_lote'], 'LOTE');
+                //ValidarCampos::campoVazio($this->dados['nc_oc'], 'OC N°');
+                //ValidarCampos::campoVazio($this->dados['nc_quantidade'], 'QUANTIDADE');
                 ValidarCampos::campoVazio($this->dados['nc_descricaocompleta'], 'DESCRIÇÃO');
                 ValidarCampos::campoVazio($this->dados['nc_local_ocorrencia'], 'LOCAL');
                 ValidarCampos::campoVazio($this->dados['usu_emitente_codigo'], 'EMITENTE');

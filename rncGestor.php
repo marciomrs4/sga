@@ -77,7 +77,7 @@ $_SESSION['rncGestor'] = $tbRnc->getFormRnc($buca->getValueGet('nc_codigo'));
         <!-- GESTOR -->
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> GESTOR</h3>
+                <h3 class="panel-title"><span class="glyphicon glyphicon-th-list"></span> DEPARTAMENTO</h3>
             </div>
             <div class="panel-body"> 
                 
