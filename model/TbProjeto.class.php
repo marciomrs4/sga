@@ -713,6 +713,78 @@ class TbProjeto extends Banco
 
 	}
 
+	//Usado no painel de projeto
+	public function getInfoPainelProjeto($pro_codigo)
+	{
+		$query = ("SELECT pro_titulo,
+							(SELECT concat(usu_nome,' ',usu_sobrenome)
+								FROM tb_usuario
+								WHERE usu_codigo = usu_codigo_solicitante) AS solicitante,
+							(SELECT concat(usu_nome,' ',usu_sobrenome)
+								FROM tb_usuario
+								WHERE usu_codigo = usu_codigo_responsavel) AS responsavel,
+						(SELECT stp_descricao FROM tb_status_projeto WHERE PRO.stp_codigo = stp_codigo) 'status',
+						pro_previsao_inicio, pro_previsao_fim
+					FROM tb_projeto AS PRO
+					INNER JOIN tb_usuario AS USU
+					ON usu_codigo_solicitante = usu_codigo
+					WHERE PRO.pro_codigo = ?
+					AND PRO.stp_codigo = 2;");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$pro_codigo,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetch(\PDO::FETCH_ASSOC));
+
+		}catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	//Usado no painel de projeto detalhado
+	public function getInfoDetalhePainelProjeto($pro_codigo)
+	{
+		$query = ("SELECT pro_codigo, pro_titulo,
+							(SELECT concat(usu_nome,' ',usu_sobrenome)
+								FROM tb_usuario
+								WHERE usu_codigo = usu_codigo_solicitante) AS solicitante,
+							(SELECT concat(usu_nome,' ',usu_sobrenome)
+								FROM tb_usuario
+								WHERE usu_codigo = usu_codigo_responsavel) AS responsavel,
+							pro_previsao_inicio, pro_previsao_fim,
+						(SELECT stp_descricao FROM tb_status_projeto WHERE PRO.stp_codigo = stp_codigo) pro_status,
+						pro_descricao,
+						(SELECT dep_descricao FROM tb_departamento WHERE PRO.dep_codigo = dep_codigo) AS departamento
+					FROM tb_projeto AS PRO
+					INNER JOIN tb_usuario AS USU
+					ON usu_codigo_solicitante = usu_codigo
+					WHERE PRO.pro_codigo = ?");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$pro_codigo,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetch(\PDO::FETCH_ASSOC));
+
+		}catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+
 
 }
 ?>

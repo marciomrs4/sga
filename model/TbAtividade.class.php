@@ -540,8 +540,8 @@ class TbAtividade extends Banco
 		{
 			$stmt = $this->conexao->prepare($query);
 
-			$stmt->bindParam(1,$dados[$this->pro_codigo],PDO::PARAM_INT);
-			$stmt->bindParam(2,$dados[$this->at_codigo],PDO::PARAM_INT);
+			$stmt->bindParam(1,$dados['pro_codigo'],PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados['at_codigo'],PDO::PARAM_INT);
 
 			$stmt->execute();
 
@@ -768,6 +768,212 @@ class TbAtividade extends Banco
 			throw new PDOException('Erro ao listar ' . $e->getMessage(),$e->getCode());
 		}
 
+	}
+
+
+	//Usado no painel de detalhe das atividades
+	public function listarAtividadeByProjeto($pro_codigo)
+	{
+		$query = ("SELECT at_codigo,
+						(SELECT concat(usu_nome,' ', usu_sobrenome)
+							FROM tb_usuario
+							WHERE usu_codigo_responsavel = usu_codigo) AS responsavel,
+						(SELECT sta_descricao
+							FROM tb_status_atividade
+							WHERE ATV.sta_codigo = sta_codigo) AS 'status',
+							concat(at_previsao_inicio,' 00:00:00') AS previsao_inicio,
+							IF(sta_codigo > 2, ifnull(at_fim, at_previsao_fim), at_previsao_fim) AS previsao_fim,
+							IF(sta_codigo < 3, now(), ifnull(at_fim, at_previsao_fim)) AS atual
+					FROM tb_atividade ATV
+					WHERE fas_codigo IS NULL
+					AND pro_codigo = ?");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$pro_codigo,\PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetchAll(\PDO::FETCH_ASSOC));
+
+		} catch (\PDOException $e)
+		{
+			throw new \PDOException('Erro ao listar ' . $e->getMessage(),$e->getCode());
+		}
+
+	}
+
+
+	//Usado no painel de detalhe das atividades por fase
+	public function listarAtividadeByFaseAndProjeto($dados)
+	{
+			$query = ("SELECT at_codigo,
+							(SELECT concat(usu_nome,' ', usu_sobrenome)
+								FROM tb_usuario
+								WHERE usu_codigo_responsavel = usu_codigo) AS responsavel,
+							(SELECT sta_descricao
+								FROM tb_status_atividade
+								WHERE ATV.sta_codigo = sta_codigo) AS 'status',
+								concat(at_previsao_inicio,' 00:00:00') AS previsao_inicio,
+								IF(sta_codigo > 2, ifnull(at_fim, at_previsao_fim), at_previsao_fim) AS previsao_fim,
+								IF(sta_codigo < 3, now(), ifnull(at_fim, at_previsao_fim)) AS atual,
+								fas_codigo
+						FROM tb_atividade ATV
+						WHERE fas_codigo = ?
+						AND pro_codigo = ?
+						ORDER BY fas_codigo;");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados['fas_codigo'],\PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados['pro_codigo'],\PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt->fetchAll(\PDO::FETCH_ASSOC));
+
+		} catch (\PDOException $e)
+		{
+			throw new \PDOException('Erro ao listar ' . $e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	//Usado no painel de atividade
+	public function getFormDetalheAtividade($at_codigo)
+	{
+		$query = ("SELECT at_codigo, at_descricao,
+						(SELECT sta_descricao
+							FROM tb_status_atividade
+							WHERE ATV.sta_codigo = sta_codigo) AS 'status',
+						(SELECT concat(usu_nome,' ', usu_sobrenome)
+								FROM tb_usuario
+								WHERE usu_codigo = usu_codigo_responsavel) AS responsavel,
+						   date_format(at_previsao_inicio,'%d-%m-%Y') AS at_previsao_inicio,
+						   date_format(at_previsao_fim,'%d-%m-%Y') AS at_previsao_fim,
+						   (SELECT fas_descricao
+								FROM tb_fase_projeto
+								WHERE  ATV.fas_codigo = fas_codigo) AS fas_descricao,
+								IF(at_tipo_atividade = 1,'Nao Planejado','Planejado') AS planejamento,
+								date_format(at_inicio,'%d-%m-%Y') AS at_inicio,
+								date_format(at_fim,'%d-%m-%Y') AS at_fim
+					FROM tb_atividade AS ATV
+					WHERE at_codigo = ?");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$at_codigo,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			$dados = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+			return($dados);
+
+
+		}catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+
+	//Usado no painel de projetos detalhados
+	public function getPlanejamentoAtividade($pro_codigo)
+	{
+		$query = ("SELECT count(*) AS plano
+					FROM tb_atividade
+					WHERE pro_codigo = ?
+					GROUP BY at_tipo_atividade
+					ORDER BY at_tipo_atividade;
+				");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$pro_codigo,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return $stmt->fetchAll(\PDO::FETCH_NUM);
+
+
+		}catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	#Usado no Painel de projeto
+	public function graficoPainelDetalheAtividade($pro_codigo)
+	{
+		$query = ("SELECT
+					(SELECT sta_descricao
+						FROM tb_status
+						WHERE sta_codigo = ATI.sta_codigo ) AS 'STATUS' ,
+				count(*) AS 'Quantidade'
+				FROM tb_atividade AS ATI
+				WHERE pro_codigo = ?
+				GROUP BY sta_codigo");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$pro_codigo,\PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			foreach ($stmt as $value){
+				echo '[',"'",$value[0],"'",',',$value[1],'],';
+			}
+
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
+		}
+	}
+
+
+	#Usado no Painel de projeto detalhes
+	public function graficoPainelDetalheAtividadePrazo($pro_codigo)
+	{
+		$query = ("SELECT
+					IF(ROUND(((datediff(IF(sta_codigo > 2,IFNULL(at_fim,now()),now()), at_previsao_inicio) + 1) /
+							   (datediff(at_previsao_fim, at_previsao_inicio) + 1) * 100),2) < 100,'Dentro','Fora') AS prazo,
+
+						COUNT(IF(ROUND(((datediff(IF(sta_codigo > 2,IFNULL(at_fim,now()),now()), at_previsao_inicio) + 1) /
+							   (datediff(at_previsao_fim, at_previsao_inicio) + 1) * 100),2) < 100,'dentro','fora') ) AS qtd
+					FROM tb_atividade WHERE pro_codigo = ?
+					GROUP BY prazo;");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$pro_codigo,\PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			foreach ($stmt as $value){
+				echo '[',"'",$value[0],"'",',',$value[1],'],';
+			}
+
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
+		}
 	}
 
 
