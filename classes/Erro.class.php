@@ -1,8 +1,8 @@
 <?php
 /**
- * @author Márcio Ramos e-mail: marciomrs4@hotmail.com
+ * @author M?rcio Ramos e-mail: marciomrs4@hotmail.com
  * @name Titulo
- * @example Essa classe é utilizada para criar titulo já formatado
+ * @example Essa classe ? utilizada para criar titulo j? formatado
  * @package script
  * @version 1.0 Data 20/04/2011
  * 
@@ -33,6 +33,27 @@ final class Erro
 		
 		
 	}
+
+
+	public static function validarChamadoInRnc($erro)
+	{
+		#String de Entrada
+		$haystack = $erro;
+
+		#String procurada
+		$needle = "campo_unique";
+
+		if(strpos($haystack, $needle) != '')
+		{
+			return(Texto::erro('Esse chamado já foi adcionado a uma RNC.'));
+		}else {
+			return $erro;
+		}
+
+
+	}
+
+
 
 }
 

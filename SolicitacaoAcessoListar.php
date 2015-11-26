@@ -2,7 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
 $ControleAcesso = new ControleDeAcesso();
-$ControleAcesso->permitirAcesso(array(ControleDeAcesso::$TecnicoADM,ControleDeAcesso::$Tecnico));
+$ControleAcesso->permitirAcesso(array($ControleAcesso::$Solicitante,ControleDeAcesso::$TecnicoADM,ControleDeAcesso::$Tecnico));
 
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/script.php");
 

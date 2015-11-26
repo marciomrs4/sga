@@ -8,9 +8,18 @@
 		$acesso = new ControleDeAcesso(); 
         $acesso->permitirBotao("<li><a href='Solicitante.php'>Chamado</a></li>",array(ControleDeAcesso::$Solicitante));
         $acesso->permitirBotao("<li><a href='Operacao.php'>Operação</a></li>",array(ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
+
+        if($_SESSION['dep_codigo'] == 36) {
+            $acesso->permitirBotao("<li><a href='Qualidade.php'>Qualidade</a></li>", array(ControleDeAcesso::$Tecnico, ControleDeAcesso::$TecnicoADM));
+        }
+
+        if($_SESSION['dep_codigo'] != 36) {
+            $acesso->permitirBotao("<li><a href='GestorRnc.php'>Qualidade</a></li>", array(ControleDeAcesso::$Tecnico, ControleDeAcesso::$TecnicoADM));
+        }
+
         $acesso->permitirBotao("<li><a href='Relatorio.php'>Relatório</a></li>",array(ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
         $acesso->permitirBotao("<li><a href='Administracao.php'>Administração</a></li>",array(ControleDeAcesso::$TecnicoADM));
-        $acesso->permitirBotao("<li><a href='Qualidade.php'>Qualidade</a></li>",array(ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
+
         
         ?>                        
     </ul>

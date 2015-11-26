@@ -15,15 +15,15 @@ if($_POST)
 				{
 					$cadastro->setDados($_POST);
                                         
-                                        //$cadastro->listarDados();
-                                        
 					$cadastro->cadastrarRnc();
 
 					$cadastro->finalizarApp('rnc','Cadastrado com sucesso !');
 
+					header('location: ../Qualidade.php');
+
 				}catch (Exception $e)
 				{
-					ClasseException::throwException($e,$_POST,'rnc');
+					//ClasseException::throwException($e,$_POST,'rnc');
 				}
 	
 	}else

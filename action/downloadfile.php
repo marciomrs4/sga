@@ -33,8 +33,6 @@ switch ($tipo)
 
 		$path = '../files/'.DirectoryCreate::PROJETOS.$codigo.'/'.$file;
 
-		//echo $arquivo;
-
 		download($path,$file);
 
 	break;
@@ -43,6 +41,11 @@ switch ($tipo)
 	break;
 
 	case 'rncs':
+
+		$path = '../files/'.DirectoryCreate::RNC.$codigo.'/'.$file;
+
+		download($path,$file);
+
 	break;
 
 	case 'melhorias':
