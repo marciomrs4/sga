@@ -42,7 +42,7 @@
                                 </div>
 				
 				<?php 
-					endfor;
+                                    endfor;
 				?>	
 					  			
   			</div>
