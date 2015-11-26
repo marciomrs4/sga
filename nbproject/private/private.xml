@@ -5,14 +5,18 @@
         <group>
             <file>file:/var/www/sga/rncVerificacao.php</file>
             <file>file:/var/www/sga/forms/alterar/Solicitacao.php</file>
+            <file>file:/var/www/sga/forms/cadastrar/Ocorrencia.php</file>
             <file>file:/var/www/sga/classes/Cadastro.class.php</file>
-            <file>file:/var/www/sga/Operacao.php</file>
             <file>file:/var/www/sga/model/TbCadastroRnc.class.php</file>
+            <file>file:/var/www/sga/Operacao.php</file>
             <file>file:/var/www/sga/action/cadastrarRnc.php</file>
+            <file>file:/var/www/sga/forms/cadastrar/Assentamento.php</file>
+            <file>file:/var/www/sga/PainelUsuarios.php</file>
             <file>file:/var/www/sga/Qualidade.php</file>
             <file>file:/var/www/sga/rnc.php</file>
             <file>file:/var/www/sga/rncGestor.php</file>
             <file>file:/var/www/sga/model/TbProblema.class.php</file>
+            <file>file:/var/www/sga/PainelProjetosTi.php</file>
             <file>file:/var/www/sga/model/TbRncEficaz.class.php</file>
         </group>
     </open-files>
