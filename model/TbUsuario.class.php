@@ -146,15 +146,17 @@ class TbUsuario extends Banco
 	#Usado na lista de usu�rios na abertura de chamado
 	public function selectUsuarios()
 	{
-		$query = ("SELECT usu_codigo, concat(usu_nome,' ',usu_sobrenome), dep_descricao, tac_descricao
-					FROM tb_usuario AS a
-					INNER JOIN tb_departamento AS b
-					ON a.dep_codigo = b.dep_codigo
-					INNER JOIN tb_tipo_acesso AS c
-					ON a.tac_codigo = c.tac_codigo
-        		    WHERE usu_codigo != 1
-        		    ORDER BY 2
-				");
+		$query = ("SELECT USU.usu_codigo, concat(USU.usu_nome,' ',USU.usu_sobrenome), DEP.dep_descricao, TIPO.tac_descricao
+						FROM tb_usuario AS USU
+						INNER JOIN tb_departamento AS DEP
+						ON DEP.dep_codigo = USU.dep_codigo
+						INNER JOIN tb_tipo_acesso AS TIPO
+						ON TIPO.tac_codigo = USU.tac_codigo
+						INNER JOIN tb_acesso AS ACE
+						ON USU.usu_codigo = ACE.usu_codigo
+						WHERE USU.usu_codigo != 1
+						AND ACE.ace_ativo = 'S'
+						ORDER BY 2");
 		
 		try 
 		{
@@ -266,11 +268,14 @@ class TbUsuario extends Banco
 	#Listagem usada no cadastro de usuario Atividade
 	public function selectUsuariosAtividade($dados)
 	{
-		$query = ("SELECT usu_codigo, concat(usu_nome,' ',usu_sobrenome) 
-					as usu_nome 
-					FROM tb_usuario 
-					WHERE usu_codigo NOT IN(?,?)
-					AND usu_codigo != 1
+		$query = ("SELECT USU.usu_codigo, concat(usu_nome,' ',usu_sobrenome)
+						AS usu_nome
+						FROM tb_usuario AS USU
+						INNER JOIN tb_acesso AS ACE
+						ON USU.usu_codigo = ACE.usu_codigo
+						WHERE USU.usu_codigo NOT IN(?,?)
+						AND USU.usu_codigo != 1
+						AND ACE.ace_ativo = 'S'
 				  ");
 		
 		try 

@@ -5,7 +5,9 @@
     <div id="nav_main">
        <div class="titulo_menu_direita">Menu</div>
         <ul>
-        <span><b>Relatórios</b></span>
+        <span>
+			<b>Relatórios</b>
+		</span>
 <!-- 		<li><a href="RelatorioPorUsuario.php">Chamados por <?php echo($_SESSION['config']['usuario']);?></a></li>
 			<li><a href="RelatorioPorArea.php">Chamados por ?rea</a></li>
 			<li><a href="RelatorioPorPeriodo.php">Chamados por Per?odo</a></li>
@@ -16,7 +18,17 @@
             <li><a href="RelatorioSolucaoTempoEnvioTerceiro.php" target="_blank">Tempo de Solução com Terceiro</a></li>
             <li><a href="RelatorioDeTarefa.php" target="_blank">Relatório de Tarefas</a></li>
 	<hr>		
-		<span><b>Painéis</b></span>
+		<span>
+			<b>Painéis</b>
+		</span>
+			<?php
+			if($_SESSION['dep_codigo'] == 36) {
+			?>
+			<li>
+				<a href="PainelQualidade.php" target="_blank">Painel Qualidade</a></li>
+			<?php
+			}
+			?>
 			<li><a href="PainelChamados.php">Painel de Chamados</a></li>
 			<li><a href="PainelAtividade.php">Painel de Atividade</a></li>																								
 <!--			<li><a href="PainelProjeto.php">Painel de Projetos</a></li>-->

@@ -15,8 +15,6 @@ if($_POST)
 				{
 					$cadastro->setDados($_POST);
                                         
-                                        //$cadastro->listarDados();
-                                        
 					$cadastro->cadastrarRespostaRnc();
 
 					$cadastro->finalizarApp('rncGestor','Cadastrado com sucesso !');

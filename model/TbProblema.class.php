@@ -104,8 +104,8 @@ class TbProblema extends Banco
 	{
 		$query = ("SELECT pro.pro_codigo, pro.pro_descricao, 
 						  dep.dep_descricao, pri.pri_descricao, pro_tempo_solucao,
-						  IF(pro_mostrar_usuario = 1,'SIM','NÃO'),
-						  IF(pro_status_ativo = 1,'SIM','NÃO') 
+						  IF(pro_mostrar_usuario = 1,'SIM','NAO'),
+						  IF(pro_status_ativo = 1,'SIM','NAO')
 					FROM tb_problema AS pro
 					INNER JOIN tb_departamento AS dep
 					ON pro.dep_codigo = dep.dep_codigo
@@ -154,7 +154,7 @@ class TbProblema extends Banco
 		}
 	}
 	
-	#Usado na tela de operação para listagem dos problemas
+	#Usado na tela de operaï¿½ï¿½o para listagem dos problemas
 	public function selectMeusProblemas($dep_codigo)
 	{
 		$query = ("SELECT pro_codigo, pro_descricao 
@@ -245,7 +245,7 @@ class TbProblema extends Banco
 		}
 	}
 	
-	#Listagem de problema para tela de buscar chamado em Operação
+	#Listagem de problema para tela de buscar chamado em Operaï¿½ï¿½o
 	public function listarTodosProblema()
 	{
 		$query = ("SELECT pro_codigo, pro_descricao 
@@ -297,6 +297,7 @@ class TbProblema extends Banco
 			throw new PDOException($e->getMessage(),$e->getMessage());
 		}
 	}
-	
+
+
 }
 ?>

@@ -843,5 +843,37 @@ class Busca extends Dados
 
     }
 
+	public function listarRncGestor()
+	{
+
+		$this->dados['dep_responsavel_codigo'] = $_SESSION['dep_codigo'];
+		$this->dados['data1'] = ($this->dados['data1'] == '') ? date('Y-m-d') : ValidarDatas::dataBanco($this->dados['data1']);
+		$this->dados['data2'] = ($this->dados['data2'] == '') ? date('Y-m-d') : ValidarDatas::dataBanco($this->dados['data2']);
+		$this->dados['sta_codigo_rnc'] = ($this->dados['sta_codigo_rnc'] == '') ? '%' : $this->dados['sta_codigo_rnc'];
+		$this->dados['nc_descricaocompleta'] = ($this->dados['nc_descricaocompleta'] == '') ? '%' : $this->dados['nc_descricaocompleta'];
+
+		$tbRnc = new TbCadastroRnc();
+		return $tbRnc->listarRncGestor($this->dados);
+
+	}
+
+	public function listarRncQualidade()
+	{
+
+		$this->dados['dep_responsavel_codigo'] = ($this->dados['dep_responsavel_codigo'] == '') ? '%' : $this->dados['dep_responsavel_codigo'];
+
+		$this->dados['data1'] = ($this->dados['data1'] == '') ? date('Y-m-d') : ValidarDatas::dataBanco($this->dados['data1']);
+		$this->dados['data2'] = ($this->dados['data2'] == '') ? date('Y-m-d') : ValidarDatas::dataBanco($this->dados['data2']);
+
+		$this->dados['sta_codigo_rnc'] = ($this->dados['snc_codigo'] == '') ? '%' : $this->dados['snc_codigo'];
+		$this->dados['nc_descricaocompleta'] = ($this->dados['nc_descricaocompleta'] == '') ? '%' : $this->dados['nc_descricaocompleta'];
+
+		$tbRnc = new TbCadastroRnc();
+		return $tbRnc->listarRncQualidade($this->dados);
+
+	}
+
+
+
 }
 ?>

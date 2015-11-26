@@ -31,7 +31,7 @@ class TbAssentamento extends Banco
 			
 		} catch (PDOException $e) 
 		{
-			throw new PDOException($e->getMessage(),$e->getCode());
+			throw new PDOException('Tabela de Assentamento: ' . $e->getMessage(),$e->getCode());
 		}
 		
 		

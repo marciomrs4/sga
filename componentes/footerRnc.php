@@ -4,8 +4,8 @@
 </div>
 </div>
 </div>    
-<script src="jscript/jquery-1.11.1.min.js"></script>        
-<script src="jscript/jquery.dataTables.js"></script>
+<script src="jscript/jquery-1.11.1.min.js"></script>
+<script src="jscript/my-printer.js"></script>
 
 <!--<script>
 var $alert = jQuery.noConflict();  

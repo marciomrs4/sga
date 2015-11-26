@@ -30,28 +30,30 @@ if($_POST)
 				}
 				break;
 
-			case 'alterar/Apontamento' :
-				$alteracao = new Alteracao();				
+			case 'cadastrar/uploadfilesRNC' :
+
+				$cadastro = new Cadastro();
 
 				try
 				{
+					$cadastro->setDados($_POST);
 
-					$alteracao->setDados($_POST);
+					$cadastro->cadastrarAnexoRNC($_FILES);
 
-					//$alteracao->alterarProblema();
-
-					$alteracao->finalizarApp();
+					$_SESSION['acao'] = base64_encode('cadastrar/uploadfilesRNC');
+					$_SESSION['valor'] = $_POST['nc_codigo'];
+					header('location: '.$_SERVER['HTTP_REFERER']);
 
 				}catch (Exception $e)
 				{
-					ClasseException::throwException($e);
+					ClasseException::throwException($e,$_POST,'cadastrar/uploadfilesRNC');
 				}
 				break;
 
 			default:
 				Sessao::destroiSessao();
 				break;
-					
+
 		}
 
 	}else

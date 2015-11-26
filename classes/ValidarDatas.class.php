@@ -154,6 +154,18 @@ class ValidarDatas extends ClasseException
 
 		return($timestamp);
 	}
+
+	public static function validateDatePeriodo($dataInicial, $dataFinal)
+	{
+		$data1 = new DateTime($dataInicial);
+
+		$data2 = new DateTime($dataFinal);
+
+		if($data1->diff($data2)->invert == 1){
+			throw new \Exception('O Periodo informado incorreto.');
+		}
+
+	}
 	
 }
 ?>

@@ -289,4 +289,33 @@ class Email extends PHPMailer
 
 	}
 
+
+	/**
+	 * @param $dados
+	 *
+	 * Envio de email para criacao de RNC
+	 */
+	public function notificarCriacaoRnc($dados)
+	{
+
+		$tbRnc = new TbCadastroRnc();
+
+		$nc_codigo = $tbRnc->getNumberRncFormatado($dados['nc_codigo']);
+
+		$this->cabecalho = "Criação da RNC: $nc_codigo";
+
+		$this->mensagem .= '<b>Houve um novo apontamento.</b><br><br>';
+		$this->mensagem .= "<b>Titulo do Projeto:</b> {$projeto['pro_titulo']} <br>";
+		$this->mensagem .= "<b>Número da atividade: </b> {$at_codigo} <br><br>";
+		$this->mensagem .= "<b>Criado por: </b>" . $usuario['usu_nome'] .' '. $usuario['usu_sobrenome'] .' | ' . $usuario['usu_email'] . "<br><br>";
+		$this->mensagem .= '<b>Descrição do apontamento:</b> <br>';
+		$this->mensagem .= "{$ap_descricao}<br><br>";
+		$this->mensagem .= "<b>Status da Atividade: </b> {$tbStatusAtividade->getDescricao($sta_codigo)}";
+
+
+
+		$this->enviarEmail();
+
+	}
+
 }

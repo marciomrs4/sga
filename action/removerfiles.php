@@ -7,13 +7,13 @@ $file = $_GET['file'];
 
 $LogUpload = new LogUpload();
 
-function createlog($file,$codigo)
+function createlog($file,$codigo,$tipo)
 {
 
 	$dados['usuario'] = $_SESSION['usu_nome'].' '.$_SESSION['usu_sobrenome'];
 	$dados['arquivo'] = $file;
 	$dados['acao'] = 'Remover';
-	$dados['tipo'] = 'Projetos';
+	$dados['tipo'] = $tipo;
 	$dados['codigo'] = $codigo;
 
 
@@ -38,7 +38,7 @@ switch($tipo){
 		$_SESSION['acao'] = base64_encode('cadastrar/uploadfilesprojeto');
 		$_SESSION['valor'] = base64_encode($codigo);
 
-		createlog($file,$codigo);
+		createlog($file,$codigo,'projetos');
 
 		header('location: '.$_SERVER['HTTP_REFERER']);
 
@@ -50,6 +50,15 @@ switch($tipo){
 	break;
 
 	case 'rncs':
+
+		unlink(DirectoryCreate::PATH . DirectoryCreate::RNC . $codigo . '/' . $file);
+
+		$_SESSION['acao'] = base64_encode('cadastrar/uploadfilesRNC');
+		$_SESSION['valor'] = base64_encode($codigo);
+
+		createlog($file,$codigo,'RNC');
+
+		header('location: '.$_SERVER['HTTP_REFERER']);
 
 	break;
 
