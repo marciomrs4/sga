@@ -17,7 +17,7 @@
             $acesso->permitirBotao("<li><a href='GestorRnc.php'>Qualidade</a></li>", array(ControleDeAcesso::$Tecnico, ControleDeAcesso::$Solicitante, ControleDeAcesso::$TecnicoADM));
         }
 
-        $acesso->permitirBotao("<li><a href='Relatorio.php'>Relatório</a></li>",array(ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
+        $acesso->permitirBotao("<li><a href='Relatorio.php'>Relatório</a></li>",array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
         $acesso->permitirBotao("<li><a href='Administracao.php'>Administração</a></li>",array(ControleDeAcesso::$TecnicoADM));
 
         

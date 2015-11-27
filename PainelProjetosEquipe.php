@@ -57,7 +57,7 @@ $tbDepartamento = new TbDepartamento();
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             <h3 class="panel-title"><span class="glyphicon glyphicon-picture"></span>
-                                Atividade por status
+                                Atividade por status (Pendente e Em Andamento)
                             </h3>
                         </div>
                         <div class="panel-body">
