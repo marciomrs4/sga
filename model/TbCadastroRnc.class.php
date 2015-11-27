@@ -136,6 +136,29 @@ class TbCadastroRnc extends Banco
         }
     }
 
+
+    public function getStatus($nc_codigo)
+    {
+        $query = ("SELECT snc_codigo FROM $this->tabela
+                   WHERE nc_codigo = ?");
+
+        try{
+
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->bindParam(1,$nc_codigo,\PDO::PARAM_INT);
+
+            $stmt->execute();
+
+            $dados = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+            return $dados['snc_codigo'];
+
+        }  catch (\PDOException $e){
+            throw new \PDOException($e->getMessage(), $e->getCode());
+        }
+    }
+
     //Usado na tela de listagem de RNC para a Area/Gestor
     public function listarRncGestor($dados)
     {

@@ -10,7 +10,7 @@ abstract class Banco
 {
 
 	private $user = 'root';
-	private $password = '123456';
+	private $password = 'q1w2e3mrs';
 	private $tipobanco = 'mysql';
 	private $database = 'sga';
 	private $server =  'localhost';

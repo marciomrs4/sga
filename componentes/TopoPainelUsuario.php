@@ -7,7 +7,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Painel de Usuários</title>	
+	<title>Painel de Usuários</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel='shortcut icon' href='css/images/ceadisico.ico'>	
 	<!-- css -->
@@ -31,7 +31,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 	</div>	
 	  
 	<div class="container-fluid collapse navbar-collapse" id="menu-principal">
-            <h4 class="navbar-text"><a href="Operacao.php" title="Voltar">SGA</a> - PAINEL DE USUÁRIOS</h4>
+            <h4 class="navbar-text"><a href="PainelProjetosEquipe.php" title="Voltar">SGA</a> - PAINEL DE USUÁRIOS</h4>
             <h5 class="navbar-right navbar-text">
                 <span class="estiloniver">
                     <?php echo (date('d-m-Y | H:i:s')); ?>

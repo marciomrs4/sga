@@ -16,9 +16,7 @@ echo PHP_EOL;
 
 $tb = new TbCadastroRnc();
 
-$dados['data1'] = '2015-11-01';
-$dados['data2'] = '2015-11-26';
 
-$tb->getGraficoRncByDepartamento($dados);
+echo $tb->getStatus(11);
 
 ?>

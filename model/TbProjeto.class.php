@@ -784,6 +784,32 @@ class TbProjeto extends Banco
 
 	}
 
+	//Usado no painel de usuarios
+	public function getQuantidadeProjetoByUsuarioResponsavel($usu_codigo)
+	{
+		$query = ("SELECT count(pro_codigo) AS qtd
+					FROM tb_projeto
+					WHERE usu_codigo_responsavel = ?
+					AND stp_codigo IN(1,2);");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$usu_codigo,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			$dados = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+			return $dados['qtd'];
+
+		}catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
 
 
 }

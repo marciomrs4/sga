@@ -8,8 +8,8 @@
         <?php
 		$controleacesso = new ControleDeAcesso();
 
-		$botaobusca = ("<li><a href='BuscaRnc.php'><img src='./css/images/search.png'> Pesquisar</a></li>");
-		$controleacesso->permitirBotao($botaobusca, array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
+/*		$botaobusca = ("<li><a href='BuscaRnc.php'><img src='./css/images/search.png'> Pesquisar</a></li>");
+		$controleacesso->permitirBotao($botaobusca, array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));*/
 
 		if($_SESSION['dep_codigo'] != 36) {
 			$botaoRNCGestor = ("<li><a href='GestorRnc.php'><img src='./css/images/melhoria.png'> RNC</a></li>");

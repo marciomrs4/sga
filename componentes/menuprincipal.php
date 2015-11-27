@@ -14,7 +14,7 @@
         }
 
         if($_SESSION['dep_codigo'] != 36) {
-            $acesso->permitirBotao("<li><a href='GestorRnc.php'>Qualidade</a></li>", array(ControleDeAcesso::$Tecnico, ControleDeAcesso::$TecnicoADM));
+            $acesso->permitirBotao("<li><a href='GestorRnc.php'>Qualidade</a></li>", array(ControleDeAcesso::$Tecnico, ControleDeAcesso::$Solicitante, ControleDeAcesso::$TecnicoADM));
         }
 
         $acesso->permitirBotao("<li><a href='Relatorio.php'>Relatório</a></li>",array(ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));

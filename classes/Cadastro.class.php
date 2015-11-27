@@ -277,19 +277,27 @@ class Cadastro extends Dados
 			ValidarCampos::campoVazio($this->dados['nc_resp_implantacao'], 'RESPONSÁVEL PELA IMPLANTAÇÃO');
 			ValidarCampos::campoVazio($this->dados['nc_data_implantacao'], 'DATA DA IMPLANTAÇÃO');
 
+			$tbrnc = new TbCadastroRnc();
+
 			$this->dados['nc_data_implantacao'] = date('Y-m-d',strtotime(str_replace('/','-',$this->dados['nc_data_implantacao'])));
 			$this->dados['nc_edicao_gestor'] = 1;
-			$this->dados['snc_codigo'] = 2;
+
+			if($tbrnc->getStatus($this->dados['nc_codigo']) == 1) {
+				$this->dados['snc_codigo'] = 2;
+			}else{
+				$this->dados['snc_codigo'] = $tbrnc->getStatus($this->dados['nc_codigo']);
+			}
+
 			$this->dados['usu_codigo_repondedor'] = $_SESSION['usu_codigo'];
 
 			//$this->conexao->beginTransaction();
 
-			$tbrnc = new TbCadastroRnc();
+
 			$tbrnc->update($this->dados);
 
-		} catch (Exception $e)
+		} catch (\Exception $e)
 		{
-			throw new Exception($e->getMessage(), $e->getCode());
+			throw new \Exception($e->getMessage(), $e->getCode());
 		}
 	}
 

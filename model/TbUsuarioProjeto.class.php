@@ -154,11 +154,16 @@ class TbUsuarioProjeto extends Banco
 
     }
 
+    //Conta quanto projetos em andamento existem por usuario participante
     public function countProjectByUser($usu_codigo)
     {
-        $query = ("SELECT count(pro_codigo)
-                    FROM tb_usuario_projeto
-                    WHERE usu_codigo_integrante = ?");
+        $query = ("SELECT count(pro.pro_codigo)
+                    FROM tb_usuario_projeto AS usu_pro
+                    INNER JOIN tb_projeto AS pro
+                    ON usu_pro.pro_codigo = pro.pro_codigo
+                    WHERE usu_codigo_integrante = ?
+                    AND pro.stp_codigo = 2;
+");
 
         try{
 

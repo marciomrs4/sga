@@ -421,10 +421,11 @@ class TbAtividade extends Banco
 	{
 		$query = ("SELECT 
 					(SELECT sta_descricao 
-						FROM tb_status 
+						FROM tb_status_atividade
 						WHERE sta_codigo = ATI.sta_codigo ) AS 'STATUS' , 
 				count(*) AS 'Quantidade'
 				FROM tb_atividade AS ATI
+				WHERE sta_codigo IN (1,2)
 				GROUP BY sta_codigo");
 						
 		try
@@ -447,7 +448,10 @@ class TbAtividade extends Banco
 	#Painel Grafico de Atividade por usuario
 	public function graficoAtividadePorUsuario($dados)
 	{
-		$query = ("SELECT (SELECT usu_nome FROM tb_usuario WHERE usu_codigo =  usu_codigo_responsavel) AS Usuario, count(*) AS Quantidade
+		$query = ("SELECT
+						(SELECT usu_nome
+							FROM tb_usuario
+							WHERE usu_codigo =  ATV.usu_codigo_responsavel) AS Usuario, count(*) AS Quantidade
 					FROM tb_atividade AS ATV
 					INNER JOIN tb_projeto AS PRO
 					ON PRO.pro_codigo = ATV.pro_codigo
@@ -975,6 +979,69 @@ class TbAtividade extends Banco
 			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
 		}
 	}
+
+
+	public function listarAtividadeProjetoByUser($usu_codigo_responsavel)
+	{
+		$query = ("SELECT
+						at_codigo, at_codigo,PRO.pro_titulo,
+						date_format(at_previsao_inicio,'%d-%m-%Y') AS at_previsao_inicio,
+						date_format(at_previsao_fim,'%d-%m-%Y') AS at_previsao_fim,
+							(SELECT sta_descricao
+								FROM tb_status_atividade
+								WHERE ATV.sta_codigo = sta_codigo) AS sta_descricao
+						FROM tb_atividade ATV
+						INNER JOIN tb_projeto AS PRO
+						ON ATV.pro_codigo = PRO.pro_codigo
+
+						WHERE ATV.usu_codigo_responsavel = ?
+						AND sta_codigo IN (1,2)
+
+						ORDER BY ATV.pro_codigo, at_previsao_inicio;");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$usu_codigo_responsavel,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt);
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
+		}
+	}
+
+
+	public function getQuantidadeAtividadeByUser($usu_codigo_responsavel)
+	{
+		$query = ("SELECT
+						count(at_codigo) AS qtd
+						FROM tb_atividade
+						WHERE usu_codigo_responsavel = ?
+						AND sta_codigo IN (1,2);");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$usu_codigo_responsavel,PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			$dados  = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+			return $dados['qtd'];
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
+		}
+	}
+
 
 
 }

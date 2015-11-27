@@ -360,28 +360,30 @@ class TbUsuario extends Banco
 		}
 	}
 	
-	#Listagem usada no Painel de Atividade
+	#Listagem usada no Painel de Atividade (NOVO PAINEL DE ATIVIDADE)
 	public function listarUsuariosPainelAtividade($dados)
 	{
 	
-		$query = ("SELECT u.usu_codigo, count(ATS.at_codigo) , u.usu_nome
-				FROM tb_usuario u
-				INNER JOIN tb_acesso a
-				ON u.usu_codigo = a.usu_codigo
-				INNER JOIN tb_atividade AS ATS
-				ON ATS.usu_codigo_responsavel = u.usu_codigo
-				WHERE u.dep_codigo = ?
-				AND ATS.sta_codigo = ?
-				AND a.ace_ativo = 'S'
-				GROUP BY u.usu_codigo
-				ORDER BY 2 DESC");
+		$query = ("SELECT u.usu_codigo, count(ATS.at_codigo)AS qtd,
+						date_format(min(at_previsao_inicio),'%d-%m-%Y') AS at_previsao_inicio,
+						date_format(max(at_previsao_fim),'%d-%m-%Y') AS at_previsao_fim, u.usu_nome
+						FROM tb_usuario u
+						INNER JOIN tb_acesso a
+						ON u.usu_codigo = a.usu_codigo
+						INNER JOIN tb_atividade AS ATS
+						ON ATS.usu_codigo_responsavel = u.usu_codigo
+						WHERE u.dep_codigo = 5
+						AND ATS.sta_codigo IN (1,2)
+						AND a.ace_ativo = 'S'
+						GROUP BY u.usu_codigo
+						ORDER BY 2 DESC;
+");
 	
 		try
 		{
 			$stmt = $this->conexao->prepare($query);
 	
-			$stmt->execute(array("{$dados['dep_codigo']}",
-			                     "{$dados['sta_codigo']}"));
+			$stmt->execute(array("{$dados['dep_codigo']}"));
 				
 			return($stmt);
 				
@@ -427,7 +429,7 @@ class TbUsuario extends Banco
 				INNER JOIN tb_acesso a
 				ON u.usu_codigo = a.usu_codigo
 				INNER JOIN tb_atendente_solicitacao AS ATS
-				ON ATS.usu_codigo_atendente = U.usu_codigo
+				ON ATS.usu_codigo_atendente = u.usu_codigo
 				LEFT JOIN tb_solicitacao AS SOL
 				ON SOL.sol_codigo = ATS.sol_codigo
 				WHERE u.dep_codigo = :dep_codigo
