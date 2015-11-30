@@ -46,6 +46,14 @@ switch($tipo){
 
 	case 'chamados':
 
+		unlink(DirectoryCreate::PATH . DirectoryCreate::CHAMADOS . $codigo . '/' . $file);
+
+		$_SESSION['acao'] = base64_encode('cadastrar/uploadfilesChamado');
+		$_SESSION['valor'] = base64_encode($codigo);
+
+		createlog($file,$codigo,'CHAMADO');
+
+		header('location: '.$_SERVER['HTTP_REFERER']);
 
 	break;
 

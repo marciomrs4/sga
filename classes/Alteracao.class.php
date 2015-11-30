@@ -273,7 +273,7 @@ class Alteracao extends Dados
 			{
 				$this->conexao->beginTransaction();
 
-				if($file['tmp_name'] != '')
+/*				if($file['tmp_name'] != '')
 				{
 
 					$tbanexo = new TbAnexo();
@@ -285,7 +285,7 @@ class Alteracao extends Dados
 					$arquivo->setDados($file);
 					/*
                      * Capturando os dados do arquivo
-                     */
+
 					$this->dados['ane_anexo'] = $arquivo->arquivoBinario();
 					$this->dados['ane_nome'] = $arquivo->arquivoNome();
 					$this->dados['ane_tamanho'] = $arquivo->arquivoTamanho();
@@ -300,13 +300,20 @@ class Alteracao extends Dados
 					{
 						$tbanexo->insert($this->dados);
 					}
-				}
+				}*/
 
 
 				$tbsolicitacao = new TbSolicitacao();
 				$tbsolicitacao->update($this->dados);
 
 				$this->conexao->commit();
+
+
+				$this->dados['sol_codigo'] = base64_encode($this->dados['sol_codigo']);
+				$Cadastro = new Cadastro();
+				$Cadastro->cadastrarAnexoChamado($file);
+				$this->dados['sol_codigo'] = base64_decode($this->dados['sol_codigo']);
+
 
 			}catch (PDOException $e)
 			{

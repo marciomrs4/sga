@@ -52,8 +52,12 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($_SESSION['a
 					<a href="./action/formcontroler.php?<?php echo(base64_encode('cadastrar/Ocorrencia').'='.base64_encode($_SESSION['alterar/Solicitacao']['sol_codigo']));?>"><img src="./css/images/ocorrencia2.png" title="Adicionar Ocorrência"></a>
 
 				<?php endif; ?>
-                                    
-				<a href="./GerarRelatorioPdf.php?<?php echo(base64_encode('codigo').'='.base64_encode($_SESSION['alterar/Solicitacao']['sol_codigo']));?>" target="blank"><img src="./css/images/pdf.png" title="Gerar PDF"></a>
+			<a href="./action/formcontroler.php?<?php echo(base64_encode('cadastrar/uploadfilesChamado').'='.base64_encode($_SESSION['alterar/Solicitacao']['sol_codigo']));?>">
+				<img src="./css/images/anexo.png" title="Anexar Arquivos">
+			</a>
+			<a href="./GerarRelatorioPdf.php?<?php echo(base64_encode('codigo').'='.base64_encode($_SESSION['alterar/Solicitacao']['sol_codigo']));?>" target="blank">
+				<img src="./css/images/pdf.png" title="Gerar PDF">
+			</a>
                                                                 
 			</div>
 			</fieldset>
@@ -200,23 +204,7 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($_SESSION['a
 	      	<textarea name="sol_descricao_solicitacao" rows="10" cols="50"><?php echo($_SESSION['alterar/Solicitacao']['sol_descricao_solicitacao']); ?></textarea>
 	      </td>
     </tr>
-		<?php
-		$tbanexo = new TbAnexo();
-		$dados = $tbanexo->getForm($_SESSION['alterar/Solicitacao']['sol_codigo']);
-		if($dados['ane_anexo']){
-		?>
-	<tr>
-		<th>Arquivo Anexo</th>
-		<td>
-		<a href="BaixarArquivo.php?<?php echo(base64_encode('id').'='.base64_encode($dados['ane_codigo'])); ?>" target="_blank" ><?php echo($dados['ane_nome']);?></a>
-			</td>
-	    </tr>
-	    <?php }?>
-		<tr>
-    	<th><?php if( !$usu_codigo){ echo('Alterar Anexo:');  ?></th>     		
-    	<td><input type="file" name="arquivo" /><?php }?></td>
-    </tr>
-        
+
     <tr>
       <td colspan="2" align="left">
 			&nbsp;

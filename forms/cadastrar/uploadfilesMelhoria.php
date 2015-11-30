@@ -72,7 +72,7 @@
             endforeach;
 
         }catch(\Exception $e){
-            echo 'Essa RNC não possui arquivos';
+            echo 'Não há arquivos disponiveis';
         }
         ?>
     </table>

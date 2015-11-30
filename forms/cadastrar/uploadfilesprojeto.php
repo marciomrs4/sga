@@ -63,7 +63,7 @@
             endforeach;
 
         }catch(\Exception $e){
-            echo 'Esse projeto não possui arquivos';
+            echo 'Não há arquivos disponiveis';
         }
         ?>
     </table>

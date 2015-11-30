@@ -406,32 +406,35 @@ class Cadastro extends Dados
 				$tbsolicitacao = new TbSolicitacao();
 				$this->dados['sol_codigo'] = $tbsolicitacao->insert($this->dados);
 
-				if($file['tmp_name'] != '')
-				{
-					#Instancia da classe Arquivo que manipula os aquivos
+
+				/*  Instancia da classe Arquivo que manipula os aquivos
 					$arquivo = new Arquivo();
 					#Metodo setDados que serve para setar o $file que cont?m todo o arquivo
 					$arquivo->setDados($file);
-					/*
-					 * Capturando os dados do arquivo
-					 */
+
+					 /* Capturando os dados do arquivo
+
 					$this->dados['ane_anexo'] = $arquivo->arquivoBinario();
 					$this->dados['ane_nome'] = $arquivo->arquivoNome();
 					$this->dados['ane_tamanho'] = $arquivo->arquivoTamanho();
 					$this->dados['ane_tipo'] = $arquivo->arquivoTipo();
 
-					#Gravando o arquivo no banco dentro da tabela de anexo
+					/*Gravando o arquivo no banco dentro da tabela de anexo
 					$tbanexo = new TbAnexo();
-					$tbanexo->insert($this->dados);
-				}
+					$tbanexo->insert($this->dados);*/
 
 				#Grava a data de abertura da solicita??o
 				$tbcalculoatendimento = new TbCalculoAtendimento();
 				$tbcalculoatendimento->insertCalculoAtendimento($this->dados);
 
-
 				#Se tudo deu certo, faz commit
 				$this->conexao->commit();
+
+
+				$this->dados['sol_codigo'] = base64_encode($this->dados['sol_codigo']);
+				$this->cadastrarAnexoChamado($file);
+				$this->dados['sol_codigo'] = base64_decode($this->dados['sol_codigo']);
+
 
 
 				if($this->dados['Departamento'] || $this->dados['Solicitante'])
@@ -458,7 +461,7 @@ class Cadastro extends Dados
 	}
 
 	#cadastra as solicitacaoes tecnicas
-	public function cadastrarSolicitacaoTecnico($usu_codigo_solicitante = null,$file)
+	public function cadastrarSolicitacaoTecnico($usu_codigo_solicitante = null, $file)
 	{
 		try
 		{
@@ -486,24 +489,6 @@ class Cadastro extends Dados
 				$tbsolicitacao = new TbSolicitacao();
 				$this->dados['sol_codigo'] = $tbsolicitacao->insert($this->dados);
 
-				if($file['tmp_name'] != '')
-				{
-					#Instancia da classe Arquivo que manipula os aquivos
-					$arquivo = new Arquivo();
-					#Metodo setDados que serve para setar o $file que cont?m todo o arquivo
-					$arquivo->setDados($file);
-					/*
-* Capturando os dados do arquivo
-                    */
-					$this->dados['ane_anexo'] = $arquivo->arquivoBinario();
-					$this->dados['ane_nome'] = $arquivo->arquivoNome();
-					$this->dados['ane_tamanho'] = $arquivo->arquivoTamanho();
-					$this->dados['ane_tipo'] = $arquivo->arquivoTipo();
-
-					#Gravando o arquivo no banco dentro da tabela de anexo
-					$tbanexo = new TbAnexo();
-					$tbanexo->insert($this->dados);
-				}
 
 				#Grava a data de abertura da solicita??o
 				$tbcalculoatendimento = new TbCalculoAtendimento();
@@ -514,9 +499,32 @@ class Cadastro extends Dados
 				$this->conexao->commit();
 
 
+
+/*					#Instancia da classe Arquivo que manipula os aquivos
+					$arquivo = new Arquivo();
+					#Metodo setDados que serve para setar o $file que cont?m todo o arquivo
+					$arquivo->setDados($file);
+
+					* Capturando os dados do arquivo
+
+					$this->dados['ane_anexo'] = $arquivo->arquivoBinario();
+					$this->dados['ane_nome'] = $arquivo->arquivoNome();
+					$this->dados['ane_tamanho'] = $arquivo->arquivoTamanho();
+					$this->dados['ane_tipo'] = $arquivo->arquivoTipo();
+
+					#Gravando o arquivo no banco dentro da tabela de anexo
+					$tbanexo = new TbAnexo();
+					$tbanexo->insert($this->dados);*/
+
+					$this->dados['sol_codigo'] = base64_encode($this->dados['sol_codigo']);
+					$this->cadastrarAnexoChamado($file);
+
+
+
 				if($this->dados['Departamento'] || $this->dados['Solicitante'])
 				{
 					$email = new Email();
+					$this->dados['sol_codigo'] = base64_decode($this->dados['sol_codigo']);
 					$email->aberturaChamado($this->dados);
 				}
 
@@ -1182,6 +1190,8 @@ class Cadastro extends Dados
 
 				#Envio de e-mail
 				$email = new Email();
+
+				$this->dados['som_codigo'] = base64_decode($this->dados['som_codigo']);
 				$email->aberturaMelhoria($this->dados);
 
 			}catch (PDOException $e)
@@ -1786,6 +1796,41 @@ class Cadastro extends Dados
 		}
 
 	}
+
+
+	public function cadastrarAnexoChamado($file)
+	{
+
+		$upload = new FileUpload();
+
+		$sol_codigo = base64_decode($this->dados['sol_codigo']);
+
+		$Dir = new DirectoryCreate();
+		$Dir->createDirChamados($sol_codigo);
+
+		$erro = $upload->setFile($file['arquivo']['tmp_name'])
+			->setDestination(FileUpload::PATH.FileUpload::CHAMADOS.$sol_codigo.'/'.$file['arquivo']['name'])
+			->moveUploaded()
+			->getErro();
+
+		$dados['usuario'] = $_SESSION['usu_nome'].' '.$_SESSION['usu_sobrenome'];
+		$dados['arquivo'] = $file['arquivo']['name'];
+		$dados['acao'] = 'Envio';
+		$dados['tipo'] = 'CHAMADO';
+		$dados['codigo'] = $sol_codigo;
+
+		$log = new LogUpload();
+
+		try {
+
+			$log->insert($dados);
+
+		}catch (\PDOException $e){
+			throw new \PDOException($e->getMessage(), $e->getCode());
+		}
+
+	}
+
 }
 
 ?>

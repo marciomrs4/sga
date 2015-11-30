@@ -21,7 +21,7 @@ if($_POST)
 				{
 					$cadastro->setDados($_POST);	
 					
-					$cadastro->cadastrarSolicitacao($_SESSION['usu_codigo'],$_FILES['arquivo']);
+					$cadastro->cadastrarSolicitacao($_SESSION['usu_codigo'],$_FILES);
 					
 					$cadastro->finalizarApp('cadastrar/Solicitacao');
 
@@ -57,7 +57,7 @@ if($_POST)
 
 					$alteracao->setDados($_POST);
 
-					$alteracao->alterarSolicitacao($_FILES['arquivo']);
+					$alteracao->alterarSolicitacao($_FILES);
 					//$alteracao->listarDados();
 					$alteracao->finalizarApp('','Atualizado com sucesso!');
 
@@ -73,11 +73,9 @@ if($_POST)
 
 				try
 				{
-					$cadastro->setDados($_POST);	
+					$cadastro->setDados($_POST);
 					
-					//$cadastro->listarDados();
-					
-					$cadastro->cadastrarSolicitacaoTecnico(null,$_FILES['arquivo']);
+					$cadastro->cadastrarSolicitacaoTecnico(null,$_FILES);
 					
 					$cadastro->finalizarApp('cadastrar/SolicitacaoTecnico');
 

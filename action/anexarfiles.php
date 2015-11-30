@@ -70,6 +70,26 @@ if($_POST)
 				}
 			break;
 
+			case 'cadastrar/uploadfilesChamado' :
+
+				$cadastro = new Cadastro();
+
+				try
+				{
+					$cadastro->setDados($_POST);
+
+					$cadastro->cadastrarAnexoChamado($_FILES);
+
+					$_SESSION['acao'] = base64_encode('cadastrar/uploadfilesChamado');
+					$_SESSION['valor'] = $_POST['sol_codigo'];
+					header('location: '.$_SERVER['HTTP_REFERER']);
+
+				}catch (Exception $e)
+				{
+					ClasseException::throwException($e,$_POST,'cadastrar/uploadfilesChamado');
+				}
+			break;
+
 			default:
 				Sessao::destroiSessao();
 				break;

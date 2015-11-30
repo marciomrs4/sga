@@ -38,6 +38,9 @@ switch ($tipo)
 	break;
 
 	case 'chamados':
+		$path = '../files/'.DirectoryCreate::CHAMADOS.$codigo.'/'.$file;
+
+		download($path,$file);
 	break;
 
 	case 'rncs':
