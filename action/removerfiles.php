@@ -64,7 +64,17 @@ switch($tipo){
 
 	case 'melhorias':
 
-	break;
+		unlink(DirectoryCreate::PATH . DirectoryCreate::MELHORIA . $codigo . '/' . $file);
+
+		$_SESSION['acao'] = base64_encode('cadastrar/uploadfilesMelhoria');
+		$_SESSION['valor'] = base64_encode($codigo);
+
+		createlog($file,$codigo,'MELHORIA');
+
+		header('location: '.$_SERVER['HTTP_REFERER']);
+
+
+		break;
 
 	default:
 		header('location: '.$_SERVER['HTTP_REFERER']);

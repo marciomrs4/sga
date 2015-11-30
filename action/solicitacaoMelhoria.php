@@ -19,9 +19,9 @@ if($_POST)
 
 				try
 				{
-					$cadastro->setDados($_POST);	
-					
-					$cadastro->cadastrarSolicitacaoMelhoria();
+					$cadastro->setDados($_POST);
+
+					$cadastro->cadastrarSolicitacaoMelhoria($_FILES);
 					
 					$cadastro->finalizarApp('cadastrar/SolicitacaoMelhoria');
 

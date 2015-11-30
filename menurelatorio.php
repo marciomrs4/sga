@@ -21,6 +21,7 @@
 		<li><a href="RelatorioSolucao.php" target="_blank">Tempo de Solução</a></li>
 		<li><a href="RelatorioSolucaoTempoEnvioTerceiro.php" target="_blank">Tempo de Solução com Terceiro</a></li>
 		<li><a href="RelatorioDeTarefa.php" target="_blank">Relatório de Tarefas</a></li>
+		<li><a href="RelatorioMelhoria.php">Relatório de Melhoria</a></li>
 		<hr>
 		<?php
 		}

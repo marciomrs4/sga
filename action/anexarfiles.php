@@ -48,7 +48,27 @@ if($_POST)
 				{
 					ClasseException::throwException($e,$_POST,'cadastrar/uploadfilesRNC');
 				}
-				break;
+			break;
+
+			case 'cadastrar/uploadfilesMelhoria' :
+
+				$cadastro = new Cadastro();
+
+				try
+				{
+					$cadastro->setDados($_POST);
+
+					$cadastro->cadastrarAnexoMelhoria($_FILES);
+
+					$_SESSION['acao'] = base64_encode('cadastrar/uploadfilesMelhoria');
+					$_SESSION['valor'] = $_POST['som_codigo'];
+					header('location: '.$_SERVER['HTTP_REFERER']);
+
+				}catch (Exception $e)
+				{
+					ClasseException::throwException($e,$_POST,'cadastrar/uploadfilesMelhoria');
+				}
+			break;
 
 			default:
 				Sessao::destroiSessao();

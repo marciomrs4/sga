@@ -67,7 +67,7 @@ $tbRnc = new TbCadastroRnc();
                         <a href="action/downloadfile.php?tipo=rncs&codigo=<?php echo($nc_codigo);?>&file=<?php echo $dir->getFilename();?>" target="_blank"><?php echo($dir->getFilename()); ?></a>
                     </td>
                     <td>
-                        <a href="action/removerfiles.php?tipo=rncs&codigo=<?php echo($nc_codigo);?>&file=<?php echo $dir->getFilename();?>" onclick="return confirm('Tem certeza que deseja excluir ?')">
+                        <a href="action/removerfiles.php?tipo=rncs&codigo=<?php echo($nc_codigo);?>&file=<?php echo $dir->getFilename();?>" onclick="return confirm('Tem certeza que deseja excluir <?php echo $dir->getFilename();?> ?')">
                             <img src="css/images/remover.png">
                         </a>
                     </td>

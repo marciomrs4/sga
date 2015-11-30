@@ -1154,7 +1154,7 @@ class Cadastro extends Dados
 	}
 
 
-	public function cadastrarSolicitacaoMelhoria()
+	public function cadastrarSolicitacaoMelhoria($file)
 	{
 
 		try
@@ -1176,6 +1176,9 @@ class Cadastro extends Dados
 				$this->dados['som_codigo'] = $tbMelhoria->insert($this->dados);
 
 				$this->conexao->commit();
+
+				$this->dados['som_codigo'] = base64_encode($this->dados['som_codigo']);
+				$this->cadastrarAnexoMelhoria($file);
 
 				#Envio de e-mail
 				$email = new Email();
@@ -1748,6 +1751,41 @@ class Cadastro extends Dados
 	}
 
 
+	public function cadastrarAnexoMelhoria($file)
+	{
+
+		$upload = new FileUpload();
+
+		$som_codigo = base64_decode($this->dados['som_codigo']);
+
+		$Dir = new DirectoryCreate();
+		$Dir->createDirMelhoria($som_codigo);
+
+		$erro = $upload->setFile($file['arquivo']['tmp_name'])
+			->setDestination(FileUpload::PATH.FileUpload::MELHORIA.$som_codigo.'/'.$file['arquivo']['name'])
+			->moveUploaded()
+			->getErro();
+
+
+
+		$dados['usuario'] = $_SESSION['usu_nome'].' '.$_SESSION['usu_sobrenome'];
+		$dados['arquivo'] = $file['arquivo']['name'];
+		$dados['acao'] = 'Envio';
+		$dados['tipo'] = 'MELHORIA';
+		$dados['codigo'] = $som_codigo;
+
+
+		$log = new LogUpload();
+
+		try {
+
+			$log->insert($dados);
+
+		}catch (\PDOException $e){
+			throw new \PDOException($e->getMessage(), $e->getCode());
+		}
+
+	}
 }
 
 ?>

@@ -68,7 +68,7 @@ echo '</pre>';*/
                                     <?php echo ValidarDatas::dataCliente($dadosProjeto['pro_previsao_fim']); ?>
                                 </div>
                                 <div class="col-xs-12">
-                                    <label class="text-warning">Quantide de dias do projeto:</label>
+                                    <label class="text-warning">Quantidade de dias do projeto:</label>
                                     <?php
                                     $incio = new DateTime($dadosProjeto['pro_previsao_inicio']);
                                     $final = new DateTime($dadosProjeto['pro_previsao_fim']);

@@ -30,7 +30,12 @@ Sessao::validarForm('cadastrar/SolicitacaoMelhoria');
 	      	<textarea name="som_descricao" rows="10" cols="50"><?php echo($_SESSION['cadastrar/SolicitacaoMelhoria']['som_descricao']); ?></textarea>
 	      </td>
     </tr>
-            
+    <tr>
+      <th>Anexar Arquivo:</th>
+      <td>
+          <input type="file" name="arquivo" />
+      </td>
+    </tr>
     <tr>
     	<td colspan="2">
     	&emsp;

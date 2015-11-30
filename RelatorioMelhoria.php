@@ -2,7 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 
 $ControleAcesso = new ControleDeAcesso();
-$ControleAcesso->permitirAcesso(array(ControleDeAcesso::$TecnicoADM,ControleDeAcesso::$Tecnico, ControleDeAcesso::$Solicitante));
+$ControleAcesso->permitirAcesso(array(ControleDeAcesso::$TecnicoADM,ControleDeAcesso::$Tecnico));
 
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/script.php");
 
@@ -13,8 +13,7 @@ $busca->validarPost($_POST);
 $datagrid = new DataGrid();
 
 echo"<div class='sub_menu_principal'>";
-echo FormComponente::actionButton('<img src="./css/images/addmelhoria.png" title="Nova Melhoria"  >','cadastrar/SolicitacaoMelhoria');
-Texto::criarTitulo("Solicitações de Melhorias");
+Texto::criarTitulo("Relatório de Melhorias");
 echo "</div>";
 
 ?>
@@ -28,16 +27,25 @@ echo "</div>";
 			Status:
 			<?php 
 			$tbstatusMelhoria = new TbStatusMelhoria();
-
-			$form = new FormComponente();
-			$form::$name = 'TODOS';
-			$form->selectOption('stm_codigo', $tbstatusMelhoria->listarStatus(),true,$busca->getDados('stm_codigo'));
-
-			#Nome do Campo
-			echo(' Sistema:');
-				
+			$SelectStatus = new SelectOption();
+			$SelectStatus->setStmt($tbstatusMelhoria->listarStatus())
+				->setOptionEmpty('Todos')
+				->setSelectName('stm_codigo')
+				->setSelectedItem($busca->getDados('stm_codigo'))
+				->listOption();
+			?>
+			Sistema:
+			<?php
 		    $tbSistema = new TbSistemas();
-		    FormComponente::selectOption('sis_codigo',$tbSistema->listarSistemas(),true,$_POST);
+
+			$SelectSistema = new SelectOption();
+
+			$SelectSistema->setStmt($tbSistema->listarSistemas())
+				->setOptionEmpty('Todos')
+				->setSelectName('sis_codigo')
+				->setSelectedItem($busca->getDados('sis_codigo'))
+				->listOption();
+
 			?>
 			
 		</td>
@@ -48,10 +56,15 @@ echo "</div>";
 	</tr>
 </table>
 </fieldset>
+	<?php
+	$datagrid->excel = true;
+	$datagrid->exportarExcel('Lista de Melhoria','listarRelatorioMelhoria');
+	$datagrid->setCabecalho(array('N°','Sistema','Usuário Chave','Solicitante','Status','Data Abertura','Assunto'));
+	?>
 </form>
 
 <?php
-//Carrega os formularios dinamincamente
+#Carrega dinamicamente os formularios	
 Arquivo::includeForm();
 
 
@@ -59,14 +72,15 @@ try
 {
 	
 	
-$datagrid->setDados($busca->listarMelhoria());
-$datagrid->setCabecalho(array('N°','Solicitante','Data Solicitação','Sistema','Status','Descrição','Atendente'));
+$datagrid->setDados($busca->listarRelatorioMelhoria());
+
 
 $datagrid->titulofield = ' Melhorias(s)';
+$datagrid->islink = false;
 $datagrid->acao = 'alterar/SolicitacaoMelhoria';
 $datagrid->nomelink = '<img src="/sga/css/images/search2.png" title="Visualizar" />';	
 
-$datagrid->islink2 = true;
+$datagrid->islink2 = false;
 $datagrid->acao2 = 'cadastrar/ApontamentoMelhoria';
 $datagrid->nomelink2 = '<img src="./css/images/adcionar.png" title="Adicionar Apontamento" />';
 
@@ -81,7 +95,7 @@ $datagrid->mostrarDatagrid();
 
 Sessao::finalizarSessao();
 
-include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/menusecundario.php");
+include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/menurelatorio.php");
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/rodape.php");
 
 ?>

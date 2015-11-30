@@ -7,6 +7,7 @@
     <file url="file://$PROJECT_DIR$/DetalheProjeto.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GerarAniversariantePdf.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GerarExcel.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GerarMelhoriaPdf.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GerarRelatorioPdf.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GestorRnc.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GraficoTempoSolucaoMontagem.php" charset="ISO-8859-1" />
@@ -30,6 +31,7 @@
     <file url="file://$PROJECT_DIR$/Qualidade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Relatorio.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/RelatorioDeTarefa.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/RelatorioMelhoria.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/RelatorioSolucao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/RelatorioSolucaoTempoEnvioTerceiro.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/ScriptAniversariantes.php" charset="ISO-8859-1" />
@@ -81,6 +83,7 @@
     <file url="file://$PROJECT_DIR$/forms/cadastrar/UsuarioAtividade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/UsuarioProjeto.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/departamento.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/forms/cadastrar/uploadfilesMelhoria.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/uploadfilesRNC.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/uploadfilesprojeto.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/formsolicitacao.php" charset="ISO-8859-1" />

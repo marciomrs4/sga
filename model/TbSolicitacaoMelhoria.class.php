@@ -163,6 +163,44 @@ private $stm_codigo = 'stm_codigo';
 	
 	}
 
+
+	#Usado no relatorio de melhoria
+	public function listarRelatorioMelhoria($dados)
+	{
+
+		$query = ("SELECT som_codigo, SIS.sis_descricao, USUARIO.usu_nome, USU.usu_nome, STM.stm_descricao,
+						  date_format(som_data_solicitacao,'%d-%m-%Y %H:%i:%s') AS som_data_solicitacao,
+					   	  som_descricao
+						FROM tb_solicitacao_melhoria AS SOL
+						INNER JOIN tb_sistemas AS SIS
+						ON SOL.sis_codigo = SIS.sis_codigo
+						INNER JOIN tb_usuario AS USU
+						ON SOL.usu_codigo_solicitante = USU.usu_codigo
+						LEFT JOIN tb_usuario AS USUARIO
+						ON SOL.usu_codigo_atendente = USUARIO.usu_codigo
+						INNER JOIN tb_status_melhoria AS STM
+						ON SOL.stm_codigo = STM.stm_codigo
+						WHERE SOL.sis_codigo LIKE ?
+						AND SOL.stm_codigo  LIKE ?
+						ORDER BY 1 DESC;");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+
+			$stmt->execute(array("%{$dados['sis_codigo']}%",
+								"%{$dados['stm_codigo']}%"));
+
+			return($stmt);
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
 	
 	public function getUsuarioAtendente($som_codigo)
 	{

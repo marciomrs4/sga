@@ -789,6 +789,20 @@ class Busca extends Dados
 		return($dados);
 	
 	}
+
+	public function listarRelatorioMelhoria()
+	{
+
+		$this->dados['sis_codigo'] = ($this->dados['sis_codigo'] == '') ? '%' : $this->dados['sis_codigo'];
+		$this->dados['stm_codigo'] = ($this->dados['stm_codigo'] == '') ? '%' : $this->dados['stm_codigo'];
+
+		$tbSolicitacaoMelhoria = new TbSolicitacaoMelhoria();
+
+		$dados = $tbSolicitacaoMelhoria->listarRelatorioMelhoria($this->dados);
+
+		return($dados);
+
+	}
 	
 	#Usado na tela de cadastro de sistema
 	public function listarSistemaUsuarioChave()

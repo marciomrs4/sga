@@ -49,6 +49,11 @@ switch ($tipo)
 	break;
 
 	case 'melhorias':
+
+		$path = '../files/'.DirectoryCreate::MELHORIA.$codigo.'/'.$file;
+
+		download($path,$file);
+
 	break;
 
 	default:
