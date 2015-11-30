@@ -256,7 +256,7 @@ class Alteracao extends Dados
 	 * Usadao para alterar a solicita??o...
 	 * @throws Exception
 	 */
-	public function alterarSolicitacao($file)
+	public function alterarSolicitacao()
 	{
 		try
 		{
@@ -309,10 +309,44 @@ class Alteracao extends Dados
 				$this->conexao->commit();
 
 
-				$this->dados['sol_codigo'] = base64_encode($this->dados['sol_codigo']);
-				$Cadastro = new Cadastro();
-				$Cadastro->cadastrarAnexoChamado($file);
-				$this->dados['sol_codigo'] = base64_decode($this->dados['sol_codigo']);
+			}catch (PDOException $e)
+			{
+				$this->conexao->rollBack();
+				throw new PDOException($e->getMessage(), $e->getCode());
+			}
+
+		}catch (Exception $e)
+		{
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+	}
+
+	/**
+	 *
+	 * Usadao para alterar a solicita??o...
+	 * @throws Exception
+	 */
+	public function alterarSolicitacaoSolicitante()
+	{
+		try
+		{
+			ValidarCampos::campoVazio($this->dados['dep_codigo'],'Departamento');
+			ValidarCampos::campoVazio($this->dados['pro_codigo'],$_SESSION['config']['problema']);
+			ValidarCampos::campoVazio($this->dados['sol_descricao_solicitacao'],'Descrição do '.$_SESSION['config']['problema']);
+			$this->dados['sol_descricao_solicitacao'] = strip_tags($this->dados['sol_descricao_solicitacao']);
+			ValidarCampos::validarQtdCaracter($this->dados['sol_descricao_solicitacao'],10,'Descrição do '.$_SESSION['config']['problema']);
+
+			#Capturando o c?digo do DEPTO solicitado
+			$this->dados['dep_codigo_solicitado'] = $this->dados['dep_codigo'];
+
+			try
+			{
+				$this->conexao->beginTransaction();
+
+				$tbsolicitacao = new TbSolicitacao();
+				$tbsolicitacao->updateSolicitacaoSolicitante($this->dados);
+
+				$this->conexao->commit();
 
 
 			}catch (PDOException $e)

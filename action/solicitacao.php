@@ -19,10 +19,10 @@ if($_POST)
 
 				try
 				{
-					$cadastro->setDados($_POST);	
-					
+					$cadastro->setDados($_POST);
+
 					$cadastro->cadastrarSolicitacao($_SESSION['usu_codigo'],$_FILES);
-					
+
 					$cadastro->finalizarApp('cadastrar/Solicitacao');
 
 				}catch (Exception $e)
@@ -57,8 +57,8 @@ if($_POST)
 
 					$alteracao->setDados($_POST);
 
-					$alteracao->alterarSolicitacao($_FILES);
-					//$alteracao->listarDados();
+					$alteracao->alterarSolicitacao();
+
 					$alteracao->finalizarApp('','Atualizado com sucesso!');
 
 				}catch (Exception $e)
@@ -74,16 +74,36 @@ if($_POST)
 				try
 				{
 					$cadastro->setDados($_POST);
-					
+
 					$cadastro->cadastrarSolicitacaoTecnico(null,$_FILES);
-					
+
 					$cadastro->finalizarApp('cadastrar/SolicitacaoTecnico');
 
 				}catch (Exception $e)
 				{
 					ClasseException::throwException($e,$_POST,'cadastrar/SolicitacaoTecnico');
 				}
-				
+
+				break;
+
+
+
+			case 'alterar/SolicitacaoSolicitante' :
+				$alteracao = new Alteracao();
+
+				try
+				{
+
+					$alteracao->setDados($_POST);
+
+					$alteracao->alterarSolicitacaoSolicitante('','Alterado com sucesso!');
+
+					$alteracao->finalizarApp();
+
+				}catch (Exception $e)
+				{
+					ClasseException::throwException($e);
+				}
 				break;
 
 			case 'alterar/AprovarSolicitacao' :
@@ -107,7 +127,7 @@ if($_POST)
 			default:
 				Sessao::destroiSessao();
 				break;
-					
+
 		}
 
 	}else

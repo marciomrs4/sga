@@ -54,9 +54,9 @@ class TbSolicitacao extends Banco
 	{
 		$query = ("UPDATE $this->tabela
 					SET	$this->dep_codigo_solicitado = ?,
-					$this->pro_codigo = ?,
-					$this->sol_descricao_solicitacao = ?,
-					$this->pro_codigo_tecnico = ?
+						$this->pro_codigo = ?,
+						$this->sol_descricao_solicitacao = ?,
+						$this->pro_codigo_tecnico = ?
 					WHERE $this->sol_codigo = ? ");
 					try
 					{
@@ -76,6 +76,35 @@ class TbSolicitacao extends Banco
 					{
 						throw new PDOException("Erro em TbSolicitacao".$e->getMessage(),$e->getCode());
 					}
+
+	}
+
+	public function updateSolicitacaoSolicitante($dados)
+	{
+		$query = ("UPDATE $this->tabela
+					SET	$this->dep_codigo_solicitado = ?,
+						$this->pro_codigo = ?,
+						$this->sol_descricao_solicitacao = ?,
+						$this->pro_codigo_tecnico = ?
+					WHERE $this->sol_codigo = ? ");
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados['dep_codigo'],PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados['pro_codigo'],PDO::PARAM_INT);
+			$stmt->bindParam(3,$dados['sol_descricao_solicitacao'],PDO::PARAM_STR);
+			$stmt->bindParam(4,$dados['pro_codigo'],PDO::PARAM_INT);
+			$stmt->bindParam(5,$dados['sol_codigo'],PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt);
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException("Erro em TbSolicitacao".$e->getMessage(),$e->getCode());
+		}
 
 	}
 
