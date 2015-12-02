@@ -232,9 +232,10 @@ class Cadastro extends Dados
 			$this->dados['pro_codigo_tecnico'] = $this->dados['pro_codigo_tecnico_rnc'];
 
 
+			$this->dados['numero_rnc'] = $tbrnc->getNumberRncFormatado($this->dados['nc_codigo']);
 			$this->dados['usu_codigo'] = $_SESSION['usu_codigo'];
 			$this->dados['ass_descricao'] = 'Este chamado esta sendo encerrado devido a abertura da RNC '
-											. $tbrnc->getNumberRncFormatado($this->dados['nc_codigo']) .'.';
+											. $this->dados['numero_rnc'] .'.';
 
 			$tbassentamento->insert($this->dados);
 
@@ -255,7 +256,11 @@ class Cadastro extends Dados
 			$this->dados['Departamento'] = true;
 			$email->interacaoAssentamento($this->dados);
 
-			//$email->notificarCriacaoRnc($this->dados);
+			$emailReclamante = new Email();
+			$emailReclamante->notificarCriacaoRncReclamente($this->dados);
+
+			$emailDepartamento = new Email();
+			$emailDepartamento->notificarCriacaoRncDepartamento($this->dados);
 
 
 		} catch (\Exception $e)
@@ -293,7 +298,12 @@ class Cadastro extends Dados
 			//$this->conexao->beginTransaction();
 
 
+			$this->dados['numero_rnc'] = $tbrnc->getNumberRncFormatado($this->dados['nc_codigo']);
 			$tbrnc->update($this->dados);
+
+
+			$email = new Email();
+			$email->notificarRespostaRncGestor($this->dados);
 
 		} catch (\Exception $e)
 		{

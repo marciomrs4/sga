@@ -293,26 +293,89 @@ class Email extends PHPMailer
 	/**
 	 * @param $dados
 	 *
-	 * Envio de email para criacao de RNC
+	 * Envio de email para criacao de RNC para o usuario que abriu a ocorrencia
 	 */
-	public function notificarCriacaoRnc($dados)
+	public function notificarCriacaoRncReclamente($dados)
 	{
 
-		$tbRnc = new TbCadastroRnc();
+		$this->cabecalho = "Criação da RNC: {$dados['numero_rnc']}";
 
-		$nc_codigo = $tbRnc->getNumberRncFormatado($dados['nc_codigo']);
+		$this->mensagem .= "Informamos que a ocorrência: <b>{$dados['sol_codigo']}</b>";
+		$this->mensagem .= " gerou a RNC <b>{$dados['numero_rnc']}.</b> <br>";
+		$this->mensagem .= "A mesma foi enviada a área responsável para tratamento.";
 
-		$this->cabecalho = "Criação da RNC: $nc_codigo";
+		$tbSolicitacao = new TbSolicitacao();
+		$usuarioSolicitante = $tbSolicitacao->getUsuarioSolicitante($dados['sol_codigo']);
+		$dep_codigo = $tbSolicitacao->getCodigoDepartamentoSolicitado($dados['sol_codigo']);
+		$tbDepartamento = new TbDepartamento();
+		$emailDepartamento = $tbDepartamento->getDepartamentoEmail($dep_codigo);
 
-		$this->mensagem .= '<b>Houve um novo apontamento.</b><br><br>';
-		$this->mensagem .= "<b>Titulo do Projeto:</b> {$projeto['pro_titulo']} <br>";
-		$this->mensagem .= "<b>Número da atividade: </b> {$at_codigo} <br><br>";
-		$this->mensagem .= "<b>Criado por: </b>" . $usuario['usu_nome'] .' '. $usuario['usu_sobrenome'] .' | ' . $usuario['usu_email'] . "<br><br>";
-		$this->mensagem .= '<b>Descrição do apontamento:</b> <br>';
-		$this->mensagem .= "{$ap_descricao}<br><br>";
-		$this->mensagem .= "<b>Status da Atividade: </b> {$tbStatusAtividade->getDescricao($sta_codigo)}";
+		$tbUsuario = new TbUsuario();
+		$dadosUsuario = $tbUsuario->getUsuario($usuarioSolicitante);
+
+		$this->AddAddress($dadosUsuario['usu_email']);
+		$this->AddAddress($emailDepartamento);
+
+		$this->enviarEmail();
+
+	}
+
+	/**
+	 * @param $dados
+	 *
+	 * Envio de email para criacao de RNC para o Departamento que responderá
+	 */
+	public function notificarCriacaoRncDepartamento($dados)
+	{
+
+		$tbDepartamento = new TbDepartamento();
+
+		$depDescricao = $tbDepartamento->getDepDescricao($dados['dep_responsavel_codigo']);
+
+		$this->cabecalho = "Criação da RNC: {$dados['numero_rnc']}";
+
+		$this->mensagem .= "Informamos que foi gerada a RNC <b>{$dados['numero_rnc']}</b>";
+		$this->mensagem .= " para a área <b>{$depDescricao}</b> para analise. <br>";
+		$this->mensagem .= "Solicitamos o preenchimento do registro em no máximo 48 horas da data da abertura.";
 
 
+		$tbSolicitacao = new TbSolicitacao();
+		$dep_codigo = $tbSolicitacao->getCodigoDepartamentoSolicitado($dados['sol_codigo']);
+		$tbDepartamento = new TbDepartamento();
+		$emailDepartamentoResponsavel = $tbDepartamento->getDepartamentoEmail($dep_codigo);
+
+
+		$emailDepartamentoRespondedor = $tbDepartamento->getDepartamentoEmail($dados['dep_responsavel_codigo']);
+
+		$this->AddAddress($emailDepartamentoResponsavel);
+		$this->AddAddress($emailDepartamentoRespondedor);
+
+		$this->enviarEmail();
+
+	}
+
+	/**
+	 * @param $dados
+	 *
+	 * Envio de email para criacao de resposta da RNC da area para o Departamento qualidade
+	 */
+	public function notificarRespostaRncGestor($dados)
+	{
+
+
+		$tbUsuario = new TbUsuario();
+
+		$dadosUsuario = $tbUsuario->getUsuario($dados['usu_codigo_repondedor']);
+
+		$this->cabecalho = "Resposta da RNC: {$dados['numero_rnc']}";
+
+		$this->mensagem .= "A RNC <b>{$dados['numero_rnc']}</b>";
+		$this->mensagem .= " foi respondida pelo usuário(a) <b>{$dadosUsuario['usu_nome']} {$dadosUsuario['usu_sobrenome']}.</b> <br>";
+		$this->mensagem .= "Aguardando validação da qualidade.";
+
+
+		$this->AddAddress($dadosUsuario['usu_email']);
+		$this->AddAddress('qualidade@ceadis.org.br');
 
 		$this->enviarEmail();
 
