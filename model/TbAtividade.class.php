@@ -922,7 +922,7 @@ class TbAtividade extends Banco
 	{
 		$query = ("SELECT
 					(SELECT sta_descricao
-						FROM tb_status
+						FROM tb_status_atividade
 						WHERE sta_codigo = ATI.sta_codigo ) AS 'STATUS' ,
 				count(*) AS 'Quantidade'
 				FROM tb_atividade AS ATI
@@ -985,7 +985,7 @@ class TbAtividade extends Banco
 	{
 		$query = ("SELECT
 						at_codigo, at_codigo,PRO.pro_titulo,
-						date_format(at_previsao_inicio,'%d-%m-%Y') AS at_previsao_inicio,
+						at_previsao_inicio,
 						date_format(at_previsao_fim,'%d-%m-%Y') AS at_previsao_fim,
 							(SELECT sta_descricao
 								FROM tb_status_atividade

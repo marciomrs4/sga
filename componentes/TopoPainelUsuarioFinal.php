@@ -34,7 +34,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
             <h4 class="navbar-text"><a href="PainelProjetosEquipe.php" title="Voltar">SGA</a> - PAINEL DE USUÁRIOS</h4>
             <h5 class="navbar-right navbar-text">
                 <span class="estiloniver">
-                    <?php echo (date('d-m-Y | H:i:s')); ?>
+                    <?php echo (date('d-m-Y')); ?>
                 </span>
             </h5>
             <span class="navbar-right navbar-text"></span>

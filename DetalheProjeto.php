@@ -208,18 +208,20 @@ echo '</pre>';*/
                                                 $atividade['atual']);
 
                                             ?>
-                                            <div class="col-xs-6">
+                                            <div class="col-xs-4">
                                                 <div class="panel panel-<?php echo $calculatePercent->getColor(); ?>">
                                                     <div class="panel-heading">
                                                         <div class="panel-title">
 
-                                                            <button value="<?php echo $atividade['at_codigo']; ?>" id="atividade" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" title="Ver Atividade">
-                                                                <span class="glyphicon glyphicon-eye-open"></span>
-                                                            </button>
+                                                            <div class="list-group">
+                                                                <div class="list-group-item">Atividade: <?php echo $atividade['at_codigo']; ?></div>
+                                                                <div class="list-group-item">Responsável: <?php echo $atividade['responsavel']; ?></div>
+                                                                <div class="list-group-item">Status: <?php echo $atividade['status']; ?></div>
 
-                                                            <a>Atividade: <?php echo $atividade['at_codigo']; ?> |
-                                                                Responsável: <?php echo $atividade['responsavel']; ?> |
-                                                                Status: <?php echo $atividade['status']; ?> </a>
+                                                                    <button value="<?php echo $atividade['at_codigo']; ?>" id="atividade" type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" title="Ver Atividade">
+                                                                        <span class="glyphicon glyphicon-plus"></span> Informações
+                                                                    </button>
+                                                            </div>
 
                                                         </div>
                                                     </div>
@@ -255,18 +257,20 @@ echo '</pre>';*/
                                                     $atividade['atual']);
 
                                                 ?>
-                                                <div class="col-xs-6">
+                                                <div class="col-xs-4">
                                                     <div class="panel panel-<?php echo $calculatePercent->getColor(); ?>">
                                                         <div class="panel-heading">
                                                             <div class="panel-title">
 
-                                                                <button value="<?php echo $atividade['at_codigo']; ?>" id="atividade" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal" title="Ver Atividade">
-                                                                    <span class="glyphicon glyphicon-eye-open"></span>
-                                                                </button>
+                                                                <div class="list-group">
+                                                                    <div class="list-group-item">Atividade: <?php echo $atividade['at_codigo']; ?></div>
+                                                                    <div class="list-group-item">Responsável: <?php echo $atividade['responsavel']; ?></div>
+                                                                    <div class="list-group-item">Status: <?php echo $atividade['status']; ?></div>
 
-                                                                <a>Atividade: <?php echo $atividade['at_codigo']; ?> |
-                                                                    Responsável: <?php echo $atividade['responsavel']; ?> |
-                                                                    Status: <?php echo $atividade['status']; ?> </a>
+                                                                        <button value="<?php echo $atividade['at_codigo']; ?>" id="atividade" type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" title="Ver Atividade">
+                                                                            <span class="glyphicon glyphicon-plus"></span> Informações
+                                                                        </button>
+                                                                </div>
 
                                                             </div>
                                                         </div>
@@ -302,7 +306,7 @@ echo '</pre>';*/
 
                             <div class="panel-body">
 
-                                <span id="graficoAtividade1"></span>
+                                <div id="graficoAtividade1"></div>
 
                             </div>
                         </div>
@@ -321,7 +325,7 @@ echo '</pre>';*/
 
                             <div class="panel-body">
 
-                                <span id="graficoAtividade2"></span>
+                                <div id="graficoAtividade2"></div>
 
                             </div>
                         </div>

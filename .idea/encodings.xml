@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/Administracao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/BuscaRnc.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/DemandaTecnica.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Departamentos.php" charset="ISO-8859-1" />
@@ -44,9 +45,10 @@
     <file url="file://$PROJECT_DIR$/classes/Email.class.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/classes/Erro.class.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/TopoPainelProjeto.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/componentes/TopoPainelProjetosEquipe.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/TopoPainelQualidade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/TopoPainelTarefas.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/componentes/TopoPainelUsuario.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/componentes/TopoPainelUsuarioFinal.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/TopoRnc.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/bootstrap.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/footerPainel.php" charset="ISO-8859-1" />
@@ -106,6 +108,7 @@
     <file url="file://$PROJECT_DIR$/rnc.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/rncGestor.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/rncVerificacao.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/tests/ScriptAniversariantesTest.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/atividadedependente.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/convertdate.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/criararquivo.php" charset="ISO-8859-1" />

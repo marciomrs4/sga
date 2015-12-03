@@ -1,6 +1,6 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/sga/componentes/config.php');
-include_once 'componentes/TopoPainelUsuario.php';
+include_once 'componentes/TopoPainelUsuarioFinal.php';
 
 $busca = new Busca();
 
@@ -15,26 +15,10 @@ $tbAtividade = new TbAtividade();
     <div class="container-fluid">
         <div class="col-xs-12">
 
-
-<!--            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><span class="glyphicon glyphicon-calendar"></span>
-                        Filtros:
-                    </h3>
-                </div>
-                <div class="panel-body">
-
-                    ...
-
-                </div>
-                <div class="panel-footer"></div>
-            </div>-->
-
-
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title"><span class="glyphicon glyphicon-th-list"></span>
-                        Atividades: <?php $User = $tbUsuario->getUsuario($busca->getValueGet('usu_codigo'));
+                        Usuário: <?php $User = $tbUsuario->getUsuario($busca->getValueGet('usu_codigo'));
                         echo $User['usu_nome'] . ' ' . $User['usu_sobrenome'],
                         ' | Total de Atividades: ', $tbAtividade->getQuantidadeAtividadeByUser($busca->getValueGet('usu_codigo'));
                         ?>
@@ -58,6 +42,10 @@ $tbAtividade = new TbAtividade();
                                 </button>";
                         return $btn;
                     },0);
+
+                 $DataGrid->addFunctionColumn(function($data){
+                     return date('d-m-Y',strtotime($data));
+                 },3);
 
 
                  $DataGrid->show(true);

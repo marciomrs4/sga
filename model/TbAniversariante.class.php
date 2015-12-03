@@ -260,16 +260,13 @@ class TbAniversariante extends Banco
     public function createListEmailToDay($unidade=1)
     {
         $query = ("SELECT ani_nome, ani_setor
-                    FROM tb_aniversariante
-                    WHERE ani_mes = ?
-                    AND ani_dia = ?
-                    AND ani_unidade = ?");
-        /*
-                    #Unidade CEADIS = 1 | UDTP = 2
-                    AND ani_unidade = 1");
-    */
-        	$mes = 9;//date('m');
-        	$dia = 5;//date('d');
+                   FROM tb_aniversariante
+                   WHERE ani_mes = ?
+                   AND ani_dia = ?
+                   AND ani_unidade = ?");
+
+       	$mes = date('m');
+       	$dia = date('d');
 
         $stmt = $this->conexao->prepare($query);
 

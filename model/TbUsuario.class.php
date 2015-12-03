@@ -372,7 +372,7 @@ class TbUsuario extends Banco
 						ON u.usu_codigo = a.usu_codigo
 						INNER JOIN tb_atividade AS ATS
 						ON ATS.usu_codigo_responsavel = u.usu_codigo
-						WHERE u.dep_codigo = 5
+						WHERE u.dep_codigo = ?
 						AND ATS.sta_codigo IN (1,2)
 						AND a.ace_ativo = 'S'
 						GROUP BY u.usu_codigo

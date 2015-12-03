@@ -1,6 +1,6 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/sga/componentes/config.php');
-include_once 'componentes/TopoPainelUsuario.php';
+include_once 'componentes/TopoPainelProjetosEquipe.php';
 
 $tbDepartamento = new TbDepartamento();
 ?>
@@ -10,7 +10,7 @@ $tbDepartamento = new TbDepartamento();
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span>
-                    USUÁRIOS <?php echo strtoupper($tbDepartamento->getDepDescricao($_SESSION['dep_codigo'])); ?>
+                    USUÁRIOS <?php echo mb_strtoupper($tbDepartamento->getDepDescricao($_SESSION['dep_codigo'])); ?>
                 </h3>
             </div>
             <div class="panel-body">
