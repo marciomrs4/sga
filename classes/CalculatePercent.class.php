@@ -71,7 +71,7 @@ class CalculatePercent
 
 		if($this->percentual <= 80){
 			return $success;
-		}elseif($this->percentual <= 99){
+		}elseif($this->percentual <= 100){
 			return $warning;
 		}else{
 			return $danger;

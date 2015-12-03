@@ -17,10 +17,6 @@ $planejamentoAtividade = $tbAtividade->getPlanejamentoAtividade($pro_codigo);
 
 $tbAtaReuniao = new TbAtaReuniao();
 
-/*echo '<pre>';
-print_r($tbAtividade->listarAtividadeByProjeto($pro_codigo));
-echo '</pre>';*/
-
 ?>
 
     <div class="container-fluid">
@@ -216,7 +212,7 @@ echo '</pre>';*/
                                                             <div class="list-group">
                                                                 <div class="list-group-item">Atividade: <?php echo $atividade['at_codigo']; ?></div>
                                                                 <div class="list-group-item">Responsável: <?php echo $atividade['responsavel']; ?></div>
-                                                                <div class="list-group-item">Status: <?php echo $atividade['status']; ?></div>
+                                                                <div class="list-group-item">Status: <?php echo $atividade['status']; echo $calculatePercent->getPercent(); ?></div>
 
                                                                     <button value="<?php echo $atividade['at_codigo']; ?>" id="atividade" type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" title="Ver Atividade">
                                                                         <span class="glyphicon glyphicon-plus"></span> Informações
@@ -265,7 +261,7 @@ echo '</pre>';*/
                                                                 <div class="list-group">
                                                                     <div class="list-group-item">Atividade: <?php echo $atividade['at_codigo']; ?></div>
                                                                     <div class="list-group-item">Responsável: <?php echo $atividade['responsavel']; ?></div>
-                                                                    <div class="list-group-item">Status: <?php echo $atividade['status']; ?></div>
+                                                                    <div class="list-group-item">Status: <?php echo $atividade['status'], ' - ', $calculatePercent->getPercent();  ?></div>
 
                                                                         <button value="<?php echo $atividade['at_codigo']; ?>" id="atividade" type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" title="Ver Atividade">
                                                                             <span class="glyphicon glyphicon-plus"></span> Informações

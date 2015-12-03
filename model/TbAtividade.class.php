@@ -954,10 +954,10 @@ class TbAtividade extends Banco
 	{
 		$query = ("SELECT
 					IF(ROUND(((datediff(IF(sta_codigo > 2,IFNULL(at_fim,now()),now()), at_previsao_inicio) + 1) /
-							   (datediff(at_previsao_fim, at_previsao_inicio) + 1) * 100),2) < 100,'Dentro','Fora') AS prazo,
+							   (datediff(at_previsao_fim, at_previsao_inicio) + 1) * 100),2) <= 100,'Dentro','Fora') AS prazo,
 
 						COUNT(IF(ROUND(((datediff(IF(sta_codigo > 2,IFNULL(at_fim,now()),now()), at_previsao_inicio) + 1) /
-							   (datediff(at_previsao_fim, at_previsao_inicio) + 1) * 100),2) < 100,'dentro','fora') ) AS qtd
+							   (datediff(at_previsao_fim, at_previsao_inicio) + 1) * 100),2) <= 100,'dentro','fora') ) AS qtd
 					FROM tb_atividade WHERE pro_codigo = ?
 					GROUP BY prazo;");
 
