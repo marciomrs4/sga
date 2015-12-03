@@ -400,8 +400,7 @@ class TbProjeto extends Banco
 	{
 		$query = ("SELECT pro_codigo, pro_titulo
 					FROM tb_projeto 
-					WHERE stp_codigo != 1
-					AND dep_codigo = ?
+					WHERE dep_codigo = ?
 					ORDER BY pro_titulo
 				 ");
 

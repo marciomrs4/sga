@@ -969,7 +969,7 @@ class Cadastro extends Dados
 
 				$status = $tbProjeto->getStatusProjeto($this->dados['pro_codigo']);
 
-				if($status != 2)
+				if($status > 2)
 				{
 					throw new Exception('Não é possível criar essa atividade: Este projeto não esta em andamento');
 				}else
