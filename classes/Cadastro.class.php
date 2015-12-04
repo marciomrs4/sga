@@ -1675,6 +1675,7 @@ class Cadastro extends Dados
 
 		try{
 
+
 			ValidarCampos::campoVazio($this->dados['nc_codigo'],'Codigo Obrigatorio');
 			ValidarCampos::campoVazio($this->dados['efi_codigo'],'Eficaz');
 			ValidarCampos::campoVazio($this->dados['ver_encerrado'],'Encerrar NC');
