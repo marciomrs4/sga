@@ -786,8 +786,10 @@ class TbAtividade extends Banco
 							FROM tb_status_atividade
 							WHERE ATV.sta_codigo = sta_codigo) AS 'status',
 							concat(at_previsao_inicio,' 00:00:00') AS previsao_inicio,
-							IF(sta_codigo > 2, ifnull(at_fim, at_previsao_fim), at_previsao_fim) AS previsao_fim,
-							IF(sta_codigo < 3, now(), ifnull(at_fim, at_previsao_fim)) AS atual
+
+							concat(at_previsao_fim,' 00:00:00') AS previsao_fim,
+							IF(sta_codigo < 3, now(), ifnull(at_fim, now())) AS atual
+
 					FROM tb_atividade ATV
 					WHERE fas_codigo IS NULL
 					AND pro_codigo = ?");
@@ -821,8 +823,10 @@ class TbAtividade extends Banco
 								FROM tb_status_atividade
 								WHERE ATV.sta_codigo = sta_codigo) AS 'status',
 								concat(at_previsao_inicio,' 00:00:00') AS previsao_inicio,
-								IF(sta_codigo > 2, ifnull(at_fim, at_previsao_fim), at_previsao_fim) AS previsao_fim,
-								IF(sta_codigo < 3, now(), ifnull(at_fim, at_previsao_fim)) AS atual,
+
+							concat(at_previsao_fim,' 00:00:00') AS previsao_fim,
+							IF(sta_codigo < 3, now(), ifnull(at_fim, now())) AS atual,
+
 								fas_codigo
 						FROM tb_atividade ATV
 						WHERE fas_codigo = ?

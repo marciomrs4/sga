@@ -1070,10 +1070,16 @@ class Cadastro extends Dados
 				//Atualiza a data de Fim ao ter um apontamento com status em concluido e ainda data fim vazia
 				if(($this->dados['sta_codigo'] == 3) and ($dataAtividade['at_fim'] == '')){
 
-					$dados['at_fim'] = date('Y-m-d H:i:s');
 					$dados['at_codigo'] = $this->dados['at_codigo'];
 
+					$dados['at_fim'] = date('Y-m-d H:i:s');
 					$tbAtividade->updateDataFimAtividade($dados);
+
+					if ($dataAtividade['at_inicio'] == '') {
+
+						$dados['at_inicio'] = date('Y-m-d H:i:s');
+						$tbAtividade->updateDataInicioAtividade($dados);
+					}
 				}
 
 
