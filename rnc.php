@@ -38,7 +38,7 @@ if($tbOcorrenciaRnc->validarOcorrencia($busca->getValueGet('sol_codigo')) >= 1){
 
     ?>
 
-    <form name="rnc" method="post" action="action/cadastrarRnc.php">
+    <form id="cadastrarrnc" name="rnc" method="post" action="action/cadastrarRnc.php">
 
         <?php if ($_SESSION['erro']): ?>
             <div class="alert alert-danger" role="alert"><?php echo $_SESSION['erro']; ?></div>
@@ -139,7 +139,8 @@ if($tbOcorrenciaRnc->validarOcorrencia($busca->getValueGet('sol_codigo')) >= 1){
 
         <div class="form-group">
             <div class="col-xs-12">
-                <button type="submit" class="btn btn-primary"> Criar</button>
+                <button type="submit" class="btn btn-primary" id="botaoSave"> Criar</button>
+                <div id="loadprocessar"></div>
             </div>
         </div>
 

@@ -117,7 +117,7 @@ $_SESSION['rncGestor'] = $tbRnc->getFormRnc($buca->getValueGet('nc_codigo'));
                     </div>
                     <div class="panel-body">
 
-                        <form name="rncVerificacao" method="post" action="action/rncVerificacao.php">
+                        <form id="rncVerificacao" name="rncVerificacao" method="post" action="action/rncVerificacao.php">
                             <input type="hidden" name="nc_codigo"
                                    value="<?php echo($_SESSION['rncGestor']['nc_codigo']); ?>">
 
@@ -175,7 +175,8 @@ $_SESSION['rncGestor'] = $tbRnc->getFormRnc($buca->getValueGet('nc_codigo'));
 
                             <div class="form-group">
                                 <div>
-                                    <button type="submit" class="btn btn-primary"> Verificar</button>
+                                    <button type="submit" class="btn btn-primary" id="botaoSave"> Verificar</button>
+                                    <div id="loadprocessar"></div>
                                 </div>
                             </div>
 

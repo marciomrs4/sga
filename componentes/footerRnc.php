@@ -6,6 +6,8 @@
 </div>    
 <script src="jscript/jquery-1.11.1.min.js"></script>
 <script src="jscript/my-printer.js"></script>
+<script src="jscript/jquery.validate.js"></script>
+<script src="jscript/validadorBootstrap.js"></script>
 
 <!--<script>
 var $alert = jQuery.noConflict();  

@@ -23,7 +23,7 @@ if($_POST)
 
 				}catch (Exception $e)
 				{
-					//ClasseException::throwException($e,$_POST,'rnc');
+					ClasseException::throwException($e,$_POST,'rnc');
 				}
 	
 	}else

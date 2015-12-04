@@ -194,6 +194,7 @@ class Cadastro extends Dados
 	#Gerar RNC
 	public function cadastrarRnc()
 	{
+
 		try
 		{
 
@@ -274,8 +275,10 @@ class Cadastro extends Dados
 	#Resposta Gestor RNC
 	public function cadastrarRespostaRnc()
 	{
+
 		try
 		{
+
 			ValidarCampos::campoVazio($this->dados['nc_causas'], 'CAUSA DA OCORRÊNCIA');
 			ValidarCampos::campoVazio($this->dados['nc_acao_melhoria'], 'MELHORIA');
 			ValidarCampos::campoVazio($this->dados['nc_prazo_implatacao'], 'PRAZO PARA IMPLANTAÇÃO');
@@ -1073,13 +1076,21 @@ class Cadastro extends Dados
 					$tbAtividade->updateDataFimAtividade($dados);
 				}
 
-				//Atualiza a data de Fim ao ter um apontamento com status cancelado e ainda data fim vazia
-				if(($this->dados['sta_codigo'] == 4) and ($dataAtividade['at_fim'] == '')){
 
-					$dados['at_fim'] = date('Y-m-d H:i:s');
+				//Atualiza a data de Fim ao ter um apontamento com status cancelado e ainda data fim vazia
+				if(($this->dados['sta_codigo'] == 4) and ($dataAtividade['at_fim'] == '')) {
+
 					$dados['at_codigo'] = $this->dados['at_codigo'];
 
+					$dados['at_fim'] = date('Y-m-d H:i:s');
 					$tbAtividade->updateDataFimAtividade($dados);
+
+					if ($dataAtividade['at_inicio'] == '') {
+
+						$dados['at_inicio'] = date('Y-m-d H:i:s');
+						$tbAtividade->updateDataInicioAtividade($dados);
+					}
+
 				}
 
 

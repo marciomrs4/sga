@@ -89,7 +89,7 @@ if($_SESSION['rncGestor']['nc_edicao_gestor'] == 1) {
                 </div>
                 <div class="panel-body">
 
-                    <form name="rncGestor" method="post" action="action/rncResposta.php">
+                    <form id="rncGestor" name="rncGestor" method="post" action="action/rncResposta.php">
 
                         <?php if ($_SESSION['erro']): ?>
                             <div class="alert alert-danger" role="alert"><?php echo $_SESSION['erro']; ?></div>
@@ -139,7 +139,8 @@ if($_SESSION['rncGestor']['nc_edicao_gestor'] == 1) {
 
                         <div class="form-group">
                             <div>
-                                <button type="submit" class="btn btn-primary"> Responder</button>
+                                <button type="submit" class="btn btn-primary" id="botaoSave"> Responder</button>
+                                <div id="loadprocessar"></div>
                             </div>
                         </div>
 

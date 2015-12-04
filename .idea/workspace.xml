@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2526c6c5-3cfb-4a59-b223-ceacd7d0168e" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/css/images/ck - Cópia.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" afterPath="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/formatacao.css" afterPath="$PROJECT_DIR$/css/formatacao.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Cadastro.class.php" afterPath="$PROJECT_DIR$/classes/Cadastro.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/action/cadastrarRnc.php" afterPath="$PROJECT_DIR$/action/cadastrarRnc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/footerRnc.php" afterPath="$PROJECT_DIR$/componentes/footerRnc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rnc.php" afterPath="$PROJECT_DIR$/rnc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rncGestor.php" afterPath="$PROJECT_DIR$/rncGestor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rncVerificacao.php" afterPath="$PROJECT_DIR$/rncVerificacao.php" />
     </list>
     <ignored path="sga.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,18 +50,7 @@
     <favorites_list name="sga" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Apontamento.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/forms/cadastrar/Apontamento.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.94868237">
-              <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,12 +58,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/PainelUsuarios.php" />
-        <option value="$PROJECT_DIR$/componentes/TopoPainelUsuario.php" />
-        <option value="$PROJECT_DIR$/PainelProjetosUsuario.php" />
-        <option value="$PROJECT_DIR$/model/TbUsuarioProjeto.class.php" />
-        <option value="$PROJECT_DIR$/componentes/footerPainel.php" />
-        <option value="$PROJECT_DIR$/jscript/getGraficoAtividadePorResponsavel.php" />
         <option value="$PROJECT_DIR$/jscript/getGraficoAtividadePorStatus.php" />
         <option value="$PROJECT_DIR$/componentes/menuprincipal.php" />
         <option value="$PROJECT_DIR$/Relatorio.php" />
@@ -112,9 +100,15 @@
         <option value="$PROJECT_DIR$/PainelProjetoUsuarios.php" />
         <option value="$PROJECT_DIR$/DetalheProjeto.php" />
         <option value="$PROJECT_DIR$/jscript/validador.js" />
-        <option value="$PROJECT_DIR$/classes/Cadastro.class.php" />
         <option value="$PROJECT_DIR$/css/formatacao.css" />
         <option value="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" />
+        <option value="$PROJECT_DIR$/componentes/footerRnc.php" />
+        <option value="$PROJECT_DIR$/action/cadastrarRnc.php" />
+        <option value="$PROJECT_DIR$/rnc.php" />
+        <option value="$PROJECT_DIR$/rncGestor.php" />
+        <option value="$PROJECT_DIR$/classes/Cadastro.class.php" />
+        <option value="$PROJECT_DIR$/jscript/validadorBootstrap.js" />
+        <option value="$PROJECT_DIR$/rncVerificacao.php" />
       </list>
     </option>
   </component>
@@ -244,20 +238,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="action" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -275,11 +255,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/jscript" />
       <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/componentes" />
       <recent name="$PROJECT_DIR$/forms/cadastrar" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/jscript" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/info" />
@@ -331,9 +311,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1440" height="875" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18636996" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18636996" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -369,7 +349,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18680556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18636996" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -397,90 +377,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/TbSolicitacao.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34487534">
-          <caret line="809" column="20" selection-start-line="809" selection-start-column="20" selection-end-line="809" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/rncResposta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4238227">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/notificaRNC.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82548475">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Email.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.610951">
-          <caret line="311" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
-          <folding>
-            <element signature="n#enviarEmail#0;n#Email#0;n#!!top" expanded="false" />
-            <element signature="n#setMensagem#0;n#Email#0;n#!!top" expanded="false" />
-            <element signature="n#setCabecalho#0;n#Email#0;n#!!top" expanded="false" />
-            <element signature="n#aberturaChamado#0;n#Email#0;n#!!top" expanded="false" />
-            <element signature="n#aberturaMelhoria#0;n#Email#0;n#!!top" expanded="false" />
-            <element signature="n#apontamentoMelhoria#0;n#Email#0;n#!!top" expanded="false" />
-            <element signature="n#apontamentoAtividade#0;n#Email#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/cadastrarRnc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4238227">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GerarExcel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/getGraficoAtividadeDetalheProjeto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6759003">
-          <caret line="56" column="64" selection-start-line="56" selection-start-column="64" selection-end-line="56" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Texto.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5235457">
-          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/ControleDeAcesso.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5734072">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Administracao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12465374">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/menusecundario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68836564">
@@ -680,14 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/validador.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/Arquivo.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40083218">
@@ -751,27 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Cadastro.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61904764">
-          <caret line="1074" column="0" selection-start-line="1074" selection-start-column="0" selection-end-line="1074" selection-end-column="0" />
-          <folding>
-            <element signature="n#cadastrarUsuario#0;n#Cadastro#0;n#!!top" expanded="false" />
-            <element signature="n#cadastrarDepartamento#0;n#Cadastro#0;n#!!top" expanded="false" />
-            <element signature="n#cadastrarProjeto#0;n#Cadastro#0;n#!!top" expanded="false" />
-            <element signature="n#cadastrarTempo#0;n#Cadastro#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/apontamento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5492372">
-          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/formatacao.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7419786">
@@ -788,10 +655,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/action/formcontroler.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0998613">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Sessao.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34535366">
+          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Apontamento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.69902915">
+          <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/assentamento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Email.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27045768">
+          <caret line="235" column="20" selection-start-line="235" selection-start-column="20" selection-end-line="235" selection-end-column="20" />
+          <folding>
+            <element signature="n#enviarEmail#0;n#Email#0;n#!!top" expanded="false" />
+            <element signature="n#setMensagem#0;n#Email#0;n#!!top" expanded="false" />
+            <element signature="n#setCabecalho#0;n#Email#0;n#!!top" expanded="false" />
+            <element signature="n#aberturaChamado#0;n#Email#0;n#!!top" expanded="false" />
+            <element signature="n#aberturaMelhoria#0;n#Email#0;n#!!top" expanded="false" />
+            <element signature="n#apontamentoMelhoria#0;n#Email#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/apontamento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5492372">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/model/TbAtividade.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34535366">
-          <caret line="196" column="20" selection-start-line="196" selection-start-column="20" selection-end-line="196" selection-end-column="20" />
+          <caret line="634" column="20" selection-start-line="634" selection-start-column="20" selection-end-line="634" selection-end-column="20" />
           <folding>
             <marker date="1449166631211" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
             <marker date="1449166631211" expanded="true" signature="-1:-1" placeholder="SELECT ATI.a..." />
@@ -847,26 +769,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/action/formcontroler.php">
+    <entry file="file://$PROJECT_DIR$/jscript/validador.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0998613">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.80748665">
+          <caret line="354" column="7" selection-start-line="334" selection-start-column="4" selection-end-line="354" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Sessao.class.php">
+    <entry file="file://$PROJECT_DIR$/css/images/addfases.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34535366">
-          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.37586686">
+          <caret line="141" column="76" selection-start-line="141" selection-start-column="62" selection-end-line="141" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Apontamento.php">
+    <entry file="file://$PROJECT_DIR$/action/cadastrarRnc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.94868237">
-          <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/componentes/footerRnc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2746186">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Cadastro.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4701803">
+          <caret line="280" column="0" selection-start-line="280" selection-start-column="0" selection-end-line="280" selection-end-column="0" />
+          <folding>
+            <element signature="n#cadastrarUsuario#0;n#Cadastro#0;n#!!top" expanded="false" />
+            <element signature="n#cadastrarDepartamento#0;n#Cadastro#0;n#!!top" expanded="false" />
+            <element signature="n#cadastrarProjeto#0;n#Cadastro#0;n#!!top" expanded="false" />
+            <element signature="n#cadastrarTempo#0;n#Cadastro#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/rncResposta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42441055">
+          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rncVerificacao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5256588">
+          <caret line="177" column="96" selection-start-line="177" selection-start-column="96" selection-end-line="177" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jscript/validadorBootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6">
+          <caret line="88" column="33" selection-start-line="88" selection-start-column="33" selection-end-line="88" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rncGestor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4479889">
+          <caret line="141" column="92" selection-start-line="141" selection-start-column="78" selection-end-line="141" selection-end-column="92" />
           <folding />
         </state>
       </provider>
