@@ -1040,6 +1040,7 @@ class Cadastro extends Dados
 
 		try
 		{
+
 			ValidarCampos::campoVazio($this->dados['at_codigo']);
 			ValidarCampos::campoVazio($this->dados['ap_descricao'],'Descrição do Apontamento');
 
@@ -1071,6 +1072,16 @@ class Cadastro extends Dados
 
 					$tbAtividade->updateDataFimAtividade($dados);
 				}
+
+				//Atualiza a data de Fim ao ter um apontamento com status cancelado e ainda data fim vazia
+				if(($this->dados['sta_codigo'] == 4) and ($dataAtividade['at_fim'] == '')){
+
+					$dados['at_fim'] = date('Y-m-d H:i:s');
+					$dados['at_codigo'] = $this->dados['at_codigo'];
+
+					$tbAtividade->updateDataFimAtividade($dados);
+				}
+
 
 
 

@@ -75,7 +75,8 @@ $dados = $tbAtividade->getFormAlteracao(base64_decode($_SESSION['valorform']));
 
     <tr>
       <td colspan="2" align="left">
-	      <input type="submit" name="alterar" class="button-tela" value="Salvar" />
+	      <input type="submit" name="alterar" class="button-tela" id="botaoSave" value="Salvar" />
+   	      <span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>
 	  </td>
     </tr>
   </table>

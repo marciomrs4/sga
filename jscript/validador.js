@@ -330,5 +330,28 @@ $valida(document).ready( function()
             submitForm(form);
         }
     });
+
+
+	$valida("#Apontamento").validate({
+
+		rules:{
+
+			ap_descricao:{
+				required: true,
+				minlength: 10
+			}
+		},
+		/* DEFINI??O DAS MENSAGENS DE ERRO */
+		messages:{
+
+			ap_descricao: {
+				required: "O campo Descricao do apontamento, é obrigatório",
+				minlength: "É necessário ao menos 10 caracteres"
+			}
+		},
+		submitHandler: function(form){
+			submitForm(form);
+		}
+	});
 	
 });

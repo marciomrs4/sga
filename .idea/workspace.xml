@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="2526c6c5-3cfb-4a59-b223-ceacd7d0168e" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/css/images/ck - Cópia.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/CalculatePercent.class.php" afterPath="$PROJECT_DIR$/classes/CalculatePercent.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" afterPath="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Cadastro.class.php" afterPath="$PROJECT_DIR$/classes/Cadastro.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DetalheProjeto.php" afterPath="$PROJECT_DIR$/DetalheProjeto.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbAtividade.class.php" afterPath="$PROJECT_DIR$/model/TbAtividade.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PainelProjetoUsuarios.php" afterPath="$PROJECT_DIR$/PainelProjetoUsuarios.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/validador.js" afterPath="$PROJECT_DIR$/jscript/validador.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sga.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,8 +58,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/menuqualidade.php" />
-        <option value="$PROJECT_DIR$/model/TbCadastroRnc.class.php" />
         <option value="$PROJECT_DIR$/tests/convertdate.php" />
         <option value="$PROJECT_DIR$/PainelUsuarios.php" />
         <option value="$PROJECT_DIR$/componentes/TopoPainelUsuario.php" />
@@ -90,7 +92,6 @@
         <option value="$PROJECT_DIR$/classes/Email.class.php" />
         <option value="$PROJECT_DIR$/tests/notificaRNC.php" />
         <option value="$PROJECT_DIR$/menusecundario.php" />
-        <option value="$PROJECT_DIR$/PainelProjetoUsuarios.php" />
         <option value="$PROJECT_DIR$/Administracao.php" />
         <option value="$PROJECT_DIR$/menurelatorio.php" />
         <option value="$PROJECT_DIR$/model/TbUsuario.class.php" />
@@ -101,10 +102,13 @@
         <option value="$PROJECT_DIR$/componentes/TopoPainelProjetosEquipe.php" />
         <option value="$PROJECT_DIR$/componentes/TopoPainelUsuarioFinal.php" />
         <option value="$PROJECT_DIR$/model/TbProjeto.class.php" />
-        <option value="$PROJECT_DIR$/classes/Cadastro.class.php" />
-        <option value="$PROJECT_DIR$/DetalheProjeto.php" />
         <option value="$PROJECT_DIR$/classes/CalculatePercent.class.php" />
         <option value="$PROJECT_DIR$/model/TbAtividade.class.php" />
+        <option value="$PROJECT_DIR$/PainelProjetoUsuarios.php" />
+        <option value="$PROJECT_DIR$/DetalheProjeto.php" />
+        <option value="$PROJECT_DIR$/jscript/validador.js" />
+        <option value="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" />
+        <option value="$PROJECT_DIR$/classes/Cadastro.class.php" />
       </list>
     </option>
   </component>
@@ -124,9 +128,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1439" />
-    <option name="width" value="1442" />
-    <option name="height" value="876" />
+    <option name="x" value="1440" />
+    <option name="width" value="1440" />
+    <option name="height" value="875" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -165,40 +169,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="6e28f145-cd8f-43ed-a4bc-86a35cd193d4" />
               <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jscript" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -249,6 +219,40 @@
           </PATH>
         </subPane>
         <subPane subId="Default" />
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
     </panes>
   </component>
@@ -320,10 +324,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1439" y="0" width="1442" height="876" extended-state="6" />
+    <frame x="1440" y="0" width="1440" height="875" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18680556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18636996" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -387,83 +391,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/action/assentamento.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34903046">
-          <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Operacao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6260388">
-          <caret line="107" column="40" selection-start-line="107" selection-start-column="40" selection-end-line="107" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Solicitacao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/alterar/SolicitacaoSolicitante.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35180056">
-          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Solicitante.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20221607">
-          <caret line="100" column="6" selection-start-line="100" selection-start-column="6" selection-end-line="100" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/solicitacao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.389049">
-          <caret line="93" column="19" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Alteracao.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62247837">
-          <caret line="346" column="45" selection-start-line="346" selection-start-column="45" selection-end-line="346" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/convertdate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49861497">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Departamentos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/gerarmodel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.024930747">
           <caret line="1" column="70" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -471,18 +402,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5692521">
           <caret line="48" column="59" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
-          <folding>
-            <marker date="1447760945913" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1447760945913" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1447760945913" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1447760945913" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..." />
-            <marker date="1447760945913" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..." />
-            <marker date="1447760945913" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_departamento..." />
-            <marker date="1447760945913" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1447760945913" expanded="true" signature="-1:-1" placeholder="SELECT DEP.d..tb_solicitacao..." />
-            <marker date="1447760945913" expanded="true" signature="-1:-1" placeholder="SELECT dep_h..." />
-            <marker date="1447760945913" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_departamento..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -490,87 +410,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34487534">
           <caret line="809" column="20" selection-start-line="809" selection-start-column="20" selection-end-line="809" selection-end-column="20" />
-          <folding>
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT sol_c..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT date_..tb_calculo_atendimento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT date_..tb_calculo_atendimento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT date_..tb_calculo_atendimento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT date_..tb_calculo_atendimento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT usu_n..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT date_..tb_calculo_atendimento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT date_..tb_calculo_atendimento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT sta_c..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT sol_d..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT pro_d..tb_problema..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT pri_d..tb_prioridade..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT pri_c..tb_problema..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT tat_d..tb_tempo_atendimento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="select tat_c..tb_prioridade..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT pri_c..tb_problema..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="/* (SELECT p..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT pro_d..tb_problema..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="/* (SELECT p..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT pro_t..tb_problema..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="/* TIMEDIFF(..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT SOL.s..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="/* (SELECT d..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT pro_d..tb_problema..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT pro_t..tb_problema..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..tb_problema..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT PRI.p..tb_prioridade..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT min(C..tb_calculo_atendimento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT count..tb_solicitacao..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT count..." />
-            <marker date="1448913604850" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -578,7 +418,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4238227">
           <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -586,7 +425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.82548475">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -610,7 +448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4238227">
           <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -618,7 +455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -626,17 +462,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6759003">
           <caret line="56" column="64" selection-start-line="56" selection-start-column="64" selection-end-line="56" selection-end-column="64" />
-          <folding>
-            <marker date="1447761068509" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Atividade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47368422">
-          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -652,7 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5734072">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -660,15 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12465374">
           <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Sessao.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09972299">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -676,7 +491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.68836564">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -684,7 +498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64841497">
           <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -692,29 +505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5193906">
           <caret line="379" column="3" selection-start-line="379" selection-start-column="3" selection-end-line="379" selection-end-column="3" />
-          <folding>
-            <marker date="1449142549483" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1449142549483" expanded="true" signature="-1:-1" placeholder="SELECT a.usu..tb_usuario..." />
-            <marker date="1449142549483" expanded="true" signature="-1:-1" placeholder="SELECT a.usu..tb_usuario..." />
-            <marker date="1449142549483" expanded="true" signature="-1:-1" placeholder="SELECT USU.u..tb_usuario..." />
-            <marker date="1449142549483" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1449142549483" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1449142549483" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1449142549483" expanded="true" signature="-1:-1" placeholder="SELECT USU.u..tb_usuario..." />
-            <marker date="1449142549483" expanded="true" signature="-1:-1" placeholder="SELECT a.usu..tb_usuario..." />
-            <marker date="1449142549483" expanded="true" signature="-1:-1" placeholder="SELECT u.usu..tb_usuario..." />
-            <marker date="1449142549483" expanded="true" signature="-1:-1" placeholder="SELECT u.usu..tb_usuario..." />
-            <marker date="1449142549483" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
-            <marker date="1449142549483" expanded="true" signature="-1:-1" placeholder="SELECT u.usu..." />
-            <marker date="1449142549483" expanded="true" signature="-1:-1" placeholder="SELECT dep_c..tb_usuario..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PainelProjetoUsuarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4210526">
-          <caret line="57" column="22" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -723,11 +513,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1447760945881" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945881" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945881" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -735,7 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49861497">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -743,34 +527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.5650969">
           <caret line="143" column="2" selection-start-line="143" selection-start-column="2" selection-end-line="143" selection-end-column="2" />
-          <folding>
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/notificacaoatividade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27700832">
-          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -778,26 +534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32409972">
           <caret line="13" column="43" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-          <folding>
-            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -805,26 +541,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6260388">
           <caret line="276" column="25" selection-start-line="276" selection-start-column="25" selection-end-line="276" selection-end-column="25" />
-          <folding>
-            <marker date="1449145411263" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1449145411263" expanded="true" signature="-1:-1" placeholder="SELECT ani_c..tb_aniversariante..." />
-            <marker date="1449145411263" expanded="true" signature="-1:-1" placeholder="SELECT ani_c..tb_aniversariante..." />
-            <marker date="1449145411263" expanded="true" signature="-1:-1" placeholder="SELECT ani_c..tb_aniversariante..." />
-            <marker date="1449145411263" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1449145411263" expanded="true" signature="-1:-1" placeholder="SELECT ani_n..tb_aniversariante..." />
-            <marker date="1449145411263" expanded="true" signature="-1:-1" placeholder="SELECT ani_d..tb_aniversariante..." />
-            <marker date="1449145411263" expanded="true" signature="-1:-1" placeholder="SELECT ani_n..tb_aniversariante..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PainelProjetosUsuarioFinal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27423823">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <marker date="1449145473519" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -832,7 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3767313">
           <caret line="30" column="70" selection-start-line="30" selection-start-column="70" selection-end-line="30" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -840,7 +556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.601108">
           <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,7 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7728532">
           <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,7 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,7 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64819944">
           <caret line="36" column="43" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -880,15 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6232687">
           <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PainelProjetosEquipe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.049861494">
-          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -896,41 +598,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44459835">
           <caret line="402" column="26" selection-start-line="402" selection-start-column="26" selection-end-line="402" selection-end-column="26" />
-          <folding>
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT max($..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT P.PRO..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT P.PRO..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT P.PRO..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT P.PRO..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_projeto..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT usu_n..tb_usuario..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT stp_d..tb_status_projeto..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_projeto..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_projeto..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_projeto..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT PRO.p..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT subst..tb_atividade..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT count..tb_projeto..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT pro_p..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT pro_d..tb_projeto..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..tb_usuario_projeto..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT pro_t..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT stp_d..tb_status_projeto..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_projeto..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT stp_d..tb_status_projeto..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1449165167771" expanded="true" signature="-1:-1" placeholder="SELECT count..tb_projeto..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -938,20 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7479224">
           <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Cadastro.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44459835">
-          <caret line="968" column="0" selection-start-line="968" selection-start-column="0" selection-end-line="968" selection-end-column="0" />
-          <folding>
-            <element signature="n#cadastrarUsuario#0;n#Cadastro#0;n#!!top" expanded="false" />
-            <element signature="n#cadastrarDepartamento#0;n#Cadastro#0;n#!!top" expanded="false" />
-            <element signature="n#cadastrarProjeto#0;n#Cadastro#0;n#!!top" expanded="false" />
-            <element signature="n#cadastrarTempo#0;n#Cadastro#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,14 +613,173 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5235457">
           <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/componentes/footerPainel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6980609">
+          <caret line="43" column="100" selection-start-line="43" selection-start-column="100" selection-end-line="43" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/CalculatePercent.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5263158">
+          <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PainelProjetosEquipe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04993065">
+          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PainelProjetosUsuarioFinal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.3481276">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <marker date="1449145473519" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DetalheProjeto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5492372">
+          <caret line="271" column="56" selection-start-line="271" selection-start-column="56" selection-end-line="271" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PainelProjetoUsuarios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32454923">
+          <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Atividade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4923717">
+          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jscript/ProtecaoMultiSubmit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Apontamento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32454923">
+          <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Solicitacao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47572815">
+          <caret line="71" column="100" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jscript/validador.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Arquivo.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40083218">
+          <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+          <folding>
+            <element signature="n#includeForm#0;n#Arquivo#0;n#!!top" expanded="false" />
+            <element signature="n#validarFile#0;n#Arquivo#0;n#!!top" expanded="false" />
+            <element signature="n#criarLinha#0;n#Arquivo#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/JavaScript.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34951457">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding>
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Sessao.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.7975035">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Table.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Logar.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5006935">
+          <caret line="42" column="71" selection-start-line="42" selection-start-column="71" selection-end-line="42" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/notificacaoatividade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21359223">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jscript/getGraficoAtividadeDetalheProjetoPrazo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71289873">
+          <caret line="56" column="63" selection-start-line="56" selection-start-column="63" selection-end-line="56" selection-end-column="63" />
+          <folding>
+            <marker date="1447761068509" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/TbAtividade.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69390583">
-          <caret line="966" column="0" selection-start-line="966" selection-start-column="0" selection-end-line="966" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.34535366">
+          <caret line="660" column="20" selection-start-line="660" selection-start-column="20" selection-end-line="660" selection-end-column="20" />
           <folding>
             <marker date="1449166631211" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
             <marker date="1449166631211" expanded="true" signature="-1:-1" placeholder="SELECT ATI.a..." />
@@ -1022,36 +835,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/getGraficoAtividadeDetalheProjetoPrazo.php">
+    <entry file="file://$PROJECT_DIR$/classes/Cadastro.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6759003">
-          <caret line="56" column="66" selection-start-line="56" selection-start-column="66" selection-end-line="56" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.61904764">
+          <caret line="1074" column="0" selection-start-line="1074" selection-start-column="0" selection-end-line="1074" selection-end-column="0" />
           <folding>
-            <marker date="1447761068509" expanded="true" signature="-1:-1" placeholder="..." />
+            <element signature="n#cadastrarUsuario#0;n#Cadastro#0;n#!!top" expanded="false" />
+            <element signature="n#cadastrarDepartamento#0;n#Cadastro#0;n#!!top" expanded="false" />
+            <element signature="n#cadastrarProjeto#0;n#Cadastro#0;n#!!top" expanded="false" />
+            <element signature="n#cadastrarTempo#0;n#Cadastro#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/componentes/footerPainel.php">
+    <entry file="file://$PROJECT_DIR$/action/apontamento.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6980609">
-          <caret line="43" column="100" selection-start-line="43" selection-start-column="100" selection-end-line="43" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DetalheProjeto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82548475">
-          <caret line="338" column="35" selection-start-line="338" selection-start-column="35" selection-end-line="338" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/CalculatePercent.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6565097">
-          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.5492372">
+          <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
           <folding />
         </state>
       </provider>

@@ -2,8 +2,6 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/Administracao.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/BuscaRnc.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/DemandaTecnica.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Departamentos.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/DetalheProjeto.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GerarAniversariantePdf.php" charset="ISO-8859-1" />
@@ -20,11 +18,9 @@
     <file url="file://$PROJECT_DIR$/Operacao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/PainelAtividade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/PainelChamados.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/PainelChamados_OLD.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/PainelProjeto.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/PainelProjetoUsuarios.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/PainelProjetosEquipe.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/PainelProjetosUsuario.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/PainelProjetosUsuarioFinal.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/PainelQualidade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/PainelTarefas.php" charset="ISO-8859-1" />

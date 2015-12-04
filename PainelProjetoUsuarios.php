@@ -11,7 +11,7 @@ $tbProjeto = new TbProjeto();
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        <span class="glyphicon glyphicon-folder-open"></span> Total de Projeto(s) em andamento: <?php echo $tbUsuarioProjeto->countProjectByUser($_SESSION['usu_codigo']); ?>
+                        <span class="glyphicon glyphicon-th-large"></span> Total de Projeto(s) em andamento: <?php echo $tbUsuarioProjeto->countProjectByUser($_SESSION['usu_codigo']); ?>
                     </h3>
                 </div>
                 <div class="panel-body">
