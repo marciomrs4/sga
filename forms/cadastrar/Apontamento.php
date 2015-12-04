@@ -74,10 +74,15 @@ $dados = $tbAtividade->getFormAlteracao(base64_decode($_SESSION['valorform']));
   </tr>
 
     <tr>
-      <td colspan="2" align="left">
+      <td>
 	      <input type="submit" name="alterar" class="button-tela" id="botaoSave" value="Salvar" />
    	      <span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>
-	  </td>
+      </td>
+      <td>
+        <a href="action/formcontroler.php?<?php echo base64_encode('alterar/Atividade'); ?>=<?php echo base64_encode($dados[0]); ?>">
+            <span class="button-tela">Voltar</span>
+        </a>
+      </td>
     </tr>
   </table>
 </form>
