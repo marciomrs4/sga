@@ -31,7 +31,7 @@ if($tbOcorrenciaRnc->validarOcorrencia($busca->getValueGet('sol_codigo')) >= 1){
 
     $Panel = new Painel();
 
-    $Panel->addGrid($Grid)->setPainelTitle('Registro de RNC - Já Existe uma RNC Criada ou anexada a esse chamado !')->setPainelColor('danger')->show();
+    $Panel->addGrid($Grid)->setPainelTitle('Registro de RNC - Já Existe uma RNC criada ou associada a esse chamado !')->setPainelColor('danger')->show();
 
 }else {
 

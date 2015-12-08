@@ -62,13 +62,17 @@ class TbOcorrenciaRnc extends Banco
     public function listarRncChamado($sol_codigo)
     {
         $query = ("SELECT onc_codigo,
-                        (SELECT concat(nc_codigo,'/',date_format(nc_data_criacao,'%y'))
-                            FROM tb_rnc
-                            WHERE RNC.nc_codigo = nc_codigo) AS nc_codigo,
-                        sol_codigo
-                    FROM tb_ocorrencia_rnc AS RNC
-                    WHERE sol_codigo = ?
-                    ");
+                            concat(
+                                    (SELECT concat(nc_codigo,'/',date_format(nc_data_criacao,'%y'))
+                                        FROM tb_rnc WHERE RNC.nc_codigo = nc_codigo),' - ',
+                                    (SELECT pro_descricao
+                                        FROM tb_problema WHERE pro_codigo =
+                                            (SELECT pro_codigo_tecnico_rnc
+                                                FROM tb_rnc
+                                                WHERE nc_codigo = RNC.nc_codigo ))) AS nc_codigo,
+                                                sol_codigo
+                                            FROM tb_ocorrencia_rnc AS RNC
+                                            WHERE sol_codigo = ?");
 
         try{
 

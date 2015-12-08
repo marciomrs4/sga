@@ -290,10 +290,12 @@ class TbCadastroRnc extends Banco
     public function listarRncNaoFechadas()
     {
         $query = ("SELECT nc_codigo,
-                          concat(nc_codigo,'/',date_format(nc_data_criacao,'%y')) AS titulo
+                          concat(concat(nc_codigo,'/',date_format(nc_data_criacao,'%y')),' - ',
+							(SELECT pro_descricao FROM tb_problema WHERE pro_codigo = pro_codigo_tecnico_rnc)) AS titulo
                     FROM tb_rnc
                     WHERE snc_codigo < 4
-                    ORDER BY 1 DESC  ");
+                    ORDER BY 1 DESC;
+                 ");
 
         try{
 

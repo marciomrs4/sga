@@ -353,5 +353,25 @@ $valida(document).ready( function()
 			submitForm(form);
 		}
 	});
+
+	$valida("#associarocorrencia").validate({
+
+		rules:{
+
+			nc_codigo:{
+				required: true
+			}
+		},
+		/* DEFINI??O DAS MENSAGENS DE ERRO */
+		messages:{
+
+			nc_codigo: {
+				required: "O campo RNC, é obrigatório",
+				}
+		},
+		submitHandler: function(form){
+			submitForm(form);
+		}
+	});
 	
 });

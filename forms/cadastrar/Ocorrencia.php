@@ -7,7 +7,7 @@ $sol_codigo = base64_decode($_SESSION['valorform']);
 <fieldset>
     <legend>Associar Ocorrência</legend>
     <form name="associarocorrencia" id="associarocorrencia" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/associarRnc.php">
-        <table>
+        <table border="0">
 
             <?php
             if($_SESSION['erro']) {
@@ -66,7 +66,10 @@ $sol_codigo = base64_decode($_SESSION['valorform']);
 
             <tr>
                 <td>
-                    <input type="submit" name="salvar" class="button-tela" value=" Salvar " />
+                    <input type="submit" name="salvar" class="button-tela" id="botaoSave" value="Salvar" />
+                    <span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>
+                </td>
+                <td>
                     <a href="action/formcontroler.php?<?php echo base64_encode('alterar/Solicitacao') . base64_encode($sol_codigo); ?>">
                         <span class="button-tela">Voltar</span>
                     </a>

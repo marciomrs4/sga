@@ -1728,6 +1728,7 @@ class Cadastro extends Dados
 
 	public function cadastrarAssociacaoRnc()
 	{
+
 		try{
 
 			ValidarCampos::campoVazio($this->dados['nc_codigo'],'RNC');
@@ -1738,7 +1739,7 @@ class Cadastro extends Dados
 				$tbOcorrenciaRnc = new TbOcorrenciaRnc();
 
 				if($tbOcorrenciaRnc->validarOcorrencia($this->dados['sol_codigo']) >= 1){
-					throw new \Exception('Este chamado já está adicionado a uma RNC.');
+					throw new \Exception('Este chamado já está associado a uma RNC.');
 				}
 
 				$tbOcorrenciaRnc->insert($this->dados);

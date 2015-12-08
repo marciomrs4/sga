@@ -11,7 +11,7 @@ $OcorrenciaRnc = $tbOcorrenciaRnc->getFormOcorrenciaRnc($onc_codigo);
 <fieldset>
     <legend>Associar Ocorrência (Editar)</legend>
     <form name="associarocorrencia" id="associarocorrencia" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/associarRnc.php">
-        <table>
+        <table border="0">
 
             <?php
             if($_SESSION['erro']) {
@@ -72,6 +72,9 @@ $OcorrenciaRnc = $tbOcorrenciaRnc->getFormOcorrenciaRnc($onc_codigo);
             <tr>
                 <td>
                     <input type="submit" name="salvar" class="button-tela" value=" Salvar " />
+
+                </td>
+                <td>
                     <a href="action/formcontroler.php?<?php echo base64_encode('alterar/Solicitacao') . base64_encode($OcorrenciaRnc['sol_codigo']); ?>">
                         <span class="button-tela">Voltar</span>
                     </a>
