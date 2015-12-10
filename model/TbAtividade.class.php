@@ -1047,6 +1047,64 @@ class TbAtividade extends Banco
 	}
 
 
+	public function graficAtividadeAbertaByUser($dados)
+	{
+		$query = ("SELECT date_format(at_previsao_inicio,'%y/%m') AS inicio , count(*) AS QTD
+						FROM tb_atividade
+						WHERE usu_codigo_responsavel = ?
+						AND at_previsao_inicio >= ?
+						GROUP BY 1
+						ORDER BY 1;");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados['usu_codigo_responsavel'],PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados['data'],PDO::PARAM_STR);
+
+			$stmt->execute();
+
+			foreach ($stmt as $value){
+				echo '[',"'",$value[0],"'",',',$value[1],'],';
+			}
+
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
+		}
+	}
+
+	public function graficAtividadeConcludidoByUser($dados)
+	{
+		$query = ("SELECT date_format(at_fim,'%y/%m') AS inicio, count(*) AS QTD
+						FROM tb_atividade
+						WHERE usu_codigo_responsavel = ?
+						AND at_fim >= ?
+						GROUP BY 1
+						ORDER BY 1;");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados['usu_codigo_responsavel'],PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados['data'],PDO::PARAM_STR);
+
+			$stmt->execute();
+
+			foreach ($stmt as $value){
+				echo '[',"'",$value[0],"'",',',$value[1],'],';
+			}
+
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException('Erro na tabela: '.get_class($this).$e->getMessage(),$e->getCode());
+		}
+	}
+
 
 }
 

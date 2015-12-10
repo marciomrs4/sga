@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2526c6c5-3cfb-4a59-b223-ceacd7d0168e" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/css/images/ck - Cópia.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Cadastro.class.php" afterPath="$PROJECT_DIR$/classes/Cadastro.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/Ocorrencia.php" afterPath="$PROJECT_DIR$/forms/alterar/Ocorrencia.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/Ocorrencia.php" afterPath="$PROJECT_DIR$/forms/cadastrar/Ocorrencia.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbCadastroRnc.class.php" afterPath="$PROJECT_DIR$/model/TbCadastroRnc.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbOcorrenciaRnc.class.php" afterPath="$PROJECT_DIR$/model/TbOcorrenciaRnc.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rnc.php" afterPath="$PROJECT_DIR$/rnc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/validador.js" afterPath="$PROJECT_DIR$/jscript/validador.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/projetos/214/ATA DE REUNI�O 25-15.docx" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Grid.class.php" afterPath="$PROJECT_DIR$/classes/Grid.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PainelProjetosUsuarioFinal.php" afterPath="$PROJECT_DIR$/PainelProjetosUsuarioFinal.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbAtividade.class.php" afterPath="$PROJECT_DIR$/model/TbAtividade.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/convertdate.php" afterPath="$PROJECT_DIR$/tests/convertdate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/footerPainel.php" afterPath="$PROJECT_DIR$/componentes/footerPainel.php" />
     </list>
     <ignored path="sga.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,58 +50,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="liberarGestor.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/action/liberarGestor.php">
+      <file leaf-file-name="getGraficoAtividadeConcluidaUsuario.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jscript/getGraficoAtividadeConcluidaUsuario.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.333334">
-              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.852982">
+              <caret line="56" column="55" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rncVerificacao.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rncVerificacao.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5256588">
-              <caret line="228" column="21" selection-start-line="228" selection-start-column="21" selection-end-line="228" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Alteracao.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Alteracao.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.37037">
-              <caret line="1208" column="33" selection-start-line="1208" selection-start-column="33" selection-end-line="1208" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TbCadastroRnc.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/TbCadastroRnc.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.222222">
-              <caret line="266" column="20" selection-start-line="266" selection-start-column="20" selection-end-line="266" selection-end-column="20" />
-              <folding>
-                <marker date="1449598633571" expanded="true" signature="1176:1536" placeholder="INSERT INTO ..." />
-                <marker date="1449598633571" expanded="true" signature="4431:4881" placeholder="SELECT nc_co..tb_rnc..." />
-                <marker date="1449598633571" expanded="true" signature="5350:5416" placeholder="SELECT * FRO..." />
-                <marker date="1449598633571" expanded="true" signature="5895:5970" placeholder="SELECT snc_c..." />
-                <marker date="1449598633571" expanded="true" signature="6483:7371" placeholder="SELECT nc_co..tb_rnc..." />
-                <marker date="1449598633571" expanded="true" signature="6809:6920" placeholder="SELECT snc_d..tb_status_rnc..." />
-                <marker date="1449598633571" expanded="true" signature="8185:9076" placeholder="SELECT nc_co..tb_rnc..." />
-                <marker date="1449598633571" expanded="true" signature="8511:8622" placeholder="SELECT snc_d..tb_status_rnc..." />
-                <marker date="1449598633571" expanded="true" signature="11159:11481" placeholder="SELECT nc_co..tb_rnc..." />
-                <marker date="1449598633571" expanded="true" signature="11281:11360" placeholder="SELECT pro_d..tb_problema..." />
-                <marker date="1449598633571" expanded="true" signature="11888:12032" placeholder="SELECT conca..tb_rnc..." />
-                <marker date="1449598633571" expanded="true" signature="12557:12959" placeholder="SELECT (SELE..tb_rnc..." />
-                <marker date="1449598633571" expanded="true" signature="12565:12712" placeholder="SELECT dep_d..tb_departamento..." />
-                <marker date="1449598633571" expanded="true" signature="13665:14059" placeholder="SELECT (SELE..tb_rnc..." />
-                <marker date="1449598633571" expanded="true" signature="13673:13816" placeholder="SELECT pro_d..tb_problema..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -115,12 +68,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/action/solicitacaoMelhoria.php" />
-        <option value="$PROJECT_DIR$/GerarMelhoriaPdf.php" />
-        <option value="$PROJECT_DIR$/forms/alterar/SolicitacaoMelhoria.php" />
-        <option value="$PROJECT_DIR$/classes/Busca.class.php" />
-        <option value="$PROJECT_DIR$/model/TbSolicitacaoMelhoria.class.php" />
-        <option value="$PROJECT_DIR$/Melhoria.php" />
         <option value="$PROJECT_DIR$/RelatorioMelhoria.php" />
         <option value="$PROJECT_DIR$/forms/cadastrar/uploadfilesMelhoria.php" />
         <option value="$PROJECT_DIR$/forms/cadastrar/uploadfilesprojeto.php" />
@@ -144,7 +91,6 @@
         <option value="$PROJECT_DIR$/PainelProjetosEquipe.php" />
         <option value="$PROJECT_DIR$/tests/ScriptAniversariantesTest.php" />
         <option value="$PROJECT_DIR$/model/TbAniversariante.class.php" />
-        <option value="$PROJECT_DIR$/PainelProjetosUsuarioFinal.php" />
         <option value="$PROJECT_DIR$/componentes/TopoPainelProjetosEquipe.php" />
         <option value="$PROJECT_DIR$/componentes/TopoPainelUsuarioFinal.php" />
         <option value="$PROJECT_DIR$/model/TbProjeto.class.php" />
@@ -158,7 +104,6 @@
         <option value="$PROJECT_DIR$/rncGestor.php" />
         <option value="$PROJECT_DIR$/jscript/validadorBootstrap.js" />
         <option value="$PROJECT_DIR$/rncVerificacao.php" />
-        <option value="$PROJECT_DIR$/model/TbAtividade.class.php" />
         <option value="$PROJECT_DIR$/jscript/validador.js" />
         <option value="$PROJECT_DIR$/forms/cadastrar/Ocorrencia.php" />
         <option value="$PROJECT_DIR$/model/TbCadastroRnc.class.php" />
@@ -166,6 +111,14 @@
         <option value="$PROJECT_DIR$/model/TbOcorrenciaRnc.class.php" />
         <option value="$PROJECT_DIR$/classes/Cadastro.class.php" />
         <option value="$PROJECT_DIR$/rnc.php" />
+        <option value="$PROJECT_DIR$/classes/Grid.class.php" />
+        <option value="$PROJECT_DIR$/jscript/getGraficoAtividadeProdutividadeUsuario.php" />
+        <option value="$PROJECT_DIR$/componentes/footerPainel.php" />
+        <option value="$PROJECT_DIR$/model/TbAtividade.class.php" />
+        <option value="$PROJECT_DIR$/jscript/getGraficoAtividadeConcluidaUsuario.php" />
+        <option value="$PROJECT_DIR$/jscript/getGraficoAtividadeAbertaUsuario.php" />
+        <option value="$PROJECT_DIR$/PainelProjetosUsuarioFinal.php" />
+        <option value="$PROJECT_DIR$/tests/convertdate.php" />
       </list>
     </option>
   </component>
@@ -295,84 +248,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jscript" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="forms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="forms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cadastrar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="forms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="alterar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sga" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="action" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -446,13 +321,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1440" height="875" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18636996" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18636996" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32818532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32947233" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -466,7 +342,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -512,85 +387,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PainelProjetosEquipe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04993065">
-          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PainelProjetosUsuarioFinal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.3481276">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <marker date="1449145473519" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Atividade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4923717">
-          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/ProtecaoMultiSubmit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/cadastrar/Solicitacao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47572815">
-          <caret line="71" column="100" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Arquivo.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40083218">
-          <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
-          <folding>
-            <element signature="n#includeForm#0;n#Arquivo#0;n#!!top" expanded="false" />
-            <element signature="n#validarFile#0;n#Arquivo#0;n#!!top" expanded="false" />
-            <element signature="n#criarLinha#0;n#Arquivo#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/JavaScript.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34951457">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-          <folding>
-            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Table.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/Logar.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5006935">
@@ -727,83 +523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbAtividade.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.407767">
-          <caret line="823" column="79" selection-start-line="823" selection-start-column="79" selection-end-line="823" selection-end-column="79" />
-          <folding>
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT ATI.a..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT ATI.a..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT at_co..tb_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT usu_c..tb_projeto..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT at_co..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT at_co..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT count..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT ATI.a..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..tb_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT usu_n..tb_usuario..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="select count..tb_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT at_co..tb_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..tb_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="UPDATE tb_at..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT sta_c..tb_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT at_co..tb_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="UPDATE tb_at..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="UPDATE tb_at..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT at_in..tb_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..tb_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT pro_t..tb_projeto..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT at_co..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT at_co..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT at_co..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT count..tb_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT IF(RO..tb_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT at_co..tb_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
-            <marker date="1449259192514" expanded="true" signature="-1:-1" placeholder="SELECT count..tb_atividade..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/getGraficoAtividadeDetalheProjetoPrazo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.740638">
-          <caret line="56" column="60" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
-          <folding>
-            <marker date="1447761068509" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/componentes/footerPainel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.073509">
-          <caret line="43" column="100" selection-start-line="43" selection-start-column="100" selection-end-line="43" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DetalheProjeto.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42024964">
@@ -934,19 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Cadastro.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32732317">
-          <caret line="1726" column="0" selection-start-line="1726" selection-start-column="0" selection-end-line="1726" selection-end-column="0" />
-          <folding>
-            <element signature="n#cadastrarUsuario#0;n#Cadastro#0;n#!!top" expanded="false" />
-            <element signature="n#cadastrarDepartamento#0;n#Cadastro#0;n#!!top" expanded="false" />
-            <element signature="n#cadastrarProjeto#0;n#Cadastro#0;n#!!top" expanded="false" />
-            <element signature="n#cadastrarTempo#0;n#Cadastro#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/forms/cadastrar/Ocorrencia.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.49930653">
@@ -981,50 +687,218 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/TbCadastroRnc.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.222222">
-          <caret line="266" column="20" selection-start-line="266" selection-start-column="20" selection-end-line="266" selection-end-column="20" />
-          <folding>
-            <marker date="1449598633571" expanded="true" signature="1176:1536" placeholder="INSERT INTO ..." />
-            <marker date="1449598633571" expanded="true" signature="4431:4881" placeholder="SELECT nc_co..tb_rnc..." />
-            <marker date="1449598633571" expanded="true" signature="5350:5416" placeholder="SELECT * FRO..." />
-            <marker date="1449598633571" expanded="true" signature="5895:5970" placeholder="SELECT snc_c..." />
-            <marker date="1449598633571" expanded="true" signature="6483:7371" placeholder="SELECT nc_co..tb_rnc..." />
-            <marker date="1449598633571" expanded="true" signature="6809:6920" placeholder="SELECT snc_d..tb_status_rnc..." />
-            <marker date="1449598633571" expanded="true" signature="8185:9076" placeholder="SELECT nc_co..tb_rnc..." />
-            <marker date="1449598633571" expanded="true" signature="8511:8622" placeholder="SELECT snc_d..tb_status_rnc..." />
-            <marker date="1449598633571" expanded="true" signature="11159:11481" placeholder="SELECT nc_co..tb_rnc..." />
-            <marker date="1449598633571" expanded="true" signature="11281:11360" placeholder="SELECT pro_d..tb_problema..." />
-            <marker date="1449598633571" expanded="true" signature="11888:12032" placeholder="SELECT conca..tb_rnc..." />
-            <marker date="1449598633571" expanded="true" signature="12557:12959" placeholder="SELECT (SELE..tb_rnc..." />
-            <marker date="1449598633571" expanded="true" signature="12565:12712" placeholder="SELECT dep_d..tb_departamento..." />
-            <marker date="1449598633571" expanded="true" signature="13665:14059" placeholder="SELECT (SELE..tb_rnc..." />
-            <marker date="1449598633571" expanded="true" signature="13673:13816" placeholder="SELECT pro_d..tb_problema..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Alteracao.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.37037">
-          <caret line="1208" column="33" selection-start-line="1208" selection-start-column="33" selection-end-line="1208" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/action/liberarGestor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.333334">
+        <state vertical-scroll-proportion="0.64909846">
           <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Alteracao.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61303747">
+          <caret line="1208" column="33" selection-start-line="1208" selection-start-column="33" selection-end-line="1208" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/TbCadastroRnc.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34535366">
+          <caret line="266" column="20" selection-start-line="266" selection-start-column="20" selection-end-line="266" selection-end-column="20" />
+          <folding>
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="SELECT nc_co..tb_rnc..." />
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="SELECT snc_c..." />
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="SELECT nc_co..tb_rnc..." />
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="SELECT snc_d..tb_status_rnc..." />
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="SELECT nc_co..tb_rnc..." />
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="SELECT snc_d..tb_status_rnc..." />
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="SELECT nc_co..tb_rnc..." />
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="SELECT pro_d..tb_problema..." />
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_rnc..." />
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..tb_rnc..." />
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..tb_rnc..." />
+            <marker date="1449598633571" expanded="true" signature="-1:-1" placeholder="SELECT pro_d..tb_problema..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/rncVerificacao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5256588">
-          <caret line="228" column="21" selection-start-line="228" selection-start-column="21" selection-end-line="228" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.06518724">
+          <caret line="221" column="26" selection-start-line="221" selection-start-column="26" selection-end-line="221" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Cadastro.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41192788">
+          <caret line="1071" column="0" selection-start-line="1071" selection-start-column="0" selection-end-line="1071" selection-end-column="0" />
+          <folding>
+            <element signature="n#cadastrarUsuario#0;n#Cadastro#0;n#!!top" expanded="false" />
+            <element signature="n#cadastrarDepartamento#0;n#Cadastro#0;n#!!top" expanded="false" />
+            <element signature="n#cadastrarProjeto#0;n#Cadastro#0;n#!!top" expanded="false" />
+            <element signature="n#cadastrarTempo#0;n#Cadastro#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Grid.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29542303">
+          <caret line="100" column="23" selection-start-line="100" selection-start-column="23" selection-end-line="100" selection-end-column="23" />
+          <folding>
+            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jscript/getGraficoAtividadeDetalheProjetoPrazo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85020804">
+          <caret line="63" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="63" selection-end-column="9" />
+          <folding>
+            <marker date="1447761068509" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jscript/getGraficoAtividadePorResponsavel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.74757284">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1448647729366" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/componentes/footerPainel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.11111">
+          <caret line="49" column="93" selection-start-line="49" selection-start-column="93" selection-end-line="49" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jscript/getGraficoAtividadeDetalheProjeto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34951457">
+          <caret line="14" column="14" selection-start-line="12" selection-start-column="11" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/ValidarDatas.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71983355">
+          <caret line="87" column="55" selection-start-line="87" selection-start-column="55" selection-end-line="87" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/TbAtividade.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5533981">
+          <caret line="1083" column="39" selection-start-line="1083" selection-start-column="39" selection-end-line="1083" selection-end-column="39" />
+          <folding>
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT ATI.a..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT ATI.a..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT at_co..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT usu_c..tb_projeto..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT ${$th..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT at_co..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT at_co..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT count..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT ATI.a..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT usu_n..tb_usuario..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="select count..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT at_co..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="UPDATE tb_at..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT sta_c..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT at_co..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="UPDATE tb_at..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="UPDATE tb_at..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT at_in..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT pro_t..tb_projeto..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT usu_e..tb_usuario..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT at_co..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT at_co..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_usuario..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT at_co..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT count..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT IF(RO..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT at_co..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT sta_d..tb_status_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT count..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT date_..tb_atividade..." />
+            <marker date="1449759453652" expanded="true" signature="-1:-1" placeholder="SELECT date_..tb_atividade..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PainelProjetosUsuarioFinal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.95006937">
+          <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
+          <folding>
+            <marker date="1449765958188" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/convertdate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64909846">
+          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jscript/getGraficoAtividadeAbertaUsuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3370319">
+          <caret line="40" column="10" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jscript/getGraficoAtividadeConcluidaUsuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.852982">
+          <caret line="56" column="55" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
           <folding />
         </state>
       </provider>

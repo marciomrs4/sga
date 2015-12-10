@@ -98,7 +98,7 @@ class Grid implements IGrid
 	{
 
 		echo("<div class='table-responsive'>
-                <table border='2' class='{$this->css}' id='{$this->id}'>
+                <table class='{$this->css}' id='{$this->id}'>
 				<thead>
 					<tr class='active'>");				
 				foreach ($this->cabecalho as $cabecalho):

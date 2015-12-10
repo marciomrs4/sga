@@ -14,9 +14,17 @@ echo date('Y-m-d',strtotime($data));
 echo PHP_EOL;
 */
 
-$tb = new TbCadastroRnc();
+/*$tb = new TbCadastroRnc();
 
 
-echo $tb->getStatus(11);
+echo $tb->getStatus(11);*/
+
+
+echo ValidarDatas::dataBanco(
+
+        ValidarDatas::dataAnterior(date('d-m-Y'),-180)
+
+    ). ' 00:00:01';
+
 
 ?>

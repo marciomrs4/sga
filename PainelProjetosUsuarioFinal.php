@@ -27,38 +27,61 @@ $tbAtividade = new TbAtividade();
 
                 <div class="panel-body">
 
-                 <?php
-                 $DataGrid = new Grid();
+                    <?php
+                    $DataGrid = new Grid();
 
-                 $DataGrid->setCabecalho(array('#','Atividade','Titulo Projeto','Prev. Inicio','Prev. Fim','Status'));
+                    $DataGrid->setCabecalho(array('#','Atividade','Titulo Projeto','Prev. Inicio','Prev. Fim','Status'));
 
-                 $DataGrid->setDados($tbAtividade->listarAtividadeProjetoByUser($busca->getValueGet('usu_codigo'))->fetchAll(\PDO::FETCH_NUM));
+                    $DataGrid->setDados($tbAtividade->listarAtividadeProjetoByUser($busca->getValueGet('usu_codigo'))->fetchAll(\PDO::FETCH_NUM));
 
-                 $DataGrid->id = null;
+                    $DataGrid->id = null;
 
-                 $DataGrid->addFunctionColumn(function($x){
+                    $DataGrid->addFunctionColumn(function($x){
                         $btn = "<button value='{$x}' id='atividade' type='button' class='btn btn-primary btn-sm' data-toggle='modal' data-target='#myModal' title='Ver Atividade'>
                                 <span class='glyphicon glyphicon-eye-open'></span>
                                 </button>";
                         return $btn;
                     },0);
 
-                 $DataGrid->addFunctionColumn(function($data){
-                     return date('d-m-Y',strtotime($data));
-                 },3);
+                    $DataGrid->addFunctionColumn(function($data){
+                        return date('d-m-Y',strtotime($data));
+                    },3);
 
+                    $DataGrid->show(true);
 
-                 $DataGrid->show(true);
-
-
-
-
-                 ?>
+                    ?>
 
                 </div>
                 <div class="panel-footer"></div>
             </div>
         </div>
+
+        <div class="col-xs-12">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"></h3>
+                </div>
+                <div class="panel-body">
+                        <div id="atividadeaberta"></div>
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"></h3>
+                </div>
+                <div class="panel-body">
+                    <div id="atividadeconcluido"></div>
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+
     </div>
 
 <?php
