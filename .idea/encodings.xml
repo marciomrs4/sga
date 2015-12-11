@@ -49,6 +49,7 @@
     <file url="file://$PROJECT_DIR$/componentes/TopoRnc.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/bootstrap.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/footerPainel.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/componentes/footerPainelChamados.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/footerPainelQualidade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/footerPainelTarefas.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/footerPainelUsuarioFinal.php" charset="ISO-8859-1" />

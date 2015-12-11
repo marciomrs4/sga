@@ -7,8 +7,8 @@ header('Content-Type: text/html; charset=ISO-8859-1');
  
 /* $codigo = $_POST['sol_codigo'];
 
-echo 'Aqui: ',$codigo;
- */
+echo 'Aqui: ',$codigo;*/
+
 
 $busca = new Busca();
 $busca->validarPost($_POST);

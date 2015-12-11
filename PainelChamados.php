@@ -180,5 +180,5 @@ $tbUsuario = new TbUsuario();
 	<!-- Fim Div Principal -->
 	
 <?php 
-	include_once 'componentes/footerPainel.php'; 
+	include_once 'componentes/footerPainelChamados.php';
 ?>

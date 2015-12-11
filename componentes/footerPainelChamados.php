@@ -11,7 +11,7 @@
             </div>
             <div class="modal-body">
 
-                <span id="carregaratividade"></span>
+                <div id="carregarchamado"></div>
 
             </div>
             <div class="modal-footer">
@@ -32,23 +32,7 @@
 			<script src="jscript/bootstrap.js"></script>
             <script src="jscript/chamadoTempoSolucao.js"></script>
             <script src="jscript/my-alert.js"></script>
-            <script src="jscript/getAtividadeDetalheProjeto.js"></script>
-            <script src="jscript/getAtaDetalheProjeto.js"></script>
-            <script src="jscript/getApontamentoDetalheProjeto.js"></script>
-            <script src="jscript/getFilesDetalheProjeto.js"></script>
-            <script src="jscript/highcharts.js"></script>
-            <script src="jscript/highcharts-3d.js"></script>
-            <script src="jscript/exporting.js"></script>
-            <script src="jscript/jquery.dataTables.js"></script>
-            <script src="jscript/my-data-table.js"></script>
-            <?php
-            include_once $_SERVER['DOCUMENT_ROOT'].'/sga/jscript/getGraficoAtividadeDetalheProjeto.php';
-            include_once $_SERVER['DOCUMENT_ROOT'].'/sga/jscript/getGraficoAtividadeDetalheProjetoPrazo.php';
 
-            include_once $_SERVER['DOCUMENT_ROOT'].'/sga/jscript/getGraficoAtividadePorStatus.php';
-            include_once $_SERVER['DOCUMENT_ROOT'].'/sga/jscript/getGraficoAtividadePorResponsavel.php';
-
-            ?>
 
 <script type="text/javascript">
 

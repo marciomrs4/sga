@@ -430,7 +430,7 @@ class TbAtividade extends Banco
 									FROM tb_usuario AS USU
 									INNER JOIN tb_acesso AS ACE
 									ON USU.usu_codigo = ACE.usu_codigo
-									WHERE USU.dep_codigo = 5
+									WHERE USU.dep_codigo = ?
 									AND ACE.ace_ativo = 'S')
 					GROUP BY sta_codigo;");
 
@@ -438,7 +438,7 @@ class TbAtividade extends Banco
 		{
 			$stmt = $this->conexao->prepare($query);
 				
-			$stmt->execute();
+			$stmt->execute(array($_SESSION['dep_codigo']));
 			
 			foreach ($stmt as $value){
 				echo '[',"'",$value[0],"'",',',$value[1],'],';
