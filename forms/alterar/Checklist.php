@@ -14,7 +14,7 @@ $_SESSION['dia_semana'] = $tbDiaSemana->getForm($_SESSION['cadastrar/Checklist']
 		<td>
 			<fieldset>
 				<legend>Alterar Checklist</legend>
-<form name="Checklist" id="Checklist" method="post" action="../<?php echo($_SESSION['projeto']); ?>/action/Checklist.php">
+<form name="Checklist" id="Checklist" method="post" action="../<?php echo($_SESSION['projeto']); ?>/action/checklist.php">
   <table border="0" cellspacing="5">
     <tr>
       <td colspan="2" align="center">
@@ -31,7 +31,7 @@ $_SESSION['dia_semana'] = $tbDiaSemana->getForm($_SESSION['cadastrar/Checklist']
 			<?php echo $dse_domingo = ($_SESSION['dia_semana']['dse_domingo'] == 1) ? 'checked="checked"' : '' ?>  > |
 		Segunda: <input type="checkbox" name="dse_segunda" value="1"
 			<?php echo $dse_segunda = ($_SESSION['dia_semana']['dse_segunda'] == 1) ? 'checked="checked"' : '' ?>  > |
-		Terça: <input type="checkbox" name="dse_terca" value="1" 
+		Terï¿½a: <input type="checkbox" name="dse_terca" value="1" 
 		 	<?php echo $dse_terca = ($_SESSION['dia_semana']['dse_terca'] == 1) ? 'checked="checked"' : '' ?>  > |
 		Quarta: <input type="checkbox" name="dse_quarta" value="1" 
 			<?php echo $dse_quarta = ($_SESSION['dia_semana']['dse_quarta'] == 1) ? 'checked="checked"' : '' ?>  > |
@@ -39,7 +39,7 @@ $_SESSION['dia_semana'] = $tbDiaSemana->getForm($_SESSION['cadastrar/Checklist']
 			<?php echo $dse_quinta = ($_SESSION['dia_semana']['dse_quinta'] == 1) ? 'checked="checked"' : '' ?>  > |
 		Sexta: <input type="checkbox" name="dse_sexta" value="1" 
 			<?php echo $dse_sexta = ($_SESSION['dia_semana']['dse_sexta'] == 1) ? 'checked="checked"' : '' ?>  > |
-		Sábado: <input type="checkbox" name="dse_sabado" value="1" 
+		Sï¿½bado: <input type="checkbox" name="dse_sabado" value="1" 
 			<?php echo $dse_sabado = ($_SESSION['dia_semana']['dse_sabado'] == 1) ? 'checked="checked"' : '' ?>  >
 		    </td>
     	</tr>    
@@ -58,7 +58,7 @@ $_SESSION['dia_semana'] = $tbDiaSemana->getForm($_SESSION['cadastrar/Checklist']
       </td>
     </tr>  
  	<tr>
-      <th width="119" align="left" nowrap="nowrap">Descrição:</th>
+      <th width="119" align="left" nowrap="nowrap">Descriï¿½ï¿½o:</th>
       <td>
 	      	<textarea name="che_descricao" rows="10" cols="50"><?php echo($_SESSION['cadastrar/Checklist']['che_descricao']); ?></textarea>
       </td>
