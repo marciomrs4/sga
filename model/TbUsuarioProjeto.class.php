@@ -131,12 +131,13 @@ class TbUsuarioProjeto extends Banco
 
     public function findProjetoByUsers($usu_codigo)
     {
-        $query = ("SELECT USU_PRO.pro_codigo
+        $query = ("SELECT USU_PRO.pro_codigo, PRO.dep_codigo
                     FROM tb_usuario_projeto AS USU_PRO
                     INNER JOIN tb_projeto AS PRO
                     ON USU_PRO.pro_codigo = PRO.pro_codigo
                     WHERE usu_codigo_integrante = ?
-                    AND PRO.stp_codigo = 2;");
+                    AND PRO.stp_codigo = 2
+                    ORDER BY 2,1;");
 
         try{
 

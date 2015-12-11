@@ -9,6 +9,7 @@
     <file url="file://$PROJECT_DIR$/GerarMelhoriaPdf.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GerarRelatorioPdf.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GestorRnc.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/GraficoQuantidadeChamadoAbertoPorArea.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GraficoTempoSolucaoMontagem.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/ItemCheckList.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/LoadAtividadesPainelTarefas.php" charset="ISO-8859-1" />
@@ -50,6 +51,7 @@
     <file url="file://$PROJECT_DIR$/componentes/footerPainel.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/footerPainelQualidade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/footerPainelTarefas.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/componentes/footerPainelUsuarioFinal.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/footerRnc.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/menuprincipal.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/rodape.php" charset="ISO-8859-1" />
@@ -93,6 +95,7 @@
     <file url="file://$PROJECT_DIR$/forms/solicitacaoacessoperfil.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/solicitacaoacessoservicos.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/getChamadoSolucao.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/jscript/GraficoQuantidadeChamadoAbertoPorArea.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/jscript/my-add-field.js" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/jscript/validador.js" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/jscript/validadorBootstrap.js" charset="ISO-8859-1" />

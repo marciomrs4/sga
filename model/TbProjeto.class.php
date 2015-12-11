@@ -723,6 +723,7 @@ class TbProjeto extends Banco
 								FROM tb_usuario
 								WHERE usu_codigo = usu_codigo_responsavel) AS responsavel,
 						(SELECT stp_descricao FROM tb_status_projeto WHERE PRO.stp_codigo = stp_codigo) 'status',
+						(SELECT dep_descricao FROM tb_departamento WHERE dep_codigo = PRO.dep_codigo) AS 'departamento',
 						pro_previsao_inicio, pro_previsao_fim
 					FROM tb_projeto AS PRO
 					INNER JOIN tb_usuario AS USU

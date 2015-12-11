@@ -420,14 +420,20 @@ class TbAtividade extends Banco
 	public function graficoAtividade()
 	{
 		$query = ("SELECT 
-					(SELECT sta_descricao 
-						FROM tb_status_atividade
-						WHERE sta_codigo = ATI.sta_codigo ) AS 'STATUS' , 
-				count(*) AS 'Quantidade'
-				FROM tb_atividade AS ATI
-				WHERE sta_codigo IN (1,2)
-				GROUP BY sta_codigo");
-						
+						(SELECT sta_descricao
+							FROM tb_status_atividade
+							WHERE sta_codigo = ATI.sta_codigo ) AS 'STATUS' ,
+					count(*) AS 'Quantidade'
+					FROM tb_atividade AS ATI
+					WHERE sta_codigo IN (1,2)
+					AND usu_codigo_responsavel IN (SELECT USU.usu_codigo
+									FROM tb_usuario AS USU
+									INNER JOIN tb_acesso AS ACE
+									ON USU.usu_codigo = ACE.usu_codigo
+									WHERE USU.dep_codigo = 5
+									AND ACE.ace_ativo = 'S')
+					GROUP BY sta_codigo;");
+
 		try
 		{
 			$stmt = $this->conexao->prepare($query);

@@ -39,7 +39,9 @@ $tbProjeto = new TbProjeto();
                                         <div class="list-group">
                                             <div class="list-group-item">Projeto: <?php echo $dadosProjeto['pro_titulo']; ?> </div>
                                             <div class="list-group-item">Responsável: <?php echo $dadosProjeto['responsavel']; ?></div>
+                                            <div class="list-group-item">Departamento: <?php echo $dadosProjeto['departamento'] ?></div>
                                             <div class="list-group-item">Status: <?php echo $dadosProjeto['status'] ?></div>
+
 
                                                 <a href="DetalheProjeto.php?<?php echo base64_encode(pro_codigo) ?>=<?php echo base64_encode($projeto['pro_codigo']); ?>">
                                                     <button type="button" class="btn btn-primary btn-sm">

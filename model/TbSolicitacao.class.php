@@ -1292,6 +1292,46 @@ class TbSolicitacao extends Banco
 	}
 
 
-	
+	#Grafico: Chamado por departamento no periodo
+	public function graficoTopTenChamadoAbertoPorArea($dados)
+	{
+		$query = ("SELECT (SELECT dep_descricao FROM tb_departamento WHERE dep_codigo = (SELECT dep_codigo
+								FROM tb_usuario
+								WHERE usu_codigo =  usu_codigo_solicitante)) AS departamento, count(sol_codigo) AS QTD
+					FROM tb_solicitacao
+					WHERE dep_codigo_solicitado = ?
+					AND sol_data_inicio >= ?
+					AND sol_data_inicio <= ?
+					GROUP BY 1
+					ORDER BY 2 DESC
+					LIMIT 10;");
+
+		try
+		{
+
+			$data1 = $dados['data1'].' 00:00:01';
+			$data2 = $dados['data2'].' 23:59:59';
+
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$_SESSION['dep_codigo'],PDO::PARAM_INT);
+			$stmt->bindParam(2,$data1,PDO::PARAM_STR);
+			$stmt->bindParam(3,$data2,PDO::PARAM_STR);
+
+
+			$stmt->execute();
+
+			foreach ($stmt as $value){
+				echo '[',"'",$value[0],"'",',',$value[1],'],';
+			}
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(), $e->getCode());
+		}
+	}
+
+
+
 }
 ?>

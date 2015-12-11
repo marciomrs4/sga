@@ -887,6 +887,22 @@ class Busca extends Dados
 
 	}
 
+	public function graficoTopTenChamadoAbertoPorArea()
+	{
+
+		$tbSolicitacao = new TbSolicitacao();
+
+		$this->dados['data1'] = ($this->dados['data1'] == '') ? ValidarDatas::dataAnterior(date('d-m-Y'),-30) : $this->dados['data1'];
+		$this->dados['data2'] = ($this->dados['data2'] == '') ? date('d-m-Y') : $this->dados['data2'];
+
+		$this->dados['data1'] = ValidarDatas::dataBanco($this->dados['data1']);
+		$this->dados['data2'] = ValidarDatas::dataBanco($this->dados['data2']);
+
+
+		$tbSolicitacao->graficoTopTenChamadoAbertoPorArea($this->dados);
+
+	}
+
 
 
 }

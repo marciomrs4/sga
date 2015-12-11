@@ -2,6 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT']."/sga/componentes/config.php");
 ?>
 
+<script>
 var $grafico = jQuery.noConflict();
 
 $grafico(document).ready(function(){
@@ -27,7 +28,7 @@ $grafico(document).ready(function(){
         	style: {
    				fontWeight: 'bold'
 				},
-            text: 'Top 10: Quantidade de Chamado por Area - Periodo: 01/2014 a 12/2014'
+            text: 'Top 10: Departamentos que abriram chamados no período'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.y}</b>'
@@ -53,12 +54,11 @@ $grafico(document).ready(function(){
             type: 'pie',
             name: 'Quantidade',
             data: [
-					<?php 
-						$tbDepartamento = new TbDepartamento();
-												
-						$tbDepartamento->graficoChamadoPorArea();
-						?>
+					<?php
+                        $busca->graficoTopTenChamadoAbertoPorArea();
+					?>
             	  ]
         		}]
     });
-})(jQuery);
+});
+</script>

@@ -85,5 +85,5 @@ $tbAtividade = new TbAtividade();
     </div>
 
 <?php
-include_once './componentes/footerPainel.php';
+include_once './componentes/footerPainelUsuarioFinal.php';
 ?>

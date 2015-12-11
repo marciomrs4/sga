@@ -37,7 +37,7 @@ include_once($_SERVER['DOCUMENT_ROOT']."/sga/componentes/config.php");
             enabled: false
         },
         tooltip: {
-            pointFormat: 'Atividades Abertas: <b>{point.y: .0f} </b>'
+            pointFormat: 'Atividades Fechadas: <b>{point.y: .0f} </b>'
         },
         series: [{
             name: 'Population',

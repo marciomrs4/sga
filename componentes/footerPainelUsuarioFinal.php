@@ -40,12 +40,8 @@
             <script src="jscript/jquery.dataTables.js"></script>
             <script src="jscript/my-data-table.js"></script>
             <?php
-            include_once $_SERVER['DOCUMENT_ROOT'].'/sga/jscript/getGraficoAtividadeDetalheProjeto.php';
-            include_once $_SERVER['DOCUMENT_ROOT'].'/sga/jscript/getGraficoAtividadeDetalheProjetoPrazo.php';
-
-            include_once $_SERVER['DOCUMENT_ROOT'].'/sga/jscript/getGraficoAtividadePorStatus.php';
-            include_once $_SERVER['DOCUMENT_ROOT'].'/sga/jscript/getGraficoAtividadePorResponsavel.php';
-
+            include_once $_SERVER['DOCUMENT_ROOT'].'/sga/jscript/getGraficoAtividadeAbertaUsuario.php';
+            include_once $_SERVER['DOCUMENT_ROOT'].'/sga/jscript/getGraficoAtividadeConcluidaUsuario.php';
             ?>
 
 <script type="text/javascript">
