@@ -8,18 +8,8 @@
 <script src="jscript/my-printer.js"></script>
 <script src="jscript/jquery.validate.js"></script>
 <script src="jscript/validadorBootstrap.js"></script>
+<script src="jscript/my-alert.js"></script>
 
-<!--<script>
-var $alert = jQuery.noConflict();  
-
-$alert(document).ready(function(){
-//Encolhe os paineis do sistema de forma padrao
-$alert(".panel-heading").click(
-function(){
-$alert(this).next().toggle('slow');
-});
-});
-</script>-->
 
 </body>
 </html>

@@ -30,6 +30,8 @@
 
 			<script src="jscript/jquery-2.1.4.js"></script>
 			<script src="jscript/bootstrap.js"></script>
+            <script src="jscript/my-alert.js"></script>
+
             <script src="jscript/highcharts.js"></script>
             <script src="jscript/highcharts-3d.js"></script>
             <script src="jscript/exporting.js"></script>
@@ -37,20 +39,6 @@
             include_once $_SERVER['DOCUMENT_ROOT'].'/sga/jscript/getGraficoRncPorDepartamento.php';
             include_once $_SERVER['DOCUMENT_ROOT'].'/sga/jscript/getGraficoRncPorTipoOcorrencia.php';
             ?>
-
-<script type="text/javascript">
-
-var $panel = jQuery.noConflict();
-
-$panel(document).ready(function(){
-
-    $panel(".panel-heading").click(
-        function(){
-            $panel(this).next().toggle('slow');
-        });
-});
-
-</script>
 
 </body>
 </html>

@@ -33,20 +33,5 @@
             <script src="jscript/chamadoTempoSolucao.js"></script>
             <script src="jscript/my-alert.js"></script>
 
-
-<script type="text/javascript">
-
-var $panel = jQuery.noConflict();
-
-$panel(document).ready(function(){
-
-    $panel(".panel-heading").click(
-        function(){
-            $panel(this).next().toggle('slow');
-        });
-});
-
-</script>
-
 </body>
 </html>

@@ -54,10 +54,4 @@ $chamado(document).ready(function(){
         }
     });
 
-
-    $chamado(".panel-heading").click(
-        function(){
-            $chamado(this).next().toggle(1000);
-        });
-
 });
