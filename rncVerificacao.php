@@ -179,11 +179,9 @@ $_SESSION['rncGestor'] = $tbRnc->getFormRnc($buca->getValueGet('nc_codigo'));
                                 <br>
                             </div>
 
-                            <div class="form-group">
-                                <div>
+                            <div class="col-xs-12">
                                     <button type="submit" class="btn btn-primary" id="botaoSave"> Verificar</button>
                                     <div id="loadprocessar"></div>
-                                </div>
                             </div>
 
                         </form>

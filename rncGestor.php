@@ -143,7 +143,7 @@ if($_SESSION['rncGestor']['nc_edicao_gestor'] == 1) {
         </div>
     </div>
 
-    <?php
+<?php
 }
 Sessao::finalizarSessao();
 include_once 'componentes/footerRnc.php';
