@@ -883,7 +883,18 @@ class Busca extends Dados
 		$this->dados['nc_descricaocompleta'] = ($this->dados['nc_descricaocompleta'] == '') ? '%' : $this->dados['nc_descricaocompleta'];
 
 		$tbRnc = new TbCadastroRnc();
-		return $tbRnc->listarRncQualidade($this->dados);
+
+		/*
+		 * 1 = Data de Verificacao
+		 * 2 = Date de Abertura
+		 */
+		if($this->dados['tipo_data'] == 1){
+			return $tbRnc->listarRncQualidadeVerificacao($this->dados);
+		}else{
+			return $tbRnc->listarRncQualidadeAbertura($this->dados);
+		}
+
+
 
 	}
 

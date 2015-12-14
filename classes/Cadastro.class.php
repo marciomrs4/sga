@@ -252,6 +252,16 @@ class Cadastro extends Dados
 
 			$this->conexao->commit();
 
+			//Cria o diretorio para RNC
+			$directoryCreate = new DirectoryCreate();
+			$directoryCreate->createDirRnc($this->dados['nc_codigo']);
+
+			//Pega todos os arquivos que houver no chamado e coloca na RNC
+			$fileCopy = new FileCopy();
+			$fileCopy->setChamado($this->dados['sol_codigo'])
+					 ->setRnc($this->dados['nc_codigo'])
+					 ->copyChamadoToRnc();
+
 			$email = new Email();
 			$this->dados['Solicitante'] = true;
 			$this->dados['Departamento'] = true;
@@ -283,12 +293,16 @@ class Cadastro extends Dados
 			ValidarCampos::campoVazio($this->dados['nc_acao_melhoria'], 'MELHORIA');
 			ValidarCampos::campoVazio($this->dados['nc_prazo_implatacao'], 'PRAZO PARA IMPLANTAÇÃO');
 			ValidarCampos::campoVazio($this->dados['nc_resp_implantacao'], 'RESPONSÁVEL PELA IMPLANTAÇÃO');
-			ValidarCampos::campoVazio($this->dados['nc_data_implantacao'], 'DATA DA IMPLANTAÇÃO');
+
 
 			$tbrnc = new TbCadastroRnc();
 
 			$this->dados['nc_data_implantacao'] = date('Y-m-d',strtotime(str_replace('/','-',$this->dados['nc_data_implantacao'])));
 			$this->dados['nc_edicao_gestor'] = 1;
+
+			$this->dados['nc_prazo_implatacao'] = date('Y-m-d',strtotime(str_replace('/','-',$this->dados['nc_prazo_implatacao'])));
+
+			$this->dados['nc_data_resposta_gestor'] = date('Y-m-d');
 
 			if($tbrnc->getStatus($this->dados['nc_codigo']) == 1) {
 				$this->dados['snc_codigo'] = 2;
@@ -1692,6 +1706,10 @@ class Cadastro extends Dados
 			$this->dados['usu_codigo_criador'] = $_SESSION['usu_codigo'];
 			//$this->dados['ver_encerrado'] = 1;
 
+			$this->dados['nc_previsao_encerramento'] =
+				($this->dados['nc_previsao_encerramento'] == '') ? date('Y-m-d') :
+					date('Y-m-d',strtotime(str_replace('/','-',$this->dados['nc_previsao_encerramento'])));
+
 
 			if($this->dados['ver_encerrado'] == 1){
 				$this->dados['snc_codigo'] = 4;
@@ -1782,6 +1800,12 @@ class Cadastro extends Dados
 					$tbcalculoatendimento->insertCalculoAtendimento($this->dados);
 
 					$this->conexao->commit();
+
+					//Pega todos os arquivos que houver no chamado e coloca na RNC
+					$fileCopy = new FileCopy();
+					$fileCopy->setChamado($this->dados['sol_codigo'])
+						->setRnc($this->dados['nc_codigo'])
+						->copyChamadoToRnc();
 
 					$email = new Email();
 					$this->dados['Solicitante'] = true;

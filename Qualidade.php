@@ -39,7 +39,7 @@ $busca->validarPost($_POST);
                          ->listOption();
 
 			?>
-			- Período: De <input type="text" name="data1" class="data" id="data-id" size="10" value="<?php echo($busca->getDados('data1'));?>">
+			Período: de <input type="text" name="data1" class="data" id="data-id" size="10" value="<?php echo($busca->getDados('data1'));?>">
 			à <input type="text" name="data2" class="data" id="data" size="10" value="<?php echo($busca->getDados('data2'));?>">
 
 		</td>
@@ -49,7 +49,18 @@ $busca->validarPost($_POST);
 		<td>
 			Descrição:
 			<input type="text" name="nc_descricaocompleta" size="50" value="<?php echo($busca->getDados('nc_descricaocompleta'));?>">
-		</td>				
+			Tipo de Data:
+			<?php
+			$TipoData = array(array(1,'Data Verificação'),array(2,'Data Abertura'));
+			//Criacao do campo do formulario de Problema
+			$FormProblema = new SelectOption();
+			$FormProblema->setStmt($TipoData)
+				->setSelectName('tipo_data')
+				->setSelectedItem($busca->getDados('tipo_data'))
+				->listOption();
+
+			?>
+		</td>
 		<td>
 			<input type="submit" class="pesquisando" value="Pesquisar" />
 		</td>
@@ -64,7 +75,7 @@ Arquivo::includeForm();
 
 $DataGridRNC = new DataGrid();
 
-$cabecalho = array('Número','Data Ocorrência','Descrição', 'Local', 'Departamento','Data Abertura','Status');
+$cabecalho = array('Número','Data Ocorrência','Descrição','Problema', 'Local', 'Departamento','Data Abertura','Status','Data Verificação');
 
 $DataGridRNC->setCabecalho($cabecalho);
 

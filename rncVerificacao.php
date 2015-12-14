@@ -97,9 +97,9 @@ $_SESSION['rncGestor'] = $tbRnc->getFormRnc($buca->getValueGet('nc_codigo'));
                     </div>
                     <div class="col-xs-12">
                         <label class="text-info">
-                            DATA DA IMPLANTAÇÃO:
+                            RESPONDIDO EM:
                         </label>
-                        <?php echo ValidarDatas::dataCliente($_SESSION['rncGestor']['nc_data_implantacao']); ?>
+                        <?php echo ValidarDatas::dataCliente($_SESSION['rncGestor']['nc_data_resposta_gestor']); ?>
                     </div>
                 </div>
             </div>
@@ -129,11 +129,8 @@ $_SESSION['rncGestor'] = $tbRnc->getFormRnc($buca->getValueGet('nc_codigo'));
                             <input type="hidden" name="nc_codigo"
                                    value="<?php echo($_SESSION['rncGestor']['nc_codigo']); ?>">
 
-                            <div class="col-xs-6">
-                                <p class="text-primary">EFICAZ ?</p>
-
-                                <div class="col-xs-6">
-
+                            <div class="col-xs-4">
+                                <label class="text-info">Eficaz ?</label>
                                     <?php
                                     $tbRncEficaz = new TbRncEficaz();
 
@@ -146,15 +143,10 @@ $_SESSION['rncGestor'] = $tbRnc->getFormRnc($buca->getValueGet('nc_codigo'));
                                         ->setSelectName('efi_codigo')
                                         ->listOption();
                                     ?>
-                                </div>
                             </div>
 
-                            <div class="col-xs-6">
-                                <p class="text-primary">ENCERRAR NC ?</p>
-
-                                <div class="col-xs-6">
-
-
+                            <div class="col-xs-4">
+                                <label class="text-info">Encerrar NC ?</label>
                                     <?php
                                     $array = array(array(1, 'SIM'),
                                         array(2, 'NÃO'));
@@ -169,10 +161,16 @@ $_SESSION['rncGestor'] = $tbRnc->getFormRnc($buca->getValueGet('nc_codigo'));
                                         ->listOption();
 
                                     ?>
-
-
-                                </div>
                             </div>
+
+                            <div class="col-xs-4">
+                                <label class="text-info">Previsão Encerramento:</label>
+
+                                    <input type="date" name="nc_previsao_encerramento" class="form-control" >
+
+                            </div>
+
+
                             <div class="col-xs-12">
                                 <hr>
                                 <label class="text-info">PARECER DA QUALIDADE:</label>

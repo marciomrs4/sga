@@ -119,33 +119,23 @@ if($_SESSION['rncGestor']['nc_edicao_gestor'] == 1) {
                         </div>
                         <div class="col-xs-4">
                             <label class="text-info">PRAZO DE IMPLANTAÇÂO:</label>
-                            <input type="text" class="form-control" name="nc_prazo_implatacao"
+                            <input type="date" class="form-control" name="nc_prazo_implatacao"
                                    placeholder="PRAZO PARA IMPLANTAÇÃO">
 
                         </div>
-                        <div class="col-xs-4">
+                        <div class="col-xs-8">
                             <label class="text-info">RESPONSÁVEL IMPLANTAÇÃO:</label>
                             <input type="text" class="form-control" name="nc_resp_implantacao"
                                    placeholder="RESPONSÁVEL PELA IMPLANTAÇÃO">
 
-                        </div>
-                        <div class="col-xs-4">
-                            <label class="text-info">DATA DA IMPLANTAÇÃO:</label>
-                            <input type="date" class="form-control" name="nc_data_implantacao" placeholder="DATA"
-                                   title="DATA DA IMPLANTAÇÃO">
-
                             <br>
                         </div>
 
-                        <div class="form-group">
-                            <div>
-                                <button type="submit" class="btn btn-primary" id="botaoSave"> Responder</button>
-                                <div id="loadprocessar"></div>
-                            </div>
-                        </div>
-
+                        <button type="submit" class="btn btn-primary" id="botaoSave"> Responder</button>
+                        <div id="loadprocessar"></div>
 
                     </form>
+
                 </div>
                 <div class="panel-footer"></div>
             </div>

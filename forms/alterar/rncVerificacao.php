@@ -158,10 +158,10 @@ $userDados = $tbUsuario->getUsuario($verRnc['usu_emitente_codigo']);
 
 			<tr>
 				<th>
-					Data da Implantação:
+					Respondido em:
 				</th>
 				<td>
-					<?php echo ValidarDatas::dataCliente($verRnc['nc_data_implantacao']); ?>
+					<?php echo ValidarDatas::dataCliente($verRnc['nc_data_resposta_gestor']); ?>
 				</td>
 			</tr>
 

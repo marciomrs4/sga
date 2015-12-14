@@ -16,6 +16,7 @@ class DirectoryCreate
 	const CHAMADOS = 'chamados/';
 	const MELHORIA = 'melhoria/';
 	const RNC = 'rnc/';
+	const DS = DIRECTORY_SEPARATOR;
 
 	private function createDir($path)
 	{

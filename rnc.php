@@ -114,7 +114,7 @@ if($tbOcorrenciaRnc->validarOcorrencia($busca->getValueGet('sol_codigo')) >= 1){
 
         <div class="col-xs-9">
             <hr>
-            <label class="text-info">TIPOS DE PROBLEMA:</label>
+            <label class="text-info">TIPO DE PROBLEMA:</label>
             <?php
             $tbProblema = new TbProblema();
 

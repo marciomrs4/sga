@@ -17,12 +17,14 @@ class TbCadastroRnc extends Banco
     private $nc_resp_implantacao = 'nc_resp_implantacao';
     private $snc_codigo = 'snc_codigo';
     private $nc_data_criacao = 'nc_data_criacao';
-    private $nc_data_implantacao = 'nc_data_implantacao';
+    private $nc_data_resposta_gestor = 'nc_data_resposta_gestor';
     private $nc_edicao_gestor = 'nc_edicao_gestor';
     private $usu_codigo_criador = 'usu_codigo_criador';
     private $usu_codigo_repondedor = 'usu_codigo_repondedor';
     private $usu_codigo_verificador = 'usu_codigo_verificador';
     private $pro_codigo_tecnico_rnc = 'pro_codigo_tecnico_rnc';
+    private $nc_previsao_encerramento = 'nc_previsao_encerramento';
+
 
 
     public function insert($dados)
@@ -62,7 +64,7 @@ class TbCadastroRnc extends Banco
                                     $this->nc_acao_melhoria = ?,
                                     $this->nc_prazo_implatacao = ?,
                                     $this->nc_resp_implantacao = ?,    
-                                    $this->nc_data_implantacao = ?,
+                                    $this->nc_data_resposta_gestor = ?,
                                     $this->nc_edicao_gestor = ?,
                                     $this->snc_codigo = ?,
                                     $this->usu_codigo_repondedor = ?
@@ -74,7 +76,7 @@ class TbCadastroRnc extends Banco
             $stmt->bindParam(2,$dados[$this->nc_acao_melhoria], PDO::PARAM_STR);
             $stmt->bindParam(3,$dados[$this->nc_prazo_implatacao], PDO::PARAM_STR);
             $stmt->bindParam(4,$dados[$this->nc_resp_implantacao], PDO::PARAM_STR);
-            $stmt->bindParam(5,$dados[$this->nc_data_implantacao], PDO::PARAM_STR);
+            $stmt->bindParam(5,$dados[$this->nc_data_resposta_gestor], PDO::PARAM_STR);
             $stmt->bindParam(6,$dados[$this->nc_edicao_gestor],PDO::PARAM_INT);
             $stmt->bindParam(7,$dados[$this->snc_codigo],PDO::PARAM_INT);
             $stmt->bindParam(8,$dados[$this->usu_codigo_repondedor], PDO::PARAM_INT);
@@ -200,14 +202,58 @@ class TbCadastroRnc extends Banco
     }
 
 
-    //Usado na tela de listagem de RNC para a Qualidade
-    public function listarRncQualidade($dados)
+    //Usado na tela de listagem de RNC para a Qualidade por data de verificacao
+    public function listarRncQualidadeVerificacao($dados)
     {
-        $query = ("SELECT nc_codigo, concat(nc_codigo,'/',date_format(nc_data_criacao,'%y')) AS numero, date_format(nc_data_ocorrencia,'%d-%m-%Y') AS nc_data_ocorrencia, nc_descricaocompleta,
+        $query = ("SELECT nc_codigo, concat(nc_codigo,'/',date_format(nc_data_criacao,'%y')) AS numero, date_format(nc_data_ocorrencia,'%d-%m-%Y') AS nc_data_ocorrencia,
+                          nc_descricaocompleta, (SELECT pro_descricao FROM tb_problema WHERE pro_codigo =  pro_codigo_tecnico_rnc) AS pro_codigo_tecnico_rnc,
                           nc_local_ocorrencia, DEP.dep_descricao, date_format(nc_data_criacao,'%d-%m-%Y') AS nc_data_criacao,
                           (SELECT snc_descricao
                 			FROM tb_status_rnc
-			                WHERE RNC.snc_codigo = snc_codigo) AS snc_descricao
+			                WHERE RNC.snc_codigo = snc_codigo) AS snc_descricao,
+			                date_format(nc_previsao_encerramento,'%d-%m-%Y') AS nc_previsao_encerramento
+                    FROM tb_rnc AS RNC
+                    INNER JOIN tb_departamento AS DEP
+                    ON RNC.dep_responsavel_codigo = DEP.dep_codigo
+                    WHERE DEP.dep_codigo LIKE ?
+                    AND nc_previsao_encerramento >= ?
+                    AND nc_previsao_encerramento <= ?
+                    AND snc_codigo LIKE ?
+                    AND nc_descricaocompleta LIKE ?
+                    ORDER BY nc_codigo DESC");
+
+        try{
+
+            $data1 = $dados['data1'].' 00:00:01';
+            $data2 = $dados['data2'].' 23:59:59';
+
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->execute(array("{$dados['dep_responsavel_codigo']}",
+                    "{$data1}",
+                    "{$data2}",
+                    "{$dados['sta_codigo_rnc']}",
+                    "%{$dados['nc_descricaocompleta']}%"
+                )
+            );
+
+            return $stmt;
+
+        }  catch (\PDOException $e){
+            throw new \PDOException($e->getMessage(), $e->getCode());
+        }
+    }
+
+    //Usado na tela de listagem de RNC para a Qualidade por data de Abertura
+    public function listarRncQualidadeAbertura($dados)
+    {
+        $query = ("SELECT nc_codigo, concat(nc_codigo,'/',date_format(nc_data_criacao,'%y')) AS numero, date_format(nc_data_ocorrencia,'%d-%m-%Y') AS nc_data_ocorrencia,
+                          nc_descricaocompleta, (SELECT pro_descricao FROM tb_problema WHERE pro_codigo =  pro_codigo_tecnico_rnc) AS pro_codigo_tecnico_rnc,
+                          nc_local_ocorrencia, DEP.dep_descricao, date_format(nc_data_criacao,'%d-%m-%Y') AS nc_data_criacao,
+                          (SELECT snc_descricao
+                			FROM tb_status_rnc
+			                WHERE RNC.snc_codigo = snc_codigo) AS snc_descricao,
+			                date_format(nc_previsao_encerramento,'%d-%m-%Y') AS nc_previsao_encerramento
                     FROM tb_rnc AS RNC
                     INNER JOIN tb_departamento AS DEP
                     ON RNC.dep_responsavel_codigo = DEP.dep_codigo
@@ -240,17 +286,20 @@ class TbCadastroRnc extends Banco
         }
     }
 
+
     //Atualiza informacao na verificacao
     public function updateVerificacao($dados)
     {
         $query = ("UPDATE $this->tabela
-                   SET $this->snc_codigo = ?
+                   SET $this->snc_codigo = ?,
+                       $this->nc_previsao_encerramento = ?
                    WHERE $this->nc_codigo = ? ");
         try {
             $stmt = $this->conexao->prepare($query);
 
-            $stmt->bindParam(1,$dados[$this->snc_codigo], PDO::PARAM_STR);
-            $stmt->bindParam(2,$dados[$this->nc_codigo], PDO::PARAM_INT);
+            $stmt->bindParam(1,$dados[$this->snc_codigo], PDO::PARAM_INT);
+            $stmt->bindParam(2,$dados[$this->nc_previsao_encerramento], PDO::PARAM_STR);
+            $stmt->bindParam(3,$dados[$this->nc_codigo], PDO::PARAM_INT);
 
             $stmt->execute();
 
@@ -404,6 +453,31 @@ class TbCadastroRnc extends Banco
         }
     }
 
+
+    //Usado no script de envio de email para qualidade fazer as verificacoes
+    public function listRncToVerificacao()
+    {
+        $query = ("SELECT nc_codigo,
+                        concat(nc_codigo,'/',date_format(nc_data_criacao,'%y')) AS numero_rnc,
+                        (SELECT snc_descricao FROM tb_status_rnc WHERE RNC.snc_codigo = snc_codigo) AS snc_codigo,
+                        (SELECT pro_descricao FROM tb_problema WHERE pro_codigo =  pro_codigo_tecnico_rnc) AS pro_codigo_tecnico_rnc,
+                        date_format(nc_previsao_encerramento,'%d-%m-%Y') AS nc_previsao_encerramento
+                        FROM tb_rnc AS RNC
+                        WHERE nc_previsao_encerramento <= curdate()
+                        AND snc_codigo = 1;");
+
+        try{
+
+            $stmt = $this->conexao->prepare($query);
+
+            $stmt->execute();
+
+            return $stmt;
+
+        }  catch (\PDOException $e){
+            throw new \PDOException($e->getMessage(), $e->getCode());
+        }
+    }
 
 }
 

@@ -19,6 +19,7 @@
 		if($_SESSION['dep_codigo'] == 36) {
 			$botaoRNCQualidade = ("<li><a href='Qualidade.php'><img src='./css/images/melhoria.png'> RNC</a></li>");
 			$controleacesso->permitirBotao($botaoRNCQualidade, array(ControleDeAcesso::$Solicitante, ControleDeAcesso::$Tecnico, ControleDeAcesso::$TecnicoADM));
+
 		}
 		?>
 		</ul>

@@ -4,17 +4,19 @@
     <list default="true" id="2526c6c5-3cfb-4a59-b223-ceacd7d0168e" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/css/images/ck - Cópia.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/projetos/214/ATA DE REUNI�O 25-15.docx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/GraficoAtividade.php" afterPath="$PROJECT_DIR$/jscript/GraficoAtividade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/GraficoAtividadePorUsuario.php" afterPath="$PROJECT_DIR$/jscript/GraficoAtividadePorUsuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/GraficoChamadoTempoSolucao.php" afterPath="$PROJECT_DIR$/jscript/GraficoChamadoTempoSolucao.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/GraficoQtdChamadoPorUsuario.php" afterPath="$PROJECT_DIR$/jscript/GraficoQtdChamadoPorUsuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/getGraficoAtividadeDetalheProjeto.php" afterPath="$PROJECT_DIR$/jscript/getGraficoAtividadeDetalheProjeto.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/getGraficoAtividadeDetalheProjetoPrazo.php" afterPath="$PROJECT_DIR$/jscript/getGraficoAtividadeDetalheProjetoPrazo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/getGraficoAtividadePorResponsavel.php" afterPath="$PROJECT_DIR$/jscript/getGraficoAtividadePorResponsavel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/getGraficoAtividadePorStatus.php" afterPath="$PROJECT_DIR$/jscript/getGraficoAtividadePorStatus.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/getGraficoRncPorDepartamento.php" afterPath="$PROJECT_DIR$/jscript/getGraficoRncPorDepartamento.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/getGraficoRncPorTipoOcorrencia.php" afterPath="$PROJECT_DIR$/jscript/getGraficoRncPorTipoOcorrencia.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/menusecundario.php" afterPath="$PROJECT_DIR$/menusecundario.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Busca.class.php" afterPath="$PROJECT_DIR$/classes/Busca.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Cadastro.class.php" afterPath="$PROJECT_DIR$/classes/Cadastro.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/DirectoryCreate.class.php" afterPath="$PROJECT_DIR$/classes/DirectoryCreate.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Qualidade.php" afterPath="$PROJECT_DIR$/Qualidade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbCadastroRnc.class.php" afterPath="$PROJECT_DIR$/model/TbCadastroRnc.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/menuqualidade.php" afterPath="$PROJECT_DIR$/menuqualidade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rnc.php" afterPath="$PROJECT_DIR$/rnc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rncGestor.php" afterPath="$PROJECT_DIR$/rncGestor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rncVerificacao.php" afterPath="$PROJECT_DIR$/rncVerificacao.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/rncVerificacao.php" afterPath="$PROJECT_DIR$/forms/alterar/rncVerificacao.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/testcopy.php" afterPath="$PROJECT_DIR$/tests/testcopy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sga.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,7 +57,58 @@
     <favorites_list name="sga" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="FileCopy.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/classes/FileCopy.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.2">
+              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testcopy.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/testcopy.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.3333335">
+              <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cadastrarRnc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/action/cadastrarRnc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.333333">
+              <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cadastro.class.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classes/Cadastro.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.46320346">
+              <caret line="1805" column="69" selection-start-line="1805" selection-start-column="69" selection-end-line="1805" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="associarRnc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/action/associarRnc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.0">
+              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,20 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/forms/cadastrar/Ocorrencia.php" />
-        <option value="$PROJECT_DIR$/model/TbCadastroRnc.class.php" />
-        <option value="$PROJECT_DIR$/forms/alterar/Ocorrencia.php" />
-        <option value="$PROJECT_DIR$/model/TbOcorrenciaRnc.class.php" />
-        <option value="$PROJECT_DIR$/classes/Cadastro.class.php" />
-        <option value="$PROJECT_DIR$/rnc.php" />
-        <option value="$PROJECT_DIR$/classes/Grid.class.php" />
-        <option value="$PROJECT_DIR$/jscript/getGraficoAtividadeProdutividadeUsuario.php" />
-        <option value="$PROJECT_DIR$/jscript/getGraficoAtividadeAbertaUsuario.php" />
-        <option value="$PROJECT_DIR$/tests/convertdate.php" />
-        <option value="$PROJECT_DIR$/model/TbDepartamento.class.php" />
-        <option value="$PROJECT_DIR$/menurelatorio.php" />
-        <option value="$PROJECT_DIR$/classes/Busca.class.php" />
-        <option value="$PROJECT_DIR$/model/TbSolicitacao.class.php" />
         <option value="$PROJECT_DIR$/tests/testsourcedata.php" />
         <option value="$PROJECT_DIR$/GraficoQuantidadeChamadoAbertoPorAreaInclude.php" />
         <option value="$PROJECT_DIR$/jscript/GraficoQuantidadeChamadoAbertoPorArea.php" />
@@ -114,6 +153,20 @@
         <option value="$PROJECT_DIR$/jscript/getGraficoRncPorDepartamento.php" />
         <option value="$PROJECT_DIR$/jscript/getGraficoRncPorTipoOcorrencia.php" />
         <option value="$PROJECT_DIR$/menusecundario.php" />
+        <option value="$PROJECT_DIR$/rnc.php" />
+        <option value="$PROJECT_DIR$/rncGestor.php" />
+        <option value="$PROJECT_DIR$/forms/alterar/rncVerificacao.php" />
+        <option value="$PROJECT_DIR$/action/rncVerificacao.php" />
+        <option value="$PROJECT_DIR$/classes/Busca.class.php" />
+        <option value="$PROJECT_DIR$/menuqualidade.php" />
+        <option value="$PROJECT_DIR$/Qualidade.php" />
+        <option value="$PROJECT_DIR$/model/TbCadastroRnc.class.php" />
+        <option value="$PROJECT_DIR$/tests/testNotificacaoQualidade.php" />
+        <option value="$PROJECT_DIR$/rncVerificacao.php" />
+        <option value="$PROJECT_DIR$/classes/DirectoryCreate.class.php" />
+        <option value="$PROJECT_DIR$/tests/testcopy.php" />
+        <option value="$PROJECT_DIR$/classes/FileCopy.class.php" />
+        <option value="$PROJECT_DIR$/classes/Cadastro.class.php" />
       </list>
     </option>
   </component>
@@ -243,6 +296,34 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sga" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -260,11 +341,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/componentes" />
+      <recent name="$PROJECT_DIR$/classes" />
       <recent name="$PROJECT_DIR$/tests" />
-      <recent name="$PROJECT_DIR$/jscript" />
-      <recent name="$PROJECT_DIR$/forms/cadastrar" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/componentes" />
+      <recent name="$PROJECT_DIR$/jscript" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/info" />
@@ -316,9 +397,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="0" width="1440" height="875" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19888735" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19888735" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -382,242 +463,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DetalheProjeto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8252427">
-          <caret line="338" column="36" selection-start-line="338" selection-start-column="36" selection-end-line="338" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/getGraficoAtividadeConcluidaUsuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7919556">
-          <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Grid.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="92.62963">
-          <caret line="69" column="20" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
-          <folding>
-            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/ordena.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/my-addfieldata.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45721924">
-          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/meuMaskMoney.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/MeuColorpicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/maskMoney.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/marcacao.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/grafico.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/my-datatable-doubleclick.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1447760945909" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945909" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jscript/my-data-table.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1447760945909" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945909" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Busca.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27045768">
-          <caret line="349" column="20" selection-start-line="349" selection-start-column="20" selection-end-line="349" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/getChamadoSolucao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1997226">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GraficoTempoSolucaoMontagem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6255201">
-          <caret line="64" column="6" selection-start-line="64" selection-start-column="6" selection-end-line="64" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RelatorioSolucaoTempoEnvioTerceiro.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7503467">
-          <caret line="305" column="37" selection-start-line="305" selection-start-column="37" selection-end-line="305" selection-end-column="37" />
-          <folding>
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1447760945885" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forms/alterar/Checklist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5991678">
-          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Operacao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0998613">
-          <caret line="4" column="97" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PainelChamados.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0998613">
-          <caret line="4" column="97" selection-start-line="4" selection-start-column="97" selection-end-line="4" selection-end-column="97" />
-          <folding>
-            <marker date="1449860581244" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449860581244" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449860581244" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1449860581244" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PainelAtividade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.103896104">
-          <caret line="4" column="97" selection-start-line="4" selection-start-column="97" selection-end-line="4" selection-end-column="97" />
-          <folding>
-            <marker date="1449860581244" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PainelProjeto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.077922076">
-          <caret line="3" column="97" selection-start-line="3" selection-start-column="97" selection-end-line="3" selection-end-column="97" />
-          <folding>
-            <marker date="1449860581248" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449860581248" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449860581248" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PainelProjetosUsuarioFinal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0998613">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <marker date="1449860581244" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PainelProjetoUsuarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.024965325">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/componentes/TopoPainelProjeto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12987013">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PainelQualidade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.024965325">
-          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/componentes/TopoPainelQualidade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.077922076">
@@ -700,14 +545,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5006935">
           <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/componentes/footerRnc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3744799">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -895,6 +732,288 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7503467">
           <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/componentes/TopoRnc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.333333">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forms/alterar/rncVerificacao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49514562">
+          <caret line="160" column="33" selection-start-line="160" selection-start-column="33" selection-end-line="160" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/rncResposta.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42441055">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/rncVerificacao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44155845">
+          <caret line="17" column="48" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rncGestor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7004161">
+          <caret line="133" column="34" selection-start-line="133" selection-start-column="34" selection-end-line="133" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rnc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49930653">
+          <caret line="116" column="41" selection-start-line="116" selection-start-column="41" selection-end-line="116" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/menuqualidade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5991678">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Arquivo.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12482663">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/aniversariantesdodia.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/listadeaniversariante.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ScriptAniversariantesTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27600554">
+          <caret line="66" column="57" selection-start-line="66" selection-start-column="57" selection-end-line="66" selection-end-column="57" />
+          <folding>
+            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1449145278775" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Grid.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.119279">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1449754276579" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/testNotificacaoQualidade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60055476">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <marker date="1450116337685" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450116337685" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450116337685" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450116337685" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450116337685" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450116337685" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450116337685" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450116337685" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450116337685" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1450116337685" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/DataGrid.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.217753">
+          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+          <folding>
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1447760945889" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/TbCadastroRnc.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65048546">
+          <caret line="466" column="42" selection-start-line="466" selection-start-column="42" selection-end-line="466" selection-end-column="42" />
+          <folding>
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT nc_co..tb_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT snc_c..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT nc_co..tb_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT snc_d..tb_status_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT nc_co..tb_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT pro_d..tb_problema..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT snc_d..tb_status_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT nc_co..tb_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT pro_d..tb_problema..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT snc_d..tb_status_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT nc_co..tb_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT pro_d..tb_problema..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT conca..tb_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..tb_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT dep_d..tb_departamento..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..tb_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT pro_d..tb_problema..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT nc_co..tb_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT nc_co..tb_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT (SELE..tb_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT snc_d..tb_status_rnc..." />
+            <marker date="1450116337689" expanded="true" signature="-1:-1" placeholder="SELECT pro_d..tb_problema..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Busca.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5021645">
+          <caret line="891" column="52" selection-start-line="891" selection-start-column="52" selection-end-line="891" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Qualidade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5256588">
+          <caret line="57" column="42" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/componentes/footerRnc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3744799">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rncVerificacao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8252427">
+          <caret line="283" column="30" selection-start-line="283" selection-start-column="30" selection-end-line="283" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/FileUpload.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.42302358">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/testcopy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.3333335">
+          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/FileCopy.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.2">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/DirectoryCreate.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38280165">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/cadastrarRnc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.333333">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/associarRnc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.0">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Cadastro.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46320346">
+          <caret line="1805" column="69" selection-start-line="1805" selection-start-column="69" selection-end-line="1805" selection-end-column="69" />
           <folding />
         </state>
       </provider>
