@@ -41,7 +41,8 @@ $grafico(document).ready(function(){
                         color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
                         "fontSize":"18px"
                     }
-                }
+                },
+                showInLegend: true
             }
         },
         series: [{

@@ -35,8 +35,8 @@
 		$botaocklist = ("<li><a href='Aniversariante.php'><img src='./css/images/niver.png'> Aniversário</a></li>");
 		$controleacesso->permitirBotao($botaocklist, array(ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
 
-/*        $SolicitacaoAcesso = ("<li><a href='SolicitacaoAcessoListar.php'><img src='./css/images/acessorestrito.jpg'> Solicitação de Acesso</a></li>");
-        $controleacesso->permitirBotao($SolicitacaoAcesso, array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));*/
+        $SolicitacaoAcesso = ("<li><a href='SolicitacaoAcessoListar.php'><img src='./css/images/acessorestrito.jpg'> Solicitação de Acesso</a></li>");
+        $controleacesso->permitirBotao($SolicitacaoAcesso, array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
 
 		?>
 		</ul>

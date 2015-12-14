@@ -24,7 +24,7 @@ $grafico(document).ready(function(){
         },
 		
         title: {
-            text: 'Quantidade de Atividades (Em Andamento e Pendente) por Usuário'
+            text: 'Quantidade de Atividades (Em Andamento e Pendente) por Usuï¿½rio'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.y}</b>'
@@ -40,7 +40,8 @@ $grafico(document).ready(function(){
                     style: {
                         color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
                     }
-                }
+                },
+                showInLegend: true
             }
         },
         series: [{

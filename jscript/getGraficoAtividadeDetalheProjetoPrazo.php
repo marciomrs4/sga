@@ -44,7 +44,8 @@ include_once($_SERVER['DOCUMENT_ROOT']."/sga/componentes/config.php");
                             color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
                             "fontSize":"18px"
                         }
-                    }
+                    },
+                    showInLegend: true
                 }
             },
             series: [{
