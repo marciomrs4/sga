@@ -89,7 +89,13 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
       <td>
       <?php 
       	$tbstatus = new TbStatus();
-      	FormComponente::selectOption('sta_codigo', $tbstatus->selectStatusNaoAberto(),false,$dados[2]);
+
+			  $SelectStatus = new SelectOption();
+			  $SelectStatus->setStmt( $tbstatus->selectStatusNaoAberto())
+						  ->setSelectName('sta_codigo')
+						  ->setSelectedItem($dados['2'])
+						  ->listOption();
+
       ?>
 	  </td>
     </tr>    
@@ -97,19 +103,19 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
       <th nowrap="nowrap">Atendente do Chamado:</th>
       <td>
       <?php 
-      	$tbatendente = new TbAtendenteSolicitacao();
-      	$atendente = $tbatendente->getNomeAtendente($dados[0]);
+      		$tbatendente = new TbAtendenteSolicitacao();
+      		$atendente = $tbatendente->getNomeAtendente($dados['0']);
     
-      	$tbusuario = new TbUsuario();
-      		#Verifica se h? um atendente e n?o houver, ? mostrado o $name
-      		#Caso contrario lista os nomes sem o $name
-     	  	if($atendente)
-   			{$valor = false;}
-   			else
-   			{FormComponente::$name = 'Não hão atendentes';
-   			$valor = true;}
-      	FormComponente::selectOption('usu_codigo_atendente',$tbusuario->selectUsuarioDepCompleto($_SESSION['dep_codigo']),$valor,$atendente);
-      
+      		$tbusuario = new TbUsuario();
+
+	  		$SelectAtendente = new SelectOption();
+
+	  		$SelectAtendente->setStmt($tbusuario->selectUsuarioDepCompleto($_SESSION['dep_codigo']))
+				->setSelectName('usu_codigo_atendente')
+				->setSelectedItem($atendente['usu_codigo_atendente'])
+				->setOptionEmpty('Não hão atendentes')
+				->listOption();
+
       ?>
 	  </td>
     </tr>
@@ -121,12 +127,16 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
     	<td>
     	<?php 
     	$tbProblema = new TbProblema();
-     	if($dados[4])
-    	{$valor = false;}
-    	else
-    	{FormComponente::$name = 'Não há problema técnico indicado';
-    	$valor = true;} 
-    	FormComponente::selectOption('pro_codigo_tecnico', $tbProblema->listarProblemasTecnicos($_SESSION['dep_codigo']),true,$dados);
+
+		$SelectProblemaTecnico = new SelectOption();
+
+		$SelectProblemaTecnico->setStmt($tbProblema->listarProblemasTecnicos($_SESSION['dep_codigo']))
+						->setSelectName('pro_codigo_tecnico')
+						->setSelectedItem($dados[4])
+						->setOptionEmpty('Não há problema técnico indicado')
+						->listOption();
+
+
     	
     	?>
     	</td>
@@ -157,10 +167,12 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
     
 </form>
 		<hr>
-      	
-      	<form action="">
- 	    	<input type="submit" name="alterar" class="button-tela" value=" Voltar " />
- 	    </form>
+
+
+		<a href="action/formcontroler.php?<?php echo base64_encode('alterar/Solicitacao'); ?>=<?php echo base64_encode($dados['0']); ?>">
+			<span class="button-tela">Voltar</span>
+		</a>
+
 	  </td>
   	</tr>
 
@@ -172,11 +184,9 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
   	try
   	{
 	  	$tbassentamento = new TbAssentamento();
-	  	$tabela = $tbassentamento->listarAssentamento($dados[0]);
-	
-	  	$cabecalho = array('Descrição','Data','Editor');
 	  	
-	  	$grid = new DataGrid($cabecalho, $tabela);
+	  	$grid = new DataGrid(array('Descrição','Data','Editor'),
+							$tbassentamento->listarAssentamento($dados['0']));
 	  	
 	  	$grid->titulofield = 'Assentameto(s)';
 	  	$grid->islink = false;
