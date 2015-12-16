@@ -112,6 +112,7 @@ $SolicitacaoTerceiro = $tbSolicitacaoTerceiro->getChamadoInTerceiro($dados['sol_
 
 	  		$SelectAtendente->setStmt($tbusuario->selectUsuarioDepCompleto($_SESSION['dep_codigo']))
 				->setSelectName('usu_codigo_atendente')
+				->setClass('usu_codigo_atendente')
 				->setSelectedItem($atendente['usu_codigo_atendente'])
 				->setOptionEmpty('Não hão atendentes')
 				->listOption();

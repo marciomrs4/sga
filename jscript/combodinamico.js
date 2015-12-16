@@ -70,5 +70,17 @@ $listar(document).ready(function(){
 		return false;
 	});
 
+	//Criado para colocar o nome do usuario selecionado com a frase dentro o campo de assentamento.
+	$listar('.usu_codigo_atendente').change(function() {
+
+		var usuario = $listar('.usu_codigo_atendente option:selected').text();
+
+		usuario = usuario.split(' ');
+
+		$listar('textarea[name="ass_descricao"]').html(usuario[0] + ' por favor verificar.');
+
+		return false;
+	});
+
 
 });
