@@ -51,7 +51,7 @@ $_SESSION['alterar/UsuarioProjeto'] = $tbUsuarioProjeto->getForm(base64_decode($
       <input type="button" onclick="pergunta()" name="apagar" value="Remover" />
 
         <a href="./action/formcontroler.php?<?php echo(base64_encode('alterar/Projeto').'='.base64_encode($_SESSION['alterar/UsuarioProjeto']['pro_codigo']));?>">
-          <img src="./css/images/voltar.png" title="Voltar para Projeto">
+          <span class="button-tela">Voltar</span>
         </a>
 
       </td>

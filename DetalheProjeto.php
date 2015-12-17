@@ -156,7 +156,7 @@ $tbAtaReuniao = new TbAtaReuniao();
                                                 <button value="<?php echo $ata['ata_codigo']; ?>" id="ata" type="button" class="btn btn-primary btn-xs"
                                                         data-toggle="modal" data-target="#myModal" title="Ata reunião">
                                                     <span class="glyphicon glyphicon-book"></span>
-                                                    Ata: <?php echo $form['ata_assunto']?>
+                                                    Ata: <?php echo $form['ata_data'],' | ', $form['ata_assunto']?>
 
                                                 </button>
                                             </li>

@@ -104,9 +104,20 @@ $_SESSION['cadastrar/AtaReuniao'] = $tbProjeto->getProjetoToCadastroApontamento(
     </tr>
 
     <tr>
-      <td colspan="2" align="left">
+      <td>
+      &nbsp;
+      </td>
+    </tr>
+
+    <tr>
+      <td align="left">
 	      <input type="submit" name="salvar" class="button-tela" value="Salvar" />
 	  </td>
+	  <td>
+        <a href="action/formcontroler.php?<?php echo base64_encode('alterar/Projeto'); ?>=<?php echo base64_encode($_SESSION['cadastrar/AtaReuniao']['pro_codigo']); ?>">
+            <span class="button-tela">Voltar</span>
+        </a>
+      </td>
     </tr>
 
   </table>

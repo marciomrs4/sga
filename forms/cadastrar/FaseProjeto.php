@@ -25,6 +25,11 @@ Sessao::validarForm('cadastrar/FaseProjeto');
       <td colspan="2" align="right">
 	      <input type="submit" name="cadastrar" id="button" value="Cadastrar" />
       </td>
+      <td>
+        <a href="action/formcontroler.php?<?php echo base64_encode('alterar/Projeto'); ?>=<?php echo $_SESSION['valor']; ?>">
+          <span class="button-tela">Voltar</span>
+        </a>
+      </td>
     </tr>
     
   </table>

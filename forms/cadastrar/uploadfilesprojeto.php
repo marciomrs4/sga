@@ -15,7 +15,7 @@
                 </td>
                 <td>
                     <a href="./action/formcontroler.php?<?php echo(base64_encode('alterar/Projeto').'='.$_SESSION['valor']);?>">
-                        <img src="./css/images/voltar.png" title="Voltar para Projeto">
+                        <span class="button-tela">Voltar</span>
                     </a>
 
                 </td>

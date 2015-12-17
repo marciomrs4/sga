@@ -110,9 +110,23 @@ $dadosAtaForm = unserialize($dadosAtaReuniao['form_ata_reuniao']);
     </tr>
 
     <tr>
-      <td colspan="2" align="left">
+      <td>
+      &nbsp;
+      </td>
+    </tr>
+
+
+    <tr>
+      <td align="left">
 	      <input type="submit" name="salvar" class="button-tela" value="Salvar" />
 	  </td>
+
+	  	  <td>
+        <a href="action/formcontroler.php?<?php echo base64_encode('alterar/Projeto'); ?>=<?php echo base64_encode($dadosAtaReuniao['pro_codigo_projeto']); ?>">
+            <span class="button-tela">Voltar</span>
+        </a>
+      </td>
+
     </tr>
 
   </table>

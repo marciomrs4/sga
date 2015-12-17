@@ -276,6 +276,7 @@ class TbUsuario extends Banco
 						WHERE USU.usu_codigo NOT IN(?,?)
 						AND USU.usu_codigo != 1
 						AND ACE.ace_ativo = 'S'
+						ORDER BY 2
 				  ");
 		
 		try 

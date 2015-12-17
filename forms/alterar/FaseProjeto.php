@@ -31,6 +31,11 @@ $_SESSION['alterar/FaseProjeto'] = $tbFaseProjeto->getForm(base64_decode($_SESSI
       <td colspan="2" align="right">
 	      <input type="submit" name="cadastrar" id="button" value="Alterar" />
       </td>
+      <td>
+        <a href="action/formcontroler.php?<?php echo base64_encode('alterar/Projeto'); ?>=<?php echo base64_encode($_SESSION['alterar/FaseProjeto']['pro_codigo']); ?>">
+          <span class="button-tela">Voltar</span>
+        </a>
+      </td>
     </tr>
     
   </table>
