@@ -3,6 +3,8 @@ include_once 'componentes/TopoRnc.php';
 
 
 $tbOcorrenciaRnc = new TbOcorrenciaRnc();
+$TbSolicitacao = new TbSolicitacao();
+
 
 $busca = new Busca();
 
@@ -53,6 +55,16 @@ if($tbOcorrenciaRnc->validarOcorrencia($busca->getValueGet('sol_codigo')) >= 1){
             <label class="text-info">CRIANDO RNC COM A OCORRÊNCIA:</label>
             <?php echo $busca->getValueGet('sol_codigo'); ?>
             <input type="hidden" name="sol_codigo" value="<?php echo($busca->getValueGet('sol_codigo')); ?>">
+        </div>
+
+        <div class="col-xs-12">
+            <label class="text-info">DESCRIÇÃO DA OCORRÊNCIA:</label>
+            <?php echo $TbSolicitacao->getDescricaoSolicitacao($busca->getValueGet('sol_codigo')); ?>
+            <input type="hidden" name="sol_codigo" value="<?php echo($busca->getValueGet('sol_codigo')); ?>">
+        </div>
+
+        <div class="col-xs-12">
+            <hr>
         </div>
 
         <div class="col-xs-12">

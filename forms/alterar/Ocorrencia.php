@@ -34,12 +34,26 @@ $OcorrenciaRnc = $tbOcorrenciaRnc->getFormOcorrenciaRnc($onc_codigo);
 
             <tr>
                 <th nowrap="nowrap">
-                    Número do Chamado:
+                    Número da ocorrência:
                 </th>
                 <td>
                     <?php echo $OcorrenciaRnc['sol_codigo']; ?>
                     <input type="hidden" name="sol_codigo" value="<?php echo $OcorrenciaRnc['sol_codigo']; ?>">
                     <input type="hidden" name="onc_codigo" value="<?php echo $OcorrenciaRnc['onc_codigo']; ?>">
+                </td>
+            </tr>
+
+            <tr>
+                <th nowrap="nowrap">
+                    Descriação da ocorrência:
+                </th>
+                <td>
+                    <?php
+                    $tbSolicitacao = new TbSolicitacao();
+
+                    echo $tbSolicitacao->getDescricaoSolicitacao($OcorrenciaRnc['sol_codigo']);
+
+                    ?>
                 </td>
             </tr>
 

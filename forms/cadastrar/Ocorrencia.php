@@ -30,11 +30,25 @@ $sol_codigo = base64_decode($_SESSION['valorform']);
 
             <tr>
                 <th nowrap="nowrap">
-                    Número do Chamado:
+                    Número da ocorrência:
                 </th>
                 <td>
                     <?php echo $sol_codigo; ?>
                     <input type="hidden" name="sol_codigo" value="<?php echo $sol_codigo; ?>">
+                </td>
+            </tr>
+
+            <tr>
+                <th nowrap="nowrap">
+                    Descriação da ocorrência:
+                </th>
+                <td>
+                    <?php
+                    $tbSolicitacao = new TbSolicitacao();
+
+                    echo $tbSolicitacao->getDescricaoSolicitacao($sol_codigo);
+
+                    ?>
                 </td>
             </tr>
 
