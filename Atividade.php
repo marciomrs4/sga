@@ -39,7 +39,7 @@ echo "</div>";
 		    FormComponente::$name = 'Todos';
 		    FormComponente::selectOption('pro_codigo',$tbProjeto->listarProjetoTodos($_SESSION['dep_codigo']),true,$_SESSION['post']);
 			?>
-			Usuário:
+			Usu?rio:
 			<?php 
 				
 		    $tbUsuario = new TbUsuario();
@@ -51,7 +51,7 @@ echo "</div>";
 	</tr>
 	<tr>
 		<td>
-			Descrição:
+			Descri??o:
 				<input type="text" name="at_descricao" size="50" value="<?php echo($busca->getDados('at_descricao'));?>">
 		</td>				
 
@@ -63,7 +63,7 @@ echo "</div>";
 </fieldset>
 
 <?php 
-$cabecalho = array('N°','Projeto','Executor','Prev. Inicio','Previsão. Fim','Status','Descrição','Data Aponta.','Descrição','Qtd');
+$cabecalho = array('Número','Projeto','Executor','Prev. Inicio','Previs?o. Fim','Status','Descri??o','Data Aponta.','Descri??o','Qtd');
 $datagrid->setCabecalho($cabecalho);
 
 
@@ -86,7 +86,9 @@ $datagrid->setDados($busca->listarAtividade());
 
 $datagrid->titulofield = 'Atividade(s)';
 $datagrid->acao = 'alterar/Atividade';
-$datagrid->nomelink = '<img src="/sga/css/images/search2.png" title="Visualizar" />';	
+$datagrid->nomelink = '<img src="/sga/css/images/search2.png" title="Visualizar" />';
+
+$datagrid->colunaoculta = 1;
 
 $datagrid->islink2 = true;
 $datagrid->nomelink2 = '<img src="/sga/css/images/adcionar.png" title="Adicionar Apontamento" />';

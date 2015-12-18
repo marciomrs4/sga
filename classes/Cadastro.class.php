@@ -236,7 +236,7 @@ class Cadastro extends Dados
 			$this->dados['numero_rnc'] = $tbrnc->getNumberRncFormatado($this->dados['nc_codigo']);
 			$this->dados['usu_codigo'] = $_SESSION['usu_codigo'];
 			$this->dados['ass_descricao'] = 'Este chamado esta sendo encerrado devido a abertura da RNC '
-											. $this->dados['numero_rnc'] .'.';
+				. $this->dados['numero_rnc'] .'.';
 
 			$tbassentamento->insert($this->dados);
 
@@ -259,8 +259,8 @@ class Cadastro extends Dados
 			//Pega todos os arquivos que houver no chamado e coloca na RNC
 			$fileCopy = new FileCopy();
 			$fileCopy->setChamado($this->dados['sol_codigo'])
-					 ->setRnc($this->dados['nc_codigo'])
-					 ->copyChamadoToRnc();
+				->setRnc($this->dados['nc_codigo'])
+				->copyChamadoToRnc();
 
 			$email = new Email();
 			$this->dados['Solicitante'] = true;
@@ -527,24 +527,24 @@ class Cadastro extends Dados
 
 
 
-/*					#Instancia da classe Arquivo que manipula os aquivos
-					$arquivo = new Arquivo();
-					#Metodo setDados que serve para setar o $file que cont?m todo o arquivo
-					$arquivo->setDados($file);
+				/*					#Instancia da classe Arquivo que manipula os aquivos
+                                    $arquivo = new Arquivo();
+                                    #Metodo setDados que serve para setar o $file que cont?m todo o arquivo
+                                    $arquivo->setDados($file);
 
-					* Capturando os dados do arquivo
+                                    * Capturando os dados do arquivo
 
-					$this->dados['ane_anexo'] = $arquivo->arquivoBinario();
-					$this->dados['ane_nome'] = $arquivo->arquivoNome();
-					$this->dados['ane_tamanho'] = $arquivo->arquivoTamanho();
-					$this->dados['ane_tipo'] = $arquivo->arquivoTipo();
+                                    $this->dados['ane_anexo'] = $arquivo->arquivoBinario();
+                                    $this->dados['ane_nome'] = $arquivo->arquivoNome();
+                                    $this->dados['ane_tamanho'] = $arquivo->arquivoTamanho();
+                                    $this->dados['ane_tipo'] = $arquivo->arquivoTipo();
 
-					#Gravando o arquivo no banco dentro da tabela de anexo
-					$tbanexo = new TbAnexo();
-					$tbanexo->insert($this->dados);*/
+                                    #Gravando o arquivo no banco dentro da tabela de anexo
+                                    $tbanexo = new TbAnexo();
+                                    $tbanexo->insert($this->dados);*/
 
-					$this->dados['sol_codigo'] = base64_encode($this->dados['sol_codigo']);
-					$this->cadastrarAnexoChamado($file);
+				$this->dados['sol_codigo'] = base64_encode($this->dados['sol_codigo']);
+				$this->cadastrarAnexoChamado($file);
 
 
 
@@ -973,13 +973,13 @@ class Cadastro extends Dados
 				}
 
 				//Valida se a data inicial da atividade é maior que a data inicial do projeto
-				if($at_previsao_inicio <= $pro_previsao_inicio){
-					throw new \Exception('A data inicial da atividade deve ser maior que a data inicial do projeto.');
+				if($at_previsao_inicio < $pro_previsao_inicio){
+					throw new \Exception('A data inicial da atividade deve ser maior que a data inicial do projeto. '.date('d-m-Y',$pro_previsao_inicio));
 				}
 
 				//Valida se a data final da atividade é menor que a data final do projeto
 				if($at_previsao_fim > $pro_previsao_fim){
-					throw new \Exception('A data final da atividade deve ser menor ou igual que a data final do projeto.');
+					throw new \Exception('A data final da atividade deve ser menor ou igual que a data final do projeto.' .date('d-m-Y',$pro_previsao_fim));
 				}
 
 
@@ -993,6 +993,12 @@ class Cadastro extends Dados
 				{
 
 					$tbAtividade = new TbAtividade();
+
+					$projeto = $this->dados['pro_codigo']-1;
+					$atividade = $tbAtividade->getNumeroAtividadeProjeto($this->dados['pro_codigo'])+1;
+
+					$this->dados['at_titulo'] = $projeto . '-' .$atividade;
+
 					$this->dados['at_codigo'] = $tbAtividade->insert($this->dados);
 
 					$qtd = $tbAtividade->getCountQtdAtividadeByProjetos($this->dados['pro_codigo']);

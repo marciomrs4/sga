@@ -15,7 +15,7 @@ include_once($_SERVER['DOCUMENT_ROOT']."/sga/componentes/config.php");
             type: 'column'
         },
         title: {
-            text: 'Atividades Abertas'
+            text: 'Atividades Abertas (6 meses)'
         },
         xAxis: {
             type: 'category',

@@ -131,10 +131,10 @@ $dados = $tbsolicitacao->getFormAssentamento(base64_decode($_SESSION['valorform'
     
 </form>
 		<hr>
-      	
-      	<form action="">
- 	    	<input type="submit" name="alterar" class="button-tela" value=" Voltar " />
- 	    </form>
+
+	<a href="action/formcontroler.php?<?php echo base64_encode('alterar/Solicitacao'); ?>=<?php echo base64_encode($dados['0']); ?>">
+		<span class="button-tela">Voltar</span>
+	</a>
 	  </td>
   	</tr>
 

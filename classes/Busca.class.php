@@ -915,6 +915,47 @@ class Busca extends Dados
 	}
 
 
+	public function listarAtividadeProjetoByUserFinal()
+	{
+
+		$tbAtividade = new TbAtividade();
+
+		$dataAtividade = $tbAtividade->getMaxAndMinDataAtividades($this->dados['usu_codigo_responsavel']);
+
+		$this->dados['data1'] = ($this->dados['data1'] == '') ? $dataAtividade['menor_data'] : $this->dados['data1'];
+		$this->dados['data2'] = ($this->dados['data2'] == '') ? $dataAtividade['maior_data'] : $this->dados['data2'];
+
+		$this->dados['data1'] = date('Y-m-d',strtotime(str_replace('/','-',$this->dados['data1'])));
+		$this->dados['data2'] = date('Y-m-d',strtotime(str_replace('/','-',$this->dados['data2'])));
+
+		$this->dados['usu_codigo_responsavel'];
+
+
+		return $tbAtividade->listarAtividadeProjetoByUser($this->dados)->fetchAll(\PDO::FETCH_NUM);
+
+	}
+
+	public function getTotalAtividadeUsuario()
+	{
+
+		$tbAtividade = new TbAtividade();
+
+		$dataAtividade = $tbAtividade->getMaxAndMinDataAtividades($this->dados['usu_codigo_responsavel']);
+
+		$this->dados['data1'] = ($this->dados['data1'] == '') ? $dataAtividade['menor_data'] : $this->dados['data1'];
+		$this->dados['data2'] = ($this->dados['data2'] == '') ? $dataAtividade['maior_data'] : $this->dados['data2'];
+
+		$this->dados['data1'] = date('Y-m-d',strtotime(str_replace('/','-',$this->dados['data1'])));
+		$this->dados['data2'] = date('Y-m-d',strtotime(str_replace('/','-',$this->dados['data2'])));
+
+		$this->dados['usu_codigo_responsavel'];
+
+
+		return $tbAtividade->getQuantidadeAtividadeByUser($this->dados);
+
+	}
+
+
 
 }
 ?>

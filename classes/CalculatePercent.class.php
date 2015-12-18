@@ -79,6 +79,31 @@ class CalculatePercent
 
 	}
 
+	public function getSimbol()
+	{
+		$exclamation = 'exclamation-sign';
+		$up = 'thumbs-up';
+		$down = 'thumbs-down';
+
+		switch ($this->getColor()){
+			case 'danger' :
+				return $down;
+			break;
+
+			case 'warning' :
+				return $exclamation;
+			break;
+
+			case 'success' :
+				return $up;
+			break;
+
+			default:
+				return;
+			break;
+		}
+
+	}
 
 }
 

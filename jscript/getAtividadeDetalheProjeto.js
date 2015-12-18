@@ -10,3 +10,14 @@ $atividade(document).on('click','#atividade',function(){
             $atividade('#carregaratividade').html(data);
         });
 });
+
+
+$atividade(document).on('click','#DocinformacaoCoresPrazo',function(){
+
+    var codigo = $atividade(this).val();
+
+    $atividade.post('services/DocInformacaoCoresPrazo.php',
+        {at_codigo: codigo}, function (data) {
+            $atividade('#carregaratividade').html(data);
+        });
+});

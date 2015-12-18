@@ -684,13 +684,13 @@ class Alteracao extends Dados
 				}
 
 				//Valida se a data inicial da atividade é maior que a data inicial do projeto
-				if($at_previsao_inicio <= $pro_previsao_inicio){
-					throw new \Exception('A data inicial da atividade deve ser maior que a data inicial do projeto.');
+				if($at_previsao_inicio < $pro_previsao_inicio){
+					throw new \Exception('A data inicial da atividade deve ser maior que a data inicial do projeto. '.date('d-m-Y',$pro_previsao_inicio));
 				}
 
 				//Valida se a data final da atividade é menor que a data final do projeto
 				if($at_previsao_fim > $pro_previsao_fim){
-					throw new \Exception('A data final da atividade deve ser menor ou igual que a data final do projeto.');
+					throw new \Exception('A data final da atividade deve ser menor ou igual que a data final do projeto. '.date('d-m-Y',$pro_previsao_fim));
 				}
 
 				//Valida se a atividade esta em andamento e não deixa editar

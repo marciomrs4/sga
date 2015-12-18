@@ -483,6 +483,8 @@ class TbUsuario extends Banco
 		}
 		
 	}
-	
+
+
+
 }
 ?>

@@ -41,7 +41,13 @@ $n = rand(1,100)
 	</div>	
 	  
 	<div class="container-fluid collapse navbar-collapse" id="menu-principal">
-            <h4 class="navbar-text"><a href="PainelProjetoUsuarios.php" title="Voltar">SGA</a> - DETALHES DO PROJETO</h4>
+            <h4 class="navbar-text">
+
+				<span style="cursor: pointer" id="DocinformacaoCoresPrazo" data-toggle="modal" data-target="#myModal" title="Como funciona">
+					<span class="glyphicon glyphicon-question-sign"></span>
+				</span>
+
+				<a href="PainelProjetoUsuarios.php" title="Voltar">SGA</a> - DETALHES DO PROJETO</h4>
             <h5 class="navbar-right navbar-text"><span class="estiloniver"> <?php echo (date('d-m-Y')); ?> <span id="timer"></span></span></h5><span class="navbar-right navbar-text"></span>
 	</div>				
 </nav>

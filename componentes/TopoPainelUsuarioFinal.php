@@ -31,7 +31,11 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/sga/componentes/config.php');
 	</div>	
 	  
 	<div class="container-fluid collapse navbar-collapse" id="menu-principal">
-            <h4 class="navbar-text"><a href="PainelProjetosEquipe.php" title="Voltar">SGA</a> - PAINEL DE USUÁRIOS</h4>
+            <h4 class="navbar-text">
+                			<span style="cursor: pointer" id="DocinformacaoCoresPrazo" data-toggle="modal" data-target="#myModal" title="Como funciona">
+				<span class="glyphicon glyphicon-question-sign"></span>
+			</span>
+                <a href="PainelProjetosEquipe.php" title="Voltar">SGA</a> - PAINEL DE USUÁRIOS</h4>
             <h5 class="navbar-right navbar-text">
                 <span class="estiloniver">
                     <?php echo (date('d-m-Y')); ?>

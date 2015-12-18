@@ -6,7 +6,7 @@
 	
 	date_default_timezone_set('America/Sao_Paulo');
 	
-	$wdays_labels	= array("SEG", "TER", "QUA", "QUI", "SEX", "SAB", "DOM");
+	$wdays_labels	= array("S", "T", "Q", "Q", "S", "S", "D");
 	$month_labels	= array("JANEIRO", "FEVEREIRO", "MAR&Ccedil;O", "ABRIL", "MAIO", "JUNHO", "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO");
 	$month_s_labels	= array("Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez");
 ?>
