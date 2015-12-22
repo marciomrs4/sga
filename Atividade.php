@@ -39,7 +39,7 @@ echo "</div>";
 		    FormComponente::$name = 'Todos';
 		    FormComponente::selectOption('pro_codigo',$tbProjeto->listarProjetoTodos($_SESSION['dep_codigo']),true,$_SESSION['post']);
 			?>
-			Usu?rio:
+			Usuário:
 			<?php 
 				
 		    $tbUsuario = new TbUsuario();
@@ -51,7 +51,7 @@ echo "</div>";
 	</tr>
 	<tr>
 		<td>
-			Descri??o:
+			Descrição:
 				<input type="text" name="at_descricao" size="50" value="<?php echo($busca->getDados('at_descricao'));?>">
 		</td>				
 
@@ -63,7 +63,7 @@ echo "</div>";
 </fieldset>
 
 <?php 
-$cabecalho = array('Número','Projeto','Executor','Prev. Inicio','Previs?o. Fim','Status','Descri??o','Data Aponta.','Descri??o','Qtd');
+$cabecalho = array('Número','Projeto','Executor','Prev. Inicio','Previsão. Fim','Status','Descrição','Data Aponta.','Descrição','Qtd');
 $datagrid->setCabecalho($cabecalho);
 
 

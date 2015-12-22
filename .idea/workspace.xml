@@ -4,25 +4,7 @@
     <list default="true" id="2526c6c5-3cfb-4a59-b223-ceacd7d0168e" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/css/images/ck - Cópia.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/projetos/214/ATA DE REUNI�O 25-15.docx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Alteracao.class.php" afterPath="$PROJECT_DIR$/classes/Alteracao.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Atividade.php" afterPath="$PROJECT_DIR$/Atividade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Busca.class.php" afterPath="$PROJECT_DIR$/classes/Busca.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Cadastro.class.php" afterPath="$PROJECT_DIR$/classes/Cadastro.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/CalculatePercent.class.php" afterPath="$PROJECT_DIR$/classes/CalculatePercent.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/EnvioTerceiro.php" afterPath="$PROJECT_DIR$/forms/alterar/EnvioTerceiro.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/EnvioTerceiro.php" afterPath="$PROJECT_DIR$/forms/cadastrar/EnvioTerceiro.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PainelProjetosUsuarioFinal.php" afterPath="$PROJECT_DIR$/PainelProjetosUsuarioFinal.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbAtividade.class.php" afterPath="$PROJECT_DIR$/model/TbAtividade.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbUsuario.class.php" afterPath="$PROJECT_DIR$/model/TbUsuario.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/TopoDescricaoProjeto.php" afterPath="$PROJECT_DIR$/componentes/TopoDescricaoProjeto.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/TopoPainelProjeto.php" afterPath="$PROJECT_DIR$/componentes/TopoPainelProjeto.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/componentes/TopoPainelUsuarioFinal.php" afterPath="$PROJECT_DIR$/componentes/TopoPainelUsuarioFinal.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/chamadoTempoSolucao.js" afterPath="$PROJECT_DIR$/jscript/chamadoTempoSolucao.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/getAtividadeDetalheProjeto.js" afterPath="$PROJECT_DIR$/jscript/getAtividadeDetalheProjeto.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/getGraficoAtividadeAbertaUsuario.php" afterPath="$PROJECT_DIR$/jscript/getGraficoAtividadeAbertaUsuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/getGraficoAtividadeConcluidaUsuario.php" afterPath="$PROJECT_DIR$/jscript/getGraficoAtividadeConcluidaUsuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jscript/inc/vars.php" afterPath="$PROJECT_DIR$/jscript/inc/vars.php" />
     </list>
     <ignored path="sga.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,8 +49,8 @@
       <file leaf-file-name="Atividade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Atividade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44155845">
-              <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.8181818">
+              <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -432,7 +414,7 @@
     <frame x="1440" y="0" width="1440" height="875" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2579972" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2579972" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904884" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -800,7 +782,7 @@
         <state vertical-scroll-proportion="0.37586686">
           <caret line="27" column="38" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#h4#0;n#div#1;n#nav#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h4#0;n#div#1;n#nav#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -821,7 +803,7 @@
         <state vertical-scroll-proportion="0.7027417">
           <caret line="38" column="19" selection-start-line="36" selection-start-column="0" selection-end-line="38" selection-end-column="19" />
           <folding>
-            <element signature="n#style#0;n#span#0;n#h4#0;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h4#0;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1047,8 +1029,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Atividade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44155845">
-          <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.8181818">
+          <caret line="84" column="47" selection-start-line="84" selection-start-column="47" selection-end-line="84" selection-end-column="47" />
           <folding />
         </state>
       </provider>
