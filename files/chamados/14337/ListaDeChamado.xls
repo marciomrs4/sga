@@ -1,0 +1,22 @@
+<div id='tabela'><br /><br />
+				<fieldset>
+					<legend>  9 resultado(s)</legend>
+				<table class='tabela' border='2'>
+			<thead>
+			<tr align='center' class='linha3'><th nowrap='nowrap'>Número</th><th nowrap='nowrap'>Solicitante</th><th nowrap='nowrap'>Data Abertura</th><th nowrap='nowrap'>Problema</th><th nowrap='nowrap'>Status</th><th nowrap='nowrap'>Depto Solicitante</th><th nowrap='nowrap'>Descrição</th><th nowrap='nowrap'>Atendente</th></tr>
+			</thead><tr class ='linha2'><td>16971</td><td>Ana Paula</td><td>03-12-2015 08:49:28</td><td>PORTAL</td><td>EM ATENDIMENTO</td><td>Qualidade</td><td>Bom dia
+
+As colaboradoras Ingrid e Lucia não estão consegu</td><td>wellington.junior@ceadis.org.br</td><tr class ='linha1'><td>16942</td><td>Pablo</td><td>02-12-2015 14:39:19</td><td>PORTAL</td><td>EM ATENDIMENTO</td><td>Movimentação</td><td>estou tentando importar alguns dados no portal para o excel </td><td>wellington.junior@ceadis.org.br</td><tr class ='linha2'><td>16891</td><td>Ana Paula</td><td>01-12-2015 09:58:59</td><td>ARMHAZENA</td><td>EM ATENDIMENTO</td><td>Qualidade</td><td>Bom dia
+
+O item RS-1993 foi atendido em duplicidade no cen</td><td>wellington.junior@ceadis.org.br</td><tr class ='linha1'><td>16888</td><td>Wagner</td><td>01-12-2015 08:57:56</td><td>Portal - Aplicação WEB</td><td>EM ATENDIMENTO</td><td>Logistica Interna</td><td>Quando tento realizar o download em PEDIDOXMES da unidade Ip</td><td>wellington.junior@ceadis.org.br</td><tr class ='linha2'><td>16878</td><td>Jefferson</td><td>30-11-2015 14:05:56</td><td>PORTAL</td><td>EM ATENDIMENTO</td><td>Logistica Interna</td><td>O portal não esta gerando etiquetas avulsas de pacto, quando</td><td>wellington.junior@ceadis.org.br</td><tr class ='linha1'><td>16742</td><td>Jefferson</td><td>23-11-2015 16:02:59</td><td>PORTAL</td><td>EM ATENDIMENTO</td><td>Logistica Interna</td><td>após ter criado um armário, começo a associar os itens nas s</td><td>wellington.junior@ceadis.org.br</td><tr class ='linha2'><td>16726</td><td>Ana Paula</td><td>23-11-2015 11:35:53</td><td>ARMHAZENA</td><td>EM ATENDIMENTO</td><td>Qualidade</td><td>Bom dia Marcio
+
+Favor verificar e-mail enviado sobre diver</td><td>wellington.junior@ceadis.org.br</td><tr class ='linha1'><td>16669</td><td>Adelia</td><td>18-11-2015 13:30:15</td><td>PORTAL</td><td>EM ATENDIMENTO</td><td>Logistica Interna</td><td>HMI- PDF estÃ¡ gerando pÃ¡ginas em branco,de etiquetas avuls</td><td>wellington.junior@ceadis.org.br</td><tr class ='linha2'><td>15271</td><td>Ana Paula</td><td>24-09-2015 11:28:10</td><td>PORTAL</td><td>EM ATENDIMENTO</td><td>Qualidade</td><td>Bom dia
+
+Favor verificar o item SP-17174 solicitado na dat</td><td>wellington.junior@ceadis.org.br</td></tr><tfoot>
+			<tr align='center'>
+				<td colspan='8' class='linha3'></td>
+			 </tr>
+			</tfoot>
+		</table>
+		</fieldset>
+			</div>
