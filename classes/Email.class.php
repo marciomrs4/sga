@@ -381,4 +381,104 @@ class Email extends PHPMailer
 
 	}
 
+
+	public function emailControleVersaoEdicao($dados)
+	{
+		$tbSistema = new TbSistemas();
+		$sistema = $tbSistema->getForm($dados['sis_codigo']);
+
+
+		#Pego e-mail do usuário chave do sistema
+		$tbusuario = new TbUsuario();
+		$Usuario = $tbusuario->getUsuario($sistema['usu_codigo_usuario_chave']);
+
+		$UsuarioCriador = $tbusuario->getUsuario($_SESSION['usu_codigo']);
+
+		//Email do Departamento
+		$tbdepartamento = new TbDepartamento();
+		$emaildepto = $tbdepartamento->getDepartamentoEmail($_SESSION['dep_codigo']);
+
+		$dados['vso_data'] = ValidarDatas::dataCliente($dados['vso_data']);
+		$dados['form_versao']['vso_data'] = ValidarDatas::dataCliente($dados['form_versao']['vso_data']);
+
+		$sistemaOld = $tbSistema->getForm($dados['form_versao']['sis_codigo']);
+
+		$dados['form_versao']['sis_codigo'];
+		$dados['form_versao']['vso_versao'];
+		$dados['form_versao']['vso_data'];
+		$dados['form_versao']['vso_novas_instalacoes'];
+		$dados['form_versao']['vso_obs'];
+
+		$this->cabecalho = 'Houve uma atualização de versão no sistema: '.$sistemaOld['sis_descricao'];
+		#De
+		$this->mensagem = '<b>Alterado de: </b><br/>';
+		$this->mensagem .= '<b>Versão: </b>'.$dados['form_versao']['vso_versao'].'<br/>';
+		$this->mensagem .= '<b>Sistema: </b>'.$sistemaOld['sis_descricao'].'<br/>';
+		$this->mensagem .= '<b>Data: </b>'.$dados['form_versao']['vso_data'].'<br/><br/>';
+		//$this->mensagem .= '<b>Versão criada por: </b>'. $UsuarioCriador['usu_nome'] .' | '.$UsuarioCriador['usu_email']. '<br/>';
+		$this->mensagem .= '<b>Novas instalações: </b>'.$dados['form_versao']['vso_novas_instalacoes'].'<br/>';
+		$this->mensagem .= '<b>Observações: </b>'.$dados['form_versao']['vso_obs'].'<br/><br/>';
+		#Para
+		$this->mensagem .= '<b>Para: </b><br/>';
+		$this->mensagem .= '<b>Nova versão: </b>'.$dados['vso_versao'].'<br/>';
+		$this->mensagem .= '<b>Sistema: </b>'.$sistema['sis_descricao'].'<br/>';
+		$this->mensagem .= '<b>Data: </b>'.$dados['vso_data'].'<br/><br/>';
+		//$this->mensagem .= '<b>Versão criada por: </b>'. $UsuarioCriador['usu_nome'] .' | '.$UsuarioCriador['usu_email']. '<br/>';
+		$this->mensagem .= '<b>Novas instalações: </b>'.$dados['vso_novas_instalacoes'].'<br/>';
+		$this->mensagem .= '<b>Observações: </b>'.$dados['vso_obs'].'<br/><br/>';
+
+		#E-mail de envido do usuario
+		if($dados['UsuarioChave'])
+		{
+			$this->AddAddress($Usuario['usu_email']);
+		}
+
+		#E-mail de envio do departamento
+		if($dados['Departamento'])
+		{
+			$this->AddAddress($emaildepto);
+		}
+
+		$this->enviarEmail();
+	}
+
+	public function emailControleVersao($dados)
+	{
+		$tbSistema = new TbSistemas();
+		$sistema = $tbSistema->getForm($dados['sis_codigo']);
+
+		#Pego e-mail do usuário chave do sistema
+		$tbusuario = new TbUsuario();
+		$Usuario = $tbusuario->getUsuario($sistema['usu_codigo_usuario_chave']);
+		$UsuarioCriador = $tbusuario->getUsuario($_SESSION['usu_codigo']);
+
+		//Email do Departamento
+		$tbdepartamento = new TbDepartamento();
+		$emaildepto = $tbdepartamento->getDepartamentoEmail($_SESSION['dep_codigo']);
+		$dados['vso_data'] = ValidarDatas::dataCliente($dados['vso_data']);
+
+		$this->cabecalho = 'Criado uma nova versão: '.$dados['vso_versao'];
+
+		$this->mensagem = '<b>Foi criada uma nova versão: </b>'.$dados['vso_versao'].'<br/>';
+		$this->mensagem .= '<b>Sistema: </b>'.$sistema['sis_descricao'].'<br/>';
+		$this->mensagem .= '<b>Data: </b>'.$dados['vso_data'].'<br/><br/>';
+		//$this->mensagem .= '<b>Versão criada por: </b>'. $UsuarioCriador['usu_nome'] .' | '.$UsuarioCriador['usu_email']. '<br/>';
+		$this->mensagem .= '<b>Novas instalações: </b>'.$dados['vso_novas_instalacoes'].'<br/><br/>';
+
+		#E-mail de envido do usuario
+		if($dados['UsuarioChave'])
+		{
+			$this->AddAddress($Usuario['usu_email']);
+		}
+
+		#E-mail de envio do departamento
+		if($dados['Departamento'])
+		{
+			$this->AddAddress($emaildepto);
+		}
+
+		$this->enviarEmail();
+
+	}
+
 }

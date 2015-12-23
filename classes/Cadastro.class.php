@@ -1901,6 +1901,36 @@ class Cadastro extends Dados
 
 	}
 
+
+	#Cadastrar Versão
+	public function cadastrarVersao()
+	{
+
+		try {
+			ValidarCampos::campoVazio($this->dados['sis_codigo'], 'Sistema');
+			ValidarCampos::campoVazio($this->dados['vso_versao'], 'Versao');
+			ValidarCampos::campoVazio($this->dados['vso_data'], 'Data');
+			ValidarCampos::campoVazio($this->dados['vso_aprovador'], 'Aprovado Por');
+			ValidarCampos::campoVazio($this->dados['vso_novas_instalacoes'], 'Novas Instalações');
+			//ValidarCampos::campoVazio($this->dados['vso_obs'], 'Observações');
+			$this->dados['usu_codigo'] = $_SESSION['usu_codigo'];
+			$this->dados['vso_data'] = ValidarDatas::dataBanco($this->dados['vso_data']);
+
+			$tbControleVersao = new TbControleVersao();
+			$tbControleVersao->insert($this->dados);
+
+			$email = new Email();
+			/* $this->dados['UsuarioChave'] = true;
+			$this->dados['Departamento'] = true; */
+			$email->emailControleVersao($this->dados);
+
+		}catch (Exception $e)
+		{
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+	}
+
+
 }
 
 ?>

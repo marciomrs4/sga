@@ -373,5 +373,51 @@ $valida(document).ready( function()
 			submitForm(form);
 		}
 	});
-	
+
+	$valida("#versao").validate({
+
+		rules:{
+
+			sis_codigo:{
+				required: true
+			},
+			vso_versao: {
+				required: true
+			},
+			vso_aprovador: {
+				required: true
+			},
+			vso_data: {
+				required: true
+			},
+			vso_novas_instalacoes: {
+				required: true
+			}
+		},
+		/* DEFINI??O DAS MENSAGENS DE ERRO */
+		messages:{
+
+			sis_codigo: {
+				required: "O campo Sistema é obrigatório",
+			},
+			vso_versao: {
+				required: "O campo Versão é obrigatório",
+			},
+			vso_aprovador: {
+				required: "O campo Aprovador é obrigatório",
+			},
+			vso_data: {
+				required: "O campo Data é obrigatório",
+			},
+			vso_novas_instalacoes: {
+				required: "O campo Data é obrigatório",
+			}
+
+		},
+		submitHandler: function(form){
+			submitForm(form);
+		}
+	});
+
+
 });

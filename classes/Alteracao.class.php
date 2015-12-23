@@ -1216,5 +1216,40 @@ class Alteracao extends Dados
 	}
 
 
+	public function alterarVersao()
+	{
+		try {
+			ValidarCampos::campoVazio($this->dados['sis_codigo'], 'Sistema');
+			ValidarCampos::campoVazio($this->dados['vso_versao'], 'Versao');
+			ValidarCampos::campoVazio($this->dados['vso_data'], 'Data');
+			ValidarCampos::campoVazio($this->dados['vso_aprovador'], 'Aprovado Por');
+			ValidarCampos::campoVazio($this->dados['vso_novas_instalacoes'], 'Novas Instalações');
+			//ValidarCampos::campoVazio($this->dados['vso_obs'], 'Observações');
+
+			$this->dados['vso_data'] = ValidarDatas::dataBanco($this->dados['vso_data']);
+
+			//$this->dados['sis_codigo'];
+
+			$this->dados['frase'] = '';
+
+			try {
+				$tbcontroleVersao = new TbControleVersao();
+				//Pegando a lista da atualizacao antes de atualizar
+				$this->dados['form_versao'] = $tbcontroleVersao->getFormVersao($this->dados['vso_codigo']);
+
+				$tbcontroleVersao->update($this->dados);
+
+				$email = new Email();
+				$email->emailControleVersaoEdicao($this->dados);
+
+			}catch (PDOException $e){
+				throw new PDOException($e->getMessage(), $e->getCode());
+			}
+
+		}catch (Exception $e){
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+	}
+
 }
 ?>

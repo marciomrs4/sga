@@ -38,6 +38,12 @@
         $SolicitacaoAcesso = ("<li><a href='SolicitacaoAcessoListar.php'><img src='./css/images/acessorestrito.jpg'> Solicitação de Acesso</a></li>");
         $controleacesso->permitirBotao($SolicitacaoAcesso, array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
 
+
+		if($_SESSION['dep_codigo'] == 5) {
+			$ControleVersao = ("<li><a href='ControleVersao.php'><img src='./css/images/versao.png'> Controle de Versão</a></li>");
+			$controleacesso->permitirBotao($ControleVersao, array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
+		}
+
 		?>
 		</ul>
     </div>

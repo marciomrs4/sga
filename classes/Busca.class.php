@@ -956,6 +956,17 @@ class Busca extends Dados
 	}
 
 
+	public function listarVersoes()
+	{
+		$this->dados['sis_codigo'] = ($this->dados['sis_codigo'] == '') ? '%' : $this->dados['sis_codigo'];
+
+		$this->dados['data1'] = ($this->dados['data1'] == '') ? date('Y-m-d') : ValidarDatas::dataBanco($this->dados['data1']);
+		$this->dados['data2'] = ($this->dados['data2'] == '') ? date('Y-m-d') : ValidarDatas::dataBanco($this->dados['data2']);
+
+		$tbControleVersao = new TbControleVersao();
+		return $tbControleVersao->listarVersoes($this->dados);
+	}
+
 
 }
 ?>
