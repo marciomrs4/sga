@@ -5,7 +5,7 @@ $AlterarVersao = $tbcontroleVersao->getFormVersao(base64_decode($_SESSION['valor
 ?>
 
 <fieldset>
-  <legend> Editar Vers√£o </legend>
+  <legend> Editar Vers„o </legend>
   <form name="alterarversao" id="versao" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/CadastrarVersao.php">
     <table border="0" cellspacing="5">
       <tr>
@@ -34,7 +34,7 @@ $AlterarVersao = $tbcontroleVersao->getFormVersao(base64_decode($_SESSION['valor
         </td>
       </tr>
       <tr>
-        <th align="left" nowrap="nowrap">Vers√£o:</th>
+        <th align="left" nowrap="nowrap">Vers„o:</th>
         <td>
           <input type="text" name="vso_versao" size="30" value="<?php echo $AlterarVersao['vso_versao']; ?>" />
         </td>
@@ -55,14 +55,14 @@ $AlterarVersao = $tbcontroleVersao->getFormVersao(base64_decode($_SESSION['valor
       </tr>
 
       <tr>
-        <th align="left" nowrap="nowrap">Novas Instala√ß√µes:</th>
+        <th align="left" nowrap="nowrap">Novas InstalaÁıes:</th>
         <td>
           <textarea name="vso_novas_instalacoes" rows="8" cols="50"><?php echo($AlterarVersao['vso_novas_instalacoes']); ?></textarea>
         </td>
       </tr>
 
       <tr>
-        <th align="left" nowrap="nowrap">Observa√ß√µes:</th>
+        <th align="left" nowrap="nowrap">ObservaÁıes:</th>
         <td>
           <textarea name="vso_obs" rows="8" cols="50"><?php echo($AlterarVersao['vso_obs']); ?></textarea>
         </td>
@@ -73,7 +73,7 @@ $AlterarVersao = $tbcontroleVersao->getFormVersao(base64_decode($_SESSION['valor
         <td nowrap="nowrap">
           Departamento: <input type="checkbox" name="Departamento" checked="checked" value="1" >
           |
-          Usu√°rio chave: <input type="checkbox" name="UsuarioChave" checked="checked" value="1" >
+          Usu·rio chave: <input type="checkbox" name="UsuarioChave" checked="checked" value="1" >
         </td>
       </tr>
 

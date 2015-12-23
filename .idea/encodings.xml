@@ -3,6 +3,7 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/Administracao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Atividade.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/ControleVersao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Departamentos.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/DetalheProjeto.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GerarAniversariantePdf.php" charset="ISO-8859-1" />
@@ -58,6 +59,7 @@
     <file url="file://$PROJECT_DIR$/componentes/menuprincipal.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/rodape.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/topo1.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/forms/alterar/AlterarVersao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/alterar/AtaReuniao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/alterar/Atividade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/alterar/EnvioTerceiro.php" charset="ISO-8859-1" />
@@ -84,6 +86,7 @@
     <file url="file://$PROJECT_DIR$/forms/cadastrar/SolicitacaoTecnico.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/UsuarioAtividade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/UsuarioProjeto.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/forms/cadastrar/Versao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/departamento.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/uploadfilesChamado.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/uploadfilesMelhoria.php" charset="ISO-8859-1" />

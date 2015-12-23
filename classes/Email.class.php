@@ -409,14 +409,14 @@ class Email extends PHPMailer
 		$dados['form_versao']['vso_novas_instalacoes'];
 		$dados['form_versao']['vso_obs'];
 
-		$this->cabecalho = 'Houve uma atualização de versão no sistema: '.$sistemaOld['sis_descricao'];
+		$this->cabecalho = 'Retificando a atualização do sistema: '.$sistemaOld['sis_descricao'];
 		#De
 		$this->mensagem = '<b>Alterado de: </b><br/>';
 		$this->mensagem .= '<b>Versão: </b>'.$dados['form_versao']['vso_versao'].'<br/>';
 		$this->mensagem .= '<b>Sistema: </b>'.$sistemaOld['sis_descricao'].'<br/>';
 		$this->mensagem .= '<b>Data: </b>'.$dados['form_versao']['vso_data'].'<br/><br/>';
 		//$this->mensagem .= '<b>Versão criada por: </b>'. $UsuarioCriador['usu_nome'] .' | '.$UsuarioCriador['usu_email']. '<br/>';
-		$this->mensagem .= '<b>Novas instalações: </b>'.$dados['form_versao']['vso_novas_instalacoes'].'<br/>';
+		$this->mensagem .= '<b>Lista da publicação: </b>'.$dados['form_versao']['vso_novas_instalacoes'].'<br/>';
 		$this->mensagem .= '<b>Observações: </b>'.$dados['form_versao']['vso_obs'].'<br/><br/>';
 		#Para
 		$this->mensagem .= '<b>Para: </b><br/>';
@@ -424,7 +424,7 @@ class Email extends PHPMailer
 		$this->mensagem .= '<b>Sistema: </b>'.$sistema['sis_descricao'].'<br/>';
 		$this->mensagem .= '<b>Data: </b>'.$dados['vso_data'].'<br/><br/>';
 		//$this->mensagem .= '<b>Versão criada por: </b>'. $UsuarioCriador['usu_nome'] .' | '.$UsuarioCriador['usu_email']. '<br/>';
-		$this->mensagem .= '<b>Novas instalações: </b>'.$dados['vso_novas_instalacoes'].'<br/>';
+		$this->mensagem .= '<b>Lista da publicação: </b>'.$dados['vso_novas_instalacoes'].'<br/>';
 		$this->mensagem .= '<b>Observações: </b>'.$dados['vso_obs'].'<br/><br/>';
 
 		#E-mail de envido do usuario
@@ -457,13 +457,12 @@ class Email extends PHPMailer
 		$emaildepto = $tbdepartamento->getDepartamentoEmail($_SESSION['dep_codigo']);
 		$dados['vso_data'] = ValidarDatas::dataCliente($dados['vso_data']);
 
-		$this->cabecalho = 'Criado uma nova versão: '.$dados['vso_versao'];
+		$this->cabecalho = 'Atualização do sistema: '.$sistema['sis_descricao'];
 
-		$this->mensagem = '<b>Foi criada uma nova versão: </b>'.$dados['vso_versao'].'<br/>';
+		$this->mensagem  = '<b>Versão: </b>'.$dados['vso_versao'].'<br/>';
 		$this->mensagem .= '<b>Sistema: </b>'.$sistema['sis_descricao'].'<br/>';
 		$this->mensagem .= '<b>Data: </b>'.$dados['vso_data'].'<br/><br/>';
-		//$this->mensagem .= '<b>Versão criada por: </b>'. $UsuarioCriador['usu_nome'] .' | '.$UsuarioCriador['usu_email']. '<br/>';
-		$this->mensagem .= '<b>Novas instalações: </b>'.$dados['vso_novas_instalacoes'].'<br/><br/>';
+		$this->mensagem .= '<b>Lista da publicação: </b>'.$dados['vso_novas_instalacoes'].'<br/><br/>';
 
 		#E-mail de envido do usuario
 		if($dados['UsuarioChave'])

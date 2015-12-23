@@ -4,8 +4,8 @@ $ControleAcesso = new ControleDeAcesso();
 $ControleAcesso->permitirAcesso(array(ControleDeAcesso::$TecnicoADM,ControleDeAcesso::$Tecnico));
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/script.php");
 echo"<div class='sub_menu_principal'>";
-echo FormComponente::actionButton('<img src="./css/images/versaoadd.png" title="Nova Vers√£o"  >','cadastrar/Versao');
-Texto::criarTitulo("Controle de Vers√£o");
+echo FormComponente::actionButton('<img src="./css/images/versaoadd.png" title="Nova Vers„o"  >','cadastrar/Versao');
+Texto::criarTitulo("Controle de Vers„o");
 echo "</div>";
 $busca = new Busca();
 $busca->validarPost($_POST);
@@ -13,7 +13,7 @@ $busca->validarPost($_POST);
 
 	<form action="" method="post">
 		<fieldset>
-			<legend>Pesquisar Vers√£o</legend>
+			<legend>Pesquisar Vers„o</legend>
 			<table border="0">
 
 				<tr>
@@ -31,12 +31,10 @@ $busca->validarPost($_POST);
 
 						?>
 					</td>
-				</tr>
-				<tr>
 					<td>
 						Data de:
 						<input type="text" name="data1" class="data" id="data-id" size="10" value="<?php echo($busca->getDados('data1')); ?>" />
-						At√©   <input type="text" name="data2" class="data" id="data" size="10" value="<?php echo($busca->getDados('data2')); ?>"	/>
+						AtÈ   <input type="text" name="data2" class="data" id="data" size="10" value="<?php echo($busca->getDados('data2')); ?>"	/>
 					</td>
 
 					<td>
@@ -50,10 +48,10 @@ $busca->validarPost($_POST);
 <?php
 Arquivo::includeForm();
 $DatagridVersao = new DataGrid();
-$cabecalho = array('Sistema', 'Vers√£o', 'Data', 'Aprovado Por');
+$cabecalho = array('Sistema', 'Vers„o', 'Data', 'Aprovado Por');
 $DatagridVersao->setCabecalho($cabecalho);
 $DatagridVersao->setDados($busca->listarVersoes());
-$DatagridVersao->titulofield = 'Registro(s) de Vers√£o';
+$DatagridVersao->titulofield = 'Registro(s) de Vers„o';
 $DatagridVersao->colunaoculta = 1;
 $DatagridVersao->acao = 'alterar/AlterarVersao';
 $DatagridVersao->nomelink = '<img src="./css/images/search2.png" title="Abrir" />';

@@ -3,7 +3,7 @@ Sessao::validarForm('cadastrar/Versao');
 ?>
 
   <fieldset>
-    <legend> Nova VersÃ£o </legend>
+    <legend> Nova Versão </legend>
     <form name="versao" id="versao" method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/CadastrarVersao.php">
       <table border="0" cellspacing="5">
         <tr>
@@ -27,7 +27,7 @@ Sessao::validarForm('cadastrar/Versao');
           </td>
         </tr>
         <tr>
-          <th align="left" nowrap="nowrap">VersÃ£o:</th>
+          <th align="left" nowrap="nowrap">Versão:</th>
           <td>
             <input type="text" name="vso_versao" size="30" value="" />
           </td>
@@ -48,14 +48,14 @@ Sessao::validarForm('cadastrar/Versao');
         </tr>
 
         <tr>
-          <th align="left" nowrap="nowrap">Novas InstalaÃ§Ãµes:</th>
+          <th align="left" nowrap="nowrap">Novas Instalações:</th>
           <td>
             <textarea name="vso_novas_instalacoes" rows="8" cols="50"></textarea>
           </td>
         </tr>
 
         <tr>
-          <th align="left" nowrap="nowrap">ObservaÃ§Ãµes:</th>
+          <th align="left" nowrap="nowrap">Observações:</th>
           <td>
             <textarea name="vso_obs" rows="8" cols="50"></textarea>
           </td>
@@ -66,7 +66,7 @@ Sessao::validarForm('cadastrar/Versao');
           <td nowrap="nowrap">
             Departamento: <input type="checkbox" name="Departamento" checked="checked" value="1" >
             |
-            UsuÃ¡rio chave: <input type="checkbox" name="UsuarioChave" checked="checked" value="1" >
+            Usuário chave: <input type="checkbox" name="UsuarioChave" checked="checked" value="1" >
           </td>
         </tr>
 
