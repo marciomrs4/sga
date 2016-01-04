@@ -38,6 +38,11 @@ $tbAtaReuniao = new TbAtaReuniao();
                             <div class="panel-body">
 
                                 <!-- Detalhes do projeto -->
+                                <!-- Detalhes do projeto -->
+                                <div class="col-xs-12">
+                                    <label class="text-warning">Número:</label> <?php echo $dadosProjeto['pro_cod_projeto']; ?>
+                                    <br>
+                                </div>
                                 <div class="col-xs-12">
                                     <label class="text-warning">Solicitante:</label> <?php echo $dadosProjeto['solicitante']; ?>
                                     <br>
@@ -210,7 +215,7 @@ $tbAtaReuniao = new TbAtaReuniao();
                                                         <div class="panel-title">
 
                                                             <div class="list-group">
-                                                                <div class="list-group-item">Atividade: <?php echo $atividade['at_codigo']; ?></div>
+                                                                <div class="list-group-item">Atividade: <?php echo $atividade['at_titulo']; ?></div>
                                                                 <div class="list-group-item">Responsável: <?php echo $atividade['responsavel']; ?></div>
                                                                 <div class="list-group-item">Status: <?php echo $atividade['status']; ?></div>
 
@@ -259,7 +264,7 @@ $tbAtaReuniao = new TbAtaReuniao();
                                                             <div class="panel-title">
 
                                                                 <div class="list-group">
-                                                                    <div class="list-group-item">Atividade: <?php echo $atividade['at_codigo']; ?></div>
+                                                                    <div class="list-group-item">Atividade: <?php echo $atividade['at_titulo']; ?></div>
                                                                     <div class="list-group-item">Responsável: <?php echo $atividade['responsavel']; ?></div>
                                                                     <div class="list-group-item">Status: <?php echo $atividade['status'];  ?></div>
 

@@ -112,7 +112,7 @@ class TbAtividade extends Banco
 	#Usado para listar as atividades, na exporta��o do excel da tela de atividade
 	public function listarAtividadeSemQuebrarLinha($dados)
 	{
-		$query = ("SELECT ATI.at_codigo, PRO.pro_titulo, USU.usu_nome, date_format(ATI.at_previsao_inicio,'%d-%m-%Y'),
+		$query = ("SELECT ATI.at_titulo, PRO.pro_titulo, USU.usu_nome, date_format(ATI.at_previsao_inicio,'%d-%m-%Y'),
 						  date_format(ATI.at_previsao_fim,'%d-%m-%Y'),STI.sta_descricao, ATI.at_descricao,
 						  date_format(max(APO.ap_data_criacao),'%d-%m-%Y %H:%i:%s') AS 'Maior Data',
 						  (SELECT ap_descricao FROM tb_apontamento WHERE ap_codigo = max(APO.ap_codigo)) AS 'Descricao',
@@ -335,7 +335,7 @@ class TbAtividade extends Banco
 		$query = ("SELECT at_codigo, (SELECT concat(usu_nome,' ',usu_sobrenome) FROM tb_usuario WHERE usu_codigo_responsavel = usu_codigo) AS Usuario, 
 					    	date_format(at_previsao_inicio,'%d/%m/%Y') Inicio, date_format(at_previsao_fim,'%d/%m/%Y') Fim, 
 					       (SELECT sta_descricao FROM tb_status_atividade WHERE ATI.sta_codigo = sta_codigo) AS 'Status', 
-					       at_descricao
+					       at_descricao, at_titulo
 					FROM tb_atividade AS ATI
 					WHERE at_codigo = ?
 					ORDER BY 1 ");
@@ -786,7 +786,7 @@ class TbAtividade extends Banco
 	//Usado no painel de detalhe das atividades
 	public function listarAtividadeByProjeto($pro_codigo)
 	{
-		$query = ("SELECT at_codigo,
+		$query = ("SELECT at_codigo,at_titulo,
 						(SELECT concat(usu_nome,' ', usu_sobrenome)
 							FROM tb_usuario
 							WHERE usu_codigo_responsavel = usu_codigo) AS responsavel,
@@ -823,7 +823,7 @@ class TbAtividade extends Banco
 	//Usado no painel de detalhe das atividades por fase
 	public function listarAtividadeByFaseAndProjeto($dados)
 	{
-			$query = ("SELECT at_codigo,
+			$query = ("SELECT at_codigo, at_titulo,
 							(SELECT concat(usu_nome,' ', usu_sobrenome)
 								FROM tb_usuario
 								WHERE usu_codigo_responsavel = usu_codigo) AS responsavel,
@@ -862,7 +862,7 @@ class TbAtividade extends Banco
 	//Usado no painel de atividade
 	public function getFormDetalheAtividade($at_codigo)
 	{
-		$query = ("SELECT at_codigo, at_descricao,
+		$query = ("SELECT at_codigo, at_descricao, at_titulo,
 						(SELECT sta_descricao
 							FROM tb_status_atividade
 							WHERE ATV.sta_codigo = sta_codigo) AS 'status',
@@ -996,7 +996,7 @@ class TbAtividade extends Banco
 	public function listarAtividadeProjetoByUser($dados)
 	{
 		$query = ("SELECT
-						at_codigo, at_codigo,PRO.pro_titulo,
+						at_codigo, at_titulo,PRO.pro_titulo,
 						at_previsao_inicio,
 						date_format(at_previsao_fim,'%d-%m-%Y') AS at_previsao_fim,
 							(SELECT sta_descricao

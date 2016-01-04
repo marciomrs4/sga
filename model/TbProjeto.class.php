@@ -751,7 +751,7 @@ class TbProjeto extends Banco
 	//Usado no painel de projeto detalhado
 	public function getInfoDetalhePainelProjeto($pro_codigo)
 	{
-		$query = ("SELECT pro_codigo, pro_titulo,
+		$query = ("SELECT pro_codigo, pro_titulo, pro_cod_projeto,
 							(SELECT concat(usu_nome,' ',usu_sobrenome)
 								FROM tb_usuario
 								WHERE usu_codigo = usu_codigo_solicitante) AS solicitante,
