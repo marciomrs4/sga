@@ -16,7 +16,7 @@ $dadosApontamento = $tbApontamento->listarApontamento($_POST['at_codigo']);
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Detalhes da Atividade: <?php echo $dadosAtividade['at_codigo']; ?></h3>
+        <h3 class="panel-title">Detalhes da Atividade: <?php echo $dadosAtividade['at_titulo']; ?></h3>
     </div>
     <div class="panel-body">
 

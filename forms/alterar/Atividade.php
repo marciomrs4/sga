@@ -35,6 +35,15 @@ $at_codigo = $tbUsuAtividade->verificaUsuariosAtividade($_SESSION['alterar/Ativi
       </td>
     </tr>
 
+	  <tr>
+		  <th nowrap="nowrap">Número:</th>
+		  <td>
+			  <?php
+			  echo $_SESSION['alterar/Atividade']['at_titulo'];
+			  ?>
+		  </td>
+	  </tr>
+
 	<tr>
 		<th nowrap="nowrap">Projeto:</th>
 		<td>
