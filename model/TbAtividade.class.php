@@ -750,7 +750,7 @@ class TbAtividade extends Banco
 						(SELECT pro_titulo
 							FROM tb_projeto
 							WHERE ATV.pro_codigo = pro_codigo) AS pro_titulo,
-						at_codigo,
+						at_titulo,
 						(SELECT concat(usu_nome,' ', usu_sobrenome)
 							FROM tb_usuario
 							WHERE usu_codigo_responsavel = usu_codigo) AS usu_nome,

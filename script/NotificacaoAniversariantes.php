@@ -1,4 +1,5 @@
-<?php
+<?php 
+#Seto o time zone como s?o paulo
 date_default_timezone_set('America/Sao_Paulo');
 
 include_once '../model/Banco.class.php';
@@ -70,18 +71,20 @@ try
 					<br /><br />
 				  </h4>';
 
+
      $email = new Email();
 
      $cabecalho = date('d/m').' Aniversariante(s) do dia';
 
      $email->setCabecalho($cabecalho)
            ->setMensagem($html)
-           ->AddAddress('marcio.santos@ceadis.org.br');
+           ->AddAddress('eventos@ceadis.org.br');
 
      $email->enviarEmail();
 
 	}
-
+	
+	
 }catch (\PDOException $e)
 {
 	echo $e->getMessage();

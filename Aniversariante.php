@@ -17,7 +17,7 @@ echo"<div class='sub_menu_principal'>";
 if($datagrid->islink)
 {
 	echo FormComponente::actionButton('<img src="./css/images/niver.png" title="Novo Aniversariante"  >','cadastrar/Aniversario');
-	echo FormComponente::criaHiperlink('Enviar E-mail','ScriptAniversariantes.php');
+	echo FormComponente::criaHiperlink('Enviar E-mail','script/NotificacaoAniversariantes.php');
 }
 Texto::criarTitulo("Aniversario");
 echo "</div>";
@@ -25,7 +25,7 @@ echo "</div>";
 ?>
 <form action="" method="post">
 <fieldset>
-	<legend>Pesquisar Aniversáriantes</legend>
+	<legend>Pesquisar Aniversï¿½riantes</legend>
 <table border="0">
  
 	<tr>
@@ -38,7 +38,7 @@ echo "</div>";
 			FormComponente::selectOption('ani_dia', $tbDia->listarDias(),true,$_POST);
 			?>	
 					
-		Mês:
+		Mï¿½s:
 			<?php 
 			$tbMes = new TbConfigAniversario();
 			FormComponente::$name = 'TODOS';
@@ -60,7 +60,7 @@ echo "</div>";
 				<input type="text" name="ani_nome" size="40" value="<?php echo($busca->getDados('ani_nome')); ?>">
 				
 				<?php 
-				$colunas = array('DRT','Nome','Departamento','Dia','Mês');
+				$colunas = array('DRT','Nome','Departamento','Dia','Mï¿½s');
 				
 				$datagrid->setCabecalho($colunas);
 				$datagrid->exportarExcel('ListaDeAniversariantes', 'listarAniversariante',1);

@@ -13,8 +13,6 @@ try
 
     $tbRnc = new TbCadastroRnc();
 
-    //print_r($tbRnc->listRncToVerificacao()->fetchAll(\PDO::FETCH_NAMED));
-
     $table = '';
 
     $table .= '<table border="1">
@@ -43,9 +41,9 @@ $table .= '</table>';
 
     $emal = new Email();
 
-    $emal->AddAddress('marcio.santos@ceadis.org.br');
+    $emal->AddAddress('qualidade@ceadis.org.br');
 
-    $emal->setCabecalho('TESTE - Notificação para verificação de RNCs');
+    $emal->setCabecalho('Notificação para encerramento das RNCs');
 
     $emal->setMensagem($table);
 
