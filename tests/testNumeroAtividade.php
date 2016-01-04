@@ -72,6 +72,7 @@ class Migrate extends Banco
 
 $obj = new Migrate();
 
+
 echo 'Processando...<br><br>';
 
 foreach($obj->listProjeto() as $projeto){
@@ -91,6 +92,7 @@ foreach($obj->listProjeto() as $projeto){
 
 
 }
+
 
 echo 'Finalizado !';
 

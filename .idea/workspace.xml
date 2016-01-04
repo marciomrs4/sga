@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2526c6c5-3cfb-4a59-b223-ceacd7d0168e" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/alterar/Atividade.php" afterPath="$PROJECT_DIR$/forms/alterar/Atividade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/testNumeroAtividade.php" afterPath="$PROJECT_DIR$/tests/testNumeroAtividade.php" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" afterPath="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DetalheProjeto.php" afterPath="$PROJECT_DIR$/DetalheProjeto.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GerarRelatorioAtividadePdf.php" afterPath="$PROJECT_DIR$/GerarRelatorioAtividadePdf.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbAtividade.class.php" afterPath="$PROJECT_DIR$/model/TbAtividade.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/TbProjeto.class.php" afterPath="$PROJECT_DIR$/model/TbProjeto.class.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forms/getAtividadeDetalheProjeto.php" afterPath="$PROJECT_DIR$/forms/getAtividadeDetalheProjeto.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+>>>>>>> 62bdcf3ef342e2598f0f2fd14e977ec73d5aeb07
     </list>
     <ignored path="sga.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,6 +55,7 @@
     <favorites_list name="sga" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf>
       <file leaf-file-name="Atividade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/forms/alterar/Atividade.php">
@@ -56,6 +68,9 @@
         </entry>
       </file>
     </leaf>
+=======
+    <leaf />
+>>>>>>> 62bdcf3ef342e2598f0f2fd14e977ec73d5aeb07
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,6 +78,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/rncGestor.php" />
+>>>>>>> 62bdcf3ef342e2598f0f2fd14e977ec73d5aeb07
         <option value="$PROJECT_DIR$/rncVerificacao.php" />
         <option value="$PROJECT_DIR$/forms/cadastrar/Assentamento.php" />
         <option value="$PROJECT_DIR$/jscript/combodinamico.js" />
@@ -106,14 +125,21 @@
         <option value="$PROJECT_DIR$/forms/alterar/AlterarVersao.php" />
         <option value="$PROJECT_DIR$/ControleVersao.php" />
         <option value="$PROJECT_DIR$/classes/Email.class.php" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/tests/testNumeroAtividade.php" />
+>>>>>>> 62bdcf3ef342e2598f0f2fd14e977ec73d5aeb07
         <option value="$PROJECT_DIR$/forms/cadastrar/Apontamento.php" />
         <option value="$PROJECT_DIR$/GerarRelatorioAtividadePdf.php" />
         <option value="$PROJECT_DIR$/forms/getAtividadeDetalheProjeto.php" />
         <option value="$PROJECT_DIR$/model/TbProjeto.class.php" />
         <option value="$PROJECT_DIR$/DetalheProjeto.php" />
         <option value="$PROJECT_DIR$/model/TbAtividade.class.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/tests/testNumeroAtividade.php" />
         <option value="$PROJECT_DIR$/forms/alterar/Atividade.php" />
+=======
+>>>>>>> 62bdcf3ef342e2598f0f2fd14e977ec73d5aeb07
       </list>
     </option>
   </component>
@@ -179,6 +205,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< HEAD
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="sga" />
@@ -211,6 +238,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+=======
+>>>>>>> 62bdcf3ef342e2598f0f2fd14e977ec73d5aeb07
         </subPane>
       </pane>
       <pane id="Scratches">
@@ -349,9 +378,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="11" width="1440" height="875" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2579972" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2579972" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32818532" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -415,6 +444,16 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/css/formatacao.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5053476">
+          <caret line="78" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 62bdcf3ef342e2598f0f2fd14e977ec73d5aeb07
     <entry file="file://$PROJECT_DIR$/jscript/inc/vars.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22468793">
@@ -591,6 +630,17 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/tests/teste.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 62bdcf3ef342e2598f0f2fd14e977ec73d5aeb07
     <entry file="file://$PROJECT_DIR$/tests/testnumeroatividade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12482663">
@@ -714,6 +764,26 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/tests/testNumeroAtividade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6449376">
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding>
+            <element signature="n#listarAtividades#0;n#Migrate#0;n#!!top" expanded="false" />
+            <element signature="n#listProjeto#0;n#Migrate#0;n#!!top" expanded="false" />
+            <element signature="n#updateAtividade#0;n#Migrate#0;n#!!top" expanded="false" />
+            <marker date="1451911296010" expanded="true" signature="-1:-1" placeholder="SELECT at_co..tb_atividade..." />
+            <marker date="1451911296010" expanded="true" signature="-1:-1" placeholder="SELECT at_co..tb_atividade..." />
+            <marker date="1451911296010" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_projeto..." />
+            <marker date="1451911296010" expanded="true" signature="-1:-1" placeholder="SELECT pro_c..tb_projeto..." />
+            <marker date="1451911296010" expanded="true" signature="-1:-1" placeholder="UPDATE tb_at..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 62bdcf3ef342e2598f0f2fd14e977ec73d5aeb07
     <entry file="file://$PROJECT_DIR$/GerarRelatorioAtividadePdf.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3744799">
@@ -815,6 +885,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Atividade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45076284">
@@ -850,6 +921,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34535366">
           <caret line="198" column="20" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="20" />
+=======
+    <entry file="file://$PROJECT_DIR$/model/TbAtividade.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1816921">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+>>>>>>> 62bdcf3ef342e2598f0f2fd14e977ec73d5aeb07
           <folding>
             <element signature="n#update#0;n#TbAtividade#0;n#!!top" expanded="false" />
             <element signature="n#getUsuarioAtividadeProjeto#0;n#TbAtividade#0;n#!!top" expanded="false" />
@@ -934,10 +1011,17 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/forms/alterar/Atividade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5974026">
           <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+=======
+    <entry file="file://$PROJECT_DIR$/Atividade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45076284">
+          <caret line="69" column="68" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="68" />
+>>>>>>> 62bdcf3ef342e2598f0f2fd14e977ec73d5aeb07
           <folding />
         </state>
       </provider>
