@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/Administracao.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/Aniversariante.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Atividade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/ControleVersao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Departamentos.php" charset="ISO-8859-1" />
@@ -34,7 +35,6 @@
     <file url="file://$PROJECT_DIR$/RelatorioMelhoria.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/RelatorioSolucao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/RelatorioSolucaoTempoEnvioTerceiro.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/ScriptAniversariantes.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/SolicitacaoAcesso.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/SolicitacaoAcessoListar.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Solicitante.php" charset="ISO-8859-1" />
@@ -117,18 +117,6 @@
     <file url="file://$PROJECT_DIR$/script/NotificacaoAniversariantes.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/script/NotificacaoAtividade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/script/NotificacaoQualidade.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/script/ScriptAniversariantesTest.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/script/atividadedependente.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/script/convertdate.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/script/criararquivo.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/script/detalheprojeto.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/script/gerarmodel.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/script/notificaRNC.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/script/testNumeroAtividade.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/script/teste.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/script/testeUpload.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/script/testedatadiff.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/script/testnumeroatividade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/ScriptAniversariantesTest.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/atividadedependente.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/convertdate.php" charset="ISO-8859-1" />
@@ -136,7 +124,6 @@
     <file url="file://$PROJECT_DIR$/tests/detalheprojeto.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/gerarmodel.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/notificaRNC.php" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/tests/notificacaoatividade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/notificacaoatividade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/testNotificacaoQualidade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/testNumeroAtividade.php" charset="ISO-8859-1" />

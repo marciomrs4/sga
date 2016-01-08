@@ -25,7 +25,7 @@ echo "</div>";
 ?>
 <form action="" method="post">
 <fieldset>
-	<legend>Pesquisar Aniversï¿½riantes</legend>
+	<legend>Pesquisar Aniversáriantes</legend>
 <table border="0">
  
 	<tr>
@@ -38,7 +38,7 @@ echo "</div>";
 			FormComponente::selectOption('ani_dia', $tbDia->listarDias(),true,$_POST);
 			?>	
 					
-		Mï¿½s:
+		Mês:
 			<?php 
 			$tbMes = new TbConfigAniversario();
 			FormComponente::$name = 'TODOS';
@@ -60,7 +60,7 @@ echo "</div>";
 				<input type="text" name="ani_nome" size="40" value="<?php echo($busca->getDados('ani_nome')); ?>">
 				
 				<?php 
-				$colunas = array('DRT','Nome','Departamento','Dia','Mï¿½s');
+				$colunas = array('DRT','Nome','Departamento','Dia','Mês');
 				
 				$datagrid->setCabecalho($colunas);
 				$datagrid->exportarExcel('ListaDeAniversariantes', 'listarAniversariante',1);
@@ -105,7 +105,7 @@ $datagrid->setDados($busca->listarAniversariante());
 $datagrid->titulofield = ' Aniversariante(s)';
 $datagrid->islink = (($_SESSION['dep_codigo'] == 40) || ($_SESSION['dep_codigo'] == 5)) ? true : false;
 $datagrid->acao = 'alterar/Aniversario';
-$datagrid->nomelink = '<img src="/sga/css/images/search.png" />';	
+$datagrid->nomelink = '<img src="/sga/css/images/search2.png" />';
 
 $datagrid->acao2 = true;
 
