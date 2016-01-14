@@ -54,7 +54,7 @@
 			?>
 			<hr>
 			<span><b>Gráficos</b></span>
-			<li><a href="GraficoQuantidadeChamado.php">Chamado por Atedente</a></li>
+			<li><a href="GraficoQuantidadeChamado.php">Chamado por Atendente</a></li>
 			<li><a href="GraficoQuantidadeAtividade.php">Atividade por Status</a></li>
 			<li><a href="GraficoAtividadePorUsuario.php">Quantidade de Atividade</a></li>
 			<li><a href="GraficoQuantidadeChamadoAbertoPorArea.php">Chamado por Area no Período</a></li>
