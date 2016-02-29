@@ -223,7 +223,7 @@ $userDados = $tbUsuario->getUsuario($verRnc['usu_emitente_codigo']);
 
 					$tbOcorrenciaRnc = new TbOcorrenciaRnc();
 
-					$GridVerificao  = new DataGrid(array('Chamado'),$tbOcorrenciaRnc->listarChamadoByRnc($verRnc['nc_codigo']));
+					$GridVerificao  = new DataGrid(array('Chamado','Descricao'),$tbOcorrenciaRnc->listarChamadoByRnc($verRnc['nc_codigo']));
 					$GridVerificao->titulofield = 'Lista de Chamado(s)';
 					$GridVerificao->islink = false;
 					$GridVerificao->mostrarDatagrid(1);

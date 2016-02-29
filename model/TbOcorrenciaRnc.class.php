@@ -143,8 +143,11 @@ class TbOcorrenciaRnc extends Banco
     //Lista de Chamado por RNC na tela de RNC
     public function listarChamadoByRnc($nc_codigo)
     {
-        $query = ("SELECT sol_codigo
-                    FROM tb_ocorrencia_rnc
+        $query = ("SELECT sol_codigo,
+                      (SELECT sol_descricao_solicitacao
+                          FROM tb_solicitacao
+                          WHERE RNC.sol_codigo = sol_codigo) AS descricao
+                    FROM tb_ocorrencia_rnc AS RNC
                     WHERE nc_codigo = ?
                     ");
 

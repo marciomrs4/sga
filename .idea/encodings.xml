@@ -10,6 +10,7 @@
     <file url="file://$PROJECT_DIR$/GerarAniversariantePdf.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GerarExcel.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/GerarMelhoriaPdf.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/GerarRelatorioAtividadePdf.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GerarRelatorioPdf.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GestorRnc.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GraficoQuantidadeChamadoAbertoPorArea.php" charset="ISO-8859-1" />
@@ -131,5 +132,6 @@
     <file url="file://$PROJECT_DIR$/tests/testeUpload.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/testedatadiff.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/testnumeroatividade.php" charset="ISO-8859-1" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

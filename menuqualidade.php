@@ -11,13 +11,12 @@
 /*		$botaobusca = ("<li><a href='BuscaRnc.php'><img src='./css/images/search.png'> Pesquisar</a></li>");
 		$controleacesso->permitirBotao($botaobusca, array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));*/
 
-		if($_SESSION['dep_codigo'] != 36) {
-			$botaoRNCGestor = ("<li><a href='GestorRnc.php'><img src='./css/images/melhoria.png'> RNC</a></li>");
+			$botaoRNCGestor = ("<li><a href='GestorRnc.php'><img src='./css/images/responder_rnc.png'> Responder RNC</a></li>");
 			$controleacesso->permitirBotao($botaoRNCGestor, array(ControleDeAcesso::$Solicitante, ControleDeAcesso::$Tecnico, ControleDeAcesso::$TecnicoADM));
-		}
+
 
 		if($_SESSION['dep_codigo'] == 36) {
-			$botaoRNCQualidade = ("<li><a href='Qualidade.php'><img src='./css/images/melhoria.png'> RNC</a></li>");
+			$botaoRNCQualidade = ("<li><a href='Qualidade.php'><img src='./css/images/gerar.png'> Registrar RNC</a></li>");
 			$controleacesso->permitirBotao($botaoRNCQualidade, array(ControleDeAcesso::$Solicitante, ControleDeAcesso::$Tecnico, ControleDeAcesso::$TecnicoADM));
 
 		}

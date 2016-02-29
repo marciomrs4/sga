@@ -31,15 +31,15 @@ try
 <div id="global">
 
 	<img src="../sga/css/images/logoRelatorio.png">
-	<span style="font-size: 24px;">Informaï¿½ï¿½es da Atividade</span>
+	<span style="font-size: 24px;">Informações da Atividade</span>
 
 		<div id="infoprojeto">
-			<span>Nï¿½mero:</span> <?php echo($atividade['at_titulo']);?>
+			<span>Número:</span> <?php echo($atividade['at_titulo']);?>
 			- <span>Executor:</span> <?php echo($atividade['Usuario']);?>
-			- <span>Previsï¿½o de Inicio:</span> <?php echo($atividade['Inicio']);?>
-			- <span>Previsï¿½o de Fim:</span> <?php echo($atividade['Fim']);?>		
+			- <span>Previsão de Inicio:</span> <?php echo($atividade['Inicio']);?>
+			- <span>Previsão de Fim:</span> <?php echo($atividade['Fim']);?>
 			- <span>Status:</span> <?php echo($atividade['Status']);?><br />						
-			<span>Descriï¿½ï¿½o:</span> <?php echo($atividade['at_descricao']);?><br/>			
+			<span>Descrição:</span> <?php echo($atividade['at_descricao']);?><br/>
 		</div>
 	<div id="infocliente">
 	<h3 style="color: #0000CD;">APONTAMENTOS</h3>
@@ -51,11 +51,11 @@ try
 		?>
 		<div id="apontamento">
 			<span style="color: #00008B;">Apontamento:</span><br />
-			<span>Nï¿½mero Apontamento:</span> <?php echo($apontamento['ap_codigo']);?>
-			- <span>Usuï¿½rio:</span> <?php echo($apontamento['Usuario']);?>
+			<span>Número Apontamento:</span> <?php echo($apontamento['ap_codigo']);?>
+			- <span>Usuário:</span> <?php echo($apontamento['Usuario']);?>
 			- <span>Data do Apontamento:</span> <?php echo($apontamento['Data']);?>
 			<br />
-			<span>Descriï¿½ï¿½o:</span> <?php echo($apontamento['Descricao']);?>		
+			<span>Descrição:</span> <?php echo($apontamento['Descricao']);?>
 			<br />
 		</div>
 	
@@ -66,7 +66,7 @@ try
 
 	
 	<div id="anotacoes">
-		<h5>Anotaï¿½ï¿½es:</h5>
+		<h5>Anotações:</h5>
 	
 	</div>
 </div>
@@ -101,7 +101,7 @@ $mpdf = new mPDF('','', 0, '', 5, 5, 1, 1, 1, 1, 'P');
 //$mpdf->SetHeader(utf8_encode('Emitido em: - '.date("d-m-Y")));
 
 
-$mpdf->SetAuthor(utf8_encode("Mï¿½rcio Ramos"));
+$mpdf->SetAuthor(utf8_encode("M?rcio Ramos"));
 $css =  file_get_contents('../sga/css/FormatacaoRelatorio.css');
 
 
@@ -113,7 +113,7 @@ $mpdf->setFooter(utf8_encode('Emitido por: '.$_SESSION['usu_nome'] .' '.$_SESSIO
 
 
 
-//$mpdf->AddPage('L'); #Na posiï¿½ï¿½o retrato
+//$mpdf->AddPage('L'); #Na posi??o retrato
 
 $mpdf->WriteHTML(utf8_encode($html),2);
 
