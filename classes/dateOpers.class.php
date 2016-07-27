@@ -42,8 +42,8 @@ class dateOpers {
 		$minuto = 0;
 		$segundo = 0;
 
-		 //formato brasileiro com hora!!!
-		if (ereg ("([0-9]{1,2})[/|-]([0-9]{1,2})[/|-]([0-9]{4}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})", $data, $sep)) {
+		 //formato brasileiro com hora!!! ereg
+		if (preg_match("([0-9]{1,2})[/|-]([0-9]{1,2})[/|-]([0-9]{4}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})", $data, $sep)) {
 
 			$dia = $sep[1];
 		 	$mes = $sep[2];
@@ -53,7 +53,7 @@ class dateOpers {
 		  	$segundo = $sep[6];
 		} else
 			//formato americano com hora
-		if (ereg ("([0-9]{4})[/|-]([0-9]{1,2})[/|-]([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})", $data, $sep)) {
+		if (preg_match ("([0-9]{4})[/|-]([0-9]{1,2})[/|-]([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})", $data, $sep)) {
 			$dia = $sep[3];
 		 	$mes = $sep[2];
 		 	$ano = $sep[1];
@@ -106,7 +106,7 @@ class dateOpers {
 	function hourToSec($hour){
 		$s = 0;
 		//if (ereg ("([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})", $hour, $sep)) {
-		if (ereg ("([0-9]{1,}):([0-9]{1,2}):([0-9]{1,2})", $hour, $sep)) {
+		if (preg_match ("([0-9]{1,}):([0-9]{1,2}):([0-9]{1,2})", $hour, $sep)) {
 			//$sep = explode(":",$hour);
 			$s= $sep[3];
 			$s+=$sep[2]*60;
@@ -120,7 +120,7 @@ class dateOpers {
 
 		// Desmembra Data -------------------------------------------------------------
 		//FORMATO VÃ�LIDO: ANO-MES-DIA
-		if (ereg ("([0-9]{4})-([0-9]{1,2})-([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})", $datahoje, $sep)) {
+		if (preg_match ("([0-9]{4})-([0-9]{1,2})-([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})", $datahoje, $sep)) {
 			$dia = $sep[3];
 			$mes = $sep[2];
 			$ano = $sep[1];
