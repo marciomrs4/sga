@@ -265,8 +265,8 @@ class TbAniversariante extends Banco
                    AND ani_dia = ?
                    AND ani_unidade = ?");
 
-       	$mes = date('m');
-       	$dia = date('d');
+       	$mes = 4;//date('m');
+       	$dia = 20;//date('d');
 
         $stmt = $this->conexao->prepare($query);
 
@@ -280,6 +280,15 @@ class TbAniversariante extends Banco
 
         return $dados;
     }
+
+	public function truncateTable()
+	{
+		$stmt = $this->conexao->prepare("TRUNCATE {$this->tabela}");
+
+		$stmt->execute();
+
+		return $stmt;
+	}
 
 }
 

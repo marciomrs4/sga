@@ -11,7 +11,7 @@ class ValidarDatas extends ClasseException
 	{
 		if(!preg_match("/^[0-9]{2}\-[0-9]{2}\-[0-9]{4}$/",$data))
 		{
-			throw new Exception("A data no campo {$campo} n�o � v�lida",300);
+			throw new \Exception("A data no campo {$campo} n�o � v�lida",300);
 		}
 
 	}

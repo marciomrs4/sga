@@ -15,12 +15,14 @@ abstract class Banco
 	private $database = 'sga';
 	private $server =  'localhost';
 
-/*	private $user = 'marcio.santos';
-	private $password = 'q1w2e3mrs5';
+
+/*
+	private $user = 'marcio.santos';
+	private $password = 'q1w2e3mrs';
 	private $tipobanco = 'mysql';
 	private $database = 'sga';
-	private $server =  '172.22.0.30';*/
-
+	private $server =  '172.22.0.85';
+*/
 	/** 
 	 *@name PDO
 	 *@uses conexao

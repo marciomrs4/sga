@@ -115,6 +115,7 @@
     <file url="file://$PROJECT_DIR$/rnc.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/rncGestor.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/rncVerificacao.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/script/ImportacaoAniversariante.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/script/NotificacaoAniversariantes.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/script/NotificacaoAtividade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/script/NotificacaoQualidade.php" charset="ISO-8859-1" />
