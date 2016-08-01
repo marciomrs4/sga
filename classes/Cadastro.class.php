@@ -1129,7 +1129,7 @@ class Cadastro extends Dados
 
 
 				if($atividadeDependete['sta_codigo'] == 1){
-					throw new \Exception("A atividade {$atividadeDependete['at_codigo']} é
+					throw new \Exception("A atividade {$atividadeDependete['at_titulo']} é
 					dependente, vc não pode iniciar essa atividade!");
 				}
 

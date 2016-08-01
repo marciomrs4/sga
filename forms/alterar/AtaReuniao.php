@@ -85,7 +85,7 @@ $dadosAtaForm = unserialize($dadosAtaReuniao['form_ata_reuniao']);
     </tr>
 
     <tr>
-      <th>Participantes: <span id="adcionarparticipante">Adcionar</span></th> </th>
+      <th>Participantes: <span id="adcionarparticipante">Adicionar</span></th> </th>
       <td>
       	<textarea name="ata_participantes" cols="55" rows="7"><?php echo($dadosAtaForm['ata_participantes']); ?></textarea>
       </td>

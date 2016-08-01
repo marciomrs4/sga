@@ -10,7 +10,9 @@ Texto::mostrarMensagem($_SESSION['sempermissao']);
 Texto::criarTitulo("Relatório");
 ?>
 
-<?php 
+<?php
+
+Sessao::mostrarSessao();
 
 Sessao::finalizarSessao();
 

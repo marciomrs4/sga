@@ -616,7 +616,7 @@ class TbAtividade extends Banco
 
 	public function getAtividadeDependente($at_codigo)
 	{
-		$query = ("SELECT sta_codigo, at_codigo
+		$query = ("SELECT sta_codigo, at_codigo, at_titulo
 					FROM tb_atividade
 					WHERE at_codigo = (SELECT at_codigo_dependente
 										FROM tb_atividade
