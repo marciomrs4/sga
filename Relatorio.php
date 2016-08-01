@@ -12,7 +12,7 @@ Texto::criarTitulo("Relatório");
 
 <?php
 
-Sessao::mostrarSessao();
+//Sessao::mostrarSessao();
 
 Sessao::finalizarSessao();
 
