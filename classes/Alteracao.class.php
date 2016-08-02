@@ -148,7 +148,20 @@ class Alteracao extends Dados
 
 			$tbprojeto = new TbProjeto();
 
-			$tbprojeto->update($this->dados);
+			if($tbprojeto->getStatusProjeto($this->dados['pro_codigo']) == 1){
+
+				//throw new \Exception('O status é 1'. print_r($this->dados,true));
+				$tbprojeto->update($this->dados);
+
+			}else{
+
+				//throw new \Exception('O status é outro'. print_r($this->dados,true));
+				$tbprojeto->updateAfterAprovacao($this->dados);
+
+			}
+
+
+
 
 		}catch (Exception $e)
 		{

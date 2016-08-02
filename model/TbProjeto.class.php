@@ -289,11 +289,14 @@ class TbProjeto extends Banco
 	{
 		$query = ("UPDATE $this->tabela
 					SET $this->pro_titulo = ?,
-					$this->usu_codigo_solicitante = ?,
-					$this->pro_previsao_inicio = ?,
-					$this->pro_previsao_fim = ?,
-					$this->stp_codigo = ?,
-					$this->pro_descricao = ?
+						$this->usu_codigo_solicitante = ?,
+						$this->pro_previsao_inicio = ?,
+						$this->pro_previsao_fim = ?,
+						$this->stp_codigo = ?,
+						$this->pro_descricao = ?,
+						$this->usu_codigo_responsavel = ?,
+						$this->pro_observacao = ?,
+						$this->pro_local_armazenado = ?
 					
 					WHERE $this->pro_codigo = ? ");
 						
@@ -307,7 +310,10 @@ class TbProjeto extends Banco
 						$stmt->bindParam(4,$dados[$this->pro_previsao_fim],PDO::PARAM_STR);
 						$stmt->bindParam(5,$dados[$this->stp_codigo],PDO::PARAM_INT);
 						$stmt->bindParam(6,$dados[$this->pro_descricao],PDO::PARAM_STR);
-						$stmt->bindParam(7,$dados[$this->pro_codigo],PDO::PARAM_INT);
+						$stmt->bindParam(7,$dados[$this->usu_codigo_responsavel],PDO::PARAM_STR);
+						$stmt->bindParam(8,$dados[$this->pro_observacao],PDO::PARAM_INT);
+						$stmt->bindParam(9,$dados[$this->pro_local_armazenado],PDO::PARAM_STR);
+						$stmt->bindParam(10,$dados[$this->pro_codigo],PDO::PARAM_INT);
 							
 						$stmt->execute();
 
@@ -317,6 +323,35 @@ class TbProjeto extends Banco
 					{
 						throw new PDOException($e->getMessage(),$e->getCode());
 					}
+
+	}
+
+	public function updateAfterAprovacao($dados)
+	{
+		$query = ("UPDATE $this->tabela
+						SET $this->usu_codigo_responsavel = ?,
+							$this->pro_observacao = ?,
+							$this->pro_local_armazenado = ?
+
+						WHERE $this->pro_codigo = ? ");
+
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados[$this->usu_codigo_responsavel],PDO::PARAM_STR);
+			$stmt->bindParam(2,$dados[$this->pro_observacao],PDO::PARAM_INT);
+			$stmt->bindParam(3,$dados[$this->pro_local_armazenado],PDO::PARAM_STR);
+			$stmt->bindParam(4,$dados[$this->pro_codigo],PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt);
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
 
 	}
 
