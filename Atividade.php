@@ -63,7 +63,7 @@ echo "</div>";
 </fieldset>
 
 <?php 
-$cabecalho = array('Número','Projeto','Executor','Prev. Inicio','Previsão. Fim','Status','Descrição','Data Aponta.','Descrição','Qtd');
+$cabecalho = array('Número','Notificar','Projeto','Executor','Prev. Inicio','Previsão. Fim','Status','Descrição','Data Aponta.','Descrição','Qtd');
 $datagrid->setCabecalho($cabecalho);
 
 

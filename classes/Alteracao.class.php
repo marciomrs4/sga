@@ -140,15 +140,16 @@ class Alteracao extends Dados
 			}
 
 
-			$qtdAtividade = $tbAtividade->getCountQtdAtividadeByProjetos($this->dados['pro_codigo']);
-
-			if($qtdAtividade['qtd_atividade'] != 0){
-				throw new \Exception('Existe(m) atividade(s) não pendente: Este projeto não pode ser alterado.');
-			}
-
 			$tbprojeto = new TbProjeto();
 
+			//Projeto tem q estar em andamento para ser alterado se não, não.
 			if($tbprojeto->getStatusProjeto($this->dados['pro_codigo']) == 1){
+
+				$qtdAtividade = $tbAtividade->getCountQtdAtividadeByProjetos($this->dados['pro_codigo']);
+
+				if($qtdAtividade['qtd_atividade'] != 0){
+					throw new \Exception('Existe(m) atividade(s) não pendente: Este projeto não pode ser alterado.');
+				}
 
 				//throw new \Exception('O status é 1'. print_r($this->dados,true));
 				$tbprojeto->update($this->dados);
@@ -159,9 +160,6 @@ class Alteracao extends Dados
 				$tbprojeto->updateAfterAprovacao($this->dados);
 
 			}
-
-
-
 
 		}catch (Exception $e)
 		{
@@ -706,24 +704,32 @@ class Alteracao extends Dados
 					throw new \Exception('A data final da atividade deve ser menor ou igual que a data final do projeto. '.date('d-m-Y',$pro_previsao_fim));
 				}
 
-				//Valida se a atividade esta em andamento e não deixa editar
-				if($this->dados['sta_codigo'] != 1){
-					throw new \Exception('Atividade não está pendente, você não pode alterar.');
-				}
 
 				$status = $tbProjeto->getStatusProjeto($this->dados['pro_codigo']);
 
 				if($status != 2)
 				{
-					throw new Exception('Não é possível alterar essa atividade: Este projeto não esta em andamento');
+					throw new \Exception('Não é possível alterar essa atividade: Este projeto não esta em andamento');
 				}else
 				{
-
 					$tbAtividade = new TbAtividade();
-					$tbAtividade->update($this->dados);
 
-					$this->conexao->commit();
+					//Valida se a atividade esta em andamento e não deixa editar
+					if($this->dados['sta_codigo'] != 1){
 
+						//throw new \Exception('Atividade não está pendente, você não pode alterar.'.print_r($this->dados,true));
+
+						$tbAtividade->updateAfterPendente($this->dados);
+
+						$this->conexao->commit();
+
+					}else {
+
+
+						$tbAtividade->update($this->dados);
+
+						$this->conexao->commit();
+					}
 				}
 
 

@@ -68,7 +68,7 @@ class TbAtividade extends Banco
 	#Usado para listar as atividades, na tela de atividade
 	public function listarAtividade($dados)
 	{
-		$query = ("SELECT ATI.at_codigo, at_titulo, PRO.pro_titulo, USU.usu_nome, date_format(ATI.at_previsao_inicio,'%d-%m-%Y'),
+		$query = ("SELECT ATI.at_codigo, at_titulo, IF(at_notificacao = 1,'Sim','N„o'), PRO.pro_titulo, USU.usu_nome, date_format(ATI.at_previsao_inicio,'%d-%m-%Y'),
 						  date_format(ATI.at_previsao_fim,'%d-%m-%Y'),STI.sta_descricao, substr(ATI.at_descricao,1,60), 
 						  date_format(max(APO.ap_data_criacao),'%d-%m-%Y %H:%i:%s') AS 'Maior Data',					
 						  substr((SELECT ap_descricao FROM tb_apontamento WHERE ap_codigo = max(APO.ap_codigo)) ,1,30) AS 'Descricao',					
@@ -109,7 +109,7 @@ class TbAtividade extends Banco
 		}
 	}
 	
-	#Usado para listar as atividades, na exportaÔøΩÔøΩo do excel da tela de atividade
+	#Usado para listar as atividades, na exporta??o do excel da tela de atividade
 	public function listarAtividadeSemQuebrarLinha($dados)
 	{
 		$query = ("SELECT ATI.at_titulo, PRO.pro_titulo, USU.usu_nome, date_format(ATI.at_previsao_inicio,'%d-%m-%Y'),
@@ -195,6 +195,43 @@ class TbAtividade extends Banco
 					}
 
 	}
+
+
+	public function updateAfterPendente($dados)
+	{
+
+		$query = ("UPDATE $this->tabela
+					SET
+						$this->usu_codigo_responsavel = ?,
+						$this->at_observacao = ?,
+						$this->fas_codigo = ?,
+						$this->at_codigo_dependente = ?,
+						$this->at_notificacao = ?
+
+					WHERE $this->at_codigo = ? ");
+
+		try{
+
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados[$this->usu_codigo_responsavel],PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados[$this->at_observacao],PDO::PARAM_STR);
+			$stmt->bindParam(3,$dados[$this->fas_codigo],PDO::PARAM_INT);
+			$stmt->bindParam(4,$dados[$this->at_codigo_dependente],PDO::PARAM_INT);
+			$stmt->bindParam(5,$dados[$this->at_notificacao],PDO::PARAM_INT);
+			$stmt->bindParam(6,$dados[$this->at_codigo],PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return($stmt);
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
 
 	public function getFormAlteracao($at_codigo)
 	{
@@ -565,7 +602,7 @@ class TbAtividade extends Banco
 		}
 	}
 
-	#usado no cadastro de projeto para validar se existe atividades que n√£o sejam pendentes
+	#usado no cadastro de projeto para validar se existe atividades que n„o sejam pendentes
 	public function getCountQtdAtividadeByProjetos($pro_codigo)
 	{
 		$query = ("SELECT COUNT(*) AS qtd_atividade

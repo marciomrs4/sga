@@ -223,7 +223,7 @@
 
 
             <div class="panel-footer" align="center">
-                RG.TI.04.001 - CONTROLE DE ACESSO A SISTEMAS E REDES - Rev.02 - 10/08/15
+                RG.TI.04.001 - CONTROLE DE ACESSO A SISTEMAS E REDES - Rev.03 - 05/08/16
             </div>
 
         </div>

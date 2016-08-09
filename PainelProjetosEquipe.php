@@ -1,9 +1,10 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'] . '/sga/componentes/config.php');
-$ControleAcesso = new ControleDeAcesso();
-$ControleAcesso->permitirAcesso(array(ControleDeAcesso::$TecnicoADM,ControleDeAcesso::$Tecnico));
+
 
 include_once 'componentes/TopoPainelProjetosEquipe.php';
+
+$_SESSION['dep_codigo'] = ($_SESSION['dep_codigo'] == '') ? $_GET['dep_codigo'] : $_SESSION['dep_codigo'];
 
 $tbDepartamento = new TbDepartamento();
 ?>

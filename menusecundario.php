@@ -39,7 +39,7 @@
         $controleacesso->permitirBotao($SolicitacaoAcesso, array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
 
 
-		if($_SESSION['dep_codigo'] == 5) {
+		if(($_SESSION['dep_codigo'] == 5) OR ($_SESSION['dep_codigo'] == 47)) {
 			$ControleVersao = ("<li><a href='ControleVersao.php'><img src='./css/images/versao.png'> Controle de Versão</a></li>");
 			$controleacesso->permitirBotao($ControleVersao, array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
 		}

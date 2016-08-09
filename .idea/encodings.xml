@@ -108,6 +108,7 @@
     <file url="file://$PROJECT_DIR$/menuqualidade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/menurelatorio.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/menusecundario.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/model/TbAtividade.class.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/model/TbExecutarTarefas.class.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/model/TbRncVerificacao.class.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/model/TbStatusRnc.class.php" charset="ISO-8859-1" />

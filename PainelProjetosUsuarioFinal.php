@@ -7,7 +7,7 @@ include_once 'componentes/TopoPainelUsuarioFinal.php';
 
 $busca = new Busca();
 
-$busca->validarPost($_POST);
+$busca->setDados($_POST);
 
 $busca->setValueGet($_GET,'usu_codigo');
 
@@ -50,9 +50,6 @@ $tbUsuario = new TbUsuario();
                         <?php
                     }
                     ?>
-
-
-
                 </div>
                 <div class="panel-footer">
                 </div>
@@ -95,7 +92,7 @@ $tbUsuario = new TbUsuario();
 
                         $calculatePercent = new CalculatePercent($data['0'],$data['1'],$data['2']);
 
-                      return "<button type='button' class='btn btn-{$calculatePercent->getColor()} btn-sm btn-block' disabled>
+                        return "<button type='button' class='btn btn-{$calculatePercent->getColor()} btn-sm btn-block' disabled>
                                 <span class='glyphicon glyphicon-{$calculatePercent->getSimbol()}'></span>
                               </button>";
 
@@ -122,7 +119,7 @@ $tbUsuario = new TbUsuario();
                     <h3 class="panel-title"></h3>
                 </div>
                 <div class="panel-body">
-                        <div id="atividadeaberta"></div>
+                    <div id="atividadeaberta"></div>
                 </div>
                 <div class="panel-footer"></div>
             </div>

@@ -31,12 +31,6 @@
 		</span>
 		<li><a href="PainelProjetoUsuarios.php" target="_blank">Painel de Projetos</a></li>
 		<?php
-		if($_SESSION['dep_codigo'] == 36) {
-			?>
-			<li>
-				<a href="PainelQualidade.php" target="_blank">Painel Qualidade</a></li>
-			<?php
-		}
 
 		if(in_array($_SESSION['tac_codigo'],array(ControleDeAcesso::$TecnicoADM, ControleDeAcesso::$Tecnico))) {
 			?>

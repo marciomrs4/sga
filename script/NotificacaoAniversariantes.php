@@ -2,11 +2,11 @@
 #Seto o time zone como s?o paulo
 date_default_timezone_set('America/Sao_Paulo');
 
-include_once '../model/Banco.class.php';
-include_once '../model/TbAniversariante.class.php';
-include_once '../classes/SMTP.class.php';
-include_once '../classes/PHPMailer.class.php';
-include_once '../classes/Email.class.php';
+include_once 'model/Banco.class.php';
+include_once 'model/TbAniversariante.class.php';
+include_once 'classes/SMTP.class.php';
+include_once 'classes/PHPMailer.class.php';
+include_once 'classes/Email.class.php';
 
 try
 {
@@ -78,7 +78,7 @@ try
 
      $email->setCabecalho($cabecalho)
            ->setMensagem($html)
-           ->AddAddress('eventos@ceadis.org.br');
+           ->AddAddress('sistemas@ceadis.org.br');
 
      $email->enviarEmail();
 
