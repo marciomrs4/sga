@@ -960,7 +960,7 @@ class Busca extends Dados
 	{
 		$this->dados['sis_codigo'] = ($this->dados['sis_codigo'] == '') ? '%' : $this->dados['sis_codigo'];
 
-		$this->dados['data1'] = ($this->dados['data1'] == '') ? date('Y-m-d') : ValidarDatas::dataBanco($this->dados['data1']);
+		$this->dados['data1'] = ($this->dados['data1'] == '') ? ValidarDatas::dataBanco(ValidarDatas::dataAnterior(date('d-m-Y'),-30)) : ValidarDatas::dataBanco($this->dados['data1']);
 		$this->dados['data2'] = ($this->dados['data2'] == '') ? date('Y-m-d') : ValidarDatas::dataBanco($this->dados['data2']);
 
 		$tbControleVersao = new TbControleVersao();

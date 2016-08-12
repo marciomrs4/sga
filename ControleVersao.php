@@ -34,7 +34,8 @@ $busca->validarPost($_POST);
 					<td>
 						Data de:
 						<input type="text" name="data1" class="data" id="data-id" size="10" value="<?php echo($busca->getDados('data1')); ?>" />
-						Até   <input type="text" name="data2" class="data" id="data" size="10" value="<?php echo($busca->getDados('data2')); ?>"	/>
+						Até
+						<input type="text" name="data2" class="data" id="data" size="10" value="<?php echo($busca->getDados('data2')); ?>"	/>
 					</td>
 
 					<td>
@@ -47,6 +48,7 @@ $busca->validarPost($_POST);
 
 <?php
 Arquivo::includeForm();
+
 $DatagridVersao = new DataGrid();
 $cabecalho = array('Sistema', 'Versão', 'Data', 'Aprovado Por');
 $DatagridVersao->setCabecalho($cabecalho);
@@ -56,6 +58,7 @@ $DatagridVersao->colunaoculta = 1;
 $DatagridVersao->acao = 'alterar/AlterarVersao';
 $DatagridVersao->nomelink = '<img src="./css/images/search2.png" title="Abrir" />';
 $DatagridVersao->mostrarDatagrid();
+
 Sessao::finalizarSessao();
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/menusecundario.php");
 include($_SERVER['DOCUMENT_ROOT']."/{$_SESSION['projeto']}/componentes/rodape.php");

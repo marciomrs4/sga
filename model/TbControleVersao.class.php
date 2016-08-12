@@ -42,13 +42,14 @@ class TbControleVersao extends Banco
     //Listagem da tela de versões
     public function listarVersoes($dados)
     {
-        $query = ("SELECT vso_codigo, SIS.sis_descricao, vso_versao, date_format(vso_data, '%d-%m-%Y') AS vso_data, vso_aprovador
+        $query = ("SELECT vso_codigo, SIS.sis_descricao, vso_versao, date_format(vso_data, '%d-%m-%Y'), vso_aprovador
 	   						FROM tb_controle_versao AS VERSAO
 	   						INNER JOIN tb_sistemas AS SIS
 	   						ON VERSAO.sis_codigo = SIS.sis_codigo
 	   						WHERE SIS.sis_codigo LIKE ?
 	   						AND vso_data >= ?
-	   						AND vso_data <= ?");
+	   						AND vso_data <= ?
+	   						ORDER BY vso_data DESC, SIS.sis_descricao");
         try{
 
             $stmt = $this->conexao->prepare($query);
