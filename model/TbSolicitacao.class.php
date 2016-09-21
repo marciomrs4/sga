@@ -1431,6 +1431,9 @@ class TbSolicitacao extends Banco
 
 			$stmt = $this->conexao->prepare($query);
 
+			$dados['data1'] = $dados['data1'].' 00:00:01';
+			$dados['data2'] = $dados['data2'].' 23:59:59';
+
 			$stmt->bindParam(1,$dados['sta_codigo'],\PDO::PARAM_INT);
 			$stmt->bindParam(2,$dados['dep_codigo_solicitado'],\PDO::PARAM_INT);
 			$stmt->bindParam(3,$dados['data1'],\PDO::PARAM_STR);
