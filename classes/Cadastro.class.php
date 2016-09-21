@@ -1939,14 +1939,10 @@ class Cadastro extends Dados
 
 			ValidarCampos::campoVazio($this->dados['sol_codigo'], 'Chamado');
 			ValidarCampos::campoVazio($this->dados['avaliacao_id'], 'Avaliação');
-			ValidarCampos::campoVazio($this->dados['avaliacao_descricao'], 'Descrição');
+			//ValidarCampos::campoVazio($this->dados['avaliacao_descricao'], 'Descrição');
 
 			$solicitacao = new TbSolicitacao();
 			$solicitacao->createAvaliacao($this->dados);
-
-
-			/*$email = new Email();
-			$email->emailControleVersao($this->dados);*/
 
 		}catch (Exception $e)
 		{

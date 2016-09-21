@@ -1421,8 +1421,8 @@ class TbSolicitacao extends Banco
 					WHERE avaliacao_id IS NOT NULL
 						AND SOL.sta_codigo = ?
 						AND SOL.dep_codigo_solicitado = ?
-						AND sol_data_inicio > ?
-						AND sol_data_inicio < ?
+						AND sol_data_fim > ?
+						AND sol_data_fim < ?
 						AND DEP.dep_codigo LIKE ?
 						AND SOL.pro_codigo_tecnico LIKE ?
 					ORDER BY sol_codigo DESC;");
@@ -1489,8 +1489,8 @@ class TbSolicitacao extends Banco
 					WHERE avaliacao_id IS NOT NULL
 						AND SOL.sta_codigo = ?
 						AND SOL.dep_codigo_solicitado = ?
-						AND sol_data_inicio > ?
-						AND sol_data_inicio < ?
+						AND sol_data_fim > ?
+						AND sol_data_fim < ?
 						AND DEP.dep_codigo LIKE ?
 						AND SOL.pro_codigo_tecnico LIKE ?
 					GROUP BY AVA.descricao

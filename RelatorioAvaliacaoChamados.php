@@ -5,7 +5,7 @@ include_once($_SERVER['DOCUMENT_ROOT']."/sga/componentes/config.php");
 ControleDeAcesso::permitirAcesso(array(ControleDeAcesso::$TecnicoADM,ControleDeAcesso::$Tecnico));
 
 include($_SERVER['DOCUMENT_ROOT']."/{$Projeto}/componentes/bootstrap.php");
- 
+
 echo '<div class="jumbotron">';
 
 
@@ -15,64 +15,65 @@ $busca->validarPost($_POST);
 
 ?>
 
-<form action="" method="post" id="relatoriosolucao">
-<fieldset>
-	<legend>Avaliação de chamados</legend>
+	<form action="" method="post" id="relatoriosolucao">
+		<fieldset>
+			<legend>Avaliação de chamados</legend>
 
-	<table border="0">
-	<tr>	
-		<td>
-		Período: De <input type="date" name="data1" class="input-sm" value="<?php echo($busca->getDados('data1'));?>">
-		à 			<input type="date" name="data2" class="input-sm" value="<?php echo($busca->getDados('data2'));?>">
-		</td>
+			<table border="0">
+				<tr>
+					<td>
+						Período de finalização: de <input type="date" name="data1" class="input-sm" value="<?php echo($busca->getDados('data1'));?>">
+						à 			<input type="date" name="data2" class="input-sm" value="<?php echo($busca->getDados('data2'));?>">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Problema técnico:
+						<?php
+						$TbProblema = new TbProblema();
 
-        <td>
-            Problema técnico:
-            <?php
-            $TbProblema = new TbProblema();
+						$FormProblema = new SelectOption();
+						$FormProblema->setStmt($TbProblema->listarProblemasTecnicos($_SESSION['dep_codigo']))
+							->setOptionEmpty('TODOS')
+							->setSelectName('pro_codigo_tecnico')
+							->setSelectedItem($busca->getDados('pro_codigo_tecnico'))
+							->listOption();
 
-            $FormProblema = new SelectOption();
-            $FormProblema->setStmt($TbProblema->listarProblemasTecnicos($_SESSION['dep_codigo']))
-                         ->setOptionEmpty('TODOS')
-                         ->setSelectName('pro_codigo_tecnico')
-                         ->setSelectedItem($busca->getDados('pro_codigo_tecnico'))
-                         ->listOption();
+						?>
 
-            ?>
+					</td>
 
-		</td>
+					<td>
+						Departamento Solicitante:
+						<?php
+						$TbDepartamento = new TbDepartamento();
 
-		<td>
-			Departamento Solicitante:
-			<?php
-			$TbDepartamento = new TbDepartamento();
+						$FormProblema = new SelectOption();
+						$FormProblema->setStmt($TbDepartamento->getAllDepartamentos())
+							->setOptionEmpty('TODOS')
+							->setSelectName('dep_codigo')
+							->setSelectedItem($busca->getDados('dep_codigo'))
+							->listOption();
 
-			$FormProblema = new SelectOption();
-			$FormProblema->setStmt($TbDepartamento->getAllDepartamentos())
-				->setOptionEmpty('TODOS')
-				->setSelectName('dep_codigo')
-				->setSelectedItem($busca->getDados('dep_codigo'))
-				->listOption();
+						?>
 
-			?>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" class="button-tela" id="botaoSave" value="Pesquisar" name="Pesquisar" />
+						<span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>
+					</td>
+				</tr>
 
-		</td>
-	</tr>
-	<tr>
-		<td>
-          <input type="submit" class="button-tela" id="botaoSave" value="Pesquisar" name="Pesquisar" />
-	      <span class="botaoSave" style="visibility: hidden"><img src="./css/images/299.GIF"></span>
-		</td>
-	</tr>
-	
-</table>
-</fieldset>
-</form>
-<br />
-<?php 
-try 
+			</table>
+		</fieldset>
+	</form>
+	<br />
+<?php
+try
 {
-	
+
 
 	$grid = new Grid();
 
@@ -92,36 +93,36 @@ try
 	$grid->addFunctionColumn('convertDate',2);
 
 
-function formatResult($avaliacao)
-{
-	switch ($avaliacao)
+	function formatResult($avaliacao)
 	{
+		switch ($avaliacao)
+		{
 
-		case 1:
-			return '<span class="label label-success">&nbsp &nbsp &nbsp &nbsp &nbsp</span>';
-		break;
+			case 1:
+				return '<span class="label label-success">&nbsp &nbsp &nbsp &nbsp &nbsp</span>';
+				break;
 
-		case 2:
-			return '<span class="label label-warning">&nbsp &nbsp &nbsp &nbsp &nbsp</span>';
-		break;
+			case 2:
+				return '<span class="label label-warning">&nbsp &nbsp &nbsp &nbsp &nbsp</span>';
+				break;
 
-		case 3:
-			return '<span class="label label-danger">&nbsp &nbsp &nbsp &nbsp &nbsp</span>';
-		break;
+			case 3:
+				return '<span class="label label-danger">&nbsp &nbsp &nbsp &nbsp &nbsp</span>';
+				break;
 
-		case 4:
-			return '<span class="label label-default">&nbsp &nbsp &nbsp &nbsp &nbsp</span>';
-		break;
+			case 4:
+				return '<span class="label label-default">&nbsp &nbsp &nbsp &nbsp &nbsp</span>';
+				break;
 
-		default:
-			return '<span class="">ERROR</span>';
-		break;
+			default:
+				return '<span class="">ERROR</span>';
+				break;
+		}
+
+
+
+
 	}
-
-
-
-
-}
 
 	$grid->addFunctionColumn('formatResult',7);
 
@@ -134,14 +135,14 @@ function formatResult($avaliacao)
 	$grid->id = null;
 
 
-$Painel = new Painel();
-$Painel->addGrid($grid)
-       ->setPainelTitle('<a href="#">Resultado <span id="painel-resultado" class="glyphicon glyphicon-resize-small"></span></a>')
-       ->setPainelColor('default')
-       ->show();
+	$Painel = new Painel();
+	$Painel->addGrid($grid)
+		->setPainelTitle('<a href="#">Resultado <span id="painel-resultado" class="glyphicon glyphicon-resize-small"></span></a>')
+		->setPainelColor('default')
+		->show();
 
-			
-} catch (Exception $e) 
+
+} catch (Exception $e)
 {
 	echo $e->getMessage();
 }
