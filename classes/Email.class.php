@@ -127,6 +127,11 @@ class Email extends PHPMailer
 		$this->mensagem .= '<b>Descrição do Chamado: </b>'.$descricaoSolicitacao.'<br/><br/>';
 		$this->mensagem .= '<b>Foi adicionado o seguinte assentamento: </b>'.$dados['ass_descricao'].'<br/><br/>';
 		$this->mensagem .= '<b>Status do chamado: </b>'.$sta_descricao;
+
+		if($tbsolcitacao->getStatus($dados['sol_codigo']) == 3){
+			$this->mensagem .= '<br/><br/><b>O chamado foi encerrado, agora você pode avalia-lo em:</b><br/>
+								Acessando o SGA no menu Operação e após Avaliação.';
+		}
 		
 		
 		#E-mail de envido do usuario

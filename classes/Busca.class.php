@@ -18,6 +18,17 @@ class Busca extends Dados
 		}
 	}
 
+	public function listarChamadoParaAvaliacao()
+	{
+		$tbSolicitacao = new TbSolicitacao();
+
+		$dados['sta_codigo'] = 3;
+		$dados['usu_codigo_solicitante'] =  $_SESSION['usu_codigo'];
+		$dados['sol_data_fim'] = '2015-01-01';
+
+		return $tbSolicitacao->avaliacaoSolicitacao($dados);
+	}
+
 	public function listarChamado()
 	{
 
@@ -624,7 +635,78 @@ class Busca extends Dados
 	
 	}
 
-    #Listar chamado por tempo de solu��o de problema com envio de terceiro
+	#Listar chamado para avaliacao de chamado
+	public function listarChamadoRelatorioAvaliacao()
+	{
+
+		try {
+
+			ValidarCampos::campoVazio($this->dados['data1'],'Data Inicial');
+
+			ValidarCampos::campoVazio($this->dados['data2'],'Data final');
+
+
+		} catch (Exception $e) {
+
+			throw new Exception('Por favor informe todos os campos: '.$e->getMessage());
+		}
+
+
+
+		$this->dados['pro_codigo_tecnico'] = ($this->dados['pro_codigo_tecnico'] == '') ? '%' : $this->dados['pro_codigo_tecnico'];
+
+		$this->dados['dep_codigo'] = ($this->dados['dep_codigo'] == '') ? '%' : $this->dados['dep_codigo'];
+
+		$this->dados['data1'] = ($this->dados['data1'] == '') ? date('d-m-Y') : $this->dados['data1'];
+		$this->dados['data2'] = ($this->dados['data2'] == '') ? date('d-m-Y') : $this->dados['data2'];
+
+		$this->dados['dep_codigo_solicitado'] = $_SESSION['dep_codigo'];
+		$this->dados['sta_codigo'] = 3;
+
+		$tbSolicitacao = new TbSolicitacao();
+		$dados = $tbSolicitacao->listarChamadoParaAvaliacao($this->dados);
+
+		return($dados);
+
+	}
+
+	#Listar chamado grafico para avaliacao de chamados
+	public function graficoChamadoRelatorioAvaliacao()
+	{
+
+		try {
+
+			ValidarCampos::campoVazio($this->dados['data1'],'Data Inicial');
+
+			ValidarCampos::campoVazio($this->dados['data2'],'Data final');
+
+
+		} catch (Exception $e) {
+
+			throw new Exception('Por favor informe todos os campos: '.$e->getMessage());
+		}
+
+
+
+		$this->dados['pro_codigo_tecnico'] = ($this->dados['pro_codigo_tecnico'] == '') ? '%' : $this->dados['pro_codigo_tecnico'];
+
+		$this->dados['dep_codigo'] = ($this->dados['dep_codigo'] == '') ? '%' : $this->dados['dep_codigo'];
+
+		$this->dados['data1'] = ($this->dados['data1'] == '') ? date('d-m-Y') : $this->dados['data1'];
+		$this->dados['data2'] = ($this->dados['data2'] == '') ? date('d-m-Y') : $this->dados['data2'];
+
+		$this->dados['dep_codigo_solicitado'] = $_SESSION['dep_codigo'];
+		$this->dados['sta_codigo'] = 3;
+
+		$tbSolicitacao = new TbSolicitacao();
+
+		$tbSolicitacao->getGraficoChamadoParaAvaliacao($this->dados);
+
+	}
+
+
+
+	#Listar chamado por tempo de solu��o de problema com envio de terceiro
     public function listarChamadoPorTempoDeSolucaoEnvioTerceiro()
     {
 

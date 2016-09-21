@@ -18,6 +18,7 @@
 			<li><a href="RelatorioPorPrioridade.php">Chamados por Prioridade</a></li>			
   		-->
 		<li><a href="RelatorioPorPeriodoTempo.php">Chamados por Tempo</a></li>
+		<li><a href="RelatorioAvaliacaoChamados.php" target="_blank">Avaliação dos Chamados</a></li>
 		<li><a href="RelatorioSolucao.php" target="_blank">Tempo de Solução</a></li>
 		<li><a href="RelatorioSolucaoTempoEnvioTerceiro.php" target="_blank">Tempo de Solução com Terceiro</a></li>
 		<li><a href="RelatorioDeTarefa.php" target="_blank">Relatório de Tarefas</a></li>

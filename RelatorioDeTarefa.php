@@ -49,7 +49,8 @@ $cabecalho = array('Tarefa','Data','Usuário');
         $dataExporta->setCabecalho($cabecalho);
         $dataExporta->exportarExcel('ListaDeTarefa','getRelatorioTarefa');
 
-        $export = ($busca->getDados('Metodo') == 'getRelatorioTarefa') ? ' <a href="GerarExcel.php" title="Clique para exportar"><span class="glyphicon glyphicon-save">Exportar </span></a> |' : '';
+        $export = ($busca->getDados('Metodo') == 'getRelatorioTarefa') ? '
+        <a href="GerarExcel.php" title="Clique para exportar"><span class="glyphicon glyphicon-save">Exportar </span></a> |' : '';
 
         ?>
     </form>

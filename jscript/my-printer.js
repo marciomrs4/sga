@@ -10,5 +10,8 @@ function doPrinter(){
 $print = jQuery.noConflict();
 
 $print(document).on('click','#doPrinter',function(){
-    doPrinter();
+
+    window.print();
+    //alert('Print');
+    //doPrinter();
 });
