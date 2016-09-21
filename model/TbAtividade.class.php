@@ -552,7 +552,7 @@ class TbAtividade extends Banco
     #Usado no Painel de Tarefas
     public function listarAtividadePainelTarefas($dados)
     {
-        $query = ("SELECT concat('Atividade: ', at_codigo) AS atividade
+        $query = ("SELECT concat('Atividade: ', at_titulo) AS atividade
                     FROM tb_atividade
                     WHERE usu_codigo_responsavel = ?
                     AND sta_codigo = ?

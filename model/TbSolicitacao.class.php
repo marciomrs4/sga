@@ -1331,7 +1331,195 @@ class TbSolicitacao extends Banco
 		}
 	}
 
+	#Mostrar os chamados para avaliacao.
+	public function avaliacaoSolicitacao($dados)
+	{
 
+		$query = ("SELECT SOL.sol_codigo, substr(PRO.pro_descricao,1,60), STA.sta_descricao,
+							substr(sol_descricao_solicitacao,1,60),
+				    (SELECT dep_descricao FROM tb_departamento WHERE dep_codigo = SOL.dep_codigo_solicitado) AS Departamento_Solicitante,
+				    (SELECT usu_email FROM tb_usuario WHERE usu_codigo = ATS.usu_codigo_atendente) AS Atendente,
+	                (SELECT date_format(tea_data_acao,'%d-%m-%Y %H:%i:%s')
+                    FROM tb_calculo_atendimento
+                    WHERE sol_codigo = SOL.sol_codigo AND sta_codigo = 1) AS Abertura
+				    FROM tb_solicitacao AS SOL
+				    #Traz o nome do usuario solicitante
+				    INNER JOIN tb_usuario as USU
+           			ON usu_codigo_solicitante = USU.usu_codigo
+				    #Tabela de Problema, traz a descricao do problema
+				    INNER JOIN tb_problema AS PRO
+				    ON PRO.pro_codigo = SOL.pro_codigo
+				    INNER JOIN tb_status STA
+				    ON STA.sta_codigo = SOL.sta_codigo
+				    #Tabela de Atendente Solicitacao, traz quem esta atendendo a solicitacao
+				    LEFT JOIN tb_atendente_solicitacao AS ATS
+				    ON SOL.sol_codigo = ATS.sol_codigo
+				    WHERE SOL.sta_codigo = ?
+                    AND usu_codigo_solicitante = ?
+                    AND sol_data_fim > ?
+                    AND avaliacao_id IS NULL
+				    ORDER BY SOL.sol_codigo DESC
+				    ");
+		try
+		{
+			$stmt = $this->conexao->prepare($query);
+
+			$array = array("{$dados['sta_codigo']}",
+						   "{$dados['usu_codigo_solicitante']}",
+						   "{$dados['sol_data_fim']}");
+
+			$stmt->execute($array);
+
+			return($stmt);
+
+		} catch (PDOException $e)
+		{
+			throw new PDOException($e->getMessage(), $e->getCode());
+		}
+	}
+
+
+	public function createAvaliacao($dados)
+	{
+		$query = ("UPDATE tb_solicitacao
+					SET avaliacao_id = ?,
+					 	avaliacao_descricao = ?
+					WHERE sol_codigo = ?");
+
+		try{
+
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados['avaliacao_id'],\PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados['avaliacao_descricao'],\PDO::PARAM_STR);
+			$stmt->bindParam(3,$dados['sol_codigo'],\PDO::PARAM_INT);
+
+			$stmt->execute();
+
+			return $stmt;
+
+		}catch(\PDOException $e){
+			throw new \PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	#usado para listar o chamado no relatorio de avaliacao
+	public function listarChamadoParaAvaliacao($dados)
+	{
+		$query = ("SELECT sol_codigo, sol_data_inicio, sol_data_fim, USU.usu_nome, DEP.dep_descricao,
+						   (SELECT pro_descricao FROM tb_problema WHERE pro_codigo = SOL.pro_codigo) AS 'problema',
+						   (SELECT pro_descricao FROM tb_problema WHERE pro_codigo = SOL.pro_codigo_tecnico) AS 'problema_tecnico',
+						avaliacao_id, AVA.descricao
+					FROM tb_solicitacao AS SOL
+					INNER JOIN tb_usuario as USU
+						ON SOL.usu_codigo_solicitante = USU.usu_codigo
+					INNER JOIN tb_departamento AS DEP
+						ON USU.dep_codigo = DEP.dep_codigo
+					INNER JOIN avaliacao AS AVA
+						ON SOL.avaliacao_id = AVA.id
+					WHERE avaliacao_id IS NOT NULL
+						AND SOL.sta_codigo = ?
+						AND SOL.dep_codigo_solicitado = ?
+						AND sol_data_inicio > ?
+						AND sol_data_inicio < ?
+						AND DEP.dep_codigo LIKE ?
+						AND SOL.pro_codigo_tecnico LIKE ?
+					ORDER BY sol_codigo DESC;");
+
+		try{
+
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados['sta_codigo'],\PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados['dep_codigo_solicitado'],\PDO::PARAM_INT);
+			$stmt->bindParam(3,$dados['data1'],\PDO::PARAM_STR);
+			$stmt->bindParam(4,$dados['data2'],\PDO::PARAM_STR);
+			$stmt->bindParam(5,$dados['dep_codigo'],\PDO::PARAM_STR);
+			$stmt->bindParam(6,$dados['pro_codigo_tecnico'],\PDO::PARAM_STR);
+
+			$stmt->execute();
+
+			return $stmt;
+
+		}catch(\PDOException $e){
+			throw new \PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+
+	#usado para listar o chamado para marcalos como nao avaliado no script automatico
+	public function marcarChamadoComoNaoAvaliado($dados)
+	{
+		$query = ("UPDATE tb_solicitacao
+					SET avaliacao_id = 4
+					WHERE sta_codigo = 3
+						AND avaliacao_id IS NULL
+						AND sol_data_fim < ?");
+
+		try{
+
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados['data'],\PDO::PARAM_STR);
+
+			$stmt->execute();
+
+			return $stmt;
+
+		}catch(\PDOException $e){
+			throw new \PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
+
+	#usado para listar o chamado no grafico relatorio de avaliacao
+	public function getGraficoChamadoParaAvaliacao($dados)
+	{
+		$query = ("SELECT
+						AVA.descricao, count(avaliacao_id) AS 'avaliacao'
+					FROM tb_solicitacao AS SOL
+					INNER JOIN tb_usuario as USU
+						ON SOL.usu_codigo_solicitante = USU.usu_codigo
+					INNER JOIN tb_departamento AS DEP
+						ON USU.dep_codigo = DEP.dep_codigo
+					INNER JOIN avaliacao AS AVA
+						ON SOL.avaliacao_id = AVA.id
+					WHERE avaliacao_id IS NOT NULL
+						AND SOL.sta_codigo = ?
+						AND SOL.dep_codigo_solicitado = ?
+						AND sol_data_inicio > ?
+						AND sol_data_inicio < ?
+						AND DEP.dep_codigo LIKE ?
+						AND SOL.pro_codigo_tecnico LIKE ?
+					GROUP BY AVA.descricao
+					ORDER BY 2 DESC");
+
+		try{
+
+			$stmt = $this->conexao->prepare($query);
+
+			$stmt->bindParam(1,$dados['sta_codigo'],\PDO::PARAM_INT);
+			$stmt->bindParam(2,$dados['dep_codigo_solicitado'],\PDO::PARAM_INT);
+			$stmt->bindParam(3,$dados['data1'],\PDO::PARAM_STR);
+			$stmt->bindParam(4,$dados['data2'],\PDO::PARAM_STR);
+			$stmt->bindParam(5,$dados['dep_codigo'],\PDO::PARAM_STR);
+			$stmt->bindParam(6,$dados['pro_codigo_tecnico'],\PDO::PARAM_STR);
+
+			$stmt->execute();
+
+			foreach ($stmt as $value){
+				echo '[',"'",$value[0],"'",',',$value[1],'],';
+			}
+
+			//return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+		}catch(\PDOException $e){
+			throw new \PDOException($e->getMessage(),$e->getCode());
+		}
+
+	}
 
 }
 ?>

@@ -1931,6 +1931,30 @@ class Cadastro extends Dados
 	}
 
 
+	#Cadastrar Avalicao de chamado
+	public function cadastrarAvaliacao()
+	{
+
+		try {
+
+			ValidarCampos::campoVazio($this->dados['sol_codigo'], 'Chamado');
+			ValidarCampos::campoVazio($this->dados['avaliacao_id'], 'Avaliação');
+			ValidarCampos::campoVazio($this->dados['avaliacao_descricao'], 'Descrição');
+
+			$solicitacao = new TbSolicitacao();
+			$solicitacao->createAvaliacao($this->dados);
+
+
+			/*$email = new Email();
+			$email->emailControleVersao($this->dados);*/
+
+		}catch (Exception $e)
+		{
+			throw new Exception($e->getMessage(), $e->getCode());
+		}
+	}
+
+
 }
 
 ?>

@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/Administracao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Aniversariante.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Atividade.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/AvaliacaoChamado.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/ControleVersao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Departamentos.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/DetalheProjeto.php" charset="ISO-8859-1" />
@@ -13,6 +14,7 @@
     <file url="file://$PROJECT_DIR$/GerarRelatorioAtividadePdf.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GerarRelatorioPdf.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GestorRnc.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/GraficoAvaliacaoChamados.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GraficoQuantidadeChamadoAbertoPorArea.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/GraficoTempoSolucaoMontagem.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/ItemCheckList.php" charset="ISO-8859-1" />
@@ -32,6 +34,7 @@
     <file url="file://$PROJECT_DIR$/Projetos.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Qualidade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/Relatorio.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/RelatorioAvaliacaoChamados.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/RelatorioDeTarefa.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/RelatorioMelhoria.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/RelatorioSolucao.php" charset="ISO-8859-1" />
@@ -60,6 +63,7 @@
     <file url="file://$PROJECT_DIR$/componentes/menuprincipal.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/rodape.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/componentes/topo1.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/forms/SolicitacaoAvaliacao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/alterar/AlterarVersao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/alterar/AtaReuniao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/alterar/Atividade.php" charset="ISO-8859-1" />
@@ -79,6 +83,7 @@
     <file url="file://$PROJECT_DIR$/forms/cadastrar/AssentamentoSolicitante.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/AtaReuniao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/Atividade.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/forms/cadastrar/Avaliacao.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/EnvioTerceiro.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/Ocorrencia.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/forms/cadastrar/Projeto.php" charset="ISO-8859-1" />
@@ -116,10 +121,12 @@
     <file url="file://$PROJECT_DIR$/rnc.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/rncGestor.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/rncVerificacao.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/script/AvaliarChamados.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/script/ImportacaoAniversariante.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/script/NotificacaoAniversariantes.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/script/NotificacaoAtividade.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/script/NotificacaoQualidade.php" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/tests/AvaliarChamadosTest.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/ScriptAniversariantesTest.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/atividadedependente.php" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/tests/convertdate.php" charset="ISO-8859-1" />

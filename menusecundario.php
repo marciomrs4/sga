@@ -8,6 +8,10 @@
         <?php
 		$controleacesso = new ControleDeAcesso();
 
+		$avaliacao = ("<li><a href='AvaliacaoChamado.php'><img src='./css/images/avaliacao.png'> Avaliação</a></li>");
+		$controleacesso->permitirBotao($avaliacao, array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
+
+
 		$botaobusca = ("<li><a href='Busca.php'><img src='./css/images/search.png'> Pesquisar</a></li>");
 		$controleacesso->permitirBotao($botaobusca, array(ControleDeAcesso::$Solicitante,ControleDeAcesso::$Tecnico,ControleDeAcesso::$TecnicoADM));
 		

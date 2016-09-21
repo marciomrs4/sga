@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html id="print">
+<html>
     <head>
         <meta charset="ISO-8859-1">
         <title>Solicitação de Acesso</title>
         <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
         <link rel="stylesheet" href="css/bootstrap/style-solicitacao-acesso.css">
+
+<!--        <style type="text/css">-->
+<!--            @media print {-->
+<!--                body * {-->
+<!--                    visibility: hidden;-->
+<!--                }-->
+<!--                #printable, #printable * {-->
+<!--                    visibility: visible;-->
+<!--                }-->
+<!--                #printable {-->
+<!--                    position: fixed;-->
+<!--                    left: 0;-->
+<!--                    top: 0;-->
+<!--                }-->
+<!--            }-->
+<!---->
+<!--        </style>-->
+
     </head>
-    <body class="size-text">
+    <body class="size-text" id="print">
         <div class="container">
         <div class="col-sm-12">
         <div class="panel panel-default">
