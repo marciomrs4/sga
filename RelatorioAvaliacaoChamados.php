@@ -77,9 +77,9 @@ try
 	$grid = new Grid();
 
 	$cabecalho = array('','Número','Data Inicio','Data Fim','Solicitante','Departamento Solicitante','Problema','Problema Tecnico','','Avaliação');
-	
+
 	$grid->setCabecalho($cabecalho);
-	
+
 	$grid->setDados($busca->listarChamadoRelatorioAvaliacao()->fetchAll(\PDO::FETCH_NUM));
 
 	function convertDate($date)
