@@ -130,7 +130,7 @@ class Email extends PHPMailer
 
 		if($tbsolcitacao->getStatus($dados['sol_codigo']) == 3){
 			$this->mensagem .= '<br/><br/><b>O chamado foi encerrado, agora você pode avalia-lo em:</b><br/>
-								Acessando o SGA no menu Operação e após Avaliação.';
+								Acessando o SGA no menu superior Operação ou Chamado e em seguida menu lateral Avaliação.';
 		}
 		
 		
