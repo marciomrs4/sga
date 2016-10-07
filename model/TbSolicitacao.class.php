@@ -1382,7 +1382,8 @@ class TbSolicitacao extends Banco
 	public function createAvaliacao($dados)
 	{
 		$query = ("UPDATE tb_solicitacao
-					SET avaliacao_id = ?,
+					SET avaliacao_date = ?,
+						avaliacao_id = ?,
 					 	avaliacao_descricao = ?
 					WHERE sol_codigo = ?");
 
@@ -1390,9 +1391,10 @@ class TbSolicitacao extends Banco
 
 			$stmt = $this->conexao->prepare($query);
 
-			$stmt->bindParam(1,$dados['avaliacao_id'],\PDO::PARAM_INT);
-			$stmt->bindParam(2,$dados['avaliacao_descricao'],\PDO::PARAM_STR);
-			$stmt->bindParam(3,$dados['sol_codigo'],\PDO::PARAM_INT);
+			$stmt->bindParam(1,date('Y-m-d H:i:s'),\PDO::PARAM_STR);
+			$stmt->bindParam(2,$dados['avaliacao_id'],\PDO::PARAM_INT);
+			$stmt->bindParam(3,$dados['avaliacao_descricao'],\PDO::PARAM_STR);
+			$stmt->bindParam(4,$dados['sol_codigo'],\PDO::PARAM_INT);
 
 			$stmt->execute();
 
@@ -1456,7 +1458,8 @@ class TbSolicitacao extends Banco
 	public function marcarChamadoComoNaoAvaliado($dados)
 	{
 		$query = ("UPDATE tb_solicitacao
-					SET avaliacao_id = 4
+					SET avaliacao_id = 4,
+						avaliacao_date = ?
 					WHERE sta_codigo = 3
 						AND avaliacao_id IS NULL
 						AND sol_data_fim < ?");
@@ -1465,7 +1468,8 @@ class TbSolicitacao extends Banco
 
 			$stmt = $this->conexao->prepare($query);
 
-			$stmt->bindParam(1,$dados['data'],\PDO::PARAM_STR);
+			$stmt->bindParam(1,date('Y-m-d H:i:s'),\PDO::PARAM_STR);
+			$stmt->bindParam(2,$dados['data'],\PDO::PARAM_STR);
 
 			$stmt->execute();
 
