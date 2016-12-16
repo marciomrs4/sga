@@ -9,7 +9,7 @@ include_once '../classes/ValidarDatas.class.php';
 
 $tbAniversariante = new TbAniversariante();
 
-$file = file('../tests/listaniver.csv');
+$file = file('../tests/niver_2016.csv');
 
 
 $tbAniversariante->truncateTable();

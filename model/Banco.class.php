@@ -9,6 +9,7 @@
 abstract class Banco
 {
 
+
 	private $user = 'root';
 	private $password = 'q1w2e3mrs';
 	private $tipobanco = 'mysql';
@@ -17,12 +18,14 @@ abstract class Banco
 
 
 /*
+
 	private $user = 'marcio.santos';
 	private $password = 'q1w2e3mrs';
 	private $tipobanco = 'mysql';
 	private $database = 'sga';
 	private $server =  '172.22.0.85';
 */
+
 	/** 
 	 *@name PDO
 	 *@uses conexao

@@ -77,7 +77,7 @@ try
 
 	$grid = new Grid();
 
-	$cabecalho = array('','Número','Data Inicio','Data Fim','Solicitante','Departamento Solicitante','Problema','Problema Tecnico','','Avaliação');
+	$cabecalho = array('','Número','Data Inicio','Data Fim','Solicitante','Departamento Solicitante','Problema','Problema Tecnico','','Avaliação','Justificativa');
 
 	$grid->setCabecalho($cabecalho);
 

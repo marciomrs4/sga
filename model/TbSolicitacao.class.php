@@ -1412,7 +1412,7 @@ class TbSolicitacao extends Banco
 		$query = ("SELECT sol_codigo, sol_data_inicio, sol_data_fim, USU.usu_nome, DEP.dep_descricao,
 						   (SELECT pro_descricao FROM tb_problema WHERE pro_codigo = SOL.pro_codigo) AS 'problema',
 						   (SELECT pro_descricao FROM tb_problema WHERE pro_codigo = SOL.pro_codigo_tecnico) AS 'problema_tecnico',
-						avaliacao_id, AVA.descricao
+						avaliacao_id, AVA.descricao, SOL.avaliacao_descricao
 					FROM tb_solicitacao AS SOL
 					INNER JOIN tb_usuario as USU
 						ON SOL.usu_codigo_solicitante = USU.usu_codigo
