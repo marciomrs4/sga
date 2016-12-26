@@ -71,9 +71,15 @@ try
 	
 	$DataGrid->titulofield = 'Projeto(s)';
 
-	$DataGrid->nomelink = '<img src="./css/images/search2.png" title="Abrir" />';
-	
-	$DataGrid->acao = 'alterar/Projeto';
+	$DataGrid->nomelink2 = '<img src="./css/images/search2.png" title="Abrir" />';
+	$DataGrid->acao2 = 'alterar/Projeto';
+	$DataGrid->islink2 = true;
+	$DataGrid->link ='DetalheProjeto.php?'.base64_encode('pro_codigo');
+	$DataGrid->targetEnable = true;
+
+	$DataGrid->nomelink = '<img src="./css/images/projeto.png" title="Painel de Projeto" />';
+	$DataGrid->acao = '';
+
 	
 	$DataGrid->mostrarDatagrid();
 
