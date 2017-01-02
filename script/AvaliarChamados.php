@@ -7,26 +7,14 @@ include_once '../model/TbSolicitacao.class.php';
 
 
 $data = new \DateTime('now');
+$tbSolicitacao = new TbSolicitacao();
 
-$dataDia = $data->format('d');
+    $data->modify('-7 days');
 
+    $dados['data'] = $data->format('Y-m-d').' 23:59:59';
 
-if($dataDia == 07){
-
-    $tbSolicitacao = new TbSolicitacao();
-
-    $dados['data'] = $data->format('Y-m-d');
-    //$dados['data'] = '2015-09-21';
     $tbSolicitacao->marcarChamadoComoNaoAvaliado($dados);
 
     echo 'Chamados marcados como não atendidos';
-
-
-}else{
-
-    echo 'Não houveram chamados marcados';
-}
-
-
 
 ?>

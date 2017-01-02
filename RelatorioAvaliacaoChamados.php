@@ -22,8 +22,23 @@ $busca->validarPost($_POST);
 			<table border="0">
 				<tr>
 					<td>
-						Período de finalização: de <input type="date" name="data1" class="input-sm" value="<?php echo($busca->getDados('data1'));?>">
-						à 			<input type="date" name="data2" class="input-sm" value="<?php echo($busca->getDados('data2'));?>">
+						Período de Avaliação: De <input type="date" name="data1" class="input-sm" value="<?php echo($busca->getDados('data1'));?>">
+						até 			<input type="date" name="data2" class="input-sm" value="<?php echo($busca->getDados('data2'));?>">
+					</td>
+					<td>
+						Atendente:
+						<?php
+						$TbUsuario = new TbUsuario();
+
+						$FormProblema = new SelectOption();
+						$FormProblema->setStmt($TbUsuario->selectUsuarioPorDepartamento($_SESSION['dep_codigo']))
+							->setOptionEmpty('TODOS')
+							->setSelectName('usu_codigo')
+							->setSelectedItem($busca->getDados('usu_codigo'))
+							->listOption();
+
+						?>
+
 					</td>
 				</tr>
 				<tr>
@@ -58,6 +73,7 @@ $busca->validarPost($_POST);
 						?>
 
 					</td>
+
 				</tr>
 				<tr>
 					<td>
@@ -77,7 +93,7 @@ try
 
 	$grid = new Grid();
 
-	$cabecalho = array('','Número','Data Inicio','Data Fim','Solicitante','Departamento Solicitante','Problema','Problema Tecnico','','Avaliação','Justificativa');
+	$cabecalho = array('','Número','Data Inicio','Data Fim','Data Avaliação','Solicitante','Departamento Solicitante','Atendente','Problema','Problema Tecnico','','Avaliação','Justificativa');
 
 	$grid->setCabecalho($cabecalho);
 
@@ -91,6 +107,7 @@ try
 
 	$grid->addFunctionColumn('convertDate',1);
 	$grid->addFunctionColumn('convertDate',2);
+	$grid->addFunctionColumn('convertDate',3);
 
 
 	function formatResult($avaliacao)
@@ -124,7 +141,7 @@ try
 
 	}
 
-	$grid->addFunctionColumn('formatResult',7);
+	$grid->addFunctionColumn('formatResult',9);
 
 	$option = new GridOption();
 	$option->setIco('edit')->setName('Ver chamado');
