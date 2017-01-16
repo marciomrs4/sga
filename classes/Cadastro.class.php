@@ -27,20 +27,23 @@ class Cadastro extends Dados
 			$this->dados['ace_senha'] = Validacao::hashSenha($this->dados['ace_senha']);
 
 			#Instancia Tabela usuario
-			$ValidarEmailUsuario = new TbUsuario();
+			//$ValidarEmailUsuario = new TbUsuario();
 			#Valida se j? existe um usu?rio cadastrado
+			/*
 			if($ValidarEmailUsuario->validaEmailUsuario($this->dados['usu_email']))
 			{
 				throw new Exception('E-mail j? cadastrado para outro '.$_SESSION['config']['usuario'],300);
 			}
+			*/
 
 			#Instancia Tabela de acesso
-			$ValidaUsuario = new TbAcesso();
-			#Valida se j? existe um acesso com esse nome
-			//if($ValidaUsuario->validaLoginAcesso($this->dados['ace_usuario']));
-			//{
-			//	throw new Exception('J? existe um '.$_SESSION['config']['usuario'].' ['.$this->dados['ace_usuario'].'] cadastrado no sistema.',300);
-			//	}
+			//$ValidaUsuario = new TbAcesso();
+			//Valida se j? existe um acesso com esse nome
+			/*if($ValidaUsuario->validaLoginAcesso($this->dados['ace_usuario']));
+			{
+				throw new Exception('Já existe um '.$_SESSION['config']['usuario'].' ['.$this->dados['ace_usuario'].'] cadastrado no sistema.',300);
+			}
+			*/
 
 
 			try
@@ -1551,10 +1554,10 @@ class Cadastro extends Dados
 
 			$tbAtividade = new TbAtividade();
 
-			$quantidade = $tbAtividade->validateQtdAtividadeEmAndamento($this->dados['pro_codigo']);
+			$quantidade = $tbAtividade->validateQtdAtividadeEmAndamentoAndPendente($this->dados['pro_codigo']);
 
 			if(($this->dados['stp_codigo'] != 2) and ($quantidade != 0)){
-				throw new Exception('Existem atividades em andamento, o projeto não pode ser concluido.');
+				throw new Exception('Existem atividades pendente ou em andamento, o projeto não pode ser concluido.');
 			}
 
 			try{
@@ -1942,6 +1945,7 @@ class Cadastro extends Dados
 
 			if($this->dados['avaliacao_id'] == 3) {
 				ValidarCampos::campoVazio($this->dados['avaliacao_descricao'], 'Justificativa');
+				ValidarCampos::validaQtdCaracter($this->dados['avaliacao_descricao'],10,'Justificativa');
 			}
 
 			$solicitacao = new TbSolicitacao();

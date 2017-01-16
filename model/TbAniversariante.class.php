@@ -265,8 +265,8 @@ class TbAniversariante extends Banco
                    AND ani_dia = ?
                    AND ani_unidade = ?");
 
-       	$mes = 4;//date('m');
-       	$dia = 20;//date('d');
+       	$mes = date('m');
+       	$dia = date('d');
 
         $stmt = $this->conexao->prepare($query);
 

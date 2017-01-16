@@ -707,9 +707,9 @@ class Alteracao extends Dados
 
 				$status = $tbProjeto->getStatusProjeto($this->dados['pro_codigo']);
 
-				if($status != 2)
+				if(!in_array($status,array(1,2)))
 				{
-					throw new \Exception('Não é possível alterar essa atividade: Este projeto não esta em andamento');
+					throw new \Exception('Não é possível alterar essa atividade: Este projeto não esta em andamento ou em aprovação');
 				}else
 				{
 					$tbAtividade = new TbAtividade();

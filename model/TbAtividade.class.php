@@ -525,11 +525,11 @@ class TbAtividade extends Banco
 	}
 	
 	
-	public function validateQtdAtividadeEmAndamento($pro_codigo)
+	public function validateQtdAtividadeEmAndamentoAndPendente($pro_codigo)
 	{
 		$query = ("select count(*) from tb_atividade 
 					where pro_codigo = ?
-					and sta_codigo = 2;");
+					and sta_codigo in (1,2);");
 		
 		try
 		{

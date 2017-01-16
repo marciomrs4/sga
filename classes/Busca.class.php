@@ -694,6 +694,8 @@ class Busca extends Dados
 
 		$this->dados['dep_codigo'] = ($this->dados['dep_codigo'] == '') ? '%' : $this->dados['dep_codigo'];
 
+		$this->dados['usu_codigo'] = ($this->dados['usu_codigo'] == '') ? '%' : $this->dados['usu_codigo'];
+
 		$this->dados['data1'] = ($this->dados['data1'] == '') ? date('d-m-Y') : $this->dados['data1'];
 		$this->dados['data2'] = ($this->dados['data2'] == '') ? date('d-m-Y') : $this->dados['data2'];
 

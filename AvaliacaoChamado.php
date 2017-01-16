@@ -13,7 +13,7 @@ $busca->validarPost($_POST);
 $datagrid = new DataGrid();
 
 echo"<div class='sub_menu_principal'>";
-Texto::criarTitulo("Avaliação de chamados");
+Texto::criarTitulo("AvaliaÃ§Ã£o de chamados");
 echo "</div>";
 
 #Carrega dinamicamente os formularios	
@@ -31,12 +31,12 @@ if($_SESSION['avaliacao']){
 try
 {
 	
-$cabecalho = array('Nº','Problema','Status','Descrição','Departamento Solicitado','Atendente','Abertura');
+$cabecalho = array('NÂº','Problema','Status','DescriÃ§Ã£o','Departamento Solicitado','Atendente','Abertura');
 
 $datagrid->setCabecalho($cabecalho);
 $datagrid->setDados($busca->listarChamadoParaAvaliacao());
 
-$datagrid->titulofield = 'Chamados pendentes de avaliação';
+$datagrid->titulofield = 'Chamados pendentes de avaliaÃ§Ã£o';
 $datagrid->acao = 'cadastrar/Avaliacao';
 $datagrid->nomelink = '<img src="/sga/css/images/avaliacao.png" title="Avaliar" />';
 

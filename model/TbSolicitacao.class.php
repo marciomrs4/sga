@@ -1409,7 +1409,7 @@ class TbSolicitacao extends Banco
 	#usado para listar o chamado no relatorio de avaliacao
 	public function listarChamadoParaAvaliacao($dados)
 	{
-		$query = ("SELECT SOL.sol_codigo, sol_data_inicio, avaliacao_date, sol_data_fim, USU.usu_nome, DEP.dep_descricao, USU_ATE.usu_nome,
+		$query = ("SELECT SOL.sol_codigo, sol_data_inicio, sol_data_fim, avaliacao_date, USU.usu_nome, DEP.dep_descricao, USU_ATE.usu_nome,
 						   (SELECT pro_descricao FROM tb_problema WHERE pro_codigo = SOL.pro_codigo) AS 'problema',
 						   (SELECT pro_descricao FROM tb_problema WHERE pro_codigo = SOL.pro_codigo_tecnico) AS 'problema_tecnico',
 						avaliacao_id, AVA.descricao, SOL.avaliacao_descricao
@@ -1490,24 +1490,28 @@ class TbSolicitacao extends Banco
 	#usado para listar o chamado no grafico relatorio de avaliacao
 	public function getGraficoChamadoParaAvaliacao($dados)
 	{
-		$query = ("SELECT
-						AVA.descricao, count(avaliacao_id) AS 'avaliacao'
-					FROM tb_solicitacao AS SOL
-					INNER JOIN tb_usuario as USU
-						ON SOL.usu_codigo_solicitante = USU.usu_codigo
-					INNER JOIN tb_departamento AS DEP
-						ON USU.dep_codigo = DEP.dep_codigo
-					INNER JOIN avaliacao AS AVA
-						ON SOL.avaliacao_id = AVA.id
-					WHERE avaliacao_id IS NOT NULL
-						AND SOL.sta_codigo = ?
-						AND SOL.dep_codigo_solicitado = ?
-						AND sol_data_fim > ?
-						AND sol_data_fim < ?
-						AND DEP.dep_codigo LIKE ?
-						AND SOL.pro_codigo_tecnico LIKE ?
-					GROUP BY AVA.descricao
-					ORDER BY 2 DESC");
+		$query = ("SELECT AVA.descricao, count(avaliacao_id)
+						FROM tb_solicitacao AS SOL
+						INNER JOIN tb_usuario as USU
+								ON SOL.usu_codigo_solicitante = USU.usu_codigo
+						INNER JOIN tb_departamento AS DEP
+								ON USU.dep_codigo = DEP.dep_codigo
+						INNER JOIN avaliacao AS AVA
+								ON SOL.avaliacao_id = AVA.id
+						LEFT JOIN tb_atendente_solicitacao AS ATE
+								ON SOL.sol_codigo = ATE.sol_codigo
+						LEFT JOIN tb_usuario AS USU_ATE
+								ON ATE.usu_codigo_atendente = USU_ATE.usu_codigo
+						WHERE avaliacao_id IS NOT NULL
+								AND SOL.sta_codigo = ?
+								AND SOL.dep_codigo_solicitado = ?
+								AND avaliacao_date > ?
+								AND avaliacao_date < ?
+								AND DEP.dep_codigo LIKE ?
+								AND SOL.pro_codigo_tecnico LIKE ?
+								AND ATE.usu_codigo_atendente LIKE ?
+									GROUP BY AVA.descricao
+						ORDER BY 2 DESC;");
 
 		try{
 
@@ -1523,6 +1527,7 @@ class TbSolicitacao extends Banco
 			$stmt->bindParam(4,$dados['data2'],\PDO::PARAM_STR);
 			$stmt->bindParam(5,$dados['dep_codigo'],\PDO::PARAM_STR);
 			$stmt->bindParam(6,$dados['pro_codigo_tecnico'],\PDO::PARAM_STR);
+			$stmt->bindParam(7,$dados['usu_codigo'],\PDO::PARAM_STR);
 
 			$stmt->execute();
 
