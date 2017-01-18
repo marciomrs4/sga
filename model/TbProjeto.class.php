@@ -257,7 +257,15 @@ class TbProjeto extends Banco
 			        	(SELECT usu_nome FROM tb_usuario WHERE usu_codigo = usu_codigo_solicitante) AS Usuario,
 			        	date_format(pro_previsao_inicio,'%d/%m/%Y') AS pro_previsao_inicio, 
 			        	date_format(pro_previsao_fim,'%d/%m/%Y') AS pro_previsao_fim,
-			        	(SELECT stp_descricao FROm tb_status_projeto WHERE stp_codigo = PRO.stp_codigo) AS stp_descricao
+			        	(SELECT stp_descricao FROm tb_status_projeto WHERE stp_codigo = PRO.stp_codigo) AS stp_descricao,
+			        	(SELECT ap_descricao
+							FROM tb_apontamento_projeto AS APO
+                            WHERE PRO.pro_codigo = APO.pro_codigo
+                            ORDER BY ap_codigo DESC LIMIT 1) AS apontamento,
+						date_format((SELECT ap_data_criacao
+							FROM tb_apontamento_projeto AS APO
+                            WHERE PRO.pro_codigo = APO.pro_codigo
+                            ORDER BY ap_codigo DESC LIMIT 1),'%d-%m-%Y') AS data_apontamento
 					FROM tb_projeto AS PRO
 					WHERE stp_codigo LIKE ?
 					AND pro_titulo LIKE ?

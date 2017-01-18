@@ -14,7 +14,7 @@ echo "</div>";
 $busca = new Busca();
 $busca->validarPost($_POST);
 
-$DataGrid = new DataGrid(array('Código do Projeto','Titulo',$_SESSION['config']['usuario'].' Solicitante','Previsão Inicio','Previsão Fim','Status'));
+$DataGrid = new DataGrid(array('Nº Projeto','Titulo','Solicitante','Previsão Inicio','Previsão Fim','Status','Ultimo Apontamento','Data Apont.'));
 
 
 ?>
@@ -79,7 +79,6 @@ try
 
 	$DataGrid->nomelink = '<img src="./css/images/projeto.png" title="Painel de Projeto" />';
 	$DataGrid->acao = '';
-
 	
 	$DataGrid->mostrarDatagrid();
 
