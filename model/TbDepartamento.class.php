@@ -63,7 +63,7 @@ class TbDepartamento extends Banco
 
 		$query = ("INSERT INTO $this->tabela ($this->dep_descricao,
 		$this->dep_email, $this->pro_permite_listar_chamado, $this->dep_hora_inicio,
-		$this->$this->dep_hora_fim, $this->dep_hora_almoco, $this->dep_carga_sabado)
+		$this->dep_hora_fim, $this->dep_hora_almoco, $this->dep_carga_sabado)
 					VALUES(?, ?, ?, ?, ?, ?, ?)");
 
 		try{

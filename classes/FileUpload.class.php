@@ -59,6 +59,15 @@ class FileUpload
 		}
 	}
 
+	public function validateSizeFile($file, $size = 5000000)
+	{
+
+		if($file >= $size)
+		{
+			throw new \Exception('Arquivo Excede o limite de tamanho de 5MB');
+		}
+	}
+
 }
 
 ?>

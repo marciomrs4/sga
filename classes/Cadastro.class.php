@@ -1635,6 +1635,8 @@ class Cadastro extends Dados
 		$Dir = new DirectoryCreate();
 		$Dir->createDirProjetos($pro_codigo);
 
+		$upload->validateSizeFile($file['arquivo']['size']);
+
 		$erro = $upload->setFile($file['arquivo']['tmp_name'])
 			->setDestination(FileUpload::PATH.FileUpload::PROJETOS.$pro_codigo.'/'.$file['arquivo']['name'])
 			->moveUploaded()
@@ -1844,6 +1846,8 @@ class Cadastro extends Dados
 		$Dir = new DirectoryCreate();
 		$Dir->createDirMelhoria($som_codigo);
 
+		$upload->validateSizeFile($file['arquivo']['size']);
+
 		$erro = $upload->setFile($file['arquivo']['tmp_name'])
 			->setDestination(FileUpload::PATH.FileUpload::MELHORIA.$som_codigo.'/'.$file['arquivo']['name'])
 			->moveUploaded()
@@ -1880,6 +1884,13 @@ class Cadastro extends Dados
 
 		$Dir = new DirectoryCreate();
 		$Dir->createDirChamados($sol_codigo);
+
+		$upload->validateSizeFile($file['arquivo']['size']);
+
+//		if($file['arquivo']['size'] >= 5000000)
+//		{
+//			throw new \Exception('Arquivo Excede o limite de tamanho de 5MB');
+//		}
 
 		$erro = $upload->setFile($file['arquivo']['tmp_name'])
 			->setDestination(FileUpload::PATH.FileUpload::CHAMADOS.$sol_codigo.'/'.$file['arquivo']['name'])

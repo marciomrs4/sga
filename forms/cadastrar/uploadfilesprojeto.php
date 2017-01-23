@@ -1,7 +1,14 @@
 <fieldset xmlns="http://www.w3.org/1999/html">
     <legend> Anexar arquivo </legend>
     <form name="anexarfile" id="anexarfile"  method="post" enctype="multipart/form-data" action="../<?php echo($_SESSION['projeto']); ?>/action/anexarfiles.php">
-        <table border="2">
+        <table border="0">
+
+            <tr>
+                <td colspan="2" align="center">
+                    <?php Texto::mostrarMensagem($_SESSION['erro']); ?>
+                </td>
+            </tr>
+
             <tr>
                 <th>Enviar Arquivo:</th>
                 <td>

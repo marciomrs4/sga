@@ -4,6 +4,12 @@
         <table border="0">
 
             <tr>
+                <td colspan="2" align="center">
+                    <?php Texto::mostrarMensagem($_SESSION['erro']); ?>
+                </td>
+            </tr>
+
+            <tr>
                 <th>
                     Melhoria:
                 </th>
